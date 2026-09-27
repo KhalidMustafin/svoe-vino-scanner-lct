@@ -1,0 +1,3777 @@
+{
+ "set": "ooc_v2",
+ "frames": 409,
+ "replayed": 408,
+ "failed": [
+  "M608-orig-0"
+ ],
+ "reads": {
+  "off_hits": 408,
+  "off_misses": 1,
+  "on_hits": 408,
+  "on_misses": 1
+ },
+ "gate": null,
+ "gate_frames": 0,
+ "csv_score_delta_max": null,
+ "files": {
+  "off": {
+   "index_path": "<корень>\\svoe-vino-scanner\\data\\index\\visual-s2so400m.npz",
+   "attrs_path": "<корень>\\svoe-vino-scanner\\data\\gt\\gt_tokens.jsonl",
+   "lexicon_path": "<корень>\\svoe-vino-scanner\\data\\index\\lexicon.json"
+  },
+  "on": {
+   "index_path": "<корень>\\svoe-vino-scanner\\data\\index\\visual-s2so400m-live71.npz",
+   "attrs_path": "<корень>\\svoe-vino-scanner\\data\\gt\\gt_tokens-live71.jsonl",
+   "lexicon_path": "<корень>\\svoe-vino-scanner\\data\\index\\lexicon-live71.json"
+  },
+  "sha1": {
+   "visual-s2so400m.npz": "ccd3a01f16379a3f0a8a1e7e8dc0623c7622bda5",
+   "gt_tokens.jsonl": "bf6a8823a45004b1e13e586e5a92e05b8beb07b0",
+   "lexicon.json": "82bc2234b9953884f86cb77bf23193678f3bed72",
+   "visual-s2so400m-live71.npz": "d0a53644978fca385d4db88cc35677ab261207e0",
+   "gt_tokens-live71.jsonl": "06a294ff0e28b993f5ed4bad15ca8123f4467ef8",
+   "lexicon-live71.json": "3f2c9a8905fd40b8f3363131ee414b0d35eca05b"
+  }
+ },
+ "provenance_on": {
+  "gt_tokens_sha1": "06a294ff0e28b993f5ed4bad15ca8123f4467ef8",
+  "model_gt_tokens_sha1": "bf6a8823a45004b1e13e586e5a92e05b8beb07b0",
+  "lexicon_source_sha1": "06a294ff0e28b993f5ed4bad15ca8123f4467ef8",
+  "vlm_reader": "vlm@qwen3.5:4b|f3a017317f04",
+  "vlm_reader_trained": [
+   "vlm@qwen3.5:4b|f3a017317f04"
+  ],
+  "consistent": false
+ },
+ "live_slugs_count": 71,
+ "rows": {
+  "L01-orig-0": {
+   "off": "fanagoriya-formula-q-kaberne-sovinon-krasnoe-suhoe-135",
+   "p_off": 0.4219,
+   "cv_off": "fanagoriya-beloe-polusladkoe",
+   "on": "fanagoriya-formula-q-kaberne-sovinon-krasnoe-suhoe-135",
+   "p_on": 0.4219,
+   "cv_on": "fanagoriya-beloe-polusladkoe",
+   "fields_same": true
+  },
+  "L02-orig-0": {
+   "off": "gavras-sira-krasnoe-suhoe-135",
+   "p_off": 0.5024,
+   "cv_off": "gavras-sira-krasnoe-suhoe-135",
+   "on": "sira-1",
+   "p_on": 0.6607,
+   "cv_on": "sira-1",
+   "fields_same": true
+  },
+  "L03-orig-0": {
+   "off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_off": 0.1203,
+   "cv_off": "perovskih_semilion_reserv",
+   "on": "vinnye-kraski-merlo",
+   "p_on": 0.1872,
+   "cv_on": "perovskih_semilion_reserv",
+   "fields_same": true
+  },
+  "L06-orig-0": {
+   "off": "massandra-portveyn-belyy-gurzuf-kokur-belyy-beloe-sladkoe-135",
+   "p_off": 0.507,
+   "cv_off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "on": "risling-2",
+   "p_on": 0.3177,
+   "cv_on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "fields_same": true
+  },
+  "L08-orig-0": {
+   "off": "solnechnaya-dolina-meganom-beloe-aligote-suhoe-13",
+   "p_off": 0.9161,
+   "cv_off": "solnechnaya-dolina-meganom-beloe-aligote-suhoe-13",
+   "on": "solnechnaya-dolina-meganom-beloe-aligote-suhoe-13",
+   "p_on": 0.9236,
+   "cv_on": "solnechnaya-dolina-meganom-beloe-aligote-suhoe-13",
+   "fields_same": true
+  },
+  "L09-orig-0": {
+   "off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_off": 0.1671,
+   "cv_off": "rozovaya-pantera",
+   "on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_on": 0.1642,
+   "cv_on": "rozovaya-pantera",
+   "fields_same": true
+  },
+  "L12-orig-0": {
+   "off": "soyuz-vino-zelyonaya-dolina-shardone-beloe-suhoe-12",
+   "p_off": 0.4138,
+   "cv_off": "zolotaya-balka-zb-wine-riesling-risling-beloe-polusuhoe-115",
+   "on": "soyuz-vino-zelyonaya-dolina-shardone-beloe-suhoe-12",
+   "p_on": 0.4138,
+   "cv_on": "zolotaya-balka-zb-wine-riesling-risling-beloe-polusuhoe-115",
+   "fields_same": true
+  },
+  "L13-orig-0": {
+   "off": "cantiani-brut",
+   "p_off": 0.7013,
+   "cv_off": "cantiani-brut",
+   "on": "cantiani-brut",
+   "p_on": 0.7013,
+   "cv_on": "cantiani-brut",
+   "fields_same": true
+  },
+  "L15-orig-0": {
+   "off": "bryut-beloe-zolotaya-balka",
+   "p_off": 0.4439,
+   "cv_off": "rozovoe-bryut-1",
+   "on": "bryut-beloe-zolotaya-balka",
+   "p_on": 0.4408,
+   "cv_on": "rozovoe-bryut-1",
+   "fields_same": true
+  },
+  "L16-orig-0": {
+   "off": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-bryut",
+   "p_off": 0.3685,
+   "cv_off": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-bryut",
+   "on": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-bryut",
+   "p_on": 0.3685,
+   "cv_on": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-bryut",
+   "fields_same": true
+  },
+  "L26-orig-0": {
+   "off": "fanagoriya-alta-qortis-saperavi-krasnoe-suhoe-145",
+   "p_off": 0.9893,
+   "cv_off": "fanagoriya-alta-qortis-saperavi-krasnoe-suhoe-145",
+   "on": "fanagoriya-alta-qortis-saperavi-krasnoe-suhoe-145",
+   "p_on": 0.9893,
+   "cv_on": "fanagoriya-alta-qortis-saperavi-krasnoe-suhoe-145",
+   "fields_same": true
+  },
+  "L27-orig-0": {
+   "off": "massandra-heres",
+   "p_off": 0.3926,
+   "cv_off": "massandra-heres",
+   "on": "massandra-heres",
+   "p_on": 0.3926,
+   "cv_on": "massandra-heres",
+   "fields_same": true
+  },
+  "L30-orig-0": {
+   "off": "shato-pino-pino-gridzhio-beloe-suhoe-12",
+   "p_off": 0.9882,
+   "cv_off": "shato-pino-pino-gridzhio-beloe-suhoe-12",
+   "on": "shato-pino-pino-gridzhio-beloe-suhoe-12",
+   "p_on": 0.9882,
+   "cv_on": "shato-pino-pino-gridzhio-beloe-suhoe-12",
+   "fields_same": true
+  },
+  "L31-orig-0": {
+   "off": "katharon-semi-sweet",
+   "p_off": 0.4369,
+   "cv_off": "katharon-semi-sweet",
+   "on": "katharon-semi-sweet",
+   "p_on": 0.4369,
+   "cv_on": "katharon-semi-sweet",
+   "fields_same": true
+  },
+  "L32-orig-0": {
+   "off": "beloe-polusladkoe",
+   "p_off": 0.1389,
+   "cv_off": "massandra-portveyn-belyy-alushta-belye-sorta-vinograda-beloe-sladkoe-17",
+   "on": "beloe-polusladkoe",
+   "p_on": 0.1445,
+   "cv_on": "massandra-portveyn-belyy-alushta-belye-sorta-vinograda-beloe-sladkoe-17",
+   "fields_same": true
+  },
+  "L33-orig-0": {
+   "off": "soyuz-vino-lavetti-krasnoe-polusladkoe-krasnye-sorta-vinograda-11",
+   "p_off": 0.7076,
+   "cv_off": "soyuz-vino-lavetti-krasnoe-suhoe-krasnye-sorta-vinograda-11",
+   "on": "soyuz-vino-lavetti-krasnoe-polusladkoe-krasnye-sorta-vinograda-11",
+   "p_on": 0.7076,
+   "cv_on": "soyuz-vino-lavetti-krasnoe-suhoe-krasnye-sorta-vinograda-11",
+   "fields_same": true
+  },
+  "L34-orig-0": {
+   "off": "kuban-vino-aristov-kyuve-aleksandr-millezimato-shardone-beloe-ekstra-bryut-12",
+   "p_off": 0.7212,
+   "cv_off": "kuban-vino-aristov-kyuve-aleksandr-millezimato-shardone-beloe-ekstra-bryut-12",
+   "on": "kuban-vino-aristov-kyuve-aleksandr-millezimato-shardone-beloe-ekstra-bryut-12",
+   "p_on": 0.7212,
+   "cv_on": "kuban-vino-aristov-kyuve-aleksandr-millezimato-shardone-beloe-ekstra-bryut-12",
+   "fields_same": true
+  },
+  "L36-orig-0": {
+   "off": "shardone-akacziya",
+   "p_off": 0.4265,
+   "cv_off": "shardone-akacziya",
+   "on": "shardone-akacziya",
+   "p_on": 0.4549,
+   "cv_on": "shardone-akacziya",
+   "fields_same": true
+  },
+  "L38-orig-0": {
+   "off": "shardone-rezerv",
+   "p_off": 0.7688,
+   "cv_off": "shardone-rezerv",
+   "on": "shardone-rezerv",
+   "p_on": 0.7688,
+   "cv_on": "shardone-rezerv",
+   "fields_same": true
+  },
+  "L39-orig-0": {
+   "off": "soyuz-vino-soyuz-vino-izabella-krasnoe-polusladkoe-11",
+   "p_off": 0.9372,
+   "cv_off": "soyuz-vino-soyuz-vino-izabella-krasnoe-polusladkoe-11",
+   "on": "soyuz-vino-soyuz-vino-izabella-krasnoe-polusladkoe-11",
+   "p_on": 0.934,
+   "cv_on": "soyuz-vino-soyuz-vino-izabella-krasnoe-polusladkoe-11",
+   "fields_same": true
+  },
+  "L40-orig-0": {
+   "off": "sovinon-blan-krasnaya-gorka",
+   "p_off": 0.2655,
+   "cv_off": "usadba-mezyb-vione-beloe-suhoe-118",
+   "on": "risling-2",
+   "p_on": 0.7475,
+   "cv_on": "risling-2",
+   "fields_same": true
+  },
+  "L41-orig-0": {
+   "off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_off": 0.6265,
+   "cv_off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_on": 0.6106,
+   "cv_on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "fields_same": true
+  },
+  "L42-orig-0": {
+   "off": "usadba-mezyb-vione-beloe-suhoe-118",
+   "p_off": 0.1451,
+   "cv_off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "on": "usadba-mezyb-vione-beloe-suhoe-118",
+   "p_on": 0.1437,
+   "cv_on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "fields_same": true
+  },
+  "L44-orig-0": {
+   "off": "leto-risling-2020",
+   "p_off": 0.4694,
+   "cv_off": "leto-risling-2020",
+   "on": "leto-risling-2020",
+   "p_on": 0.3918,
+   "cv_on": "leto-risling-2020",
+   "fields_same": true
+  },
+  "L46-orig-0": {
+   "off": "novyy-svet-dom-shampanskih-vin-rossiyskoe-shampanskoe-kollektsionnoe-bryut-beloe-novyy-svet-yubileynoe-risling-13",
+   "p_off": 0.9228,
+   "cv_off": "novyy-svet-dom-shampanskih-vin-rossiyskoe-shampanskoe-kollektsionnoe-bryut-beloe-novyy-svet-yubileynoe-risling-13",
+   "on": "novyy-svet-dom-shampanskih-vin-rossiyskoe-shampanskoe-kollektsionnoe-bryut-beloe-novyy-svet-yubileynoe-risling-13",
+   "p_on": 0.9228,
+   "cv_on": "novyy-svet-dom-shampanskih-vin-rossiyskoe-shampanskoe-kollektsionnoe-bryut-beloe-novyy-svet-yubileynoe-risling-13",
+   "fields_same": true
+  },
+  "L47-orig-0": {
+   "off": "shato-taman-bryut",
+   "p_off": 0.4167,
+   "cv_off": "shato-taman-bryut",
+   "on": "shato-taman-bryut",
+   "p_on": 0.4167,
+   "cv_on": "shato-taman-bryut",
+   "fields_same": true
+  },
+  "L48-orig-0": {
+   "off": "kuban-vino-vysokiy-bereg-grafit-roze-kaberne-sovinon-rozovoe-suhoe-12",
+   "p_off": 0.8705,
+   "cv_off": "vinodelnya-vedernikov-tsimlyanskiy-chernyy-bryut-roze-rozovoe-129",
+   "on": "kuban-vino-vysokiy-bereg-grafit-roze-kaberne-sovinon-rozovoe-suhoe-12",
+   "p_on": 0.872,
+   "cv_on": "vinodelnya-vedernikov-tsimlyanskiy-chernyy-bryut-roze-rozovoe-129",
+   "fields_same": true
+  },
+  "M001-orig-0": {
+   "off": "solnechnaya-dolina-chernyy-polkovnik-odesskiy-chernyy-krasnoe-sladkoe-175",
+   "p_off": 0.518,
+   "cv_off": "petrouchka",
+   "on": "avtorskij-kupazh",
+   "p_on": 0.1481,
+   "cv_on": "petrouchka",
+   "fields_same": true
+  },
+  "M002-orig-0": {
+   "off": "pino-nuar-dzhavaga",
+   "p_off": 0.2023,
+   "cv_off": "petrouchka",
+   "on": "pino-nuar-dzhavaga",
+   "p_on": 0.2109,
+   "cv_on": "petrouchka",
+   "fields_same": true
+  },
+  "M003-orig-0": {
+   "off": "alma-valley-tempranilo-krasnoe-suhoe-13",
+   "p_off": 0.5451,
+   "cv_off": "alma-valley-tempranilo-krasnoe-suhoe-13",
+   "on": "krymskij-blend",
+   "p_on": 0.9305,
+   "cv_on": "alma-valley-tempranilo-krasnoe-suhoe-13",
+   "fields_same": true
+  },
+  "M004-orig-0": {
+   "off": "villa-sofiya-sovinon-blan-beloe-suhoe-123",
+   "p_off": 0.5406,
+   "cv_off": "villa-sofiya-sovinon-blan-beloe-suhoe-14",
+   "on": "krymskij-blend",
+   "p_on": 0.9849,
+   "cv_on": "krymskij-blend",
+   "fields_same": true
+  },
+  "M009-orig-0": {
+   "off": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-polusladkoe-krasnye-sorta-vinograda-11",
+   "p_off": 0.3389,
+   "cv_off": "sary-pandas-vyderzhannoe",
+   "on": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-polusladkoe-krasnye-sorta-vinograda-11",
+   "p_on": 0.3475,
+   "cv_on": "sary-pandas-vyderzhannoe",
+   "fields_same": true
+  },
+  "M010-orig-0": {
+   "off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-belye-sorta-vinograda-11",
+   "p_off": 0.5407,
+   "cv_off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-belye-sorta-vinograda-11",
+   "p_on": 0.5474,
+   "cv_on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "fields_same": true
+  },
+  "M011-orig-0": {
+   "off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "p_off": 0.6142,
+   "cv_off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "p_on": 0.6436,
+   "cv_on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "fields_same": true
+  },
+  "M012-orig-0": {
+   "off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-belye-sorta-vinograda-11",
+   "p_off": 0.5328,
+   "cv_off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-belye-sorta-vinograda-11",
+   "p_on": 0.5519,
+   "cv_on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "fields_same": true
+  },
+  "M013-orig-0": {
+   "off": "zolotoe-pole-legend-of-crimea-white-blend-malvaziya-beloe-suhoe-135",
+   "p_off": 0.6634,
+   "cv_off": "zolotoe-pole-legend-of-crimea-white-blend-malvaziya-beloe-suhoe-135",
+   "on": "zolotoe-pole-legend-of-crimea-white-blend-malvaziya-beloe-suhoe-135",
+   "p_on": 0.6634,
+   "cv_on": "zolotoe-pole-legend-of-crimea-white-blend-malvaziya-beloe-suhoe-135",
+   "fields_same": true
+  },
+  "M015-orig-0": {
+   "off": "zolotoe-pole-legend-of-crimea-pinot-gris-rose-pino-gri-rozovoe-suhoe-135",
+   "p_off": 0.9797,
+   "cv_off": "zolotoe-pole-legend-of-crimea-pinot-gris-rose-pino-gri-rozovoe-suhoe-135",
+   "on": "zolotoe-pole-legend-of-crimea-pinot-gris-rose-pino-gri-rozovoe-suhoe-135",
+   "p_on": 0.9797,
+   "cv_on": "zolotoe-pole-legend-of-crimea-pinot-gris-rose-pino-gri-rozovoe-suhoe-135",
+   "fields_same": true
+  },
+  "M017-orig-0": {
+   "off": "zolotoe-pole-legend-of-crimea-pinot-gris-rose-pino-gri-rozovoe-suhoe-135",
+   "p_off": 0.9901,
+   "cv_off": "zolotoe-pole-legend-of-crimea-pinot-gris-rose-pino-gri-rozovoe-suhoe-135",
+   "on": "zolotoe-pole-legend-of-crimea-pinot-gris-rose-pino-gri-rozovoe-suhoe-135",
+   "p_on": 0.9902,
+   "cv_on": "zolotoe-pole-legend-of-crimea-pinot-gris-rose-pino-gri-rozovoe-suhoe-135",
+   "fields_same": true
+  },
+  "M024-orig-0": {
+   "off": "tsimlyanskie-vina-krepost-sarkel-krasnostop-zolotovskiy-krasnoe-suhoe-145",
+   "p_off": 0.9993,
+   "cv_off": "tsimlyanskie-vina-krepost-sarkel-krasnostop-zolotovskiy-krasnoe-suhoe-145",
+   "on": "tsimlyanskie-vina-krepost-sarkel-krasnostop-zolotovskiy-krasnoe-suhoe-145",
+   "p_on": 0.9993,
+   "cv_on": "tsimlyanskie-vina-krepost-sarkel-krasnostop-zolotovskiy-krasnoe-suhoe-145",
+   "fields_same": true
+  },
+  "M025-orig-0": {
+   "off": "tsimlyanskie-vina-krepost-sarkel-krasnostop-zolotovskiy-krasnoe-suhoe-145",
+   "p_off": 0.9983,
+   "cv_off": "tsimlyanskie-vina-krepost-sarkel-krasnostop-zolotovskiy-krasnoe-suhoe-145",
+   "on": "tsimlyanskie-vina-krepost-sarkel-krasnostop-zolotovskiy-krasnoe-suhoe-145",
+   "p_on": 0.9982,
+   "cv_on": "tsimlyanskie-vina-krepost-sarkel-krasnostop-zolotovskiy-krasnoe-suhoe-145",
+   "fields_same": true
+  },
+  "M026-orig-0": {
+   "off": "sary-pandas-vyderzhannoe",
+   "p_off": 0.7456,
+   "cv_off": "sary-pandas-vyderzhannoe",
+   "on": "sary-pandas-vyderzhannoe",
+   "p_on": 0.7646,
+   "cv_on": "sary-pandas-vyderzhannoe",
+   "fields_same": true
+  },
+  "M027-orig-0": {
+   "off": "krasnostop-zolotovskij",
+   "p_off": 0.1923,
+   "cv_off": "sary-pandas-vyderzhannoe",
+   "on": "krasnostop-zolotovskij",
+   "p_on": 0.181,
+   "cv_on": "sary-pandas-vyderzhannoe",
+   "fields_same": true
+  },
+  "M028-orig-0": {
+   "off": "vinodelnya-myshako-merlo-tempranilo-kyuve-krasnoe-polusladkoe-135",
+   "p_off": 0.5105,
+   "cv_off": "kyuve-czimlyanskij-chernyj-i-krasnostop-zolotoj",
+   "on": "vinodelnya-myshako-merlo-tempranilo-kyuve-krasnoe-polusladkoe-135",
+   "p_on": 0.5113,
+   "cv_on": "kyuve-czimlyanskij-chernyj-i-krasnostop-zolotoj",
+   "fields_same": true
+  },
+  "M029-orig-0": {
+   "off": "belbek-muskat-oranzh-muskat-belyy-oranzhevoe-suhoe-125",
+   "p_off": 0.3139,
+   "cv_off": "vinodelnya-myshako-oranzhevoe-iz-belogo-gevyurtstraminer-krasnoe-suhoe-142",
+   "on": "gevyurcztraminer-oranzh",
+   "p_on": 0.4082,
+   "cv_on": "vinodelnya-myshako-oranzhevoe-iz-belogo-gevyurtstraminer-krasnoe-suhoe-142",
+   "fields_same": true
+  },
+  "M030-orig-0": {
+   "off": "czimlyanskoe-bianka",
+   "p_off": 0.2798,
+   "cv_off": "perovskih_rkaciteli_orange",
+   "on": "gevyurcztraminer-oranzh",
+   "p_on": 0.0861,
+   "cv_on": "perovskih_rkaciteli_orange",
+   "fields_same": true
+  },
+  "M031-orig-0": {
+   "off": "perovskih_rkaciteli_orange",
+   "p_off": 0.3625,
+   "cv_off": "perovskih_rkaciteli_orange",
+   "on": "gevyurcztraminer-oranzh",
+   "p_on": 0.3362,
+   "cv_on": "perovskih_rkaciteli_orange",
+   "fields_same": true
+  },
+  "M032-orig-0": {
+   "off": "kyuve-czimlyanskij-chernyj-i-krasnostop-zolotoj",
+   "p_off": 0.5007,
+   "cv_off": "kyuve-czimlyanskij-chernyj-i-krasnostop-zolotoj",
+   "on": "kyuve-czimlyanskij-chernyj-i-krasnostop-zolotoj",
+   "p_on": 0.5075,
+   "cv_on": "kyuve-czimlyanskij-chernyj-i-krasnostop-zolotoj",
+   "fields_same": true
+  },
+  "M033-orig-0": {
+   "off": "czimlyanskoe-beloe-polusladkoe",
+   "p_off": 0.5006,
+   "cv_off": "kyuve-czimlyanskij-chernyj-i-krasnostop-zolotoj",
+   "on": "czimlyanskoe-risling",
+   "p_on": 0.0743,
+   "cv_on": "kyuve-czimlyanskij-chernyj-i-krasnostop-zolotoj",
+   "fields_same": true
+  },
+  "M034-orig-0": {
+   "off": "czimlyanskoe-risling",
+   "p_off": 0.1455,
+   "cv_off": "kyuve-czimlyanskij-chernyj-i-krasnostop-zolotoj",
+   "on": "czimlyanskoe-risling",
+   "p_on": 0.1465,
+   "cv_on": "kyuve-czimlyanskij-chernyj-i-krasnostop-zolotoj",
+   "fields_same": true
+  },
+  "M035-orig-0": {
+   "off": "czimlyanskoe-beloe-polusladkoe",
+   "p_off": 0.5428,
+   "cv_off": "czimlyanskoe-risling",
+   "on": "czimlyanskoe-beloe-polusladkoe",
+   "p_on": 0.5334,
+   "cv_on": "czimlyanskoe-risling",
+   "fields_same": true
+  },
+  "M036-orig-0": {
+   "off": "tsimlyanskie-vina-krepost-sarkel-krasnostop-zolotovskiy-krasnoe-suhoe-145",
+   "p_off": 0.9881,
+   "cv_off": "tsimlyanskie-vina-krepost-sarkel-krasnostop-zolotovskiy-krasnoe-suhoe-145",
+   "on": "tsimlyanskie-vina-krepost-sarkel-krasnostop-zolotovskiy-krasnoe-suhoe-145",
+   "p_on": 0.9886,
+   "cv_on": "tsimlyanskie-vina-krepost-sarkel-krasnostop-zolotovskiy-krasnoe-suhoe-145",
+   "fields_same": true
+  },
+  "M037-orig-0": {
+   "off": "merlo-litavshhuk",
+   "p_off": 0.0324,
+   "cv_off": "czimlyanskoe-bianka",
+   "on": "merlo-litavshhuk",
+   "p_on": 0.0313,
+   "cv_on": "czimlyanskoe-bianka",
+   "fields_same": true
+  },
+  "M038-orig-0": {
+   "off": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-polusladkoe-07-krasnye-sorta-vinograda-11",
+   "p_off": 0.1812,
+   "cv_off": "sary-pandas-vyderzhannoe",
+   "on": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-polusladkoe-07-krasnye-sorta-vinograda-11",
+   "p_on": 0.213,
+   "cv_on": "sary-pandas-vyderzhannoe",
+   "fields_same": true
+  },
+  "M039-orig-0": {
+   "off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "p_off": 0.337,
+   "cv_off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "p_on": 0.3534,
+   "cv_on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "fields_same": true
+  },
+  "M041-orig-0": {
+   "off": "igristoe-krasnoe-sladkoe-czimlyanskoe",
+   "p_off": 0.8789,
+   "cv_off": "czimlyanskoe-bianka",
+   "on": "igristoe-krasnoe-sladkoe-czimlyanskoe",
+   "p_on": 0.8683,
+   "cv_on": "czimlyanskoe-bianka",
+   "fields_same": true
+  },
+  "M042-orig-0": {
+   "off": "millstream-cellar-vyderzhannoe-igristoe-polusuhoe-beloe",
+   "p_off": 0.5273,
+   "cv_off": "millstream-cellar-select-krasnostop-zolotovskij",
+   "on": "vinodelnya-myshako-risling-beloe-suhoe-123",
+   "p_on": 0.1647,
+   "cv_on": "millstream-cellar-select-krasnostop-zolotovskij",
+   "fields_same": true
+  },
+  "M043-orig-0": {
+   "off": "massandra-muskat",
+   "p_off": 0.3551,
+   "cv_off": "millstream-cellar-select-krasnostop-zolotovskij",
+   "on": "massandra-muskat",
+   "p_on": 0.3551,
+   "cv_on": "millstream-cellar-select-krasnostop-zolotovskij",
+   "fields_same": true
+  },
+  "M044-orig-0": {
+   "off": "millstream-cellar-vyderzhannoe-igristoe-polusuhoe-beloe",
+   "p_off": 0.0362,
+   "cv_off": "millstream-cellar-select-krasnostop-zolotovskij",
+   "on": "millstream-cellar-vyderzhannoe-igristoe-polusuhoe-beloe",
+   "p_on": 0.0352,
+   "cv_on": "millstream-cellar-select-krasnostop-zolotovskij",
+   "fields_same": true
+  },
+  "M045-orig-0": {
+   "off": "millstream-cellar-vyderzhannoe-igristoe-polusuhoe-beloe",
+   "p_off": 0.2814,
+   "cv_off": "millstream-cellar-select-krasnostop-zolotovskij",
+   "on": "millstream-cellar-vyderzhannoe-igristoe-polusuhoe-beloe",
+   "p_on": 0.2742,
+   "cv_on": "millstream-cellar-select-krasnostop-zolotovskij",
+   "fields_same": true
+  },
+  "M046-orig-0": {
+   "off": "millstream-cellar-select-saperavi",
+   "p_off": 0.9888,
+   "cv_off": "millstream-cellar-select-saperavi",
+   "on": "millstream-cellar-select-saperavi",
+   "p_on": 0.9039,
+   "cv_on": "millstream-cellar-select-saperavi",
+   "fields_same": true
+  },
+  "M047-orig-0": {
+   "off": "millstream-cellar-select-krasnostop-zolotovskij",
+   "p_off": 0.5226,
+   "cv_off": "millstream-cellar-select-krasnostop-zolotovskij",
+   "on": "millstream-cellar-select-krasnostop-zolotovskij",
+   "p_on": 0.5188,
+   "cv_on": "millstream-cellar-select-krasnostop-zolotovskij",
+   "fields_same": true
+  },
+  "M048-orig-0": {
+   "off": "millstream-cellar-select-krasnostop-zolotovskij",
+   "p_off": 0.9317,
+   "cv_off": "millstream-cellar-select-krasnostop-zolotovskij",
+   "on": "millstream-cellar-select-krasnostop-zolotovskij",
+   "p_on": 0.9365,
+   "cv_on": "millstream-cellar-select-krasnostop-zolotovskij",
+   "fields_same": true
+  },
+  "M049-orig-0": {
+   "off": "millstream-cellar-select-krasnostop-zolotovskij",
+   "p_off": 0.917,
+   "cv_off": "millstream-cellar-select-krasnostop-zolotovskij",
+   "on": "millstream-cellar-select-krasnostop-zolotovskij",
+   "p_on": 0.9212,
+   "cv_on": "millstream-cellar-select-krasnostop-zolotovskij",
+   "fields_same": true
+  },
+  "M050-orig-0": {
+   "off": "millstream-cellar-select-krasnostop-zolotovskij",
+   "p_off": 0.9341,
+   "cv_off": "millstream-cellar-select-krasnostop-zolotovskij",
+   "on": "millstream-cellar-select-krasnostop-zolotovskij",
+   "p_on": 0.9357,
+   "cv_on": "millstream-cellar-select-krasnostop-zolotovskij",
+   "fields_same": true
+  },
+  "M051-orig-0": {
+   "off": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-polusladkoe-07-krasnye-sorta-vinograda-11",
+   "p_off": 0.2295,
+   "cv_off": "vinodelnya-78-muskat-polusladkoe-muskat-ottonel-beloe-115",
+   "on": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-polusladkoe-07-krasnye-sorta-vinograda-11",
+   "p_on": 0.2295,
+   "cv_on": "vinodelnya-78-muskat-polusladkoe-muskat-ottonel-beloe-115",
+   "fields_same": true
+  },
+  "M052-orig-0": {
+   "off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "p_off": 0.5841,
+   "cv_off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "p_on": 0.6075,
+   "cv_on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "fields_same": true
+  },
+  "M053-orig-0": {
+   "off": "olymp-winery-shato-belbek-kaberne-kaberne-sovinon-krasnoe-suhoe-11",
+   "p_off": 0.2304,
+   "cv_off": "kuban-vino-shato-tamane-ruzh-2023-tsvaygelt-krasnoe-suhoe-12",
+   "on": "olymp-winery-shato-belbek-kaberne-kaberne-sovinon-krasnoe-suhoe-11",
+   "p_on": 0.2304,
+   "cv_on": "kuban-vino-shato-tamane-ruzh-2023-tsvaygelt-krasnoe-suhoe-12",
+   "fields_same": true
+  },
+  "M054-orig-0": {
+   "off": "chteau-le-grand-vostock-cabernet-sauvignon-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_off": 0.2312,
+   "cv_off": "kuban-vino-kaberne-de-tamane-kaberne-sovinon-krasnoe-suhoe-125",
+   "on": "chteau-le-grand-vostock-cabernet-sauvignon-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_on": 0.2312,
+   "cv_on": "kuban-vino-kaberne-de-tamane-kaberne-sovinon-krasnoe-suhoe-125",
+   "fields_same": true
+  },
+  "M055-orig-0": {
+   "off": "chteau-le-grand-vostock-chardonnay-shardone-beloe-suhoe-14",
+   "p_off": 0.2546,
+   "cv_off": "kuban-vino-kaberne-de-tamane-kaberne-sovinon-krasnoe-suhoe-125",
+   "on": "chteau-le-grand-vostock-chardonnay-shardone-beloe-suhoe-14",
+   "p_on": 0.2546,
+   "cv_on": "kuban-vino-kaberne-de-tamane-kaberne-sovinon-krasnoe-suhoe-125",
+   "fields_same": true
+  },
+  "M056-orig-0": {
+   "off": "chteau-le-grand-vostock-sauvignon-blanc-sovinon-blan-beloe-suhoe-14",
+   "p_off": 0.153,
+   "cv_off": "kuban-vino-kaberne-de-tamane-kaberne-sovinon-krasnoe-suhoe-125",
+   "on": "chteau-le-grand-vostock-sauvignon-blanc-sovinon-blan-beloe-suhoe-14",
+   "p_on": 0.153,
+   "cv_on": "kuban-vino-kaberne-de-tamane-kaberne-sovinon-krasnoe-suhoe-125",
+   "fields_same": true
+  },
+  "M057-orig-0": {
+   "off": "perovskih_polusladkoe_beloe",
+   "p_off": 0.1794,
+   "cv_off": "usadba-mezyb-mezyb-vione-beloe-suhoe-13",
+   "on": "perovskih_polusladkoe_beloe",
+   "p_on": 0.1789,
+   "cv_on": "usadba-mezyb-mezyb-vione-beloe-suhoe-13",
+   "fields_same": true
+  },
+  "M066-orig-0": {
+   "off": "millstream-cellar-rezerv-blend-4",
+   "p_off": 0.6117,
+   "cv_off": "millstream-cellar-rezerv-blend-4",
+   "on": "millstream-cellar-rezerv-blend-4",
+   "p_on": 0.5588,
+   "cv_on": "millstream-cellar-rezerv-blend-4",
+   "fields_same": true
+  },
+  "M067-orig-0": {
+   "off": "usadba-markoth-kaberne-sovinon-rezerv-krasnoe-suhoe-13",
+   "p_off": 0.6255,
+   "cv_off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "on": "usadba-markoth-kaberne-sovinon-rezerv-krasnoe-suhoe-13",
+   "p_on": 0.4937,
+   "cv_on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "fields_same": true
+  },
+  "M071-orig-0": {
+   "off": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "p_off": 0.6642,
+   "cv_off": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "on": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "p_on": 0.6704,
+   "cv_on": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "fields_same": true
+  },
+  "M072-orig-0": {
+   "off": "fanagoriya-100-ottenkov-krasnogo-kaberne-kaberne-sovinon-krasnoe-suhoe-135",
+   "p_off": 0.418,
+   "cv_off": "fanagoriya-100-ottenkov-krasnogo-kaberne-kaberne-sovinon-krasnoe-suhoe-135",
+   "on": "fanagoriya-100-ottenkov-krasnogo-kaberne-kaberne-sovinon-krasnoe-suhoe-135",
+   "p_on": 0.418,
+   "cv_on": "fanagoriya-100-ottenkov-krasnogo-kaberne-kaberne-sovinon-krasnoe-suhoe-135",
+   "fields_same": true
+  },
+  "M073-orig-0": {
+   "off": "fanagoriya-dekanter-merlo-2018-krasnoe-suhoe-14",
+   "p_off": 0.2914,
+   "cv_off": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "on": "fanagoriya-dekanter-merlo-2018-krasnoe-suhoe-14",
+   "p_on": 0.2829,
+   "cv_on": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "fields_same": true
+  },
+  "M074-orig-0": {
+   "off": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "p_off": 0.8157,
+   "cv_off": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "on": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "p_on": 0.8316,
+   "cv_on": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "fields_same": true
+  },
+  "M075-orig-0": {
+   "off": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "p_off": 0.3608,
+   "cv_off": "evolution-pinot-noir",
+   "on": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "p_on": 0.3156,
+   "cv_on": "evolution-pinot-noir",
+   "fields_same": true
+  },
+  "M079-orig-0": {
+   "off": "fanagoriya-pelle-calda-saperavi-krasnoe-suhoe-155",
+   "p_off": 0.6672,
+   "cv_off": "fanagoriya-pelle-calda-saperavi-krasnoe-suhoe-155",
+   "on": "fanagoriya-pelle-calda-saperavi-krasnoe-suhoe-155",
+   "p_on": 0.6862,
+   "cv_on": "fanagoriya-pelle-calda-saperavi-krasnoe-suhoe-155",
+   "fields_same": true
+  },
+  "M080-orig-0": {
+   "off": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "p_off": 0.6482,
+   "cv_off": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "on": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "p_on": 0.6605,
+   "cv_on": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "fields_same": true
+  },
+  "M081-orig-0": {
+   "off": "fanagoriya-pelle-calda-saperavi-krasnoe-suhoe-155",
+   "p_off": 0.5502,
+   "cv_off": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "on": "fanagoriya-pelle-calda-saperavi-krasnoe-suhoe-155",
+   "p_on": 0.5502,
+   "cv_on": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "fields_same": true
+  },
+  "M082-orig-0": {
+   "off": "perovskih_polusladkoe_krasnoe",
+   "p_off": 0.0069,
+   "cv_off": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "on": "perovskih_polusladkoe_krasnoe",
+   "p_on": 0.0069,
+   "cv_on": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "fields_same": true
+  },
+  "M083-orig-0": {
+   "off": "fanagoriya-100-ottenkov-krasnogo-kaberne-kaberne-sovinon-krasnoe-suhoe-135",
+   "p_off": 0.2961,
+   "cv_off": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "on": "fanagoriya-100-ottenkov-krasnogo-kaberne-kaberne-sovinon-krasnoe-suhoe-135",
+   "p_on": 0.2841,
+   "cv_on": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "fields_same": false
+  },
+  "M084-orig-0": {
+   "off": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-beloe-polusuhoe-11",
+   "p_off": 0.8566,
+   "cv_off": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "on": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-beloe-polusuhoe-11",
+   "p_on": 0.8566,
+   "cv_on": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "fields_same": true
+  },
+  "M085-orig-0": {
+   "off": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-beloe-polusuhoe-11",
+   "p_off": 0.9287,
+   "cv_off": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "on": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-beloe-polusuhoe-11",
+   "p_on": 0.9287,
+   "cv_on": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "fields_same": true
+  },
+  "M086-orig-0": {
+   "off": "fanagoriya-pelle-calda-saperavi-krasnoe-suhoe-155",
+   "p_off": 0.8789,
+   "cv_off": "fanagoriya-pelle-calda-saperavi-krasnoe-suhoe-155",
+   "on": "fanagoriya-pelle-calda-saperavi-krasnoe-suhoe-155",
+   "p_on": 0.8789,
+   "cv_on": "fanagoriya-pelle-calda-saperavi-krasnoe-suhoe-155",
+   "fields_same": true
+  },
+  "M087-orig-0": {
+   "off": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-beloe-polusuhoe-11",
+   "p_off": 0.8581,
+   "cv_off": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "on": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-beloe-polusuhoe-11",
+   "p_on": 0.8581,
+   "cv_on": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "fields_same": true
+  },
+  "M093-orig-0": {
+   "off": "rustok-glera-ru-140",
+   "p_off": 0.5922,
+   "cv_off": "rustok-glera-ru-140",
+   "on": "rustok-glera-ru-140",
+   "p_on": 0.5922,
+   "cv_on": "rustok-glera-ru-140",
+   "fields_same": true
+  },
+  "M094-orig-0": {
+   "off": "rustok-glera-ru-140",
+   "p_off": 0.2559,
+   "cv_off": "rustok-glera-ru-140",
+   "on": "rustok-glera-ru-140",
+   "p_on": 0.2559,
+   "cv_on": "rustok-glera-ru-140",
+   "fields_same": true
+  },
+  "M098-orig-0": {
+   "off": "vinodelnya-myshako-sovinon-semilon-kyuve-sovinon-blan-beloe-suhoe-132",
+   "p_off": 0.4885,
+   "cv_off": "vinodelnya-myshako-sovinon-semilon-kyuve-sovinon-blan-beloe-suhoe-132",
+   "on": "vinodelnya-myshako-sovinon-semilon-kyuve-sovinon-blan-beloe-suhoe-132",
+   "p_on": 0.4885,
+   "cv_on": "vinodelnya-myshako-sovinon-semilon-kyuve-sovinon-blan-beloe-suhoe-132",
+   "fields_same": true
+  },
+  "M103-orig-0": {
+   "off": "inkerman-shato-ruzh",
+   "p_off": 0.934,
+   "cv_off": "inkerman-shato-ruzh",
+   "on": "avtorskij-kupazh",
+   "p_on": 0.6074,
+   "cv_on": "inkerman-shato-ruzh",
+   "fields_same": false
+  },
+  "M104-orig-0": {
+   "off": "inkermanskiy-zmv-winemakers-selection-saperavi-krasnoe-polusladkoe-12",
+   "p_off": 0.7212,
+   "cv_off": "vinodelnya-batrak-perfekt-klassik-saperavi-krasnoe-suhoe-135",
+   "on": "inkermanskiy-zmv-winemakers-selection-saperavi-krasnoe-polusladkoe-12",
+   "p_on": 0.7023,
+   "cv_on": "vinodelnya-batrak-perfekt-klassik-saperavi-krasnoe-suhoe-135",
+   "fields_same": true
+  },
+  "M105-orig-0": {
+   "off": "roze-malbek",
+   "p_off": 0.9794,
+   "cv_off": "roze-malbek",
+   "on": "roze-malbek",
+   "p_on": 0.9797,
+   "cv_on": "roze-malbek",
+   "fields_same": true
+  },
+  "M115-orig-0": {
+   "off": "chateau-de-talu-yuzhnaya-vertikal-kaberne-fran-premium-krasnoe-suhoe-143",
+   "p_off": 0.2535,
+   "cv_off": "chateau-de-talu-muskat-beloe-suhoe-13",
+   "on": "chateau-de-talu-yuzhnaya-vertikal-kaberne-fran-premium-krasnoe-suhoe-143",
+   "p_on": 0.2535,
+   "cv_on": "chateau-de-talu-muskat-beloe-suhoe-13",
+   "fields_same": true
+  },
+  "M116-orig-0": {
+   "off": "cantiani-rkatsiteli",
+   "p_off": 0.8499,
+   "cv_off": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-bastardo-bastardo-magarachskiy-krasnoe-suhoe-12",
+   "on": "cantiani-rkatsiteli",
+   "p_on": 0.8499,
+   "cv_on": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-bastardo-bastardo-magarachskiy-krasnoe-suhoe-12",
+   "fields_same": true
+  },
+  "M117-orig-0": {
+   "off": "valeriy-zaharin-bakkal-su-saperavi-bastardo-kaberne-sovinon-krasnoe-polusladkoe-11",
+   "p_off": 0.0133,
+   "cv_off": "cantiani-cabernet-sauvignon-reserve-2024",
+   "on": "valeriy-zaharin-bakkal-su-saperavi-bastardo-kaberne-sovinon-krasnoe-polusladkoe-11",
+   "p_on": 0.0133,
+   "cv_on": "cantiani-cabernet-sauvignon-reserve-2024",
+   "fields_same": true
+  },
+  "M118-orig-0": {
+   "off": "vinodelnya-pokrovskaya-rkatsiteli-shardone-pokrovskoe-beloe-suhoe-13",
+   "p_off": 0.0414,
+   "cv_off": "golubitskoe-estate-kaberne-sovinon-noble-selection-krasnoe-suhoe-133",
+   "on": "vinodelnya-pokrovskaya-rkatsiteli-shardone-pokrovskoe-beloe-suhoe-13",
+   "p_on": 0.0357,
+   "cv_on": "golubitskoe-estate-kaberne-sovinon-noble-selection-krasnoe-suhoe-133",
+   "fields_same": true
+  },
+  "M119-orig-0": {
+   "off": "czitronnyj-magaracha",
+   "p_off": 0.6019,
+   "cv_off": "czitronnyj-magaracha",
+   "on": "czitronnyj-magaracha",
+   "p_on": 0.6166,
+   "cv_on": "czitronnyj-magaracha",
+   "fields_same": true
+  },
+  "M120-orig-0": {
+   "off": "golubitskoe-estate-kaberne-sovinon-noble-selection-krasnoe-suhoe-133",
+   "p_off": 0.4044,
+   "cv_off": "golubitskoe-estate-kaberne-sovinon-noble-selection-krasnoe-suhoe-133",
+   "on": "golubitskoe-estate-kaberne-sovinon-noble-selection-krasnoe-suhoe-133",
+   "p_on": 0.4065,
+   "cv_on": "golubitskoe-estate-kaberne-sovinon-noble-selection-krasnoe-suhoe-133",
+   "fields_same": true
+  },
+  "M121-orig-0": {
+   "off": "vinodelnya-78-muskat-polusladkoe-muskat-ottonel-beloe-115",
+   "p_off": 0.2501,
+   "cv_off": "usadba-aleksandrovskaya-bubnovyy-valet-kaberne-sovinon-krasnoe-polusladkoe-13",
+   "on": "vinodelnya-78-muskat-polusladkoe-muskat-ottonel-beloe-115",
+   "p_on": 0.2502,
+   "cv_on": "usadba-aleksandrovskaya-bubnovyy-valet-kaberne-sovinon-krasnoe-polusladkoe-13",
+   "fields_same": true
+  },
+  "M122-orig-0": {
+   "off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_off": 0.9028,
+   "cv_off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_on": 0.8681,
+   "cv_on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "fields_same": true
+  },
+  "M123-orig-0": {
+   "off": "leto-kollekcziya-leta-2020-suhoe-beloe",
+   "p_off": 0.7414,
+   "cv_off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-suhoe-07-belye-sorta-vinograda-11",
+   "on": "leto-kollekcziya-leta-2020-suhoe-beloe",
+   "p_on": 0.7418,
+   "cv_on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-suhoe-07-belye-sorta-vinograda-11",
+   "fields_same": true
+  },
+  "M124-orig-0": {
+   "off": "leto-kollekcziya-leta-2020-suhoe-beloe",
+   "p_off": 0.3709,
+   "cv_off": "levokumskoe-beloe-rkatsiteli-suhoe-10",
+   "on": "leto-kollekcziya-leta-2020-suhoe-beloe",
+   "p_on": 0.3709,
+   "cv_on": "levokumskoe-beloe-rkatsiteli-suhoe-10",
+   "fields_same": true
+  },
+  "M125-orig-0": {
+   "off": "soyuz-vino-soyuz-vino-izabella-krasnoe-polusladkoe-11",
+   "p_off": 0.9865,
+   "cv_off": "soyuz-vino-soyuz-vino-izabella-krasnoe-polusladkoe-11",
+   "on": "soyuz-vino-soyuz-vino-izabella-krasnoe-polusladkoe-11",
+   "p_on": 0.987,
+   "cv_on": "soyuz-vino-soyuz-vino-izabella-krasnoe-polusladkoe-11",
+   "fields_same": true
+  },
+  "M126-orig-0": {
+   "off": "chateau-tamagne-grand-dessert-muscat",
+   "p_off": 0.7161,
+   "cv_off": "chateau-tamagne-grand-dessert-muscat",
+   "on": "chateau-tamagne-grand-dessert-muscat",
+   "p_on": 0.7264,
+   "cv_on": "chateau-tamagne-grand-dessert-muscat",
+   "fields_same": true
+  },
+  "M135-orig-0": {
+   "off": "vinodelnya-raevskoe-glou-krasnoe-merlo-suhoe-14",
+   "p_off": 0.9266,
+   "cv_off": "vinodelnya-raevskoe-glou-krasnoe-merlo-suhoe-14",
+   "on": "vinodelnya-raevskoe-glou-krasnoe-merlo-suhoe-14",
+   "p_on": 0.9341,
+   "cv_on": "vinodelnya-raevskoe-glou-krasnoe-merlo-suhoe-14",
+   "fields_same": true
+  },
+  "M136-orig-0": {
+   "off": "vinodelnya-raevskoe-glou-krasnoe-merlo-suhoe-14",
+   "p_off": 0.9321,
+   "cv_off": "vinodelnya-raevskoe-glou-krasnoe-merlo-suhoe-14",
+   "on": "vinodelnya-raevskoe-glou-krasnoe-merlo-suhoe-14",
+   "p_on": 0.9321,
+   "cv_on": "vinodelnya-raevskoe-glou-krasnoe-merlo-suhoe-14",
+   "fields_same": true
+  },
+  "M137-orig-0": {
+   "off": "vinodelnya-raevskoe-glou-krasnoe-merlo-suhoe-14",
+   "p_off": 0.796,
+   "cv_off": "vinodelnya-raevskoe-glou-krasnoe-merlo-suhoe-14",
+   "on": "vinodelnya-raevskoe-glou-krasnoe-merlo-suhoe-14",
+   "p_on": 0.8055,
+   "cv_on": "vinodelnya-raevskoe-glou-krasnoe-merlo-suhoe-14",
+   "fields_same": true
+  },
+  "M138-orig-0": {
+   "off": "usadba-mezyb-vione-beloe-suhoe-118",
+   "p_off": 0.4231,
+   "cv_off": "usadba-mezyb-vione-beloe-suhoe-118",
+   "on": "risling-2",
+   "p_on": 0.3939,
+   "cv_on": "risling-2",
+   "fields_same": true
+  },
+  "M139-orig-0": {
+   "off": "vinodelnya-zhakov-kokurkod-beloe-suhoe-118",
+   "p_off": 0.7235,
+   "cv_off": "vinodelnya-zhakov-kokurkod-beloe-suhoe-118",
+   "on": "vinodelnya-zhakov-kokurkod-beloe-suhoe-118",
+   "p_on": 0.7235,
+   "cv_on": "vinodelnya-zhakov-kokurkod-beloe-suhoe-118",
+   "fields_same": true
+  },
+  "M140-orig-0": {
+   "off": "vinodelnya-raevskoe-glou-krasnoe-merlo-suhoe-14",
+   "p_off": 0.9392,
+   "cv_off": "vinodelnya-raevskoe-glou-krasnoe-merlo-suhoe-14",
+   "on": "vinodelnya-raevskoe-glou-krasnoe-merlo-suhoe-14",
+   "p_on": 0.9393,
+   "cv_on": "vinodelnya-raevskoe-glou-krasnoe-merlo-suhoe-14",
+   "fields_same": true
+  },
+  "M152-orig-0": {
+   "off": "inkermanskiy-zmv-winemakers-selection-saperavi-krasnoe-polusladkoe-12",
+   "p_off": 0.7464,
+   "cv_off": "inkermanskiy-zmv-winemakers-selection-saperavi-krasnoe-polusladkoe-12",
+   "on": "inkermanskiy-zmv-winemakers-selection-saperavi-krasnoe-polusladkoe-12",
+   "p_on": 0.7541,
+   "cv_on": "inkermanskiy-zmv-winemakers-selection-saperavi-krasnoe-polusladkoe-12",
+   "fields_same": true
+  },
+  "M167-orig-0": {
+   "off": "chernaya-lvicza-polusladkoe-krasnoe",
+   "p_off": 0.041,
+   "cv_off": "denisov_pet_nat_rubin",
+   "on": "chernaya-lvicza-polusladkoe-krasnoe",
+   "p_on": 0.041,
+   "cv_on": "denisov_pet_nat_rubin",
+   "fields_same": true
+  },
+  "M174-orig-0": {
+   "off": "novyy-svet-dom-shampanskih-vin-igristoe-vino-vyderzhannoe-polusladkoe-rozovoe-novyy-svet-pino-fran-135",
+   "p_off": 0.5863,
+   "cv_off": "novyy-svet-dom-shampanskih-vin-igristoe-vino-vyderzhannoe-polusladkoe-rozovoe-novyy-svet-pino-fran-135",
+   "on": "novyy-svet-dom-shampanskih-vin-igristoe-vino-vyderzhannoe-polusladkoe-rozovoe-novyy-svet-pino-fran-135",
+   "p_on": 0.5863,
+   "cv_on": "novyy-svet-dom-shampanskih-vin-igristoe-vino-vyderzhannoe-polusladkoe-rozovoe-novyy-svet-pino-fran-135",
+   "fields_same": true
+  },
+  "M175-orig-0": {
+   "off": "rozovoe-bryut-1",
+   "p_off": 0.35,
+   "cv_off": "rozovoe-bryut-1",
+   "on": "rozovoe-bryut-1",
+   "p_on": 0.3531,
+   "cv_on": "rozovoe-bryut-1",
+   "fields_same": true
+  },
+  "M176-orig-0": {
+   "off": "ivan-ksenia-kruz-argonne-chardonay-shardone-beloe-suhoe-127",
+   "p_off": 0.191,
+   "cv_off": "ivan-ksenia-kruz-argonne-chardonay-shardone-beloe-suhoe-127",
+   "on": "ivan-ksenia-kruz-argonne-chardonay-shardone-beloe-suhoe-127",
+   "p_on": 0.191,
+   "cv_on": "ivan-ksenia-kruz-argonne-chardonay-shardone-beloe-suhoe-127",
+   "fields_same": true
+  },
+  "M177-orig-0": {
+   "off": "inkermanskiy-zmv-inkerman-polusladkoe-rkatsiteli-beloe-13",
+   "p_off": 0.4704,
+   "cv_off": "inkermanskiy-zmv-inkerman-polusladkoe-rkatsiteli-beloe-13",
+   "on": "inkermanskiy-zmv-inkerman-polusladkoe-rkatsiteli-beloe-13",
+   "p_on": 0.4758,
+   "cv_on": "inkermanskiy-zmv-inkerman-polusladkoe-rkatsiteli-beloe-13",
+   "fields_same": true
+  },
+  "M178-orig-0": {
+   "off": "agrolayn-vexillum-blanc-de-blancs-shardone-beloe-bryut-115",
+   "p_off": 0.5345,
+   "cv_off": "agrolayn-vexillum-blanc-de-blancs-shardone-beloe-bryut-115",
+   "on": "agrolayn-vexillum-blanc-de-blancs-shardone-beloe-bryut-115",
+   "p_on": 0.5345,
+   "cv_on": "agrolayn-vexillum-blanc-de-blancs-shardone-beloe-bryut-115",
+   "fields_same": true
+  },
+  "M181-orig-0": {
+   "off": "lefkadiya-krasnoe",
+   "p_off": 0.6961,
+   "cv_off": "lefkadiya-beloe",
+   "on": "lefkadiya-krasnoe",
+   "p_on": 0.6195,
+   "cv_on": "lefkadiya-beloe",
+   "fields_same": true
+  },
+  "M182-orig-0": {
+   "off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_off": 0.5825,
+   "cv_off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_on": 0.5291,
+   "cv_on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "fields_same": true
+  },
+  "M183-orig-0": {
+   "off": "gavras-sira-krasnoe-suhoe-135",
+   "p_off": 0.7463,
+   "cv_off": "gavras-sira-krasnoe-suhoe-135",
+   "on": "sira-1",
+   "p_on": 0.5555,
+   "cv_on": "sira-1",
+   "fields_same": true
+  },
+  "M188-orig-0": {
+   "off": "usadba-divnomorskoe-east-hill-vione-beloe-suhoe-127",
+   "p_off": 0.6892,
+   "cv_off": "usadba-divnomorskoe-east-hill-vione-beloe-suhoe-127",
+   "on": "usadba-divnomorskoe-east-hill-vione-beloe-suhoe-127",
+   "p_on": 0.6929,
+   "cv_on": "usadba-divnomorskoe-east-hill-vione-beloe-suhoe-127",
+   "fields_same": true
+  },
+  "M190-orig-0": {
+   "off": "nikolaev-i-synovya-festeliya-pti-verdo-krasnoe-suhoe-135",
+   "p_off": 0.4553,
+   "cv_off": "nikolaev-i-synovya-festeliya-pti-verdo-krasnoe-suhoe-135",
+   "on": "nikolaev-i-synovya-festeliya-pti-verdo-krasnoe-suhoe-135",
+   "p_on": 0.4553,
+   "cv_on": "nikolaev-i-synovya-festeliya-pti-verdo-krasnoe-suhoe-135",
+   "fields_same": true
+  },
+  "M192-orig-0": {
+   "off": "perovskih_kaberne_fran_reserve",
+   "p_off": 0.8168,
+   "cv_off": "perovskih_kaberne_fran_reserve",
+   "on": "perovskih_kaberne_fran_reserve",
+   "p_on": 0.8168,
+   "cv_on": "perovskih_kaberne_fran_reserve",
+   "fields_same": true
+  },
+  "M198-orig-0": {
+   "off": "vinodelnya-vedernikov-gubernatorskiy-rezerv-beloe-risling-suhoe-12",
+   "p_off": 0.3648,
+   "cv_off": "usadba-mezyb-shishka-saperavi-krasnoe-suhoe-13",
+   "on": "vinodelnya-vedernikov-gubernatorskiy-rezerv-beloe-risling-suhoe-12",
+   "p_on": 0.3708,
+   "cv_on": "usadba-mezyb-shishka-saperavi-krasnoe-suhoe-13",
+   "fields_same": true
+  },
+  "M199-orig-0": {
+   "off": "nikolaev-i-synovya-flamingo-malbek-rozovoe-suhoe-125",
+   "p_off": 0.9656,
+   "cv_off": "nikolaev-i-synovya-flamingo-malbek-rozovoe-suhoe-125",
+   "on": "nikolaev-i-synovya-flamingo-malbek-rozovoe-suhoe-125",
+   "p_on": 0.9656,
+   "cv_on": "nikolaev-i-synovya-flamingo-malbek-rozovoe-suhoe-125",
+   "fields_same": true
+  },
+  "M200-orig-0": {
+   "off": "usadba-mezyb-mezyb-vione-beloe-suhoe-13",
+   "p_off": 0.4386,
+   "cv_off": "usadba-mezyb-vione-beloe-suhoe-118",
+   "on": "usadba-mezyb-mezyb-vione-beloe-suhoe-13",
+   "p_on": 0.4386,
+   "cv_on": "usadba-mezyb-vione-beloe-suhoe-118",
+   "fields_same": true
+  },
+  "M201-orig-0": {
+   "off": "vinodelnya-marko-vione-beloe-suhoe-12",
+   "p_off": 0.3731,
+   "cv_off": "vinodelnya-marko-vione-beloe-suhoe-12",
+   "on": "vinodelnya-marko-vione-beloe-suhoe-12",
+   "p_on": 0.3731,
+   "cv_on": "vinodelnya-marko-vione-beloe-suhoe-12",
+   "fields_same": true
+  },
+  "M202-orig-0": {
+   "off": "nikolaev-i-synovya-shardone-beloe-suhoe-125",
+   "p_off": 0.4264,
+   "cv_off": "nikolaev-i-synovya-shardone-beloe-suhoe-125",
+   "on": "nikolaev-i-synovya-shardone-beloe-suhoe-125",
+   "p_on": 0.3318,
+   "cv_on": "nikolaev-i-synovya-shardone-beloe-suhoe-125",
+   "fields_same": true
+  },
+  "M203-orig-0": {
+   "off": "sober-bash-trezvaya-golova-tsimlyanskiygolubok-tsimlyanskiy-chernyy-krasnoe-suhoe-135",
+   "p_off": 0.3175,
+   "cv_off": "perovskih_semilion_reserv",
+   "on": "sober-bash-trezvaya-golova-tsimlyanskiygolubok-tsimlyanskiy-chernyy-krasnoe-suhoe-135",
+   "p_on": 0.3002,
+   "cv_on": "perovskih_semilion_reserv",
+   "fields_same": true
+  },
+  "M204-orig-0": {
+   "off": "perovskih_semilion_reserv",
+   "p_off": 0.6692,
+   "cv_off": "perovskih_semilion_reserv",
+   "on": "perovskih_semilion_reserv",
+   "p_on": 0.6328,
+   "cv_on": "perovskih_semilion_reserv",
+   "fields_same": true
+  },
+  "M205-orig-0": {
+   "off": "perovskih_semilion_reserv",
+   "p_off": 0.7637,
+   "cv_off": "perovskih_semilion_reserv",
+   "on": "perovskih_semilion_reserv",
+   "p_on": 0.7603,
+   "cv_on": "perovskih_semilion_reserv",
+   "fields_same": true
+  },
+  "M207-orig-0": {
+   "off": "vinodelnya-raevskoe-renessans-beloe-shardone-suhoe-126",
+   "p_off": 0.4056,
+   "cv_off": "vinodelnya-raevskoe-renessans-beloe-shardone-suhoe-126",
+   "on": "risling-rezerv",
+   "p_on": 0.5634,
+   "cv_on": "risling-rezerv",
+   "fields_same": true
+  },
+  "M221-orig-0": {
+   "off": "balaklava-muskat-beloe-polusladkoe",
+   "p_off": 0.1745,
+   "cv_off": "balaklava-bryut-rezerv",
+   "on": "balaklava-muskat-beloe-polusladkoe",
+   "p_on": 0.1745,
+   "cv_on": "balaklava-bryut-rezerv",
+   "fields_same": true
+  },
+  "M230-orig-0": {
+   "off": "abrau-dyurso-spumante-bryut-roze-shardone-rozovoe-12",
+   "p_off": 0.9838,
+   "cv_off": "abrau-dyurso-spumante-bryut-roze-shardone-rozovoe-12",
+   "on": "abrau-dyurso-spumante-bryut-roze-shardone-rozovoe-12",
+   "p_on": 0.9838,
+   "cv_on": "abrau-dyurso-spumante-bryut-roze-shardone-rozovoe-12",
+   "fields_same": true
+  },
+  "M231-orig-0": {
+   "off": "abrau-dyurso-spumante-bryut-roze-shardone-rozovoe-12",
+   "p_off": 0.9562,
+   "cv_off": "abrau-dyurso-spumante-bryut-roze-shardone-rozovoe-12",
+   "on": "abrau-dyurso-spumante-bryut-roze-shardone-rozovoe-12",
+   "p_on": 0.9562,
+   "cv_on": "abrau-dyurso-spumante-bryut-roze-shardone-rozovoe-12",
+   "fields_same": true
+  },
+  "M234-orig-0": {
+   "off": "rozovoe-polusladkoe-1",
+   "p_off": 0.7799,
+   "cv_off": "rozovoe-polusladkoe-1",
+   "on": "rozovoe-polusladkoe-1",
+   "p_on": 0.7762,
+   "cv_on": "rozovoe-polusladkoe-1",
+   "fields_same": true
+  },
+  "M239-orig-0": {
+   "off": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "p_off": 0.2785,
+   "cv_off": "valeriy-zaharin-avtohtonnoe-vino-kryma-ot-valeriya-zaharina-bastardo-kefesiya-bastardo-magarachskiy-krasnoe-suhoe-115",
+   "on": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "p_on": 0.2918,
+   "cv_on": "valeriy-zaharin-avtohtonnoe-vino-kryma-ot-valeriya-zaharina-bastardo-kefesiya-bastardo-magarachskiy-krasnoe-suhoe-115",
+   "fields_same": true
+  },
+  "M242-orig-0": {
+   "off": "good-steak-merlot",
+   "p_off": 0.7207,
+   "cv_off": "good-steak-merlot",
+   "on": "good-steak-merlot",
+   "p_on": 0.7207,
+   "cv_on": "good-steak-merlot",
+   "fields_same": true
+  },
+  "M245-orig-0": {
+   "off": "relikta-relikta-merlo-krasnoe-suhoe-135",
+   "p_off": 0.3398,
+   "cv_off": "relikta-relikta-merlo-krasnoe-suhoe-135",
+   "on": "relikta-relikta-merlo-krasnoe-suhoe-135",
+   "p_on": 0.3457,
+   "cv_on": "relikta-relikta-merlo-krasnoe-suhoe-135",
+   "fields_same": true
+  },
+  "M246-orig-0": {
+   "off": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-beloe-polusuhoe-11",
+   "p_off": 0.9,
+   "cv_off": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "on": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-beloe-polusuhoe-11",
+   "p_on": 0.9009,
+   "cv_on": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "fields_same": true
+  },
+  "M247-orig-0": {
+   "off": "perovskih_polusladkoe_krasnoe",
+   "p_off": 0.0005,
+   "cv_off": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "on": "perovskih_polusladkoe_krasnoe",
+   "p_on": 0.0005,
+   "cv_on": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "fields_same": true
+  },
+  "M248-orig-0": {
+   "off": "vinodelnya-vedernikov-fantom-7030-krasnostop-zolotovskiy-krasnoe-suhoe-15",
+   "p_off": 0.3532,
+   "cv_off": "vinodelnya-vedernikov-fantom-7030-krasnostop-zolotovskiy-krasnoe-suhoe-15",
+   "on": "vinodelnya-vedernikov-fantom-7030-krasnostop-zolotovskiy-krasnoe-suhoe-15",
+   "p_on": 0.3532,
+   "cv_on": "vinodelnya-vedernikov-fantom-7030-krasnostop-zolotovskiy-krasnoe-suhoe-15",
+   "fields_same": true
+  },
+  "M249-orig-0": {
+   "off": "nikolaev-i-synovya-festeliya-pti-verdo-krasnoe-suhoe-135",
+   "p_off": 0.6008,
+   "cv_off": "nikolaev-i-synovya-festeliya-pti-verdo-krasnoe-suhoe-135",
+   "on": "nikolaev-i-synovya-festeliya-pti-verdo-krasnoe-suhoe-135",
+   "p_on": 0.6008,
+   "cv_on": "nikolaev-i-synovya-festeliya-pti-verdo-krasnoe-suhoe-135",
+   "fields_same": true
+  },
+  "M250-orig-0": {
+   "off": "olymp-winery-adagum-estate-sauvignon-blanc-sovinon-blan-beloe-suhoe-11",
+   "p_off": 0.7315,
+   "cv_off": "olymp-winery-adagum-estate-sauvignon-blanc-sovinon-blan-beloe-suhoe-11",
+   "on": "olymp-winery-adagum-estate-sauvignon-blanc-sovinon-blan-beloe-suhoe-11",
+   "p_on": 0.7315,
+   "cv_on": "olymp-winery-adagum-estate-sauvignon-blanc-sovinon-blan-beloe-suhoe-11",
+   "fields_same": true
+  },
+  "M252-orig-0": {
+   "off": "abrau-dyurso-abrau-estates-krasnoe-kaberne-sovinon-suhoe-13",
+   "p_off": 0.4611,
+   "cv_off": "abrau-dyurso-abrau-estates-krasnoe-kaberne-sovinon-suhoe-13",
+   "on": "abrau-dyurso-abrau-estates-krasnoe-kaberne-sovinon-suhoe-13",
+   "p_on": 0.4611,
+   "cv_on": "abrau-dyurso-abrau-estates-krasnoe-kaberne-sovinon-suhoe-13",
+   "fields_same": true
+  },
+  "M261-orig-0": {
+   "off": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "p_off": 0.4835,
+   "cv_off": "derbent-vino-graf-vorontsov-bryut-rozovoe-pervenets-magaracha-105-125",
+   "on": "rozovoe-polusuhoe",
+   "p_on": 0.632,
+   "cv_on": "rozovoe-polusuhoe",
+   "fields_same": true
+  },
+  "M262-orig-0": {
+   "off": "fanagoriya-cru-lermont-merlo-merlo-krasnoe-suhoe-14",
+   "p_off": 0.6062,
+   "cv_off": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "on": "fanagoriya-cru-lermont-merlo-merlo-krasnoe-suhoe-14",
+   "p_on": 0.6062,
+   "cv_on": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "fields_same": true
+  },
+  "M263-orig-0": {
+   "off": "cantiani-cabernet-sauvignon-reserve-2024",
+   "p_off": 0.0127,
+   "cv_off": "derbent-vino-di-kaspiko-shardone-beloe-polusladkoe-105-125",
+   "on": "cantiani-cabernet-sauvignon-reserve-2024",
+   "p_on": 0.0127,
+   "cv_on": "derbent-vino-di-kaspiko-shardone-beloe-polusladkoe-105-125",
+   "fields_same": true
+  },
+  "M264-orig-0": {
+   "off": "cantiani-brut",
+   "p_off": 0.2639,
+   "cv_off": "cantiani-brut",
+   "on": "cantiani-brut",
+   "p_on": 0.2639,
+   "cv_on": "cantiani-brut",
+   "fields_same": true
+  },
+  "M265-orig-0": {
+   "off": "rozovoe-bryut-spumante",
+   "p_off": 0.2505,
+   "cv_off": "cantiani-riesling-1",
+   "on": "rozovoe-bryut-spumante",
+   "p_on": 0.2505,
+   "cv_on": "cantiani-riesling-1",
+   "fields_same": true
+  },
+  "M266-orig-0": {
+   "off": "abrau-dyurso-brut-dor-rose-pino-nuar-rozovoe-bryut-12",
+   "p_off": 0.8876,
+   "cv_off": "abrau-dyurso-brut-dor-rose-pino-nuar-rozovoe-bryut-12",
+   "on": "abrau-dyurso-brut-dor-rose-pino-nuar-rozovoe-bryut-12",
+   "p_on": 0.8876,
+   "cv_on": "abrau-dyurso-brut-dor-rose-pino-nuar-rozovoe-bryut-12",
+   "fields_same": true
+  },
+  "M267-orig-0": {
+   "off": "abrau-dyurso-abrau-durso-reserve-brut-shardone-beloe-bryut-115",
+   "p_off": 0.5413,
+   "cv_off": "abrau-dyurso-spumante-bryut-roze-shardone-rozovoe-12",
+   "on": "abrau-dyurso-abrau-durso-reserve-brut-shardone-beloe-bryut-115",
+   "p_on": 0.5413,
+   "cv_on": "abrau-dyurso-spumante-bryut-roze-shardone-rozovoe-12",
+   "fields_same": true
+  },
+  "M268-orig-0": {
+   "off": "agora-rosa-viva-muscat",
+   "p_off": 0.2034,
+   "cv_off": "perovskih_muskat",
+   "on": "agora-rosa-viva-muscat",
+   "p_on": 0.1968,
+   "cv_on": "perovskih_muskat",
+   "fields_same": true
+  },
+  "M269-orig-0": {
+   "off": "kuban-vino-shato-tamane-delikeyt-roze-2024-bianka-rozovoe-suhoe-95",
+   "p_off": 0.7097,
+   "cv_off": "kuban-vino-shato-tamane-delikeyt-roze-2024-bianka-rozovoe-suhoe-95",
+   "on": "kuban-vino-shato-tamane-delikeyt-roze-2024-bianka-rozovoe-suhoe-95",
+   "p_on": 0.7097,
+   "cv_on": "kuban-vino-shato-tamane-delikeyt-roze-2024-bianka-rozovoe-suhoe-95",
+   "fields_same": true
+  },
+  "M270-orig-0": {
+   "off": "shato-taman-bryut-1",
+   "p_off": 0.2096,
+   "cv_off": "chateau-tamagne-nature-orange",
+   "on": "shato-taman-bryut-1",
+   "p_on": 0.2096,
+   "cv_on": "chateau-tamagne-nature-orange",
+   "fields_same": true
+  },
+  "M271-orig-0": {
+   "off": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "p_off": 0.5863,
+   "cv_off": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "on": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "p_on": 0.5863,
+   "cv_on": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "fields_same": true
+  },
+  "M272-orig-0": {
+   "off": "shato-pino-grand-reserve-cabernet-franc-kaberne-fran-krasnoe-suhoe-135",
+   "p_off": 0.6657,
+   "cv_off": "shato-pino-grand-reserve-cabernet-franc-kaberne-fran-krasnoe-suhoe-135",
+   "on": "shato-pino-grand-reserve-cabernet-franc-kaberne-fran-krasnoe-suhoe-135",
+   "p_on": 0.6657,
+   "cv_on": "shato-pino-grand-reserve-cabernet-franc-kaberne-fran-krasnoe-suhoe-135",
+   "fields_same": true
+  },
+  "M273-orig-0": {
+   "off": "soyuz-vino-kanonicheskie-traditsii-krasnoe-polusladkoe-kaberne-sovinon-115",
+   "p_off": 0.4759,
+   "cv_off": "soyuz-vino-kanonicheskie-traditsii-krasnoe-polusladkoe-kaberne-sovinon-115",
+   "on": "soyuz-vino-kanonicheskie-traditsii-krasnoe-polusladkoe-kaberne-sovinon-115",
+   "p_on": 0.4571,
+   "cv_on": "soyuz-vino-kanonicheskie-traditsii-krasnoe-polusladkoe-kaberne-sovinon-115",
+   "fields_same": true
+  },
+  "M275-orig-0": {
+   "off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_off": 0.6031,
+   "cv_off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_on": 0.6095,
+   "cv_on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "fields_same": true
+  },
+  "M276-orig-0": {
+   "off": "fanagoriya-cru-lermont-cabernet-franc-kaberne-fran-krasnoe-suhoe-13",
+   "p_off": 0.5449,
+   "cv_off": "fanagoriya-cru-lermont-cabernet-franc-kaberne-fran-krasnoe-suhoe-13",
+   "on": "fanagoriya-cru-lermont-cabernet-franc-kaberne-fran-krasnoe-suhoe-13",
+   "p_on": 0.5449,
+   "cv_on": "fanagoriya-cru-lermont-cabernet-franc-kaberne-fran-krasnoe-suhoe-13",
+   "fields_same": true
+  },
+  "M278-orig-0": {
+   "off": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "p_off": 0.4726,
+   "cv_off": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "on": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "p_on": 0.4726,
+   "cv_on": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "fields_same": true
+  },
+  "M279-orig-0": {
+   "off": "fanagoriya-cru-lermont-saperavi-saperavi-krasnoe-suhoe-135",
+   "p_off": 0.8573,
+   "cv_off": "fanagoriya-cru-lermont-saperavi-saperavi-krasnoe-suhoe-135",
+   "on": "fanagoriya-cru-lermont-saperavi-saperavi-krasnoe-suhoe-135",
+   "p_on": 0.8573,
+   "cv_on": "fanagoriya-cru-lermont-saperavi-saperavi-krasnoe-suhoe-135",
+   "fields_same": true
+  },
+  "M282-orig-0": {
+   "off": "massandra-muskat-belyy-yuzhnoberezhnyy-beloe-sladkoe-16",
+   "p_off": 0.3681,
+   "cv_off": "massandra-muskat-belyy-yuzhnoberezhnyy-beloe-sladkoe-16",
+   "on": "massandra-muskat-belyy-yuzhnoberezhnyy-beloe-sladkoe-16",
+   "p_on": 0.3681,
+   "cv_on": "massandra-muskat-belyy-yuzhnoberezhnyy-beloe-sladkoe-16",
+   "fields_same": true
+  },
+  "M283-orig-0": {
+   "off": "kuban-vino-flyor-dyu-syud-ruzh-de-tamane-rubin-golodrigi-krasnoe-suhoe-12",
+   "p_off": 0.8481,
+   "cv_off": "kuban-vino-flyor-dyu-syud-ruzh-de-tamane-rubin-golodrigi-krasnoe-suhoe-12",
+   "on": "kuban-vino-flyor-dyu-syud-ruzh-de-tamane-rubin-golodrigi-krasnoe-suhoe-12",
+   "p_on": 0.8799,
+   "cv_on": "kuban-vino-flyor-dyu-syud-ruzh-de-tamane-rubin-golodrigi-krasnoe-suhoe-12",
+   "fields_same": true
+  },
+  "M284-orig-0": {
+   "off": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-polusladkoe-07-krasnye-sorta-vinograda-11",
+   "p_off": 0.2928,
+   "cv_off": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-suhoe-07-krasnye-sorta-vinograda-11",
+   "on": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-polusladkoe-07-krasnye-sorta-vinograda-11",
+   "p_on": 0.3122,
+   "cv_on": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-suhoe-07-krasnye-sorta-vinograda-11",
+   "fields_same": true
+  },
+  "M288-orig-0": {
+   "off": "inkerman-shato-ruzh",
+   "p_off": 0.9813,
+   "cv_off": "inkerman-shato-ruzh",
+   "on": "inkerman-shato-ruzh",
+   "p_on": 0.7034,
+   "cv_on": "inkerman-shato-ruzh",
+   "fields_same": true
+  },
+  "M290-orig-0": {
+   "off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_off": 0.2389,
+   "cv_off": "perovskih_semilion_reserv",
+   "on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_on": 0.2331,
+   "cv_on": "perovskih_semilion_reserv",
+   "fields_same": true
+  },
+  "M292-orig-0": {
+   "off": "chateau-tamagne-signature-kaberne",
+   "p_off": 0.6386,
+   "cv_off": "chateau-tamagne-signature-kaberne",
+   "on": "chateau-tamagne-signature-kaberne",
+   "p_on": 0.6386,
+   "cv_on": "chateau-tamagne-signature-kaberne",
+   "fields_same": true
+  },
+  "M294-orig-0": {
+   "off": "kaberne-sovinon-1",
+   "p_off": 0.4859,
+   "cv_off": "kaberne-sovinon-1",
+   "on": "kaberne-sovinon-1",
+   "p_on": 0.4061,
+   "cv_on": "kaberne-sovinon-1",
+   "fields_same": true
+  },
+  "M295-orig-0": {
+   "off": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-bastardo-bastardo-magarachskiy-krasnoe-suhoe-12",
+   "p_off": 0.9042,
+   "cv_off": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-bastardo-bastardo-magarachskiy-krasnoe-suhoe-12",
+   "on": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-bastardo-bastardo-magarachskiy-krasnoe-suhoe-12",
+   "p_on": 0.9042,
+   "cv_on": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-bastardo-bastardo-magarachskiy-krasnoe-suhoe-12",
+   "fields_same": true
+  },
+  "M296-orig-0": {
+   "off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_off": 0.8513,
+   "cv_off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_on": 0.8651,
+   "cv_on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "fields_same": true
+  },
+  "M297-orig-0": {
+   "off": "kuban-vino-aristov-rosso-polusladkoe-saperavi-krasnoe-13",
+   "p_off": 0.7603,
+   "cv_off": "kuban-vino-aristov-rosso-polusladkoe-saperavi-krasnoe-13",
+   "on": "kuban-vino-aristov-rosso-polusladkoe-saperavi-krasnoe-13",
+   "p_on": 0.7603,
+   "cv_on": "kuban-vino-aristov-rosso-polusladkoe-saperavi-krasnoe-13",
+   "fields_same": true
+  },
+  "M298-orig-0": {
+   "off": "vinodelnya-myshako-risling-beloe-suhoe-123",
+   "p_off": 0.6283,
+   "cv_off": "vinodelnya-myshako-risling-beloe-suhoe-123",
+   "on": "risling-rezerv",
+   "p_on": 0.9092,
+   "cv_on": "risling-rezerv",
+   "fields_same": true
+  },
+  "M299-orig-0": {
+   "off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_off": 0.3724,
+   "cv_off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_on": 0.3806,
+   "cv_on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "fields_same": true
+  },
+  "M300-orig-0": {
+   "off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_off": 0.4555,
+   "cv_off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_on": 0.4259,
+   "cv_on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "fields_same": true
+  },
+  "M301-orig-0": {
+   "off": "millstream-cellar-select-saperavi",
+   "p_off": 0.9673,
+   "cv_off": "millstream-cellar-select-saperavi",
+   "on": "millstream-cellar-select-saperavi",
+   "p_on": 0.9216,
+   "cv_on": "millstream-cellar-select-saperavi",
+   "fields_same": true
+  },
+  "M303-orig-0": {
+   "off": "olymp-winery-olimp-avtorskoe-kaberne-sovinon-krasnoe-suhoe-11",
+   "p_off": 0.5443,
+   "cv_off": "olymp-winery-olimp-avtorskoe-kaberne-sovinon-krasnoe-suhoe-11",
+   "on": "olymp-winery-olimp-avtorskoe-kaberne-sovinon-krasnoe-suhoe-11",
+   "p_on": 0.3647,
+   "cv_on": "olymp-winery-olimp-avtorskoe-kaberne-sovinon-krasnoe-suhoe-11",
+   "fields_same": true
+  },
+  "M304-orig-0": {
+   "off": "millstream-cellar-select-krasnostop-zolotovskij",
+   "p_off": 0.5571,
+   "cv_off": "millstream-cellar-select-krasnostop-zolotovskij",
+   "on": "millstream-cellar-select-krasnostop-zolotovskij",
+   "p_on": 0.5614,
+   "cv_on": "millstream-cellar-select-krasnostop-zolotovskij",
+   "fields_same": true
+  },
+  "M309-orig-0": {
+   "off": "leto-kaberne-sovinon-2023-polusuhoe-krasnoe",
+   "p_off": 0.3578,
+   "cv_off": "leto-kaberne-sovinon-2023-polusuhoe-krasnoe",
+   "on": "merlo-and-kaberne-sovinon",
+   "p_on": 0.2757,
+   "cv_on": "leto-kaberne-sovinon-2023-polusuhoe-krasnoe",
+   "fields_same": true
+  },
+  "M313-orig-0": {
+   "off": "inkerman-shato-ruzh",
+   "p_off": 0.6946,
+   "cv_off": "privat",
+   "on": "inkerman-shato-ruzh",
+   "p_on": 0.6946,
+   "cv_on": "privat",
+   "fields_same": true
+  },
+  "M314-orig-0": {
+   "off": "inkerman-shato-ruzh",
+   "p_off": 0.914,
+   "cv_off": "inkerman-shato-ruzh",
+   "on": "inkerman-shato-ruzh",
+   "p_on": 0.9104,
+   "cv_on": "inkerman-shato-ruzh",
+   "fields_same": true
+  },
+  "M315-orig-0": {
+   "off": "winemaker-selection",
+   "p_off": 0.5161,
+   "cv_off": "winemaker-selection",
+   "on": "winemaker-selection",
+   "p_on": 0.5418,
+   "cv_on": "winemaker-selection",
+   "fields_same": true
+  },
+  "M317-orig-0": {
+   "off": "abrau-dyurso-abrau-estates-krasnoe-kaberne-sovinon-suhoe-13",
+   "p_off": 0.3963,
+   "cv_off": "abrau-dyurso-abrau-estates-krasnoe-kaberne-sovinon-suhoe-13",
+   "on": "abrau-dyurso-abrau-estates-krasnoe-kaberne-sovinon-suhoe-13",
+   "p_on": 0.3963,
+   "cv_on": "abrau-dyurso-abrau-estates-krasnoe-kaberne-sovinon-suhoe-13",
+   "fields_same": true
+  },
+  "M318-orig-0": {
+   "off": "shato-taman-kaberne",
+   "p_off": 0.4544,
+   "cv_off": "shato-taman-kaberne",
+   "on": "shato-taman-kaberne",
+   "p_on": 0.4545,
+   "cv_on": "shato-taman-kaberne",
+   "fields_same": true
+  },
+  "M319-orig-0": {
+   "off": "merlo-litavshhuk",
+   "p_off": 0.0461,
+   "cv_off": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "on": "merlo-litavshhuk",
+   "p_on": 0.0353,
+   "cv_on": "kaberne-sovinon-3",
+   "fields_same": true
+  },
+  "M320-orig-0": {
+   "off": "belbek-kaberne-sovinon-krasnoe-suhoe-138",
+   "p_off": 0.5882,
+   "cv_off": "belbek-kaberne-sovinon-krasnoe-suhoe-138",
+   "on": "belbek-kaberne-sovinon-krasnoe-suhoe-138",
+   "p_on": 0.5918,
+   "cv_on": "belbek-kaberne-sovinon-krasnoe-suhoe-138",
+   "fields_same": true
+  },
+  "M321-orig-0": {
+   "off": "olymp-winery-shato-belbek-kaberne-kaberne-sovinon-krasnoe-suhoe-11",
+   "p_off": 0.3972,
+   "cv_off": "olymp-winery-shato-belbek-kaberne-kaberne-sovinon-krasnoe-suhoe-11",
+   "on": "olymp-winery-shato-belbek-kaberne-kaberne-sovinon-krasnoe-suhoe-11",
+   "p_on": 0.4044,
+   "cv_on": "olymp-winery-shato-belbek-kaberne-kaberne-sovinon-krasnoe-suhoe-11",
+   "fields_same": true
+  },
+  "M322-orig-0": {
+   "off": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-bastardo-bastardo-magarachskiy-krasnoe-suhoe-12",
+   "p_off": 0.752,
+   "cv_off": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-krasnoe-pino-nuar-suhoe-125",
+   "on": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-bastardo-bastardo-magarachskiy-krasnoe-suhoe-12",
+   "p_on": 0.7493,
+   "cv_on": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-krasnoe-pino-nuar-suhoe-125",
+   "fields_same": true
+  },
+  "M323-orig-0": {
+   "off": "alma-valley-tempranilo-krasnoe-suhoe-13",
+   "p_off": 0.2417,
+   "cv_off": "rozovaya-pantera",
+   "on": "alma-valley-tempranilo-krasnoe-suhoe-13",
+   "p_on": 0.2417,
+   "cv_on": "rozovaya-pantera",
+   "fields_same": true
+  },
+  "M324-orig-0": {
+   "off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_off": 0.4983,
+   "cv_off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_on": 0.3639,
+   "cv_on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "fields_same": true
+  },
+  "M326-orig-0": {
+   "off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_off": 0.6558,
+   "cv_off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_on": 0.6445,
+   "cv_on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "fields_same": true
+  },
+  "M327-orig-0": {
+   "off": "soyuz-vino-kanonicheskie-traditsii-krasnoe-polusladkoe-kaberne-sovinon-115",
+   "p_off": 0.0718,
+   "cv_off": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-suhoe-07-krasnye-sorta-vinograda-11",
+   "on": "soyuz-vino-kanonicheskie-traditsii-krasnoe-polusladkoe-kaberne-sovinon-115",
+   "p_on": 0.0734,
+   "cv_on": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-suhoe-07-krasnye-sorta-vinograda-11",
+   "fields_same": true
+  },
+  "M329-orig-0": {
+   "off": "sovinon-blan-krasnaya-gorka",
+   "p_off": 0.6866,
+   "cv_off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "on": "sovinon-blan",
+   "p_on": 0.0091,
+   "cv_on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "fields_same": true
+  },
+  "M332-orig-0": {
+   "off": "chateau-de-talu-yuzhnaya-vertikal-kaberne-fran-rezerv-krasnoe-suhoe-146",
+   "p_off": 0.7773,
+   "cv_off": "chateau-de-talu-yuzhnaya-vertikal-kaberne-fran-rezerv-krasnoe-suhoe-146",
+   "on": "chateau-de-talu-yuzhnaya-vertikal-kaberne-fran-rezerv-krasnoe-suhoe-146",
+   "p_on": 0.7773,
+   "cv_on": "chateau-de-talu-yuzhnaya-vertikal-kaberne-fran-rezerv-krasnoe-suhoe-146",
+   "fields_same": true
+  },
+  "M338-orig-0": {
+   "off": "perovskih_semilion_reserv",
+   "p_off": 0.9082,
+   "cv_off": "perovskih_semilion_reserv",
+   "on": "perovskih_semilion_reserv",
+   "p_on": 0.8986,
+   "cv_on": "perovskih_semilion_reserv",
+   "fields_same": true
+  },
+  "M339-orig-0": {
+   "off": "shardone-rezerv",
+   "p_off": 0.3379,
+   "cv_off": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-suhoe-07-krasnye-sorta-vinograda-11",
+   "on": "shardone-rezerv",
+   "p_on": 0.3258,
+   "cv_on": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-suhoe-07-krasnye-sorta-vinograda-11",
+   "fields_same": true
+  },
+  "M341-orig-0": {
+   "off": "winemaker-selection",
+   "p_off": 0.8823,
+   "cv_off": "winemaker-selection",
+   "on": "winemaker-selection",
+   "p_on": 0.8823,
+   "cv_on": "winemaker-selection",
+   "fields_same": true
+  },
+  "M342-orig-0": {
+   "off": "vinodelnya-myshako-risling-beloe-suhoe-123",
+   "p_off": 0.6955,
+   "cv_off": "vinodelnya-myshako-risling-beloe-suhoe-123",
+   "on": "risling-rezerv",
+   "p_on": 0.9335,
+   "cv_on": "risling-rezerv",
+   "fields_same": true
+  },
+  "M348-orig-0": {
+   "off": "vysokij-bereg-traminer-zelenaya-seriya",
+   "p_off": 0.7282,
+   "cv_off": "b-yu-rne-pino-gri-beloe-suhoe",
+   "on": "vysokij-bereg-traminer-zelenaya-seriya",
+   "p_on": 0.7282,
+   "cv_on": "b-yu-rne-pino-gri-beloe-suhoe",
+   "fields_same": true
+  },
+  "M352-orig-0": {
+   "off": "vinodelnya-78-muskat-polusladkoe-muskat-ottonel-beloe-115",
+   "p_off": 0.2815,
+   "cv_off": "rozovaya-pantera",
+   "on": "vinodelnya-78-muskat-polusladkoe-muskat-ottonel-beloe-115",
+   "p_on": 0.2815,
+   "cv_on": "rozovaya-pantera",
+   "fields_same": true
+  },
+  "M353-orig-0": {
+   "off": "zhemchuzhnaya-9-risling-sovinon-blan",
+   "p_off": 0.5241,
+   "cv_off": "leto-kaberne-fran-rezerv-2020-suhoe-krasnoe",
+   "on": "risling-rezerv",
+   "p_on": 0.6499,
+   "cv_on": "risling-rezerv",
+   "fields_same": true
+  },
+  "M356-orig-0": {
+   "off": "good-steak-merlot",
+   "p_off": 0.5164,
+   "cv_off": "good-steak-merlot",
+   "on": "good-steak-merlot",
+   "p_on": 0.5164,
+   "cv_on": "good-steak-merlot",
+   "fields_same": true
+  },
+  "M357-orig-0": {
+   "off": "chateau-tamagne-grand-dessert-muscat",
+   "p_off": 0.7818,
+   "cv_off": "chateau-tamagne-grand-dessert-muscat",
+   "on": "chateau-tamagne-grand-dessert-muscat",
+   "p_on": 0.7818,
+   "cv_on": "chateau-tamagne-grand-dessert-muscat",
+   "fields_same": true
+  },
+  "M361-orig-0": {
+   "off": "zhemchuzhnaya-9-risling-sovinon-blan",
+   "p_off": 0.4024,
+   "cv_off": "zhemchuzhnaya-9-risling-sovinon-blan",
+   "on": "risling-rezerv",
+   "p_on": 0.7477,
+   "cv_on": "risling-rezerv",
+   "fields_same": true
+  },
+  "M362-orig-0": {
+   "off": "shato-pino-dichkaberne-fran-krasnoe-suhoe-14",
+   "p_off": 0.2912,
+   "cv_off": "vinodelnya-uzunov-shardone-rezerv-beloe-suhoe-135",
+   "on": "shato-pino-dichkaberne-fran-krasnoe-suhoe-14",
+   "p_on": 0.2912,
+   "cv_on": "vinodelnya-uzunov-shardone-rezerv-beloe-suhoe-135",
+   "fields_same": true
+  },
+  "M363-orig-0": {
+   "off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "p_off": 0.5235,
+   "cv_off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "p_on": 0.5293,
+   "cv_on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "fields_same": true
+  },
+  "M367-orig-0": {
+   "off": "zb-vajn-moskato-polusladkoe-beloe",
+   "p_off": 0.6121,
+   "cv_off": "zb-vajn-moskato-polusladkoe-beloe",
+   "on": "zb-vajn-moskato-polusladkoe-beloe",
+   "p_on": 0.6121,
+   "cv_on": "zb-vajn-moskato-polusladkoe-beloe",
+   "fields_same": true
+  },
+  "M368-orig-0": {
+   "off": "villa-sofiya-sovinon-blan-beloe-suhoe-123",
+   "p_off": 0.5163,
+   "cv_off": "villa-sofiya-sovinon-blan-beloe-suhoe-14",
+   "on": "sovinon",
+   "p_on": 0.7026,
+   "cv_on": "sovinon",
+   "fields_same": true
+  },
+  "M369-orig-0": {
+   "off": "shardone-rezerv",
+   "p_off": 0.963,
+   "cv_off": "shardone-rezerv",
+   "on": "shardone-rezerv",
+   "p_on": 0.9725,
+   "cv_on": "shardone-rezerv",
+   "fields_same": true
+  },
+  "M370-orig-0": {
+   "off": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "p_off": 0.7475,
+   "cv_off": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "on": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "p_on": 0.7238,
+   "cv_on": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "fields_same": true
+  },
+  "M371-orig-0": {
+   "off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-suhoe-belye-sorta-vinograda-11",
+   "p_off": 0.5614,
+   "cv_off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-suhoe-belye-sorta-vinograda-11",
+   "on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-suhoe-belye-sorta-vinograda-11",
+   "p_on": 0.4983,
+   "cv_on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-suhoe-belye-sorta-vinograda-11",
+   "fields_same": true
+  },
+  "M372-orig-0": {
+   "off": "vinodelnya-myshako-shardone-beloe-suhoe-145",
+   "p_off": 0.4731,
+   "cv_off": "vinodelnya-myshako-shardone-beloe-suhoe-145",
+   "on": "vinodelnya-myshako-shardone-beloe-suhoe-145",
+   "p_on": 0.4451,
+   "cv_on": "vinodelnya-myshako-shardone-beloe-suhoe-145",
+   "fields_same": true
+  },
+  "M374-orig-0": {
+   "off": "millstream-cellar-vyderzhannoe-igristoe-polusuhoe-beloe",
+   "p_off": 0.6191,
+   "cv_off": "millstream-cellar-select-krasnostop-zolotovskij",
+   "on": "millstream-cellar-vyderzhannoe-igristoe-polusuhoe-beloe",
+   "p_on": 0.6203,
+   "cv_on": "millstream-cellar-select-krasnostop-zolotovskij",
+   "fields_same": true
+  },
+  "M375-orig-0": {
+   "off": "soyuz-vino-soyuz-vino-muskat-beloe-polusladkoe-11",
+   "p_off": 0.1934,
+   "cv_off": "vinodelnya-myshako-muskat-avtorskaya-tehnologiya-mono-beloe-suhoe-128",
+   "on": "soyuz-vino-soyuz-vino-muskat-beloe-polusladkoe-11",
+   "p_on": 0.1924,
+   "cv_on": "vinodelnya-myshako-muskat-avtorskaya-tehnologiya-mono-beloe-suhoe-128",
+   "fields_same": true
+  },
+  "M376-orig-0": {
+   "off": "vinodelnya-myshako-semilon-aligote-reserve-beloe-suhoe-126",
+   "p_off": 0.1062,
+   "cv_off": "inkerman-shato-ruzh",
+   "on": "vinodelnya-myshako-semilon-aligote-reserve-beloe-suhoe-126",
+   "p_on": 0.1052,
+   "cv_on": "inkerman-shato-ruzh",
+   "fields_same": true
+  },
+  "M377-orig-0": {
+   "off": "leto-risling-2024-polusuhoe-vino",
+   "p_off": 0.7966,
+   "cv_off": "leto-risling-2024-polusuhoe-vino",
+   "on": "risling-rezerv",
+   "p_on": 0.7646,
+   "cv_on": "risling-rezerv",
+   "fields_same": true
+  },
+  "M379-orig-0": {
+   "off": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "p_off": 0.7068,
+   "cv_off": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "on": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "p_on": 0.6978,
+   "cv_on": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "fields_same": true
+  },
+  "M380-orig-0": {
+   "off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "p_off": 0.9929,
+   "cv_off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "p_on": 0.9932,
+   "cv_on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "fields_same": true
+  },
+  "M381-orig-0": {
+   "off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "p_off": 0.9576,
+   "cv_off": "millstream-cellar-select-krasnostop-zolotovskij",
+   "on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "p_on": 0.9576,
+   "cv_on": "millstream-cellar-select-krasnostop-zolotovskij",
+   "fields_same": true
+  },
+  "M382-orig-0": {
+   "off": "shardone-akacziya",
+   "p_off": 0.2152,
+   "cv_off": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "on": "shardone-akacziya",
+   "p_on": 0.2152,
+   "cv_on": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "fields_same": true
+  },
+  "M383-orig-0": {
+   "off": "shato-pino-grand-reserve-chardonnay-shardone-beloe-suhoe-125",
+   "p_off": 0.6842,
+   "cv_off": "shato-pino-grand-reserve-chardonnay-shardone-beloe-suhoe-125",
+   "on": "shato-pino-grand-reserve-chardonnay-shardone-beloe-suhoe-125",
+   "p_on": 0.6842,
+   "cv_on": "shato-pino-grand-reserve-chardonnay-shardone-beloe-suhoe-125",
+   "fields_same": true
+  },
+  "M384-orig-0": {
+   "off": "agora-rosa-viva-beloe-polusladkoe",
+   "p_off": 0.3654,
+   "cv_off": "agora-rosa-viva-beloe-polusladkoe",
+   "on": "agora-rosa-viva-beloe-polusladkoe",
+   "p_on": 0.3654,
+   "cv_on": "agora-rosa-viva-beloe-polusladkoe",
+   "fields_same": true
+  },
+  "M385-orig-0": {
+   "off": "vinodelnya-berdyaeva-shardone-beloe-suhoe-125",
+   "p_off": 0.6998,
+   "cv_off": "vinodelnya-berdyaeva-shardone-beloe-suhoe-125",
+   "on": "vinodelnya-berdyaeva-shardone-beloe-suhoe-125",
+   "p_on": 0.698,
+   "cv_on": "vinodelnya-berdyaeva-shardone-beloe-suhoe-125",
+   "fields_same": true
+  },
+  "M395-orig-0": {
+   "off": "zolotaya-balka-zb-spumante-brut-risling-beloe-bryut-125",
+   "p_off": 0.4081,
+   "cv_off": "zb-vajn-spumante-bryut-beloe",
+   "on": "zolotaya-balka-zb-spumante-brut-risling-beloe-bryut-125",
+   "p_on": 0.4081,
+   "cv_on": "zb-vajn-spumante-bryut-beloe",
+   "fields_same": true
+  },
+  "M396-orig-0": {
+   "off": "zolotaya-balka-zb-spumante-brut-risling-beloe-bryut-125",
+   "p_off": 0.5723,
+   "cv_off": "zolotaya-balka-zb-spumante-brut-risling-beloe-bryut-125",
+   "on": "zolotaya-balka-zb-spumante-brut-risling-beloe-bryut-125",
+   "p_on": 0.5723,
+   "cv_on": "zolotaya-balka-zb-spumante-brut-risling-beloe-bryut-125",
+   "fields_same": true
+  },
+  "M397-orig-0": {
+   "off": "zolotaya-balka-zb-spumante-semi-dry-risling-beloe-polusuhoe-125",
+   "p_off": 0.5219,
+   "cv_off": "rozovoe-bryut-spumante",
+   "on": "zolotaya-balka-zb-spumante-semi-dry-risling-beloe-polusuhoe-125",
+   "p_on": 0.5219,
+   "cv_on": "rozovoe-bryut-spumante",
+   "fields_same": true
+  },
+  "M398-orig-0": {
+   "off": "abrau-dyurso-imperatorskoe-polusladkoe-shardone-beloe-12",
+   "p_off": 0.2305,
+   "cv_off": "abrau-dyurso-imperatorskoe-polusladkoe-shardone-beloe-12",
+   "on": "abrau-dyurso-imperatorskoe-polusladkoe-shardone-beloe-12",
+   "p_on": 0.2305,
+   "cv_on": "abrau-dyurso-imperatorskoe-polusladkoe-shardone-beloe-12",
+   "fields_same": true
+  },
+  "M399-orig-0": {
+   "off": "abrau-dyurso-russkoe-igristoe-polusuhoe-rozovoe-pino-nuar-12",
+   "p_off": 0.4065,
+   "cv_off": "abrau-dyurso-russkoe-igristoe-polusuhoe-rozovoe-pino-nuar-12",
+   "on": "abrau-dyurso-russkoe-igristoe-polusuhoe-rozovoe-pino-nuar-12",
+   "p_on": 0.4065,
+   "cv_on": "abrau-dyurso-russkoe-igristoe-polusuhoe-rozovoe-pino-nuar-12",
+   "fields_same": true
+  },
+  "M400-orig-0": {
+   "off": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-bryut",
+   "p_off": 0.4409,
+   "cv_off": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-bryut",
+   "on": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-bryut",
+   "p_on": 0.4409,
+   "cv_on": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-bryut",
+   "fields_same": true
+  },
+  "M401-orig-0": {
+   "off": "katharon-semi-sweet",
+   "p_off": 0.6603,
+   "cv_off": "katharon-semi-sweet",
+   "on": "katharon-semi-sweet",
+   "p_on": 0.6603,
+   "cv_on": "katharon-semi-sweet",
+   "fields_same": true
+  },
+  "M402-orig-0": {
+   "off": "katharon-semi-sweet",
+   "p_off": 0.6873,
+   "cv_off": "katharon-semi-sweet",
+   "on": "katharon-semi-sweet",
+   "p_on": 0.6873,
+   "cv_on": "katharon-semi-sweet",
+   "fields_same": true
+  },
+  "M403-orig-0": {
+   "off": "temelion-bryut-roze",
+   "p_off": 0.2922,
+   "cv_off": "temelion-bryut-roze",
+   "on": "temelion-bryut-roze",
+   "p_on": 0.2922,
+   "cv_on": "temelion-bryut-roze",
+   "fields_same": true
+  },
+  "M404-orig-0": {
+   "off": "shato-taman-polusladkoe",
+   "p_off": 0.5941,
+   "cv_off": "shato-taman-bryut",
+   "on": "shato-taman-polusladkoe",
+   "p_on": 0.5941,
+   "cv_on": "shato-taman-bryut",
+   "fields_same": true
+  },
+  "M405-orig-0": {
+   "off": "shato-taman-bryut",
+   "p_off": 0.4083,
+   "cv_off": "shato-taman-bryut",
+   "on": "shato-taman-bryut",
+   "p_on": 0.4083,
+   "cv_on": "shato-taman-bryut",
+   "fields_same": true
+  },
+  "M409-orig-0": {
+   "off": "shato-taman-bryut-1",
+   "p_off": 0.2377,
+   "cv_off": "shato-taman-bryut-1",
+   "on": "shato-taman-bryut-1",
+   "p_on": 0.2377,
+   "cv_on": "shato-taman-bryut-1",
+   "fields_same": true
+  },
+  "M415-orig-0": {
+   "off": "shato-taman-polusladkoe",
+   "p_off": 0.5132,
+   "cv_off": "shato-taman-bryut",
+   "on": "shato-taman-polusladkoe",
+   "p_on": 0.5132,
+   "cv_on": "shato-taman-bryut",
+   "fields_same": true
+  },
+  "M416-orig-0": {
+   "off": "shato-taman-polusladkoe",
+   "p_off": 0.1513,
+   "cv_off": "novyy-svet-dom-shampanskih-vin-rossiyskoe-shampanskoe-kollektsionnoe-bryut-beloe-novyy-svet-yubileynoe-risling-13",
+   "on": "risling-2",
+   "p_on": 0.5949,
+   "cv_on": "risling-2",
+   "fields_same": true
+  },
+  "M417-orig-0": {
+   "off": "igristoe-zhemchuzhnoe-vino-polusladkoe-rozovoe-di-kaspiko-fiori-di-mare-di-caspico-fiori-di-mare",
+   "p_off": 0.3257,
+   "cv_off": "cantiani-riesling-1",
+   "on": "igristoe-zhemchuzhnoe-vino-polusladkoe-rozovoe-di-kaspiko-fiori-di-mare-di-caspico-fiori-di-mare",
+   "p_on": 0.3257,
+   "cv_on": "cantiani-riesling-1",
+   "fields_same": true
+  },
+  "M418-orig-0": {
+   "off": "cantiani-riesling-1",
+   "p_off": 0.2608,
+   "cv_off": "cantiani-riesling-1",
+   "on": "cantiani-riesling-1",
+   "p_on": 0.2608,
+   "cv_on": "cantiani-riesling-1",
+   "fields_same": true
+  },
+  "M419-orig-0": {
+   "off": "derbent-vino-graf-vorontsov-bryut-beloe-sovinon-blan-105-125",
+   "p_off": 0.5783,
+   "cv_off": "derbent-vino-graf-vorontsov-bryut-beloe-sovinon-blan-105-125",
+   "on": "derbent-vino-graf-vorontsov-bryut-beloe-sovinon-blan-105-125",
+   "p_on": 0.5969,
+   "cv_on": "derbent-vino-graf-vorontsov-bryut-beloe-sovinon-blan-105-125",
+   "fields_same": true
+  },
+  "M420-orig-0": {
+   "off": "novyy-svet-dom-shampanskih-vin-novyy-svet-polusladkoe-roze-shardone-rozovoe-115",
+   "p_off": 0.1429,
+   "cv_off": "perovskih_rose",
+   "on": "novyy-svet-dom-shampanskih-vin-novyy-svet-polusladkoe-roze-shardone-rozovoe-115",
+   "p_on": 0.1429,
+   "cv_on": "perovskih_rose",
+   "fields_same": true
+  },
+  "M423-orig-0": {
+   "off": "abrau-dyurso-spumante-bryut-roze-shardone-rozovoe-12",
+   "p_off": 0.9827,
+   "cv_off": "abrau-dyurso-spumante-bryut-roze-shardone-rozovoe-12",
+   "on": "abrau-dyurso-spumante-bryut-roze-shardone-rozovoe-12",
+   "p_on": 0.9827,
+   "cv_on": "abrau-dyurso-spumante-bryut-roze-shardone-rozovoe-12",
+   "fields_same": true
+  },
+  "M426-orig-0": {
+   "off": "vysokij-bereg-risling-zelenaya-seriya-2",
+   "p_off": 0.6767,
+   "cv_off": "vysokij-bereg-risling-zelenaya-seriya-2",
+   "on": "vysokij-bereg-risling-zelenaya-seriya-2",
+   "p_on": 0.6767,
+   "cv_on": "vysokij-bereg-risling-zelenaya-seriya-2",
+   "fields_same": true
+  },
+  "M427-orig-0": {
+   "off": "vysokij-bereg-risling-zelenaya-seriya-2",
+   "p_off": 0.7657,
+   "cv_off": "vysokij-bereg-risling-zelenaya-seriya-2",
+   "on": "vysokij-bereg-risling-zelenaya-seriya-2",
+   "p_on": 0.7657,
+   "cv_on": "vysokij-bereg-risling-zelenaya-seriya-2",
+   "fields_same": true
+  },
+  "M433-orig-0": {
+   "off": "novyy-svet-dom-shampanskih-vin-rossiyskoe-shampanskoe-kollektsionnoe-bryut-beloe-novyy-svet-zolotoy-risling-suhoe-13",
+   "p_off": 0.2998,
+   "cv_off": "novyy-svet-dom-shampanskih-vin-rossiyskoe-shampanskoe-kollektsionnoe-bryut-beloe-novyy-svet-zolotoy-risling-suhoe-13",
+   "on": "novyy-svet-dom-shampanskih-vin-rossiyskoe-shampanskoe-kollektsionnoe-bryut-beloe-novyy-svet-zolotoy-risling-suhoe-13",
+   "p_on": 0.2569,
+   "cv_on": "novyy-svet-dom-shampanskih-vin-rossiyskoe-shampanskoe-kollektsionnoe-bryut-beloe-novyy-svet-zolotoy-risling-suhoe-13",
+   "fields_same": true
+  },
+  "M434-orig-0": {
+   "off": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-polusladkoe",
+   "p_off": 0.47,
+   "cv_off": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-polusladkoe",
+   "on": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-polusladkoe",
+   "p_on": 0.47,
+   "cv_on": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-polusladkoe",
+   "fields_same": true
+  },
+  "M435-orig-0": {
+   "off": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-polusladkoe",
+   "p_off": 0.4183,
+   "cv_off": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-polusladkoe",
+   "on": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-polusladkoe",
+   "p_on": 0.4183,
+   "cv_on": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-polusladkoe",
+   "fields_same": true
+  },
+  "M444-orig-0": {
+   "off": "abrau-dyurso-russkoe-igristoe-koshernoe-bryut-shardone-beloe-13",
+   "p_off": 0.1093,
+   "cv_off": "abrau-dyurso-russkoe-igristoe-polusladkoe-shardone-beloe-12",
+   "on": "abrau-dyurso-russkoe-igristoe-koshernoe-bryut-shardone-beloe-13",
+   "p_on": 0.1093,
+   "cv_on": "abrau-dyurso-russkoe-igristoe-polusladkoe-shardone-beloe-12",
+   "fields_same": true
+  },
+  "M445-orig-0": {
+   "off": "shato-taman-bryut-1",
+   "p_off": 0.7795,
+   "cv_off": "shato-taman-bryut-1",
+   "on": "shato-taman-bryut-1",
+   "p_on": 0.7795,
+   "cv_on": "shato-taman-bryut-1",
+   "fields_same": true
+  },
+  "M446-orig-0": {
+   "off": "shato-taman-polusladkoe",
+   "p_off": 0.0554,
+   "cv_off": "risling-shato-taman",
+   "on": "shato-taman-polusladkoe",
+   "p_on": 0.0554,
+   "cv_on": "risling-shato-taman",
+   "fields_same": true
+  },
+  "M447-orig-0": {
+   "off": "derbent-vino-graf-vorontsov-bryut-beloe-sovinon-blan-105-125",
+   "p_off": 0.5614,
+   "cv_off": "derbent-vino-graf-vorontsov-bryut-beloe-sovinon-blan-105-125",
+   "on": "derbent-vino-graf-vorontsov-bryut-beloe-sovinon-blan-105-125",
+   "p_on": 0.572,
+   "cv_on": "derbent-vino-graf-vorontsov-bryut-beloe-sovinon-blan-105-125",
+   "fields_same": true
+  },
+  "M448-orig-0": {
+   "off": "rozovoe-polusladkoe-1",
+   "p_off": 0.4363,
+   "cv_off": "rozovoe-polusladkoe-1",
+   "on": "rozovoe-polusladkoe-1",
+   "p_on": 0.4411,
+   "cv_on": "rozovoe-polusladkoe-1",
+   "fields_same": true
+  },
+  "M449-orig-0": {
+   "off": "portvejn-krymskij",
+   "p_off": 0.9042,
+   "cv_off": "portvejn-krymskij",
+   "on": "portvejn-krymskij",
+   "p_on": 0.9042,
+   "cv_on": "portvejn-krymskij",
+   "fields_same": true
+  },
+  "M450-orig-0": {
+   "off": "novyy-svet-dom-shampanskih-vin-igristoe-vino-vyderzhannoe-polusladkoe-rozovoe-novyy-svet-pino-fran-135",
+   "p_off": 0.1756,
+   "cv_off": "novyy-svet-dom-shampanskih-vin-igristoe-vino-vyderzhannoe-bryut-rozovoe-novyy-svet-pino-fran-135",
+   "on": "vyderzhannoe-ekstra-bryut-roze-bryut-natyur",
+   "p_on": 0.6626,
+   "cv_on": "vyderzhannoe-ekstra-bryut-roze-bryut-natyur",
+   "fields_same": true
+  },
+  "M451-orig-0": {
+   "off": "novyy-svet-dom-shampanskih-vin-igristoe-vino-vyderzhannoe-bryut-rozovoe-novyy-svet-pino-fran-135",
+   "p_off": 0.5339,
+   "cv_off": "novyy-svet-dom-shampanskih-vin-igristoe-vino-vyderzhannoe-bryut-rozovoe-novyy-svet-pino-fran-135",
+   "on": "vyderzhannoe-ekstra-bryut-risling-bryut-natyur",
+   "p_on": 0.5756,
+   "cv_on": "vyderzhannoe-ekstra-bryut-risling-bryut-natyur",
+   "fields_same": true
+  },
+  "M461-orig-0": {
+   "off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_off": 0.7343,
+   "cv_off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_on": 0.682,
+   "cv_on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "fields_same": true
+  },
+  "M462-orig-0": {
+   "off": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "p_off": 0.5945,
+   "cv_off": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "on": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "p_on": 0.6096,
+   "cv_on": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "fields_same": true
+  },
+  "M463-orig-0": {
+   "off": "vinodelnya-vedernikov-gubernatorskoe-golubok-krasnoe-suhoe-11",
+   "p_off": 0.941,
+   "cv_off": "vinodelnya-vedernikov-gubernatorskoe-golubok-krasnoe-suhoe-11",
+   "on": "vinodelnya-vedernikov-gubernatorskoe-golubok-krasnoe-suhoe-11",
+   "p_on": 0.9443,
+   "cv_on": "vinodelnya-vedernikov-gubernatorskoe-golubok-krasnoe-suhoe-11",
+   "fields_same": true
+  },
+  "M464-orig-0": {
+   "off": "perovskih_polusladkoe_krasnoe",
+   "p_off": 0.1824,
+   "cv_off": "perovskih_polusladkoe_krasnoe",
+   "on": "perovskih_polusladkoe_krasnoe",
+   "p_on": 0.1935,
+   "cv_on": "perovskih_polusladkoe_krasnoe",
+   "fields_same": true
+  },
+  "M465-orig-0": {
+   "off": "soyuz-vino-kanonicheskie-traditsii-krasnoe-sladkoe-kaberne-sovinon-115",
+   "p_off": 0.5798,
+   "cv_off": "soyuz-vino-kanonicheskie-traditsii-krasnoe-polusladkoe-kaberne-sovinon-115",
+   "on": "soyuz-vino-kanonicheskie-traditsii-krasnoe-sladkoe-kaberne-sovinon-115",
+   "p_on": 0.5763,
+   "cv_on": "soyuz-vino-kanonicheskie-traditsii-krasnoe-polusladkoe-kaberne-sovinon-115",
+   "fields_same": true
+  },
+  "M466-orig-0": {
+   "off": "soyuz-vino-soyuz-vino-izabella-krasnoe-polusladkoe-11",
+   "p_off": 0.5083,
+   "cv_off": "vinodelnya-myshako-primitivo-blaufrankish-reserve-krasnoe-suhoe-142",
+   "on": "soyuz-vino-soyuz-vino-izabella-krasnoe-polusladkoe-11",
+   "p_on": 0.4603,
+   "cv_on": "vinodelnya-myshako-primitivo-blaufrankish-reserve-krasnoe-suhoe-142",
+   "fields_same": true
+  },
+  "M467-orig-0": {
+   "off": "kaberne-sovinon-1",
+   "p_off": 0.5261,
+   "cv_off": "kaberne-sovinon-1",
+   "on": "kaberne-sovinon-1",
+   "p_on": 0.4853,
+   "cv_on": "kaberne-sovinon-1",
+   "fields_same": true
+  },
+  "M468-orig-0": {
+   "off": "tsimlyanskie-vina-krepost-sarkel-krasnostop-zolotovskiy-krasnoe-suhoe-145",
+   "p_off": 0.2081,
+   "cv_off": "vysokij-bereg-czvajgelt",
+   "on": "tsimlyanskie-vina-krepost-sarkel-krasnostop-zolotovskiy-krasnoe-suhoe-145",
+   "p_on": 0.2098,
+   "cv_on": "vysokij-bereg-czvajgelt",
+   "fields_same": false
+  },
+  "M470-orig-0": {
+   "off": "kaberne-sovinon-1",
+   "p_off": 0.4481,
+   "cv_off": "kaberne-sovinon-1",
+   "on": "kaberne-sovinon-1",
+   "p_on": 0.4635,
+   "cv_on": "kaberne-sovinon-1",
+   "fields_same": true
+  },
+  "M471-orig-0": {
+   "off": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-suhoe-07-krasnye-sorta-vinograda-11",
+   "p_off": 0.6142,
+   "cv_off": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-suhoe-07-krasnye-sorta-vinograda-11",
+   "on": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-suhoe-07-krasnye-sorta-vinograda-11",
+   "p_on": 0.6739,
+   "cv_on": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-suhoe-07-krasnye-sorta-vinograda-11",
+   "fields_same": true
+  },
+  "M472-orig-0": {
+   "off": "fanagoriya-101-ottenok-krasnogo-pino-nuar-krasnoe-suhoe-135",
+   "p_off": 0.4529,
+   "cv_off": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "on": "fanagoriya-101-ottenok-krasnogo-pino-nuar-krasnoe-suhoe-135",
+   "p_on": 0.4547,
+   "cv_on": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "fields_same": true
+  },
+  "M473-orig-0": {
+   "off": "fanagoriya-5-elements-bryut-beloe-pino-gri-igristoe-bryut-beloe-125",
+   "p_off": 0.5298,
+   "cv_off": "fanagoriya-5-elements-bryut-rozovoe-saperavi-igristoe-bryut-rozovoe-125",
+   "on": "fanagoriya-5-elements-bryut-beloe-pino-gri-igristoe-bryut-beloe-125",
+   "p_on": 0.5298,
+   "cv_on": "fanagoriya-5-elements-bryut-rozovoe-saperavi-igristoe-bryut-rozovoe-125",
+   "fields_same": true
+  },
+  "M475-orig-0": {
+   "off": "kaberne-sovinon-1",
+   "p_off": 0.6589,
+   "cv_off": "kaberne-sovinon-1",
+   "on": "kaberne-sovinon-1",
+   "p_on": 0.6545,
+   "cv_on": "kaberne-sovinon-1",
+   "fields_same": true
+  },
+  "M477-orig-0": {
+   "off": "soyuz-vino-lenty-izabella-krymskaya-krasnoe-polusladkoe-11",
+   "p_off": 0.7678,
+   "cv_off": "soyuz-vino-lenty-izabella-krymskaya-krasnoe-polusladkoe-11",
+   "on": "soyuz-vino-lenty-izabella-krymskaya-krasnoe-polusladkoe-11",
+   "p_on": 0.7644,
+   "cv_on": "soyuz-vino-lenty-izabella-krymskaya-krasnoe-polusladkoe-11",
+   "fields_same": true
+  },
+  "M479-orig-0": {
+   "off": "inkermanskiy-zmv-winemakers-selection-saperavi-krasnoe-polusladkoe-12",
+   "p_off": 0.9999,
+   "cv_off": "inkermanskiy-zmv-winemakers-selection-saperavi-krasnoe-polusladkoe-12",
+   "on": "inkermanskiy-zmv-winemakers-selection-saperavi-krasnoe-polusladkoe-12",
+   "p_on": 0.9999,
+   "cv_on": "inkermanskiy-zmv-winemakers-selection-saperavi-krasnoe-polusladkoe-12",
+   "fields_same": true
+  },
+  "M480-orig-0": {
+   "off": "inkerman-shato-ruzh",
+   "p_off": 0.5041,
+   "cv_off": "privat",
+   "on": "inkerman-shato-ruzh",
+   "p_on": 0.5054,
+   "cv_on": "privat",
+   "fields_same": true
+  },
+  "M481-orig-0": {
+   "off": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-bastardo-bastardo-magarachskiy-krasnoe-suhoe-12",
+   "p_off": 0.9002,
+   "cv_off": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-bastardo-bastardo-magarachskiy-krasnoe-suhoe-12",
+   "on": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-bastardo-bastardo-magarachskiy-krasnoe-suhoe-12",
+   "p_on": 0.9002,
+   "cv_on": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-bastardo-bastardo-magarachskiy-krasnoe-suhoe-12",
+   "fields_same": true
+  },
+  "M483-orig-0": {
+   "off": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "p_off": 0.3977,
+   "cv_off": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "on": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "p_on": 0.3988,
+   "cv_on": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "fields_same": true
+  },
+  "M484-orig-0": {
+   "off": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "p_off": 0.1751,
+   "cv_off": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "on": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "p_on": 0.1751,
+   "cv_on": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "fields_same": true
+  },
+  "M485-orig-0": {
+   "off": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-bastardo-bastardo-magarachskiy-krasnoe-suhoe-12",
+   "p_off": 0.5026,
+   "cv_off": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-krasnoe-pino-nuar-suhoe-125",
+   "on": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-bastardo-bastardo-magarachskiy-krasnoe-suhoe-12",
+   "p_on": 0.5026,
+   "cv_on": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-krasnoe-pino-nuar-suhoe-125",
+   "fields_same": true
+  },
+  "M486-orig-0": {
+   "off": "merlo",
+   "p_off": 0.8283,
+   "cv_off": "merlo",
+   "on": "merlo",
+   "p_on": 0.8301,
+   "cv_on": "merlo",
+   "fields_same": true
+  },
+  "M487-orig-0": {
+   "off": "vinodelnya-myshako-muskat-avtorskaya-tehnologiya-mono-beloe-suhoe-128",
+   "p_off": 0.5805,
+   "cv_off": "vinodelnya-pokrovskaya-sovinon-blan-pokrovskoe-beloe-suhoe-12",
+   "on": "vinodelnya-myshako-muskat-avtorskaya-tehnologiya-mono-beloe-suhoe-128",
+   "p_on": 0.5255,
+   "cv_on": "vinodelnya-pokrovskaya-sovinon-blan-pokrovskoe-beloe-suhoe-12",
+   "fields_same": true
+  },
+  "M488-orig-0": {
+   "off": "soyuz-vino-lenty-izabella-krymskaya-krasnoe-polusladkoe-11",
+   "p_off": 0.7957,
+   "cv_off": "soyuz-vino-lenty-izabella-krymskaya-krasnoe-polusladkoe-11",
+   "on": "soyuz-vino-lenty-izabella-krymskaya-krasnoe-polusladkoe-11",
+   "p_on": 0.7997,
+   "cv_on": "soyuz-vino-lenty-izabella-krymskaya-krasnoe-polusladkoe-11",
+   "fields_same": true
+  },
+  "M489-orig-0": {
+   "off": "saperavi-premium",
+   "p_off": 0.4252,
+   "cv_off": "saperavi-premium",
+   "on": "saperavi-kvevri",
+   "p_on": 0.631,
+   "cv_on": "saperavi-kvevri",
+   "fields_same": true
+  },
+  "M490-orig-0": {
+   "off": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "p_off": 0.5695,
+   "cv_off": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "on": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "p_on": 0.5727,
+   "cv_on": "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+   "fields_same": true
+  },
+  "M491-orig-0": {
+   "off": "fanagoriya-cru-lermont-merlo-merlo-krasnoe-suhoe-14",
+   "p_off": 0.6075,
+   "cv_off": "fanagoriya-100-ottenkov-krasnogo-kaberne-kaberne-sovinon-krasnoe-suhoe-135",
+   "on": "fanagoriya-cru-lermont-merlo-merlo-krasnoe-suhoe-14",
+   "p_on": 0.6075,
+   "cv_on": "fanagoriya-100-ottenkov-krasnogo-kaberne-kaberne-sovinon-krasnoe-suhoe-135",
+   "fields_same": true
+  },
+  "M492-orig-0": {
+   "off": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "p_off": 0.835,
+   "cv_off": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "on": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "p_on": 0.7908,
+   "cv_on": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "fields_same": true
+  },
+  "M493-orig-0": {
+   "off": "merlo-litavshhuk",
+   "p_off": 0.1143,
+   "cv_off": "millstream-cellar-select-krasnostop-zolotovskij",
+   "on": "merlo-limitirovannaya-seriya",
+   "p_on": 0.5525,
+   "cv_on": "millstream-cellar-select-krasnostop-zolotovskij",
+   "fields_same": true
+  },
+  "M494-orig-0": {
+   "off": "merlo",
+   "p_off": 0.8312,
+   "cv_off": "merlo",
+   "on": "merlo",
+   "p_on": 0.8365,
+   "cv_on": "merlo",
+   "fields_same": true
+  },
+  "M495-orig-0": {
+   "off": "leto-kollekcziya-vinodela-2020-suhoe-krasnoe",
+   "p_off": 0.7391,
+   "cv_off": "leto-kollekcziya-vinodela-2020-suhoe-krasnoe",
+   "on": "leto-kollekcziya-vinodela-2020-suhoe-krasnoe",
+   "p_on": 0.5059,
+   "cv_on": "leto-kollekcziya-vinodela-2020-suhoe-krasnoe",
+   "fields_same": true
+  },
+  "M496-orig-0": {
+   "off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_off": 0.7347,
+   "cv_off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "p_on": 0.7347,
+   "cv_on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "fields_same": true
+  },
+  "M497-orig-0": {
+   "off": "vinodelnya-batrak-contadina-merlo-krasnoe-suhoe-14",
+   "p_off": 0.7776,
+   "cv_off": "vinodelnya-batrak-contadina-merlo-krasnoe-suhoe-14",
+   "on": "vinodelnya-batrak-contadina-merlo-krasnoe-suhoe-14",
+   "p_on": 0.6907,
+   "cv_on": "vinodelnya-batrak-contadina-merlo-krasnoe-suhoe-14",
+   "fields_same": true
+  },
+  "M498-orig-0": {
+   "off": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "p_off": 0.7879,
+   "cv_off": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "on": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "p_on": 0.8025,
+   "cv_on": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "fields_same": true
+  },
+  "M499-orig-0": {
+   "off": "millstream-cellar-select-krasnostop-zolotovskij",
+   "p_off": 0.6012,
+   "cv_off": "millstream-cellar-select-krasnostop-zolotovskij",
+   "on": "millstream-cellar-select-krasnostop-zolotovskij",
+   "p_on": 0.6182,
+   "cv_on": "millstream-cellar-select-krasnostop-zolotovskij",
+   "fields_same": true
+  },
+  "M500-orig-0": {
+   "off": "domaine-lipko-white-blend-muskat-beloe-polusuhoe-12",
+   "p_off": 0.2396,
+   "cv_off": "vinodelnya-raevskoe-renessans-rozovoe-tempranilo-suhoe-12",
+   "on": "domaine-lipko-white-blend-muskat-beloe-polusuhoe-12",
+   "p_on": 0.2381,
+   "cv_on": "vinodelnya-raevskoe-renessans-rozovoe-tempranilo-suhoe-12",
+   "fields_same": true
+  },
+  "M501-orig-0": {
+   "off": "valeriy-zaharin-tangovoe-manto-pino-nuar-krasnoe-suhoe-13",
+   "p_off": 0.2897,
+   "cv_off": "rozovaya-pantera",
+   "on": "valeriy-zaharin-tangovoe-manto-pino-nuar-krasnoe-suhoe-13",
+   "p_on": 0.2888,
+   "cv_on": "rozovaya-pantera",
+   "fields_same": true
+  },
+  "M502-orig-0": {
+   "off": "leto-kollekcziya-vinodela-2020-suhoe-krasnoe",
+   "p_off": 0.1409,
+   "cv_off": "rozovaya-pantera",
+   "on": "leto-kollekcziya-vinodela-2020-suhoe-krasnoe",
+   "p_on": 0.141,
+   "cv_on": "rozovaya-pantera",
+   "fields_same": true
+  },
+  "M503-orig-0": {
+   "off": "vinodelnya-batrak-contadina-merlo-krasnoe-suhoe-14",
+   "p_off": 0.7162,
+   "cv_off": "vinodelnya-batrak-contadina-merlo-krasnoe-suhoe-14",
+   "on": "vinodelnya-batrak-contadina-merlo-krasnoe-suhoe-14",
+   "p_on": 0.746,
+   "cv_on": "vinodelnya-batrak-contadina-merlo-krasnoe-suhoe-14",
+   "fields_same": true
+  },
+  "M504-orig-0": {
+   "off": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "p_off": 0.5925,
+   "cv_off": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "on": "merlo-litavshhuk",
+   "p_on": 0.0351,
+   "cv_on": "kaberne-sovinon-3",
+   "fields_same": true
+  },
+  "M505-orig-0": {
+   "off": "olymp-winery-adagum-saperavi-saperavi-krasnoe-suhoe-11",
+   "p_off": 0.8222,
+   "cv_off": "olymp-winery-adagum-saperavi-saperavi-krasnoe-suhoe-11",
+   "on": "olymp-winery-adagum-saperavi-saperavi-krasnoe-suhoe-11",
+   "p_on": 0.7508,
+   "cv_on": "olymp-winery-adagum-saperavi-saperavi-krasnoe-suhoe-11",
+   "fields_same": true
+  },
+  "M506-orig-0": {
+   "off": "olymp-winery-adagum-saperavi-saperavi-krasnoe-suhoe-11",
+   "p_off": 0.9062,
+   "cv_off": "olymp-winery-adagum-saperavi-saperavi-krasnoe-suhoe-11",
+   "on": "olymp-winery-adagum-saperavi-saperavi-krasnoe-suhoe-11",
+   "p_on": 0.8949,
+   "cv_on": "olymp-winery-adagum-saperavi-saperavi-krasnoe-suhoe-11",
+   "fields_same": true
+  },
+  "M507-orig-0": {
+   "off": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "p_off": 0.68,
+   "cv_off": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "on": "kaberne-sovinon-4",
+   "p_on": 0.5808,
+   "cv_on": "kaberne-sovinon-4",
+   "fields_same": true
+  },
+  "M508-orig-0": {
+   "off": "saperavi-premium",
+   "p_off": 0.2258,
+   "cv_off": "sober-bash-saperavi-krasnoe-suhoe-13",
+   "on": "saperavi-premium",
+   "p_on": 0.1562,
+   "cv_on": "saperavi-kvevri",
+   "fields_same": true
+  },
+  "M509-orig-0": {
+   "off": "sober-bash-saperavi-krasnoe-suhoe-13",
+   "p_off": 0.188,
+   "cv_off": "saperavi-premium",
+   "on": "saperavi",
+   "p_on": 0.443,
+   "cv_on": "saperavi",
+   "fields_same": true
+  },
+  "M510-orig-0": {
+   "off": "soyuz-vino-soyuz-vino-izabella-krasnoe-polusladkoe-11",
+   "p_off": 0.9871,
+   "cv_off": "soyuz-vino-soyuz-vino-izabella-krasnoe-polusladkoe-11",
+   "on": "soyuz-vino-soyuz-vino-izabella-krasnoe-polusladkoe-11",
+   "p_on": 0.9875,
+   "cv_on": "soyuz-vino-soyuz-vino-izabella-krasnoe-polusladkoe-11",
+   "fields_same": true
+  },
+  "M511-orig-0": {
+   "off": "zmv-koktebel-kagor-vysshego-kachestva-kaberne-sovinon-krasnoe-sladkoe-16",
+   "p_off": 0.4562,
+   "cv_off": "zmv-koktebel-kagor-vysshego-kachestva-kaberne-sovinon-krasnoe-sladkoe-16",
+   "on": "zmv-koktebel-kagor-vysshego-kachestva-kaberne-sovinon-krasnoe-sladkoe-16",
+   "p_on": 0.4824,
+   "cv_on": "zmv-koktebel-kagor-vysshego-kachestva-kaberne-sovinon-krasnoe-sladkoe-16",
+   "fields_same": true
+  },
+  "M512-orig-0": {
+   "off": "olymp-winery-adagum-saperavi-saperavi-krasnoe-suhoe-11",
+   "p_off": 0.4291,
+   "cv_off": "zmv-koktebel-kagor-vysshego-kachestva-kaberne-sovinon-krasnoe-sladkoe-16",
+   "on": "saperavi-kvevri",
+   "p_on": 0.4268,
+   "cv_on": "zmv-koktebel-kagor-vysshego-kachestva-kaberne-sovinon-krasnoe-sladkoe-16",
+   "fields_same": true
+  },
+  "M513-orig-0": {
+   "off": "novyy-svet-dom-shampanskih-vin-rossiyskoe-shampanskoe-kollektsionnoe-bryut-beloe-novyy-svet-yubileynoe-risling-13",
+   "p_off": 0.4897,
+   "cv_off": "novyy-svet-dom-shampanskih-vin-rossiyskoe-shampanskoe-kollektsionnoe-bryut-beloe-novyy-svet-yubileynoe-risling-13",
+   "on": "novyy-svet-dom-shampanskih-vin-rossiyskoe-shampanskoe-kollektsionnoe-bryut-beloe-novyy-svet-yubileynoe-risling-13",
+   "p_on": 0.4897,
+   "cv_on": "novyy-svet-dom-shampanskih-vin-rossiyskoe-shampanskoe-kollektsionnoe-bryut-beloe-novyy-svet-yubileynoe-risling-13",
+   "fields_same": true
+  },
+  "M514-orig-0": {
+   "off": "soyuz-vino-lenty-kaberne-krymskoe-kaberne-sovinon-krasnoe-polusladkoe-11",
+   "p_off": 0.5208,
+   "cv_off": "soyuz-vino-lenty-kaberne-krymskoe-kaberne-sovinon-krasnoe-polusladkoe-11",
+   "on": "soyuz-vino-lenty-kaberne-krymskoe-kaberne-sovinon-krasnoe-polusladkoe-11",
+   "p_on": 0.512,
+   "cv_on": "soyuz-vino-lenty-kaberne-krymskoe-kaberne-sovinon-krasnoe-polusladkoe-11",
+   "fields_same": true
+  },
+  "M515-orig-0": {
+   "off": "millstream-cellar-select-saperavi",
+   "p_off": 0.9216,
+   "cv_off": "millstream-cellar-select-saperavi",
+   "on": "millstream-cellar-select-saperavi",
+   "p_on": 0.8685,
+   "cv_on": "millstream-cellar-select-saperavi",
+   "fields_same": true
+  },
+  "M516-orig-0": {
+   "off": "soyuz-vino-lenty-kaberne-krymskoe-kaberne-sovinon-krasnoe-polusladkoe-11",
+   "p_off": 0.8297,
+   "cv_off": "soyuz-vino-lenty-kaberne-krymskoe-kaberne-sovinon-krasnoe-polusladkoe-11",
+   "on": "soyuz-vino-lenty-kaberne-krymskoe-kaberne-sovinon-krasnoe-polusladkoe-11",
+   "p_on": 0.8383,
+   "cv_on": "soyuz-vino-lenty-kaberne-krymskoe-kaberne-sovinon-krasnoe-polusladkoe-11",
+   "fields_same": true
+  },
+  "M517-orig-0": {
+   "off": "derbent-vino-di-kaspiko-fiori-di-mare-verde-avgustin-rozovoe-polusuhoe-10",
+   "p_off": 0.4935,
+   "cv_off": "derbent-vino-di-kaspiko-fiori-di-mare-verde-avgustin-rozovoe-polusuhoe-10",
+   "on": "derbent-vino-di-kaspiko-fiori-di-mare-verde-avgustin-rozovoe-polusuhoe-10",
+   "p_on": 0.4935,
+   "cv_on": "derbent-vino-di-kaspiko-fiori-di-mare-verde-avgustin-rozovoe-polusuhoe-10",
+   "fields_same": true
+  },
+  "M519-orig-0": {
+   "off": "roze",
+   "p_off": 0.4866,
+   "cv_off": "roze",
+   "on": "roze",
+   "p_on": 0.4866,
+   "cv_on": "roze",
+   "fields_same": true
+  },
+  "M520-orig-0": {
+   "off": "shato-taman-kaberne-sovinon",
+   "p_off": 0.5739,
+   "cv_off": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-suhoe-07-krasnye-sorta-vinograda-11",
+   "on": "shato-taman-kaberne-sovinon",
+   "p_on": 0.4985,
+   "cv_on": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-suhoe-07-krasnye-sorta-vinograda-11",
+   "fields_same": true
+  },
+  "M522-orig-0": {
+   "off": "solnechnaya-dolina-muskatnoe-festivalnoe-muskat-belyy-rozovoe-sladkoe-16",
+   "p_off": 0.8642,
+   "cv_off": "solnechnaya-dolina-muskatnoe-festivalnoe-muskat-belyy-rozovoe-sladkoe-16",
+   "on": "solnechnaya-dolina-muskatnoe-festivalnoe-muskat-belyy-rozovoe-sladkoe-16",
+   "p_on": 0.8492,
+   "cv_on": "solnechnaya-dolina-muskatnoe-festivalnoe-muskat-belyy-rozovoe-sladkoe-16",
+   "fields_same": true
+  },
+  "M524-orig-0": {
+   "off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-suhoe-belye-sorta-vinograda-11",
+   "p_off": 0.6491,
+   "cv_off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-belye-sorta-vinograda-11",
+   "on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-suhoe-belye-sorta-vinograda-11",
+   "p_on": 0.6499,
+   "cv_on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-belye-sorta-vinograda-11",
+   "fields_same": true
+  },
+  "M525-orig-0": {
+   "off": "di-kaspiko-di-caspico-fiori-di-mare-verde",
+   "p_off": 0.5478,
+   "cv_off": "kuban-vino-aristov-verde-muskat-beloe-polusuhoe-11",
+   "on": "di-kaspiko-di-caspico-fiori-di-mare-verde",
+   "p_on": 0.5388,
+   "cv_on": "kuban-vino-aristov-verde-muskat-beloe-polusuhoe-11",
+   "fields_same": true
+  },
+  "M526-orig-0": {
+   "off": "soyuz-vino-soyuz-vino-muskat-beloe-polusladkoe-11",
+   "p_off": 0.8414,
+   "cv_off": "soyuz-vino-soyuz-vino-muskat-beloe-polusladkoe-11",
+   "on": "soyuz-vino-soyuz-vino-muskat-beloe-polusladkoe-11",
+   "p_on": 0.8424,
+   "cv_on": "soyuz-vino-soyuz-vino-muskat-beloe-polusladkoe-11",
+   "fields_same": true
+  },
+  "M529-orig-0": {
+   "off": "di-kaspiko-di-caspico-fiori-di-mare-verde",
+   "p_off": 0.702,
+   "cv_off": "di-kaspiko-di-caspico-fiori-di-mare-verde",
+   "on": "di-kaspiko-di-caspico-fiori-di-mare-verde",
+   "p_on": 0.702,
+   "cv_on": "di-kaspiko-di-caspico-fiori-di-mare-verde",
+   "fields_same": true
+  },
+  "M530-orig-0": {
+   "off": "fanagoriya-100-ottenkov-shardone-beloe-suhoe-14",
+   "p_off": 0.2601,
+   "cv_off": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "on": "fanagoriya-100-ottenkov-shardone-beloe-suhoe-14",
+   "p_on": 0.2601,
+   "cv_on": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "fields_same": true
+  },
+  "M531-orig-0": {
+   "off": "fanagoriya-5-elements-bryut-beloe-pino-gri-igristoe-bryut-beloe-125",
+   "p_off": 0.9974,
+   "cv_off": "fanagoriya-5-elements-bryut-rozovoe-saperavi-igristoe-bryut-rozovoe-125",
+   "on": "fanagoriya-5-elements-bryut-beloe-pino-gri-igristoe-bryut-beloe-125",
+   "p_on": 0.9974,
+   "cv_on": "fanagoriya-5-elements-bryut-rozovoe-saperavi-igristoe-bryut-rozovoe-125",
+   "fields_same": true
+  },
+  "M533-orig-0": {
+   "off": "vinodelnya-myshako-risling-beloe-suhoe-123",
+   "p_off": 0.3514,
+   "cv_off": "millstream-cellar-select-krasnostop-zolotovskij",
+   "on": "vinodelnya-myshako-risling-beloe-suhoe-123",
+   "p_on": 0.2651,
+   "cv_on": "millstream-cellar-select-krasnostop-zolotovskij",
+   "fields_same": true
+  },
+  "M534-orig-0": {
+   "off": "usadba-markoth-shardone-beloe-suhoe-12",
+   "p_off": 0.8288,
+   "cv_off": "chateau-andre-shardone-beloe-suhoe-13",
+   "on": "usadba-markoth-shardone-beloe-suhoe-12",
+   "p_on": 0.8288,
+   "cv_on": "chateau-andre-shardone-beloe-suhoe-13",
+   "fields_same": true
+  },
+  "M535-orig-0": {
+   "off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "p_off": 0.9819,
+   "cv_off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "p_on": 0.982,
+   "cv_on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "fields_same": true
+  },
+  "M536-orig-0": {
+   "off": "perovskih_muskat",
+   "p_off": 0.9188,
+   "cv_off": "perovskih_muskat",
+   "on": "perovskih_muskat",
+   "p_on": 0.9398,
+   "cv_on": "perovskih_muskat",
+   "fields_same": true
+  },
+  "M537-orig-0": {
+   "off": "shardone-2",
+   "p_off": 0.5446,
+   "cv_off": "shardone-2",
+   "on": "shardone-2",
+   "p_on": 0.5492,
+   "cv_on": "shardone-2",
+   "fields_same": true
+  },
+  "M538-orig-0": {
+   "off": "chateau-tamagne-grand-dessert-muscat",
+   "p_off": 0.6032,
+   "cv_off": "fanagoriya-velvet-season-muskat-ottonel-beloe-sladkoe-13",
+   "on": "chateau-tamagne-grand-dessert-muscat",
+   "p_on": 0.6032,
+   "cv_on": "fanagoriya-velvet-season-muskat-ottonel-beloe-sladkoe-13",
+   "fields_same": true
+  },
+  "M540-orig-0": {
+   "off": "belbek-aligote-beloe-suhoe-125",
+   "p_off": 0.3745,
+   "cv_off": "belbek-kaberne-sovinon-krasnoe-suhoe-138",
+   "on": "sovinon-blan",
+   "p_on": 0.0032,
+   "cv_on": "belbek-kaberne-sovinon-krasnoe-suhoe-138",
+   "fields_same": true
+  },
+  "M542-orig-0": {
+   "off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-belye-sorta-vinograda-11",
+   "p_off": 0.4533,
+   "cv_off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-belye-sorta-vinograda-11",
+   "on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-belye-sorta-vinograda-11",
+   "p_on": 0.494,
+   "cv_on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-belye-sorta-vinograda-11",
+   "fields_same": true
+  },
+  "M545-orig-0": {
+   "off": "zolotaya-balka-zb-wine-riesling-risling-beloe-polusuhoe-115",
+   "p_off": 0.5248,
+   "cv_off": "zolotaya-balka-zb-wine-riesling-risling-beloe-polusuhoe-115",
+   "on": "zolotaya-balka-zb-wine-riesling-risling-beloe-polusuhoe-115",
+   "p_on": 0.5248,
+   "cv_on": "zolotaya-balka-zb-wine-riesling-risling-beloe-polusuhoe-115",
+   "fields_same": true
+  },
+  "M547-orig-0": {
+   "off": "alma-valley-solntse-vozduh-vinograd-kokur-beloe-polusladkoe-13",
+   "p_off": 0.3582,
+   "cv_off": "alma-valley-solntse-vozduh-vinograd-kokur-beloe-polusladkoe-13",
+   "on": "alma-valley-solntse-vozduh-vinograd-kokur-beloe-polusladkoe-13",
+   "p_on": 0.3672,
+   "cv_on": "alma-valley-solntse-vozduh-vinograd-kokur-beloe-polusladkoe-13",
+   "fields_same": true
+  },
+  "M551-orig-0": {
+   "off": "vysokij-bereg-traminer-zelenaya-seriya",
+   "p_off": 0.5672,
+   "cv_off": "b-yu-rne-pino-gri-beloe-suhoe",
+   "on": "vysokij-bereg-traminer-zelenaya-seriya",
+   "p_on": 0.5672,
+   "cv_on": "b-yu-rne-pino-gri-beloe-suhoe",
+   "fields_same": true
+  },
+  "M552-orig-0": {
+   "off": "levokumskoe-beloe-rkatsiteli-suhoe-10",
+   "p_off": 0.0694,
+   "cv_off": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-suhoe-07-krasnye-sorta-vinograda-11",
+   "on": "levokumskoe-beloe-rkatsiteli-suhoe-10",
+   "p_on": 0.0694,
+   "cv_on": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-suhoe-07-krasnye-sorta-vinograda-11",
+   "fields_same": true
+  },
+  "M553-orig-0": {
+   "off": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "p_off": 0.618,
+   "cv_off": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "on": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "p_on": 0.6442,
+   "cv_on": "aratti-kaberne-sovinon-2020-krasnoe-suhoe",
+   "fields_same": true
+  },
+  "M555-orig-0": {
+   "off": "vinodelnya-berdyaeva-shardone-beloe-suhoe-125",
+   "p_off": 0.2893,
+   "cv_off": "vinodelnya-batrak-contadina-merlo-krasnoe-suhoe-14",
+   "on": "vinodelnya-berdyaeva-shardone-beloe-suhoe-125",
+   "p_on": 0.2318,
+   "cv_on": "vinodelnya-batrak-contadina-merlo-krasnoe-suhoe-14",
+   "fields_same": true
+  },
+  "M557-orig-0": {
+   "off": "soyuz-vino-lenty-shardone-krymskoe-beloe-polusladkoe-11",
+   "p_off": 0.3779,
+   "cv_off": "soyuz-vino-lenty-kaberne-krymskoe-kaberne-sovinon-krasnoe-polusladkoe-11",
+   "on": "soyuz-vino-lenty-shardone-krymskoe-beloe-polusladkoe-11",
+   "p_on": 0.383,
+   "cv_on": "soyuz-vino-lenty-kaberne-krymskoe-kaberne-sovinon-krasnoe-polusladkoe-11",
+   "fields_same": true
+  },
+  "M558-orig-0": {
+   "off": "inkerman-muskatnoe-beloe",
+   "p_off": 0.2419,
+   "cv_off": "vinodelnya-myshako-muskat-avtorskaya-tehnologiya-mono-beloe-suhoe-128",
+   "on": "inkerman-muskatnoe-beloe",
+   "p_on": 0.2419,
+   "cv_on": "vinodelnya-myshako-muskat-avtorskaya-tehnologiya-mono-beloe-suhoe-128",
+   "fields_same": true
+  },
+  "M559-orig-0": {
+   "off": "alma-valley-solntse-vozduh-vinograd-shardone-beloe-polusuhoe-13",
+   "p_off": 0.6381,
+   "cv_off": "alma-valley-solntse-vozduh-vinograd-kokur-beloe-polusladkoe-13",
+   "on": "alma-valley-solntse-vozduh-vinograd-shardone-beloe-polusuhoe-13",
+   "p_on": 0.6321,
+   "cv_on": "alma-valley-solntse-vozduh-vinograd-kokur-beloe-polusladkoe-13",
+   "fields_same": true
+  },
+  "M560-orig-0": {
+   "off": "villa-sofiya-risling-beloe-suhoe-131",
+   "p_off": 0.528,
+   "cv_off": "portvejn-krymskij",
+   "on": "risling-rezerv",
+   "p_on": 0.4569,
+   "cv_on": "risling-rezerv",
+   "fields_same": true
+  },
+  "M561-orig-0": {
+   "off": "zhemchuzhnaya-9-aligote-czitron",
+   "p_off": 0.4045,
+   "cv_off": "aratti-risling-suhoe",
+   "on": "zhemchuzhnaya-9-aligote-czitron",
+   "p_on": 0.4152,
+   "cv_on": "aratti-risling-suhoe",
+   "fields_same": true
+  },
+  "M562-orig-0": {
+   "off": "soyuz-vino-soyuz-vino-muskat-beloe-polusladkoe-11",
+   "p_off": 0.1055,
+   "cv_off": "millstream-cellar-select-krasnostop-zolotovskij",
+   "on": "soyuz-vino-soyuz-vino-muskat-beloe-polusladkoe-11",
+   "p_on": 0.1055,
+   "cv_on": "millstream-cellar-select-krasnostop-zolotovskij",
+   "fields_same": true
+  },
+  "M563-orig-0": {
+   "off": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-krasnoe-pino-nuar-suhoe-125",
+   "p_off": 0.5338,
+   "cv_off": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-bastardo-bastardo-magarachskiy-krasnoe-suhoe-12",
+   "on": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-krasnoe-pino-nuar-suhoe-125",
+   "p_on": 0.5338,
+   "cv_on": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-bastardo-bastardo-magarachskiy-krasnoe-suhoe-12",
+   "fields_same": true
+  },
+  "M564-orig-0": {
+   "off": "vinodelnya-78-muskat-polusladkoe-muskat-ottonel-beloe-115",
+   "p_off": 0.1573,
+   "cv_off": "rozovaya-pantera",
+   "on": "vinodelnya-78-muskat-polusladkoe-muskat-ottonel-beloe-115",
+   "p_on": 0.1573,
+   "cv_on": "rozovaya-pantera",
+   "fields_same": true
+  },
+  "M565-orig-0": {
+   "off": "sovinon-blan-krasnaya-gorka",
+   "p_off": 0.7384,
+   "cv_off": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "on": "sovinon-blan-krasnaya-gorka",
+   "p_on": 0.4944,
+   "cv_on": "vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14",
+   "fields_same": true
+  },
+  "M566-orig-0": {
+   "off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-belye-sorta-vinograda-11",
+   "p_off": 0.1989,
+   "cv_off": "millstream-cellar-select-krasnostop-zolotovskij",
+   "on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-belye-sorta-vinograda-11",
+   "p_on": 0.1938,
+   "cv_on": "millstream-cellar-select-krasnostop-zolotovskij",
+   "fields_same": true
+  },
+  "M567-orig-0": {
+   "off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "p_off": 0.9702,
+   "cv_off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "p_on": 0.9744,
+   "cv_on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-07-belye-sorta-vinograda-11",
+   "fields_same": true
+  },
+  "M568-orig-0": {
+   "off": "imenie-sikory-shardone-sikory-beloe-suhoe-13",
+   "p_off": 0.4593,
+   "cv_off": "imenie-sikory-shardone-sikory-beloe-suhoe-13",
+   "on": "imenie-sikory-shardone-sikory-beloe-suhoe-13",
+   "p_on": 0.4593,
+   "cv_on": "imenie-sikory-shardone-sikory-beloe-suhoe-13",
+   "fields_same": true
+  },
+  "M569-orig-0": {
+   "off": "massandra-muskat-belyy-krasnogo-kamnya-beloe-sladkoe-13",
+   "p_off": 0.145,
+   "cv_off": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-suhoe-07-krasnye-sorta-vinograda-11",
+   "on": "massandra-muskat-belyy-krasnogo-kamnya-beloe-sladkoe-13",
+   "p_on": 0.1388,
+   "cv_on": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-suhoe-07-krasnye-sorta-vinograda-11",
+   "fields_same": true
+  },
+  "M570-orig-0": {
+   "off": "soyuz-vino-soyuz-vino-muskat-beloe-polusladkoe-11",
+   "p_off": 0.1812,
+   "cv_off": "zhemchuzhnaya-9-muskat-rozovyj-kaberne-sovinon",
+   "on": "soyuz-vino-soyuz-vino-muskat-beloe-polusladkoe-11",
+   "p_on": 0.1661,
+   "cv_on": "zhemchuzhnaya-9-muskat-rozovyj-kaberne-sovinon",
+   "fields_same": true
+  },
+  "M571-orig-0": {
+   "off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-suhoe-belye-sorta-vinograda-11",
+   "p_off": 0.3597,
+   "cv_off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-suhoe-belye-sorta-vinograda-11",
+   "on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-suhoe-belye-sorta-vinograda-11",
+   "p_on": 0.3343,
+   "cv_on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-suhoe-belye-sorta-vinograda-11",
+   "fields_same": true
+  },
+  "M572-orig-0": {
+   "off": "soyuz-vino-lak-dazyur-blan-sek-belye-sorta-vinograda-beloe-suhoe-11",
+   "p_off": 0.2904,
+   "cv_off": "soyuz-vino-el-krusero-tinto-polusladkoe-krasnye-sorta-vinograda-krasnoe-11",
+   "on": "soyuz-vino-lak-dazyur-blan-sek-belye-sorta-vinograda-beloe-suhoe-11",
+   "p_on": 0.2904,
+   "cv_on": "soyuz-vino-el-krusero-tinto-polusladkoe-krasnye-sorta-vinograda-krasnoe-11",
+   "fields_same": true
+  },
+  "M573-orig-0": {
+   "off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-belye-sorta-vinograda-11",
+   "p_off": 0.239,
+   "cv_off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-belye-sorta-vinograda-11",
+   "on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-belye-sorta-vinograda-11",
+   "p_on": 0.239,
+   "cv_on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-polusladkoe-belye-sorta-vinograda-11",
+   "fields_same": true
+  },
+  "M574-orig-0": {
+   "off": "soyuz-vino-kubanskoe-traditsionnoe-beloe-suhoe-belye-sorta-vinograda-11",
+   "p_off": 0.4507,
+   "cv_off": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-suhoe-krasnye-sorta-vinograda-11",
+   "on": "soyuz-vino-kubanskoe-traditsionnoe-beloe-suhoe-belye-sorta-vinograda-11",
+   "p_on": 0.4507,
+   "cv_on": "soyuz-vino-kubanskoe-traditsionnoe-krasnoe-suhoe-krasnye-sorta-vinograda-11",
+   "fields_same": true
+  },
+  "M575-orig-0": {
+   "off": "soyuz-vino-lenty-shardone-krymskoe-beloe-polusladkoe-11",
+   "p_off": 0.9324,
+   "cv_off": "soyuz-vino-lenty-shardone-krymskoe-beloe-polusladkoe-11",
+   "on": "soyuz-vino-lenty-shardone-krymskoe-beloe-polusladkoe-11",
+   "p_on": 0.9324,
+   "cv_on": "soyuz-vino-lenty-shardone-krymskoe-beloe-polusladkoe-11",
+   "fields_same": true
+  },
+  "M576-orig-0": {
+   "off": "rozovoe-bryut-spumante",
+   "p_off": 0.2091,
+   "cv_off": "abrau-dyurso-fizz-beloe-bryut",
+   "on": "rozovoe-bryut-spumante",
+   "p_on": 0.2091,
+   "cv_on": "abrau-dyurso-fizz-beloe-bryut",
+   "fields_same": true
+  },
+  "M577-orig-0": {
+   "off": "abrau-dyurso-fizz-beloe-bryut",
+   "p_off": 0.8994,
+   "cv_off": "abrau-dyurso-fizz-beloe-bryut",
+   "on": "abrau-dyurso-fizz-beloe-bryut",
+   "p_on": 0.8994,
+   "cv_on": "abrau-dyurso-fizz-beloe-bryut",
+   "fields_same": true
+  },
+  "M578-orig-0": {
+   "off": "abrau-dyurso-fizz-beloe-polusladkoe",
+   "p_off": 0.4384,
+   "cv_off": "abrau-dyurso-fizz-beloe-bryut",
+   "on": "abrau-dyurso-fizz-beloe-polusladkoe",
+   "p_on": 0.4358,
+   "cv_on": "abrau-dyurso-fizz-beloe-bryut",
+   "fields_same": true
+  },
+  "M579-orig-0": {
+   "off": "leto-kaberne-fran-2024-polusladkoe-krasnoe",
+   "p_off": 0.0356,
+   "cv_off": "abrau-dyurso-fizz-beloe-bryut",
+   "on": "leto-kaberne-fran-2024-polusladkoe-krasnoe",
+   "p_on": 0.0319,
+   "cv_on": "abrau-dyurso-fizz-beloe-bryut",
+   "fields_same": true
+  },
+  "M580-orig-0": {
+   "off": "abrau-dyurso-fizz-beloe-polusladkoe",
+   "p_off": 0.4025,
+   "cv_off": "abrau-dyurso-fizz-beloe-bryut",
+   "on": "abrau-dyurso-fizz-beloe-polusladkoe",
+   "p_on": 0.4025,
+   "cv_on": "abrau-dyurso-fizz-beloe-bryut",
+   "fields_same": true
+  },
+  "M581-orig-0": {
+   "off": "perovskih_polusladkoe_rosovoe",
+   "p_off": 0.0392,
+   "cv_off": "skalistyy-bereg-skb-roze-pino-nuar-beloe-ekstra-bryut-122",
+   "on": "perovskih_polusladkoe_rosovoe",
+   "p_on": 0.0325,
+   "cv_on": "skalistyy-bereg-skb-roze-pino-nuar-beloe-ekstra-bryut-122",
+   "fields_same": true
+  },
+  "M582-orig-0": {
+   "off": "portvejn-krymskij",
+   "p_off": 0.8358,
+   "cv_off": "portvejn-krymskij",
+   "on": "portvejn-krymskij",
+   "p_on": 0.8406,
+   "cv_on": "portvejn-krymskij",
+   "fields_same": true
+  },
+  "M583-orig-0": {
+   "off": "shato-taman-bryut",
+   "p_off": 0.3968,
+   "cv_off": "shato-taman-bryut",
+   "on": "shato-taman-bryut",
+   "p_on": 0.3968,
+   "cv_on": "shato-taman-bryut",
+   "fields_same": true
+  },
+  "M598-orig-0": {
+   "off": "abrau-dyurso-russkoe-igristoe-koshernoe-bryut-shardone-beloe-13",
+   "p_off": 0.3517,
+   "cv_off": "abrau-dyurso-russkoe-igristoe-koshernoe-bryut-shardone-beloe-13",
+   "on": "abrau-dyurso-russkoe-igristoe-koshernoe-bryut-shardone-beloe-13",
+   "p_on": 0.3517,
+   "cv_on": "abrau-dyurso-russkoe-igristoe-koshernoe-bryut-shardone-beloe-13",
+   "fields_same": true
+  },
+  "M601-orig-0": {
+   "off": "vysokij-bereg-risling-zelenaya-seriya-2",
+   "p_off": 0.6187,
+   "cv_off": "vinodelnya-vedernikov-5050-tsimlyanskiy-sibirkovyy-ekstra-bryut-beloe-12",
+   "on": "vysokij-bereg-risling-zelenaya-seriya-2",
+   "p_on": 0.6428,
+   "cv_on": "vinodelnya-vedernikov-5050-tsimlyanskiy-sibirkovyy-ekstra-bryut-beloe-12",
+   "fields_same": true
+  },
+  "M602-orig-0": {
+   "off": "vysokij-bereg-risling-zelenaya-seriya-2",
+   "p_off": 0.6543,
+   "cv_off": "vysokij-bereg-risling-zelenaya-seriya-2",
+   "on": "vysokij-bereg-risling-zelenaya-seriya-2",
+   "p_on": 0.6583,
+   "cv_on": "vysokij-bereg-risling-zelenaya-seriya-2",
+   "fields_same": true
+  },
+  "M603-orig-0": {
+   "off": "shato-taman-bryut",
+   "p_off": 0.1306,
+   "cv_off": "shato-taman-bryut",
+   "on": "shato-taman-bryut",
+   "p_on": 0.1306,
+   "cv_on": "shato-taman-bryut",
+   "fields_same": true
+  },
+  "M604-orig-0": {
+   "off": "rozovoe-bryut-1",
+   "p_off": 0.1266,
+   "cv_off": "novyy-svet-dom-shampanskih-vin-igristoe-vino-vyderzhannoe-polusladkoe-rozovoe-novyy-svet-pino-fran-135",
+   "on": "rozovoe-bryut-1",
+   "p_on": 0.1272,
+   "cv_on": "novyy-svet-dom-shampanskih-vin-igristoe-vino-vyderzhannoe-polusladkoe-rozovoe-novyy-svet-pino-fran-135",
+   "fields_same": true
+  },
+  "M605-orig-0": {
+   "off": "derbent-vino-graf-vorontsov-beloe-polusladkoe-sovinon-blan-105-125",
+   "p_off": 0.1417,
+   "cv_off": "novyy-svet-dom-shampanskih-vin-igristoe-vino-vyderzhannoe-polusladkoe-rozovoe-novyy-svet-pino-fran-135",
+   "on": "derbent-vino-graf-vorontsov-beloe-polusladkoe-sovinon-blan-105-125",
+   "p_on": 0.1417,
+   "cv_on": "novyy-svet-dom-shampanskih-vin-igristoe-vino-vyderzhannoe-polusladkoe-rozovoe-novyy-svet-pino-fran-135",
+   "fields_same": true
+  },
+  "M606-orig-0": {
+   "off": "zb-vajn-moskato-polusladkoe-beloe",
+   "p_off": 0.4405,
+   "cv_off": "zb-vajn-moskato-polusladkoe-beloe",
+   "on": "zb-vajn-moskato-polusladkoe-beloe",
+   "p_on": 0.4405,
+   "cv_on": "zb-vajn-moskato-polusladkoe-beloe",
+   "fields_same": true
+  },
+  "M607-orig-0": {
+   "off": "zb-vajn-moskato-polusladkoe-beloe",
+   "p_off": 0.3051,
+   "cv_off": "zb-vajn-moskato-polusladkoe-beloe",
+   "on": "zb-vajn-moskato-polusladkoe-beloe",
+   "p_on": 0.3051,
+   "cv_on": "zb-vajn-moskato-polusladkoe-beloe",
+   "fields_same": true
+  },
+  "M609-orig-0": {
+   "off": "abrau-dyurso-imperatorskoe-polusladkoe-shardone-beloe-12",
+   "p_off": 0.1861,
+   "cv_off": "abrau-dyurso-imperatorskoe-polusladkoe-shardone-beloe-12",
+   "on": "abrau-dyurso-imperatorskoe-polusladkoe-shardone-beloe-12",
+   "p_on": 0.1861,
+   "cv_on": "abrau-dyurso-imperatorskoe-polusladkoe-shardone-beloe-12",
+   "fields_same": true
+  },
+  "M610-orig-0": {
+   "off": "shato-taman-bryut",
+   "p_off": 0.1415,
+   "cv_off": "kuban-vino-flyor-dyu-syud-roze-de-tamane-traminer-rozovyy-rozovoe-suhoe-125",
+   "on": "shato-taman-bryut",
+   "p_on": 0.1415,
+   "cv_on": "kuban-vino-flyor-dyu-syud-roze-de-tamane-traminer-rozovyy-rozovoe-suhoe-125",
+   "fields_same": true
+  },
+  "M611-orig-0": {
+   "off": "kuban-vino-flyor-dyu-syud-roze-de-tamane-traminer-rozovyy-rozovoe-suhoe-125",
+   "p_off": 0.6829,
+   "cv_off": "kuban-vino-flyor-dyu-syud-roze-de-tamane-traminer-rozovyy-rozovoe-suhoe-125",
+   "on": "kuban-vino-flyor-dyu-syud-roze-de-tamane-traminer-rozovyy-rozovoe-suhoe-125",
+   "p_on": 0.6829,
+   "cv_on": "kuban-vino-flyor-dyu-syud-roze-de-tamane-traminer-rozovyy-rozovoe-suhoe-125",
+   "fields_same": true
+  },
+  "M612-orig-0": {
+   "off": "shato-taman-bryut-1",
+   "p_off": 0.1822,
+   "cv_off": "shato-taman-bryut-1",
+   "on": "shato-taman-bryut-1",
+   "p_on": 0.1822,
+   "cv_on": "shato-taman-bryut-1",
+   "fields_same": true
+  },
+  "M613-orig-0": {
+   "off": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-bryut",
+   "p_off": 0.3545,
+   "cv_off": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-bryut",
+   "on": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-bryut",
+   "p_on": 0.3545,
+   "cv_on": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-bryut",
+   "fields_same": true
+  },
+  "M614-orig-0": {
+   "off": "novyy-svet-dom-shampanskih-vin-rossiyskoe-shampanskoe-kollektsionnoe-polusuhoe-beloe-novyy-svet-shardone-13",
+   "p_off": 0.0073,
+   "cv_off": "derbent-vino-graf-vorontsov-beloe-polusladkoe-sovinon-blan-105-125",
+   "on": "risling-2",
+   "p_on": 0.0365,
+   "cv_on": "derbent-vino-graf-vorontsov-beloe-polusladkoe-sovinon-blan-105-125",
+   "fields_same": true
+  },
+  "M615-orig-0": {
+   "off": "novyy-svet-dom-shampanskih-vin-rossiyskoe-shampanskoe-kollektsionnoe-bryut-beloe-novyy-svet-yubileynoe-risling-13",
+   "p_off": 0.5833,
+   "cv_off": "novyy-svet-dom-shampanskih-vin-rossiyskoe-shampanskoe-kollektsionnoe-bryut-beloe-novyy-svet-yubileynoe-risling-13",
+   "on": "novyy-svet-dom-shampanskih-vin-rossiyskoe-shampanskoe-kollektsionnoe-bryut-beloe-novyy-svet-yubileynoe-risling-13",
+   "p_on": 0.6052,
+   "cv_on": "novyy-svet-dom-shampanskih-vin-rossiyskoe-shampanskoe-kollektsionnoe-bryut-beloe-novyy-svet-yubileynoe-risling-13",
+   "fields_same": true
+  },
+  "R001-orig-0": {
+   "off": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "p_off": 0.8509,
+   "cv_off": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "on": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "p_on": 0.852,
+   "cv_on": "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+   "fields_same": true
+  },
+  "R002-orig-0": {
+   "off": "shato-pino-sovinon-blan-semilon-beloe-suhoe-115",
+   "p_off": 0.3571,
+   "cv_off": "shato-pino-sovinon-blan-semilon-beloe-suhoe-115",
+   "on": "shato-pino-sovinon-blan-semilon-beloe-suhoe-115",
+   "p_on": 0.3656,
+   "cv_on": "shato-pino-sovinon-blan-semilon-beloe-suhoe-115",
+   "fields_same": true
+  },
+  "R003-orig-0": {
+   "off": "usadba-perovskih-pino-nuar-rezerv-krasnoe-suhoe-122",
+   "p_off": 0.704,
+   "cv_off": "usadba-perovskih-pino-nuar-rezerv-krasnoe-suhoe-122",
+   "on": "usadba-perovskih-pino-nuar-rezerv-krasnoe-suhoe-122",
+   "p_on": 0.6192,
+   "cv_on": "usadba-perovskih-pino-nuar-rezerv-krasnoe-suhoe-122",
+   "fields_same": true
+  },
+  "R007-orig-0": {
+   "off": "shato-pino-sovinon-blan-semilon-beloe-suhoe-115",
+   "p_off": 0.6206,
+   "cv_off": "shato-pino-sovinon-blan-semilon-beloe-suhoe-115",
+   "on": "shato-pino-sovinon-blan-semilon-beloe-suhoe-115",
+   "p_on": 0.6293,
+   "cv_on": "shato-pino-sovinon-blan-semilon-beloe-suhoe-115",
+   "fields_same": true
+  },
+  "R012-orig-0": {
+   "off": "vinodelnya-uzunov-shardone-rezerv-beloe-suhoe-135",
+   "p_off": 0.8942,
+   "cv_off": "vinodelnya-uzunov-shardone-rezerv-beloe-suhoe-135",
+   "on": "vinodelnya-uzunov-shardone-rezerv-beloe-suhoe-135",
+   "p_on": 0.8942,
+   "cv_on": "vinodelnya-uzunov-shardone-rezerv-beloe-suhoe-135",
+   "fields_same": true
+  },
+  "R013-orig-0": {
+   "off": "aya-organic-wine-vineyards-purity-in-syrah-sira-rozovoe-suhoe-132",
+   "p_off": 0.4371,
+   "cv_off": "aya-organic-wine-vineyards-purity-in-syrah-sira-rozovoe-suhoe-132",
+   "on": "aya-organic-wine-vineyards-purity-in-syrah-sira-rozovoe-suhoe-132",
+   "p_on": 0.4371,
+   "cv_on": "aya-organic-wine-vineyards-purity-in-syrah-sira-rozovoe-suhoe-132",
+   "fields_same": true
+  },
+  "R015-orig-0": {
+   "off": "inkermanskiy-zmv-winemakers-selection-saperavi-krasnoe-polusladkoe-12",
+   "p_off": 0.8054,
+   "cv_off": "inkermanskiy-zmv-winemakers-selection-saperavi-krasnoe-polusladkoe-12",
+   "on": "inkermanskiy-zmv-winemakers-selection-saperavi-krasnoe-polusladkoe-12",
+   "p_on": 0.8114,
+   "cv_on": "inkermanskiy-zmv-winemakers-selection-saperavi-krasnoe-polusladkoe-12",
+   "fields_same": true
+  },
+  "R018-orig-0": {
+   "off": "inkermanskiy-zmv-inkerman-polusladkoe-roze-aligote-rozovoe-135",
+   "p_off": 0.114,
+   "cv_off": "inkerman-muskatnoe-beloe",
+   "on": "inkermanskiy-zmv-inkerman-polusladkoe-roze-aligote-rozovoe-135",
+   "p_on": 0.114,
+   "cv_on": "inkerman-muskatnoe-beloe",
+   "fields_same": true
+  },
+  "R025-orig-0": {
+   "off": "mont-blanc-blanc-de-blancs",
+   "p_off": 0.9614,
+   "cv_off": "mont-blanc-blanc-de-blancs",
+   "on": "mont-blanc-blanc-de-blancs",
+   "p_on": 0.9614,
+   "cv_on": "mont-blanc-blanc-de-blancs",
+   "fields_same": true
+  },
+  "R030-orig-0": {
+   "off": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+   "p_off": 0.2421,
+   "cv_off": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+   "on": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+   "p_on": 0.2421,
+   "cv_on": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+   "fields_same": true
+  },
+  "R033-orig-0": {
+   "off": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+   "p_off": 0.2224,
+   "cv_off": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+   "on": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+   "p_on": 0.2224,
+   "cv_on": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+   "fields_same": true
+  },
+  "R037-orig-0": {
+   "off": "shato-pino-sovinon-blan-semilon-beloe-suhoe-115",
+   "p_off": 0.475,
+   "cv_off": "shato-pino-sovinon-blan-semilon-beloe-suhoe-115",
+   "on": "shato-pino-sovinon-blan-semilon-beloe-suhoe-115",
+   "p_on": 0.475,
+   "cv_on": "shato-pino-sovinon-blan-semilon-beloe-suhoe-115",
+   "fields_same": true
+  },
+  "R038-orig-0": {
+   "off": "perovskih_polusladkoe_krasnoe",
+   "p_off": 0.0065,
+   "cv_off": "massandra-portveyn-krasnyy-alushta-krasnye-sorta-vinograda-krasnoe-sladkoe-17",
+   "on": "perovskih_polusladkoe_krasnoe",
+   "p_on": 0.0065,
+   "cv_on": "massandra-portveyn-krasnyy-alushta-krasnye-sorta-vinograda-krasnoe-sladkoe-17",
+   "fields_same": true
+  },
+  "R042-orig-0": {
+   "off": "shato-pino-pino-gri-roze-rozovoe-ekstra-bryut-12",
+   "p_off": 0.0139,
+   "cv_off": "aya-khrustaleva-76-merlot-organik",
+   "on": "shato-pino-pino-gri-roze-rozovoe-ekstra-bryut-12",
+   "p_on": 0.0131,
+   "cv_on": "aya-khrustaleva-76-merlot-organik",
+   "fields_same": true
+  },
+  "R043-orig-0": {
+   "off": "golubitskoe-estate-pino-nuar-rezerv-krasnoe-suhoe-132",
+   "p_off": 0.8538,
+   "cv_off": "golubitskoe-estate-pino-nuar-rezerv-krasnoe-suhoe-132",
+   "on": "golubitskoe-estate-pino-nuar-rezerv-krasnoe-suhoe-132",
+   "p_on": 0.8606,
+   "cv_on": "golubitskoe-estate-pino-nuar-rezerv-krasnoe-suhoe-132",
+   "fields_same": true
+  },
+  "R044-orig-0": {
+   "off": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+   "p_off": 0.1796,
+   "cv_off": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+   "on": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+   "p_on": 0.1796,
+   "cv_on": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+   "fields_same": true
+  },
+  "R046-orig-0": {
+   "off": "risling-1",
+   "p_off": 0.3502,
+   "cv_off": "risling-1",
+   "on": "risling-1",
+   "p_on": 0.3401,
+   "cv_on": "risling-1",
+   "fields_same": true
+  },
+  "R049-orig-0": {
+   "off": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+   "p_off": 0.2179,
+   "cv_off": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+   "on": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+   "p_on": 0.2179,
+   "cv_on": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+   "fields_same": true
+  },
+  "R058-orig-0": {
+   "off": "usadba-divnomorskoe-yuzhnyy-les-merlo-krasnoe-suhoe-137",
+   "p_off": 0.9244,
+   "cv_off": "usadba-divnomorskoe-yuzhnyy-les-merlo-krasnoe-suhoe-137",
+   "on": "usadba-divnomorskoe-yuzhnyy-les-merlo-krasnoe-suhoe-137",
+   "p_on": 0.9246,
+   "cv_on": "usadba-divnomorskoe-yuzhnyy-les-merlo-krasnoe-suhoe-137",
+   "fields_same": true
+  },
+  "R062-orig-0": {
+   "off": "kuban-vino-aristov-kyuve-aleksandr-rose-de-pinot-pino-nuar-rozovoe-ekstra-bryut-12",
+   "p_off": 0.5988,
+   "cv_off": "kuban-vino-aristov-kyuve-aleksandr-rose-de-pinot-pino-nuar-rozovoe-ekstra-bryut-12",
+   "on": "kuban-vino-aristov-kyuve-aleksandr-rose-de-pinot-pino-nuar-rozovoe-ekstra-bryut-12",
+   "p_on": 0.5842,
+   "cv_on": "kuban-vino-aristov-kyuve-aleksandr-rose-de-pinot-pino-nuar-rozovoe-ekstra-bryut-12",
+   "fields_same": true
+  },
+  "R067-orig-0": {
+   "off": "usadba-divnomorskoe-yuzhnyy-les-merlo-krasnoe-suhoe-137",
+   "p_off": 0.9275,
+   "cv_off": "usadba-divnomorskoe-yuzhnyy-les-merlo-krasnoe-suhoe-137",
+   "on": "usadba-divnomorskoe-yuzhnyy-les-merlo-krasnoe-suhoe-137",
+   "p_on": 0.9275,
+   "cv_on": "usadba-divnomorskoe-yuzhnyy-les-merlo-krasnoe-suhoe-137",
+   "fields_same": true
+  },
+  "R068-orig-0": {
+   "off": "novyy-svet-dom-shampanskih-vin-rossiyskoe-shampanskoe-kollektsionnoe-bryut-beloe-novyy-svet-yubileynoe-risling-13",
+   "p_off": 0.1274,
+   "cv_off": "derbent-vino-graf-vorontsov-beloe-polusladkoe-sovinon-blan-105-125",
+   "on": "novyy-svet-dom-shampanskih-vin-rossiyskoe-shampanskoe-kollektsionnoe-bryut-beloe-novyy-svet-yubileynoe-risling-13",
+   "p_on": 0.1306,
+   "cv_on": "derbent-vino-graf-vorontsov-beloe-polusladkoe-sovinon-blan-105-125",
+   "fields_same": true
+  },
+  "R071-orig-0": {
+   "off": "fanagoriya-ona-skazala-da-beloe-bryut",
+   "p_off": 0.5562,
+   "cv_off": "fanagoriya-ona-skazala-da-beloe-polusladkoe",
+   "on": "fanagoriya-ona-skazala-da-beloe-bryut",
+   "p_on": 0.5565,
+   "cv_on": "fanagoriya-ona-skazala-da-beloe-polusladkoe",
+   "fields_same": true
+  },
+  "R072-orig-0": {
+   "off": "usadba-divnomorskoe-yuzhnyy-les-merlo-krasnoe-suhoe-137",
+   "p_off": 0.9428,
+   "cv_off": "usadba-divnomorskoe-yuzhnyy-les-merlo-krasnoe-suhoe-137",
+   "on": "usadba-divnomorskoe-yuzhnyy-les-merlo-krasnoe-suhoe-137",
+   "p_on": 0.9428,
+   "cv_on": "usadba-divnomorskoe-yuzhnyy-les-merlo-krasnoe-suhoe-137",
+   "fields_same": true
+  },
+  "R073-orig-0": {
+   "off": "aristov-anima-millesimato-beloe-bryut",
+   "p_off": 0.5975,
+   "cv_off": "aristov-anima-millesimato",
+   "on": "vinnye-kraski-merlo",
+   "p_on": 0.5045,
+   "cv_on": "vinnye-kraski-merlo",
+   "fields_same": true
+  },
+  "R074-orig-0": {
+   "off": "sovinon-blan-krasnaya-gorka",
+   "p_off": 0.6634,
+   "cv_off": "sovinon-blan-krasnaya-gorka",
+   "on": "sovinon-blan",
+   "p_on": 0.9869,
+   "cv_on": "sovinon-blan",
+   "fields_same": true
+  },
+  "R077-orig-0": {
+   "off": "fanagoriya-beloe-polusladkoe",
+   "p_off": 0.6524,
+   "cv_off": "fanagoriya-beloe-polusladkoe",
+   "on": "fanagoriya-beloe-polusladkoe",
+   "p_on": 0.6524,
+   "cv_on": "fanagoriya-beloe-polusladkoe",
+   "fields_same": true
+  },
+  "R083-orig-0": {
+   "off": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-bastardo-bastardo-magarachskiy-krasnoe-suhoe-12",
+   "p_off": 0.5251,
+   "cv_off": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-krasnoe-pino-nuar-suhoe-125",
+   "on": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-bastardo-bastardo-magarachskiy-krasnoe-suhoe-12",
+   "p_on": 0.5267,
+   "cv_on": "valeriy-zaharin-avtorskoe-vino-ot-valeriya-zaharina-krasnoe-pino-nuar-suhoe-125",
+   "fields_same": true
+  },
+  "R086-orig-0": {
+   "off": "vinodelnya-begildeeva-merlo-krasnoe-suhoe-14",
+   "p_off": 0.6751,
+   "cv_off": "vinodelnya-begildeeva-merlo-krasnoe-suhoe-14",
+   "on": "vinodelnya-begildeeva-merlo-krasnoe-suhoe-14",
+   "p_on": 0.6751,
+   "cv_on": "vinodelnya-begildeeva-merlo-krasnoe-suhoe-14",
+   "fields_same": true
+  },
+  "R089-orig-0": {
+   "off": "golubitskoe-estate-red-blend-kaberne-sovinon-krasnoe-suhoe-136",
+   "p_off": 0.6989,
+   "cv_off": "golubitskoe-estate-winery-series-roze-blend-kaberne-sovinon-rozovoe-suhoe-117",
+   "on": "golubitskoe-estate-red-blend-kaberne-sovinon-krasnoe-suhoe-136",
+   "p_on": 0.6989,
+   "cv_on": "golubitskoe-estate-winery-series-roze-blend-kaberne-sovinon-rozovoe-suhoe-117",
+   "fields_same": true
+  },
+  "R093-orig-0": {
+   "off": "usadba-divnomorskoe-yuzhnyy-les-merlo-krasnoe-suhoe-137",
+   "p_off": 0.9609,
+   "cv_off": "usadba-divnomorskoe-yuzhnyy-les-merlo-krasnoe-suhoe-137",
+   "on": "usadba-divnomorskoe-yuzhnyy-les-merlo-krasnoe-suhoe-137",
+   "p_on": 0.9611,
+   "cv_on": "usadba-divnomorskoe-yuzhnyy-les-merlo-krasnoe-suhoe-137",
+   "fields_same": true
+  },
+  "R095-orig-0": {
+   "off": "sovinon-blan-krasnaya-gorka",
+   "p_off": 0.7599,
+   "cv_off": "sovinon-blan-krasnaya-gorka",
+   "on": "sovinon-blan",
+   "p_on": 0.9967,
+   "cv_on": "sovinon-blan",
+   "fields_same": true
+  },
+  "R098-orig-0": {
+   "off": "caperavi-avtorskoe-vino",
+   "p_off": 0.9415,
+   "cv_off": "caperavi-avtorskoe-vino",
+   "on": "caperavi-avtorskoe-vino",
+   "p_on": 0.9508,
+   "cv_on": "caperavi-avtorskoe-vino",
+   "fields_same": true
+  },
+  "R099-orig-0": {
+   "off": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+   "p_off": 0.2092,
+   "cv_off": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+   "on": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+   "p_on": 0.2092,
+   "cv_on": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+   "fields_same": true
+  },
+  "R100-orig-0": {
+   "off": "blagolyubov-sovinon-blan-beloe-suhoe-125",
+   "p_off": 0.6648,
+   "cv_off": "blagolyubov-sovinon-blan-beloe-suhoe-125",
+   "on": "sovinon-blan",
+   "p_on": 0.9896,
+   "cv_on": "sovinon-blan",
+   "fields_same": true
+  }
+ },
+ "wall_s": 89.6,
+ "sanity": {
+  "h5_same_as_dump": 407,
+  "h5_differs": [
+   "M056-orig-0"
+  ],
+  "fields_same_as_dump": 408,
+  "fields_differ": [],
+  "fields_same_off_on": 405
+ },
+ "score": {
+  "frames": 408,
+  "to_live_card": 38,
+  "share": 0.0931,
+  "qids": [
+   "L02-orig-0",
+   "L03-orig-0",
+   "L06-orig-0",
+   "L40-orig-0",
+   "M001-orig-0",
+   "M003-orig-0",
+   "M004-orig-0",
+   "M029-orig-0",
+   "M030-orig-0",
+   "M031-orig-0",
+   "M103-orig-0",
+   "M138-orig-0",
+   "M183-orig-0",
+   "M207-orig-0",
+   "M261-orig-0",
+   "M298-orig-0",
+   "M309-orig-0",
+   "M329-orig-0",
+   "M342-orig-0",
+   "M353-orig-0",
+   "M361-orig-0",
+   "M368-orig-0",
+   "M377-orig-0",
+   "M416-orig-0",
+   "M450-orig-0",
+   "M451-orig-0",
+   "M489-orig-0",
+   "M493-orig-0",
+   "M507-orig-0",
+   "M509-orig-0",
+   "M512-orig-0",
+   "M540-orig-0",
+   "M560-orig-0",
+   "M614-orig-0",
+   "R073-orig-0",
+   "R074-orig-0",
+   "R095-orig-0",
+   "R100-orig-0"
+  ]
+ }
+}

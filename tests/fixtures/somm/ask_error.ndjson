@@ -1,0 +1,3 @@
+{"type": "stage", "id": "card", "text": "Открываю карточку «Cru Lermont Saperavi»", "done": "Открыл карточку", "t_ms": 2}
+{"type": "error", "code": "internal", "text": "Не получилось собрать ответ — повторите вопрос", "t_ms": 6}
+{"type": "done", "t_ms": 6}

@@ -1,0 +1,20 @@
+ok    status = ready (есть ready)
+ok    degraded_reasons пусто ([])
+ok    warnings пусто ([])
+ok    provenance.consistent
+ok    прогревочный скан без флагов
+ok    model.vlm = qwen3.5:4b (qwen3.5:4b)
+ok    cv_device = cuda (cuda)
+ok    somm.status = ok (ok, [])
+ok    somm.data.*.source = data: pairs.json=data, dishes.json=data, serve.json=data, vocab.json=data, knowledge.json=data
+ok    pairs.json wines = 2103 (2103)
+ok    somm.gate.bound = true
+ok    somm.voice.model = qwen3.5:4b (qwen3.5:4b)
+ok    somm.live = True (True)
+ok    somm.safety выключен (SVS_SOMM_SAFETY=0)
+ИТОГ: всё сошлось
+exit=0
+ready 899d5db3 bf6a8823 899d5db3 True
+derivation gt_fixes@2d7050bf | mismatch []
+6312 6312 False
+degraded_reasons [] warnings []

@@ -1,0 +1,6 @@
+pfix_final: 353/353 кадров — сервис = офлайн (гибрид a3_final_insample.json)
+kr_holdout: 617/617 кадров — сервис = офлайн (гибрид a3_final_insample.json)
+exit 0
+pfix_final: 353/353 кадров — сервис = офлайн (без гибрида)
+kr_holdout: 617/617 кадров — сервис = офлайн (без гибрида)
+exit 0

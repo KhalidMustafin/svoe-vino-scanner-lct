@@ -1,0 +1,64 @@
+исключено кадров прошлых GPU-прогонов: 24
+кандидатов: 313
+M346-orig-0 jpg jpeg 2937772 None True 2548 usadba-markoth-kyuve-blan-shardone-beloe-suhoe-12
+M388-orig-0 jpg jpeg 3124956 None True 2259 inkermanskiy-zmv-inkerman-bryut-shardone-beloe-135
+M592-orig-0 jpg jpeg 3275722 None True 2554 abrau-dyurso-victor-dravigny-polusuhoe-pino-blan-beloe-12
+M186-orig-0 heic heic 1372835 True True 1345 usadba-divnomorskoe-west-hill-blend-kaberne-sovinon-krasnoe-
+M193-orig-0 heic heic 1781160 True True 1353 esse-merlo-otbornoe-krasnoe-suhoe-13
+M431-orig-0 jpg jpeg 3809386 None True 1549 bryut-beloe-zolotaya-balka
+M390-orig-0 jpg jpeg 3306578 None True 1717 polusuhoe-rozovoe-zb-vajn-frizzante
+M208-orig-0 heic heic 1328313 True True 1877 alma-valley-kolombar-beloe-polusuhoe-135
+L22-orig-0 jpg jpg 321259 None False 1649 abrau-dyurso-victor-dravigny-polusladkoe-sovinon-blan-beloe-
+M161-orig-0 jpg heic 2327576 None True 1294 abrau-dyurso-victor-dravigny-extra-brut-shardone-beloe-bryut
+M269-orig-0 jpg jpeg 3033141 None True 2123 kuban-vino-shato-tamane-delikeyt-roze-2024-bianka-rozovoe-su
+R055-orig-0 portal_webp webp 781150 True True 2120 fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-beloe-
+R064-orig-0 portal_webp webp 1067740 True True 2398 roze-2
+L45-orig-0 jpg jpg 330775 None True 1201 derbent-vino-graf-vorontsov-bryut-rozovoe-pervenets-magarach
+M414-orig-0 jpg jpeg 3296626 None True 2293 wine
+M128-orig-0 jpg heic 2601021 None True 1840 kuban-vino-flyor-dyu-syud-ruzh-de-tamane-rubin-golodrigi-kra
+M359-orig-0 jpg jpeg 3706134 None True 3582 massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe
+R094-orig-0 portal_webp webp 743158 True True 2843 oleg
+R075-orig-0 portal_webp webp 791016 True True 2136 abrau-dyurso-russkoe-igristoe-polusuhoe-rozovoe-pino-nuar-12
+R066-orig-0 portal_webp webp 774706 True True 1381 denisov-winery-sovinon-blan-beloe-suhoe-115
+вин разных: 20 кадров: 20
+по видам: {'portal_webp': 5, 'heic': 3, 'jpg': 12}
+источники: {'set_l': 2, 'phone_m': 13, 'portal_real': 5}
+12:52:41.365 === конфигурация 4b: qwen3.5:4b
+12:52:41.417 unload qwen3.5:4b: done_reason=unload
+12:52:41.420 unload qwen3-vl:8b-instruct: done_reason=unload
+12:52:41.422 /api/ps[до старта]: []
+12:52:46.817 VRAM[pre]: === pre 2026-09-23 12:52:41 | nvidia-smi: 879 MiB, 10240 MiB, 9 %, P8 | pid name           dedicated_MiB shared_MiB | --- ----           ------------- ---------- | 16548 firefox                 5230          1 | 25840 dwm                      341          2 | 11760 NVIDIA Overlay           111          0 | 14128 app                       66          5 | 24280 csrss                     52         16 | 13256 ollama                     0          0 | sum over processes: dedicated 5991 MiB, shared 27 MiB | adapter luid_0x00000000_0x000155a2_phys_0 dedicated 881 MiB | adapter luid_0x00000000_0x00016754_phys_0 dedicated 0 MiB | adapter luid_0x00000000_0x000155a2_phys_0 shared 27 MiB | adapter luid_0x00000000_0x00016754_phys_0 shared 0 MiB
+12:52:46.836 mark svc_start
+12:52:46.840 service pid 28360
+Get-Counter : �������� ��ꥪ�� �� ������� �� �⮬ ��������.
+<tmp>
+clean_latency\cpu_log.ps1:4 ����:1
++ Get-Counter '\Processor(_Total)\% Processor Time' -SampleInterval 1 - ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidResult: (:) [Get-Counter], Exception
+    + FullyQualifiedErrorId : CounterApiError,Microsoft.PowerShell.Commands.GetCounterCommand
+ 
+12:53:02.094 mark svc_ready
+12:53:02.097 ready: 15.3 с от запуска (порт открыт через 15.3 с); status=ready reasons=[] warnings=0 warm={"cv": {"status": "ok", "elapsed_ms": 8160.4, "device": "cuda"}, "vlm": {"status": "ok", "elapsed_ms": 3789}, "scan": {"attempt": 1, "outcome": "matched", "degraded": [], "timings_ms": {"decode": 5.2, "views": 2.0, "gpu_wait": 0.0, "cv": 240.5, "vlm": 820.9, "resolve": 440.0, "total": 1508.9}}}
+12:53:10.440 VRAM[ready]: === ready 2026-09-23 12:53:05 | nvidia-smi: 7229 MiB, 10240 MiB, 6 %, P3 | pid name           dedicated_MiB shared_MiB | --- ----           ------------- ---------- | 16548 firefox                 5230          1 | 41956 llama-server            4024        592 | 40656 python                  2331         82 | 25840 dwm                      341          2 | 11760 NVIDIA Overlay           111          0 | 14128 app                       61          6 | 24280 csrss                     52         16 | 13256 ollama                     0          0 | sum over processes: dedicated 12342 MiB, shared 702 MiB | adapter luid_0x00000000_0x000155a2_phys_0 dedicated 7237 MiB | adapter luid_0x00000000_0x00016754_phys_0 dedicated 0 MiB | adapter luid_0x00000000_0x000155a2_phys_0 shared 702 MiB | adapter luid_0x00000000_0x00016754_phys_0 shared 0 MiB
+12:53:10.442 /api/ps[ready]: [{"name": "qwen3.5:4b", "size": 3128038521, "size_vram": 3128038521, "context_length": 4096, "expires_at": "2026-09-24T12:53:01.4067373+05:00"}]
+12:53:10.442 mark pt_start
+12:53:54.763 mark pt_end
+12:53:54.763 participant_test.sh: код 0, 44.3 с; stdout='' stderr=''
+12:53:54.763 health после прогона: {"total": 20, "errors": 0, "null_slug": 0, "text_read": 20, "max_total_ms": 2413.1, "degraded": {}} status= ready
+12:54:00.083 VRAM[after_pt]: === after_pt 2026-09-23 12:53:54 | nvidia-smi: 7229 MiB, 10240 MiB, 1 %, P3 | pid name           dedicated_MiB shared_MiB | --- ----           ------------- ---------- | 16548 firefox                 5230          1 | 41956 llama-server            4024        592 | 40656 python                  2331         82 | 25840 dwm                      341          2 | 11760 NVIDIA Overlay           111          0 | 14128 app                       62          5 | 24280 csrss                     52         16 | 13256 ollama                     0          0 | sum over processes: dedicated 12343 MiB, shared 698 MiB | adapter luid_0x00000000_0x000155a2_phys_0 dedicated 7237 MiB | adapter luid_0x00000000_0x00016754_phys_0 dedicated 0 MiB | adapter luid_0x00000000_0x000155a2_phys_0 shared 698 MiB | adapter luid_0x00000000_0x00016754_phys_0 shared 0 MiB
+12:54:00.084 /api/ps[after_pt]: [{"name": "qwen3.5:4b", "size": 3128038521, "size_vram": 3128038521, "context_length": 4096, "expires_at": "2026-09-24T12:53:54.520765+05:00"}]
+12:54:00.098 mark scan_start
+12:54:02.243 scan {"q": "M440-orig-0", "kind": "new", "wall_ms": 2145, "slug": "abrau-dyurso-russkoe-igristoe-polusladkoe-shardone-beloe-12", "degraded": [], "timings_ms": {"decode": 87.6, "views": 6.2, "gpu_wait": 0.0, "cv": 648.4, "vlm": 1355.0, "resolve": 1.2, "total": 2098.7}, "p": 0.211}
+12:54:04.249 scan {"q": "M062-orig-0", "kind": "new", "wall_ms": 2006, "slug": "chteau-le-grand-vostock-vostock-blanc-sovinon-blan-beloe-suhoe-135", "degraded": [], "timings_ms": {"decode": 83.6, "views": 6.7, "gpu_wait": 0.0, "cv": 499.9, "vlm": 1374.0, "resolve": 3.1, "total": 1967.4}, "p": 0.9695}
+12:54:06.404 scan {"q": "M312-orig-0", "kind": "new", "wall_ms": 2154, "slug": "olymp-winery-adagum-krasnostop-krasnostop-zolotovskiy-krasnoe-suhoe-11", "degraded": [], "timings_ms": {"decode": 87.0, "views": 5.9, "gpu_wait": 0.0, "cv": 498.1, "vlm": 1519.9, "resolve": 3.9, "total": 2115.1}, "p": 0.9904}
+12:54:07.985 scan {"q": "M312-orig-0", "kind": "repeat_immediate", "wall_ms": 1581, "slug": "olymp-winery-adagum-krasnostop-krasnostop-zolotovskiy-krasnoe-suhoe-11", "degraded": [], "timings_ms": {"decode": 88.0, "views": 6.0, "gpu_wait": 0.0, "cv": 501.6, "vlm": 954.5, "resolve": 1.5, "total": 1551.9}, "p": 0.9904}
+12:54:09.321 scan {"q": "M346-orig-0", "kind": "repeat_after_20", "wall_ms": 1336, "slug": "usadba-markoth-kyuve-blan-shardone-beloe-suhoe-12", "degraded": [], "timings_ms": {"decode": 88.9, "views": 6.4, "gpu_wait": 0.0, "cv": 502.4, "vlm": 696.5, "resolve": 1.6, "total": 1296.0}, "p": 1.0}
+12:54:09.321 mark scan_end
+12:54:10.715 порт 8080 открыт после остановки: False
+12:54:10.715 mark svc_stopped
+12:54:10.720 unload qwen3.5:4b: done_reason=unload
+12:54:10.890 unload qwen3-vl:8b-instruct: done_reason=unload
+12:54:10.892 /api/ps[после остановки]: []
+12:54:18.022 VRAM[final]: === final 2026-09-23 12:54:13 | nvidia-smi: 882 MiB, 10240 MiB, 3 %, P3 | pid name           dedicated_MiB shared_MiB | --- ----           ------------- ---------- | 16548 firefox                 5230          1 | 25840 dwm                      341          2 | 11760 NVIDIA Overlay           111          0 | 14128 app                       70          5 | 24280 csrss                     52         16 | 13256 ollama                     0          0 | sum over processes: dedicated 5994 MiB, shared 26 MiB | adapter luid_0x00000000_0x000155a2_phys_0 dedicated 889 MiB | adapter luid_0x00000000_0x00016754_phys_0 dedicated 0 MiB | adapter luid_0x00000000_0x000155a2_phys_0 shared 25 MiB | adapter luid_0x00000000_0x00016754_phys_0 shared 0 MiB
+12:54:18.022 готово

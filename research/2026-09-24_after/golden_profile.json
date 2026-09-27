@@ -1,0 +1,42 @@
+{
+  "rows": 2103,
+  "tolerance": 0.05,
+  "A_port_on_loza_inputs": {
+    "all_axes_ok": 2103,
+    "of": 2103,
+    "basis_ok": 2103,
+    "max_abs_diff": 0.005,
+    "bad": {},
+    "pass": true
+  },
+  "B_service_inputs_no_abv": {
+    "compared": 2103,
+    "missing_in_catalog": 0,
+    "all_axes_ok": 2029,
+    "axes_without_alcohol_ok": 2045,
+    "bad_by_axis": {
+      "acidity": 43,
+      "body": 43,
+      "aroma_intensity": 43,
+      "oak": 36,
+      "tannin": 27,
+      "effervescence": 18,
+      "alcohol": 16,
+      "sweetness": 2
+    },
+    "causes": {
+      "grapes": 38,
+      "sparkling": 12,
+      "grapes+sparkling": 5,
+      "grapes+sugar": 1,
+      "sugar+sparkling": 1,
+      "year": 1
+    },
+    "unexplained": []
+  },
+  "C_alcohol_from_abv": {
+    "wines": 2075,
+    "abs_diff_to_loza_median": 0.571,
+    "abs_diff_to_loza_p95": 1.643
+  }
+}

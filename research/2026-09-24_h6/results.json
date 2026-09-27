@@ -1,0 +1,5159 @@
+{
+ "prereg": "research/2026-09-24_h6/PREREG.md @ ba8ef42",
+ "inputs": {
+  "run": "pfix_final/iter20",
+  "gt_tokens_sha1": "bf6a8823a45004b1e13e586e5a92e05b8beb07b0",
+  "wines_final_sha1": "0ef779d7454c4dda1f5f10a3929852f630cc5fbd",
+  "meta_sha1": "3171109b18776acc0697e38c8602f36e2ae40b5c",
+  "model_sha1": "be51adb713e1b7b7b564a41c73dce384066d22be"
+ },
+ "sources": {
+  "svc_grape_codes": 116,
+  "dict_grape_codes": 113,
+  "dict_vs_svc_diff": {
+   "sugar": 24,
+   "color": 1,
+   "grapes": 65,
+   "winery": 6
+  }
+ },
+ "gate": {
+  "A_filter": {
+   "frames": 353,
+   "filter_top1": 353,
+   "filter_top5": 353,
+   "order_top5_eq_whatif_model": 353,
+   "slug_eq_order0": 353,
+   "bad": []
+  },
+  "B_recompute": {
+   "frames": 353,
+   "order20": 353,
+   "p_top1_close": 353,
+   "h5_answer": 353,
+   "h5_top5_on_ambiguous": 353,
+   "bad": []
+  },
+  "C_base": {
+   "soft_macro": 86.0,
+   "strict_micro": 84.1,
+   "soft_micro": 86.4
+  },
+  "passed": true
+ },
+ "base": {
+  "frames": 353,
+  "wines": 226,
+  "soft_macro": 85.95132743362832,
+  "soft_micro": 86.40226628895184,
+  "strict_macro": 83.88643067846608,
+  "strict_micro": 84.13597733711048,
+  "slices": {
+   "L": {
+    "soft": 19,
+    "strict": 19,
+    "n": 20
+   },
+   "M": {
+    "soft": 224,
+    "strict": 220,
+    "n": 268
+   },
+   "R": {
+    "soft": 62,
+    "strict": 58,
+    "n": 65
+   }
+  }
+ },
+ "variants": {
+  "H6-svc": {
+   "changed": 16,
+   "soft": {
+    "fix": 10,
+    "break": 2,
+    "neutral": 4
+   },
+   "strict": {
+    "fix": 10,
+    "break": 2,
+    "neutral": 4
+   },
+   "slice_net_soft": {
+    "R": -1,
+    "M": 9,
+    "L": 0
+   },
+   "metrics": {
+    "frames": 353,
+    "wines": 226,
+    "soft_macro": 87.97935103244838,
+    "soft_micro": 88.6685552407932,
+    "strict_macro": 85.91445427728614,
+    "strict_micro": 86.40226628895184,
+    "slices": {
+     "L": {
+      "soft": 19,
+      "strict": 19,
+      "n": 20
+     },
+     "M": {
+      "soft": 233,
+      "strict": 229,
+      "n": 268
+     },
+     "R": {
+      "soft": 61,
+      "strict": 57,
+      "n": 65
+     }
+    }
+   },
+   "criteria": {
+    "fix>=4*break&fix>=3": true,
+    "strict_micro>=base": true,
+    "slices_net>=0": false
+   },
+   "criterion1_on_strict": true,
+   "accepted": false,
+   "bootstrap_soft_macro": {
+    "base": [
+     81.38,
+     89.93
+    ],
+    "variant": [
+     83.63,
+     91.89
+    ],
+    "delta": [
+     -0.04,
+     4.24
+    ]
+   },
+   "changes": [
+    {
+     "query_id": "L22-orig-0",
+     "slice": "L",
+     "p_top1": 0.5147,
+     "lines": [
+      "МЭТОДЕ CLASSIQUE",
+      "с 1870 г.",
+      "РУССКИЙ ВИННЫЙ ДОМ",
+      "АБРАУ-ДЮРСО",
+      "VICTOR DRAVIGNY",
+      "Виноград: Чернский Дворец",
+      "Полусладкое",
+      "2023"
+     ],
+     "read": {
+      "sugar": [
+       "polusladkoe"
+      ],
+      "color": null,
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "abrau-dyurso-victor-dravigny-polusladkoe-sovinon-blan-beloe-12",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "abrau-dyurso-victor-dravigny-bryut",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "pinot_blanc",
+       "riesling"
+      ]
+     },
+     "new": {
+      "slug": "abrau-dyurso-victor-dravigny-krasnoe-polusladkoe-kaberne-sovinon-125",
+      "sugar": "polusladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon"
+      ]
+     },
+     "soft": "neutral",
+     "strict": "neutral"
+    },
+    {
+     "query_id": "M112-orig-0",
+     "slice": "M",
+     "p_top1": 0.508,
+     "lines": [
+      "CHA TEA",
+      "PINOT",
+      "ГРАВИТАЦИЯ",
+      "ШАРДОНЕ",
+      "РИСЛИНГ",
+      "МЯЛО СУХОЕ",
+      "2023"
+     ],
+     "read": {
+      "sugar": [
+       "suhoe"
+      ],
+      "color": null,
+      "grapes": [
+       "chardonnay",
+       "riesling"
+      ],
+      "grapes_raw": [
+       "chardonnay",
+       "riesling"
+      ]
+     },
+     "gt": {
+      "slug": "shato-pino-shardone-risling-beloe-suhoe-12",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "shato-pino-kaberne-sovinon-merlo-krasnoe-suhoe-135",
+      "sugar": "suhoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon"
+      ]
+     },
+     "new": {
+      "slug": "shato-pino-shardone-risling-beloe-suhoe-12",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M214-orig-0",
+     "slice": "M",
+     "p_top1": 0.7058,
+     "lines": [
+      "КРЫМ",
+      "1839",
+      "ЗОЛОТАЯ БАЛКА",
+      "БАЛАКЛАВА",
+      "ПОЛУСЛАДКОЕ",
+      "Muscat"
+     ],
+     "read": {
+      "sugar": [
+       "polusladkoe"
+      ],
+      "color": null,
+      "grapes": [
+       "muscat"
+      ],
+      "grapes_raw": [
+       "muscat"
+      ]
+     },
+     "gt": {
+      "slug": "balaklava-muskat-beloe-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "muscat",
+       "muscat_amber",
+       "muscat_ottonel"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "balaklava-muskat",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "muscat"
+      ]
+     },
+     "new": {
+      "slug": "balaklava-muskat-beloe-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "muscat",
+       "muscat_amber",
+       "muscat_ottonel"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M217-orig-0",
+     "slice": "M",
+     "p_top1": 0.6483,
+     "lines": [
+      "FANAGORIA",
+      "SEMI-SWEET ROSE",
+      "MÉTHODE CHARMAT"
+     ],
+     "read": {
+      "sugar": [
+       "polusladkoe"
+      ],
+      "color": "Розовое",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "fanagoriya-fanagoriya-polusladkoe-rozovoe-sovinon-blan-krasnoe-11-13",
+      "sugar": "polusladkoe",
+      "color": "Красное",
+      "grapes": [
+       "chardonnay",
+       "merlot",
+       "pinot_noir",
+       "sauvignon_blanc"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "fanagoriya-fanagoriya-polusladkoe-rozovoe-sovinon-blan-krasnoe-11-13",
+      "sugar": "polusladkoe",
+      "color": "Красное",
+      "grapes": [
+       "chardonnay",
+       "merlot",
+       "pinot_noir",
+       "sauvignon_blanc"
+      ]
+     },
+     "new": {
+      "slug": "rozovoe-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Розовое",
+      "grapes": [
+       "chardonnay",
+       "pinot_noir",
+       "tsimlyansky_cherny"
+      ]
+     },
+     "soft": "break",
+     "strict": "break"
+    },
+    {
+     "query_id": "M233-orig-0",
+     "slice": "M",
+     "p_top1": 0.5775,
+     "lines": [
+      "АБРАУ-ДЮРСО",
+      "ИМПЕРАТОРСКОЕ",
+      "ПОЛУСУХОЕ"
+     ],
+     "read": {
+      "sugar": [
+       "polusuhoe"
+      ],
+      "color": null,
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "abrau-dyurso-imperatorskoe-polusuhoe-shardone-beloe-12",
+      "sugar": "polusuhoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "new": {
+      "slug": "abrau-dyurso-imperatorskoe-polusuhoe-shardone-beloe-12",
+      "sugar": "polusuhoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M289-orig-0",
+     "slice": "M",
+     "p_top1": 0.5079,
+     "lines": [
+      "Vostock",
+      "du",
+      "CHÂTEAU",
+      "LE GRAND VOSTOCK",
+      "sélection rouge",
+      "ОБЯЗАНО ПОД ОСОБЫМ КОНТРОЛЕМ КОМАНДЫ МИШЕЛЯ РОТАНА"
+     ],
+     "read": {
+      "sugar": [],
+      "color": "Красное",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "vostok-krasnoe",
+      "sugar": null,
+      "color": null,
+      "grapes": []
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "chteau-le-grand-vostock-vostock-blanc-sovinon-blan-beloe-suhoe-135",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "aligote",
+       "chardonnay",
+       "riesling",
+       "rkatsiteli",
+       "sauvignon_blanc",
+       "tsvetochny"
+      ]
+     },
+     "new": {
+      "slug": "chteau-le-grand-vostock-cabernet-sauvignon-kaberne-sovinon-krasnoe-suhoe-14",
+      "sugar": "suhoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon"
+      ]
+     },
+     "soft": "neutral",
+     "strict": "neutral"
+    },
+    {
+     "query_id": "M410-orig-0",
+     "slice": "M",
+     "p_top1": 0.5916,
+     "lines": [
+      "КРЫМ",
+      "1889",
+      "ЗОЛОТАЯ БАЛКА",
+      "МУСКАТ ПОЛУСЛАДКОЕ БЕЛОЕ",
+      "Российское игристое вино",
+      "БАЛАКЛАВА",
+      "ПОЛУСЛАДКОЕ",
+      "Muscat",
+      "С ЗАЩИЩЕННЫМ ГЕОГРАФИЧЕСКИМ УКАЗАНИЕМ «КРЫМ"
+     ],
+     "read": {
+      "sugar": [
+       "polusladkoe"
+      ],
+      "color": "Белое",
+      "grapes": [
+       "muscat"
+      ],
+      "grapes_raw": [
+       "muscat"
+      ]
+     },
+     "gt": {
+      "slug": "balaklava-muskat-beloe-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "muscat",
+       "muscat_amber",
+       "muscat_ottonel"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "balaklava-muskat",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "muscat"
+      ]
+     },
+     "new": {
+      "slug": "balaklava-muskat-beloe-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "muscat",
+       "muscat_amber",
+       "muscat_ottonel"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M422-orig-0",
+     "slice": "M",
+     "p_top1": 0.6045,
+     "lines": [
+      "CHATEAU",
+      "TAMAGNE",
+      "БРЮТ",
+      "BRUT"
+     ],
+     "read": {
+      "sugar": [
+       "brut"
+      ],
+      "color": null,
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "shato-taman-bryut",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "shato-taman-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay"
+      ]
+     },
+     "new": {
+      "slug": "shato-taman-bryut",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M425-orig-0",
+     "slice": "M",
+     "p_top1": 0.7058,
+     "lines": [
+      "Высокий Берег",
+      "РИСЛИНГ",
+      "БРЮТ",
+      "ЗЕЛЕНАЯ СЕРИЯ"
+     ],
+     "read": {
+      "sugar": [
+       "brut"
+      ],
+      "color": null,
+      "grapes": [
+       "riesling"
+      ],
+      "grapes_raw": [
+       "riesling"
+      ]
+     },
+     "gt": {
+      "slug": "vysokij-bereg-risling-zelenaya-seriya-1",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "riesling"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "vysokij-bereg-risling-zelenaya-seriya-2",
+      "sugar": "extra_brut",
+      "color": "Белое",
+      "grapes": [
+       "riesling"
+      ]
+     },
+     "new": {
+      "slug": "vysokij-bereg-risling-zelenaya-seriya-1",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "riesling"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M437-orig-0",
+     "slice": "M",
+     "p_top1": 0.5677,
+     "lines": [
+      "ИМПЕРАТОРСКОЕ",
+      "АБРАУ-ДЮРСО",
+      "ПОЛУСУХОЕ"
+     ],
+     "read": {
+      "sugar": [
+       "polusuhoe"
+      ],
+      "color": null,
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "abrau-dyurso-imperatorskoe-polusuhoe-shardone-beloe-12",
+      "sugar": "polusuhoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-bryut",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "new": {
+      "slug": "abrau-dyurso-imperatorskoe-polusuhoe-shardone-beloe-12",
+      "sugar": "polusuhoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M459-orig-0",
+     "slice": "M",
+     "p_top1": 0.5954,
+     "lines": [
+      "КАНОНИЧЕСКИЕ",
+      "ТРАДИЦИИ",
+      "ВИНО ОРИГИНАРНОЕ",
+      "КРАСНОЕ",
+      "ПОЛУСАЛАДКОЕ",
+      "Церковные трапезные вина имеют благородное происхождение, так как изготавливаются только из винограда классических сортов. Особая технология приготовления красного виноградного вина позволяет им раскрыться богатым букетом вкуса и аромата.",
+      "АЛМ МИРСКИХ И ЦЕРКОВНЫХ ТРАПЕЗ"
+     ],
+     "read": {
+      "sugar": [
+       "polusladkoe"
+      ],
+      "color": "Красное",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "soyuz-vino-kanonicheskie-traditsii-krasnoe-polusladkoe-kaberne-sovinon-115",
+      "sugar": "polusladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon",
+       "merlot"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "soyuz-vino-kanonicheskie-traditsii-krasnoe-sladkoe-kaberne-sovinon-115",
+      "sugar": "sladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon",
+       "merlot"
+      ]
+     },
+     "new": {
+      "slug": "soyuz-vino-kanonicheskie-traditsii-krasnoe-polusladkoe-kaberne-sovinon-115",
+      "sugar": "polusladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon",
+       "merlot"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M460-orig-0",
+     "slice": "M",
+     "p_top1": 0.7255,
+     "lines": [
+      "КАНОНИЧЕСКИЕ",
+      "ТРАДИЦИИ",
+      "ВИНО ОРАДИНАРНОЕ",
+      "КРАСНОЕ",
+      "СЛАДКОЕ",
+      "Церковные трапезные вина имеют благородное происхождение, так как изготавливаются только из винограда классических сортов. Особая технология приготовления красного сладкого вина позволяет им раскрываться богатым букетом вкуса и аромата.",
+      "АЛЯ МИРСКИХ И ЦЕРКОВНЫХ ТРАПЕЗ"
+     ],
+     "read": {
+      "sugar": [
+       "sladkoe"
+      ],
+      "color": "Красное",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "soyuz-vino-kanonicheskie-traditsii-krasnoe-sladkoe-kaberne-sovinon-115",
+      "sugar": "sladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon",
+       "merlot"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "soyuz-vino-kanonicheskie-traditsii-krasnoe-polusladkoe-kaberne-sovinon-115",
+      "sugar": "polusladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon",
+       "merlot"
+      ]
+     },
+     "new": {
+      "slug": "soyuz-vino-kanonicheskie-traditsii-krasnoe-sladkoe-kaberne-sovinon-115",
+      "sugar": "sladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon",
+       "merlot"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M478-orig-0",
+     "slice": "M",
+     "p_top1": 0.5824,
+     "lines": [
+      "Vostock",
+      "du",
+      "Château",
+      "LE GRAND VOSTOCK",
+      "sélection rouge",
+      "ВИНО С ЗАЩИЩЕННЫМ ГЕОГРАФИЧЕСКИМ УКАЗАНИЕМ «КУБАЛЬ» КРЫМА",
+      "БЕРЕЖЕТСЯ ПОД ОСОБЫМ КОНТРОЛЕМ КОМАНДЫ МИШЕЛЯ РОПЛАНА"
+     ],
+     "read": {
+      "sugar": [],
+      "color": "Красное",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "vostok-krasnoe",
+      "sugar": null,
+      "color": null,
+      "grapes": []
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "chteau-le-grand-vostock-vostock-blanc-sovinon-blan-beloe-suhoe-135",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "aligote",
+       "chardonnay",
+       "riesling",
+       "rkatsiteli",
+       "sauvignon_blanc",
+       "tsvetochny"
+      ]
+     },
+     "new": {
+      "slug": "chteau-le-grand-vostock-cabernet-sauvignon-kaberne-sovinon-krasnoe-suhoe-14",
+      "sugar": "suhoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon"
+      ]
+     },
+     "soft": "neutral",
+     "strict": "neutral"
+    },
+    {
+     "query_id": "M543-orig-0",
+     "slice": "M",
+     "p_top1": 0.501,
+     "lines": [
+      "ПРОИЗВОДСТВЕННО-АГРАРНОЕ ОБЪЕДИНЕНИЕ",
+      "МАССАНДАРА",
+      "КРЫМ",
+      "19.05.25",
+      "ГОД ОСНОВАНИЯ",
+      "1894",
+      "ВИНО РОССИИ",
+      "КОКУР",
+      "ГОД УРОЖАЯ",
+      "2024",
+      "РОССИЙСКОЕ ВИНО С ЗАЩИЩЕННЫМ ГЕОГРАФИЧЕСКИМ",
+      "УКАЗАНИЕМ «КРЫМ» — ОДИНАРНОЕ СУХОЕ БЕЛОЕ",
+      "Собственная виноградики",
+      "0,75 л"
+     ],
+     "read": {
+      "sugar": [
+       "suhoe"
+      ],
+      "color": "Белое",
+      "grapes": [
+       "kokur"
+      ],
+      "grapes_raw": [
+       "kokur"
+      ]
+     },
+     "gt": {
+      "slug": "kokur-suhoe",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "kokur"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "massandra-kokur",
+      "sugar": "polusuhoe",
+      "color": "Белое",
+      "grapes": [
+       "kokur"
+      ]
+     },
+     "new": {
+      "slug": "kokur-suhoe",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "kokur"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M596-orig-0",
+     "slice": "M",
+     "p_top1": 0.5279,
+     "lines": [
+      "SPARKLING WINE",
+      "SINCE 1870 YEAR",
+      "ЛУЧШИЕ ВИНОГРАДНИКИ",
+      "ABRAU·DURSO",
+      "RESERVE",
+      "РОЗОВОЕ БРЮТ"
+     ],
+     "read": {
+      "sugar": [
+       "brut"
+      ],
+      "color": "Розовое",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "abrau-dyurso-abrau-durso-brut-rose-reserve-pino-nuar-beloe-bryut-12",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "cabernet_franc",
+       "cabernet_sauvignon",
+       "merlot",
+       "pinot_franc",
+       "pinot_noir"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "abrau-dyurso-abrau-durso-reserve-brut-shardone-beloe-bryut-115",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "pinot_blanc",
+       "riesling"
+      ]
+     },
+     "new": {
+      "slug": "abrau-dyurso-imperial-kyuve-pino-nuar-rozovoe-bryut-125",
+      "sugar": "brut",
+      "color": "Розовое",
+      "grapes": [
+       "pinot_noir"
+      ]
+     },
+     "soft": "neutral",
+     "strict": "neutral"
+    },
+    {
+     "query_id": "R076-orig-0",
+     "slice": "R",
+     "p_top1": 0.977,
+     "lines": [
+      "ТАБИЯ",
+      "ВИНОДЕЛЬНЯ",
+      "ЦИТРОН",
+      "2024",
+      "БЕЛОЕ ПОЛУСУХОЕ",
+      "ПЛОИЗВЕДЕННО ИЗ ВИНОГРАДА, ВЫРАЩЕННОГО НА ТЕРРИТОРИИ РОССИЙСКОЙ ФЕДЕРАЦИИ"
+     ],
+     "read": {
+      "sugar": [
+       "polusuhoe"
+      ],
+      "color": "Белое",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "czitronnyj-magaracha",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "citron_magaracha"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "czitronnyj-magaracha",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "citron_magaracha"
+      ]
+     },
+     "new": {
+      "slug": "risling-1",
+      "sugar": "polusuhoe",
+      "color": "Белое",
+      "grapes": [
+       "riesling"
+      ]
+     },
+     "soft": "break",
+     "strict": "break"
+    }
+   ]
+  },
+  "H6-dict": {
+   "changed": 20,
+   "soft": {
+    "fix": 11,
+    "break": 4,
+    "neutral": 5
+   },
+   "strict": {
+    "fix": 11,
+    "break": 5,
+    "neutral": 4
+   },
+   "slice_net_soft": {
+    "R": -3,
+    "M": 10,
+    "L": 0
+   },
+   "metrics": {
+    "frames": 353,
+    "wines": 226,
+    "soft_macro": 87.97935103244838,
+    "soft_micro": 88.38526912181302,
+    "strict_macro": 85.47197640117994,
+    "strict_micro": 85.8356940509915,
+    "slices": {
+     "L": {
+      "soft": 19,
+      "strict": 19,
+      "n": 20
+     },
+     "M": {
+      "soft": 234,
+      "strict": 229,
+      "n": 268
+     },
+     "R": {
+      "soft": 59,
+      "strict": 55,
+      "n": 65
+     }
+    }
+   },
+   "criteria": {
+    "fix>=4*break&fix>=3": false,
+    "strict_micro>=base": true,
+    "slices_net>=0": false
+   },
+   "criterion1_on_strict": false,
+   "accepted": false,
+   "bootstrap_soft_macro": {
+    "base": [
+     81.38,
+     89.93
+    ],
+    "variant": [
+     83.78,
+     91.81
+    ],
+    "delta": [
+     -0.29,
+     4.57
+    ]
+   },
+   "changes": [
+    {
+     "query_id": "L22-orig-0",
+     "slice": "L",
+     "p_top1": 0.5147,
+     "lines": [
+      "МЭТОДЕ CLASSIQUE",
+      "с 1870 г.",
+      "РУССКИЙ ВИННЫЙ ДОМ",
+      "АБРАУ-ДЮРСО",
+      "VICTOR DRAVIGNY",
+      "Виноград: Чернский Дворец",
+      "Полусладкое",
+      "2023"
+     ],
+     "read": {
+      "sugar": [
+       "polusladkoe"
+      ],
+      "color": null,
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "abrau-dyurso-victor-dravigny-polusladkoe-sovinon-blan-beloe-12",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "abrau-dyurso-victor-dravigny-bryut",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "pinot_blanc",
+       "riesling"
+      ]
+     },
+     "new": {
+      "slug": "abrau-dyurso-victor-dravigny-krasnoe-polusladkoe-kaberne-sovinon-125",
+      "sugar": "polusladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon"
+      ]
+     },
+     "soft": "neutral",
+     "strict": "neutral"
+    },
+    {
+     "query_id": "M112-orig-0",
+     "slice": "M",
+     "p_top1": 0.508,
+     "lines": [
+      "CHA TEA",
+      "PINOT",
+      "ГРАВИТАЦИЯ",
+      "ШАРДОНЕ",
+      "РИСЛИНГ",
+      "МЯЛО СУХОЕ",
+      "2023"
+     ],
+     "read": {
+      "sugar": [
+       "suhoe"
+      ],
+      "color": null,
+      "grapes": [
+       "chardonnay",
+       "riesling"
+      ],
+      "grapes_raw": [
+       "chardonnay",
+       "riesling"
+      ]
+     },
+     "gt": {
+      "slug": "shato-pino-shardone-risling-beloe-suhoe-12",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "shato-pino-kaberne-sovinon-merlo-krasnoe-suhoe-135",
+      "sugar": "suhoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon"
+      ]
+     },
+     "new": {
+      "slug": "shato-pino-shardone-risling-beloe-suhoe-12",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M151-orig-0",
+     "slice": "M",
+     "p_top1": 0.8278,
+     "lines": [
+      "INKERMAN",
+      "19 61",
+      "МУСКАТ",
+      "Semi-sweet",
+      "ИРИСТОЕ ВИНО БЕЛОЕ"
+     ],
+     "read": {
+      "sugar": [
+       "polusladkoe"
+      ],
+      "color": "Белое",
+      "grapes": [
+       "muscat"
+      ],
+      "grapes_raw": [
+       "muscat"
+      ]
+     },
+     "gt": {
+      "slug": "inkermanskiy-zmv-inkerman-muskat-polusladkoe-beloe-13",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "muscat"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "inkerman-muskatnoe-beloe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "muscat_amber",
+       "rkatsiteli"
+      ]
+     },
+     "new": {
+      "slug": "inkermanskiy-zmv-inkerman-muskat-polusladkoe-beloe-13",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "muscat"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M214-orig-0",
+     "slice": "M",
+     "p_top1": 0.7058,
+     "lines": [
+      "КРЫМ",
+      "1839",
+      "ЗОЛОТАЯ БАЛКА",
+      "БАЛАКЛАВА",
+      "ПОЛУСЛАДКОЕ",
+      "Muscat"
+     ],
+     "read": {
+      "sugar": [
+       "polusladkoe"
+      ],
+      "color": null,
+      "grapes": [
+       "muscat"
+      ],
+      "grapes_raw": [
+       "muscat"
+      ]
+     },
+     "gt": {
+      "slug": "balaklava-muskat-beloe-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "muscat",
+       "muscat_amber",
+       "muscat_ottonel"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "balaklava-muskat",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "muscat"
+      ]
+     },
+     "new": {
+      "slug": "balaklava-muskat-beloe-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "muscat",
+       "muscat_amber",
+       "muscat_ottonel"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M217-orig-0",
+     "slice": "M",
+     "p_top1": 0.6483,
+     "lines": [
+      "FANAGORIA",
+      "SEMI-SWEET ROSE",
+      "MÉTHODE CHARMAT"
+     ],
+     "read": {
+      "sugar": [
+       "polusladkoe"
+      ],
+      "color": "Розовое",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "fanagoriya-fanagoriya-polusladkoe-rozovoe-sovinon-blan-krasnoe-11-13",
+      "sugar": "polusladkoe",
+      "color": "Красное",
+      "grapes": [
+       "chardonnay",
+       "merlot",
+       "pinot_noir",
+       "sauvignon_blanc"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "fanagoriya-fanagoriya-polusladkoe-rozovoe-sovinon-blan-krasnoe-11-13",
+      "sugar": "polusladkoe",
+      "color": "Красное",
+      "grapes": [
+       "chardonnay",
+       "merlot",
+       "pinot_noir",
+       "sauvignon_blanc"
+      ]
+     },
+     "new": {
+      "slug": "rozovoe-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Розовое",
+      "grapes": [
+       "chardonnay",
+       "pinot_noir",
+       "tsimlyansky_cherny"
+      ]
+     },
+     "soft": "break",
+     "strict": "break"
+    },
+    {
+     "query_id": "M233-orig-0",
+     "slice": "M",
+     "p_top1": 0.5775,
+     "lines": [
+      "АБРАУ-ДЮРСО",
+      "ИМПЕРАТОРСКОЕ",
+      "ПОЛУСУХОЕ"
+     ],
+     "read": {
+      "sugar": [
+       "polusuhoe"
+      ],
+      "color": null,
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "abrau-dyurso-imperatorskoe-polusuhoe-shardone-beloe-12",
+      "sugar": "polusuhoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "new": {
+      "slug": "abrau-dyurso-imperatorskoe-polusuhoe-shardone-beloe-12",
+      "sugar": "polusuhoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M289-orig-0",
+     "slice": "M",
+     "p_top1": 0.5079,
+     "lines": [
+      "Vostock",
+      "du",
+      "CHÂTEAU",
+      "LE GRAND VOSTOCK",
+      "sélection rouge",
+      "ОБЯЗАНО ПОД ОСОБЫМ КОНТРОЛЕМ КОМАНДЫ МИШЕЛЯ РОТАНА"
+     ],
+     "read": {
+      "sugar": [],
+      "color": "Красное",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "vostok-krasnoe",
+      "sugar": null,
+      "color": null,
+      "grapes": []
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "chteau-le-grand-vostock-vostock-blanc-sovinon-blan-beloe-suhoe-135",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "aligote",
+       "chardonnay",
+       "riesling",
+       "rkatsiteli",
+       "sauvignon_blanc",
+       "tsvetochny"
+      ]
+     },
+     "new": {
+      "slug": "chteau-le-grand-vostock-cabernet-sauvignon-kaberne-sovinon-krasnoe-suhoe-14",
+      "sugar": "suhoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon"
+      ]
+     },
+     "soft": "neutral",
+     "strict": "neutral"
+    },
+    {
+     "query_id": "M406-orig-0",
+     "slice": "M",
+     "p_top1": 0.6851,
+     "lines": [
+      "MOSCATO",
+      "NATURAL SPARKLING WINE",
+      "ROSE SEMISWEET",
+      "ZB",
+      "WINE",
+      "УВАЖАЙ КАК СОММАЛЬСКОЕ ЭТО ВИНО"
+     ],
+     "read": {
+      "sugar": [
+       "polusladkoe"
+      ],
+      "color": "Розовое",
+      "grapes": [
+       "muscat"
+      ],
+      "grapes_raw": [
+       "muscat"
+      ]
+     },
+     "gt": {
+      "slug": "zolotaya-balka-zb-moscato-semi-sweet-rose-muskat-yantarnyy-rozovoe-polusladkoe-9",
+      "sugar": "polusladkoe",
+      "color": "Розовое",
+      "grapes": [
+       "muscat_amber",
+       "muscat_hamburg"
+      ]
+     },
+     "acceptable": [
+      "zb-vajn-moskato-polusladkoe-rozovoe"
+     ],
+     "old": {
+      "slug": "zolotaya-balka-zb-moscato-semi-sweet-rose-muskat-yantarnyy-rozovoe-polusladkoe-9",
+      "sugar": "polusladkoe",
+      "color": "Розовое",
+      "grapes": [
+       "muscat_amber",
+       "muscat_hamburg"
+      ]
+     },
+     "new": {
+      "slug": "zb-vajn-moskato-polusladkoe-rozovoe",
+      "sugar": "polusladkoe",
+      "color": "Розовое",
+      "grapes": [
+       "muscat"
+      ]
+     },
+     "soft": "neutral",
+     "strict": "break"
+    },
+    {
+     "query_id": "M410-orig-0",
+     "slice": "M",
+     "p_top1": 0.5916,
+     "lines": [
+      "КРЫМ",
+      "1889",
+      "ЗОЛОТАЯ БАЛКА",
+      "МУСКАТ ПОЛУСЛАДКОЕ БЕЛОЕ",
+      "Российское игристое вино",
+      "БАЛАКЛАВА",
+      "ПОЛУСЛАДКОЕ",
+      "Muscat",
+      "С ЗАЩИЩЕННЫМ ГЕОГРАФИЧЕСКИМ УКАЗАНИЕМ «КРЫМ"
+     ],
+     "read": {
+      "sugar": [
+       "polusladkoe"
+      ],
+      "color": "Белое",
+      "grapes": [
+       "muscat"
+      ],
+      "grapes_raw": [
+       "muscat"
+      ]
+     },
+     "gt": {
+      "slug": "balaklava-muskat-beloe-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "muscat",
+       "muscat_amber",
+       "muscat_ottonel"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "balaklava-muskat",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "muscat"
+      ]
+     },
+     "new": {
+      "slug": "balaklava-muskat-beloe-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "muscat",
+       "muscat_amber",
+       "muscat_ottonel"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M422-orig-0",
+     "slice": "M",
+     "p_top1": 0.6045,
+     "lines": [
+      "CHATEAU",
+      "TAMAGNE",
+      "БРЮТ",
+      "BRUT"
+     ],
+     "read": {
+      "sugar": [
+       "brut"
+      ],
+      "color": null,
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "shato-taman-bryut",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "shato-taman-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay"
+      ]
+     },
+     "new": {
+      "slug": "shato-taman-bryut",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M425-orig-0",
+     "slice": "M",
+     "p_top1": 0.7058,
+     "lines": [
+      "Высокий Берег",
+      "РИСЛИНГ",
+      "БРЮТ",
+      "ЗЕЛЕНАЯ СЕРИЯ"
+     ],
+     "read": {
+      "sugar": [
+       "brut"
+      ],
+      "color": null,
+      "grapes": [
+       "riesling"
+      ],
+      "grapes_raw": [
+       "riesling"
+      ]
+     },
+     "gt": {
+      "slug": "vysokij-bereg-risling-zelenaya-seriya-1",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "riesling"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "vysokij-bereg-risling-zelenaya-seriya-2",
+      "sugar": "extra_brut",
+      "color": "Белое",
+      "grapes": [
+       "riesling"
+      ]
+     },
+     "new": {
+      "slug": "vysokij-bereg-risling-zelenaya-seriya-1",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "riesling"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M437-orig-0",
+     "slice": "M",
+     "p_top1": 0.5677,
+     "lines": [
+      "ИМПЕРАТОРСКОЕ",
+      "АБРАУ-ДЮРСО",
+      "ПОЛУСУХОЕ"
+     ],
+     "read": {
+      "sugar": [
+       "polusuhoe"
+      ],
+      "color": null,
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "abrau-dyurso-imperatorskoe-polusuhoe-shardone-beloe-12",
+      "sugar": "polusuhoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-bryut",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "new": {
+      "slug": "abrau-dyurso-imperatorskoe-polusuhoe-shardone-beloe-12",
+      "sugar": "polusuhoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M459-orig-0",
+     "slice": "M",
+     "p_top1": 0.5954,
+     "lines": [
+      "КАНОНИЧЕСКИЕ",
+      "ТРАДИЦИИ",
+      "ВИНО ОРИГИНАРНОЕ",
+      "КРАСНОЕ",
+      "ПОЛУСАЛАДКОЕ",
+      "Церковные трапезные вина имеют благородное происхождение, так как изготавливаются только из винограда классических сортов. Особая технология приготовления красного виноградного вина позволяет им раскрыться богатым букетом вкуса и аромата.",
+      "АЛМ МИРСКИХ И ЦЕРКОВНЫХ ТРАПЕЗ"
+     ],
+     "read": {
+      "sugar": [
+       "polusladkoe"
+      ],
+      "color": "Красное",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "soyuz-vino-kanonicheskie-traditsii-krasnoe-polusladkoe-kaberne-sovinon-115",
+      "sugar": "polusladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon",
+       "merlot"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "soyuz-vino-kanonicheskie-traditsii-krasnoe-sladkoe-kaberne-sovinon-115",
+      "sugar": "sladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon",
+       "merlot"
+      ]
+     },
+     "new": {
+      "slug": "soyuz-vino-kanonicheskie-traditsii-krasnoe-polusladkoe-kaberne-sovinon-115",
+      "sugar": "polusladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon",
+       "merlot"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M460-orig-0",
+     "slice": "M",
+     "p_top1": 0.7255,
+     "lines": [
+      "КАНОНИЧЕСКИЕ",
+      "ТРАДИЦИИ",
+      "ВИНО ОРАДИНАРНОЕ",
+      "КРАСНОЕ",
+      "СЛАДКОЕ",
+      "Церковные трапезные вина имеют благородное происхождение, так как изготавливаются только из винограда классических сортов. Особая технология приготовления красного сладкого вина позволяет им раскрываться богатым букетом вкуса и аромата.",
+      "АЛЯ МИРСКИХ И ЦЕРКОВНЫХ ТРАПЕЗ"
+     ],
+     "read": {
+      "sugar": [
+       "sladkoe"
+      ],
+      "color": "Красное",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "soyuz-vino-kanonicheskie-traditsii-krasnoe-sladkoe-kaberne-sovinon-115",
+      "sugar": "sladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon",
+       "merlot"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "soyuz-vino-kanonicheskie-traditsii-krasnoe-polusladkoe-kaberne-sovinon-115",
+      "sugar": "polusladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon",
+       "merlot"
+      ]
+     },
+     "new": {
+      "slug": "soyuz-vino-kanonicheskie-traditsii-krasnoe-sladkoe-kaberne-sovinon-115",
+      "sugar": "sladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon",
+       "merlot"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M478-orig-0",
+     "slice": "M",
+     "p_top1": 0.5824,
+     "lines": [
+      "Vostock",
+      "du",
+      "Château",
+      "LE GRAND VOSTOCK",
+      "sélection rouge",
+      "ВИНО С ЗАЩИЩЕННЫМ ГЕОГРАФИЧЕСКИМ УКАЗАНИЕМ «КУБАЛЬ» КРЫМА",
+      "БЕРЕЖЕТСЯ ПОД ОСОБЫМ КОНТРОЛЕМ КОМАНДЫ МИШЕЛЯ РОПЛАНА"
+     ],
+     "read": {
+      "sugar": [],
+      "color": "Красное",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "vostok-krasnoe",
+      "sugar": null,
+      "color": null,
+      "grapes": []
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "chteau-le-grand-vostock-vostock-blanc-sovinon-blan-beloe-suhoe-135",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "aligote",
+       "chardonnay",
+       "riesling",
+       "rkatsiteli",
+       "sauvignon_blanc",
+       "tsvetochny"
+      ]
+     },
+     "new": {
+      "slug": "chteau-le-grand-vostock-cabernet-sauvignon-kaberne-sovinon-krasnoe-suhoe-14",
+      "sugar": "suhoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon"
+      ]
+     },
+     "soft": "neutral",
+     "strict": "neutral"
+    },
+    {
+     "query_id": "M543-orig-0",
+     "slice": "M",
+     "p_top1": 0.501,
+     "lines": [
+      "ПРОИЗВОДСТВЕННО-АГРАРНОЕ ОБЪЕДИНЕНИЕ",
+      "МАССАНДАРА",
+      "КРЫМ",
+      "19.05.25",
+      "ГОД ОСНОВАНИЯ",
+      "1894",
+      "ВИНО РОССИИ",
+      "КОКУР",
+      "ГОД УРОЖАЯ",
+      "2024",
+      "РОССИЙСКОЕ ВИНО С ЗАЩИЩЕННЫМ ГЕОГРАФИЧЕСКИМ",
+      "УКАЗАНИЕМ «КРЫМ» — ОДИНАРНОЕ СУХОЕ БЕЛОЕ",
+      "Собственная виноградики",
+      "0,75 л"
+     ],
+     "read": {
+      "sugar": [
+       "suhoe"
+      ],
+      "color": "Белое",
+      "grapes": [
+       "kokur"
+      ],
+      "grapes_raw": [
+       "kokur"
+      ]
+     },
+     "gt": {
+      "slug": "kokur-suhoe",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "kokur"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "massandra-kokur",
+      "sugar": "polusuhoe",
+      "color": "Белое",
+      "grapes": [
+       "kokur"
+      ]
+     },
+     "new": {
+      "slug": "kokur-suhoe",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "kokur"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M596-orig-0",
+     "slice": "M",
+     "p_top1": 0.5279,
+     "lines": [
+      "SPARKLING WINE",
+      "SINCE 1870 YEAR",
+      "ЛУЧШИЕ ВИНОГРАДНИКИ",
+      "ABRAU·DURSO",
+      "RESERVE",
+      "РОЗОВОЕ БРЮТ"
+     ],
+     "read": {
+      "sugar": [
+       "brut"
+      ],
+      "color": "Розовое",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "abrau-dyurso-abrau-durso-brut-rose-reserve-pino-nuar-beloe-bryut-12",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "cabernet_franc",
+       "cabernet_sauvignon",
+       "merlot",
+       "pinot_franc",
+       "pinot_noir"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "abrau-dyurso-abrau-durso-reserve-brut-shardone-beloe-bryut-115",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "pinot_blanc",
+       "riesling"
+      ]
+     },
+     "new": {
+      "slug": "abrau-dyurso-imperial-kyuve-pino-nuar-rozovoe-bryut-125",
+      "sugar": "brut",
+      "color": "Розовое",
+      "grapes": [
+       "pinot_noir"
+      ]
+     },
+     "soft": "neutral",
+     "strict": "neutral"
+    },
+    {
+     "query_id": "R076-orig-0",
+     "slice": "R",
+     "p_top1": 0.977,
+     "lines": [
+      "ТАБИЯ",
+      "ВИНОДЕЛЬНЯ",
+      "ЦИТРОН",
+      "2024",
+      "БЕЛОЕ ПОЛУСУХОЕ",
+      "ПЛОИЗВЕДЕННО ИЗ ВИНОГРАДА, ВЫРАЩЕННОГО НА ТЕРРИТОРИИ РОССИЙСКОЙ ФЕДЕРАЦИИ"
+     ],
+     "read": {
+      "sugar": [
+       "polusuhoe"
+      ],
+      "color": "Белое",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "czitronnyj-magaracha",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "citron_magaracha"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "czitronnyj-magaracha",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "citron_magaracha"
+      ]
+     },
+     "new": {
+      "slug": "risling-1",
+      "sugar": "polusuhoe",
+      "color": "Белое",
+      "grapes": [
+       "riesling"
+      ]
+     },
+     "soft": "break",
+     "strict": "break"
+    },
+    {
+     "query_id": "R091-orig-0",
+     "slice": "R",
+     "p_top1": 0.9052,
+     "lines": [
+      "ТАБИЯ",
+      "ВИНОДЕЛЬНЯ",
+      "ОЛЕГ",
+      "2023",
+      "РОЗОВОЕ",
+      "СУХОЕ",
+      "ПРОИЗВЕДНО ИЗ ВИНОГРАДА, ВЫРАЩЕННОГО",
+      "НА ТЕРРИТОРИИ РОССИЙСКОЙ ФЕДЕРАЦИИ"
+     ],
+     "read": {
+      "sugar": [
+       "suhoe"
+      ],
+      "color": "Розовое",
+      "grapes": [],
+      "grapes_raw": [
+       "олег"
+      ]
+     },
+     "gt": {
+      "slug": "oleg",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": []
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "oleg",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": []
+     },
+     "new": {
+      "slug": "roze-2",
+      "sugar": "suhoe",
+      "color": "Розовое",
+      "grapes": [
+       "cabernet_sauvignon"
+      ]
+     },
+     "soft": "break",
+     "strict": "break"
+    },
+    {
+     "query_id": "R094-orig-0",
+     "slice": "R",
+     "p_top1": 0.8434,
+     "lines": [
+      "ТАБИЯ",
+      "ВИНОДЕЛЬНЯ",
+      "ОЛЕГ",
+      "2025",
+      "РОЗОВОЕ",
+      "СУХОЕ",
+      "ПРОИЗВЕДЕНО ИЗ ВИНОГРАДА, ВЫРАЩЕННОГО",
+      "НА ТЕРРИТОРИИ РОССИЙСКОЙ ФЕДЕРАЦИИ"
+     ],
+     "read": {
+      "sugar": [
+       "suhoe"
+      ],
+      "color": "Розовое",
+      "grapes": [],
+      "grapes_raw": [
+       "олег"
+      ]
+     },
+     "gt": {
+      "slug": "oleg",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": []
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "oleg",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": []
+     },
+     "new": {
+      "slug": "roze-2",
+      "sugar": "suhoe",
+      "color": "Розовое",
+      "grapes": [
+       "cabernet_sauvignon"
+      ]
+     },
+     "soft": "break",
+     "strict": "break"
+    }
+   ]
+  },
+  "svc: сахар+цвет": {
+   "changed": 18,
+   "soft": {
+    "fix": 9,
+    "break": 5,
+    "neutral": 4
+   },
+   "strict": {
+    "fix": 9,
+    "break": 5,
+    "neutral": 4
+   },
+   "slice_net_soft": {
+    "R": -3,
+    "M": 7,
+    "L": 0
+   },
+   "metrics": {
+    "frames": 353,
+    "wines": 226,
+    "soft_macro": 86.94690265486726,
+    "soft_micro": 87.53541076487252,
+    "strict_macro": 84.882005899705,
+    "strict_micro": 85.26912181303116,
+    "slices": {
+     "L": {
+      "soft": 19,
+      "strict": 19,
+      "n": 20
+     },
+     "M": {
+      "soft": 231,
+      "strict": 227,
+      "n": 268
+     },
+     "R": {
+      "soft": 59,
+      "strict": 55,
+      "n": 65
+     }
+    }
+   },
+   "criteria": {
+    "fix>=4*break&fix>=3": false,
+    "strict_micro>=base": true,
+    "slices_net>=0": false
+   },
+   "criterion1_on_strict": false,
+   "accepted": false,
+   "bootstrap_soft_macro": {
+    "base": [
+     81.38,
+     89.93
+    ],
+    "variant": [
+     82.67,
+     91.0
+    ],
+    "delta": [
+     -1.51,
+     3.5
+    ]
+   },
+   "changes": [
+    {
+     "query_id": "L22-orig-0",
+     "slice": "L",
+     "p_top1": 0.5147,
+     "lines": [
+      "МЭТОДЕ CLASSIQUE",
+      "с 1870 г.",
+      "РУССКИЙ ВИННЫЙ ДОМ",
+      "АБРАУ-ДЮРСО",
+      "VICTOR DRAVIGNY",
+      "Виноград: Чернский Дворец",
+      "Полусладкое",
+      "2023"
+     ],
+     "read": {
+      "sugar": [
+       "polusladkoe"
+      ],
+      "color": null,
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "abrau-dyurso-victor-dravigny-polusladkoe-sovinon-blan-beloe-12",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "abrau-dyurso-victor-dravigny-bryut",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "pinot_blanc",
+       "riesling"
+      ]
+     },
+     "new": {
+      "slug": "abrau-dyurso-victor-dravigny-krasnoe-polusladkoe-kaberne-sovinon-125",
+      "sugar": "polusladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon"
+      ]
+     },
+     "soft": "neutral",
+     "strict": "neutral"
+    },
+    {
+     "query_id": "M214-orig-0",
+     "slice": "M",
+     "p_top1": 0.7058,
+     "lines": [
+      "КРЫМ",
+      "1839",
+      "ЗОЛОТАЯ БАЛКА",
+      "БАЛАКЛАВА",
+      "ПОЛУСЛАДКОЕ",
+      "Muscat"
+     ],
+     "read": {
+      "sugar": [
+       "polusladkoe"
+      ],
+      "color": null,
+      "grapes": [
+       "muscat"
+      ],
+      "grapes_raw": [
+       "muscat"
+      ]
+     },
+     "gt": {
+      "slug": "balaklava-muskat-beloe-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "muscat",
+       "muscat_amber",
+       "muscat_ottonel"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "balaklava-muskat",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "muscat"
+      ]
+     },
+     "new": {
+      "slug": "balaklava-muskat-beloe-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "muscat",
+       "muscat_amber",
+       "muscat_ottonel"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M217-orig-0",
+     "slice": "M",
+     "p_top1": 0.6483,
+     "lines": [
+      "FANAGORIA",
+      "SEMI-SWEET ROSE",
+      "MÉTHODE CHARMAT"
+     ],
+     "read": {
+      "sugar": [
+       "polusladkoe"
+      ],
+      "color": "Розовое",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "fanagoriya-fanagoriya-polusladkoe-rozovoe-sovinon-blan-krasnoe-11-13",
+      "sugar": "polusladkoe",
+      "color": "Красное",
+      "grapes": [
+       "chardonnay",
+       "merlot",
+       "pinot_noir",
+       "sauvignon_blanc"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "fanagoriya-fanagoriya-polusladkoe-rozovoe-sovinon-blan-krasnoe-11-13",
+      "sugar": "polusladkoe",
+      "color": "Красное",
+      "grapes": [
+       "chardonnay",
+       "merlot",
+       "pinot_noir",
+       "sauvignon_blanc"
+      ]
+     },
+     "new": {
+      "slug": "rozovoe-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Розовое",
+      "grapes": [
+       "chardonnay",
+       "pinot_noir",
+       "tsimlyansky_cherny"
+      ]
+     },
+     "soft": "break",
+     "strict": "break"
+    },
+    {
+     "query_id": "M226-orig-0",
+     "slice": "M",
+     "p_top1": 0.9749,
+     "lines": [
+      "ЭНДЕМЫ",
+      "БИАНКА",
+      "БРУТ",
+      "Вино игристое белое"
+     ],
+     "read": {
+      "sugar": [],
+      "color": "Белое",
+      "grapes": [
+       "bianca"
+      ],
+      "grapes_raw": [
+       "bianca",
+       "бьянка"
+      ]
+     },
+     "gt": {
+      "slug": "igristoe-vino-endemy-bianka-bryut-beloe",
+      "sugar": "brut",
+      "color": "Розовое",
+      "grapes": [
+       "bianca"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "igristoe-vino-endemy-bianka-bryut-beloe",
+      "sugar": "brut",
+      "color": "Розовое",
+      "grapes": [
+       "bianca"
+      ]
+     },
+     "new": {
+      "slug": "igristoe-vino-endemy-pino-blan-bryut-beloe",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "pinot_blanc"
+      ]
+     },
+     "soft": "break",
+     "strict": "break"
+    },
+    {
+     "query_id": "M233-orig-0",
+     "slice": "M",
+     "p_top1": 0.5775,
+     "lines": [
+      "АБРАУ-ДЮРСО",
+      "ИМПЕРАТОРСКОЕ",
+      "ПОЛУСУХОЕ"
+     ],
+     "read": {
+      "sugar": [
+       "polusuhoe"
+      ],
+      "color": null,
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "abrau-dyurso-imperatorskoe-polusuhoe-shardone-beloe-12",
+      "sugar": "polusuhoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "new": {
+      "slug": "abrau-dyurso-imperatorskoe-polusuhoe-shardone-beloe-12",
+      "sugar": "polusuhoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M289-orig-0",
+     "slice": "M",
+     "p_top1": 0.5079,
+     "lines": [
+      "Vostock",
+      "du",
+      "CHÂTEAU",
+      "LE GRAND VOSTOCK",
+      "sélection rouge",
+      "ОБЯЗАНО ПОД ОСОБЫМ КОНТРОЛЕМ КОМАНДЫ МИШЕЛЯ РОТАНА"
+     ],
+     "read": {
+      "sugar": [],
+      "color": "Красное",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "vostok-krasnoe",
+      "sugar": null,
+      "color": null,
+      "grapes": []
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "chteau-le-grand-vostock-vostock-blanc-sovinon-blan-beloe-suhoe-135",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "aligote",
+       "chardonnay",
+       "riesling",
+       "rkatsiteli",
+       "sauvignon_blanc",
+       "tsvetochny"
+      ]
+     },
+     "new": {
+      "slug": "chteau-le-grand-vostock-cabernet-sauvignon-kaberne-sovinon-krasnoe-suhoe-14",
+      "sugar": "suhoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon"
+      ]
+     },
+     "soft": "neutral",
+     "strict": "neutral"
+    },
+    {
+     "query_id": "M410-orig-0",
+     "slice": "M",
+     "p_top1": 0.5916,
+     "lines": [
+      "КРЫМ",
+      "1889",
+      "ЗОЛОТАЯ БАЛКА",
+      "МУСКАТ ПОЛУСЛАДКОЕ БЕЛОЕ",
+      "Российское игристое вино",
+      "БАЛАКЛАВА",
+      "ПОЛУСЛАДКОЕ",
+      "Muscat",
+      "С ЗАЩИЩЕННЫМ ГЕОГРАФИЧЕСКИМ УКАЗАНИЕМ «КРЫМ"
+     ],
+     "read": {
+      "sugar": [
+       "polusladkoe"
+      ],
+      "color": "Белое",
+      "grapes": [
+       "muscat"
+      ],
+      "grapes_raw": [
+       "muscat"
+      ]
+     },
+     "gt": {
+      "slug": "balaklava-muskat-beloe-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "muscat",
+       "muscat_amber",
+       "muscat_ottonel"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "balaklava-muskat",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "muscat"
+      ]
+     },
+     "new": {
+      "slug": "balaklava-muskat-beloe-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "muscat",
+       "muscat_amber",
+       "muscat_ottonel"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M422-orig-0",
+     "slice": "M",
+     "p_top1": 0.6045,
+     "lines": [
+      "CHATEAU",
+      "TAMAGNE",
+      "БРЮТ",
+      "BRUT"
+     ],
+     "read": {
+      "sugar": [
+       "brut"
+      ],
+      "color": null,
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "shato-taman-bryut",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "shato-taman-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay"
+      ]
+     },
+     "new": {
+      "slug": "shato-taman-bryut",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M425-orig-0",
+     "slice": "M",
+     "p_top1": 0.7058,
+     "lines": [
+      "Высокий Берег",
+      "РИСЛИНГ",
+      "БРЮТ",
+      "ЗЕЛЕНАЯ СЕРИЯ"
+     ],
+     "read": {
+      "sugar": [
+       "brut"
+      ],
+      "color": null,
+      "grapes": [
+       "riesling"
+      ],
+      "grapes_raw": [
+       "riesling"
+      ]
+     },
+     "gt": {
+      "slug": "vysokij-bereg-risling-zelenaya-seriya-1",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "riesling"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "vysokij-bereg-risling-zelenaya-seriya-2",
+      "sugar": "extra_brut",
+      "color": "Белое",
+      "grapes": [
+       "riesling"
+      ]
+     },
+     "new": {
+      "slug": "vysokij-bereg-risling-zelenaya-seriya-1",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "riesling"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M437-orig-0",
+     "slice": "M",
+     "p_top1": 0.5677,
+     "lines": [
+      "ИМПЕРАТОРСКОЕ",
+      "АБРАУ-ДЮРСО",
+      "ПОЛУСУХОЕ"
+     ],
+     "read": {
+      "sugar": [
+       "polusuhoe"
+      ],
+      "color": null,
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "abrau-dyurso-imperatorskoe-polusuhoe-shardone-beloe-12",
+      "sugar": "polusuhoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-bryut",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "new": {
+      "slug": "abrau-dyurso-imperatorskoe-polusuhoe-shardone-beloe-12",
+      "sugar": "polusuhoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M459-orig-0",
+     "slice": "M",
+     "p_top1": 0.5954,
+     "lines": [
+      "КАНОНИЧЕСКИЕ",
+      "ТРАДИЦИИ",
+      "ВИНО ОРИГИНАРНОЕ",
+      "КРАСНОЕ",
+      "ПОЛУСАЛАДКОЕ",
+      "Церковные трапезные вина имеют благородное происхождение, так как изготавливаются только из винограда классических сортов. Особая технология приготовления красного виноградного вина позволяет им раскрыться богатым букетом вкуса и аромата.",
+      "АЛМ МИРСКИХ И ЦЕРКОВНЫХ ТРАПЕЗ"
+     ],
+     "read": {
+      "sugar": [
+       "polusladkoe"
+      ],
+      "color": "Красное",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "soyuz-vino-kanonicheskie-traditsii-krasnoe-polusladkoe-kaberne-sovinon-115",
+      "sugar": "polusladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon",
+       "merlot"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "soyuz-vino-kanonicheskie-traditsii-krasnoe-sladkoe-kaberne-sovinon-115",
+      "sugar": "sladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon",
+       "merlot"
+      ]
+     },
+     "new": {
+      "slug": "soyuz-vino-kanonicheskie-traditsii-krasnoe-polusladkoe-kaberne-sovinon-115",
+      "sugar": "polusladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon",
+       "merlot"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M460-orig-0",
+     "slice": "M",
+     "p_top1": 0.7255,
+     "lines": [
+      "КАНОНИЧЕСКИЕ",
+      "ТРАДИЦИИ",
+      "ВИНО ОРАДИНАРНОЕ",
+      "КРАСНОЕ",
+      "СЛАДКОЕ",
+      "Церковные трапезные вина имеют благородное происхождение, так как изготавливаются только из винограда классических сортов. Особая технология приготовления красного сладкого вина позволяет им раскрываться богатым букетом вкуса и аромата.",
+      "АЛЯ МИРСКИХ И ЦЕРКОВНЫХ ТРАПЕЗ"
+     ],
+     "read": {
+      "sugar": [
+       "sladkoe"
+      ],
+      "color": "Красное",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "soyuz-vino-kanonicheskie-traditsii-krasnoe-sladkoe-kaberne-sovinon-115",
+      "sugar": "sladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon",
+       "merlot"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "soyuz-vino-kanonicheskie-traditsii-krasnoe-polusladkoe-kaberne-sovinon-115",
+      "sugar": "polusladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon",
+       "merlot"
+      ]
+     },
+     "new": {
+      "slug": "soyuz-vino-kanonicheskie-traditsii-krasnoe-sladkoe-kaberne-sovinon-115",
+      "sugar": "sladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon",
+       "merlot"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M478-orig-0",
+     "slice": "M",
+     "p_top1": 0.5824,
+     "lines": [
+      "Vostock",
+      "du",
+      "Château",
+      "LE GRAND VOSTOCK",
+      "sélection rouge",
+      "ВИНО С ЗАЩИЩЕННЫМ ГЕОГРАФИЧЕСКИМ УКАЗАНИЕМ «КУБАЛЬ» КРЫМА",
+      "БЕРЕЖЕТСЯ ПОД ОСОБЫМ КОНТРОЛЕМ КОМАНДЫ МИШЕЛЯ РОПЛАНА"
+     ],
+     "read": {
+      "sugar": [],
+      "color": "Красное",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "vostok-krasnoe",
+      "sugar": null,
+      "color": null,
+      "grapes": []
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "chteau-le-grand-vostock-vostock-blanc-sovinon-blan-beloe-suhoe-135",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "aligote",
+       "chardonnay",
+       "riesling",
+       "rkatsiteli",
+       "sauvignon_blanc",
+       "tsvetochny"
+      ]
+     },
+     "new": {
+      "slug": "chteau-le-grand-vostock-cabernet-sauvignon-kaberne-sovinon-krasnoe-suhoe-14",
+      "sugar": "suhoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon"
+      ]
+     },
+     "soft": "neutral",
+     "strict": "neutral"
+    },
+    {
+     "query_id": "M543-orig-0",
+     "slice": "M",
+     "p_top1": 0.501,
+     "lines": [
+      "ПРОИЗВОДСТВЕННО-АГРАРНОЕ ОБЪЕДИНЕНИЕ",
+      "МАССАНДАРА",
+      "КРЫМ",
+      "19.05.25",
+      "ГОД ОСНОВАНИЯ",
+      "1894",
+      "ВИНО РОССИИ",
+      "КОКУР",
+      "ГОД УРОЖАЯ",
+      "2024",
+      "РОССИЙСКОЕ ВИНО С ЗАЩИЩЕННЫМ ГЕОГРАФИЧЕСКИМ",
+      "УКАЗАНИЕМ «КРЫМ» — ОДИНАРНОЕ СУХОЕ БЕЛОЕ",
+      "Собственная виноградики",
+      "0,75 л"
+     ],
+     "read": {
+      "sugar": [
+       "suhoe"
+      ],
+      "color": "Белое",
+      "grapes": [
+       "kokur"
+      ],
+      "grapes_raw": [
+       "kokur"
+      ]
+     },
+     "gt": {
+      "slug": "kokur-suhoe",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "kokur"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "massandra-kokur",
+      "sugar": "polusuhoe",
+      "color": "Белое",
+      "grapes": [
+       "kokur"
+      ]
+     },
+     "new": {
+      "slug": "kokur-suhoe",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "kokur"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M596-orig-0",
+     "slice": "M",
+     "p_top1": 0.5279,
+     "lines": [
+      "SPARKLING WINE",
+      "SINCE 1870 YEAR",
+      "ЛУЧШИЕ ВИНОГРАДНИКИ",
+      "ABRAU·DURSO",
+      "RESERVE",
+      "РОЗОВОЕ БРЮТ"
+     ],
+     "read": {
+      "sugar": [
+       "brut"
+      ],
+      "color": "Розовое",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "abrau-dyurso-abrau-durso-brut-rose-reserve-pino-nuar-beloe-bryut-12",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "cabernet_franc",
+       "cabernet_sauvignon",
+       "merlot",
+       "pinot_franc",
+       "pinot_noir"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "abrau-dyurso-abrau-durso-reserve-brut-shardone-beloe-bryut-115",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "pinot_blanc",
+       "riesling"
+      ]
+     },
+     "new": {
+      "slug": "abrau-dyurso-imperial-kyuve-pino-nuar-rozovoe-bryut-125",
+      "sugar": "brut",
+      "color": "Розовое",
+      "grapes": [
+       "pinot_noir"
+      ]
+     },
+     "soft": "neutral",
+     "strict": "neutral"
+    },
+    {
+     "query_id": "R076-orig-0",
+     "slice": "R",
+     "p_top1": 0.977,
+     "lines": [
+      "ТАБИЯ",
+      "ВИНОДЕЛЬНЯ",
+      "ЦИТРОН",
+      "2024",
+      "БЕЛОЕ ПОЛУСУХОЕ",
+      "ПЛОИЗВЕДЕННО ИЗ ВИНОГРАДА, ВЫРАЩЕННОГО НА ТЕРРИТОРИИ РОССИЙСКОЙ ФЕДЕРАЦИИ"
+     ],
+     "read": {
+      "sugar": [
+       "polusuhoe"
+      ],
+      "color": "Белое",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "czitronnyj-magaracha",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "citron_magaracha"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "czitronnyj-magaracha",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "citron_magaracha"
+      ]
+     },
+     "new": {
+      "slug": "risling-1",
+      "sugar": "polusuhoe",
+      "color": "Белое",
+      "grapes": [
+       "riesling"
+      ]
+     },
+     "soft": "break",
+     "strict": "break"
+    },
+    {
+     "query_id": "R091-orig-0",
+     "slice": "R",
+     "p_top1": 0.9052,
+     "lines": [
+      "ТАБИЯ",
+      "ВИНОДЕЛЬНЯ",
+      "ОЛЕГ",
+      "2023",
+      "РОЗОВОЕ",
+      "СУХОЕ",
+      "ПРОИЗВЕДНО ИЗ ВИНОГРАДА, ВЫРАЩЕННОГО",
+      "НА ТЕРРИТОРИИ РОССИЙСКОЙ ФЕДЕРАЦИИ"
+     ],
+     "read": {
+      "sugar": [
+       "suhoe"
+      ],
+      "color": "Розовое",
+      "grapes": [
+       "олег"
+      ],
+      "grapes_raw": [
+       "олег"
+      ]
+     },
+     "gt": {
+      "slug": "oleg",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "олег"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "oleg",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "олег"
+      ]
+     },
+     "new": {
+      "slug": "roze-2",
+      "sugar": "suhoe",
+      "color": "Розовое",
+      "grapes": [
+       "cabernet_sauvignon"
+      ]
+     },
+     "soft": "break",
+     "strict": "break"
+    },
+    {
+     "query_id": "R094-orig-0",
+     "slice": "R",
+     "p_top1": 0.8434,
+     "lines": [
+      "ТАБИЯ",
+      "ВИНОДЕЛЬНЯ",
+      "ОЛЕГ",
+      "2025",
+      "РОЗОВОЕ",
+      "СУХОЕ",
+      "ПРОИЗВЕДЕНО ИЗ ВИНОГРАДА, ВЫРАЩЕННОГО",
+      "НА ТЕРРИТОРИИ РОССИЙСКОЙ ФЕДЕРАЦИИ"
+     ],
+     "read": {
+      "sugar": [
+       "suhoe"
+      ],
+      "color": "Розовое",
+      "grapes": [
+       "олег"
+      ],
+      "grapes_raw": [
+       "олег"
+      ]
+     },
+     "gt": {
+      "slug": "oleg",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "олег"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "oleg",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "олег"
+      ]
+     },
+     "new": {
+      "slug": "roze-2",
+      "sugar": "suhoe",
+      "color": "Розовое",
+      "grapes": [
+       "cabernet_sauvignon"
+      ]
+     },
+     "soft": "break",
+     "strict": "break"
+    }
+   ]
+  },
+  "svc: сорта": {
+   "changed": 1,
+   "soft": {
+    "fix": 1,
+    "break": 0,
+    "neutral": 0
+   },
+   "strict": {
+    "fix": 1,
+    "break": 0,
+    "neutral": 0
+   },
+   "slice_net_soft": {
+    "R": 0,
+    "M": 1,
+    "L": 0
+   },
+   "metrics": {
+    "frames": 353,
+    "wines": 226,
+    "soft_macro": 86.09882005899705,
+    "soft_micro": 86.68555240793201,
+    "strict_macro": 84.03392330383481,
+    "strict_micro": 84.41926345609065,
+    "slices": {
+     "L": {
+      "soft": 19,
+      "strict": 19,
+      "n": 20
+     },
+     "M": {
+      "soft": 225,
+      "strict": 221,
+      "n": 268
+     },
+     "R": {
+      "soft": 62,
+      "strict": 58,
+      "n": 65
+     }
+    }
+   },
+   "criteria": {
+    "fix>=4*break&fix>=3": false,
+    "strict_micro>=base": true,
+    "slices_net>=0": true
+   },
+   "criterion1_on_strict": false,
+   "accepted": false,
+   "bootstrap_soft_macro": {
+    "base": [
+     81.38,
+     89.93
+    ],
+    "variant": [
+     81.53,
+     90.05
+    ],
+    "delta": [
+     0.0,
+     0.44
+    ]
+   },
+   "changes": [
+    {
+     "query_id": "M112-orig-0",
+     "slice": "M",
+     "p_top1": 0.508,
+     "lines": [
+      "CHA TEA",
+      "PINOT",
+      "ГРАВИТАЦИЯ",
+      "ШАРДОНЕ",
+      "РИСЛИНГ",
+      "МЯЛО СУХОЕ",
+      "2023"
+     ],
+     "read": {
+      "sugar": [
+       "suhoe"
+      ],
+      "color": null,
+      "grapes": [
+       "chardonnay",
+       "riesling"
+      ],
+      "grapes_raw": [
+       "chardonnay",
+       "riesling"
+      ]
+     },
+     "gt": {
+      "slug": "shato-pino-shardone-risling-beloe-suhoe-12",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "shato-pino-kaberne-sovinon-merlo-krasnoe-suhoe-135",
+      "sugar": "suhoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon"
+      ]
+     },
+     "new": {
+      "slug": "shato-pino-shardone-risling-beloe-suhoe-12",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    }
+   ]
+  },
+  "dict: сахар+цвет": {
+   "changed": 17,
+   "soft": {
+    "fix": 9,
+    "break": 4,
+    "neutral": 4
+   },
+   "strict": {
+    "fix": 9,
+    "break": 4,
+    "neutral": 4
+   },
+   "slice_net_soft": {
+    "R": -3,
+    "M": 8,
+    "L": 0
+   },
+   "metrics": {
+    "frames": 353,
+    "wines": 226,
+    "soft_macro": 87.38938053097345,
+    "soft_micro": 87.8186968838527,
+    "strict_macro": 85.3244837758112,
+    "strict_micro": 85.55240793201133,
+    "slices": {
+     "L": {
+      "soft": 19,
+      "strict": 19,
+      "n": 20
+     },
+     "M": {
+      "soft": 232,
+      "strict": 228,
+      "n": 268
+     },
+     "R": {
+      "soft": 59,
+      "strict": 55,
+      "n": 65
+     }
+    }
+   },
+   "criteria": {
+    "fix>=4*break&fix>=3": false,
+    "strict_micro>=base": true,
+    "slices_net>=0": false
+   },
+   "criterion1_on_strict": false,
+   "accepted": false,
+   "bootstrap_soft_macro": {
+    "base": [
+     81.38,
+     89.93
+    ],
+    "variant": [
+     83.11,
+     91.45
+    ],
+    "delta": [
+     -0.81,
+     3.69
+    ]
+   },
+   "changes": [
+    {
+     "query_id": "L22-orig-0",
+     "slice": "L",
+     "p_top1": 0.5147,
+     "lines": [
+      "МЭТОДЕ CLASSIQUE",
+      "с 1870 г.",
+      "РУССКИЙ ВИННЫЙ ДОМ",
+      "АБРАУ-ДЮРСО",
+      "VICTOR DRAVIGNY",
+      "Виноград: Чернский Дворец",
+      "Полусладкое",
+      "2023"
+     ],
+     "read": {
+      "sugar": [
+       "polusladkoe"
+      ],
+      "color": null,
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "abrau-dyurso-victor-dravigny-polusladkoe-sovinon-blan-beloe-12",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "abrau-dyurso-victor-dravigny-bryut",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "pinot_blanc",
+       "riesling"
+      ]
+     },
+     "new": {
+      "slug": "abrau-dyurso-victor-dravigny-krasnoe-polusladkoe-kaberne-sovinon-125",
+      "sugar": "polusladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon"
+      ]
+     },
+     "soft": "neutral",
+     "strict": "neutral"
+    },
+    {
+     "query_id": "M214-orig-0",
+     "slice": "M",
+     "p_top1": 0.7058,
+     "lines": [
+      "КРЫМ",
+      "1839",
+      "ЗОЛОТАЯ БАЛКА",
+      "БАЛАКЛАВА",
+      "ПОЛУСЛАДКОЕ",
+      "Muscat"
+     ],
+     "read": {
+      "sugar": [
+       "polusladkoe"
+      ],
+      "color": null,
+      "grapes": [
+       "muscat"
+      ],
+      "grapes_raw": [
+       "muscat"
+      ]
+     },
+     "gt": {
+      "slug": "balaklava-muskat-beloe-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "muscat",
+       "muscat_amber",
+       "muscat_ottonel"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "balaklava-muskat",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "muscat"
+      ]
+     },
+     "new": {
+      "slug": "balaklava-muskat-beloe-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "muscat",
+       "muscat_amber",
+       "muscat_ottonel"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M217-orig-0",
+     "slice": "M",
+     "p_top1": 0.6483,
+     "lines": [
+      "FANAGORIA",
+      "SEMI-SWEET ROSE",
+      "MÉTHODE CHARMAT"
+     ],
+     "read": {
+      "sugar": [
+       "polusladkoe"
+      ],
+      "color": "Розовое",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "fanagoriya-fanagoriya-polusladkoe-rozovoe-sovinon-blan-krasnoe-11-13",
+      "sugar": "polusladkoe",
+      "color": "Красное",
+      "grapes": [
+       "chardonnay",
+       "merlot",
+       "pinot_noir",
+       "sauvignon_blanc"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "fanagoriya-fanagoriya-polusladkoe-rozovoe-sovinon-blan-krasnoe-11-13",
+      "sugar": "polusladkoe",
+      "color": "Красное",
+      "grapes": [
+       "chardonnay",
+       "merlot",
+       "pinot_noir",
+       "sauvignon_blanc"
+      ]
+     },
+     "new": {
+      "slug": "rozovoe-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Розовое",
+      "grapes": [
+       "chardonnay",
+       "pinot_noir",
+       "tsimlyansky_cherny"
+      ]
+     },
+     "soft": "break",
+     "strict": "break"
+    },
+    {
+     "query_id": "M233-orig-0",
+     "slice": "M",
+     "p_top1": 0.5775,
+     "lines": [
+      "АБРАУ-ДЮРСО",
+      "ИМПЕРАТОРСКОЕ",
+      "ПОЛУСУХОЕ"
+     ],
+     "read": {
+      "sugar": [
+       "polusuhoe"
+      ],
+      "color": null,
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "abrau-dyurso-imperatorskoe-polusuhoe-shardone-beloe-12",
+      "sugar": "polusuhoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "new": {
+      "slug": "abrau-dyurso-imperatorskoe-polusuhoe-shardone-beloe-12",
+      "sugar": "polusuhoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M289-orig-0",
+     "slice": "M",
+     "p_top1": 0.5079,
+     "lines": [
+      "Vostock",
+      "du",
+      "CHÂTEAU",
+      "LE GRAND VOSTOCK",
+      "sélection rouge",
+      "ОБЯЗАНО ПОД ОСОБЫМ КОНТРОЛЕМ КОМАНДЫ МИШЕЛЯ РОТАНА"
+     ],
+     "read": {
+      "sugar": [],
+      "color": "Красное",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "vostok-krasnoe",
+      "sugar": null,
+      "color": null,
+      "grapes": []
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "chteau-le-grand-vostock-vostock-blanc-sovinon-blan-beloe-suhoe-135",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "aligote",
+       "chardonnay",
+       "riesling",
+       "rkatsiteli",
+       "sauvignon_blanc",
+       "tsvetochny"
+      ]
+     },
+     "new": {
+      "slug": "chteau-le-grand-vostock-cabernet-sauvignon-kaberne-sovinon-krasnoe-suhoe-14",
+      "sugar": "suhoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon"
+      ]
+     },
+     "soft": "neutral",
+     "strict": "neutral"
+    },
+    {
+     "query_id": "M410-orig-0",
+     "slice": "M",
+     "p_top1": 0.5916,
+     "lines": [
+      "КРЫМ",
+      "1889",
+      "ЗОЛОТАЯ БАЛКА",
+      "МУСКАТ ПОЛУСЛАДКОЕ БЕЛОЕ",
+      "Российское игристое вино",
+      "БАЛАКЛАВА",
+      "ПОЛУСЛАДКОЕ",
+      "Muscat",
+      "С ЗАЩИЩЕННЫМ ГЕОГРАФИЧЕСКИМ УКАЗАНИЕМ «КРЫМ"
+     ],
+     "read": {
+      "sugar": [
+       "polusladkoe"
+      ],
+      "color": "Белое",
+      "grapes": [
+       "muscat"
+      ],
+      "grapes_raw": [
+       "muscat"
+      ]
+     },
+     "gt": {
+      "slug": "balaklava-muskat-beloe-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "muscat",
+       "muscat_amber",
+       "muscat_ottonel"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "balaklava-muskat",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "muscat"
+      ]
+     },
+     "new": {
+      "slug": "balaklava-muskat-beloe-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "muscat",
+       "muscat_amber",
+       "muscat_ottonel"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M422-orig-0",
+     "slice": "M",
+     "p_top1": 0.6045,
+     "lines": [
+      "CHATEAU",
+      "TAMAGNE",
+      "БРЮТ",
+      "BRUT"
+     ],
+     "read": {
+      "sugar": [
+       "brut"
+      ],
+      "color": null,
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "shato-taman-bryut",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "shato-taman-polusladkoe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay"
+      ]
+     },
+     "new": {
+      "slug": "shato-taman-bryut",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M425-orig-0",
+     "slice": "M",
+     "p_top1": 0.7058,
+     "lines": [
+      "Высокий Берег",
+      "РИСЛИНГ",
+      "БРЮТ",
+      "ЗЕЛЕНАЯ СЕРИЯ"
+     ],
+     "read": {
+      "sugar": [
+       "brut"
+      ],
+      "color": null,
+      "grapes": [
+       "riesling"
+      ],
+      "grapes_raw": [
+       "riesling"
+      ]
+     },
+     "gt": {
+      "slug": "vysokij-bereg-risling-zelenaya-seriya-1",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "riesling"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "vysokij-bereg-risling-zelenaya-seriya-2",
+      "sugar": "extra_brut",
+      "color": "Белое",
+      "grapes": [
+       "riesling"
+      ]
+     },
+     "new": {
+      "slug": "vysokij-bereg-risling-zelenaya-seriya-1",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "riesling"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M437-orig-0",
+     "slice": "M",
+     "p_top1": 0.5677,
+     "lines": [
+      "ИМПЕРАТОРСКОЕ",
+      "АБРАУ-ДЮРСО",
+      "ПОЛУСУХОЕ"
+     ],
+     "read": {
+      "sugar": [
+       "polusuhoe"
+      ],
+      "color": null,
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "abrau-dyurso-imperatorskoe-polusuhoe-shardone-beloe-12",
+      "sugar": "polusuhoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-bryut",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "new": {
+      "slug": "abrau-dyurso-imperatorskoe-polusuhoe-shardone-beloe-12",
+      "sugar": "polusuhoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "riesling",
+       "sauvignon_blanc"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M459-orig-0",
+     "slice": "M",
+     "p_top1": 0.5954,
+     "lines": [
+      "КАНОНИЧЕСКИЕ",
+      "ТРАДИЦИИ",
+      "ВИНО ОРИГИНАРНОЕ",
+      "КРАСНОЕ",
+      "ПОЛУСАЛАДКОЕ",
+      "Церковные трапезные вина имеют благородное происхождение, так как изготавливаются только из винограда классических сортов. Особая технология приготовления красного виноградного вина позволяет им раскрыться богатым букетом вкуса и аромата.",
+      "АЛМ МИРСКИХ И ЦЕРКОВНЫХ ТРАПЕЗ"
+     ],
+     "read": {
+      "sugar": [
+       "polusladkoe"
+      ],
+      "color": "Красное",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "soyuz-vino-kanonicheskie-traditsii-krasnoe-polusladkoe-kaberne-sovinon-115",
+      "sugar": "polusladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon",
+       "merlot"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "soyuz-vino-kanonicheskie-traditsii-krasnoe-sladkoe-kaberne-sovinon-115",
+      "sugar": "sladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon",
+       "merlot"
+      ]
+     },
+     "new": {
+      "slug": "soyuz-vino-kanonicheskie-traditsii-krasnoe-polusladkoe-kaberne-sovinon-115",
+      "sugar": "polusladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon",
+       "merlot"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M460-orig-0",
+     "slice": "M",
+     "p_top1": 0.7255,
+     "lines": [
+      "КАНОНИЧЕСКИЕ",
+      "ТРАДИЦИИ",
+      "ВИНО ОРАДИНАРНОЕ",
+      "КРАСНОЕ",
+      "СЛАДКОЕ",
+      "Церковные трапезные вина имеют благородное происхождение, так как изготавливаются только из винограда классических сортов. Особая технология приготовления красного сладкого вина позволяет им раскрываться богатым букетом вкуса и аромата.",
+      "АЛЯ МИРСКИХ И ЦЕРКОВНЫХ ТРАПЕЗ"
+     ],
+     "read": {
+      "sugar": [
+       "sladkoe"
+      ],
+      "color": "Красное",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "soyuz-vino-kanonicheskie-traditsii-krasnoe-sladkoe-kaberne-sovinon-115",
+      "sugar": "sladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon",
+       "merlot"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "soyuz-vino-kanonicheskie-traditsii-krasnoe-polusladkoe-kaberne-sovinon-115",
+      "sugar": "polusladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon",
+       "merlot"
+      ]
+     },
+     "new": {
+      "slug": "soyuz-vino-kanonicheskie-traditsii-krasnoe-sladkoe-kaberne-sovinon-115",
+      "sugar": "sladkoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon",
+       "merlot"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M478-orig-0",
+     "slice": "M",
+     "p_top1": 0.5824,
+     "lines": [
+      "Vostock",
+      "du",
+      "Château",
+      "LE GRAND VOSTOCK",
+      "sélection rouge",
+      "ВИНО С ЗАЩИЩЕННЫМ ГЕОГРАФИЧЕСКИМ УКАЗАНИЕМ «КУБАЛЬ» КРЫМА",
+      "БЕРЕЖЕТСЯ ПОД ОСОБЫМ КОНТРОЛЕМ КОМАНДЫ МИШЕЛЯ РОПЛАНА"
+     ],
+     "read": {
+      "sugar": [],
+      "color": "Красное",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "vostok-krasnoe",
+      "sugar": null,
+      "color": null,
+      "grapes": []
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "chteau-le-grand-vostock-vostock-blanc-sovinon-blan-beloe-suhoe-135",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "aligote",
+       "chardonnay",
+       "riesling",
+       "rkatsiteli",
+       "sauvignon_blanc",
+       "tsvetochny"
+      ]
+     },
+     "new": {
+      "slug": "chteau-le-grand-vostock-cabernet-sauvignon-kaberne-sovinon-krasnoe-suhoe-14",
+      "sugar": "suhoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon"
+      ]
+     },
+     "soft": "neutral",
+     "strict": "neutral"
+    },
+    {
+     "query_id": "M543-orig-0",
+     "slice": "M",
+     "p_top1": 0.501,
+     "lines": [
+      "ПРОИЗВОДСТВЕННО-АГРАРНОЕ ОБЪЕДИНЕНИЕ",
+      "МАССАНДАРА",
+      "КРЫМ",
+      "19.05.25",
+      "ГОД ОСНОВАНИЯ",
+      "1894",
+      "ВИНО РОССИИ",
+      "КОКУР",
+      "ГОД УРОЖАЯ",
+      "2024",
+      "РОССИЙСКОЕ ВИНО С ЗАЩИЩЕННЫМ ГЕОГРАФИЧЕСКИМ",
+      "УКАЗАНИЕМ «КРЫМ» — ОДИНАРНОЕ СУХОЕ БЕЛОЕ",
+      "Собственная виноградики",
+      "0,75 л"
+     ],
+     "read": {
+      "sugar": [
+       "suhoe"
+      ],
+      "color": "Белое",
+      "grapes": [
+       "kokur"
+      ],
+      "grapes_raw": [
+       "kokur"
+      ]
+     },
+     "gt": {
+      "slug": "kokur-suhoe",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "kokur"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "massandra-kokur",
+      "sugar": "polusuhoe",
+      "color": "Белое",
+      "grapes": [
+       "kokur"
+      ]
+     },
+     "new": {
+      "slug": "kokur-suhoe",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "kokur"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M596-orig-0",
+     "slice": "M",
+     "p_top1": 0.5279,
+     "lines": [
+      "SPARKLING WINE",
+      "SINCE 1870 YEAR",
+      "ЛУЧШИЕ ВИНОГРАДНИКИ",
+      "ABRAU·DURSO",
+      "RESERVE",
+      "РОЗОВОЕ БРЮТ"
+     ],
+     "read": {
+      "sugar": [
+       "brut"
+      ],
+      "color": "Розовое",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "abrau-dyurso-abrau-durso-brut-rose-reserve-pino-nuar-beloe-bryut-12",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "cabernet_franc",
+       "cabernet_sauvignon",
+       "merlot",
+       "pinot_franc",
+       "pinot_noir"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "abrau-dyurso-abrau-durso-reserve-brut-shardone-beloe-bryut-115",
+      "sugar": "brut",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay",
+       "pinot_blanc",
+       "riesling"
+      ]
+     },
+     "new": {
+      "slug": "abrau-dyurso-imperial-kyuve-pino-nuar-rozovoe-bryut-125",
+      "sugar": "brut",
+      "color": "Розовое",
+      "grapes": [
+       "pinot_noir"
+      ]
+     },
+     "soft": "neutral",
+     "strict": "neutral"
+    },
+    {
+     "query_id": "R076-orig-0",
+     "slice": "R",
+     "p_top1": 0.977,
+     "lines": [
+      "ТАБИЯ",
+      "ВИНОДЕЛЬНЯ",
+      "ЦИТРОН",
+      "2024",
+      "БЕЛОЕ ПОЛУСУХОЕ",
+      "ПЛОИЗВЕДЕННО ИЗ ВИНОГРАДА, ВЫРАЩЕННОГО НА ТЕРРИТОРИИ РОССИЙСКОЙ ФЕДЕРАЦИИ"
+     ],
+     "read": {
+      "sugar": [
+       "polusuhoe"
+      ],
+      "color": "Белое",
+      "grapes": [],
+      "grapes_raw": []
+     },
+     "gt": {
+      "slug": "czitronnyj-magaracha",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "citron_magaracha"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "czitronnyj-magaracha",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "citron_magaracha"
+      ]
+     },
+     "new": {
+      "slug": "risling-1",
+      "sugar": "polusuhoe",
+      "color": "Белое",
+      "grapes": [
+       "riesling"
+      ]
+     },
+     "soft": "break",
+     "strict": "break"
+    },
+    {
+     "query_id": "R091-orig-0",
+     "slice": "R",
+     "p_top1": 0.9052,
+     "lines": [
+      "ТАБИЯ",
+      "ВИНОДЕЛЬНЯ",
+      "ОЛЕГ",
+      "2023",
+      "РОЗОВОЕ",
+      "СУХОЕ",
+      "ПРОИЗВЕДНО ИЗ ВИНОГРАДА, ВЫРАЩЕННОГО",
+      "НА ТЕРРИТОРИИ РОССИЙСКОЙ ФЕДЕРАЦИИ"
+     ],
+     "read": {
+      "sugar": [
+       "suhoe"
+      ],
+      "color": "Розовое",
+      "grapes": [],
+      "grapes_raw": [
+       "олег"
+      ]
+     },
+     "gt": {
+      "slug": "oleg",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": []
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "oleg",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": []
+     },
+     "new": {
+      "slug": "roze-2",
+      "sugar": "suhoe",
+      "color": "Розовое",
+      "grapes": [
+       "cabernet_sauvignon"
+      ]
+     },
+     "soft": "break",
+     "strict": "break"
+    },
+    {
+     "query_id": "R094-orig-0",
+     "slice": "R",
+     "p_top1": 0.8434,
+     "lines": [
+      "ТАБИЯ",
+      "ВИНОДЕЛЬНЯ",
+      "ОЛЕГ",
+      "2025",
+      "РОЗОВОЕ",
+      "СУХОЕ",
+      "ПРОИЗВЕДЕНО ИЗ ВИНОГРАДА, ВЫРАЩЕННОГО",
+      "НА ТЕРРИТОРИИ РОССИЙСКОЙ ФЕДЕРАЦИИ"
+     ],
+     "read": {
+      "sugar": [
+       "suhoe"
+      ],
+      "color": "Розовое",
+      "grapes": [],
+      "grapes_raw": [
+       "олег"
+      ]
+     },
+     "gt": {
+      "slug": "oleg",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": []
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "oleg",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": []
+     },
+     "new": {
+      "slug": "roze-2",
+      "sugar": "suhoe",
+      "color": "Розовое",
+      "grapes": [
+       "cabernet_sauvignon"
+      ]
+     },
+     "soft": "break",
+     "strict": "break"
+    }
+   ]
+  },
+  "dict: сорта": {
+   "changed": 3,
+   "soft": {
+    "fix": 2,
+    "break": 0,
+    "neutral": 1
+   },
+   "strict": {
+    "fix": 2,
+    "break": 1,
+    "neutral": 0
+   },
+   "slice_net_soft": {
+    "R": 0,
+    "M": 2,
+    "L": 0
+   },
+   "metrics": {
+    "frames": 353,
+    "wines": 226,
+    "soft_macro": 86.54129793510324,
+    "soft_micro": 86.96883852691218,
+    "strict_macro": 84.03392330383481,
+    "strict_micro": 84.41926345609065,
+    "slices": {
+     "L": {
+      "soft": 19,
+      "strict": 19,
+      "n": 20
+     },
+     "M": {
+      "soft": 226,
+      "strict": 221,
+      "n": 268
+     },
+     "R": {
+      "soft": 62,
+      "strict": 58,
+      "n": 65
+     }
+    }
+   },
+   "criteria": {
+    "fix>=4*break&fix>=3": false,
+    "strict_micro>=base": true,
+    "slices_net>=0": true
+   },
+   "criterion1_on_strict": false,
+   "accepted": false,
+   "bootstrap_soft_macro": {
+    "base": [
+     81.38,
+     89.93
+    ],
+    "variant": [
+     82.08,
+     90.49
+    ],
+    "delta": [
+     0.0,
+     1.77
+    ]
+   },
+   "changes": [
+    {
+     "query_id": "M112-orig-0",
+     "slice": "M",
+     "p_top1": 0.508,
+     "lines": [
+      "CHA TEA",
+      "PINOT",
+      "ГРАВИТАЦИЯ",
+      "ШАРДОНЕ",
+      "РИСЛИНГ",
+      "МЯЛО СУХОЕ",
+      "2023"
+     ],
+     "read": {
+      "sugar": [
+       "suhoe"
+      ],
+      "color": null,
+      "grapes": [
+       "chardonnay",
+       "riesling"
+      ],
+      "grapes_raw": [
+       "chardonnay",
+       "riesling"
+      ]
+     },
+     "gt": {
+      "slug": "shato-pino-shardone-risling-beloe-suhoe-12",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "shato-pino-kaberne-sovinon-merlo-krasnoe-suhoe-135",
+      "sugar": "suhoe",
+      "color": "Красное",
+      "grapes": [
+       "cabernet_sauvignon"
+      ]
+     },
+     "new": {
+      "slug": "shato-pino-shardone-risling-beloe-suhoe-12",
+      "sugar": "suhoe",
+      "color": "Белое",
+      "grapes": [
+       "chardonnay"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M151-orig-0",
+     "slice": "M",
+     "p_top1": 0.8278,
+     "lines": [
+      "INKERMAN",
+      "19 61",
+      "МУСКАТ",
+      "Semi-sweet",
+      "ИРИСТОЕ ВИНО БЕЛОЕ"
+     ],
+     "read": {
+      "sugar": [
+       "polusladkoe"
+      ],
+      "color": "Белое",
+      "grapes": [
+       "muscat"
+      ],
+      "grapes_raw": [
+       "muscat"
+      ]
+     },
+     "gt": {
+      "slug": "inkermanskiy-zmv-inkerman-muskat-polusladkoe-beloe-13",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "muscat"
+      ]
+     },
+     "acceptable": [],
+     "old": {
+      "slug": "inkerman-muskatnoe-beloe",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "muscat_amber",
+       "rkatsiteli"
+      ]
+     },
+     "new": {
+      "slug": "inkermanskiy-zmv-inkerman-muskat-polusladkoe-beloe-13",
+      "sugar": "polusladkoe",
+      "color": "Белое",
+      "grapes": [
+       "muscat"
+      ]
+     },
+     "soft": "fix",
+     "strict": "fix"
+    },
+    {
+     "query_id": "M406-orig-0",
+     "slice": "M",
+     "p_top1": 0.6851,
+     "lines": [
+      "MOSCATO",
+      "NATURAL SPARKLING WINE",
+      "ROSE SEMISWEET",
+      "ZB",
+      "WINE",
+      "УВАЖАЙ КАК СОММАЛЬСКОЕ ЭТО ВИНО"
+     ],
+     "read": {
+      "sugar": [
+       "polusladkoe"
+      ],
+      "color": "Розовое",
+      "grapes": [
+       "muscat"
+      ],
+      "grapes_raw": [
+       "muscat"
+      ]
+     },
+     "gt": {
+      "slug": "zolotaya-balka-zb-moscato-semi-sweet-rose-muskat-yantarnyy-rozovoe-polusladkoe-9",
+      "sugar": "polusladkoe",
+      "color": "Розовое",
+      "grapes": [
+       "muscat_amber",
+       "muscat_hamburg"
+      ]
+     },
+     "acceptable": [
+      "zb-vajn-moskato-polusladkoe-rozovoe"
+     ],
+     "old": {
+      "slug": "zolotaya-balka-zb-moscato-semi-sweet-rose-muskat-yantarnyy-rozovoe-polusladkoe-9",
+      "sugar": "polusladkoe",
+      "color": "Розовое",
+      "grapes": [
+       "muscat_amber",
+       "muscat_hamburg"
+      ]
+     },
+     "new": {
+      "slug": "zb-vajn-moskato-polusladkoe-rozovoe",
+      "sugar": "polusladkoe",
+      "color": "Розовое",
+      "grapes": [
+       "muscat"
+      ]
+     },
+     "soft": "neutral",
+     "strict": "break"
+    }
+   ]
+  }
+ },
+ "decision": "не принят ни один вариант: сервис не меняется",
+ "universe_sensitivity": {
+  "H6-svc": {
+   "differs_from_main": [
+    "R091-orig-0",
+    "R094-orig-0"
+   ],
+   "soft": {
+    "fix": 10,
+    "break": 4,
+    "neutral": 4
+   },
+   "strict": {
+    "fix": 10,
+    "break": 4,
+    "neutral": 4
+   },
+   "slice_net_soft": {
+    "R": -3,
+    "M": 9,
+    "L": 0
+   },
+   "accepted": false
+  },
+  "H6-dict": {
+   "differs_from_main": [
+    "R091-orig-0",
+    "R094-orig-0"
+   ],
+   "soft": {
+    "fix": 11,
+    "break": 2,
+    "neutral": 5
+   },
+   "strict": {
+    "fix": 11,
+    "break": 3,
+    "neutral": 4
+   },
+   "slice_net_soft": {
+    "R": -1,
+    "M": 10,
+    "L": 0
+   },
+   "accepted": false
+  }
+ },
+ "info_v2prod": {
+  "gate": {
+   "A_filter": {
+    "frames": 353,
+    "filter_top1": 353,
+    "filter_top5": 353,
+    "order_top5_eq_whatif_model": 353,
+    "slug_eq_order0": 353,
+    "bad": []
+   },
+   "B_recompute": {
+    "frames": 353,
+    "order20": 353,
+    "p_top1_close": 353,
+    "h5_answer": 353,
+    "h5_top5_on_ambiguous": 353,
+    "bad": []
+   },
+   "notes": [
+    "L29-orig-0 взят из v2prod_l29; в v2prod есть и совпадает по slug/p_top1/resolve/чтению"
+   ]
+  },
+  "base": {
+   "frames": 353,
+   "wines": 226,
+   "soft_macro": 85.06637168141593,
+   "soft_micro": 85.8356940509915,
+   "strict_macro": 83.44395280235989,
+   "strict_micro": 83.85269121813032,
+   "slices": {
+    "L": {
+     "soft": 19,
+     "strict": 19,
+     "n": 20
+    },
+    "M": {
+     "soft": 224,
+     "strict": 220,
+     "n": 268
+    },
+    "R": {
+     "soft": 60,
+     "strict": 57,
+     "n": 65
+    }
+   }
+  },
+  "variants": {
+   "H6-svc": {
+    "changed": 16,
+    "soft": {
+     "fix": 10,
+     "break": 2,
+     "neutral": 4
+    },
+    "strict": {
+     "fix": 10,
+     "break": 2,
+     "neutral": 4
+    },
+    "slice_net_soft": {
+     "R": -1,
+     "M": 9,
+     "L": 0
+    },
+    "metrics": {
+     "frames": 353,
+     "wines": 226,
+     "soft_macro": 87.09439528023599,
+     "soft_micro": 88.10198300283287,
+     "strict_macro": 85.47197640117994,
+     "strict_micro": 86.11898016997168,
+     "slices": {
+      "L": {
+       "soft": 19,
+       "strict": 19,
+       "n": 20
+      },
+      "M": {
+       "soft": 233,
+       "strict": 229,
+       "n": 268
+      },
+      "R": {
+       "soft": 59,
+       "strict": 56,
+       "n": 65
+      }
+     }
+    },
+    "criteria": {
+     "fix>=4*break&fix>=3": true,
+     "strict_micro>=base": true,
+     "slices_net>=0": false
+    },
+    "criterion1_on_strict": true,
+    "accepted": false,
+    "bootstrap_soft_macro": {
+     "base": [
+      80.35,
+      89.23
+     ],
+     "variant": [
+      82.6,
+      91.15
+     ],
+     "delta": [
+      -0.04,
+      4.24
+     ]
+    },
+    "changed_qids": [
+     "L22-orig-0",
+     "M112-orig-0",
+     "M214-orig-0",
+     "M217-orig-0",
+     "M233-orig-0",
+     "M289-orig-0",
+     "M410-orig-0",
+     "M422-orig-0",
+     "M425-orig-0",
+     "M437-orig-0",
+     "M459-orig-0",
+     "M460-orig-0",
+     "M478-orig-0",
+     "M543-orig-0",
+     "M596-orig-0",
+     "R076-orig-0"
+    ]
+   },
+   "H6-dict": {
+    "changed": 20,
+    "soft": {
+     "fix": 11,
+     "break": 4,
+     "neutral": 5
+    },
+    "strict": {
+     "fix": 11,
+     "break": 5,
+     "neutral": 4
+    },
+    "slice_net_soft": {
+     "R": -3,
+     "M": 10,
+     "L": 0
+    },
+    "metrics": {
+     "frames": 353,
+     "wines": 226,
+     "soft_macro": 87.09439528023599,
+     "soft_micro": 87.8186968838527,
+     "strict_macro": 85.02949852507375,
+     "strict_micro": 85.55240793201133,
+     "slices": {
+      "L": {
+       "soft": 19,
+       "strict": 19,
+       "n": 20
+      },
+      "M": {
+       "soft": 234,
+       "strict": 229,
+       "n": 268
+      },
+      "R": {
+       "soft": 57,
+       "strict": 54,
+       "n": 65
+      }
+     }
+    },
+    "criteria": {
+     "fix>=4*break&fix>=3": false,
+     "strict_micro>=base": true,
+     "slices_net>=0": false
+    },
+    "criterion1_on_strict": false,
+    "accepted": false,
+    "bootstrap_soft_macro": {
+     "base": [
+      80.35,
+      89.23
+     ],
+     "variant": [
+      82.6,
+      91.08
+     ],
+     "delta": [
+      -0.29,
+      4.57
+     ]
+    },
+    "changed_qids": [
+     "L22-orig-0",
+     "M112-orig-0",
+     "M151-orig-0",
+     "M214-orig-0",
+     "M217-orig-0",
+     "M233-orig-0",
+     "M289-orig-0",
+     "M406-orig-0",
+     "M410-orig-0",
+     "M422-orig-0",
+     "M425-orig-0",
+     "M437-orig-0",
+     "M459-orig-0",
+     "M460-orig-0",
+     "M478-orig-0",
+     "M543-orig-0",
+     "M596-orig-0",
+     "R076-orig-0",
+     "R091-orig-0",
+     "R094-orig-0"
+    ]
+   },
+   "svc: сахар+цвет": {
+    "changed": 18,
+    "soft": {
+     "fix": 9,
+     "break": 5,
+     "neutral": 4
+    },
+    "strict": {
+     "fix": 9,
+     "break": 5,
+     "neutral": 4
+    },
+    "slice_net_soft": {
+     "R": -3,
+     "M": 7,
+     "L": 0
+    },
+    "metrics": {
+     "frames": 353,
+     "wines": 226,
+     "soft_macro": 86.06194690265487,
+     "soft_micro": 86.96883852691218,
+     "strict_macro": 84.43952802359881,
+     "strict_micro": 84.98583569405099,
+     "slices": {
+      "L": {
+       "soft": 19,
+       "strict": 19,
+       "n": 20
+      },
+      "M": {
+       "soft": 231,
+       "strict": 227,
+       "n": 268
+      },
+      "R": {
+       "soft": 57,
+       "strict": 54,
+       "n": 65
+      }
+     }
+    },
+    "criteria": {
+     "fix>=4*break&fix>=3": false,
+     "strict_micro>=base": true,
+     "slices_net>=0": false
+    },
+    "criterion1_on_strict": false,
+    "accepted": false,
+    "bootstrap_soft_macro": {
+     "base": [
+      80.35,
+      89.23
+     ],
+     "variant": [
+      81.41,
+      90.12
+     ],
+     "delta": [
+      -1.51,
+      3.5
+     ]
+    },
+    "changed_qids": [
+     "L22-orig-0",
+     "M214-orig-0",
+     "M217-orig-0",
+     "M226-orig-0",
+     "M233-orig-0",
+     "M289-orig-0",
+     "M410-orig-0",
+     "M422-orig-0",
+     "M425-orig-0",
+     "M437-orig-0",
+     "M459-orig-0",
+     "M460-orig-0",
+     "M478-orig-0",
+     "M543-orig-0",
+     "M596-orig-0",
+     "R076-orig-0",
+     "R091-orig-0",
+     "R094-orig-0"
+    ]
+   },
+   "svc: сорта": {
+    "changed": 1,
+    "soft": {
+     "fix": 1,
+     "break": 0,
+     "neutral": 0
+    },
+    "strict": {
+     "fix": 1,
+     "break": 0,
+     "neutral": 0
+    },
+    "slice_net_soft": {
+     "R": 0,
+     "M": 1,
+     "L": 0
+    },
+    "metrics": {
+     "frames": 353,
+     "wines": 226,
+     "soft_macro": 85.21386430678467,
+     "soft_micro": 86.11898016997168,
+     "strict_macro": 83.59144542772862,
+     "strict_micro": 84.13597733711048,
+     "slices": {
+      "L": {
+       "soft": 19,
+       "strict": 19,
+       "n": 20
+      },
+      "M": {
+       "soft": 225,
+       "strict": 221,
+       "n": 268
+      },
+      "R": {
+       "soft": 60,
+       "strict": 57,
+       "n": 65
+      }
+     }
+    },
+    "criteria": {
+     "fix>=4*break&fix>=3": false,
+     "strict_micro>=base": true,
+     "slices_net>=0": true
+    },
+    "criterion1_on_strict": false,
+    "accepted": false,
+    "bootstrap_soft_macro": {
+     "base": [
+      80.35,
+      89.23
+     ],
+     "variant": [
+      80.49,
+      89.34
+     ],
+     "delta": [
+      0.0,
+      0.44
+     ]
+    },
+    "changed_qids": [
+     "M112-orig-0"
+    ]
+   },
+   "dict: сахар+цвет": {
+    "changed": 17,
+    "soft": {
+     "fix": 9,
+     "break": 4,
+     "neutral": 4
+    },
+    "strict": {
+     "fix": 9,
+     "break": 4,
+     "neutral": 4
+    },
+    "slice_net_soft": {
+     "R": -3,
+     "M": 8,
+     "L": 0
+    },
+    "metrics": {
+     "frames": 353,
+     "wines": 226,
+     "soft_macro": 86.50442477876106,
+     "soft_micro": 87.25212464589235,
+     "strict_macro": 84.882005899705,
+     "strict_micro": 85.26912181303116,
+     "slices": {
+      "L": {
+       "soft": 19,
+       "strict": 19,
+       "n": 20
+      },
+      "M": {
+       "soft": 232,
+       "strict": 228,
+       "n": 268
+      },
+      "R": {
+       "soft": 57,
+       "strict": 54,
+       "n": 65
+      }
+     }
+    },
+    "criteria": {
+     "fix>=4*break&fix>=3": false,
+     "strict_micro>=base": true,
+     "slices_net>=0": false
+    },
+    "criterion1_on_strict": false,
+    "accepted": false,
+    "bootstrap_soft_macro": {
+     "base": [
+      80.35,
+      89.23
+     ],
+     "variant": [
+      81.86,
+      90.63
+     ],
+     "delta": [
+      -0.81,
+      3.69
+     ]
+    },
+    "changed_qids": [
+     "L22-orig-0",
+     "M214-orig-0",
+     "M217-orig-0",
+     "M233-orig-0",
+     "M289-orig-0",
+     "M410-orig-0",
+     "M422-orig-0",
+     "M425-orig-0",
+     "M437-orig-0",
+     "M459-orig-0",
+     "M460-orig-0",
+     "M478-orig-0",
+     "M543-orig-0",
+     "M596-orig-0",
+     "R076-orig-0",
+     "R091-orig-0",
+     "R094-orig-0"
+    ]
+   },
+   "dict: сорта": {
+    "changed": 3,
+    "soft": {
+     "fix": 2,
+     "break": 0,
+     "neutral": 1
+    },
+    "strict": {
+     "fix": 2,
+     "break": 1,
+     "neutral": 0
+    },
+    "slice_net_soft": {
+     "R": 0,
+     "M": 2,
+     "L": 0
+    },
+    "metrics": {
+     "frames": 353,
+     "wines": 226,
+     "soft_macro": 85.65634218289085,
+     "soft_micro": 86.40226628895184,
+     "strict_macro": 83.59144542772862,
+     "strict_micro": 84.13597733711048,
+     "slices": {
+      "L": {
+       "soft": 19,
+       "strict": 19,
+       "n": 20
+      },
+      "M": {
+       "soft": 226,
+       "strict": 221,
+       "n": 268
+      },
+      "R": {
+       "soft": 60,
+       "strict": 57,
+       "n": 65
+      }
+     }
+    },
+    "criteria": {
+     "fix>=4*break&fix>=3": false,
+     "strict_micro>=base": true,
+     "slices_net>=0": true
+    },
+    "criterion1_on_strict": false,
+    "accepted": false,
+    "bootstrap_soft_macro": {
+     "base": [
+      80.35,
+      89.23
+     ],
+     "variant": [
+      81.05,
+      89.79
+     ],
+     "delta": [
+      0.0,
+      1.77
+     ]
+    },
+    "changed_qids": [
+     "M112-orig-0",
+     "M151-orig-0",
+     "M406-orig-0"
+    ]
+   }
+  }
+ },
+ "info_ooc_v2prod": {
+  "frames": 409,
+  "gate": {
+   "A_filter": {
+    "frames": 409,
+    "filter_top1": 409,
+    "filter_top5": 409,
+    "order_top5_eq_whatif_model": 409,
+    "slug_eq_order0": 409,
+    "bad": []
+   },
+   "B_recompute": {
+    "frames": 409,
+    "order20": 409,
+    "p_top1_close": 409,
+    "h5_answer": 409,
+    "h5_top5_on_ambiguous": 409,
+    "bad": []
+   }
+  },
+  "variants": {
+   "H6-svc": {
+    "changed": 22,
+    "changed_at_p_lt_0_5": 1,
+    "qids": [
+     "M003-orig-0",
+     "M084-orig-0",
+     "M085-orig-0",
+     "M093-orig-0",
+     "M094-orig-0",
+     "M231-orig-0",
+     "M242-orig-0",
+     "M246-orig-0",
+     "M267-orig-0",
+     "M314-orig-0",
+     "M332-orig-0",
+     "M356-orig-0",
+     "M473-orig-0",
+     "M485-orig-0",
+     "M524-orig-0",
+     "M531-orig-0",
+     "M545-orig-0",
+     "M559-orig-0",
+     "M611-orig-0",
+     "M615-orig-0",
+     "R062-orig-0",
+     "R083-orig-0"
+    ]
+   },
+   "H6-dict": {
+    "changed": 23,
+    "changed_at_p_lt_0_5": 2,
+    "qids": [
+     "M003-orig-0",
+     "M084-orig-0",
+     "M085-orig-0",
+     "M093-orig-0",
+     "M094-orig-0",
+     "M231-orig-0",
+     "M242-orig-0",
+     "M246-orig-0",
+     "M267-orig-0",
+     "M314-orig-0",
+     "M332-orig-0",
+     "M356-orig-0",
+     "M433-orig-0",
+     "M473-orig-0",
+     "M485-orig-0",
+     "M524-orig-0",
+     "M531-orig-0",
+     "M545-orig-0",
+     "M559-orig-0",
+     "M611-orig-0",
+     "M615-orig-0",
+     "R062-orig-0",
+     "R083-orig-0"
+    ]
+   },
+   "svc: сахар+цвет": {
+    "changed": 31,
+    "changed_at_p_lt_0_5": 0,
+    "qids": [
+     "M003-orig-0",
+     "M024-orig-0",
+     "M028-orig-0",
+     "M032-orig-0",
+     "M033-orig-0",
+     "M035-orig-0",
+     "M036-orig-0",
+     "M084-orig-0",
+     "M085-orig-0",
+     "M086-orig-0",
+     "M087-orig-0",
+     "M126-orig-0",
+     "M152-orig-0",
+     "M231-orig-0",
+     "M246-orig-0",
+     "M267-orig-0",
+     "M295-orig-0",
+     "M314-orig-0",
+     "M315-orig-0",
+     "M356-orig-0",
+     "M357-orig-0",
+     "M473-orig-0",
+     "M507-orig-0",
+     "M524-orig-0",
+     "M531-orig-0",
+     "M536-orig-0",
+     "M538-orig-0",
+     "M559-orig-0",
+     "M611-orig-0",
+     "M615-orig-0",
+     "R062-orig-0"
+    ]
+   },
+   "svc: сорта": {
+    "changed": 16,
+    "changed_at_p_lt_0_5": 2,
+    "qids": [
+     "M032-orig-0",
+     "M034-orig-0",
+     "M036-orig-0",
+     "M093-orig-0",
+     "M094-orig-0",
+     "M152-orig-0",
+     "M242-orig-0",
+     "M304-orig-0",
+     "M315-orig-0",
+     "M332-orig-0",
+     "M341-orig-0",
+     "M356-orig-0",
+     "M485-orig-0",
+     "M499-orig-0",
+     "M545-orig-0",
+     "R083-orig-0"
+    ]
+   },
+   "dict: сахар+цвет": {
+    "changed": 32,
+    "changed_at_p_lt_0_5": 1,
+    "qids": [
+     "M003-orig-0",
+     "M024-orig-0",
+     "M028-orig-0",
+     "M032-orig-0",
+     "M033-orig-0",
+     "M035-orig-0",
+     "M036-orig-0",
+     "M084-orig-0",
+     "M085-orig-0",
+     "M086-orig-0",
+     "M087-orig-0",
+     "M126-orig-0",
+     "M152-orig-0",
+     "M231-orig-0",
+     "M246-orig-0",
+     "M267-orig-0",
+     "M295-orig-0",
+     "M314-orig-0",
+     "M315-orig-0",
+     "M356-orig-0",
+     "M357-orig-0",
+     "M433-orig-0",
+     "M473-orig-0",
+     "M507-orig-0",
+     "M524-orig-0",
+     "M531-orig-0",
+     "M536-orig-0",
+     "M538-orig-0",
+     "M559-orig-0",
+     "M611-orig-0",
+     "M615-orig-0",
+     "R062-orig-0"
+    ]
+   },
+   "dict: сорта": {
+    "changed": 16,
+    "changed_at_p_lt_0_5": 2,
+    "qids": [
+     "M032-orig-0",
+     "M034-orig-0",
+     "M036-orig-0",
+     "M093-orig-0",
+     "M094-orig-0",
+     "M152-orig-0",
+     "M242-orig-0",
+     "M304-orig-0",
+     "M315-orig-0",
+     "M332-orig-0",
+     "M341-orig-0",
+     "M356-orig-0",
+     "M485-orig-0",
+     "M499-orig-0",
+     "M545-orig-0",
+     "R083-orig-0"
+    ]
+   }
+  }
+ }
+}

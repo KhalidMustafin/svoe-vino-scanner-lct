@@ -1,0 +1,25 @@
+A_alone выгрузка: [] nvidia-smi: 576 MiB
+4b {"cond": "A_alone", "q": "warm_synthetic", "wall_ms": 4005, "load_ms": 3240, "prompt_eval_count": 1109, "prompt_eval_ms": 523, "eval_count": 26, "eval_ms": 211, "total_ms": 3993}
+A_alone после загрузки nvidia-smi: 4550 MiB
+A_alone VRAM: 24880 llama-server            4020        592 | 13256 ollama                     0          0 | adapter luid_0x00000000_0x000155a2_phys_0 dedicated 4531 MiB | adapter luid_0x00000000_0x00016754_phys_0 dedicated 0 MiB | adapter luid_0x00000000_0x000155a2_phys_0 shared 619 MiB | adapter luid_0x00000000_0x00016754_phys_0 shared 0 MiB
+4b {"cond": "A_alone", "q": "M440-orig-0", "wall_ms": 1477, "load_ms": 9, "prompt_eval_count": 853, "prompt_eval_ms": 786, "eval_count": 50, "eval_ms": 631, "total_ms": 1476}
+4b {"cond": "A_alone", "q": "M062-orig-0", "wall_ms": 1309, "load_ms": 7, "prompt_eval_count": 853, "prompt_eval_ms": 589, "eval_count": 51, "eval_ms": 664, "total_ms": 1306}
+4b {"cond": "A_alone", "q": "M312-orig-0", "wall_ms": 1480, "load_ms": 7, "prompt_eval_count": 853, "prompt_eval_ms": 586, "eval_count": 62, "eval_ms": 824, "total_ms": 1464}
+4b {"cond": "A_alone", "q": "M388-orig-0", "wall_ms": 1518, "load_ms": 7, "prompt_eval_count": 853, "prompt_eval_ms": 608, "eval_count": 64, "eval_ms": 852, "total_ms": 1516}
+4b {"cond": "A_alone", "q": "R064-orig-0", "wall_ms": 1313, "load_ms": 7, "prompt_eval_count": 853, "prompt_eval_ms": 584, "eval_count": 51, "eval_ms": 675, "total_ms": 1312}
+сервис: ready 15.2 с
+B_service_idle выгрузка: [] nvidia-smi: 2835 MiB
+4b {"cond": "B_service_idle", "q": "warm_synthetic", "wall_ms": 3974, "load_ms": 3185, "prompt_eval_count": 1109, "prompt_eval_ms": 539, "eval_count": 26, "eval_ms": 221, "total_ms": 3972}
+B_service_idle после загрузки nvidia-smi: 6862 MiB
+B_service_idle VRAM: 25504 llama-server            4020        592 | 42248 python                  2331         82 | 13256 ollama                     0          0 | adapter luid_0x00000000_0x000155a2_phys_0 dedicated 6863 MiB | adapter luid_0x00000000_0x00016754_phys_0 dedicated 0 MiB | adapter luid_0x00000000_0x000155a2_phys_0 shared 699 MiB | adapter luid_0x00000000_0x00016754_phys_0 shared 0 MiB
+4b {"cond": "B_service_idle", "q": "M440-orig-0", "wall_ms": 1483, "load_ms": 22, "prompt_eval_count": 853, "prompt_eval_ms": 706, "eval_count": 50, "eval_ms": 699, "total_ms": 1480}
+4b {"cond": "B_service_idle", "q": "M062-orig-0", "wall_ms": 1384, "load_ms": 8, "prompt_eval_count": 853, "prompt_eval_ms": 622, "eval_count": 51, "eval_ms": 701, "total_ms": 1382}
+4b {"cond": "B_service_idle", "q": "M312-orig-0", "wall_ms": 1529, "load_ms": 7, "prompt_eval_count": 853, "prompt_eval_ms": 621, "eval_count": 62, "eval_ms": 851, "total_ms": 1527}
+4b {"cond": "B_service_idle", "q": "M388-orig-0", "wall_ms": 1580, "load_ms": 8, "prompt_eval_count": 853, "prompt_eval_ms": 628, "eval_count": 64, "eval_ms": 893, "total_ms": 1577}
+4b {"cond": "B_service_idle", "q": "R064-orig-0", "wall_ms": 1405, "load_ms": 8, "prompt_eval_count": 853, "prompt_eval_ms": 630, "eval_count": 51, "eval_ms": 708, "total_ms": 1402}
+после остановки: выгрузка [] порт 8080 открыт: False nvidia-smi: 504 MiB
+4b M440-orig-0  prompt_eval A   786 / B   706 мс; eval A   631 (50 ток) / B   699 (50 ток); total A  1476 / B  1480
+4b M062-orig-0  prompt_eval A   589 / B   622 мс; eval A   664 (51 ток) / B   701 (51 ток); total A  1306 / B  1382
+4b M312-orig-0  prompt_eval A   586 / B   621 мс; eval A   824 (62 ток) / B   851 (62 ток); total A  1464 / B  1527
+4b M388-orig-0  prompt_eval A   608 / B   628 мс; eval A   852 (64 ток) / B   893 (64 ток); total A  1516 / B  1577
+4b R064-orig-0  prompt_eval A   584 / B   630 мс; eval A   675 (51 ток) / B   708 (51 ток); total A  1312 / B  1402

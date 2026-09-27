@@ -1,0 +1,37 @@
+[Unit]
+Description=Полевой сканер «Своё Вино» (FastAPI + SigLIP + Ollama)
+# Ollama обязана быть поднята раньше: прогрев на старте грузит в неё модель и ждёт ответа.
+After=network-online.target ollama.service
+Wants=network-online.target
+Requires=ollama.service
+
+[Service]
+Type=simple
+User=svs
+WorkingDirectory=/opt/svs/app
+EnvironmentFile=/etc/svs-field.env
+ExecStart=/opt/svs/app/.venv/bin/python -m app.api
+Restart=always
+RestartSec=10
+# Прогрев на процессоре идёт минутами: поднять SigLIP, загрузить VLM в Ollama и прогнать
+# синтетический кадр по всей цепочке. systemd не должен считать это зависанием.
+TimeoutStartSec=900
+TimeoutStopSec=30
+# Один процесс, одна модель, один замок — воркеров больше одного быть не может.
+KillMode=mixed
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=svs-field
+
+# Кадры пишутся в SVS_FIELD_DIR, остальное — только на чтение.
+ProtectSystem=full
+PrivateTmp=true
+NoNewPrivileges=true
+# Чтобы можно было встать прямо на 80-й порт (SVS_PORT=80) — например, когда наружу смотрит
+# готовый туннель Cloudflare, поднятый на `--url http://localhost:80`, и менять его адрес
+# нельзя. Без этого непривилегированный процесс 80-й порт не займёт.
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+
+[Install]
+WantedBy=multi-user.target

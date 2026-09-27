@@ -1,0 +1,26 @@
+{
+ "format": "svs-gt-lineage/1",
+ "about": "Объявленные производные разметки каталога gt_tokens.jsonl (app/api/lineage.py). Модель resolve хранит sha1 разметки, на которой училась (meta.gt_tokens_sha1); разметка, полученная из неё цепочкой шагов ниже, согласована с моделью (provenance.consistent=true, provenance.derivation — метки шагов). Любой другой gt — consistent=false. Шаг: from — sha1 gt до шага, to — после, input_sha1 — sha1 того, что шаг добавляет; requires_live_cards — шаг действует только при SVS_LIVE_CARDS=1. Новый шаг — только принятая по своему PREREG правка, с воспроизводимыми from, to и input_sha1.",
+ "steps": [
+  {
+   "name": "gt_fixes",
+   "from": "bf6a8823a45004b1e13e586e5a92e05b8beb07b0",
+   "to": "899d5db3747fd315b7c8bfedf121f6ae79799061",
+   "input_sha1": "2d7050bfb69c4fa7b936c4734bf875f6ce592391",
+   "requires_live_cards": false,
+   "input": "data/gt/gt_fixes.tsv — 12 правок атрибутов карточек, sha1 без CR (как gt_summary.json → gt_fixes.sha1)",
+   "build": "scripts/build_gt_tokens.py: те же входы с --no-fixes дают from, с --fixes data/gt/gt_fixes.tsv — to",
+   "accepted": "Э4 плана точности 25.09: research/2026-09-25_acc/PREREG_E4_card_attrs.md, e4_results.json — v2 +1/−0 (M596), krasnostop 0/0 в обоих счётах"
+  },
+  {
+   "name": "live71",
+   "from": "899d5db3747fd315b7c8bfedf121f6ae79799061",
+   "to": "003db090393691e0e7c50c6e810ed1764f70443d",
+   "input_sha1": "312a0bc5b7e9e4377f7ec03a7408e8085f6e8474",
+   "requires_live_cards": true,
+   "input": "71 запись карточек живого портала, дописанная к from байт в байт: new_cards_gt_tokens.jsonl (данные живого портала, вне репозитория) без chardonnay-2024 и merlo-2 (дубли вин CSV), по строке с LF",
+   "build": "scripts/build_live_set.py (gt/gt_tokens-live71.jsonl)",
+   "accepted": "Э3 плана точности 25.09: research/2026-09-25_acc/PREREG_E3.md, E3_RESULT.md — принят под флагом SVS_LIVE_CARDS, по умолчанию выключен"
+  }
+ ]
+}

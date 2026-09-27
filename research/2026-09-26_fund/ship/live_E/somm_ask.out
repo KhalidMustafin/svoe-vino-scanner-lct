@@ -1,0 +1,9 @@
+запрос: {"slug": "muskat-pozdnego-sbora-rozovyj", "question": "а к селёдке подойдёт?"}
+HTTP 200, 259 мс; события: ['stage:card', 'stage:rules', 'stage:catalog', 'facts', 'text', 'done']
+intent dish_check; блюдо solenaya_seld (Солёная сельдь) вердикт no; первый «−» sweet_wine_on_fish «Сладость спорит с рыбой»; facts t_ms 208; voice False
+шаблон: К солёной сельди — скорее нет. Рядом с рыбой и морепродуктами сладость вина спорит с блюдом: сахар заглушает их вкус. Вот вина других виноделен, которые подходят к солёной сельди.
+text: generated False reason not_voiced guard None t_ms 210
+текст: К солёной сельди — скорее нет. Рядом с рыбой и морепродуктами сладость вина спорит с блюдом: сахар заглушает их вкус. Вот вина других виноделен, которые подходят к солёной сельди.
+вина подборки: ['vinodelnya-batrak-perfekt-klassik-muskat-rozovyy-rozovoe-suhoe-125', 'zhemchuzhnaya-9-muskat-rozovyj-pino-gri', 'zmv-koktebel-atmosfera-shardone-merlo-rkatsiteli-muskat-rozovyy-muskat-gamburgskiy-rozovoe-polusuhoe-12']
+gate: {"bound": true, "quiet_s": 15.0, "active_scans": 0, "quiet_left_s": 0.0, "voice_active": false, "scans": 441, "predicts": 441, "entered": 0, "released": 0, "refused": {"not_ready": 0, "busy": 0, "quiet": 0, "locked": 0}, "cancelled": {"scan": 0, "client": 0, "timeout": 0}, "hold_ms": {"last": null, "max": null}, "release_after_cancel_ms": {"last": null, "max": null}}
+ИТОГ: как ждали (скорее нет, сладость спорит с рыбой)

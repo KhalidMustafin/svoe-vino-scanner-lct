@@ -1,0 +1,113 @@
+Разметка каталога или читатель этикетки не те, на которых обучен resolve: {"gt_tokens_sha1": "06a294ff0e28b993f5ed4bad15ca8123f4467ef8", "model_gt_tokens_sha1": "bf6a8823a45004b1e13e586e5a92e05b8beb07b0", "lexicon_source_sha1": "06a294ff0e28b993f5ed4bad15ca8123f4467ef8", "vlm_reader": "vlm@qwen3.5:4b|f3a017317f04", "vlm_reader_trained": ["vlm@qwen3.5:4b|f3a017317f04"], "consistent": false} — цифры замера к этой сборке не относятся
+СЃРµСЂРІРёСЃС‹: 5.5 СЃ; off visual-s2so400m.npz (6312 СЃС‚СЂРѕРє), on visual-s2so400m-live71.npz (6525 СЃС‚СЂРѕРє, Р±Р°Р·РѕРІС‹С… 6312)
+50/409 Р·Р° 13 СЃ; СЃР±РѕРµРІ 0; РІРѕСЂРѕС‚Р° {}
+100/409 Р·Р° 24 СЃ; СЃР±РѕРµРІ 0; РІРѕСЂРѕС‚Р° {}
+150/409 Р·Р° 34 СЃ; СЃР±РѕРµРІ 0; РІРѕСЂРѕС‚Р° {}
+200/409 Р·Р° 45 СЃ; СЃР±РѕРµРІ 0; РІРѕСЂРѕС‚Р° {}
+250/409 Р·Р° 56 СЃ; СЃР±РѕРµРІ 0; РІРѕСЂРѕС‚Р° {}
+300/409 Р·Р° 67 СЃ; СЃР±РѕРµРІ 0; РІРѕСЂРѕС‚Р° {}
+350/409 Р·Р° 77 СЃ; СЃР±РѕРµРІ 0; РІРѕСЂРѕС‚Р° {}
+400/409 Р·Р° 88 СЃ; СЃР±РѕРµРІ 1; РІРѕСЂРѕС‚Р° {}
+{
+ "set": "ooc_v2",
+ "frames": 409,
+ "replayed": 408,
+ "failed": [
+  "M608-orig-0"
+ ],
+ "reads": {
+  "off_hits": 408,
+  "off_misses": 1,
+  "on_hits": 408,
+  "on_misses": 1
+ },
+ "gate": null,
+ "gate_frames": 0,
+ "csv_score_delta_max": null,
+ "files": {
+  "off": {
+   "index_path": "<root>\\svoe-vino-scanner\\data\\index\\visual-s2so400m.npz",
+   "attrs_path": "<root>\\svoe-vino-scanner\\data\\gt\\gt_tokens.jsonl",
+   "lexicon_path": "<root>\\svoe-vino-scanner\\data\\index\\lexicon.json"
+  },
+  "on": {
+   "index_path": "<root>\\svoe-vino-scanner\\data\\index\\visual-s2so400m-live71.npz",
+   "attrs_path": "<root>\\svoe-vino-scanner\\data\\gt\\gt_tokens-live71.jsonl",
+   "lexicon_path": "<root>\\svoe-vino-scanner\\data\\index\\lexicon-live71.json"
+  },
+  "sha1": {
+   "visual-s2so400m.npz": "ccd3a01f16379a3f0a8a1e7e8dc0623c7622bda5",
+   "gt_tokens.jsonl": "bf6a8823a45004b1e13e586e5a92e05b8beb07b0",
+   "lexicon.json": "82bc2234b9953884f86cb77bf23193678f3bed72",
+   "visual-s2so400m-live71.npz": "d0a53644978fca385d4db88cc35677ab261207e0",
+   "gt_tokens-live71.jsonl": "06a294ff0e28b993f5ed4bad15ca8123f4467ef8",
+   "lexicon-live71.json": "3f2c9a8905fd40b8f3363131ee414b0d35eca05b"
+  }
+ },
+ "provenance_on": {
+  "gt_tokens_sha1": "06a294ff0e28b993f5ed4bad15ca8123f4467ef8",
+  "model_gt_tokens_sha1": "bf6a8823a45004b1e13e586e5a92e05b8beb07b0",
+  "lexicon_source_sha1": "06a294ff0e28b993f5ed4bad15ca8123f4467ef8",
+  "vlm_reader": "vlm@qwen3.5:4b|f3a017317f04",
+  "vlm_reader_trained": [
+   "vlm@qwen3.5:4b|f3a017317f04"
+  ],
+  "consistent": false
+ },
+ "live_slugs_count": 71,
+ "wall_s": 89.6,
+ "sanity": {
+  "h5_same_as_dump": 407,
+  "h5_differs": [
+   "M056-orig-0"
+  ],
+  "fields_same_as_dump": 408,
+  "fields_differ": [],
+  "fields_same_off_on": 405
+ },
+ "score": {
+  "frames": 408,
+  "to_live_card": 38,
+  "share": 0.0931,
+  "qids": [
+   "L02-orig-0",
+   "L03-orig-0",
+   "L06-orig-0",
+   "L40-orig-0",
+   "M001-orig-0",
+   "M003-orig-0",
+   "M004-orig-0",
+   "M029-orig-0",
+   "M030-orig-0",
+   "M031-orig-0",
+   "M103-orig-0",
+   "M138-orig-0",
+   "M183-orig-0",
+   "M207-orig-0",
+   "M261-orig-0",
+   "M298-orig-0",
+   "M309-orig-0",
+   "M329-orig-0",
+   "M342-orig-0",
+   "M353-orig-0",
+   "M361-orig-0",
+   "M368-orig-0",
+   "M377-orig-0",
+   "M416-orig-0",
+   "M450-orig-0",
+   "M451-orig-0",
+   "M489-orig-0",
+   "M493-orig-0",
+   "M507-orig-0",
+   "M509-orig-0",
+   "M512-orig-0",
+   "M540-orig-0",
+   "M560-orig-0",
+   "M614-orig-0",
+   "R073-orig-0",
+   "R074-orig-0",
+   "R095-orig-0",
+   "R100-orig-0"
+  ]
+ }
+}

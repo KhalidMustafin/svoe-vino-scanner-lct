@@ -1,0 +1,31 @@
+13:03:51.843 === конфигурация 8b_r2: qwen3-vl:8b-instruct
+13:03:51.875 unload qwen3.5:4b: done_reason=unload
+13:03:51.880 unload qwen3-vl:8b-instruct: done_reason=unload
+13:03:51.881 /api/ps[до старта]: []
+13:03:56.872 VRAM[pre]: === pre 2026-09-23 13:03:52 | nvidia-smi: 506 MiB, 10240 MiB, 9 %, P8 | pid name           dedicated_MiB shared_MiB | --- ----           ------------- ---------- | 16548 firefox                 4956          0 | 25840 dwm                      237          2 | 11760 NVIDIA Overlay           111          0 | 14128 app                       67          5 | 13256 ollama                     0          0 | sum over processes: dedicated 5534 MiB, shared 25 MiB | adapter luid_0x00000000_0x000155a2_phys_0 dedicated 513 MiB | adapter luid_0x00000000_0x00016754_phys_0 dedicated 0 MiB | adapter luid_0x00000000_0x000155a2_phys_0 shared 24 MiB | adapter luid_0x00000000_0x00016754_phys_0 shared 0 MiB
+13:03:56.892 mark svc_start
+13:03:56.898 service pid 23840
+13:04:13.915 mark svc_ready
+13:04:13.937 ready: 17.0 с от запуска (порт открыт через 17.0 с); status=ready reasons=[] warnings=1 warm={"cv": {"status": "ok", "elapsed_ms": 8029.9, "device": "cuda"}, "vlm": {"status": "ok", "elapsed_ms": 4863}, "scan": {"attempt": 1, "outcome": "matched", "degraded": [], "timings_ms": {"decode": 4.9, "views": 2.0, "gpu_wait": 0.0, "cv": 237.7, "vlm": 1558.1, "resolve": 405.4, "total": 2209.2}}}
+13:04:21.916 VRAM[ready]: === ready 2026-09-23 13:04:17 | nvidia-smi: 9909 MiB, 10240 MiB, 4 %, P3 | pid name           dedicated_MiB shared_MiB | --- ----           ------------- ---------- | 27008 llama-server            7079        714 | 16548 firefox                 4956          0 | 37200 python                  2331         82 | 25840 dwm                      237          2 | 11760 NVIDIA Overlay           111          0 | 14128 app                       61          5 | 13256 ollama                     0          0 | sum over processes: dedicated 14938 MiB, shared 821 MiB | adapter luid_0x00000000_0x000155a2_phys_0 dedicated 9917 MiB | adapter luid_0x00000000_0x00016754_phys_0 dedicated 0 MiB | adapter luid_0x00000000_0x000155a2_phys_0 shared 821 MiB | adapter luid_0x00000000_0x00016754_phys_0 shared 0 MiB
+13:04:21.918 /api/ps[ready]: [{"name": "qwen3-vl:8b-instruct", "size": 5793780858, "size_vram": 5793780858, "context_length": 4096, "expires_at": "2026-09-24T13:04:13.1536441+05:00"}]
+13:04:21.918 mark pt_start
+13:05:35.607 mark pt_end
+13:05:35.607 participant_test.sh: код 0, 73.7 с; stdout='' stderr=''
+13:05:35.611 health после прогона: {"total": 20, "errors": 0, "null_slug": 0, "text_read": 20, "max_total_ms": 4384.3, "degraded": {}} status= ready
+13:05:40.567 VRAM[after_pt]: === after_pt 2026-09-23 13:05:35 | nvidia-smi: 9910 MiB, 10240 MiB, 0 %, P3 | pid name           dedicated_MiB shared_MiB | --- ----           ------------- ---------- | 27008 llama-server            7079        714 | 16548 firefox                 4956          0 | 37200 python                  2331         82 | 25840 dwm                      237          2 | 11760 NVIDIA Overlay           111          0 | 14128 app                       62          4 | 13256 ollama                     0          0 | sum over processes: dedicated 14939 MiB, shared 819 MiB | adapter luid_0x00000000_0x000155a2_phys_0 dedicated 9918 MiB | adapter luid_0x00000000_0x00016754_phys_0 dedicated 0 MiB | adapter luid_0x00000000_0x000155a2_phys_0 shared 819 MiB | adapter luid_0x00000000_0x00016754_phys_0 shared 0 MiB
+13:05:40.573 /api/ps[after_pt]: [{"name": "qwen3-vl:8b-instruct", "size": 5793780858, "size_vram": 5793780858, "context_length": 4096, "expires_at": "2026-09-24T13:05:35.3983916+05:00"}]
+13:05:40.573 mark scan_start
+13:05:44.282 scan {"q": "M440-orig-0", "kind": "new", "wall_ms": 3709, "slug": "abrau-dyurso-russkoe-igristoe-polusladkoe-shardone-beloe-12", "degraded": [], "timings_ms": {"decode": 85.8, "views": 6.1, "gpu_wait": 0.0, "cv": 691.7, "vlm": 2882.9, "resolve": 1.2, "total": 3668.0}, "p": 0.211}
+13:05:47.127 scan {"q": "M062-orig-0", "kind": "new", "wall_ms": 2845, "slug": "chteau-le-grand-vostock-vostock-blanc-sovinon-blan-beloe-suhoe-135", "degraded": [], "timings_ms": {"decode": 86.3, "views": 6.1, "gpu_wait": 0.0, "cv": 476.3, "vlm": 2235.6, "resolve": 3.5, "total": 2808.0}, "p": 0.9695}
+13:05:50.933 scan {"q": "M312-orig-0", "kind": "new", "wall_ms": 3806, "slug": "olymp-winery-adagum-krasnostop-krasnostop-zolotovskiy-krasnoe-suhoe-11", "degraded": [], "timings_ms": {"decode": 91.0, "views": 6.0, "gpu_wait": 0.0, "cv": 488.8, "vlm": 3174.0, "resolve": 3.7, "total": 3763.8}, "p": 0.9904}
+13:05:53.185 scan {"q": "M312-orig-0", "kind": "repeat_immediate", "wall_ms": 2252, "slug": "olymp-winery-adagum-krasnostop-krasnostop-zolotovskiy-krasnoe-suhoe-11", "degraded": [], "timings_ms": {"decode": 99.4, "views": 6.4, "gpu_wait": 0.0, "cv": 491.2, "vlm": 1617.7, "resolve": 1.1, "total": 2216.1}, "p": 0.9904}
+13:05:54.983 scan {"q": "M346-orig-0", "kind": "repeat_after_20", "wall_ms": 1799, "slug": "usadba-markoth-kyuve-blan-shardone-beloe-suhoe-12", "degraded": [], "timings_ms": {"decode": 87.3, "views": 5.9, "gpu_wait": 0.0, "cv": 487.4, "vlm": 1179.3, "resolve": 1.0, "total": 1761.1}, "p": 0.9999}
+13:05:54.983 mark scan_end
+13:05:56.356 порт 8080 открыт после остановки: False
+13:05:56.356 mark svc_stopped
+13:05:56.361 unload qwen3.5:4b: done_reason=unload
+13:05:56.375 unload qwen3-vl:8b-instruct: done_reason=unload
+13:05:56.607 /api/ps[после остановки]: []
+13:06:03.701 VRAM[final]: === final 2026-09-23 13:05:58 | nvidia-smi: 501 MiB, 10240 MiB, 1 %, P3 | pid name           dedicated_MiB shared_MiB | --- ----           ------------- ---------- | 16548 firefox                 4956          0 | 25840 dwm                      237          2 | 11760 NVIDIA Overlay           111          0 | 14128 app                       62          4 | 13256 ollama                     0          0 | sum over processes: dedicated 5529 MiB, shared 24 MiB | adapter luid_0x00000000_0x000155a2_phys_0 dedicated 508 MiB | adapter luid_0x00000000_0x00016754_phys_0 dedicated 0 MiB | adapter luid_0x00000000_0x000155a2_phys_0 shared 24 MiB | adapter luid_0x00000000_0x00016754_phys_0 shared 0 MiB
+13:06:03.702 готово

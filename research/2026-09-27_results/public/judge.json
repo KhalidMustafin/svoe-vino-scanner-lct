@@ -1,0 +1,42 @@
+{
+ "queries": 3,
+ "predictions": 3,
+ "judged": 3,
+ "missing": 0,
+ "missing_examples": [],
+ "extra": 0,
+ "extra_examples": [],
+ "in_catalog": {
+  "n": 1,
+  "correct": 1,
+  "top1": 1.0,
+  "null": 0,
+  "null_share": 0.0,
+  "wrong_examples": []
+ },
+ "out_of_catalog": {
+  "n": 2,
+  "null": 0,
+  "null_share": 0.0,
+  "answered": 2
+ },
+ "null_share": 0.0,
+ "if_null_is_correct_for_none": {
+  "accuracy": 0.3333,
+  "note": "допущение: кадр вне каталога засчитан, если ответ null. Как считает организатор, неизвестно — это не итоговая цифра"
+ },
+ "latency_ms": {
+  "n": 3,
+  "p50": 1280.0,
+  "p95": 1532.0,
+  "max": 1532.0,
+  "over_3000": 0,
+  "over_10000": 0
+ },
+ "format_problems": [],
+ "format_problems_total": 0,
+ "files": {
+  "pred": "research/2026-09-27_results/public/predictions.jsonl",
+  "gt": "public_gt.tsv"
+ }
+}

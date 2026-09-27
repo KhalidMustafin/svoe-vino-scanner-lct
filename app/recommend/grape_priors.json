@@ -1,0 +1,787 @@
+{
+  "_comment": "Приоры профиля по сортам винограда — копия приоров «Лозы» (их извлекает её скрипт scripts/extract_grape_priors.py из docs/research/extraction-method.md, вне этого репозитория). Правьте источник «Лозы», а не этот файл.",
+  "priors": {
+    "cabernet_sauvignon": {
+      "label": "Каберне Совиньон",
+      "axes": {
+        "tannin": 4.1,
+        "body": 4.0,
+        "acidity": 3.4,
+        "aroma_intensity": 3.4,
+        "oak": 2.6
+      },
+      "descriptors": [
+        "black_fruit",
+        "pepper",
+        "vegetal",
+        "herbal"
+      ]
+    },
+    "cabernet_franc": {
+      "label": "Каберне Фран",
+      "axes": {
+        "tannin": 3.4,
+        "body": 3.3,
+        "acidity": 3.6,
+        "aroma_intensity": 3.4,
+        "oak": 2.0
+      },
+      "descriptors": [
+        "red_fruit",
+        "vegetal",
+        "pepper",
+        "floral"
+      ]
+    },
+    "merlot": {
+      "label": "Мерло",
+      "axes": {
+        "tannin": 3.0,
+        "body": 3.7,
+        "acidity": 2.9,
+        "aroma_intensity": 3.1,
+        "oak": 2.3
+      },
+      "descriptors": [
+        "black_fruit",
+        "red_fruit",
+        "chocolate"
+      ]
+    },
+    "pinot_noir": {
+      "label": "Пино Нуар",
+      "axes": {
+        "tannin": 2.2,
+        "body": 2.4,
+        "acidity": 3.8,
+        "aroma_intensity": 3.3,
+        "oak": 1.8
+      },
+      "descriptors": [
+        "red_fruit",
+        "earth",
+        "floral",
+        "spice"
+      ]
+    },
+    "syrah": {
+      "label": "Сира / Шираз",
+      "axes": {
+        "tannin": 3.8,
+        "body": 4.1,
+        "acidity": 3.1,
+        "aroma_intensity": 3.7,
+        "oak": 2.4
+      },
+      "descriptors": [
+        "black_fruit",
+        "pepper",
+        "smoke",
+        "leather"
+      ]
+    },
+    "malbec": {
+      "label": "Мальбек",
+      "axes": {
+        "tannin": 3.6,
+        "body": 4.0,
+        "acidity": 3.0,
+        "aroma_intensity": 3.4,
+        "oak": 2.3
+      },
+      "descriptors": [
+        "black_fruit",
+        "chocolate",
+        "floral"
+      ]
+    },
+    "petit_verdot": {
+      "label": "Пти Вердо",
+      "axes": {
+        "tannin": 4.3,
+        "body": 4.3,
+        "acidity": 3.4,
+        "aroma_intensity": 3.5,
+        "oak": 2.4
+      },
+      "descriptors": [
+        "black_fruit",
+        "pepper",
+        "floral"
+      ]
+    },
+    "mourvedre": {
+      "label": "Мурведр / Монастрель",
+      "axes": {
+        "tannin": 4.0,
+        "body": 4.0,
+        "acidity": 3.0,
+        "aroma_intensity": 3.4,
+        "oak": 2.2
+      },
+      "descriptors": [
+        "black_fruit",
+        "leather",
+        "earth",
+        "pepper"
+      ]
+    },
+    "marselan": {
+      "label": "Марселан",
+      "axes": {
+        "tannin": 3.5,
+        "body": 3.8,
+        "acidity": 3.0,
+        "aroma_intensity": 3.4,
+        "oak": 2.2
+      },
+      "descriptors": [
+        "black_fruit",
+        "spice"
+      ]
+    },
+    "sangiovese": {
+      "label": "Санджовезе",
+      "axes": {
+        "tannin": 3.7,
+        "body": 3.3,
+        "acidity": 4.1,
+        "aroma_intensity": 3.3,
+        "oak": 2.0
+      },
+      "descriptors": [
+        "red_fruit",
+        "herbal",
+        "earth"
+      ]
+    },
+    "tempranillo": {
+      "label": "Темпранильо",
+      "axes": {
+        "tannin": 3.4,
+        "body": 3.6,
+        "acidity": 2.9,
+        "aroma_intensity": 3.2,
+        "oak": 2.8
+      },
+      "descriptors": [
+        "red_fruit",
+        "leather",
+        "vanilla"
+      ]
+    },
+    "gamay": {
+      "label": "Гаме",
+      "axes": {
+        "tannin": 2.0,
+        "body": 2.3,
+        "acidity": 3.7,
+        "aroma_intensity": 3.2,
+        "oak": 1.2
+      },
+      "descriptors": [
+        "red_fruit",
+        "floral"
+      ]
+    },
+    "zweigelt": {
+      "label": "Цвайгельт",
+      "axes": {
+        "tannin": 2.6,
+        "body": 2.9,
+        "acidity": 3.4,
+        "aroma_intensity": 3.1,
+        "oak": 1.5
+      },
+      "descriptors": [
+        "red_fruit",
+        "spice"
+      ]
+    },
+    "dornfelder": {
+      "label": "Дорнфельдер",
+      "axes": {
+        "tannin": 2.8,
+        "body": 3.2,
+        "acidity": 3.0,
+        "aroma_intensity": 3.2,
+        "oak": 1.6
+      },
+      "descriptors": [
+        "black_fruit",
+        "floral"
+      ]
+    },
+    "regent": {
+      "label": "Регент",
+      "axes": {
+        "tannin": 3.0,
+        "body": 3.2,
+        "acidity": 3.1,
+        "aroma_intensity": 3.0,
+        "oak": 1.6
+      },
+      "descriptors": [
+        "black_fruit",
+        "herbal"
+      ]
+    },
+    "saperavi": {
+      "label": "Саперави",
+      "axes": {
+        "tannin": 4.2,
+        "body": 4.3,
+        "acidity": 4.0,
+        "aroma_intensity": 3.6,
+        "oak": 2.5
+      },
+      "descriptors": [
+        "black_fruit",
+        "dried_fruit",
+        "spice",
+        "chocolate"
+      ]
+    },
+    "bastardo_magarachsky": {
+      "label": "Бастардо Магарачский",
+      "axes": {
+        "tannin": 3.4,
+        "body": 3.8,
+        "acidity": 3.0,
+        "aroma_intensity": 3.4,
+        "oak": 2.0
+      },
+      "descriptors": [
+        "dried_fruit",
+        "chocolate",
+        "spice"
+      ]
+    },
+    "cabernet_azos": {
+      "label": "Каберне АЗОС",
+      "axes": {
+        "tannin": 3.9,
+        "body": 3.9,
+        "acidity": 3.4,
+        "aroma_intensity": 3.3,
+        "oak": 2.4
+      },
+      "descriptors": [
+        "black_fruit",
+        "pepper",
+        "vegetal"
+      ]
+    },
+    "livadiysky_cherny": {
+      "label": "Ливадийский чёрный",
+      "axes": {
+        "tannin": 3.2,
+        "body": 4.0,
+        "acidity": 2.9,
+        "aroma_intensity": 3.6,
+        "oak": 1.8
+      },
+      "descriptors": [
+        "dried_fruit",
+        "chocolate"
+      ]
+    },
+    "krasnostop": {
+      "label": "Красностоп Золотовский",
+      "axes": {
+        "tannin": 4.0,
+        "body": 4.2,
+        "acidity": 3.9,
+        "aroma_intensity": 3.7,
+        "oak": 2.5
+      },
+      "descriptors": [
+        "black_fruit",
+        "dried_fruit",
+        "pepper",
+        "spice",
+        "earth"
+      ]
+    },
+    "krasnostop_azos": {
+      "label": "Красностоп АЗОС",
+      "axes": {
+        "tannin": 3.8,
+        "body": 4.0,
+        "acidity": 3.7,
+        "aroma_intensity": 3.5,
+        "oak": 2.4
+      },
+      "descriptors": [
+        "black_fruit",
+        "pepper",
+        "spice"
+      ]
+    },
+    "tsimlyansky_cherny": {
+      "label": "Цимлянский чёрный",
+      "axes": {
+        "tannin": 2.9,
+        "body": 3.2,
+        "acidity": 3.5,
+        "aroma_intensity": 3.5,
+        "oak": 1.8
+      },
+      "descriptors": [
+        "dried_fruit",
+        "red_fruit",
+        "smoke",
+        "herbal",
+        "leather"
+      ]
+    },
+    "kefesia": {
+      "label": "Кефесия",
+      "axes": {
+        "tannin": 3.2,
+        "body": 3.5,
+        "acidity": 3.2,
+        "aroma_intensity": 3.3,
+        "oak": 2.0
+      },
+      "descriptors": [
+        "dried_fruit",
+        "chocolate",
+        "black_fruit"
+      ]
+    },
+    "dzhevat_kara": {
+      "label": "Джеват кара",
+      "axes": {
+        "tannin": 2.8,
+        "body": 3.4,
+        "acidity": 2.6,
+        "aroma_intensity": 2.6,
+        "oak": 1.6
+      },
+      "descriptors": [
+        "dried_fruit",
+        "black_fruit"
+      ]
+    },
+    "ekim_kara": {
+      "label": "Эким кара",
+      "axes": {
+        "tannin": 3.4,
+        "body": 3.7,
+        "acidity": 3.0,
+        "aroma_intensity": 3.2,
+        "oak": 1.8
+      },
+      "descriptors": [
+        "dried_fruit",
+        "chocolate",
+        "spice"
+      ]
+    },
+    "golubok": {
+      "label": "Голубок",
+      "axes": {
+        "tannin": 3.6,
+        "body": 3.8,
+        "acidity": 3.2,
+        "aroma_intensity": 3.4,
+        "oak": 2.0
+      },
+      "descriptors": [
+        "black_fruit",
+        "dried_fruit",
+        "spice"
+      ]
+    },
+    "dostoyny": {
+      "label": "Достойный",
+      "axes": {
+        "tannin": 3.2,
+        "body": 3.3,
+        "acidity": 3.2,
+        "aroma_intensity": 3.0,
+        "oak": 1.8
+      },
+      "descriptors": [
+        "black_fruit",
+        "red_fruit",
+        "herbal"
+      ]
+    },
+    "gurzufsky_rozovy": {
+      "label": "Гурзуфский розовый",
+      "axes": {
+        "tannin": 2.2,
+        "body": 3.2,
+        "acidity": 2.9,
+        "aroma_intensity": 4.0,
+        "oak": 1.4
+      },
+      "descriptors": [
+        "floral",
+        "honey",
+        "spice"
+      ]
+    },
+    "chardonnay": {
+      "label": "Шардоне",
+      "axes": {
+        "acidity": 3.3,
+        "body": 3.3,
+        "aroma_intensity": 3.0,
+        "oak": 3.0
+      },
+      "descriptors": [
+        "green_apple",
+        "citrus",
+        "stone_fruit",
+        "butter",
+        "nutty"
+      ]
+    },
+    "sauvignon_blanc": {
+      "label": "Совиньон Блан",
+      "axes": {
+        "acidity": 4.1,
+        "body": 2.5,
+        "aroma_intensity": 4.0,
+        "oak": 1.2
+      },
+      "descriptors": [
+        "citrus",
+        "herbal",
+        "vegetal",
+        "tropical",
+        "mineral"
+      ]
+    },
+    "riesling": {
+      "label": "Рислинг",
+      "axes": {
+        "acidity": 4.3,
+        "body": 2.4,
+        "aroma_intensity": 3.6,
+        "oak": 1.0
+      },
+      "descriptors": [
+        "green_apple",
+        "citrus",
+        "mineral",
+        "floral",
+        "honey"
+      ]
+    },
+    "aligote": {
+      "label": "Алиготе",
+      "axes": {
+        "acidity": 3.9,
+        "body": 2.3,
+        "aroma_intensity": 2.5,
+        "oak": 1.0
+      },
+      "descriptors": [
+        "green_apple",
+        "citrus",
+        "mineral"
+      ]
+    },
+    "pinot_gris": {
+      "label": "Пино Гри / Пино Гриджо",
+      "axes": {
+        "acidity": 3.0,
+        "body": 2.9,
+        "aroma_intensity": 2.7,
+        "oak": 1.4
+      },
+      "descriptors": [
+        "stone_fruit",
+        "green_apple",
+        "nutty"
+      ]
+    },
+    "pinot_blanc": {
+      "label": "Пино Блан",
+      "axes": {
+        "acidity": 3.2,
+        "body": 2.7,
+        "aroma_intensity": 2.5,
+        "oak": 1.4
+      },
+      "descriptors": [
+        "green_apple",
+        "floral"
+      ]
+    },
+    "viognier": {
+      "label": "Вионье",
+      "axes": {
+        "acidity": 2.7,
+        "body": 3.6,
+        "aroma_intensity": 4.2,
+        "oak": 2.0
+      },
+      "descriptors": [
+        "stone_fruit",
+        "floral",
+        "tropical"
+      ]
+    },
+    "gewurztraminer": {
+      "label": "Гевюрцтраминер / Траминер розовый",
+      "axes": {
+        "acidity": 2.6,
+        "body": 3.4,
+        "aroma_intensity": 4.5,
+        "oak": 1.4
+      },
+      "descriptors": [
+        "floral",
+        "tropical",
+        "spice",
+        "honey"
+      ]
+    },
+    "semillon": {
+      "label": "Семильон",
+      "axes": {
+        "acidity": 2.9,
+        "body": 3.2,
+        "aroma_intensity": 2.8,
+        "oak": 2.4
+      },
+      "descriptors": [
+        "honey",
+        "stone_fruit",
+        "nutty"
+      ]
+    },
+    "chenin_blanc": {
+      "label": "Шенен Блан",
+      "axes": {
+        "acidity": 4.0,
+        "body": 2.9,
+        "aroma_intensity": 3.2,
+        "oak": 1.8
+      },
+      "descriptors": [
+        "green_apple",
+        "honey",
+        "floral"
+      ]
+    },
+    "muscat": {
+      "label": "Мускат белый",
+      "axes": {
+        "acidity": 2.8,
+        "body": 3.0,
+        "aroma_intensity": 4.6,
+        "oak": 1.0
+      },
+      "descriptors": [
+        "floral",
+        "tropical",
+        "honey",
+        "citrus"
+      ]
+    },
+    "muscat_ottonel": {
+      "label": "Мускат Оттонель",
+      "axes": {
+        "acidity": 2.9,
+        "body": 2.8,
+        "aroma_intensity": 4.3,
+        "oak": 1.0
+      },
+      "descriptors": [
+        "floral",
+        "citrus"
+      ]
+    },
+    "muller_thurgau": {
+      "label": "Мюллер-Тургау",
+      "axes": {
+        "acidity": 3.0,
+        "body": 2.3,
+        "aroma_intensity": 2.8,
+        "oak": 1.0
+      },
+      "descriptors": [
+        "floral",
+        "green_apple"
+      ]
+    },
+    "silvaner": {
+      "label": "Сильванер",
+      "axes": {
+        "acidity": 3.3,
+        "body": 2.5,
+        "aroma_intensity": 2.4,
+        "oak": 1.2
+      },
+      "descriptors": [
+        "green_apple",
+        "herbal"
+      ]
+    },
+    "sauvignon_gris": {
+      "label": "Совиньон Гри",
+      "axes": {
+        "acidity": 3.6,
+        "body": 2.8,
+        "aroma_intensity": 3.2,
+        "oak": 1.4
+      },
+      "descriptors": [
+        "citrus",
+        "stone_fruit"
+      ]
+    },
+    "rkatsiteli": {
+      "label": "Ркацители",
+      "axes": {
+        "acidity": 3.8,
+        "body": 2.9,
+        "aroma_intensity": 2.8,
+        "oak": 1.8
+      },
+      "descriptors": [
+        "green_apple",
+        "citrus",
+        "mineral",
+        "honey",
+        "nutty"
+      ]
+    },
+    "sibirkovy": {
+      "label": "Сибирьковый",
+      "axes": {
+        "acidity": 3.7,
+        "body": 2.6,
+        "aroma_intensity": 3.0,
+        "oak": 1.2
+      },
+      "descriptors": [
+        "herbal",
+        "green_apple",
+        "citrus",
+        "stone_fruit",
+        "mineral"
+      ]
+    },
+    "puhlyakovsky": {
+      "label": "Пухляковский",
+      "axes": {
+        "acidity": 3.2,
+        "body": 2.7,
+        "aroma_intensity": 3.0,
+        "oak": 1.2
+      },
+      "descriptors": [
+        "floral",
+        "herbal",
+        "green_apple",
+        "stone_fruit"
+      ]
+    },
+    "kokur": {
+      "label": "Кокур белый",
+      "axes": {
+        "acidity": 3.3,
+        "body": 3.1,
+        "aroma_intensity": 3.2,
+        "oak": 2.0
+      },
+      "descriptors": [
+        "green_apple",
+        "stone_fruit",
+        "honey",
+        "mineral",
+        "nutty"
+      ]
+    },
+    "citron_magaracha": {
+      "label": "Цитронный Магарача",
+      "axes": {
+        "acidity": 3.2,
+        "body": 3.0,
+        "aroma_intensity": 4.3,
+        "oak": 1.6
+      },
+      "descriptors": [
+        "citrus",
+        "floral",
+        "tropical",
+        "honey"
+      ]
+    },
+    "pervenets_magaracha": {
+      "label": "Первенец Магарача",
+      "axes": {
+        "acidity": 3.4,
+        "body": 2.9,
+        "aroma_intensity": 2.7,
+        "oak": 1.6
+      },
+      "descriptors": [
+        "green_apple",
+        "citrus",
+        "floral",
+        "mineral"
+      ]
+    },
+    "sary_pandas": {
+      "label": "Сары пандас",
+      "axes": {
+        "acidity": 3.0,
+        "body": 2.8,
+        "aroma_intensity": 2.6,
+        "oak": 1.2
+      },
+      "descriptors": [
+        "green_apple",
+        "honey"
+      ]
+    },
+    "mtsvane": {
+      "label": "Мцване",
+      "axes": {
+        "acidity": 3.5,
+        "body": 3.0,
+        "aroma_intensity": 3.3,
+        "oak": 1.6
+      },
+      "descriptors": [
+        "floral",
+        "stone_fruit",
+        "herbal"
+      ]
+    },
+    "kangun": {
+      "label": "Кангун",
+      "axes": {
+        "acidity": 3.0,
+        "body": 2.8,
+        "aroma_intensity": 2.5,
+        "oak": 1.2
+      },
+      "descriptors": [
+        "green_apple",
+        "citrus"
+      ]
+    },
+    "bianca": {
+      "label": "Бианка / Кристалл / Платовский / Подарок Магарача",
+      "axes": {
+        "acidity": 3.2,
+        "body": 2.5,
+        "aroma_intensity": 2.4,
+        "oak": 1.0
+      },
+      "descriptors": [
+        "green_apple",
+        "citrus"
+      ]
+    }
+  }
+}

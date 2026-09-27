@@ -1,0 +1,11 @@
+base_vs_e6pkg_v2 {"base": 353, "e6": 353, "slug_eq": 353, "text_read_eq": 353, "resolve_eq": 353}
+base_vs_e6pkg_kr {"base": 903, "e6": 903, "slug_eq": 903, "text_read_eq": 903, "resolve_eq": 903}
+base_vs_e6pkg_ooc {"base": 408, "fields_eq": 408}
+base_vs_expected_v2_030c62e 353
+off_vs_base_v2 {"off": 353, "base": 353, "slug_eq": 353, "fields_eq": 353, "resolve_eq": 353}
+off_vs_base_kr {"off": 903, "base": 903, "slug_eq": 903, "fields_eq": 903, "resolve_eq": 903}
+off_vs_base_ooc {"off": 408, "base": 408, "slug_eq": 408, "fields_eq": 408, "resolve_eq": 408}
+off_vs_base_kr_wm 903
+base_scores {"v2": [315, 307, {"L": {"soft": 19, "strict": 19, "n": 20}, "M": {"soft": 233, "strict": 229, "n": 268}, "R": {"soft": 63, "strict": 59, "n": 65}}], "kr617": 543, "kr617_wm": 545, "kr616": 542, "kr616_wm": 544}
+health {"base": [], "off": []}
+ворота сошлись

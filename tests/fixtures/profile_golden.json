@@ -1,0 +1,731 @@
+{
+ "_comment": "Золотая фикстура профиля: 30 вин выгрузки — slug, входы build_profile (коды сканера) и оси профиля, посчитанные движком «Лозы». Собрана research/2026-09-24_after/golden_profile.py --fixture.",
+ "tolerance": 0.05,
+ "wines": [
+  {
+   "slug": "abrau-dyurso-abrau-durso-reserve-brut-shardone-beloe-bryut-115",
+   "grapes": [
+    "pinot_blanc",
+    "chardonnay",
+    "riesling"
+   ],
+   "color": "Белое",
+   "sugar": "brut",
+   "kind": "sparkling",
+   "region": "kuban",
+   "name": "Abrau-Durso Reserve Brut",
+   "vintage": null,
+   "basis": "high",
+   "axes": {
+    "sweetness": 0.7,
+    "acidity": 3.45,
+    "tannin": 0.0,
+    "body": 2.95,
+    "alcohol": 3.0,
+    "oak": 1.8,
+    "aroma_intensity": 3.03,
+    "effervescence": 4.0
+   }
+  },
+  {
+   "slug": "abrau-dyurso-abrau-estates-oranzh-tsitronnyy-magaracha-oranzhevoe-suhoe-105",
+   "grapes": [
+    "citron_magaracha"
+   ],
+   "color": "Оранжевое",
+   "sugar": "suhoe",
+   "kind": "still",
+   "region": "kuban",
+   "name": "Abrau Estates Оранж",
+   "vintage": null,
+   "basis": "high",
+   "axes": {
+    "sweetness": 0.4,
+    "acidity": 3.05,
+    "tannin": 0.0,
+    "body": 3.15,
+    "alcohol": 3.0,
+    "oak": 1.6,
+    "aroma_intensity": 4.3,
+    "effervescence": 0.0
+   }
+  },
+  {
+   "slug": "agora-rosa-viva-beloe-bryut",
+   "grapes": [
+    "sauvignon_blanc",
+    "rkatsiteli",
+    "riesling"
+   ],
+   "color": "Белое",
+   "sugar": "brut",
+   "kind": "sparkling",
+   "region": "crimea",
+   "name": "Agora Rosa Viva Белое Брют",
+   "vintage": null,
+   "basis": "high",
+   "axes": {
+    "sweetness": 0.7,
+    "acidity": 4.02,
+    "tannin": 0.0,
+    "body": 2.65,
+    "alcohol": 3.0,
+    "oak": 1.33,
+    "aroma_intensity": 3.47,
+    "effervescence": 4.0
+   }
+  },
+  {
+   "slug": "agora-rosa-viva-rozovoe-polusladkoe",
+   "grapes": [
+    "sauvignon_blanc",
+    "pinot_noir",
+    "chardonnay"
+   ],
+   "color": "Розовое",
+   "sugar": "polusladkoe",
+   "kind": "still",
+   "region": "crimea",
+   "name": "Agora Rosa Viva Розовое Полусладкое",
+   "vintage": null,
+   "basis": "high",
+   "axes": {
+    "sweetness": 3.2,
+    "acidity": 3.68,
+    "tannin": 0.6,
+    "body": 2.78,
+    "alcohol": 3.0,
+    "oak": 2.0,
+    "aroma_intensity": 3.43,
+    "effervescence": 0.0
+   }
+  },
+  {
+   "slug": "agrolayn-mountain-eagle-aleatico-rose-aleatiko-rozovoe-suhoe-125",
+   "grapes": [
+    "aleatiko"
+   ],
+   "color": "Розовое",
+   "sugar": "suhoe",
+   "kind": "still",
+   "region": "dagestan",
+   "name": "Mountain Eagle Aleatico Rose",
+   "vintage": null,
+   "basis": "low",
+   "axes": {
+    "sweetness": 0.4,
+    "acidity": 3.4,
+    "tannin": 0.6,
+    "body": 2.75,
+    "alcohol": 3.0,
+    "oak": 0.5,
+    "aroma_intensity": 3.2,
+    "effervescence": 0.0
+   }
+  },
+  {
+   "slug": "cabernet-franc-pinot-noir-2022",
+   "grapes": [
+    "cabernet_franc"
+   ],
+   "color": "Красное",
+   "sugar": "suhoe",
+   "kind": "still",
+   "region": "other",
+   "name": "Cabernet Franc-Pinot Noir 2022",
+   "vintage": 2022,
+   "basis": "high",
+   "axes": {
+    "sweetness": 0.4,
+    "acidity": 3.55,
+    "tannin": 3.4,
+    "body": 3.34,
+    "alcohol": 3.0,
+    "oak": 2.0,
+    "aroma_intensity": 3.43,
+    "effervescence": 0.0
+   }
+  },
+  {
+   "slug": "chteau-le-grand-vostock-vostock-blanc-sovinon-blan-beloe-suhoe-135",
+   "grapes": [
+    "sauvignon_blanc",
+    "rkatsiteli",
+    "chardonnay",
+    "riesling",
+    "aligote"
+   ],
+   "color": "Белое",
+   "sugar": "suhoe",
+   "kind": "still",
+   "region": "kuban",
+   "name": "Vostock Blanc",
+   "vintage": null,
+   "basis": "high",
+   "axes": {
+    "sweetness": 0.4,
+    "acidity": 3.73,
+    "tannin": 0.0,
+    "body": 2.83,
+    "alcohol": 3.0,
+    "oak": 1.6,
+    "aroma_intensity": 3.18,
+    "effervescence": 0.0
+   }
+  },
+  {
+   "slug": "czimlyanskoe-beloe-bryut",
+   "grapes": [
+    "sauvignon_blanc",
+    "chardonnay",
+    "riesling"
+   ],
+   "color": "Белое",
+   "sugar": "brut",
+   "kind": "sparkling",
+   "region": "don_valley",
+   "name": "Цимлянское белое брют",
+   "vintage": null,
+   "basis": "high",
+   "axes": {
+    "sweetness": 0.7,
+    "acidity": 4.25,
+    "tannin": 0.0,
+    "body": 2.53,
+    "alcohol": 3.0,
+    "oak": 1.73,
+    "aroma_intensity": 3.53,
+    "effervescence": 4.0
+   }
+  },
+  {
+   "slug": "czimlyanskoe-beloe-polusladkoe",
+   "grapes": [
+    "pervenets_magaracha",
+    "sauvignon_blanc",
+    "rkatsiteli",
+    "chardonnay",
+    "riesling"
+   ],
+   "color": "Белое",
+   "sugar": "polusladkoe",
+   "kind": "still",
+   "region": "don_valley",
+   "name": "Цимлянское белое полусладкое",
+   "vintage": null,
+   "basis": "high",
+   "axes": {
+    "sweetness": 3.2,
+    "acidity": 4.13,
+    "tannin": 0.0,
+    "body": 2.6,
+    "alcohol": 3.0,
+    "oak": 1.72,
+    "aroma_intensity": 3.22,
+    "effervescence": 0.0
+   }
+  },
+  {
+   "slug": "derbent-vino-di-kaspiko-shardone-beloe-bryut-105-125",
+   "grapes": [
+    "chardonnay",
+    "riesling",
+    "aligote"
+   ],
+   "color": "Белое",
+   "sugar": "brut",
+   "kind": "sparkling",
+   "region": "dagestan",
+   "name": "Ди Каспико",
+   "vintage": null,
+   "basis": "high",
+   "axes": {
+    "sweetness": 0.7,
+    "acidity": 3.53,
+    "tannin": 0.0,
+    "body": 2.92,
+    "alcohol": 3.0,
+    "oak": 1.67,
+    "aroma_intensity": 3.03,
+    "effervescence": 4.0
+   }
+  },
+  {
+   "slug": "dva-brata-pet-nat-kokur-2024",
+   "grapes": [
+    "kokur"
+   ],
+   "color": "Белое",
+   "sugar": "extra_brut",
+   "kind": "sparkling",
+   "region": "crimea",
+   "name": "Два Брата Пет Нат Кокур, 2024",
+   "vintage": 2024,
+   "basis": "high",
+   "axes": {
+    "sweetness": 0.3,
+    "acidity": 3.25,
+    "tannin": 0.0,
+    "body": 3.15,
+    "alcohol": 3.0,
+    "oak": 2.0,
+    "aroma_intensity": 3.2,
+    "effervescence": 4.0
+   }
+  },
+  {
+   "slug": "fanagoriya-formula-q-saperavi-krasnoe-suhoe-135",
+   "grapes": [
+    "krasnostop",
+    "cabernet_sauvignon",
+    "saperavi",
+    "merlot"
+   ],
+   "color": "Красное",
+   "sugar": "suhoe",
+   "kind": "still",
+   "region": "kuban",
+   "name": "Formula Q",
+   "vintage": null,
+   "basis": "high",
+   "axes": {
+    "sweetness": 0.4,
+    "acidity": 3.4,
+    "tannin": 3.83,
+    "body": 4.2,
+    "alcohol": 3.0,
+    "oak": 2.47,
+    "aroma_intensity": 3.45,
+    "effervescence": 0.0
+   }
+  },
+  {
+   "slug": "fanagoriya-primum-alveus-brut-2014-shardone-igristoe-bryut-beloe-12",
+   "grapes": [
+    "pinot_noir",
+    "chardonnay"
+   ],
+   "color": "Белое",
+   "sugar": "brut",
+   "kind": "sparkling",
+   "region": "kuban",
+   "name": "Primum Alveus Brut 2014",
+   "vintage": 2014,
+   "basis": "high",
+   "axes": {
+    "sweetness": 0.7,
+    "acidity": 3.15,
+    "tannin": 0.3,
+    "body": 3.2,
+    "alcohol": 3.0,
+    "oak": 2.4,
+    "aroma_intensity": 3.3,
+    "effervescence": 4.0
+   }
+  },
+  {
+   "slug": "fanagoriya-primum-alveus-brut-2021-shardone-beloe-bryut-11-13",
+   "grapes": [
+    "pinot_noir",
+    "chardonnay"
+   ],
+   "color": "Белое",
+   "sugar": "brut",
+   "kind": "sparkling",
+   "region": "kuban",
+   "name": "Primum Alveus. Brut 2021",
+   "vintage": 2021,
+   "basis": "high",
+   "axes": {
+    "sweetness": 0.7,
+    "acidity": 3.32,
+    "tannin": 0.3,
+    "body": 3.06,
+    "alcohol": 3.0,
+    "oak": 2.4,
+    "aroma_intensity": 3.19,
+    "effervescence": 4.0
+   }
+  },
+  {
+   "slug": "ferrum-winery-apollinary-merlo-krasnoe-suhoe-13",
+   "grapes": [
+    "merlot"
+   ],
+   "color": "Красное",
+   "sugar": "suhoe",
+   "kind": "still",
+   "region": "stavropol",
+   "name": "Apollinary",
+   "vintage": null,
+   "basis": "high",
+   "axes": {
+    "sweetness": 0.4,
+    "acidity": 2.8,
+    "tannin": 3.0,
+    "body": 3.8,
+    "alcohol": 3.0,
+    "oak": 2.3,
+    "aroma_intensity": 3.1,
+    "effervescence": 0.0
+   }
+  },
+  {
+   "slug": "fioletovyj-rannij-petnat",
+   "grapes": [],
+   "color": "Белое",
+   "sugar": null,
+   "kind": "sparkling",
+   "region": "lower_volga",
+   "name": "Фиолетовый Ранний петнат",
+   "vintage": null,
+   "basis": "low",
+   "axes": {
+    "sweetness": 0.4,
+    "acidity": 3.85,
+    "tannin": 0.2,
+    "body": 2.55,
+    "alcohol": 3.0,
+    "oak": 1.0,
+    "aroma_intensity": 3.0,
+    "effervescence": 4.0
+   }
+  },
+  {
+   "slug": "kd-kokur",
+   "grapes": [
+    "kokur"
+   ],
+   "color": "Белое",
+   "sugar": "suhoe",
+   "kind": "still",
+   "region": "terek_valley",
+   "name": "KD Кокур",
+   "vintage": null,
+   "basis": "high",
+   "axes": {
+    "sweetness": 0.4,
+    "acidity": 3.2,
+    "tannin": 0.0,
+    "body": 3.25,
+    "alcohol": 3.0,
+    "oak": 2.0,
+    "aroma_intensity": 3.2,
+    "effervescence": 0.0
+   }
+  },
+  {
+   "slug": "kuban-vino-aristov-anima-michela-2023-sandzhoveze-krasnoe-suhoe-115",
+   "grapes": [
+    "cabernet_sauvignon",
+    "sangiovese",
+    "merlot"
+   ],
+   "color": "Красное",
+   "sugar": "suhoe",
+   "kind": "still",
+   "region": "kuban",
+   "name": "Аристов Анима Мичела 2023",
+   "vintage": 2023,
+   "basis": "high",
+   "axes": {
+    "sweetness": 0.4,
+    "acidity": 3.29,
+    "tannin": 3.6,
+    "body": 3.84,
+    "alcohol": 3.0,
+    "oak": 2.3,
+    "aroma_intensity": 3.28,
+    "effervescence": 0.0
+   }
+  },
+  {
+   "slug": "kuban-vino-shato-tamane-ruzh-2023-tsvaygelt-krasnoe-suhoe-12",
+   "grapes": [
+    "zweigelt",
+    "saperavi"
+   ],
+   "color": "Красное",
+   "sugar": "suhoe",
+   "kind": "still",
+   "region": "kuban",
+   "name": "Шато Тамань Руж 2023",
+   "vintage": 2023,
+   "basis": "high",
+   "axes": {
+    "sweetness": 0.4,
+    "acidity": 3.53,
+    "tannin": 3.4,
+    "body": 3.77,
+    "alcohol": 3.0,
+    "oak": 2.0,
+    "aroma_intensity": 3.37,
+    "effervescence": 0.0
+   }
+  },
+  {
+   "slug": "kuban-vino-shato-tamane-terruar-krasnostop-saperavi-2022-krasnoe-suhoe-125",
+   "grapes": [
+    "krasnostop",
+    "saperavi"
+   ],
+   "color": "Красное",
+   "sugar": "suhoe",
+   "kind": "still",
+   "region": "kuban",
+   "name": "Шато Тамань Терруар Красностоп-Саперави 2022",
+   "vintage": 2022,
+   "basis": "high",
+   "axes": {
+    "sweetness": 0.4,
+    "acidity": 3.75,
+    "tannin": 4.1,
+    "body": 4.44,
+    "alcohol": 3.0,
+    "oak": 2.5,
+    "aroma_intensity": 3.68,
+    "effervescence": 0.0
+   }
+  },
+  {
+   "slug": "millstream-av-igristoe-molodoe-polusuhoe-beloe",
+   "grapes": [
+    "muscat"
+   ],
+   "color": "Белое",
+   "sugar": "polusuhoe",
+   "kind": "sparkling",
+   "region": "kuban",
+   "name": "MILLSTREAM AV игристое молодое полусухое белое",
+   "vintage": null,
+   "basis": "high",
+   "axes": {
+    "sweetness": 1.8,
+    "acidity": 2.65,
+    "tannin": 0.0,
+    "body": 3.15,
+    "alcohol": 3.0,
+    "oak": 0.2,
+    "aroma_intensity": 4.6,
+    "effervescence": 4.0
+   }
+  },
+  {
+   "slug": "olymp-winery-adagum-estate-red-blend-kaberne-fran-krasnoe-suhoe-11",
+   "grapes": [
+    "cabernet_sauvignon",
+    "cabernet_franc"
+   ],
+   "color": "Красное",
+   "sugar": "suhoe",
+   "kind": "still",
+   "region": "kuban",
+   "name": "Adagum Estate Red Blend",
+   "vintage": null,
+   "basis": "high",
+   "axes": {
+    "sweetness": 0.4,
+    "acidity": 3.35,
+    "tannin": 3.75,
+    "body": 3.8,
+    "alcohol": 3.0,
+    "oak": 2.3,
+    "aroma_intensity": 3.4,
+    "effervescence": 0.0
+   }
+  },
+  {
+   "slug": "perovskih_polusladkoe_rosovoe",
+   "grapes": [
+    "mourvedre",
+    "syrah"
+   ],
+   "color": "Розовое",
+   "sugar": "polusladkoe",
+   "kind": "still",
+   "region": "crimea",
+   "name": "Полусладкое розовое",
+   "vintage": null,
+   "basis": "high",
+   "axes": {
+    "sweetness": 3.2,
+    "acidity": 3.0,
+    "tannin": 0.6,
+    "body": 4.1,
+    "alcohol": 3.0,
+    "oak": 2.3,
+    "aroma_intensity": 3.55,
+    "effervescence": 0.0
+   }
+  },
+  {
+   "slug": "sober-bash-korvina-krasnostop-zolotovskiy-krasnoe-suhoe-14",
+   "grapes": [
+    "krasnostop",
+    "cabernet_franc"
+   ],
+   "color": "Красное",
+   "sugar": "suhoe",
+   "kind": "still",
+   "region": "kuban",
+   "name": "Корвина",
+   "vintage": null,
+   "basis": "high",
+   "axes": {
+    "sweetness": 0.4,
+    "acidity": 3.6,
+    "tannin": 3.7,
+    "body": 3.9,
+    "alcohol": 3.0,
+    "oak": 2.25,
+    "aroma_intensity": 3.55,
+    "effervescence": 0.0
+   }
+  },
+  {
+   "slug": "sober-bash-trezvaya-golova-tsimlyanskiygolubok-tsimlyanskiy-chernyy-krasnoe-suhoe-135",
+   "grapes": [
+    "tsimlyansky_cherny",
+    "golubok"
+   ],
+   "color": "Красное",
+   "sugar": "suhoe",
+   "kind": "still",
+   "region": "kuban",
+   "name": "Трезвая голова. Цимлянский+Голубок",
+   "vintage": null,
+   "basis": "high",
+   "axes": {
+    "sweetness": 0.4,
+    "acidity": 3.2,
+    "tannin": 3.25,
+    "body": 3.65,
+    "alcohol": 3.0,
+    "oak": 1.9,
+    "aroma_intensity": 3.45,
+    "effervescence": 0.0
+   }
+  },
+  {
+   "slug": "vinodelnya-vedernikov-5050-tsimlyanskiy-sibirkovyy-ekstra-bryut-beloe-12",
+   "grapes": [
+    "tsimlyansky_cherny",
+    "sibirkovy"
+   ],
+   "color": "Белое",
+   "sugar": "extra_brut",
+   "kind": "sparkling",
+   "region": "don_valley",
+   "name": "50/50 Цимлянский-Сибирьковый Экстра брют",
+   "vintage": null,
+   "basis": "high",
+   "axes": {
+    "sweetness": 0.3,
+    "acidity": 3.95,
+    "tannin": 0.3,
+    "body": 2.7,
+    "alcohol": 3.0,
+    "oak": 1.5,
+    "aroma_intensity": 3.25,
+    "effervescence": 4.0
+   }
+  },
+  {
+   "slug": "vinodelnya-vedernikov-fantom-5050-krasnostop-zolotovskiy-krasnoe-suhoe-145",
+   "grapes": [
+    "krasnostop",
+    "cabernet_sauvignon"
+   ],
+   "color": "Красное",
+   "sugar": "suhoe",
+   "kind": "still",
+   "region": "don_valley",
+   "name": "Фантом 50/50",
+   "vintage": null,
+   "basis": "high",
+   "axes": {
+    "sweetness": 0.4,
+    "acidity": 4.0,
+    "tannin": 4.05,
+    "body": 3.9,
+    "alcohol": 3.0,
+    "oak": 2.55,
+    "aroma_intensity": 3.55,
+    "effervescence": 0.0
+   }
+  },
+  {
+   "slug": "zmv-koktebel-portveyn-krasnoe-kreplyonoe-kaberne-sovinon-sladkoe-17",
+   "grapes": [
+    "cabernet_sauvignon",
+    "moldova",
+    "merlot"
+   ],
+   "color": "Красное",
+   "sugar": "sladkoe",
+   "kind": "fortified",
+   "region": "crimea",
+   "name": "Портвейн - красное креплёное",
+   "vintage": null,
+   "basis": "medium",
+   "axes": {
+    "sweetness": 4.5,
+    "acidity": 3.1,
+    "tannin": 3.55,
+    "body": 3.9,
+    "alcohol": 4.6,
+    "oak": 2.45,
+    "aroma_intensity": 3.25,
+    "effervescence": 0.0
+   }
+  },
+  {
+   "slug": "znoj-denisov-vajneri",
+   "grapes": [
+    "citron_magaracha",
+    "rkatsiteli"
+   ],
+   "color": "Белое",
+   "sugar": null,
+   "kind": "still",
+   "region": "other",
+   "name": "Зной. Денисов Вайнери",
+   "vintage": null,
+   "basis": "high",
+   "axes": {
+    "sweetness": 0.4,
+    "acidity": 3.5,
+    "tannin": 0.0,
+    "body": 2.95,
+    "alcohol": 3.0,
+    "oak": 1.7,
+    "aroma_intensity": 3.55,
+    "effervescence": 0.0
+   }
+  },
+  {
+   "slug": "zolotaya-balka-blanc-de-neige-shardone-beloe-suhoe-125",
+   "grapes": [
+    "pinot_blanc",
+    "chardonnay"
+   ],
+   "color": "Белое",
+   "sugar": "suhoe",
+   "kind": "still",
+   "region": "crimea",
+   "name": "Blanc De Neige",
+   "vintage": null,
+   "basis": "high",
+   "axes": {
+    "sweetness": 0.4,
+    "acidity": 3.2,
+    "tannin": 0.0,
+    "body": 3.05,
+    "alcohol": 3.0,
+    "oak": 2.2,
+    "aroma_intensity": 2.75,
+    "effervescence": 0.0
+   }
+  }
+ ]
+}

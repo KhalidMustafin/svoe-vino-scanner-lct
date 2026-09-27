@@ -1,0 +1,33 @@
+R на оригиналах (WebP): «то же вино» 62/65 (95.4 %), строго 58/65, null 0; задержка {'p50': 1358, 'p95': 1634, 'max': 1834}
+R на JPEG (окно B):     «то же вино» 63/65 (96.9 %), строго 59/65, null 0; задержка {'p50': 1132, 'p95': 1357, 'max': 1658}
+сменился ответ: 1 ['R014-orig-0']; верно на WebP и неверно на JPEG: []; наоборот: ['R014-orig-0']
+
+R014-orig-0 [WebP/JPEG -/+] эталон massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16
+  WebP: massandra-muskatel-rozovyy-belye-sorta-vinograda-rozovoe-sladkoe-16
+  JPEG: massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16
+  orig p=0.3777 ambiguous cv_top1=massandra-muskat-belyy-yuzhnoberezhnyy-beloe-sladkoe-16 flip_blocked=False
+       строки: ПРОИЗВОДСТВЕННО-ЛАГЕРНОЕ ОБЩЕСТВО | МАССАНДА | 1894 | ГОД ОСНОВАНИЯ | ВИНО РОССИИ | МУСКАТЕЛЬ | МАССАНДАРА | БЕЛЫЙ | ГОД УРОЖАЯ | 2023 | Собственное винопроизводство
+       поля: winery=['Массандра'] cuvee=['мускатель'] grapes=[] sugar=[] color=None vintage=2023
+  jpeg p=0.5142 matched cv_top1=massandra-muskat-belyy-yuzhnoberezhnyy-beloe-sladkoe-16 flip_blocked=False
+       строки: ПРОИЗВОДСТВЕННО-ЛАГЕРНОЕ ОБЩЕСТВО | МАССАНДА | 1894 | ВИНО РОССИИ | МУСКАТЕЛЬ | МАССАНДАРА | БЕЛЬЙ | ГОД УРОЖАЯ | 2023
+       поля: winery=['Массандра'] cuvee=['мускатель'] grapes=[] sugar=[] color=Белое vintage=2023
+
+R048-orig-0 [WebP/JPEG -/-] эталон sovinon-blan
+  WebP: blagolyubov-sovinon-blan-beloe-suhoe-125
+  JPEG: blagolyubov-sovinon-blan-beloe-suhoe-125
+  orig p=0.5717 matched cv_top1=blagolyubov-sovinon-blan-beloe-suhoe-125 flip_blocked=False
+       строки: Семейная винодельня | Литавщуков | Совиньон Блан | полусладкое белое | фермерское вино | сделано в Винной деревне | Россия, Кубань. Анапа. | 0,75 л | 12%
+       поля: winery=['ЛОРИО -  семейная винодельня Логуновых', 'Литавщук. Litavshchuk vineyards & winery', 'винный'] cuvee=[] grapes=['sauvignon_blanc'] sugar=['polusladkoe'] color=Белое vintage=None
+  jpeg p=0.5794 matched cv_top1=blagolyubov-sovinon-blan-beloe-suhoe-125 flip_blocked=False
+       строки: Семейная винодельня | Литавщуков | Совиньон Блан | полусладкое белое | фермерское вино | сделано в Винной деревне | Россия, Кубань, Анапа. | 0,75 л | 12%
+       поля: winery=['ЛОРИО -  семейная винодельня Логуновых', 'Литавщук. Litavshchuk vineyards & winery', 'винный'] cuvee=[] grapes=['sauvignon_blanc'] sugar=['polusladkoe'] color=Белое vintage=None
+
+R084-orig-0 [WebP/JPEG -/-] эталон kaberne-sovinon-3
+  WebP: vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14
+  JPEG: vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14
+  orig p=0.8019 matched cv_top1=vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14 flip_blocked=False
+       строки: Семейная винодельня | Литавщукów | Каберне Совиньон | полусухое красное | фермерское вино | сделано в Винной деревне | Россия, Кубань, Анапа. | 0,75 L | 12,4%
+       поля: winery=['ЛОРИО -  семейная винодельня Логуновых', 'Литавщук. Litavshchuk vineyards & winery', 'винный'] cuvee=[] grapes=['cabernet_sauvignon'] sugar=['polusuhoe'] color=Красное vintage=None
+  jpeg p=0.7933 matched cv_top1=vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14 flip_blocked=False
+       строки: Семейная винодельня | Литавщукów | Каберне Совиньон | полусухое красное | фермерское вино | сделано в Винной деревне | Россия, Кубань, Анапа. | 0,75 L | 12,4%
+       поля: winery=['ЛОРИО -  семейная винодельня Логуновых', 'Литавщук. Litavshchuk vineyards & winery', 'винный'] cuvee=[] grapes=['cabernet_sauvignon'] sugar=['polusuhoe'] color=Красное vintage=None

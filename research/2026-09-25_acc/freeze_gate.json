@@ -1,0 +1,146 @@
+{
+ "what": "ворота слияния acc-freeze (Э1 + Э4 + Э3) 25.09: CPU, без видеокарты и Ollama",
+ "merges": {
+  "acc-e1": "374924c",
+  "acc-e4": "f516252",
+  "acc-e3": "4ee5ce1"
+ },
+ "equality": {
+  "cmd": "python -m bench.resolve_equality (файлы по умолчанию)",
+  "pfix_final": "353/353",
+  "kr_holdout": "617/617",
+  "gt_tokens_sha1": "899d5db3747fd315b7c8bfedf121f6ae79799061"
+ },
+ "e3_code_gate": {
+  "catalog_v2": {
+   "cmd": "python research/2026-09-25_acc/e3_measure.py gate --set catalog_v2",
+   "gate_failures": {},
+   "frames": 353,
+   "failed": [],
+   "reads": {
+    "off_hits": 353,
+    "off_misses": 0,
+    "on_hits": 0,
+    "on_misses": 0
+   },
+   "csv_score_delta_max": 0.0,
+   "files_sha1": {
+    "visual-s2so400m.npz": "ccd3a01f16379a3f0a8a1e7e8dc0623c7622bda5",
+    "gt_tokens.jsonl": "899d5db3747fd315b7c8bfedf121f6ae79799061",
+    "lexicon.json": "c2c7befd13b3f999b76c3469df31cc6a0732da5c",
+    "visual-s2so400m-live71.npz": "d0a53644978fca385d4db88cc35677ab261207e0",
+    "gt_tokens-live71.jsonl": "003db090393691e0e7c50c6e810ed1764f70443d",
+    "lexicon-live71.json": "41bda0093b9227675c139bd0db29cd7308432374"
+   },
+   "provenance_on": {
+    "gt_tokens_sha1": "003db090393691e0e7c50c6e810ed1764f70443d",
+    "model_gt_tokens_sha1": "bf6a8823a45004b1e13e586e5a92e05b8beb07b0",
+    "lexicon_source_sha1": "003db090393691e0e7c50c6e810ed1764f70443d",
+    "vlm_reader": "vlm@qwen3.5:4b|f3a017317f04",
+    "vlm_reader_trained": [
+     "vlm@qwen3.5:4b|f3a017317f04"
+    ],
+    "consistent": false
+   },
+   "answers_differ_from_dump_h5": [
+    "M214-orig-0",
+    "M410-orig-0",
+    "M422-orig-0",
+    "M425-orig-0",
+    "M455-orig-0",
+    "M459-orig-0",
+    "M460-orig-0",
+    "M543-orig-0",
+    "M596-orig-0",
+    "R014-orig-0"
+   ]
+  },
+  "krasnostop_v1": {
+   "cmd": "python research/2026-09-25_acc/e3_measure.py gate --set krasnostop_v1",
+   "gate_failures": {},
+   "frames": 903,
+   "failed": [],
+   "reads": {
+    "off_hits": 903,
+    "off_misses": 0,
+    "on_hits": 0,
+    "on_misses": 0
+   },
+   "csv_score_delta_max": 0.0,
+   "files_sha1": {
+    "visual-s2so400m.npz": "ccd3a01f16379a3f0a8a1e7e8dc0623c7622bda5",
+    "gt_tokens.jsonl": "899d5db3747fd315b7c8bfedf121f6ae79799061",
+    "lexicon.json": "c2c7befd13b3f999b76c3469df31cc6a0732da5c",
+    "visual-s2so400m-live71.npz": "d0a53644978fca385d4db88cc35677ab261207e0",
+    "gt_tokens-live71.jsonl": "003db090393691e0e7c50c6e810ed1764f70443d",
+    "lexicon-live71.json": "41bda0093b9227675c139bd0db29cd7308432374"
+   },
+   "provenance_on": {
+    "gt_tokens_sha1": "003db090393691e0e7c50c6e810ed1764f70443d",
+    "model_gt_tokens_sha1": "bf6a8823a45004b1e13e586e5a92e05b8beb07b0",
+    "lexicon_source_sha1": "003db090393691e0e7c50c6e810ed1764f70443d",
+    "vlm_reader": "vlm@qwen3.5:4b|f3a017317f04",
+    "vlm_reader_trained": [
+     "vlm@qwen3.5:4b|f3a017317f04"
+    ],
+    "consistent": false
+   },
+   "answers_differ_from_dump_h5": [
+    "K0203-orig-0",
+    "K0266-orig-0",
+    "K0424-orig-0"
+   ]
+  }
+ },
+ "v2_flag": {
+  "cmd": "python research/2026-09-25_acc/e3_measure.py measure --set catalog_v2",
+  "note": "справочно, набор разработки; kr флагом на слитом коде не смотрели (один просмотр на кандидата)",
+  "score": {
+   "frames_gt_in_csv": 349,
+   "fixes": [
+    "M289-orig-0",
+    "M478-orig-0",
+    "R048-orig-0",
+    "R084-orig-0"
+   ],
+   "breaks": [],
+   "breaks_gt_in_csv": [],
+   "breaks_R": [],
+   "changed": [
+    "M107-orig-0",
+    "M289-orig-0",
+    "M478-orig-0",
+    "R048-orig-0",
+    "R084-orig-0"
+   ],
+   "off": {
+    "micro": 89.24,
+    "macro": 88.91,
+    "strict": 86.97,
+    "slices": {
+     "L": "19/20",
+     "M": "233/268",
+     "R": "63/65"
+    }
+   },
+   "on": {
+    "micro": 90.37,
+    "macro": 90.23,
+    "strict": 88.1,
+    "slices": {
+     "L": "19/20",
+     "M": "235/268",
+     "R": "65/65"
+    }
+   },
+   "accept_v2": true
+  },
+  "gate_failures": {},
+  "reads": {
+   "off_hits": 353,
+   "off_misses": 0,
+   "on_hits": 353,
+   "on_misses": 0
+  }
+ }
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "fanagoriya-cru-lermont-saperavi-saperavi-krasnoe-suhoe-135",
+  "name": "Cru Lermont Saperavi",
+  "winery": "Фанагория",
+  "region": "Кубань",
+  "grapes": [
+    "Саперави"
+  ],
+  "category": "Красное",
+  "color": "Рубиновый",
+  "sugar": "сухое",
+  "sugar_class": "suhoe",
+  "photo_name": "fanagoriya-cru-lermont-saperavi-saperavi-krasnoe-suhoe-135.webp",
+  "color_label": "Красное",
+  "sugar_label": "сухое",
+  "sparkling": false,
+  "style_label": "Красное сухое",
+  "description": "Заглушка описания для вёрстки: в живом ответе — «Описание» выгрузки организатора как есть.",
+  "description_src": "catalog",
+  "photo_url": "/v1/wines/fanagoriya-cru-lermont-saperavi-saperavi-krasnoe-suhoe-135/photo",
+  "portal_url": "https://vino-svoe.ru/wines/fanagoriya-cru-lermont-saperavi-saperavi-krasnoe-suhoe-135",
+  "alcohol": 13.5,
+  "alcohol_max": null,
+  "alcohol_src": "catalog"
+}

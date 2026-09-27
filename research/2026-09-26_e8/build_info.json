@@ -1,0 +1,336 @@
+{
+ "prereg": "research/2026-09-26_e8/PREREG.md",
+ "selection": {
+  "wrong_photo": 23,
+  "ext_source_none": 24,
+  "union": 33,
+  "already_packshot_fix": [
+   "fanagoriya-velvet-season-muskat-ottonel-beloe-sladkoe-13",
+   "fanagoriya-velvet-season-risling-beloe-sladkoe-12",
+   "one-barrel-uan-barrel",
+   "pinot-noir-2024-one-barrel-by-dmitry-maslov-pino-nuar-2024-uan-barrel-dmitrij-maslov",
+   "sober-bash-kaberne-fran-krasnoe-suhoe-127",
+   "sober-bash-risling-risling-reynskiy-beloe-suhoe-11",
+   "valeriy-zaharin-bastardo-kefesiya-avtohtonnoe-vino-kryma-bastardo-magarachskiy-krasnoe-suhoe-115"
+  ],
+  "pool": 26,
+  "chosen": 8,
+  "not_chosen": {
+   "нет кадров krasnostop": 15,
+   "только same_packshot / packaging / не high": 3
+  }
+ },
+ "cards": [
+  {
+   "card": "abrau-dyurso-abrau-kupazh-tyomnyy-suhoe-kaberne-sovinon-krasnoe-13",
+   "query_id": "K0007-orig-0",
+   "kr_id": "abrau-temnyy-kupazh-krasnoe-suhoe-vino",
+   "frame_slug": "abrau-dyurso-abrau-kupazh-tyomnyy-suhoe-kaberne-sovinon-krasnoe-13",
+   "volume_l": 0.75,
+   "match_method": "auto",
+   "image": "kr-img-6adf3cedf44b",
+   "image_sha1": "52c86eadfc4be17e8108611cf140e77d3f86f8ca",
+   "png": "<корень>\\svs-logs\\somm-2409\\acc_plan\\e8\\packshots\\abrau-dyurso-abrau-kupazh-tyomnyy-suhoe-kaberne-sovinon-krasnoe-13.png",
+   "png_sha1": "fc05183dec6d4cbe88e90e6d844011ece8eefd82",
+   "m2_png": "kr-img-6497c2f1c378",
+   "m2_pixels_equal": true,
+   "box_rsk": [
+    119,
+    19,
+    468,
+    1026
+   ],
+   "box": [
+    119,
+    19,
+    468,
+    1026
+   ],
+   "wm_components_dropped": 0
+  },
+  {
+   "card": "derbent-vino-endemy-saperavi-krasnoe-suhoe-13",
+   "query_id": "K0570-orig-0",
+   "kr_id": "saperavi-endemy-krasnoe-suhoe-vino-0-75-l",
+   "frame_slug": "vino-suhoe-krasnoe-endemy-saperavi",
+   "volume_l": 0.75,
+   "match_method": "auto",
+   "image": "kr-img-8422c1e594f2",
+   "image_sha1": "97a369d5f2bbcdd609d704b0fbae2d8d2d6c9a7b",
+   "png": "<корень>\\svs-logs\\somm-2409\\acc_plan\\e8\\packshots\\derbent-vino-endemy-saperavi-krasnoe-suhoe-13.png",
+   "png_sha1": "321d09c9cad8e67993c5a11660a9f43b2308627f",
+   "m2_png": "kr-img-c270f7fffdc0",
+   "m2_pixels_equal": true,
+   "box_rsk": [
+    213,
+    0,
+    591,
+    1050
+   ],
+   "box": [
+    213,
+    0,
+    495,
+    1050
+   ],
+   "wm_components_dropped": 3
+  },
+  {
+   "card": "derbent-vino-endemy-shardone-beloe-suhoe-13",
+   "query_id": "K0592-orig-0",
+   "kr_id": "shardone-endemy-beloe-suhoe-vino-0-75-l",
+   "frame_slug": "vino-suhoe-beloe-endemy-shardone",
+   "volume_l": 0.75,
+   "match_method": "auto",
+   "image": "kr-img-246ef5312ee7",
+   "image_sha1": "a3752f35db91f3d2165fc8198b5d790177faada4",
+   "png": "<корень>\\svs-logs\\somm-2409\\acc_plan\\e8\\packshots\\derbent-vino-endemy-shardone-beloe-suhoe-13.png",
+   "png_sha1": "238be287f10ef3c1f07b12cc5c0c060b8aed23c7",
+   "m2_png": "kr-img-7f53b45efd52",
+   "m2_pixels_equal": true,
+   "box_rsk": [
+    207,
+    0,
+    591,
+    1048
+   ],
+   "box": [
+    207,
+    0,
+    550,
+    1048
+   ],
+   "wm_components_dropped": 2
+  },
+  {
+   "card": "legato-legato-sovinon-blan-beloe-suhoe-125",
+   "query_id": "K0342-orig-0",
+   "kr_id": "legato-sovinon-blan-beloe-suhoe-vino-0-75-l",
+   "frame_slug": "legato-legato-sovinon-blan-beloe-suhoe-125",
+   "volume_l": 0.75,
+   "match_method": "auto",
+   "image": "kr-img-d22ecddaac11",
+   "image_sha1": "969a91d48b479cbf7d9afe54ff644d6482283f74",
+   "png": "<корень>\\svs-logs\\somm-2409\\acc_plan\\e8\\packshots\\legato-legato-sovinon-blan-beloe-suhoe-125.png",
+   "png_sha1": "dcb7e5cea20ec2a491358c7ebf52bc2821c92e33",
+   "m2_png": "kr-img-48e2fe462bd6",
+   "m2_pixels_equal": true,
+   "box_rsk": [
+    216,
+    0,
+    505,
+    1050
+   ],
+   "box": [
+    216,
+    0,
+    505,
+    1050
+   ],
+   "wm_components_dropped": 0
+  },
+  {
+   "card": "skalistyy-bereg-shyopot-tsvetov-risling-beloe-suhoe-109",
+   "query_id": "K0693-orig-0",
+   "kr_id": "skalistyy-bereg-shepot-cvetov-beloe-suhoe-vino-0-75-l",
+   "frame_slug": "skalistyj-bereg-shepot-czvetov",
+   "volume_l": 0.75,
+   "match_method": "auto",
+   "image": "kr-img-5c84d3389edc",
+   "image_sha1": "08a32c46ca6c26a10fadd2e2146fc86a4abaa638",
+   "png": "<корень>\\svs-logs\\somm-2409\\acc_plan\\e8\\packshots\\skalistyy-bereg-shyopot-tsvetov-risling-beloe-suhoe-109.png",
+   "png_sha1": "e14d46821f8572bfe6e657903f7f95b9d6981f85",
+   "m2_png": "kr-img-0404390d77ef",
+   "m2_pixels_equal": true,
+   "box_rsk": [
+    139,
+    0,
+    487,
+    1050
+   ],
+   "box": [
+    139,
+    0,
+    487,
+    1050
+   ],
+   "wm_components_dropped": 0
+  },
+  {
+   "card": "sober-bash-krasnostop-krasnostop-zolotovskiy-krasnoe-suhoe-14",
+   "query_id": "K0320-orig-0",
+   "kr_id": "krasnostop-rezerv-sober-bash-krasnoe-suhoe-vino-2016-god-0-75-l",
+   "frame_slug": "sober-bash-krasnostop-krasnostop-zolotovskiy-krasnoe-suhoe-14",
+   "volume_l": 0.75,
+   "match_method": "verified",
+   "image": "kr-img-5de78b73b13f",
+   "image_sha1": "e929d50789e7af63f1c5a3a568e74a7b622b2835",
+   "png": "<корень>\\svs-logs\\somm-2409\\acc_plan\\e8\\packshots\\sober-bash-krasnostop-krasnostop-zolotovskiy-krasnoe-suhoe-14.png",
+   "png_sha1": "8d7052b3c93c88c3a219f0b305282ad51bcf48a6",
+   "m2_png": "kr-img-1d56ef21b34a",
+   "m2_pixels_equal": true,
+   "box_rsk": [
+    209,
+    11,
+    588,
+    1041
+   ],
+   "box": [
+    209,
+    11,
+    494,
+    1041
+   ],
+   "wm_components_dropped": 6
+  },
+  {
+   "card": "vibes-vermentino-viognier-barrel-fermented-2022",
+   "query_id": "K0780-orig-0",
+   "kr_id": "vaybs-vermentino-vione-barrel-fermented-beloe-suhoe-vino-0-75-l",
+   "frame_slug": "vibes-vermentino-viognier-barrel-fermented-vermentino-beloe-suhoe-115",
+   "volume_l": 0.75,
+   "match_method": "verified",
+   "image": "kr-img-f7a1a8546c28",
+   "image_sha1": "29c7383566617b58a61e32851cbbc8cb7131cd8e",
+   "png": "<корень>\\svs-logs\\somm-2409\\acc_plan\\e8\\packshots\\vibes-vermentino-viognier-barrel-fermented-2022.png",
+   "png_sha1": "09397615f3bf03451315c5054e4d3c16f0cebd8f",
+   "m2_png": "kr-img-4fb15b336e51",
+   "m2_pixels_equal": true,
+   "box_rsk": [
+    199,
+    0,
+    500,
+    1050
+   ],
+   "box": [
+    199,
+    0,
+    500,
+    1050
+   ],
+   "wm_components_dropped": 0
+  },
+  {
+   "card": "vinodelnya-vedernikov-gubernatorskoe-golubok-krasnoe-suhoe-11",
+   "query_id": "K0853-orig-0",
+   "kr_id": "vinodelnya-vedernikov-guberantorskoe-golubok-krasnoe-suhoe-vino",
+   "frame_slug": "vinodelnya-vedernikov-gubernatorskoe-golubok-krasnoe-suhoe-11",
+   "volume_l": 0.75,
+   "match_method": "verified",
+   "image": "kr-img-e6fc234f9d93",
+   "image_sha1": "634aaf881d46da2b55bdc4ed44a4b749dd07d5b5",
+   "png": "<корень>\\svs-logs\\somm-2409\\acc_plan\\e8\\packshots\\vinodelnya-vedernikov-gubernatorskoe-golubok-krasnoe-suhoe-11.png",
+   "png_sha1": "b8a403c646eb943430db49f367ab4778e630ed71",
+   "m2_png": "kr-img-0d304dc8fdae",
+   "m2_pixels_equal": true,
+   "box_rsk": [
+    127,
+    32,
+    469,
+    1014
+   ],
+   "box": [
+    127,
+    32,
+    469,
+    1014
+   ],
+   "wm_components_dropped": 0
+  }
+ ],
+ "M1_prep_equals_m2": true,
+ "model": "google/siglip2-so400m-patch14-384",
+ "hf_revision": {
+  "refs_main": "e8e487298228002f3d8a82e0cd5c8ea9c567f57f",
+  "snapshots": [
+   "e8e487298228002f3d8a82e0cd5c8ea9c567f57f"
+  ]
+ },
+ "device": "cpu",
+ "M2_cpu_vs_m2_gpu": {
+  "min_cos": 0.9999998807907104,
+  "per_view": {
+   "abrau-dyurso-abrau-kupazh-tyomnyy-suhoe-kaberne-sovinon-krasnoe-13|bottle": 0.9999999403953552,
+   "abrau-dyurso-abrau-kupazh-tyomnyy-suhoe-kaberne-sovinon-krasnoe-13|label": 1.0,
+   "abrau-dyurso-abrau-kupazh-tyomnyy-suhoe-kaberne-sovinon-krasnoe-13|band": 1.0000001192092896,
+   "derbent-vino-endemy-saperavi-krasnoe-suhoe-13|bottle": 1.0,
+   "derbent-vino-endemy-saperavi-krasnoe-suhoe-13|label": 1.0,
+   "derbent-vino-endemy-saperavi-krasnoe-suhoe-13|band": 1.0000001192092896,
+   "derbent-vino-endemy-shardone-beloe-suhoe-13|bottle": 1.0000001192092896,
+   "derbent-vino-endemy-shardone-beloe-suhoe-13|label": 1.0000001192092896,
+   "derbent-vino-endemy-shardone-beloe-suhoe-13|band": 1.0000001192092896,
+   "legato-legato-sovinon-blan-beloe-suhoe-125|bottle": 1.0000001192092896,
+   "legato-legato-sovinon-blan-beloe-suhoe-125|label": 1.0000001192092896,
+   "legato-legato-sovinon-blan-beloe-suhoe-125|band": 0.9999999403953552,
+   "skalistyy-bereg-shyopot-tsvetov-risling-beloe-suhoe-109|bottle": 1.0,
+   "skalistyy-bereg-shyopot-tsvetov-risling-beloe-suhoe-109|label": 1.0,
+   "skalistyy-bereg-shyopot-tsvetov-risling-beloe-suhoe-109|band": 1.0,
+   "sober-bash-krasnostop-krasnostop-zolotovskiy-krasnoe-suhoe-14|bottle": 1.0000001192092896,
+   "sober-bash-krasnostop-krasnostop-zolotovskiy-krasnoe-suhoe-14|label": 1.0000001192092896,
+   "sober-bash-krasnostop-krasnostop-zolotovskiy-krasnoe-suhoe-14|band": 1.0,
+   "vibes-vermentino-viognier-barrel-fermented-2022|bottle": 0.9999999403953552,
+   "vibes-vermentino-viognier-barrel-fermented-2022|label": 1.0000001192092896,
+   "vibes-vermentino-viognier-barrel-fermented-2022|band": 1.0,
+   "vinodelnya-vedernikov-gubernatorskoe-golubok-krasnoe-suhoe-11|bottle": 1.0,
+   "vinodelnya-vedernikov-gubernatorskoe-golubok-krasnoe-suhoe-11|label": 0.9999998807907104,
+   "vinodelnya-vedernikov-gubernatorskoe-golubok-krasnoe-suhoe-11|band": 1.0
+  },
+  "passed": true
+ },
+ "M2_ref_check": {
+  "slugs": [
+   "a-gordienko-m-nikolaev-pino-nuar-krasnoe-suhoe-135",
+   "belbek-saperavi-krasnoe-suhoe-137",
+   "domaine-de-la-vivandiere-sibirkovyy-sur-lies-beloe-suhoe-121",
+   "gunko-winery-kaberne-fran-gunko-winery-krasnoe-suhoe-135",
+   "massandra-pino-gri-beloe-sladkoe-16",
+   "shato-ay-danil-kapriz-muskat-belyy-beloe-suhoe-135",
+   "usadba-markoth-shardone-beloe-suhoe-12",
+   "vinodelnya-myshako-primitivo-blaufrankish-reserve-krasnoe-suhoe-142"
+  ],
+  "n": 24,
+  "min_cos": 0.9999998807907104,
+  "mean_cos": 1.0000000124176343,
+  "passed": true
+ },
+ "M3_build": {
+  "rows": true,
+  "other_rows_bytes_equal": true,
+  "other_slugs_views_order": true,
+  "cards_3_views": true,
+  "same_meta_model": true,
+  "n_slugs": true,
+  "live_head_equals_candidate": true,
+  "live_tail_equals_live71": true,
+  "live_mask_same": true,
+  "reorder_is_permutation": true
+ },
+ "M3_passed": true,
+ "files": {
+  "base_index": {
+   "path": "<корень>\\svoe-vino-scanner\\data\\index\\visual-s2so400m.npz",
+   "sha1": "ccd3a01f16379a3f0a8a1e7e8dc0623c7622bda5"
+  },
+  "live_index": {
+   "path": "<корень>\\svoe-vino-scanner\\data\\index\\visual-s2so400m-live71.npz",
+   "sha1": "d0a53644978fca385d4db88cc35677ab261207e0"
+  },
+  "candidate": {
+   "path": "<корень>\\svs-logs\\somm-2409\\acc_plan\\e8\\visual-s2so400m.e8.npz",
+   "sha1": "605d4cbf74e99c05c601ac160c7397c354f21564"
+  },
+  "candidate_live71": {
+   "path": "<корень>\\svs-logs\\somm-2409\\acc_plan\\e8\\visual-s2so400m-live71.e8.npz",
+   "sha1": "3e9c2b5ba19df8e6983b0be08bbd8bd83daf4415"
+  },
+  "reorder": {
+   "path": "<корень>\\svs-logs\\somm-2409\\acc_plan\\e8\\visual-s2so400m.reorder.npz",
+   "sha1": "5f79caad7612a7d9febfa67284103590413aa4dc"
+  },
+  "m2_candidate": {
+   "path": "<корень>\\krastostop\\measure\\candidate\\visual-s2so400m-kr.npz",
+   "sha1": "8b5c9d812535259a1e52fafa7ac759841e880be4"
+  }
+ },
+ "wall_s": 83.5
+}

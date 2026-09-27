@@ -1,0 +1,14 @@
+4b: 40 запросов (2 прогона × 20): p50 2038, p95 2361 (линейн.) / 2360 (ближ. ранг), max 2429, >3 с 0/40, >5 с 0/40; повтор минус первый по кадрам: медиана -25 мс, |разн.| max 161; одинаковый slug 20/20
+   4b: мягко 18/20
+   4b_r2: мягко 18/20
+8b: 40 запросов (2 прогона × 20): p50 3470, p95 3962 (линейн.) / 3949 (ближ. ранг), max 4404, >3 с 32/40, >5 с 0/40; повтор минус первый по кадрам: медиана 199 мс, |разн.| max 377; одинаковый slug 20/20
+   8b: мягко 19/20
+   8b_r2: мягко 19/20
+сервис 8b = H5 дампа bigcat (8b): 20/20; расхождения: []; дамп мягко 19/20
+сервис 4b = H5 дампа bigcat4b_live (4b): 20/20; расхождения: []; дамп мягко 18/20
+кадры с ошибкой (мягко):
+   M388-orig-0 gt=inkermanskiy-zmv-inkerman-bryut-shardone-beloe-135 acc=[] -> 4b:inkermanskiy-zmv-inkerman-bryut-rkatsiteli-beloe-12(x); 4b_r2:inkermanskiy-zmv-inkerman-bryut-rkatsiteli-beloe-12(x); 8b:inkermanskiy-zmv-inkerman-bryut-shardone-beloe-135(ok); 8b_r2:inkermanskiy-zmv-inkerman-bryut-shardone-beloe-135(ok)
+   L22-orig-0 gt=abrau-dyurso-victor-dravigny-polusladkoe-sovinon-blan-beloe-12 acc=[] -> 4b:abrau-dyurso-victor-dravigny-bryut(x); 4b_r2:abrau-dyurso-victor-dravigny-bryut(x); 8b:abrau-dyurso-victor-dravigny-bryut(x); 8b_r2:abrau-dyurso-victor-dravigny-bryut(x)
+portal_webp 5 {'4b': 2073, '4b_r2': 2045, '8b': 3516, '8b_r2': 3678}
+heic 3 {'4b': 1944, '4b_r2': 1970, '8b': 3222, '8b_r2': 3285}
+jpg 12 {'4b': 2060, '4b_r2': 2021, '8b': 3380, '8b_r2': 3514}

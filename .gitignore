@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Окружение и секреты
+.env
+.env.*
+!.env.example
+
+# Пачка данных сервиса лежит в data/ и версионируется (data/README.md): индекс, карта адаптера,
+# словарь, признаки каталога, справочник вин, данные сомелье. Не версионируются:
+data/raw/
+data/cache/
+# фото карточек каталога — данные кейса организатора, в публичный репозиторий намеренно не входят
+data/catalog/photos_small/
+# снимок портала и комплект живых карточек вне выгрузки
+data/portal/
+data/index/*-live71*
+data/gt/*-live71*
+# эталоны правки 23.09 не из выгрузки, карта фото правки и резервные копии пересборок
+data/catalog/packshots_fixed/
+data/catalog/slug_photo_map*.csv
+data/**/*.pre-*
+data/**/*.pre-*/
+data/gt/gt_summary.json
+data/gt/gt_checks.txt
+models/
+runs/
+predictions.jsonl
+
+# IDE и ОС
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Аварийные дампы grep/MSYS
+*.stackdump

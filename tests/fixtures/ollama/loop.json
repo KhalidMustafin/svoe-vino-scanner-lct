@@ -1,0 +1,13 @@
+{
+  "model": "qwen2.5vl:3b",
+  "created_at": "2026-09-15T12:00:06Z",
+  "message": {
+    "role": "assistant",
+    "content": "Bordeaux\nChâteau\nChâteau\nChâteau\nChâteau\nChâteau\nChâteau"
+  },
+  "done_reason": "length",
+  "done": true,
+  "total_duration": 1200000000,
+  "prompt_eval_count": 1133,
+  "eval_count": 160
+}

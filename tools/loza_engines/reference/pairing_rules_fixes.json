@@ -1,0 +1,127 @@
+{
+  "_comment": [
+    "Накладка на pairing.json. Часть правил в справочнике записана псевдокодом:",
+    "с вызовами несуществующих функций (wine_intensity, map_flavor_tags_to_descriptors),",
+    "присваиваниями внутри условия и комментариями на русском. Вычислитель такие",
+    "выражения отвергает, и правила молча выпадали из подбора.",
+    "",
+    "Здесь они переписаны в исполнимом виде поверх полей, которые движок реально",
+    "предоставляет: wine.intensity считается в _WineView, dish.descriptors —",
+    "в _DishView через таблицу соответствия вкусовых тегов ароматике вина.",
+    "",
+    "Файл отделён от pairing.json намеренно: тот пересобирается автоматически,",
+    "и правки в нём не пережили бы пересборку. Правила переопределяются по id.",
+    "",
+    "Правило остроты не имело верхней границы сладости: десертный мускат со",
+    "сладостью 4,5 получал 0,77 к харчо и шаверме и вставал первым в ответе.",
+    "Зеркала к dry_wine_on_dessert в справочнике не было вовсе — сухое на",
+    "десерте штрафовалось, а десертное на солёной закуске нет."
+  ],
+  "disabled": [
+    "portal_editorial_prior"
+  ],
+  "_disabled_reason": "Редакционная разметка каталога уже учитывается бонусом в коде движка; правилом это было бы двойным начислением.",
+  "rules": [
+    {
+      "id": "intensity_match",
+      "name": "Совпадение интенсивности",
+      "principle": "Вино и блюдо должны быть сопоставимы по силе вкуса, иначе одно перекроет другое.",
+      "dish_condition": "True",
+      "wine_condition": "abs(wine.intensity - dish.intensity) <= 1.0",
+      "weight": 2.5,
+      "explanation_ru": "Вино и блюдо равны по силе вкуса: ни одно не перекрикивает другое."
+    },
+    {
+      "id": "intensity_mismatch",
+      "name": "Разрыв интенсивности",
+      "principle": "Слишком мощное вино глушит деликатное блюдо, слишком лёгкое теряется рядом с ярким. Порог снижен с 2.0: при нём разрыв между лёгким вином и насыщенным блюдом не фиксировался.",
+      "dish_condition": "True",
+      "wine_condition": "abs(wine.intensity - dish.intensity) >= 1.5",
+      "weight": -2.0,
+      "explanation_ru": "Вино и блюдо сильно расходятся по насыщенности — одно заглушает другое."
+    },
+    {
+      "id": "serving_temperature_match",
+      "name": "Температура подачи",
+      "principle": "Холодная закуска просит охлаждённого вина, горячее плотное блюдо — тёплого.",
+      "dish_condition": "True",
+      "wine_condition": "(dish.category in {'cold_appetizer', 'salad', 'pickles', 'seafood_raw', 'seafood', 'sweet_preserve'} and wine.serve_temp_max <= 12) or (dish.intensity >= 3.5 and wine.serve_temp_min >= 14)",
+      "weight": 1.2,
+      "explanation_ru": "Температура подачи вина совпадает с характером блюда."
+    },
+    {
+      "id": "aroma_bridge",
+      "name": "Ароматический мост",
+      "principle": "Общий ароматический тон связывает вино и блюдо: грибы и землистость, копчёности и дым, мёд и мёд.",
+      "dish_condition": "len(dish.descriptors) >= 1",
+      "wine_condition": "len(dish.descriptors & wine.descriptors) >= 1",
+      "weight": 1.5,
+      "explanation_ru": "У вина и блюда есть общий ароматический тон — они звучат в один голос."
+    },
+    {
+      "id": "delicate_dish_needs_light_wine",
+      "name": "Деликатному блюду — лёгкое свежее вино",
+      "principle": "Правила справочника вытягивают жирные и насыщенные блюда кислотностью, но у деликатных блюд вытягивать нечего: им нужно вино, которое не заглушит вкус. Без этого правила гребешки и строганина не набирают ни одного балла, и к Шабли выходит борщ.",
+      "dish_condition": "dish.intensity <= 3.0 and dish.fat <= 2.5",
+      "wine_condition": "wine.body <= 3.0 and wine.acidity >= 3.5 and wine.oak <= 1.5 and wine.tannin <= 1.0",
+      "weight": 2.8,
+      "explanation_ru": "Блюдо деликатное, и вино ему под стать: лёгкое, свежее, без дуба — оно поддерживает вкус, а не перебивает его."
+    },
+    {
+      "id": "heavy_wine_on_delicate_dish",
+      "name": "Мощное вино к деликатному блюду (конфликт)",
+      "principle": "Плотное танинное или дубовое вино перекрывает тонкий вкус — блюдо перестаёт ощущаться.",
+      "dish_condition": "dish.intensity <= 3.0 and dish.fat <= 2.5",
+      "wine_condition": "wine.body >= 3.8 or wine.tannin >= 3.0 or wine.oak >= 3.0",
+      "weight": -3.0,
+      "explanation_ru": "Вино слишком мощное для такого деликатного блюда — оно попросту перекроет его вкус."
+    },
+    {
+      "id": "seafood_loves_mineral_white",
+      "name": "Морепродуктам — минеральное белое",
+      "principle": "Классическая пара: устрицы, гребешки и сырая рыба с острокислотным белым без дуба.",
+      "dish_condition": "len(dish.flavor_tags & {'marine', 'shellfish', 'raw_fish', 'white_fish'}) >= 1",
+      "wine_condition": "wine.color == 'white' and wine.acidity >= 3.8 and wine.tannin <= 0.5 and wine.oak <= 1.5",
+      "weight": 2.5,
+      "explanation_ru": "Морская нота блюда и минеральная свежесть вина усиливают друг друга — это классическое сочетание."
+    },
+    {
+      "id": "semisweet_wine_on_dessert",
+      "name": "Полусухое к десерту (конфликт)",
+      "principle": "Вино слаще блюда или не подаётся к нему вовсе: рядом с десертом недостаточно сладкое вино кажется кислым и пустым.",
+      "dish_condition": "dish.sweetness >= 3.5",
+      "wine_condition": "wine.sweetness > 1.0 and wine.sweetness < dish.sweetness - 1.0",
+      "weight": -2.5,
+      "explanation_ru": "Десерт слаще вина — на его фоне вино покажется кислым и потеряет фрукт."
+    },
+    {
+      "id": "sweet_wine_on_savoury_main",
+      "name": "Сладкое вино к несладкому горячему (конфликт)",
+      "principle": "Правило «сладкое вино к солёному и жирному» верно для голубого сыра и фуа-гра, но срабатывает и на солянке — в результате к Сотерну предлагался суп. Сладость уместна рядом с солёно-пикантным или острым, а не с обычным горячим блюдом.",
+      "dish_condition": "dish.sweetness <= 2.5 and dish.spice <= 2.0 and dish.category in {'soup', 'main_meat', 'main_poultry', 'main_vegetable', 'dumplings', 'savory_pastry', 'hot_appetizer', 'fast_food'}",
+      "wine_condition": "wine.sweetness >= 3.5",
+      "weight": -3.0,
+      "explanation_ru": "Сладкое вино рядом с несладким горячим блюдом звучит чужеродно — сахар спорит с солью и мясом."
+    },
+    {
+      "id": "spice_needs_sweet_and_calm",
+      "name": "Острому — сладость и низкий градус",
+      "principle": "Остаточный сахар и невысокий алкоголь гасят остроту",
+      "dish_condition": "dish.spice >= 3.0",
+      "wine_condition": "1.5 <= wine.sweetness <= 3.5 and wine.alcohol <= 3.5 and wine.tannin <= 2.0",
+      "weight": 2.5,
+      "explanation_ru": "Лёгкая сладость и невысокий градус гасят остроту: блюдо перестаёт жечь, а фрукт в вине раскрывается.",
+      "source": "WSET L3; Vero, Spicy Food & Wine Pairing"
+    },
+    {
+      "id": "dessert_wine_on_savoury_dish",
+      "name": "Десертное вино к несладкому блюду",
+      "principle": "Десертная сладость нужна десерту или солёно-жирному контрасту; на обычном блюде сахар остаётся сам по себе",
+      "dish_condition": "dish.sweetness <= 1.5 and not (dish.salt >= 4.0 and dish.fat >= 3.5)",
+      "wine_condition": "wine.sweetness >= 4.0",
+      "weight": -2.5,
+      "explanation_ru": "Десертная сладость перебивает несладкое блюдо: сахар остаётся сам по себе, а вкус еды теряется.",
+      "source": "WSET L3 Food & Wine Pairing"
+    }
+  ]
+}

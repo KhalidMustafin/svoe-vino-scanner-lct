@@ -1,0 +1,78 @@
+{
+ "queries": 100,
+ "predictions": 100,
+ "judged": 100,
+ "missing": 0,
+ "missing_examples": [],
+ "extra": 0,
+ "extra_examples": [],
+ "in_catalog": {
+  "n": 65,
+  "correct": 58,
+  "top1": 0.8923,
+  "null": 0,
+  "null_share": 0.0,
+  "wrong_examples": [
+   {
+    "query_id": "R006",
+    "slug": "fanagoriya-formula-q-saperavi-krasnoe-suhoe-135",
+    "predicted": "fanagoriya-formula-q-kaberne-sovinon-krasnoe-suhoe-135"
+   },
+   {
+    "query_id": "R020",
+    "slug": "merlo-2",
+    "predicted": "merlo-litavshhuk"
+   },
+   {
+    "query_id": "R022",
+    "slug": "aratti-kaberne-sovinon-2021-krasnoe-suhoe",
+    "predicted": "aratti-kaberne-sovinon-2020-krasnoe-suhoe"
+   },
+   {
+    "query_id": "R024",
+    "slug": "aratti-kaberne-sovinon-2021-krasnoe-suhoe",
+    "predicted": "aratti-kaberne-sovinon-2020-krasnoe-suhoe"
+   },
+   {
+    "query_id": "R048",
+    "slug": "sovinon-blan",
+    "predicted": "blagolyubov-sovinon-blan-beloe-suhoe-125"
+   },
+   {
+    "query_id": "R084",
+    "slug": "kaberne-sovinon-3",
+    "predicted": "merlo-litavshhuk"
+   },
+   {
+    "query_id": "R096",
+    "slug": "denisov_rubin_klaret_krasnaya_strelka",
+    "predicted": "denisov_pino_noir_klaret"
+   }
+  ]
+ },
+ "out_of_catalog": {
+  "n": 35,
+  "null": 0,
+  "null_share": 0.0,
+  "answered": 35
+ },
+ "null_share": 0.0,
+ "if_null_is_correct_for_none": {
+  "accuracy": 0.58,
+  "note": "допущение: кадр вне каталога засчитан, если ответ null. Как считает организатор, неизвестно — это не итоговая цифра"
+ },
+ "latency_ms": {
+  "n": 100,
+  "p50": 1482.0,
+  "p95": 1796.0,
+  "max": 2225.0,
+  "over_3000": 0,
+  "over_10000": 0
+ },
+ "format_problems": [],
+ "format_problems_total": 0,
+ "files": {
+  "pred": "research/2026-09-27_results/jury_path/real100/predictions.jsonl",
+  "gt": "data/gt/real_photos_gt.tsv"
+ }
+}

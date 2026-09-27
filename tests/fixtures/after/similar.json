@@ -1,0 +1,67 @@
+{
+  "slug": "shato-pino-shiraz-krasnoe-suhoe-14",
+  "order": "reco",
+  "limit": 3,
+  "notice": "Применяются рекомендательные технологии",
+  "category_label": "Красное сухое",
+  "items": [
+    {
+      "slug": "chateau-de-talu-shiraz-rezerv-sira-krasnoe-suhoe-14",
+      "name": "Шираз Резерв",
+      "winery": "Chateau de Talu",
+      "region": "Кубань",
+      "style_label": "Красное сухое",
+      "sparkling": false,
+      "grapes": [
+        "Сира"
+      ],
+      "photo_url": "/v1/wines/chateau-de-talu-shiraz-rezerv-sira-krasnoe-suhoe-14/photo",
+      "portal_url": "https://vino-svoe.ru/wines/chateau-de-talu-shiraz-rezerv-sira-krasnoe-suhoe-14",
+      "reasons": [
+        "Тот же сорт — Сира",
+        "Тоже сухое",
+        "Тоже Кубань",
+        "Крепость та же — 14°"
+      ]
+    },
+    {
+      "slug": "vinogradniki-gay-kodzora-terroir-de-gai-kodzor-sira-krasnoe-suhoe-14",
+      "name": "Terroir De Gai-Kodzor",
+      "winery": "Виноградники Гай-Кодзора",
+      "region": "Кубань",
+      "style_label": "Красное сухое",
+      "sparkling": false,
+      "grapes": [
+        "Сира"
+      ],
+      "photo_url": "/v1/wines/vinogradniki-gay-kodzora-terroir-de-gai-kodzor-sira-krasnoe-suhoe-14/photo",
+      "portal_url": "https://vino-svoe.ru/wines/vinogradniki-gay-kodzora-terroir-de-gai-kodzor-sira-krasnoe-suhoe-14",
+      "reasons": [
+        "Тот же сорт — Сира",
+        "Тоже сухое",
+        "Тоже Кубань",
+        "Крепость та же — 14°"
+      ]
+    },
+    {
+      "slug": "alma-valley-shiraz-sira-rezerv-krasnoe-suhoe-14",
+      "name": "Шираз (Сира) Резерв",
+      "winery": "Alma Valley",
+      "region": "Крым",
+      "style_label": "Красное сухое",
+      "sparkling": false,
+      "grapes": [
+        "Сира"
+      ],
+      "photo_url": "/v1/wines/alma-valley-shiraz-sira-rezerv-krasnoe-suhoe-14/photo",
+      "portal_url": "https://vino-svoe.ru/wines/alma-valley-shiraz-sira-rezerv-krasnoe-suhoe-14",
+      "reasons": [
+        "Тот же сорт — Сира",
+        "Тоже сухое",
+        "Крым, а не Кубань",
+        "Крепость та же — 14°"
+      ]
+    }
+  ],
+  "notes": []
+}

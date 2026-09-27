@@ -1,0 +1,167 @@
+{
+  "slug": "vinodelnya-begildeeva-merlo-krasnoe-suhoe-14",
+  "confidence": {
+    "top1": 0.6752,
+    "top5": 0.8879
+  },
+  "margin": 0.5669,
+  "top5": [
+    {
+      "slug": "vinodelnya-begildeeva-merlo-krasnoe-suhoe-14",
+      "score": 0.6752
+    },
+    {
+      "slug": "loco-cimbali-loco-cimbali-red-kaberne-sovinon-krasnoe-suhoe-135",
+      "score": 0.1083
+    },
+    {
+      "slug": "nebbiolo",
+      "score": 0.0483
+    },
+    {
+      "slug": "vinodelnya-marchenko-vermilon-kaberne-azos-krasnoe-suhoe-14",
+      "score": 0.0314
+    },
+    {
+      "slug": "blanc-de-blancs-idolo",
+      "score": 0.0247
+    }
+  ],
+  "outcome": "matched",
+  "degraded": [],
+  "timings_ms": {},
+  "error": null,
+  "evidence": {
+    "cv": {
+      "top5": [
+        {
+          "slug": "vinodelnya-begildeeva-merlo-krasnoe-suhoe-14",
+          "score": 0.6918
+        }
+      ]
+    },
+    "vlm": {
+      "status": "ok",
+      "lines": [
+        "BELCOLLE",
+        "VERDUNO - ITALIA",
+        "BAROLO",
+        "DENOMINAZIONE DI ORIGINE CONTROLLATA E GARANTITA"
+      ],
+      "fields": {
+        "winery": [],
+        "cuvee": [],
+        "grapes": [],
+        "sugar": [],
+        "vintage": null,
+        "serial": [],
+        "abv": null,
+        "color": null,
+        "unmatched": [
+          "belcolle",
+          "verduno",
+          "italia",
+          "barolo",
+          "denominazione",
+          "origine",
+          "controllata",
+          "garantita"
+        ]
+      }
+    },
+    "abstain": {
+      "mode": "off",
+      "fired": false,
+      "best_visual": 0.6918
+    }
+  },
+  "card": {
+    "slug": "vinodelnya-begildeeva-merlo-krasnoe-suhoe-14",
+    "name": "Мерло",
+    "winery": "Винодельня Бегильдеева",
+    "region": "Кубань",
+    "grapes": [
+      "Мерло"
+    ],
+    "category": "Красное",
+    "color": "Темно-красное",
+    "sugar": "сухое",
+    "sugar_class": "suhoe",
+    "photo_name": "vinodelnya-begildeeva-merlo-krasnoe-suhoe-14.webp",
+    "color_label": "Красное",
+    "sugar_label": "сухое",
+    "sparkling": false,
+    "style_label": "Красное сухое",
+    "description": "Текст-заглушка вместо описания выгрузки организатора: выгрузка в git не кладётся.",
+    "description_src": "catalog",
+    "photo_url": "/v1/wines/vinodelnya-begildeeva-merlo-krasnoe-suhoe-14/photo",
+    "portal_url": "https://vino-svoe.ru/wines/vinodelnya-begildeeva-merlo-krasnoe-suhoe-14",
+    "alcohol": 14.0,
+    "alcohol_max": null,
+    "alcohol_src": "catalog"
+  },
+  "candidates": [
+    {
+      "slug": "vinodelnya-begildeeva-merlo-krasnoe-suhoe-14",
+      "name": "Мерло",
+      "winery": "Винодельня Бегильдеева",
+      "photo_url": "/v1/wines/vinodelnya-begildeeva-merlo-krasnoe-suhoe-14/photo"
+    },
+    {
+      "slug": "loco-cimbali-loco-cimbali-red-kaberne-sovinon-krasnoe-suhoe-135",
+      "name": "Loco Cimbali Red",
+      "winery": "Loco Cimbali",
+      "photo_url": "/v1/wines/loco-cimbali-loco-cimbali-red-kaberne-sovinon-krasnoe-suhoe-135/photo"
+    },
+    {
+      "slug": "nebbiolo",
+      "name": "Nebbiolo",
+      "winery": "Галицкий и Галицкий",
+      "photo_url": "/v1/wines/nebbiolo/photo"
+    },
+    {
+      "slug": "vinodelnya-marchenko-vermilon-kaberne-azos-krasnoe-suhoe-14",
+      "name": "Вермильон",
+      "winery": "Винодельня Марченко",
+      "photo_url": "/v1/wines/vinodelnya-marchenko-vermilon-kaberne-azos-krasnoe-suhoe-14/photo"
+    },
+    {
+      "slug": "blanc-de-blancs-idolo",
+      "name": "Blanc de Blancs Idolo",
+      "winery": "Olymp Winery",
+      "photo_url": "/v1/wines/blanc-de-blancs-idolo/photo"
+    }
+  ],
+  "after": {
+    "state": "check",
+    "reasons": [
+      "visual_low"
+    ],
+    "read": {
+      "winery": null,
+      "color": null,
+      "sugar": null,
+      "grapes": [],
+      "abv": null,
+      "sparkling": null
+    },
+    "read_label": null,
+    "winery_in_catalog": null,
+    "winery_slugs": [],
+    "suggest_not_found": true,
+    "question": {
+      "field": "color",
+      "text": "Какого цвета вино: красное или белое?",
+      "options": [
+        {
+          "label": "красное",
+          "slug": "vinodelnya-begildeeva-merlo-krasnoe-suhoe-14"
+        },
+        {
+          "label": "белое",
+          "slug": "blanc-de-blancs-idolo"
+        }
+      ]
+    }
+  }
+}

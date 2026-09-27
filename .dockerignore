@@ -1,0 +1,12 @@
+# Контекст сборки — только то, что нужно образу (Dockerfile). Всё остальное — список «разрешено»
+# ниже: data/, runs/, research/, .venv и журналы в контекст не попадают, и сборка не везёт
+# в Docker гигабайты данных и чужих файлов.
+*
+!pyproject.toml
+!uv.lock
+!.python-version
+!app/
+!configs/
+!scripts/trim_vision_weights.py
+**/__pycache__
+**/*.py[cod]

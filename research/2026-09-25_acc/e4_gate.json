@@ -1,0 +1,37 @@
+{
+ "gate0_v2": {
+  "stand": 353,
+  "dump": 353,
+  "slug_eq_h5": 353,
+  "fields_eq": 353,
+  "health": []
+ },
+ "gate1_v2": {
+  "base": 353,
+  "e1_pkg": 353,
+  "slug_eq": 353,
+  "text_read_eq": 353,
+  "resolve_eq": 353,
+  "lexicon_eq_e1": true,
+  "health": []
+ },
+ "gate0_kr": {
+  "stand": 903,
+  "dump": 903,
+  "slug_eq_h5": 903,
+  "fields_eq": 903,
+  "health": []
+ },
+ "gate1_kr": {
+  "base": 903,
+  "e1_pkg": 903,
+  "slug_eq": 903,
+  "text_read_eq": 903,
+  "resolve_eq": 903,
+  "lexicon_eq_e1": true,
+  "health": []
+ },
+ "nofix_sha1": "bf6a8823a45004b1e13e586e5a92e05b8beb07b0",
+ "nofix_is_bf6a88": true,
+ "ok": true
+}

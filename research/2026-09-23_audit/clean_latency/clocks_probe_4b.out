@@ -1,0 +1,23 @@
+выгрузка: []
+выгрузка после: []
+4b {"q": "warm", "prefill_ms": 546, "prefill_tok_s": 2031, "decode_tok_s": 127, "total_ms": 4083, "sm_mhz": 1710.0, "mem_mhz": 9251.0, "pstate": ["P0", "P2", "P3", "P8"], "power_w": 102, "n": 38}
+4b {"q": "M346-orig-0", "prefill_ms": 331, "prefill_tok_s": 2577, "decode_tok_s": 129, "total_ms": 699, "sm_mhz": 1710, "mem_mhz": 9251, "pstate": ["P2"], "power_w": 184, "n": 7}
+4b {"q": "M388-orig-0", "prefill_ms": 338, "prefill_tok_s": 2524, "decode_tok_s": 129, "total_ms": 892, "sm_mhz": 1710.0, "mem_mhz": 9251.0, "pstate": ["P2"], "power_w": 213, "n": 8}
+4b {"q": "M592-orig-0", "prefill_ms": 334, "prefill_tok_s": 2554, "decode_tok_s": 126, "total_ms": 955, "sm_mhz": 1710, "mem_mhz": 9251, "pstate": ["P2"], "power_w": 220, "n": 9}
+4b {"q": "M186-orig-0", "prefill_ms": 529, "prefill_tok_s": 1612, "decode_tok_s": 79, "total_ms": 1240, "sm_mhz": 1065, "mem_mhz": 5001, "pstate": ["P2", "P3"], "power_w": 159, "n": 11}
+4b {"q": "M193-orig-0", "prefill_ms": 616, "prefill_tok_s": 1385, "decode_tok_s": 73, "total_ms": 1247, "sm_mhz": 855.0, "mem_mhz": 5001.0, "pstate": ["P3"], "power_w": 120, "n": 12}
+4b {"q": "M431-orig-0", "prefill_ms": 636, "prefill_tok_s": 1341, "decode_tok_s": 72, "total_ms": 893, "sm_mhz": 780.0, "mem_mhz": 5001.0, "pstate": ["P3"], "power_w": 117, "n": 8}
+4b {"q": "M390-orig-0", "prefill_ms": 629, "prefill_tok_s": 1356, "decode_tok_s": 74, "total_ms": 1012, "sm_mhz": 855, "mem_mhz": 5001, "pstate": ["P3"], "power_w": 114, "n": 9}
+4b {"q": "M208-orig-0", "prefill_ms": 622, "prefill_tok_s": 1371, "decode_tok_s": 73, "total_ms": 1189, "sm_mhz": 810, "mem_mhz": 5001, "pstate": ["P3"], "power_w": 114, "n": 11}
+4b {"q": "L22-orig-0", "prefill_ms": 635, "prefill_tok_s": 1343, "decode_tok_s": 73, "total_ms": 1575, "sm_mhz": 795, "mem_mhz": 5001, "pstate": ["P3"], "power_w": 119, "n": 15}
+4b {"q": "M161-orig-0", "prefill_ms": 614, "prefill_tok_s": 1389, "decode_tok_s": 73, "total_ms": 1691, "sm_mhz": 795, "mem_mhz": 5001, "pstate": ["P3"], "power_w": 119, "n": 15}
+4b {"q": "M269-orig-0", "prefill_ms": 613, "prefill_tok_s": 1392, "decode_tok_s": 73, "total_ms": 1395, "sm_mhz": 810, "mem_mhz": 5001, "pstate": ["P3"], "power_w": 121, "n": 13}
+4b {"q": "R055-orig-0", "prefill_ms": 627, "prefill_tok_s": 1360, "decode_tok_s": 74, "total_ms": 1273, "sm_mhz": 780, "mem_mhz": 5001, "pstate": ["P3"], "power_w": 113, "n": 11}
+4b {"q": "R064-orig-0", "prefill_ms": 614, "prefill_tok_s": 1389, "decode_tok_s": 73, "total_ms": 1362, "sm_mhz": 780.0, "mem_mhz": 5001.0, "pstate": ["P3"], "power_w": 113, "n": 12}
+4b {"q": "L45-orig-0", "prefill_ms": 623, "prefill_tok_s": 1369, "decode_tok_s": 75, "total_ms": 1109, "sm_mhz": 780.0, "mem_mhz": 5001.0, "pstate": ["P3"], "power_w": 122, "n": 10}
+4b {"q": "M414-orig-0", "prefill_ms": 617, "prefill_tok_s": 1382, "decode_tok_s": 73, "total_ms": 1444, "sm_mhz": 810, "mem_mhz": 5001, "pstate": ["P3"], "power_w": 117, "n": 13}
+4b {"q": "M128-orig-0", "prefill_ms": 625, "prefill_tok_s": 1365, "decode_tok_s": 73, "total_ms": 1849, "sm_mhz": 810, "mem_mhz": 5001, "pstate": ["P3"], "power_w": 118, "n": 15}
+4b {"q": "M359-orig-0", "prefill_ms": 616, "prefill_tok_s": 1385, "decode_tok_s": 73, "total_ms": 1813, "sm_mhz": null, "mem_mhz": null, "pstate": [], "power_w": null, "n": 0}
+4b {"q": "R094-orig-0", "prefill_ms": 626, "prefill_tok_s": 1363, "decode_tok_s": 73, "total_ms": 1528, "sm_mhz": null, "mem_mhz": null, "pstate": [], "power_w": null, "n": 0}
+4b {"q": "R075-orig-0", "prefill_ms": 603, "prefill_tok_s": 1415, "decode_tok_s": 74, "total_ms": 1307, "sm_mhz": null, "mem_mhz": null, "pstate": [], "power_w": null, "n": 0}
+4b {"q": "R066-orig-0", "prefill_ms": 588, "prefill_tok_s": 1451, "decode_tok_s": 78, "total_ms": 922, "sm_mhz": null, "mem_mhz": null, "pstate": [], "power_w": null, "n": 0}

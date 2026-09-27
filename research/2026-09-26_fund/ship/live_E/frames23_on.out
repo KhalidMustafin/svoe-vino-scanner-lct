@@ -1,0 +1,17 @@
+== окно E / on: 23 кадров, null 0; задержка {'n': 23, 'p50': 2064, 'p95_rank': 2300, 'max': 3009, 'over_3000': 1}
+  против window_C_1d5b4e9: slug 19/23, sha расходится 0; задержка базы {'n': 23, 'p50': 1395, 'p95_rank': 1518, 'max': 1661, 'over_3000': 0}; Δp50 +669, Δp95 +782 мс
+    q-000002: было massandra-muskatel-rozovyy-belye-sorta-vinograda-rozovoe-sladkoe-16 | сейчас massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16
+    q-000003: было aristov-anima-millesimato-beloe-bryut | сейчас fanagoriya-blanc-de-blancs-shardone-beloe-bryut-12
+    M390-orig-0: было zolotaya-balka-zb-frizzante-semi-dry-rose-risling-rozovoe-polusuhoe-10 | сейчас polusuhoe-rozovoe-zb-vajn-frizzante
+    L22-orig-0: было abrau-dyurso-victor-dravigny-bryut | сейчас abrau-dyurso-victor-dravigny-polusladkoe-sovinon-blan-beloe-12
+  против window_D_070cab4: slug 20/23, sha расходится 0; задержка базы {'n': 23, 'p50': 1398, 'p95_rank': 1531, 'max': 1660, 'over_3000': 0}; Δp50 +666, Δp95 +769 мс
+    q-000003: было aristov-anima-millesimato-beloe-bryut | сейчас fanagoriya-blanc-de-blancs-shardone-beloe-bryut-12
+    M390-orig-0: было zolotaya-balka-zb-frizzante-semi-dry-rose-risling-rozovoe-polusuhoe-10 | сейчас polusuhoe-rozovoe-zb-vajn-frizzante
+    L22-orig-0: было abrau-dyurso-victor-dravigny-bryut | сейчас abrau-dyurso-victor-dravigny-polusladkoe-sovinon-blan-beloe-12
+  против base_2309_r1: slug 18/20, sha расходится 0; задержка базы {'n': 20, 'p50': 2073, 'p95_rank': 2379, 'max': 2429, 'over_3000': 0}
+    M390-orig-0: было zolotaya-balka-zb-frizzante-semi-dry-rose-risling-rozovoe-polusuhoe-10 | сейчас polusuhoe-rozovoe-zb-vajn-frizzante
+    L22-orig-0: было abrau-dyurso-victor-dravigny-bryut | сейчас abrau-dyurso-victor-dravigny-polusladkoe-sovinon-blan-beloe-12
+  против base_2309_r2: slug 18/20, sha расходится 0; задержка базы {'n': 20, 'p50': 2034, 'p95_rank': 2345, 'max': 2360, 'over_3000': 0}
+    M390-orig-0: было zolotaya-balka-zb-frizzante-semi-dry-rose-risling-rozovoe-polusuhoe-10 | сейчас polusuhoe-rozovoe-zb-vajn-frizzante
+    L22-orig-0: было abrau-dyurso-victor-dravigny-bryut | сейчас abrau-dyurso-victor-dravigny-polusladkoe-sovinon-blan-beloe-12
+ИТОГ: null 0, p95 2300 мс, предел (продукт окна D + 100) 1631 мс — ВЫШЕ предела

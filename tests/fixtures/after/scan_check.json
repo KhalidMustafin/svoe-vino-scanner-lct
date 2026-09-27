@@ -1,0 +1,278 @@
+{
+  "slug": "abrau-dyurso-russkoe-igristoe-polusladkoe-krasnoe-kaberne-sovinon-12",
+  "confidence": {
+    "top1": 0.343,
+    "top5": 0.9503
+  },
+  "margin": 0.0934,
+  "top5": [
+    {
+      "slug": "abrau-dyurso-russkoe-igristoe-polusladkoe-krasnoe-kaberne-sovinon-12",
+      "score": 0.343
+    },
+    {
+      "slug": "abrau-dyurso-russkoe-igristoe-polusladkoe-shardone-beloe-12",
+      "score": 0.2496
+    },
+    {
+      "slug": "abrau-dyurso-russkoe-igristoe-polusuhoe-shardone-beloe-12",
+      "score": 0.206
+    },
+    {
+      "slug": "abrau-dyurso-russkoe-igristoe-koshernoe-polusladkoe-shardone-beloe-12",
+      "score": 0.0972
+    },
+    {
+      "slug": "abrau-dyurso-russkoe-igristoe-polusuhoe-rozovoe-pino-nuar-12",
+      "score": 0.0545
+    }
+  ],
+  "outcome": "ambiguous",
+  "degraded": [],
+  "timings_ms": {
+    "decode": 38.0,
+    "views": 5.9,
+    "gpu_wait": 0.0,
+    "cv": 181.5,
+    "vlm": 1602.4,
+    "resolve": 44.1,
+    "total": 1880.6
+  },
+  "error": null,
+  "evidence": {
+    "image": {
+      "format": "jpeg",
+      "width": 3024,
+      "height": 4032,
+      "bytes": 2811034
+    },
+    "cv": {
+      "model": "google/siglip2-so400m-patch14-384",
+      "margin": 0.021,
+      "top5": [
+        {
+          "slug": "abrau-dyurso-russkoe-igristoe-polusladkoe-krasnoe-kaberne-sovinon-12",
+          "score": 0.91,
+          "view": "label",
+          "rank": 1
+        },
+        {
+          "slug": "abrau-dyurso-russkoe-igristoe-polusladkoe-shardone-beloe-12",
+          "score": 0.906,
+          "view": "label",
+          "rank": 2
+        },
+        {
+          "slug": "abrau-dyurso-russkoe-igristoe-polusuhoe-shardone-beloe-12",
+          "score": 0.902,
+          "view": "label",
+          "rank": 3
+        },
+        {
+          "slug": "abrau-dyurso-russkoe-igristoe-koshernoe-polusladkoe-shardone-beloe-12",
+          "score": 0.898,
+          "view": "label",
+          "rank": 4
+        },
+        {
+          "slug": "abrau-dyurso-russkoe-igristoe-polusuhoe-rozovoe-pino-nuar-12",
+          "score": 0.894,
+          "view": "label",
+          "rank": 5
+        }
+      ],
+      "timings_ms": {
+        "embed": 171.2,
+        "match": 3.4,
+        "total": 174.6
+      }
+    },
+    "vlm": {
+      "model": "qwen3.5:4b",
+      "status": "ok",
+      "budget_ms": 6500,
+      "elapsed_ms": 1602.4,
+      "lines": [],
+      "fields": {
+        "winery": [
+          "винный",
+          "Абрау-Дюрсо"
+        ],
+        "cuvee": [
+          "русское",
+          "abrau",
+          "durso"
+        ],
+        "grapes": [],
+        "sugar": [
+          "polusladkoe"
+        ],
+        "vintage": null,
+        "serial": [],
+        "abv": null,
+        "color": null,
+        "unmatched": [
+          "русский"
+        ]
+      },
+      "timings_ms": {}
+    },
+    "resolve": {
+      "model": "resolve-v2prod-iter20",
+      "reader": "vlm",
+      "p_top1": 0.343,
+      "scores_top5": [],
+      "cv_top1": "abrau-dyurso-russkoe-igristoe-polusladkoe-krasnoe-kaberne-sovinon-12",
+      "changed_cv_top1": false,
+      "text_read": true,
+      "ambiguous_rerank": true,
+      "changed_by_rerank": false
+    },
+    "abstain": {
+      "fired": false
+    }
+  },
+  "card": {
+    "slug": "abrau-dyurso-russkoe-igristoe-polusladkoe-krasnoe-kaberne-sovinon-12",
+    "name": "Русское Игристое полусладкое красное",
+    "winery": "Абрау-Дюрсо",
+    "region": "Кубань",
+    "grapes": [
+      "Каберне Совиньон",
+      "Мерло",
+      "Пино Нуар",
+      "Сира"
+    ],
+    "category": "Красное",
+    "color": "Насыщенный рубиновый",
+    "sugar": "полусладкое",
+    "sugar_class": "polusladkoe",
+    "photo_name": "abrau-dyurso-russkoe-igristoe-polusladkoe-krasnoe-kaberne-sovinon-12.webp",
+    "color_label": "Красное",
+    "sugar_label": "полусладкое",
+    "sparkling": true,
+    "style_label": "Красное полусладкое",
+    "description": "Текст-заглушка вместо описания выгрузки организатора: выгрузка в git не кладётся.",
+    "description_src": "catalog",
+    "photo_url": "/v1/wines/abrau-dyurso-russkoe-igristoe-polusladkoe-krasnoe-kaberne-sovinon-12/photo",
+    "portal_url": "https://vino-svoe.ru/wines/abrau-dyurso-russkoe-igristoe-polusladkoe-krasnoe-kaberne-sovinon-12",
+    "alcohol": 12.0,
+    "alcohol_max": null,
+    "alcohol_src": "catalog"
+  },
+  "candidates": [
+    {
+      "slug": "abrau-dyurso-russkoe-igristoe-polusladkoe-krasnoe-kaberne-sovinon-12",
+      "name": "Русское Игристое полусладкое красное",
+      "winery": "Абрау-Дюрсо",
+      "photo_url": "/v1/wines/abrau-dyurso-russkoe-igristoe-polusladkoe-krasnoe-kaberne-sovinon-12/photo"
+    },
+    {
+      "slug": "abrau-dyurso-russkoe-igristoe-polusladkoe-shardone-beloe-12",
+      "name": "Русское Игристое полусладкое",
+      "winery": "Абрау-Дюрсо",
+      "photo_url": "/v1/wines/abrau-dyurso-russkoe-igristoe-polusladkoe-shardone-beloe-12/photo"
+    },
+    {
+      "slug": "abrau-dyurso-russkoe-igristoe-polusuhoe-shardone-beloe-12",
+      "name": "Русское Игристое полусухое",
+      "winery": "Абрау-Дюрсо",
+      "photo_url": "/v1/wines/abrau-dyurso-russkoe-igristoe-polusuhoe-shardone-beloe-12/photo"
+    },
+    {
+      "slug": "abrau-dyurso-russkoe-igristoe-koshernoe-polusladkoe-shardone-beloe-12",
+      "name": "Русское Игристое кошерное полусладкое",
+      "winery": "Абрау-Дюрсо",
+      "photo_url": "/v1/wines/abrau-dyurso-russkoe-igristoe-koshernoe-polusladkoe-shardone-beloe-12/photo"
+    },
+    {
+      "slug": "abrau-dyurso-russkoe-igristoe-polusuhoe-rozovoe-pino-nuar-12",
+      "name": "Русское Игристое полусухое розовое",
+      "winery": "Абрау-Дюрсо",
+      "photo_url": "/v1/wines/abrau-dyurso-russkoe-igristoe-polusuhoe-rozovoe-pino-nuar-12/photo"
+    }
+  ],
+  "after": {
+    "state": "check",
+    "reasons": [
+      "ambiguous"
+    ],
+    "read": {
+      "winery": "Абрау-Дюрсо",
+      "color": null,
+      "sugar": "polusladkoe",
+      "grapes": [],
+      "abv": null,
+      "sparkling": null
+    },
+    "read_label": "Абрау-Дюрсо · полусладкое",
+    "winery_in_catalog": true,
+    "winery_slugs": [
+      "abrau-dyurso-abrau-estates-amurskiy-potapenko-krasnoe-suhoe-105",
+      "abrau-dyurso-abrau-estates-beloe-shardone-suhoe-12",
+      "abrau-dyurso-abrau-estates-kaberne-po-belomu-kaberne-sovinon-beloe-suhoe-105",
+      "abrau-dyurso-abrau-estates-krasnoe-kaberne-sovinon-suhoe-13",
+      "abrau-dyurso-abrau-estates-oranzh-tsitronnyy-magaracha-oranzhevoe-suhoe-105",
+      "abrau-dyurso-abrau-estates-dostoynyy-krasnoe-suhoe-135",
+      "abrau-dyurso-abrau-estates-roze-kaberne-sovinon-rozovoe-suhoe-12",
+      "abrau-dyurso-abrau-durso-brut-rose-reserve-pino-nuar-beloe-bryut-12",
+      "abrau-dyurso-abrau-durso-reserve-brut-shardone-beloe-bryut-115",
+      "abrau-dyurso-az-abrau-bayanshira-beloe-suhoe-12",
+      "abrau-dyurso-az-abrau-madrasa-krasnoe-suhoe-14",
+      "abrau-dyurso-brut-dor-blanc-de-blancs-shardone-beloe-bryut-12",
+      "abrau-dyurso-brut-dor-blanc-de-noirs-pino-nuar-beloe-bryut-115",
+      "abrau-dyurso-brut-dor-rose-pino-nuar-rozovoe-bryut-12",
+      "abrau-dyurso-brut-dor-riesling-risling-beloe-bryut-12",
+      "abrau-dyurso-femme-dabrau-amurskiy-potapenko-krasnoe-suhoe-107",
+      "abrau-dyurso-spumante-bryut-roze-shardone-rozovoe-12",
+      "abrau-dyurso-victor-dravigny-brut-rose-pino-nuar-rozovoe-bryut-12",
+      "abrau-dyurso-victor-dravigny-extra-brut-shardone-beloe-bryut-125",
+      "abrau-dyurso-victor-dravigny-koshernoe-bryut-shardone-beloe-125",
+      "abrau-dyurso-victor-dravigny-krasnoe-polusladkoe-kaberne-sovinon-125",
+      "abrau-dyurso-victor-dravigny-polusladkoe-sovinon-blan-beloe-12",
+      "abrau-dyurso-victor-dravigny-polusuhoe-pino-blan-beloe-12",
+      "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-bryut",
+      "abrau-dyurso-udelnoe-vedomstvo-imperatorskoe-beloe-polusladkoe",
+      "abrau-dyurso-fizz-beloe-bryut",
+      "abrau-dyurso-fizz-beloe-polusladkoe",
+      "abrau-dyurso-abrau-kupazh-krasnyy-polsusladkoe-kaberne-sovinon-krasnoe-polusladkoe-11",
+      "abrau-dyurso-abrau-kupazh-svetlyy-suhoe-shardone-beloe-125",
+      "abrau-dyurso-abrau-kupazh-tyomnyy-suhoe-kaberne-sovinon-krasnoe-13",
+      "abrau-dyurso-victor-dravigny-bryut",
+      "abrau-dyurso-aleksandr-ii-magnum-shardone-beloe-bryut-125",
+      "abrau-dyurso-imperatorskoe-bryut-shardone-beloe-12",
+      "abrau-dyurso-imperatorskoe-polusladkoe-shardone-beloe-12",
+      "abrau-dyurso-imperatorskoe-polusuhoe-shardone-beloe-12",
+      "abrau-dyurso-imperial-brut-lart-nouveau-shardone-beloe-bryut-105",
+      "abrau-dyurso-imperial-brut-rose-pino-nuar-rozovoe-bryut-12",
+      "abrau-dyurso-imperial-kyuve-pino-nuar-rozovoe-bryut-125",
+      "abrau-dyurso-imperial-brut-vintage-shardone-beloe-bryut-12",
+      "abrau-dyurso-kaberne-sovinon-krasnoe-suhoe-125",
+      "abrau-dyurso-pino-nuar-krasnoe-suhoe-12",
+      "abrau-dyurso-risling-beloe-suhoe-12",
+      "rozovoe-polusladkoe-2",
+      "abrau-dyurso-russkoe-igristoe-koshernoe-bryut-shardone-beloe-13",
+      "abrau-dyurso-russkoe-igristoe-koshernoe-polusladkoe-shardone-beloe-12",
+      "abrau-dyurso-russkoe-igristoe-polusladkoe-shardone-beloe-12",
+      "abrau-dyurso-russkoe-igristoe-polusladkoe-krasnoe-kaberne-sovinon-12",
+      "abrau-dyurso-russkoe-igristoe-polusuhoe-shardone-beloe-12",
+      "abrau-dyurso-russkoe-igristoe-polusuhoe-rozovoe-pino-nuar-12",
+      "abrau-dyurso-shardone-beloe-suhoe-12"
+    ],
+    "suggest_not_found": false,
+    "question": {
+      "field": "color",
+      "text": "Какого цвета вино: красное или белое?",
+      "options": [
+        {
+          "label": "красное",
+          "slug": "abrau-dyurso-russkoe-igristoe-polusladkoe-krasnoe-kaberne-sovinon-12"
+        },
+        {
+          "label": "белое",
+          "slug": "abrau-dyurso-russkoe-igristoe-polusladkoe-shardone-beloe-12"
+        }
+      ]
+    }
+  }
+}

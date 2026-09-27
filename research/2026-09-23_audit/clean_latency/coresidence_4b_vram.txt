@@ -1,0 +1,41 @@
+=== coresidence_4b_A_alone 2026-09-23 13:09:23
+nvidia-smi: 4550 MiB, 10240 MiB, 77 %, P2
+
+  pid name           dedicated_MiB shared_MiB
+  --- ----           ------------- ----------
+16548 firefox                 4956          0
+24880 llama-server            4020        592
+25840 dwm                      240          2
+11760 NVIDIA Overlay           111          0
+14128 desktop-app               84          5
+13256 ollama                     0          0
+
+
+
+sum over processes: dedicated 9576 MiB, shared 618 MiB
+adapter luid_0x00000000_0x000155a2_phys_0 dedicated 4531 MiB
+adapter luid_0x00000000_0x00016754_phys_0 dedicated 0 MiB
+adapter luid_0x00000000_0x000155a2_phys_0 shared 619 MiB
+adapter luid_0x00000000_0x00016754_phys_0 shared 0 MiB
+
+=== coresidence_4b_B_service_idle 2026-09-23 13:09:54
+nvidia-smi: 6862 MiB, 10240 MiB, 80 %, P2
+
+  pid name           dedicated_MiB shared_MiB
+  --- ----           ------------- ----------
+16548 firefox                 4956          0
+25504 llama-server            4020        592
+42248 python                  2331         82
+25840 dwm                      240          2
+11760 NVIDIA Overlay           111          0
+14128 desktop-app               65          6
+13256 ollama                     0          0
+
+
+
+sum over processes: dedicated 11889 MiB, shared 700 MiB
+adapter luid_0x00000000_0x000155a2_phys_0 dedicated 6863 MiB
+adapter luid_0x00000000_0x00016754_phys_0 dedicated 0 MiB
+adapter luid_0x00000000_0x000155a2_phys_0 shared 699 MiB
+adapter luid_0x00000000_0x00016754_phys_0 shared 0 MiB
+

@@ -1,0 +1,40 @@
+
+==== 4b (qwen3.5:4b)
+холодный старт до ready 15.3 с (порт 15.3 с); participant_test код 0, 44.3 с на 20 кадров
+latency_ms (скрипт организатора): p50 2058, p95 2382 (линейн.) / 2379 (ближ. ранг), max 2429, среднее 2027; >3 с: 0, >5 с: 0, >8 с: 0, >=10 с: 0; null slug 0
+  по возрастанию: [1481, 1595, 1613, 1756, 1887, 1944, 1965, 1994, 2040, 2042, 2073, 2080, 2123, 2139, 2195, 2257, 2259, 2293, 2379, 2429]
+точность на 20: мягко 18/20, строго 17/20
+обрывы по журналу: vlm_timeout 0, vlm_budget_cut 0, budget_exceeded 0
+/v1/health после прогона: status ready [] scans {"total": 20, "errors": 0, "null_slug": 0, "text_read": 20, "max_total_ms": 2413.1, "degraded": {}}
+CPU: до старта сервиса среднее None %; в окне прогона среднее 13.0 %, max 19.3 % (8 отсчётов)
+nvidia-smi: до старта max None МиБ; в окне прогона 7229–7229 МиБ (47 отсчётов); max за жизнь сервиса 7229 МиБ
+/api/ps после ready: [{'name': 'qwen3.5:4b', 'size': 3128038521, 'size_vram': 3128038521, 'context_length': 4096}]
+прогревочные сканы до ready: [('2026-09-23 12:53:01,878', 'chteau-le-grand-vostock-cabernet-sauvignon-reserve-kaberne-sovinon-krasnoe-suhoe-14', 'matched', '0.6614', '1509', '-')]
+строка прогрева: 2026-09-23 12:53:01,879 INFO app.api.service: Прогрев: ready — {"cv": {"status": "ok", "elapsed_ms": 8160.4, "device": "cuda"}, "vlm": {"status": "ok", "elapsed_ms": 3789}, "scan": {"attempt": 1, "outcome": "matched", "degraded": [], "timings_ms": {"decode": 5.2, "views": 2.0, "gpu_wait": 0.0, "cv": 240.5, "vlm": 820.9, "resolve": 440.0, "total": 1508.9}}}
+покадрово: q | вид | latency | total сервиса | degraded | мягко/строго
+  M346-orig-0  jpg          1965  1945 -                            1/1  p=1.0
+  M388-orig-0  jpg          2139  2119 -                            0/0  p=0.525
+  M592-orig-0  jpg          2257  2237 -                            1/1  p=0.1033
+  M186-orig-0  heic         2195  2183 -                            1/1  p=0.9865
+  M193-orig-0  heic         1944  1930 -                            1/1  p=0.8825
+  M431-orig-0  jpg          1481  1457 -                            1/1  p=0.4322
+  M390-orig-0  jpg          1595  1577 -                            1/0  p=0.8019
+  M208-orig-0  heic         1887  1874 -                            1/1  p=0.9774
+  L22-orig-0   jpg          2080  2076 -                            0/0  p=0.5126
+  M161-orig-0  jpg          2293  2278 -                            1/1  p=0.1245
+  M269-orig-0  jpg          1994  1976 -                            1/1  p=0.7079
+  R055-orig-0  portal_webp  2073  2068 -                            1/1  p=0.8047
+  R064-orig-0  portal_webp  2123  2112 -                            1/1  p=0.9586
+  L45-orig-0   jpg          1613  1609 -                            1/1  p=0.9105
+  M414-orig-0  jpg          2040  2020 -                            1/1  p=0.7744
+  M128-orig-0  jpg          2429  2413 -                            1/1  p=0.9109
+  M359-orig-0  jpg          2379  2359 -                            1/1  p=0.5485
+  R094-orig-0  portal_webp  2259  2253 -                            1/1  p=0.9827
+  R075-orig-0  portal_webp  2042  2036 -                            1/1  p=0.9214
+  R066-orig-0  portal_webp  1756  1749 -                            1/1  p=0.9954
+/v1/scan после прогона (разбор стадий):
+  M440-orig-0  new               wall  2145 degraded=[] timings={'decode': 87.6, 'views': 6.2, 'gpu_wait': 0.0, 'cv': 648.4, 'vlm': 1355.0, 'resolve': 1.2, 'total': 2098.7}
+  M062-orig-0  new               wall  2006 degraded=[] timings={'decode': 83.6, 'views': 6.7, 'gpu_wait': 0.0, 'cv': 499.9, 'vlm': 1374.0, 'resolve': 3.1, 'total': 1967.4}
+  M312-orig-0  new               wall  2154 degraded=[] timings={'decode': 87.0, 'views': 5.9, 'gpu_wait': 0.0, 'cv': 498.1, 'vlm': 1519.9, 'resolve': 3.9, 'total': 2115.1}
+  M312-orig-0  repeat_immediate  wall  1581 degraded=[] timings={'decode': 88.0, 'views': 6.0, 'gpu_wait': 0.0, 'cv': 501.6, 'vlm': 954.5, 'resolve': 1.5, 'total': 1551.9}
+  M346-orig-0  repeat_after_20   wall  1336 degraded=[] timings={'decode': 88.9, 'views': 6.4, 'gpu_wait': 0.0, 'cv': 502.4, 'vlm': 696.5, 'resolve': 1.6, 'total': 1296.0}

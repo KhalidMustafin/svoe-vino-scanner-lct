@@ -1,0 +1,258 @@
+{
+ "stats": {
+  "wines": 2176,
+  "pool": 1996,
+  "pool_from_csv": 1923,
+  "with_portal": 2105,
+  "groups": 2051,
+  "wines_source": "wines.jsonl",
+  "portal_source": "details.json",
+  "portal_cards": 2105,
+  "icons": 20
+ },
+ "cards": {
+  "cards": 2176,
+  "photo_url": 2176,
+  "portal_url": 2105,
+  "dishes": 2105,
+  "dish_icons_all": 2105,
+  "temperature": 2105,
+  "alcohol": 2146,
+  "alcohol_src:portal": 611,
+  "description_src:portal": 2105,
+  "gradient": 2105,
+  "alcohol_src:catalog": 1535,
+  "description_src:catalog": 71,
+  "alcohol_src:None": 30,
+  "published": 2105,
+  "leaks": [],
+  "n_leaks": 0,
+  "seconds": 0.67
+ },
+ "similar": {
+  "anchors": 1996,
+  "p50_ms": 1.277,
+  "p95_ms": 1.73,
+  "max_ms": 2.881,
+  "with_percent": 0,
+  "content_filter_bad": 0,
+  "tiles_without_photo": 0
+ },
+ "field_after": {
+  "frames": 353,
+  "states": {
+   "found": 294,
+   "check": 59
+  },
+  "winery": {
+   "matches_truth_winery": 273,
+   "not_read": 48,
+   "other_winery": 25,
+   "matches_truth_winery_not_in_pool": 7
+  },
+  "sparkling_label_vs_read": {
+   "False→None": 233,
+   "True→True": 81,
+   "True→None": 36,
+   "False→True": 3
+  },
+  "sparkling_catalog_vs_read": {
+   "False→None": 262,
+   "True→True": 74,
+   "False→True": 10,
+   "True→None": 7
+  },
+  "examples": [
+   [
+    "L04-orig-0",
+    "found",
+    "Chateau de Talu · Каберне Совиньон"
+   ],
+   [
+    "L05-orig-0",
+    "found",
+    "Массандра"
+   ],
+   [
+    "L07-orig-0",
+    "found",
+    "Массандра · сладкое · Кокур · 13 % об."
+   ],
+   [
+    "L10-orig-0",
+    "found",
+    "ESSE · Совиньон Блан"
+   ],
+   [
+    "L11-orig-0",
+    "found",
+    "Chateau de Talu"
+   ],
+   [
+    "L14-orig-0",
+    "check",
+    "Кубань-Вино · игристое · брют"
+   ],
+   [
+    "L17-orig-0",
+    "check",
+    "Абрау-Дюрсо · игристое · полусладкое"
+   ],
+   [
+    "L18-orig-0",
+    "found",
+    "Дербент Вино · игристое · белое · брют · Алиготе"
+   ]
+  ]
+ },
+ "by_label": {
+  "alveus_orange_brut": {
+   "winery": {
+    "name": "Фанагория",
+    "in_catalog": true,
+    "count": 95
+   },
+   "same_winery": [
+    [
+     "5 elements Брют белое",
+     [
+      "Тоже игристое брют",
+      "Белое, а не оранжевое"
+     ]
+    ],
+    [
+     "5 elements Брют розовое",
+     [
+      "Тоже игристое брют",
+      "Розовое, а не оранжевое"
+     ]
+    ],
+    [
+     "Alveus Ultra Cuvee Brut",
+     [
+      "Тоже игристое брют",
+      "Белое, а не оранжевое"
+     ]
+    ]
+   ],
+   "similar": [
+    [
+     "Абрау-Дюрсо",
+     "Abrau-Durso Brut Rose Reserve",
+     [
+      "Тоже игристое брют",
+      "Белое, а не оранжевое",
+      "Тоже Кубань",
+      "Крепость та же — 12°"
+     ]
+    ],
+    [
+     "Кубань-Вино",
+     "Аристов Anima Millesimato",
+     [
+      "Тоже игристое брют",
+      "Розовое, а не оранжевое",
+      "Тоже Кубань",
+      "Крепость та же — 12°"
+     ]
+    ],
+    [
+     "Долина Лефкадия",
+     "Темелион брют",
+     [
+      "Тоже игристое брют",
+      "Белое, а не оранжевое",
+      "Тоже Кубань",
+      "Крепость та же — 12°"
+     ]
+    ]
+   ],
+   "notes": [
+    {
+     "code": "relaxed_color",
+     "text": "Оранжевых игристых в каталоге нет — показываем игристые брют других цветов"
+    }
+   ],
+   "percent": false
+  },
+  "barolo": {
+   "winery": {
+    "name": "Barolo",
+    "in_catalog": false,
+    "count": 0
+   },
+   "same_winery": [],
+   "similar": [
+    [
+     "Галицкий и Галицкий",
+     "Nebbiolo",
+     [
+      "Тот же сорт — Неббиоло",
+      "Тоже сухое",
+      "Крепость та же — 14°"
+     ]
+    ],
+    [
+     "Uppa Winery",
+     "Неббиоло",
+     [
+      "Тот же сорт — Неббиоло",
+      "Тоже сухое",
+      "Крепость та же — 14°"
+     ]
+    ],
+    [
+     "Усадьба Перовских",
+     "135",
+     [
+      "Сорта — Мурведр и Сира, а не Неббиоло",
+      "Тоже сухое",
+      "Крепость та же — 14°"
+     ]
+    ]
+   ],
+   "notes": [
+    {
+     "code": "winery_unknown",
+     "text": "Этой винодельни в каталоге нет"
+    }
+   ],
+   "percent": false
+  },
+  "only_winery": {
+   "winery": {
+    "name": "Абрау-Дюрсо",
+    "in_catalog": true,
+    "count": 45
+   },
+   "same_winery": [
+    [
+     "Abrau Estates Амурский Потапенко",
+     [
+      "Та же винодельня"
+     ]
+    ],
+    [
+     "Abrau Estates белое",
+     [
+      "Та же винодельня"
+     ]
+    ],
+    [
+     "Abrau Estates Каберне по-белому",
+     [
+      "Та же винодельня"
+     ]
+    ]
+   ],
+   "similar": [],
+   "notes": [
+    {
+     "code": "no_facts",
+     "text": "Цвет, сахар и сорт на этикетке не прочитаны — похожие подобрать не по чему"
+    }
+   ],
+   "percent": false
+  }
+ }
+}

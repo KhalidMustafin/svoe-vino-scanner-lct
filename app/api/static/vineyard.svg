@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 520" preserveAspectRatio="xMidYMax slice">
+  <!-- Свой рисунок «виноградник на закате» для главной и фона страницы на широком экране:
+       небо, солнце в дымке, три гряды холмов, ряды лозы и кипарисы. Без текста и ссылок. -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8f2e9"/>
+      <stop offset=".62" stop-color="#f1e3cf"/>
+      <stop offset="1" stop-color="#ecdcc4"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="560" cy="250" r="230" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff8ea"/>
+      <stop offset=".35" stop-color="#fbeedb" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#f6e7d2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="far" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e4d6c4"/>
+      <stop offset="1" stop-color="#dccbb4"/>
+    </linearGradient>
+    <linearGradient id="mid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d5c19f"/>
+      <stop offset="1" stop-color="#c9b58f"/>
+    </linearGradient>
+    <linearGradient id="near" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#bdb384"/>
+      <stop offset="1" stop-color="#a39b69"/>
+    </linearGradient>
+    <path id="cy" d="M0-48C3.2-42 5.6-30 5.8-17C6-8 4.2-1.5 0 0C-4.2-1.5-6-8-5.8-17C-5.6-30-3.2-42 0-48Z"/>
+  </defs>
+  <rect width="780" height="520" fill="url(#sky)"/>
+  <rect width="780" height="520" fill="url(#sun)"/>
+  <path d="M0 318 C70 300 140 292 220 300 C300 308 360 318 440 306 C520 294 600 280 680 288 C730 293 760 298 780 300 V520 H0z" fill="url(#far)"/>
+  <path d="M0 352 C90 334 180 330 280 338 C380 346 450 350 540 338 C620 327 700 324 780 332 V520 H0z" fill="url(#mid)"/>
+  <g fill="#6f7650" opacity=".5">
+    <use href="#cy" transform="translate(154 336) scale(.62)"/>
+    <use href="#cy" transform="translate(170 335) scale(.46)"/>
+    <use href="#cy" transform="translate(616 327) scale(.6)"/>
+  </g>
+  <path d="M0 392 C120 368 250 366 380 374 C500 381 610 376 700 366 C740 362 765 360 780 360 V520 H0z" fill="url(#near)"/>
+  <g fill="none" stroke="#7a7a49" stroke-linecap="round">
+    <path d="M-10 404 C130 382 260 381 390 389 C520 396 640 390 790 374" stroke-width="1.6" stroke-opacity=".42"/>
+    <path d="M-10 420 C130 397 260 396 390 405 C520 413 640 406 790 390" stroke-width="1.8" stroke-opacity=".44"/>
+    <path d="M-10 438 C130 414 260 413 390 423 C520 432 640 425 790 408" stroke-width="2" stroke-opacity=".46"/>
+    <path d="M-10 459 C130 434 260 433 390 444 C520 454 640 446 790 428" stroke-width="2.2" stroke-opacity=".48"/>
+    <path d="M-10 483 C130 457 260 456 390 468 C520 479 640 470 790 451" stroke-width="2.4" stroke-opacity=".5"/>
+    <path d="M-10 511 C130 484 260 483 390 496 C520 508 640 498 790 478" stroke-width="2.6" stroke-opacity=".52"/>
+  </g>
+  <g fill="#56603f">
+    <use href="#cy" transform="translate(104 382) scale(1.18)"/>
+    <use href="#cy" transform="translate(123 381) scale(.86)" fill="#4b5436"/>
+    <use href="#cy" transform="translate(240 373) scale(1.05)" fill="#4b5436"/>
+    <use href="#cy" transform="translate(557 373) scale(1.3)"/>
+    <use href="#cy" transform="translate(577 372) scale(.94)" fill="#4b5436"/>
+    <use href="#cy" transform="translate(595 373) scale(.66)"/>
+    <use href="#cy" transform="translate(709 365) scale(1.05)" fill="#4b5436"/>
+  </g>
+</svg>

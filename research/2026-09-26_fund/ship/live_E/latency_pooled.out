@@ -1,0 +1,13 @@
+on {'n': 23, 'p50': 2064, 'p95': 2300, 'max': 3009}
+off {'n': 23, 'p50': 1492, 'p95': 1826, 'max': 1986}
+off2 {'n': 23, 'p50': 1060, 'p95': 1382, 'max': 1450}
+on2 {'n': 23, 'p50': 1241, 'p95': 1620, 'max': 1734}
+on3 {'n': 23, 'p50': 1176, 'p95': 1971, 'max': 2243}
+off3 {'n': 23, 'p50': 1730, 'p95': 2038, 'max': 2198}
+off4 {'n': 23, 'p50': 1620, 'p95': 1952, 'max': 2053}
+pooled on2+on3 (00:41-00:43): {'n': 46, 'p50': 1232, 'p95': 1887, 'max': 2243}
+pooled off3+off4 (00:44-00:47): {'n': 46, 'p50': 1689, 'p95': 2038, 'max': 2198}
+pooled all off (off, off2, off3, off4): {'n': 92, 'p50': 1537, 'p95': 1986, 'max': 2198}
+pooled all on (on, on2, on3): {'n': 69, 'p50': 1435, 'p95': 2243, 'max': 3009}
+('on', 'on2', 'on3') slug identical across repeats: True
+('off', 'off2', 'off3', 'off4') slug identical across repeats: True

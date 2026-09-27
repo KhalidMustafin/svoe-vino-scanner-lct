@@ -1,0 +1,315 @@
+{
+  "cases": [
+    {
+      "name": "сахар прочитан — различает цвет (кадр поля L17)",
+      "read": {
+        "winery": "Абрау-Дюрсо",
+        "color": null,
+        "sugar": "polusladkoe",
+        "grapes": [],
+        "abv": null,
+        "sparkling": true
+      },
+      "candidates": [
+        {
+          "slug": "abrau-dyurso-russkoe-igristoe-polusladkoe-krasnoe-kaberne-sovinon-12",
+          "name": "Русское Игристое полусладкое красное",
+          "facts": {
+            "sugar": "polusladkoe",
+            "color": "Красное",
+            "sparkling": true,
+            "grapes": [
+              "Каберне Совиньон",
+              "Мерло",
+              "Пино Нуар",
+              "Сира"
+            ],
+            "abv": 12
+          }
+        },
+        {
+          "slug": "abrau-dyurso-russkoe-igristoe-polusladkoe-shardone-beloe-12",
+          "name": "Русское Игристое полусладкое",
+          "facts": {
+            "sugar": "polusladkoe",
+            "color": "Белое",
+            "sparkling": true,
+            "grapes": [
+              "Алиготе",
+              "Пино Блан",
+              "Рислинг",
+              "Совиньон Блан",
+              "Шардоне"
+            ],
+            "abv": 12
+          }
+        },
+        {
+          "slug": "abrau-dyurso-russkoe-igristoe-polusuhoe-shardone-beloe-12",
+          "name": "Русское Игристое полусухое",
+          "facts": {
+            "sugar": "polusuhoe",
+            "color": "Белое",
+            "sparkling": true,
+            "grapes": [
+              "Алиготе",
+              "Пино Блан",
+              "Рислинг",
+              "Совиньон Блан",
+              "Шардоне"
+            ],
+            "abv": 12
+          }
+        },
+        {
+          "slug": "abrau-dyurso-russkoe-igristoe-koshernoe-polusladkoe-shardone-beloe-12",
+          "name": "Русское Игристое кошерное полусладкое",
+          "facts": {
+            "sugar": "polusladkoe",
+            "color": "Белое",
+            "sparkling": true,
+            "grapes": [
+              "Алиготе",
+              "Пино Блан",
+              "Пино Нуар",
+              "Рислинг",
+              "Шардоне"
+            ],
+            "abv": 12
+          }
+        },
+        {
+          "slug": "abrau-dyurso-russkoe-igristoe-polusuhoe-rozovoe-pino-nuar-12",
+          "name": "Русское Игристое полусухое розовое",
+          "facts": {
+            "sugar": "polusuhoe",
+            "color": "Розовое",
+            "sparkling": true,
+            "grapes": [
+              "Каберне Совиньон",
+              "Каберне Фран",
+              "Пино Нуар",
+              "Пино фран"
+            ],
+            "abv": 12
+          }
+        }
+      ],
+      "question": {
+        "field": "color",
+        "text": "Какого цвета вино: красное или белое?",
+        "options": [
+          {
+            "label": "красное",
+            "slug": "abrau-dyurso-russkoe-igristoe-polusladkoe-krasnoe-kaberne-sovinon-12"
+          },
+          {
+            "label": "белое",
+            "slug": "abrau-dyurso-russkoe-igristoe-polusladkoe-shardone-beloe-12"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ничего не прочитано — различает сахар",
+      "read": {
+        "winery": null,
+        "color": null,
+        "sugar": null,
+        "grapes": [],
+        "abv": null,
+        "sparkling": null
+      },
+      "candidates": [
+        {
+          "slug": "abrau-dyurso-russkoe-igristoe-polusladkoe-krasnoe-kaberne-sovinon-12",
+          "name": "Русское Игристое полусладкое красное",
+          "facts": {
+            "sugar": "polusladkoe",
+            "color": "Красное",
+            "sparkling": true,
+            "grapes": [
+              "Каберне Совиньон",
+              "Мерло",
+              "Пино Нуар",
+              "Сира"
+            ],
+            "abv": 12
+          }
+        },
+        {
+          "slug": "abrau-dyurso-russkoe-igristoe-polusladkoe-shardone-beloe-12",
+          "name": "Русское Игристое полусладкое",
+          "facts": {
+            "sugar": "polusladkoe",
+            "color": "Белое",
+            "sparkling": true,
+            "grapes": [
+              "Алиготе",
+              "Пино Блан",
+              "Рислинг",
+              "Совиньон Блан",
+              "Шардоне"
+            ],
+            "abv": 12
+          }
+        },
+        {
+          "slug": "abrau-dyurso-russkoe-igristoe-polusuhoe-shardone-beloe-12",
+          "name": "Русское Игристое полусухое",
+          "facts": {
+            "sugar": "polusuhoe",
+            "color": "Белое",
+            "sparkling": true,
+            "grapes": [
+              "Алиготе",
+              "Пино Блан",
+              "Рислинг",
+              "Совиньон Блан",
+              "Шардоне"
+            ],
+            "abv": 12
+          }
+        },
+        {
+          "slug": "abrau-dyurso-russkoe-igristoe-koshernoe-polusladkoe-shardone-beloe-12",
+          "name": "Русское Игристое кошерное полусладкое",
+          "facts": {
+            "sugar": "polusladkoe",
+            "color": "Белое",
+            "sparkling": true,
+            "grapes": [
+              "Алиготе",
+              "Пино Блан",
+              "Пино Нуар",
+              "Рислинг",
+              "Шардоне"
+            ],
+            "abv": 12
+          }
+        },
+        {
+          "slug": "abrau-dyurso-russkoe-igristoe-polusuhoe-rozovoe-pino-nuar-12",
+          "name": "Русское Игристое полусухое розовое",
+          "facts": {
+            "sugar": "polusuhoe",
+            "color": "Розовое",
+            "sparkling": true,
+            "grapes": [
+              "Каберне Совиньон",
+              "Каберне Фран",
+              "Пино Нуар",
+              "Пино фран"
+            ],
+            "abv": 12
+          }
+        }
+      ],
+      "question": {
+        "field": "sugar",
+        "text": "Что на этикетке: полусладкое или полусухое?",
+        "options": [
+          {
+            "label": "полусладкое",
+            "slug": "abrau-dyurso-russkoe-igristoe-polusladkoe-krasnoe-kaberne-sovinon-12"
+          },
+          {
+            "label": "полусухое",
+            "slug": "abrau-dyurso-russkoe-igristoe-polusuhoe-shardone-beloe-12"
+          }
+        ]
+      }
+    },
+    {
+      "name": "различает только название",
+      "read": {
+        "winery": "Абрау-Дюрсо",
+        "color": "Белое",
+        "sugar": "polusladkoe",
+        "grapes": [],
+        "abv": 12,
+        "sparkling": true
+      },
+      "candidates": [
+        {
+          "slug": "abrau-dyurso-russkoe-igristoe-polusladkoe-shardone-beloe-12",
+          "name": "Русское Игристое полусладкое",
+          "facts": {
+            "sugar": "polusladkoe",
+            "color": "Белое",
+            "sparkling": true,
+            "grapes": [
+              "Алиготе",
+              "Пино Блан",
+              "Рислинг",
+              "Совиньон Блан",
+              "Шардоне"
+            ],
+            "abv": 12
+          }
+        },
+        {
+          "slug": "abrau-dyurso-russkoe-igristoe-koshernoe-polusladkoe-shardone-beloe-12",
+          "name": "Русское Игристое кошерное полусладкое",
+          "facts": {
+            "sugar": "polusladkoe",
+            "color": "Белое",
+            "sparkling": true,
+            "grapes": [
+              "Алиготе",
+              "Пино Блан",
+              "Пино Нуар",
+              "Рислинг",
+              "Шардоне"
+            ],
+            "abv": 12
+          }
+        }
+      ],
+      "question": {
+        "field": "name",
+        "text": "Какое название на этикетке: «Русское Игристое полусладкое» или «Русское Игристое кошерное полусладкое»?",
+        "options": [
+          {
+            "label": "Русское Игристое полусладкое",
+            "slug": "abrau-dyurso-russkoe-igristoe-polusladkoe-shardone-beloe-12"
+          },
+          {
+            "label": "Русское Игристое кошерное полусладкое",
+            "slug": "abrau-dyurso-russkoe-igristoe-koshernoe-polusladkoe-shardone-beloe-12"
+          }
+        ]
+      }
+    },
+    {
+      "name": "один кандидат — вопроса нет",
+      "read": {
+        "winery": null,
+        "color": null,
+        "sugar": null,
+        "grapes": [],
+        "abv": null,
+        "sparkling": null
+      },
+      "candidates": [
+        {
+          "slug": "abrau-dyurso-russkoe-igristoe-polusladkoe-krasnoe-kaberne-sovinon-12",
+          "name": "Русское Игристое полусладкое красное",
+          "facts": {
+            "sugar": "polusladkoe",
+            "color": "Красное",
+            "sparkling": true,
+            "grapes": [
+              "Каберне Совиньон",
+              "Мерло",
+              "Пино Нуар",
+              "Сира"
+            ],
+            "abv": 12
+          }
+        }
+      ],
+      "question": null
+    }
+  ]
+}

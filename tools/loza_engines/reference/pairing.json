@@ -1,0 +1,2723 @@
+{
+  "rules": [
+    {
+      "id": "acid_cuts_fat",
+      "name": "Кислотность режет жир",
+      "principle": "Чем жирнее блюдо, тем выше должна быть кислотность вина",
+      "dish_condition": "dish.fat >= 3.5",
+      "wine_condition": "wine.acidity >= 3.5",
+      "weight": 2.5,
+      "explanation_ru": "Блюдо жирное, а у вина живая кислотность — она освежает вкус после каждого куска, и еда не кажется тяжёлой.",
+      "source": "WSET L3 Food & Wine Pairing; классический канон сомелье"
+    },
+    {
+      "id": "flat_wine_on_fat_dish",
+      "name": "Мягкое вино под жирным блюдом",
+      "principle": "Низкокислотное вино рядом с жирным блюдом становится вязким",
+      "dish_condition": "dish.fat >= 3.5",
+      "wine_condition": "wine.acidity <= 2.5",
+      "weight": -2.2,
+      "explanation_ru": "Вино слишком мягкое для такого жирного блюда: вкус быстро становится тяжёлым и притупляется.",
+      "source": "WSET L3 Food & Wine Pairing"
+    },
+    {
+      "id": "tannin_meets_protein_fat",
+      "name": "Танины любят белок и жир",
+      "principle": "Белок и жир связывают танины, вино кажется мягче, мясо — сочнее",
+      "dish_condition": "dish.fat >= 3.0 and dish.umami >= 3.5 and (dish.flavor_tags & {'beef','lamb','pork','duck','goose','grilled','roasted'})",
+      "wine_condition": "wine.tannin >= 3.0 and wine.body >= 3.0",
+      "weight": 2.5,
+      "explanation_ru": "Белок и жир связывают танины: вино мягче, мясо сочнее.",
+      "source": "WSET L3; взаимодействие танин–белок"
+    },
+    {
+      "id": "bare_tannin_on_lean_dish",
+      "name": "Танины без жира",
+      "principle": "Без жира и белка танинам не за что зацепиться",
+      "dish_condition": "dish.fat <= 2.0 and dish.umami <= 3.0",
+      "wine_condition": "wine.tannin >= 3.5",
+      "weight": -2.2,
+      "explanation_ru": "Танинам вина здесь не за что зацепиться — без жира и мяса они ощущаются сухо и жёстко.",
+      "source": "WSET L3 Food & Wine Pairing"
+    },
+    {
+      "id": "tannin_vs_spice_clash",
+      "name": "Танины против острого (конфликт)",
+      "principle": "Капсаицин, танины, алкоголь и дуб взаимно усиливают жжение и горечь",
+      "dish_condition": "dish.spice >= 3.0",
+      "wine_condition": "wine.tannin >= 3.0 or wine.alcohol >= 4.0 or wine.oak >= 3.0",
+      "weight": -3.5,
+      "explanation_ru": "Острое блюдо и плотное крепкое вино разжигают друг друга: жжёт сильнее, а вино кажется грубым и горьким.",
+      "source": "Исследования взаимодействия капсаицина с этанолом и танинами; Wine with Seth, Spicy & Chili"
+    },
+    {
+      "id": "spice_needs_sweet_and_calm",
+      "name": "Острому — сладость и низкий градус",
+      "principle": "Остаточный сахар и невысокий алкоголь гасят остроту",
+      "dish_condition": "dish.spice >= 3.0",
+      "wine_condition": "wine.sweetness >= 1.5 and wine.alcohol <= 3.5 and wine.tannin <= 2.0",
+      "weight": 2.5,
+      "explanation_ru": "Лёгкая сладость и невысокий градус гасят остроту: блюдо перестаёт жечь, а фрукт в вине раскрывается.",
+      "source": "WSET L3; Vero, Spicy Food & Wine Pairing"
+    },
+    {
+      "id": "wine_sweeter_than_dish",
+      "name": "Вино слаще блюда",
+      "principle": "Вино к сладкому должно быть не менее сладким, но с кислотностью",
+      "dish_condition": "dish.sweetness >= 3.0",
+      "wine_condition": "wine.sweetness >= dish.sweetness - 0.5 and wine.acidity >= 3.0",
+      "weight": 3,
+      "explanation_ru": "К сладкому нужно вино не менее сладкое, иначе оно покажется пустым, а кислотность не даёт паре стать приторной.",
+      "source": "WSET L3 Food & Wine Pairing"
+    },
+    {
+      "id": "dry_wine_on_dessert",
+      "name": "Сухое вино к десерту (конфликт)",
+      "principle": "Сахар в блюде обнуляет фрукт в сухом вине",
+      "dish_condition": "dish.sweetness >= 3.0",
+      "wine_condition": "wine.sweetness <= 1.0",
+      "weight": -3.5,
+      "explanation_ru": "Десерт слаще вина — на его фоне сухое вино теряет фруктовость и становится резким, почти кислым.",
+      "source": "WSET L3 Food & Wine Pairing"
+    },
+    {
+      "id": "salt_loves_acidity",
+      "name": "Соль и кислотность",
+      "principle": "Соль в блюде делает кислотность вина приятной и освежающей",
+      "dish_condition": "dish.salt >= 3.5",
+      "wine_condition": "wine.acidity >= 3.5",
+      "weight": 2,
+      "explanation_ru": "Солёное просит свежести: кислотность вина работает как долька лимона и делает вкус ярче.",
+      "source": "WSET L3; Westgarth Wines, Umami & Salt"
+    },
+    {
+      "id": "salt_softens_tannin",
+      "name": "Соль смягчает танины",
+      "principle": "Соль снижает восприятие терпкости и поднимает фруктовость вина",
+      "dish_condition": "dish.salt >= 3.0 and dish.fat >= 2.5",
+      "wine_condition": "2.0 <= wine.tannin <= 4.0",
+      "weight": 1.2,
+      "explanation_ru": "Соль сглаживает терпкость: умеренные танины рядом с этим блюдом ощущаются мягче, а вино — фруктовее.",
+      "source": "Westgarth Wines; Brooks Wine, Pairing Science"
+    },
+    {
+      "id": "umami_vs_tannin_clash",
+      "name": "Умами против танинов (конфликт)",
+      "principle": "Умами усиливает горечь и терпкость и «съедает» фрукт",
+      "dish_condition": "dish.umami >= 3.5",
+      "wine_condition": "wine.tannin >= 3.5 or wine.oak >= 3.5",
+      "weight": -2.8,
+      "explanation_ru": "Насыщенный бульонно-грибной вкус вытягивает из вина горечь: терпкое вино рядом кажется жёстче, чем оно есть.",
+      "source": "Westgarth Wines, Umami; WSET L3"
+    },
+    {
+      "id": "umami_needs_acid_and_fruit",
+      "name": "Умами — кислотность и фрукт",
+      "principle": "Умами-блюдам нужны свежие, фруктовые, малотанинные вина",
+      "dish_condition": "dish.umami >= 3.5",
+      "wine_condition": "wine.acidity >= 3.5 and wine.tannin <= 2.5",
+      "weight": 2.2,
+      "explanation_ru": "Такому насыщенному вкусу нужен свежий и фруктовый партнёр без терпкости — тогда блюдо не заглушит вино.",
+      "source": "Westgarth Wines, Umami"
+    },
+    {
+      "id": "salt_rescues_umami",
+      "name": "Соль спасает умами-пару",
+      "principle": "Соль в умами-блюде компенсирует эффект усиления горечи",
+      "dish_condition": "dish.umami >= 3.5 and dish.salt >= 3.5",
+      "wine_condition": "2.5 <= wine.tannin <= 4.0 and wine.acidity >= 3.0",
+      "weight": 1.3,
+      "explanation_ru": "Блюдо не только насыщенное, но и солёное — соль гасит горечь, и вино с характером здесь всё-таки работает.",
+      "source": "Westgarth Wines, Umami & Salt"
+    },
+    {
+      "id": "intensity_match",
+      "name": "Соответствие интенсивности",
+      "principle": "Сила вкуса вина должна быть равна силе вкуса блюда",
+      "dish_condition": "true  # применяется всегда",
+      "wine_condition": "abs(wine_intensity(wine) - dish.intensity) <= 1.0, где wine_intensity = 0.45*wine.body + 0.35*wine.aroma_intensity + 0.20*wine.alcohol",
+      "weight": 2.5,
+      "explanation_ru": "Вино и блюдо равны по силе вкуса — ни одно не перекрикивает другое.",
+      "source": "Классическое правило соответствия (matching intensity)"
+    },
+    {
+      "id": "intensity_mismatch",
+      "name": "Разрыв интенсивности",
+      "principle": "Слишком сильный партнёр стирает второго",
+      "dish_condition": "true  # применяется всегда",
+      "wine_condition": "abs(wine_intensity(wine) - dish.intensity) >= 2.0",
+      "weight": -2,
+      "explanation_ru": "Слишком разная сила вкуса: более яркий партнёр перекроет второго, и половина вкуса просто потеряется.",
+      "source": "Классическое правило соответствия (matching intensity)"
+    },
+    {
+      "id": "bubbles_cut_fat_and_fry",
+      "name": "Пузырьки против жирного и жареного",
+      "principle": "Углекислота плюс кислотность механически очищают нёбо от жира",
+      "dish_condition": "dish.fat >= 3.0 and (dish.flavor_tags & {'fried','mayonnaise','dough','butter','pork_fat'})",
+      "wine_condition": "wine.effervescence >= 3.0 and wine.sweetness <= 2.0 and wine.acidity >= 3.5",
+      "weight": 2.5,
+      "explanation_ru": "Пузырьки вместе с кислотностью смывают жир и обновляют вкус — жареное и майонезное сразу становятся легче.",
+      "source": "WSET L3; классика подачи игристого к закускам"
+    },
+    {
+      "id": "bubbles_for_salty_snacks",
+      "name": "Игристое к солёным закускам",
+      "principle": "Брют — универсальный аперитив под солёный закусочный стол",
+      "dish_condition": "dish.salt >= 3.0 and dish.intensity <= 3.5 and dish.sweetness <= 2.0",
+      "wine_condition": "wine.effervescence >= 3.0 and wine.sweetness <= 1.5",
+      "weight": 1.5,
+      "explanation_ru": "Игристый брют — лучший спутник солёных закусок: освежает и держит аппетит весь вечер.",
+      "source": "Афиша Daily; Snob — подбор игристого к закускам"
+    },
+    {
+      "id": "acidity_mirror",
+      "name": "Зеркало кислотности",
+      "principle": "Вино должно быть не менее кислотным, чем блюдо",
+      "dish_condition": "dish.acidity >= 3.5",
+      "wine_condition": "wine.acidity >= dish.acidity - 0.5",
+      "weight": 2,
+      "explanation_ru": "В блюде есть заметная кислинка — вино должно быть не менее свежим, иначе покажется плоским.",
+      "source": "WSET L3 Food & Wine Pairing"
+    },
+    {
+      "id": "flat_wine_on_sour_dish",
+      "name": "Мягкое вино под кислым блюдом",
+      "principle": "Уксус и соленья обнуляют низкокислотное вино",
+      "dish_condition": "dish.acidity >= 3.5",
+      "wine_condition": "wine.acidity <= 2.5",
+      "weight": -2.5,
+      "explanation_ru": "Уксус и соленья в блюде «съедят» мягкое вино — оно станет вялым и приторно-сладковатым.",
+      "source": "WSET L3 Food & Wine Pairing"
+    },
+    {
+      "id": "no_tannin_with_oily_fish",
+      "name": "Танины и рыба (конфликт)",
+      "principle": "Танин плюс рыбий жир и железо дают металлический привкус",
+      "dish_condition": "dish.flavor_tags & {'oily_fish','roe','raw_fish','marine'}",
+      "wine_condition": "wine.tannin >= 2.5",
+      "weight": -3,
+      "explanation_ru": "Красное с терпкостью и рыба дают неприятный металлический привкус — здесь нужно белое, розовое или игристое.",
+      "source": "WSET L3; известное взаимодействие танин–рыбий жир"
+    },
+    {
+      "id": "serving_temperature_match",
+      "name": "Температура подачи",
+      "principle": "Холодное блюдо — охлаждённое вино, горячее и плотное — тёплая подача",
+      "dish_condition": "cold = dish.category in {'cold_appetizer','salad','pickles','seafood_raw','sweet_preserve'}",
+      "wine_condition": "(cold and wine.serve_temp_max <= 12) or (not cold and dish.intensity >= 3.5 and wine.serve_temp_max >= 14)  # serve_temp_max — верхняя граница поля temperature каталога, напр. «14-16» → 16",
+      "weight": 1.2,
+      "explanation_ru": "Подача в тон блюду: к холодной закуске — хорошо охлаждённое вино, к горячему сытному — чуть теплее, около 16 градусов.",
+      "source": "Рекомендации подачи каталога «Своё Вино» (поле temperature)"
+    },
+    {
+      "id": "regional_affinity",
+      "name": "Региональный принцип",
+      "principle": "Что растёт вместе — то и подаётся вместе",
+      "dish_condition": "dish.flavor_tags & {'cuisine_caucasian','cuisine_russian','cuisine_don','cuisine_crimean'}",
+      "wine_condition": "('cuisine_caucasian' in dish.flavor_tags and wine.region in {'dagestan','terek_valley','crimea'}) or ('cuisine_don' in dish.flavor_tags and wine.region == 'don_valley') or ('cuisine_russian' in dish.flavor_tags and wine.region in {'don_valley','crimea','kuban','lower_volga'}) or ('cuisine_crimean' in dish.flavor_tags and wine.region in {'crimea','sevastopol'})",
+      "weight": 1.5,
+      "explanation_ru": "Что растёт рядом — то и подаётся вместе: местное вино и местная кухня складывались бок о бок, и это слышно во вкусе.",
+      "source": "Принцип «what grows together goes together»; региональная структура каталога"
+    },
+    {
+      "id": "autochthon_bonus",
+      "name": "Автохтон к своей кухне",
+      "principle": "Российские автохтонные сорта дают дополнительную осмысленность паре",
+      "dish_condition": "dish.flavor_tags & {'cuisine_russian','cuisine_don'}",
+      "wine_condition": "wine.grapes & {'krasnostop','tsimlyansky_cherny','sibirkovy','puhlyakovsky','kokur','citron_magaracha'}",
+      "weight": 1,
+      "explanation_ru": "Автохтонный сорт с Дона или из Крыма — вино и блюдо буквально из одной земли, такая пара всегда звучит честнее.",
+      "source": "Каталог «Своё Вино», таксономия автохтонов проекта"
+    },
+    {
+      "id": "oak_smoke_bridge",
+      "name": "Дуб и дымок",
+      "principle": "Дым от углей перекликается с бочковой ароматикой вина",
+      "dish_condition": "dish.flavor_tags & {'smoked','grilled','char','toast'}",
+      "wine_condition": "wine.oak >= 2.5 and (wine.descriptors & {'smoke','toast','vanilla','chocolate'})",
+      "weight": 1.5,
+      "explanation_ru": "Дымок с углей перекликается с бочковыми тонами вина — получается один общий, «костровой» вкус.",
+      "source": "Принцип ароматического моста (bridging)"
+    },
+    {
+      "id": "oak_crushes_delicate",
+      "name": "Дуб против деликатного",
+      "principle": "Дубовое вино заглушает тонкие блюда",
+      "dish_condition": "dish.intensity <= 2.5 and dish.fat <= 2.5",
+      "wine_condition": "wine.oak >= 3.0",
+      "weight": -2,
+      "explanation_ru": "Дуб в вине заглушит тонкое блюдо — от него во вкусе останется только ваниль и древесина.",
+      "source": "WSET L3 Food & Wine Pairing"
+    },
+    {
+      "id": "high_alcohol_on_delicate",
+      "name": "Крепость против деликатного",
+      "principle": "Высокий алкоголь выжигает лёгкие блюда",
+      "dish_condition": "dish.intensity <= 2.5",
+      "wine_condition": "wine.alcohol >= 4.5",
+      "weight": -1.5,
+      "explanation_ru": "Крепкое вино «сожжёт» деликатное блюдо — во вкусе останется в основном спиртовая теплота.",
+      "source": "WSET L3 Food & Wine Pairing"
+    },
+    {
+      "id": "aroma_bridge",
+      "name": "Ароматический мост",
+      "principle": "Общий аромат у блюда и вина связывает пару",
+      "dish_condition": "descr(dish) = map_flavor_tags_to_descriptors(dish.flavor_tags)  # напр. mushroom→earth, black_pepper→pepper, honey→honey, berry→red_fruit, butter→butter, toast→toast, walnut→nutty, dill/herbal→herbal, apple→green_apple, marine→mineral",
+      "wine_condition": "len(descr(dish) & wine.descriptors) >= 1",
+      "weight": 1.5,
+      "explanation_ru": "У блюда и вина есть общий аромат — он связывает их в одно целое, и пара воспринимается как задуманная.",
+      "source": "Принцип ароматического моста (bridging), словарь AROMA_DESCRIPTORS проекта"
+    },
+    {
+      "id": "sweet_wine_bridges_salt_fat",
+      "name": "Сладкое вино к солёному и жирному",
+      "principle": "Классический контраст: сахар против соли и жира",
+      "dish_condition": "dish.salt >= 4.0 and dish.fat >= 3.5",
+      "wine_condition": "wine.sweetness >= 2.0 and wine.acidity >= 3.0",
+      "weight": 1.5,
+      "explanation_ru": "Проверенный приём: солёное и жирное отлично идёт с чуть сладким вином — контраст делает вкус объёмнее.",
+      "source": "Классический контрастный канон (сотерн–рокфор и аналоги)"
+    },
+    {
+      "id": "portal_editorial_prior",
+      "name": "Разметка редакции портала",
+      "principle": "Редакционная разметка dishes[] — доверенный приор, а не вывод модели",
+      "dish_condition": "portal_categories(dish) — набор из 34 слагов, сопоставленных блюду",
+      "wine_condition": "len(set(wine.dishes) & portal_categories(dish)) >= 1",
+      "weight": 2,
+      "explanation_ru": "Эту пару рекомендует и сама платформа: винодельня и редакция отметили такое сочетание в карточке вина.",
+      "source": "GET https://api.vino-svoe.ru/v1/wines/filters/dishes — 34 категории, поле dishes[] в карточке вина"
+    }
+  ],
+  "dishes": [
+    {
+      "id": "borsch",
+      "name": "Борщ",
+      "category": "soup",
+      "aliases": [
+        "борщ",
+        "борщик",
+        "украинский борщ",
+        "красный борщ"
+      ],
+      "fat": 3,
+      "acidity": 3.5,
+      "spice": 1,
+      "sweetness": 2,
+      "salt": 3,
+      "umami": 3.5,
+      "intensity": 3.5,
+      "flavor_tags": [
+        "beet",
+        "tomato",
+        "sour_cream",
+        "meat_broth",
+        "root_vegetable",
+        "herbal",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity 3.5-4.5, tannin 1.5-3, body 2.5-3.5, oak <=1.5, sweetness <=1. Свёкла и томат дают сладко-кислую основу — вину нужна кислотность не ниже блюда, иначе оно провалится. Мясной бульон (умами) сушит танин, поэтому терпкость только умеренная: лёгкое красное из Красностопа или Каберне Фран, либо сухое розовое Кубани. Ягодные дескрипторы red_fruit перекликаются со свёклой."
+    },
+    {
+      "id": "borsch_s_pampushkami",
+      "name": "Борщ с пампушками",
+      "category": "soup",
+      "aliases": [
+        "борщ с пампушками",
+        "борщ с чесночными пампушками"
+      ],
+      "fat": 3.5,
+      "acidity": 3.5,
+      "spice": 1.5,
+      "sweetness": 2,
+      "salt": 3.5,
+      "umami": 3.5,
+      "intensity": 4,
+      "flavor_tags": [
+        "beet",
+        "tomato",
+        "sour_cream",
+        "meat_broth",
+        "garlic",
+        "bread",
+        "toast",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=3.5, tannin 2-3, body 3-3.5, aroma_intensity >=3. Хлеб и чеснок добавляют веса и остроты — блюдо становится плотнее борща, вино нужно на ступень интенсивнее, но по-прежнему без жёстких танинов и без дуба: чеснок с дубом даёт горечь."
+    },
+    {
+      "id": "solyanka",
+      "name": "Солянка",
+      "category": "soup",
+      "aliases": [
+        "солянка",
+        "сборная солянка",
+        "мясная солянка"
+      ],
+      "fat": 4,
+      "acidity": 4.5,
+      "spice": 2,
+      "sweetness": 0.5,
+      "salt": 4.5,
+      "umami": 4.5,
+      "intensity": 4.5,
+      "flavor_tags": [
+        "smoked_meat",
+        "pickled",
+        "olive",
+        "lemon",
+        "meat_broth",
+        "cured",
+        "smoked",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=4.5, tannin <=1.5, oak <=1, body 2.5-3.5, effervescence 0-3. Самое сложное блюдо набора: одновременно очень солёное, очень кислое и очень умамное. Кислотность вина должна быть на пределе шкалы, танин — почти нулевым (умами + соль превратят его в горечь). Работает белое высокой кислотности (Рислинг, Алиготе, Сибирьковый) или сухое розовое; красное — только лёгкое и нетанинное."
+    },
+    {
+      "id": "okroshka",
+      "name": "Окрошка",
+      "category": "soup",
+      "aliases": [
+        "окрошка",
+        "окрошка на квасе",
+        "окрошка на кефире"
+      ],
+      "fat": 1.5,
+      "acidity": 4,
+      "spice": 1,
+      "sweetness": 1,
+      "salt": 2.5,
+      "umami": 1.5,
+      "intensity": 2,
+      "flavor_tags": [
+        "kvass",
+        "dill",
+        "cucumber",
+        "radish",
+        "sour_cream",
+        "herbal",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=4, body <=2.5, alcohol <=3, tannin 0, oak 0, effervescence >=3 предпочтительно. Блюдо холодное, кислое и лёгкое. Любая плотность, дуб или крепость его раздавят. Лучший вариант — брют или очень лёгкое белое с травяными и огуречными тонами (herbal, green_apple), подача 8-10 °C."
+    },
+    {
+      "id": "shchi",
+      "name": "Щи",
+      "category": "soup",
+      "aliases": [
+        "щи",
+        "щам",
+        "щах",
+        "кислые щи",
+        "щи из квашеной капусты"
+      ],
+      "fat": 2.5,
+      "acidity": 4,
+      "spice": 0.5,
+      "sweetness": 0.5,
+      "salt": 3,
+      "umami": 3.5,
+      "intensity": 3,
+      "flavor_tags": [
+        "sauerkraut",
+        "cabbage",
+        "meat_broth",
+        "sour_cream",
+        "fermented",
+        "herbal",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=4, tannin <=1.5, oak <=1, body 2-3. Квашеная капуста задаёт очень высокую кислотность — мягкое вино рядом станет вялым. Нужны белые с острой кислотностью и минеральностью (Рислинг, Сибирьковый, Алиготе), можно лёгкое игристое."
+    },
+    {
+      "id": "ukha",
+      "name": "Уха",
+      "category": "soup",
+      "aliases": [
+        "уха",
+        "ухе",
+        "уху",
+        "рыбный суп",
+        "уха на костре"
+      ],
+      "fat": 1.5,
+      "acidity": 1.5,
+      "spice": 1,
+      "sweetness": 0.5,
+      "salt": 2.5,
+      "umami": 3.5,
+      "intensity": 2.5,
+      "flavor_tags": [
+        "white_fish",
+        "herbal",
+        "black_pepper",
+        "smoke",
+        "mineral",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity 3.5-4.5, tannin 0, oak <=1, body 2-3, aroma_intensity <=3. Деликатный рыбный бульон: танин недопустим (металлический тон), дуб перекроет вкус. Идеальны сухие белые с минеральностью — Кокур, Ркацители, Шардоне без бочки. Дымок от костра оправдывает лёгкий smoke-дескриптор."
+    },
+    {
+      "id": "pelmeni",
+      "name": "Пельмени",
+      "category": "dumplings",
+      "aliases": [
+        "пельмени",
+        "сибирские пельмени",
+        "пельмешки"
+      ],
+      "fat": 3.5,
+      "acidity": 1,
+      "spice": 1,
+      "sweetness": 0.5,
+      "salt": 2.5,
+      "umami": 3,
+      "intensity": 3,
+      "flavor_tags": [
+        "dough",
+        "pork",
+        "beef",
+        "butter",
+        "black_pepper",
+        "sour_cream",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=3.5, tannin 1.5-3, body 3, oak <=2. Тесто плюс жирный мясной фарш — жир нужно резать кислотностью. Танин допустим умеренный: мясо его связывает, но тесто не даёт много жира на нёбо. Хорошо идёт среднетелое красное (Мерло, Каберне Фран) и, за счёт теста, сухое игристое."
+    },
+    {
+      "id": "vareniki",
+      "name": "Вареники с картошкой",
+      "category": "dumplings",
+      "aliases": [
+        "вареники",
+        "вареники с картошкой",
+        "вареники с картофелем"
+      ],
+      "fat": 2.5,
+      "acidity": 1,
+      "spice": 0.5,
+      "sweetness": 0.5,
+      "salt": 2,
+      "umami": 2,
+      "intensity": 2,
+      "flavor_tags": [
+        "dough",
+        "potato",
+        "fried_onion",
+        "butter",
+        "sour_cream",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=3.5, tannin <=1.5, body <=3, oak <=1.5, alcohol <=3.5. Блюдо мягкое и нейтральное: сильное вино его перекроет. Нужно лёгкое сухое белое или розовое со сливочными и цветочными тонами, поддерживающими масло и жареный лук."
+    },
+    {
+      "id": "bliny_smetana",
+      "name": "Блины со сметаной",
+      "category": "savory_pastry",
+      "aliases": [
+        "блины со сметаной",
+        "блины",
+        "блинчики"
+      ],
+      "fat": 3,
+      "acidity": 2,
+      "spice": 0,
+      "sweetness": 1.5,
+      "salt": 1,
+      "umami": 1,
+      "intensity": 2,
+      "flavor_tags": [
+        "dough",
+        "butter",
+        "sour_cream",
+        "dairy",
+        "toast",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=3.5, sweetness 0.5-2, tannin 0, effervescence >=3 предпочтительно, oak <=1.5. Сливочность и тесто просят пузырьков: игристое брют или экстра брют освежает нёбо. Дескрипторы butter, yeast, toast в вине дают прямой ароматический мост к блинам."
+    },
+    {
+      "id": "bliny_ikra",
+      "name": "Блины с икрой",
+      "category": "cold_appetizer",
+      "aliases": [
+        "блины с икрой",
+        "блины с красной икрой",
+        "блины с чёрной икрой"
+      ],
+      "fat": 3.5,
+      "acidity": 1,
+      "spice": 0,
+      "sweetness": 0.5,
+      "salt": 4.5,
+      "umami": 4.5,
+      "intensity": 4,
+      "flavor_tags": [
+        "roe",
+        "marine",
+        "butter",
+        "dough",
+        "salt_cured",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=4, tannin 0, oak 0, effervescence >=4, sweetness <=1, body 2-3. Соль и умами на максимуме — только брют классического метода или очень кислотное минеральное белое. Танин и дуб дадут металл и горечь. Пузырьки снимают жир от масла и икряной плёнки."
+    },
+    {
+      "id": "seledka_pod_shuboy",
+      "name": "Селёдка под шубой",
+      "category": "salad",
+      "aliases": [
+        "селёдка под шубой",
+        "селедка под шубой",
+        "шуба",
+        "сельдь под шубой",
+        "селедочку",
+        "селёдочку",
+        "селедочка",
+        "селёдочка"
+      ],
+      "fat": 4,
+      "acidity": 2.5,
+      "spice": 0.5,
+      "sweetness": 2,
+      "salt": 4.5,
+      "umami": 4,
+      "intensity": 4,
+      "flavor_tags": [
+        "oily_fish",
+        "mayonnaise",
+        "beet",
+        "onion",
+        "marine",
+        "root_vegetable",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=4, tannin 0, oak 0, effervescence 0 или >=3, body 2.5-3.5, sweetness <=1.5. Жирная солёная рыба под майонезом: нужен «нож» кислотности, чтобы прорезать слой майонеза. Танин здесь категорически запрещён — сельдь плюс терпкость даёт металлический привкус. Работают минеральное Шардоне без бочки, Рислинг, розовый брют."
+    },
+    {
+      "id": "olivier",
+      "name": "Оливье",
+      "category": "salad",
+      "aliases": [
+        "оливье",
+        "салат оливье",
+        "зимний салат",
+        "русский салат"
+      ],
+      "fat": 4,
+      "acidity": 2.5,
+      "spice": 0.5,
+      "sweetness": 1,
+      "salt": 3.5,
+      "umami": 3,
+      "intensity": 3,
+      "flavor_tags": [
+        "mayonnaise",
+        "egg",
+        "potato",
+        "pickled",
+        "boiled_meat",
+        "pea",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=4, effervescence >=3.5, tannin 0, oak <=1, sweetness <=1.5, body 2.5-3. Майонезная жирность плюс кислинка солёных огурцов. Классический и статистически лучший выбор — белый брют классического метода: пузырьки очищают нёбо от майонеза. Из тихих — Рислинг, Пино Гри, Совиньон Блан."
+    },
+    {
+      "id": "vinegret",
+      "name": "Винегрет",
+      "category": "salad",
+      "aliases": [
+        "винегрет",
+        "винегрет с фасолью"
+      ],
+      "fat": 2,
+      "acidity": 3.5,
+      "spice": 0.5,
+      "sweetness": 2,
+      "salt": 3,
+      "umami": 1.5,
+      "intensity": 2.5,
+      "flavor_tags": [
+        "beet",
+        "pickled",
+        "sauerkraut",
+        "potato",
+        "sunflower_oil",
+        "root_vegetable",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=4, tannin <=1, oak 0, body <=3, alcohol <=3.5. Соленья и уксус ставят высокую планку кислотности. Вино должно быть лёгким, свежим и без дуба; хорошо работает сухое розовое Кубани — розовая ягодность перекликается со свёклой."
+    },
+    {
+      "id": "kholodets",
+      "name": "Холодец",
+      "category": "cold_appetizer",
+      "aliases": [
+        "холодец",
+        "холодцу",
+        "холодцом",
+        "студень",
+        "заливное из мяса"
+      ],
+      "fat": 3.5,
+      "acidity": 1,
+      "spice": 2,
+      "sweetness": 0,
+      "salt": 3.5,
+      "umami": 4.5,
+      "intensity": 3.5,
+      "flavor_tags": [
+        "gelatin",
+        "pork",
+        "garlic",
+        "horseradish",
+        "mustard",
+        "boiled_meat",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=4, tannin <=1.5, oak <=1, sweetness <=1.5, serve_temp_max <=12. Подаётся холодным, поэтому и вино нужно охлаждённое. Хрен и горчица — жгучие: они конфликтуют с танином и высоким алкоголем. Оптимум — сухое белое высокой кислотности или брют."
+    },
+    {
+      "id": "salo",
+      "name": "Сало",
+      "category": "cold_appetizer",
+      "aliases": [
+        "сало",
+        "салу",
+        "солёное сало",
+        "шпик"
+      ],
+      "fat": 5,
+      "acidity": 0.5,
+      "spice": 1.5,
+      "sweetness": 0,
+      "salt": 4.5,
+      "umami": 2.5,
+      "intensity": 4,
+      "flavor_tags": [
+        "pork_fat",
+        "garlic",
+        "salt_cured",
+        "black_pepper",
+        "cured",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=4.5, sweetness 0-2.5, tannin <=2, alcohol 3-4, effervescence 0 или >=3. Максимум жира и соли: кислотность обязана быть предельной. Здесь одинаково хорошо работают два сценария — сухой брют (пузырьки смывают жир) и полусладкое белое с высокой кислотностью (контраст соль–сахар)."
+    },
+    {
+      "id": "kvashenaya_kapusta",
+      "name": "Квашеная капуста",
+      "category": "pickles",
+      "aliases": [
+        "квашеная капуста",
+        "кислая капуста"
+      ],
+      "fat": 0.5,
+      "acidity": 5,
+      "spice": 0.5,
+      "sweetness": 1,
+      "salt": 4,
+      "umami": 3,
+      "intensity": 3,
+      "flavor_tags": [
+        "sauerkraut",
+        "fermented",
+        "cranberry",
+        "dill",
+        "cabbage",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=4.5, tannin 0, oak 0, sweetness <=1, body <=2.5. Предельно кислое и солёное. Почти любое вино рядом покажется мягким, поэтому нужны только самые кислотные белые (Рислинг, Алиготе, Сибирьковый) или брют-натюр. Красное исключено."
+    },
+    {
+      "id": "solenye_ogurcy",
+      "name": "Солёные огурцы",
+      "category": "pickles",
+      "aliases": [
+        "солёные огурцы",
+        "соленые огурцы",
+        "малосольные огурцы",
+        "бочковые огурцы"
+      ],
+      "fat": 0,
+      "acidity": 4.5,
+      "spice": 1,
+      "sweetness": 0,
+      "salt": 5,
+      "umami": 3,
+      "intensity": 3,
+      "flavor_tags": [
+        "pickled",
+        "fermented",
+        "dill",
+        "garlic",
+        "brine",
+        "herbal",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=4.5, tannin 0, oak 0, sweetness 0-1, alcohol <=3.5. Соль на максимуме шкалы. Единственная рабочая стратегия — очень кислотное сухое белое или брют; травяные и минеральные дескрипторы (herbal, mineral) дают ароматический мост к укропу и рассолу."
+    },
+    {
+      "id": "malosolnaya_semga",
+      "name": "Малосольная сёмга",
+      "category": "cold_appetizer",
+      "aliases": [
+        "малосольная сёмга",
+        "малосольная семга",
+        "слабосолёный лосось",
+        "лосось слабой соли"
+      ],
+      "fat": 4,
+      "acidity": 0.5,
+      "spice": 0,
+      "sweetness": 1,
+      "salt": 4,
+      "umami": 4,
+      "intensity": 3.5,
+      "flavor_tags": [
+        "oily_fish",
+        "salt_cured",
+        "butter",
+        "marine",
+        "dill",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=4, tannin 0, oak <=1.5, body 2.5-3.5, effervescence 0 или >=3, serve_temp_max <=12. Жирная солёная рыба: кислотность режет жир, соль делает её приятной. Танин запрещён. Отлично работают Шардоне без выраженной бочки, Пино Гри, розовый и белый брют."
+    },
+    {
+      "id": "krasnaya_ryba",
+      "name": "Красная рыба",
+      "category": "seafood",
+      "aliases": [
+        "красная рыба",
+        "красной рыбе",
+        "красную рыбу",
+        "красной рыбы",
+        "лосось",
+        "лосося",
+        "лососю",
+        "сёмга",
+        "сёмгу",
+        "семга",
+        "семгу",
+        "форель",
+        "форели",
+        "кета",
+        "кеты",
+        "горбуша",
+        "горбушу",
+        "стейк из лосося",
+        "запечённый лосось",
+        "рыба на гриле красная",
+        "тунец",
+        "тунцу",
+        "тунца",
+        "стейк из тунца"
+      ],
+      "fat": 3.5,
+      "acidity": 1.0,
+      "spice": 0.5,
+      "sweetness": 1.0,
+      "salt": 2.5,
+      "umami": 3.5,
+      "intensity": 3.0,
+      "flavor_tags": [
+        "oily_fish",
+        "marine",
+        "butter",
+        "lemon",
+        "roasted",
+        "dill"
+      ],
+      "wine_requirements": "tannin 0-1, acidity >=3.5, oak <=2, body 2.5-3.5. Жирная рыба держит вино плотнее белой, но танин с ней даёт металлический привкус: красное сюда не идёт. Работают Шардоне, розовое и игристое с живой кислотностью."
+    },
+    {
+      "id": "solenaya_seld",
+      "name": "Солёная сельдь",
+      "category": "cold_appetizer",
+      "aliases": [
+        "солёная сельдь",
+        "соленая сельдь",
+        "сельдь",
+        "сельди",
+        "селёдка",
+        "селедка",
+        "селёдке",
+        "селедке",
+        "селёдку",
+        "селедку",
+        "сельдь с луком",
+        "селёдка с картошкой",
+        "иваси",
+        "малосольная сельдь"
+      ],
+      "fat": 4.5,
+      "acidity": 1.5,
+      "spice": 0.5,
+      "sweetness": 0.5,
+      "salt": 4.5,
+      "umami": 4.5,
+      "intensity": 4.0,
+      "flavor_tags": [
+        "oily_fish",
+        "salt_cured",
+        "brine",
+        "marine",
+        "onion",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=4, tannin 0, oak <=1.5, body 2.5-3.5, effervescence 0 или >=3, serve_temp_max <=12. Очень солёная и жирная рыба с йодистой нотой: кислотность обязана быть выше, чем у сёмги, иначе вино кажется вялым. Танин запрещён — с рыбьим жиром он даёт металлический привкус. Работают Рислинг, Алиготе, брют и сухое розовое."
+    },
+    {
+      "id": "kopchenaya_skumbriya",
+      "name": "Копчёная скумбрия",
+      "category": "cold_appetizer",
+      "aliases": [
+        "копчёная скумбрия",
+        "копченая скумбрия",
+        "скумбрия горячего копчения",
+        "скумбрия",
+        "скумбрии",
+        "скумбрию",
+        "скумбрией"
+      ],
+      "fat": 4.5,
+      "acidity": 0.5,
+      "spice": 1,
+      "sweetness": 0.5,
+      "salt": 4,
+      "umami": 4.5,
+      "intensity": 4.5,
+      "flavor_tags": [
+        "oily_fish",
+        "smoked",
+        "marine",
+        "salt_cured",
+        "smoke",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=4, tannin 0, oak 1.5-3 (только в белом), aroma_intensity >=3.5, body 3-4. Очень жирная, копчёная и умамная рыба: нужна максимальная кислотность и заметная ароматика, иначе вино потеряется. Работает белое с лёгкой бочкой (smoke, toast дают мост к копчению) или оранжевое. Красное — нет."
+    },
+    {
+      "id": "shashlyk_svinina",
+      "name": "Шашлык из свинины",
+      "category": "main_meat",
+      "aliases": [
+        "шашлык из свинины",
+        "свиной шашлык",
+        "шашлык",
+        "барбекю",
+        "барбекю из свинины",
+        "мясо на углях",
+        "свинина",
+        "свинине",
+        "свинину",
+        "свининой"
+      ],
+      "fat": 4,
+      "acidity": 2,
+      "spice": 2,
+      "sweetness": 1,
+      "salt": 3,
+      "umami": 4,
+      "intensity": 4,
+      "flavor_tags": [
+        "grilled",
+        "pork",
+        "smoke",
+        "char",
+        "onion",
+        "black_pepper",
+        "cuisine_caucasian"
+      ],
+      "wine_requirements": "tannin 3-4, body 3.5-4.5, acidity >=3.5, oak 2-3.5, aroma_intensity >=3.5, alcohol 3-4. Жир и белок связывают танин, дым от углей перекликается с бочкой. Классика — плотное красное Кубани или Крыма (Каберне Совиньон, Мерло, Саперави) с дескрипторами smoke, pepper, black_fruit."
+    },
+    {
+      "id": "shashlyk_baranina",
+      "name": "Шашлык из баранины",
+      "category": "main_meat",
+      "aliases": [
+        "шашлык из баранины",
+        "бараний шашлык",
+        "каре ягнёнка на углях",
+        "баранина",
+        "баранине",
+        "баранину",
+        "бараниной",
+        "каре ягнёнка",
+        "каре ягненка",
+        "ягнёнок",
+        "ягненок"
+      ],
+      "fat": 4.5,
+      "acidity": 1.5,
+      "spice": 2.5,
+      "sweetness": 0.5,
+      "salt": 3,
+      "umami": 4.5,
+      "intensity": 5,
+      "flavor_tags": [
+        "grilled",
+        "lamb",
+        "smoke",
+        "char",
+        "herbal",
+        "spice",
+        "cuisine_caucasian"
+      ],
+      "wine_requirements": "tannin 3.5-4.5, body 4-5, acidity >=3.5, oak 2.5-4, aroma_intensity 4-5, alcohol 3.5-4.5. Самое интенсивное мясное блюдо набора — вино должно быть равным по мощности. Саперави Дагестана и мощные крымские бленды: пряность и травянистость барана требуют дескрипторов spice, pepper, herbal."
+    },
+    {
+      "id": "lyulya_kebab",
+      "name": "Люля-кебаб",
+      "category": "main_meat",
+      "aliases": [
+        "люля-кебаб",
+        "люля кебаб",
+        "кебаб"
+      ],
+      "fat": 4.5,
+      "acidity": 1,
+      "spice": 3,
+      "sweetness": 0.5,
+      "salt": 3.5,
+      "umami": 4.5,
+      "intensity": 4.5,
+      "flavor_tags": [
+        "grilled",
+        "lamb",
+        "smoke",
+        "onion",
+        "spice",
+        "herbal",
+        "char",
+        "cuisine_caucasian"
+      ],
+      "wine_requirements": "tannin 2.5-3.5, alcohol <=3.5, acidity >=3.5, body 3.5-4, oak <=2.5. Пограничный случай: мясо и жир зовут танин, но пряная острота (spice 3.0) его штрафует. Компромисс — среднетанинное фруктовое красное с невысоким градусом и умеренным дубом; Саперави в свежем стиле или крымский Мерло."
+    },
+    {
+      "id": "plov",
+      "name": "Плов",
+      "category": "main_meat",
+      "aliases": [
+        "плов",
+        "узбекский плов",
+        "плов с бараниной"
+      ],
+      "fat": 4,
+      "acidity": 1,
+      "spice": 2.5,
+      "sweetness": 2,
+      "salt": 3,
+      "umami": 4,
+      "intensity": 4,
+      "flavor_tags": [
+        "lamb",
+        "rice",
+        "cumin",
+        "barberry",
+        "carrot",
+        "dried_fruit",
+        "spice",
+        "cuisine_caucasian"
+      ],
+      "wine_requirements": "tannin 2-3, sweetness 0.5-2, acidity >=3.5, body 3.5-4, alcohol <=4, oak <=2.5. Морковь, изюм и барбарис дают сладко-пряный фон, зира — жгучесть. Нужны фруктовые красные с мягким танином или насыщенное оранжевое/белое с телом; дескрипторы dried_fruit и spice дают прямой мост к специям."
+    },
+    {
+      "id": "manty",
+      "name": "Манты",
+      "category": "dumplings",
+      "aliases": [
+        "манты",
+        "манта"
+      ],
+      "fat": 4,
+      "acidity": 0.5,
+      "spice": 2,
+      "sweetness": 0.5,
+      "salt": 3,
+      "umami": 3.5,
+      "intensity": 3.5,
+      "flavor_tags": [
+        "dough",
+        "lamb",
+        "onion",
+        "pumpkin",
+        "black_pepper",
+        "cumin",
+        "cuisine_caucasian"
+      ],
+      "wine_requirements": "acidity >=3.5, tannin 2-3, body 3-3.5, oak <=2, alcohol <=4. Жирный бараний сок внутри теста — кислотность обязательна. Танин умеренный: тесто гасит его сцепление с мясом. Хороши среднетелые красные и плотные розовые."
+    },
+    {
+      "id": "khachapuri",
+      "name": "Хачапури",
+      "category": "savory_pastry",
+      "aliases": [
+        "хачапури",
+        "хачапури по-аджарски",
+        "хачапури по-имеретински"
+      ],
+      "fat": 4.5,
+      "acidity": 2,
+      "spice": 0.5,
+      "sweetness": 0.5,
+      "salt": 4,
+      "umami": 4,
+      "intensity": 4,
+      "flavor_tags": [
+        "cheese",
+        "dough",
+        "butter",
+        "egg",
+        "dairy",
+        "toast",
+        "cuisine_caucasian"
+      ],
+      "wine_requirements": "acidity >=4, tannin <=2, body 3-4, oak <=2.5, effervescence 0 или >=3. Расплавленный солёный сыр плюс масло и тесто — жир и соль на высоком уровне. Нужна большая кислотность; идеально белое с телом (Ркацители, оранжевое из Ркацители) или игристое. Красное с танином даст горечь на сыре."
+    },
+    {
+      "id": "satsivi",
+      "name": "Сациви",
+      "category": "main_poultry",
+      "aliases": [
+        "сациви",
+        "курица в ореховом соусе",
+        "сациви из индейки"
+      ],
+      "fat": 4.5,
+      "acidity": 1.5,
+      "spice": 2.5,
+      "sweetness": 0.5,
+      "salt": 3,
+      "umami": 4,
+      "intensity": 4,
+      "flavor_tags": [
+        "walnut",
+        "chicken",
+        "garlic",
+        "coriander",
+        "spice",
+        "nutty",
+        "saffron",
+        "cuisine_caucasian"
+      ],
+      "wine_requirements": "acidity >=3.5, tannin <=2, body 3.5-4.5, oak 1.5-3, alcohol <=4. Ореховый соус — плотный, жирный и слегка горьковатый: танин добавит горечи, поэтому его почти не нужно. Идеальны насыщенные белые и оранжевые вина (Ркацители, Кокур) — дескриптор nutty даёт прямой ароматический мост к грецкому ореху."
+    },
+    {
+      "id": "kharcho",
+      "name": "Харчо",
+      "category": "soup",
+      "aliases": [
+        "харчо",
+        "суп харчо"
+      ],
+      "fat": 3.5,
+      "acidity": 4,
+      "spice": 4,
+      "sweetness": 0.5,
+      "salt": 3.5,
+      "umami": 4.5,
+      "intensity": 4.5,
+      "flavor_tags": [
+        "beef",
+        "walnut",
+        "plum_sour",
+        "coriander",
+        "chili",
+        "garlic",
+        "spice",
+        "cuisine_caucasian"
+      ],
+      "wine_requirements": "spice-режим: tannin <=1.5, alcohol <=3.5, oak <=1.5, sweetness 1.5-3, acidity >=4. Одновременно очень острое, очень кислое и очень умамное. Танин, дуб и крепость усилят жжение — их надо убрать. Работает полусухое/полусладкое белое или розовое с высокой кислотностью и низким градусом; сладость гасит перец, кислотность держит ткемали."
+    },
+    {
+      "id": "befstroganov",
+      "name": "Бефстроганов",
+      "category": "main_meat",
+      "aliases": [
+        "бефстроганов",
+        "бефстроганофф",
+        "говядина по-строгановски",
+        "телятина",
+        "телятине",
+        "телятину",
+        "телятиной"
+      ],
+      "fat": 4,
+      "acidity": 2,
+      "spice": 1,
+      "sweetness": 0.5,
+      "salt": 3,
+      "umami": 4.5,
+      "intensity": 4,
+      "flavor_tags": [
+        "beef",
+        "sour_cream",
+        "mushroom",
+        "fried_onion",
+        "mustard",
+        "butter",
+        "earth",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=3.5, tannin 2.5-3.5, body 3.5-4, oak 1.5-3, aroma_intensity >=3.5. Говядина и грибы дают высокое умами: слишком терпкое вино станет горьким, слишком лёгкое утонет в сметанном соусе. Оптимум — среднетелое красное с мягким танином и дескриптором earth (грибной мост); Мерло, Красностоп в свежем стиле."
+    },
+    {
+      "id": "kotlety_po_kievski",
+      "name": "Котлеты по-киевски",
+      "category": "main_poultry",
+      "aliases": [
+        "котлеты по-киевски",
+        "котлета по-киевски"
+      ],
+      "fat": 5,
+      "acidity": 0.5,
+      "spice": 0.5,
+      "sweetness": 0.5,
+      "salt": 3,
+      "umami": 3,
+      "intensity": 3.5,
+      "flavor_tags": [
+        "chicken",
+        "butter",
+        "fried",
+        "breadcrumb",
+        "herbal",
+        "dairy",
+        "toast"
+      ],
+      "wine_requirements": "acidity >=4, tannin 0-1.5, oak <=2.5, effervescence 0 или >=3, body 3-4. Сливочное масло внутри и панировка снаружи — максимум жира при умеренной интенсивности. Нужны кислотные белые с телом (Шардоне лёгкой выдержки) или игристое; butter и toast в вине дают ароматический мост."
+    },
+    {
+      "id": "zharenaya_kartoshka_s_gribami",
+      "name": "Жареная картошка с грибами",
+      "category": "main_vegetable",
+      "aliases": [
+        "жареная картошка с грибами",
+        "картошка с грибами",
+        "жареный картофель с грибами"
+      ],
+      "fat": 4,
+      "acidity": 0.5,
+      "spice": 0.5,
+      "sweetness": 1,
+      "salt": 3,
+      "umami": 4.5,
+      "intensity": 3.5,
+      "flavor_tags": [
+        "fried",
+        "potato",
+        "mushroom",
+        "fried_onion",
+        "earth",
+        "sunflower_oil",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=3.5, tannin <=2.5, body 3-3.5, oak <=2, aroma_intensity 3-4. Грибы дают высокое умами и сушат танин, жарка требует кислотности. Идеально лёгкое красное с землистой ароматикой (Пино Нуар, Каберне Фран) или насыщенное белое; дескриптор earth — прямой мост к грибам."
+    },
+    {
+      "id": "griby_v_smetane",
+      "name": "Грибы в сметане",
+      "category": "hot_appetizer",
+      "aliases": [
+        "грибы в сметане",
+        "жульен",
+        "грибы со сметаной",
+        "грибы",
+        "грибам",
+        "грибов",
+        "жареные грибы",
+        "шампиньоны",
+        "шампиньонам",
+        "белые грибы",
+        "лисички"
+      ],
+      "fat": 4,
+      "acidity": 2,
+      "spice": 0.5,
+      "sweetness": 0.5,
+      "salt": 2.5,
+      "umami": 5,
+      "intensity": 3.5,
+      "flavor_tags": [
+        "mushroom",
+        "sour_cream",
+        "dairy",
+        "earth",
+        "fried_onion",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=4, tannin <=2, body 3-4, oak <=2.5. Максимальное умами в наборе: терпкое или сильно дубовое вино рядом станет горьким и жёстким. Нужны кислотные вина с телом и землисто-грибной ароматикой — Шардоне, оранжевое, либо очень лёгкое красное типа Пино Нуара."
+    },
+    {
+      "id": "utka_s_yablokami",
+      "name": "Запечённая утка с яблоками",
+      "category": "main_poultry",
+      "aliases": [
+        "запечённая утка с яблоками",
+        "утка",
+        "утке",
+        "утку",
+        "утка с яблоками",
+        "утка запечённая"
+      ],
+      "fat": 4.5,
+      "acidity": 2.5,
+      "spice": 1,
+      "sweetness": 3,
+      "salt": 2.5,
+      "umami": 4,
+      "intensity": 4.5,
+      "flavor_tags": [
+        "duck",
+        "roasted",
+        "apple",
+        "honey",
+        "dried_fruit",
+        "spice",
+        "char",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "sweetness 1.5-3, acidity >=3.5, tannin 2-3.5, body 4-4.5, oak 2-3.5, aroma_intensity >=4. Сладость яблок и мёда в глазури требует, чтобы вино было не суше блюда. Классика — насыщенное красное с ягодно-сухофруктовой ароматикой или полусухое; сочетание жир + сладость идеально ложится на dried_fruit и spice."
+    },
+    {
+      "id": "gus",
+      "name": "Гусь запечённый",
+      "category": "main_poultry",
+      "aliases": [
+        "гусь",
+        "гусю",
+        "гуся",
+        "запечённый гусь",
+        "рождественский гусь"
+      ],
+      "fat": 5,
+      "acidity": 2,
+      "spice": 1,
+      "sweetness": 2.5,
+      "salt": 3,
+      "umami": 4.5,
+      "intensity": 5,
+      "flavor_tags": [
+        "goose",
+        "roasted",
+        "apple",
+        "sauerkraut",
+        "dried_fruit",
+        "char",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=4, tannin 3-4, body 4.5-5, oak 2.5-4, alcohol 3.5-4.5, aroma_intensity >=4.5. Самое жирное и самое интенсивное блюдо праздничного стола — вино должно быть максимально плотным и при этом очень кислотным, иначе жир победит. Выдержанные красные Кубани и Крыма, Саперави, крупные бленды."
+    },
+    {
+      "id": "buzhenina",
+      "name": "Буженина",
+      "category": "cold_appetizer",
+      "aliases": [
+        "буженина",
+        "запечённая свинина",
+        "буженина холодная"
+      ],
+      "fat": 4,
+      "acidity": 0.5,
+      "spice": 2,
+      "sweetness": 0.5,
+      "salt": 3.5,
+      "umami": 4,
+      "intensity": 3.5,
+      "flavor_tags": [
+        "pork",
+        "roasted",
+        "garlic",
+        "black_pepper",
+        "mustard",
+        "herbal",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=3.5, tannin 2.5-3.5, body 3-4, oak 1.5-3, serve_temp_max 14-16 (или <=12 при холодной подаче). Плотное мясо с чесноком и перцем: танин здесь уместен благодаря жиру и белку. Дескриптор pepper даёт мост к чёрному перцу корочки. Хороши Каберне Фран, Мерло, Красностоп."
+    },
+    {
+      "id": "pastroma",
+      "name": "Пастрома",
+      "category": "cold_appetizer",
+      "aliases": [
+        "пастрома",
+        "пастрами",
+        "говяжья пастрома",
+        "хамон",
+        "хамону",
+        "колбаса",
+        "колбасе",
+        "колбасу",
+        "ветчина",
+        "ветчине",
+        "ветчину",
+        "мясная нарезка",
+        "мясное ассорти",
+        "прошутто",
+        "салями",
+        "сыровяленое мясо"
+      ],
+      "fat": 3,
+      "acidity": 0.5,
+      "spice": 3.5,
+      "sweetness": 0.5,
+      "salt": 4.5,
+      "umami": 4.5,
+      "intensity": 4,
+      "flavor_tags": [
+        "beef",
+        "smoked",
+        "cured",
+        "coriander",
+        "black_pepper",
+        "paprika",
+        "spice",
+        "smoke"
+      ],
+      "wine_requirements": "tannin <=2, alcohol <=3.5, acidity >=4, oak <=2, sweetness 0.5-2, body 3-3.5. Пряная корка (кориандр, перец, паприка) выводит блюдо в острый режим: танин и крепость усилят жжение. Нужны кислотные фруктовые вина без терпкости — сухое розовое, лёгкое красное холодной подачи, оранжевое. Соль при этом требует высокой кислотности."
+    },
+    {
+      "id": "stroganina",
+      "name": "Строганина",
+      "category": "seafood_raw",
+      "aliases": [
+        "строганина",
+        "строганина из муксуна",
+        "строганина из нельмы"
+      ],
+      "fat": 2.5,
+      "acidity": 0.5,
+      "spice": 1.5,
+      "sweetness": 0,
+      "salt": 3,
+      "umami": 3,
+      "intensity": 2.5,
+      "flavor_tags": [
+        "raw_fish",
+        "white_fish",
+        "marine",
+        "mineral",
+        "black_pepper",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=4, tannin 0, oak 0, body <=3, aroma_intensity <=3, serve_temp_max <=10. Сырая мороженая рыба — вкус деликатный и холодный, вино должно быть ледяным, чистым и минеральным. Любой дуб, танин или высокая крепость её уничтожат. Кокур, Рислинг, брют-натюр."
+    },
+    {
+      "id": "ikra_krasnaya",
+      "name": "Икра красная",
+      "category": "cold_appetizer",
+      "aliases": [
+        "икра красная",
+        "красная икра",
+        "лососёвая икра",
+        "красной икре",
+        "икре",
+        "икру",
+        "красную икру",
+        "икра",
+        "бутерброды с икрой",
+        "бутерброд с икрой",
+        "тарталетки с икрой"
+      ],
+      "fat": 3.5,
+      "acidity": 0,
+      "spice": 0,
+      "sweetness": 0.5,
+      "salt": 4.5,
+      "umami": 5,
+      "intensity": 4,
+      "flavor_tags": [
+        "roe",
+        "marine",
+        "butter",
+        "salt_cured",
+        "mineral",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=4.5, tannin 0, oak 0, effervescence >=4, sweetness <=1, body 2.5-3. Соль и умами на максимуме шкалы, никакой кислоты в самом продукте. Только брют классического метода или предельно кислотное минеральное белое. Танин и дуб дают жёсткий металлический тон."
+    },
+    {
+      "id": "ikra_chernaya",
+      "name": "Икра чёрная",
+      "category": "cold_appetizer",
+      "aliases": [
+        "икра чёрная",
+        "чёрная икра",
+        "черная икра",
+        "осетровая икра",
+        "чёрной икре",
+        "чёрную икру"
+      ],
+      "fat": 3.5,
+      "acidity": 0,
+      "spice": 0,
+      "sweetness": 0,
+      "salt": 4,
+      "umami": 5,
+      "intensity": 4.5,
+      "flavor_tags": [
+        "roe",
+        "marine",
+        "nutty",
+        "mineral",
+        "butter",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=4.5, tannin 0, oak 0, effervescence >=4, sweetness <=0.5, aroma_intensity 3-4. Тончайший и одновременно очень умамный продукт: нужен зрелый брют с дрожжевой и ореховой ароматикой (yeast, nutty) — она даёт мост к вкусу икры. Любой ароматический перебор всё испортит."
+    },
+    {
+      "id": "kraby",
+      "name": "Крабы",
+      "category": "seafood",
+      "aliases": [
+        "крабы",
+        "камчатский краб",
+        "крабовое мясо"
+      ],
+      "fat": 2,
+      "acidity": 0.5,
+      "spice": 0,
+      "sweetness": 2.5,
+      "salt": 2.5,
+      "umami": 4,
+      "intensity": 2.5,
+      "flavor_tags": [
+        "shellfish",
+        "marine",
+        "sweet_flesh",
+        "butter",
+        "mineral"
+      ],
+      "wine_requirements": "acidity >=4, tannin 0, oak <=1.5, body 2.5-3.5, sweetness 0-1.5, aroma_intensity <=3.5. Мясо краба сладковатое и деликатное: вино должно быть чистым, минеральным, с намёком на сливочность. Дуб и танин недопустимы. Шардоне без бочки, Кокур, Пино Гри, брют."
+    },
+    {
+      "id": "grebeshki",
+      "name": "Гребешки",
+      "category": "seafood",
+      "aliases": [
+        "гребешки",
+        "морские гребешки",
+        "гребешок",
+        "мидии",
+        "мидиям",
+        "мидий",
+        "кальмары",
+        "кальмарам",
+        "кальмаров",
+        "морской коктейль",
+        "морепродукты"
+      ],
+      "fat": 1.5,
+      "acidity": 0.5,
+      "spice": 0,
+      "sweetness": 3,
+      "salt": 2,
+      "umami": 3.5,
+      "intensity": 2.5,
+      "flavor_tags": [
+        "shellfish",
+        "marine",
+        "sweet_flesh",
+        "butter",
+        "mineral",
+        "seared"
+      ],
+      "wine_requirements": "sweetness 0.5-2, acidity >=4, tannin 0, oak <=2, body 2.5-3.5. Гребешок ощутимо сладкий (карамелизация при обжарке) — совсем сухое вино рядом станет резким, поэтому уместен намёк на остаточный сахар или очень фруктовый сухой стиль. Дальневосточная зона каталога даёт региональную рифму."
+    },
+    {
+      "id": "golubcy",
+      "name": "Голубцы",
+      "category": "main_meat",
+      "aliases": [
+        "голубцы",
+        "голубчики"
+      ],
+      "fat": 3.5,
+      "acidity": 2.5,
+      "spice": 1,
+      "sweetness": 1.5,
+      "salt": 3,
+      "umami": 4,
+      "intensity": 3.5,
+      "flavor_tags": [
+        "cabbage",
+        "pork",
+        "beef",
+        "rice",
+        "tomato",
+        "sour_cream",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=3.5, tannin 1.5-3, body 3-3.5, oak <=2. Томатный соус задаёт кислотность, капуста и фарш — умами. Нужно фруктовое красное среднего тела с мягким танином или плотное розовое; сильно дубовые вина конфликтуют с капустой."
+    },
+    {
+      "id": "farshirovanny_perec",
+      "name": "Фаршированный перец",
+      "category": "main_meat",
+      "aliases": [
+        "фаршированный перец",
+        "перец фаршированный",
+        "болгарский перец с фаршем",
+        "фаршированному перцу",
+        "перцу",
+        "перец"
+      ],
+      "fat": 3,
+      "acidity": 3,
+      "spice": 1,
+      "sweetness": 2,
+      "salt": 3,
+      "umami": 3.5,
+      "intensity": 3.5,
+      "flavor_tags": [
+        "bell_pepper",
+        "tomato",
+        "rice",
+        "minced_meat",
+        "sour_cream",
+        "vegetal",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=3.5, tannin 1.5-3, body 3-3.5, oak <=2, aroma_intensity 3-4. Сладость болгарского перца и кислота томата — нужна фруктовая свежесть. Каберне Фран с зелёно-перечной ароматикой (vegetal, pepper) даёт почти дословный ароматический мост к блюду."
+    },
+    {
+      "id": "kurnik",
+      "name": "Курник",
+      "category": "savory_pastry",
+      "aliases": [
+        "курник",
+        "пирог с курицей",
+        "царский пирог"
+      ],
+      "fat": 4,
+      "acidity": 0.5,
+      "spice": 0.5,
+      "sweetness": 0.5,
+      "salt": 3,
+      "umami": 3.5,
+      "intensity": 3.5,
+      "flavor_tags": [
+        "dough",
+        "chicken",
+        "egg",
+        "butter",
+        "mushroom",
+        "rice",
+        "toast",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=3.5, tannin <=2, body 3-4, oak <=2.5, effervescence 0 или >=3. Сдобное тесто, масло и куриный фарш — жирно и мягко по вкусу. Нужны кислотные белые с телом или игристое; дескрипторы butter, toast, yeast перекликаются с выпечкой."
+    },
+    {
+      "id": "kulebyaka",
+      "name": "Кулебяка",
+      "category": "savory_pastry",
+      "aliases": [
+        "кулебяка",
+        "кулебяка с рыбой",
+        "пирог с сёмгой"
+      ],
+      "fat": 4,
+      "acidity": 0.5,
+      "spice": 0.5,
+      "sweetness": 0.5,
+      "salt": 3,
+      "umami": 4,
+      "intensity": 4,
+      "flavor_tags": [
+        "dough",
+        "oily_fish",
+        "mushroom",
+        "egg",
+        "butter",
+        "rice",
+        "toast",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=4, tannin 0, oak 1.5-3, body 3.5-4.5, aroma_intensity >=3.5. Рыба внутри запрещает танин, но плотность пирога требует вина с телом. Идеальны выдержанное Шардоне, оранжевое из Ркацители, зрелый брют — они держат и грибной, и рыбный слой."
+    },
+    {
+      "id": "tvorozhnaya_zapekanka",
+      "name": "Творожная запеканка",
+      "category": "dessert",
+      "aliases": [
+        "творожная запеканка",
+        "запеканка из творога",
+        "творог",
+        "творогу",
+        "творога",
+        "сырная запеканка"
+      ],
+      "fat": 3,
+      "acidity": 2.5,
+      "spice": 0,
+      "sweetness": 3.5,
+      "salt": 1,
+      "umami": 1,
+      "intensity": 2.5,
+      "flavor_tags": [
+        "dairy",
+        "curd",
+        "vanilla",
+        "raisin",
+        "egg",
+        "honey"
+      ],
+      "wine_requirements": "sweetness >=3, acidity >=3.5, tannin 0, body 2.5-3.5, alcohol <=3.5. Правило «вино слаще блюда»: нужен полусладкий или сладкий белый стиль с сохранённой кислотностью — Мускат, полусладкое из Цитронного Магарача. Дескрипторы vanilla, honey, dried_fruit дают ароматический мост."
+    },
+    {
+      "id": "syrniki",
+      "name": "Сырники",
+      "category": "dessert",
+      "aliases": [
+        "сырники",
+        "творожники",
+        "сырники со сметаной"
+      ],
+      "fat": 3.5,
+      "acidity": 2.5,
+      "spice": 0,
+      "sweetness": 3.5,
+      "salt": 1,
+      "umami": 1,
+      "intensity": 3,
+      "flavor_tags": [
+        "curd",
+        "fried",
+        "dairy",
+        "vanilla",
+        "berry",
+        "sour_cream"
+      ],
+      "wine_requirements": "sweetness >=3, acidity >=3.5, tannin 0, effervescence 0 или >=3, oak <=1.5. Сладость варенья и сметаны требует вина не суше блюда; жарка и творожная жирность — кислотности. Идеально сладкое или полусладкое игристое (Мускат игристый) — сладость плюс пузырьки закрывают оба требования."
+    },
+    {
+      "id": "medovik",
+      "name": "Медовик",
+      "category": "dessert",
+      "aliases": [
+        "медовик",
+        "медовый торт",
+        "торт медовик",
+        "яблочный пирог",
+        "яблочному пирогу",
+        "шарлотка",
+        "шарлотке",
+        "пирог с яблоками"
+      ],
+      "fat": 4,
+      "acidity": 1.5,
+      "spice": 1,
+      "sweetness": 4.5,
+      "salt": 0.5,
+      "umami": 0.5,
+      "intensity": 4,
+      "flavor_tags": [
+        "honey",
+        "dairy",
+        "caramel",
+        "spice",
+        "dough",
+        "nutty"
+      ],
+      "wine_requirements": "sweetness >=4, acidity >=3.5, body 3.5-4.5, alcohol 3.5-5, tannin 0. Очень сладкий и плотный десерт — вино должно быть заведомо слаще, иначе покажется кислым. Нужны десертные и ликёрные белые (мускаты Крыма, вина позднего сбора) с медовой и ореховой ароматикой — honey, nutty, caramel в одну ноту с коржами."
+    },
+    {
+      "id": "napoleon",
+      "name": "Наполеон",
+      "category": "dessert",
+      "aliases": [
+        "наполеон",
+        "торт наполеон",
+        "мильфей",
+        "торт",
+        "торту",
+        "торта",
+        "тортик",
+        "кремовый торт",
+        "бисквитный торт"
+      ],
+      "fat": 4.5,
+      "acidity": 1,
+      "spice": 0.5,
+      "sweetness": 4.5,
+      "salt": 0.5,
+      "umami": 0.5,
+      "intensity": 4,
+      "flavor_tags": [
+        "butter",
+        "custard",
+        "vanilla",
+        "dough",
+        "caramel",
+        "dairy"
+      ],
+      "wine_requirements": "sweetness >=4, acidity >=4, effervescence 0 или >=3, tannin 0, oak <=2. Максимум сливочного жира плюс максимум сахара: нужны и сладость, и очень высокая кислотность, чтобы пара не стала приторной. Сладкое игристое или белое десертное с ванильной ароматикой — vanilla, butter дают мост к заварному крему."
+    },
+    {
+      "id": "pastila",
+      "name": "Пастила",
+      "category": "dessert",
+      "aliases": [
+        "пастила",
+        "белёвская пастила",
+        "яблочная пастила"
+      ],
+      "fat": 0,
+      "acidity": 2.5,
+      "spice": 0,
+      "sweetness": 4.5,
+      "salt": 0,
+      "umami": 0,
+      "intensity": 2.5,
+      "flavor_tags": [
+        "apple",
+        "berry",
+        "honey",
+        "floral",
+        "egg_white"
+      ],
+      "wine_requirements": "sweetness >=4, acidity >=4, body <=3, alcohol <=3.5, aroma_intensity 3-4, oak 0. Десерт лёгкий, но очень сладкий и с яблочной кислинкой: вино должно быть сладким, но не тяжёлым — иначе задавит. Полусладкие и сладкие мускаты, вина с green_apple и floral в аромате."
+    },
+    {
+      "id": "chak_chak",
+      "name": "Чак-чак",
+      "category": "dessert",
+      "aliases": [
+        "чак-чак",
+        "чакчак",
+        "чак чак",
+        "чак-чаку",
+        "чак чаку"
+      ],
+      "fat": 3,
+      "acidity": 0.5,
+      "spice": 0,
+      "sweetness": 5,
+      "salt": 0.5,
+      "umami": 0,
+      "intensity": 4,
+      "flavor_tags": [
+        "honey",
+        "fried",
+        "dough",
+        "caramel",
+        "nutty"
+      ],
+      "wine_requirements": "sweetness >=4.5, acidity >=4, tannin 0, alcohol 3.5-5. Сладость на максимуме шкалы — почти любое вино рядом покажется сухим и резким. Нужны только ликёрные и десертные стили (мускат, вино позднего сбора); высокая кислотность обязательна, иначе пара станет слащавой."
+    },
+    {
+      "id": "varenye",
+      "name": "Варенье",
+      "category": "sweet_preserve",
+      "aliases": [
+        "варенье",
+        "джем",
+        "вишнёвое варенье",
+        "малиновое варенье"
+      ],
+      "fat": 0,
+      "acidity": 2.5,
+      "spice": 0,
+      "sweetness": 5,
+      "salt": 0,
+      "umami": 0,
+      "intensity": 3.5,
+      "flavor_tags": [
+        "berry",
+        "red_fruit",
+        "stone_fruit",
+        "floral",
+        "caramel"
+      ],
+      "wine_requirements": "sweetness >=4.5, acidity >=4, body 3-4, tannin 0-1.5, aroma_intensity >=3.5. Правило «вино слаще блюда» работает в предельном режиме. Ягодное варенье идеально ложится на сладкие красные и мускаты с ягодной ароматикой — red_fruit и black_fruit дают прямой мост."
+    },
+    {
+      "id": "myod",
+      "name": "Мёд",
+      "category": "sweet_preserve",
+      "aliases": [
+        "мёд",
+        "мёду",
+        "меду",
+        "мед",
+        "медовые соты"
+      ],
+      "fat": 0,
+      "acidity": 1,
+      "spice": 0,
+      "sweetness": 5,
+      "salt": 0,
+      "umami": 0,
+      "intensity": 4,
+      "flavor_tags": [
+        "honey",
+        "floral",
+        "herbal",
+        "caramel"
+      ],
+      "wine_requirements": "sweetness >=4.5, acidity >=4, aroma_intensity >=4, tannin 0. Чистый сахар без кислоты: вину нужна и предельная сладость, и высокая кислотность, чтобы пара не слиплась. Идеальны мускаты и вина позднего сбора с honey и floral — это ароматическое тождество, а не контраст."
+    },
+    {
+      "id": "solenye_gruzdi",
+      "name": "Солёные грузди",
+      "category": "pickles",
+      "aliases": [
+        "солёные грузди",
+        "соленые грузди",
+        "солёные грибы",
+        "грузди в сметане"
+      ],
+      "fat": 1.5,
+      "acidity": 3,
+      "spice": 1,
+      "sweetness": 0,
+      "salt": 4.5,
+      "umami": 5,
+      "intensity": 3.5,
+      "flavor_tags": [
+        "mushroom",
+        "fermented",
+        "brine",
+        "dill",
+        "earth",
+        "sour_cream",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=4.5, tannin 0, oak <=1.5, sweetness <=1, body 2.5-3.5. Соль плюс максимум умами — самое враждебное к танину блюдо набора. Только сухие белые высокой кислотности или брют. Дескриптор earth даёт мост к груздям, mineral — к рассолу."
+    },
+    {
+      "id": "borodinsky_hleb_s_salom",
+      "name": "Бородинский хлеб с салом",
+      "category": "cold_appetizer",
+      "aliases": [
+        "бородинский хлеб с салом",
+        "чёрный хлеб с салом",
+        "хлеб с салом"
+      ],
+      "fat": 4.5,
+      "acidity": 2,
+      "spice": 2,
+      "sweetness": 1.5,
+      "salt": 4.5,
+      "umami": 3,
+      "intensity": 4,
+      "flavor_tags": [
+        "rye_bread",
+        "pork_fat",
+        "coriander",
+        "garlic",
+        "malt",
+        "toast",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=4.5, sweetness 0-2.5, tannin <=2, effervescence 0 или >=3, alcohol <=4. Жир и соль на пике, ржаной солод даёт тёмную хлебную ноту. Нужна предельная кислотность; допустим лёгкий остаточный сахар как контраст к соли. Дескрипторы toast и yeast перекликаются с бородинским хлебом."
+    },
+    {
+      "id": "shaverma",
+      "name": "Шаверма",
+      "category": "fast_food",
+      "aliases": [
+        "шаверма",
+        "шаурма",
+        "донер"
+      ],
+      "fat": 4,
+      "acidity": 2.5,
+      "spice": 3,
+      "sweetness": 1,
+      "salt": 4,
+      "umami": 4,
+      "intensity": 4,
+      "flavor_tags": [
+        "grilled",
+        "chicken",
+        "garlic",
+        "pita",
+        "pickled",
+        "spice",
+        "chili",
+        "smoke"
+      ],
+      "wine_requirements": "spice-режим: tannin <=1.5, alcohol <=3.5, oak <=1.5, sweetness 1-2.5, acidity >=4, effervescence 0 или >=3. Острые соусы и чеснок исключают танин и высокий градус, но жир и соль требуют максимальной кислотности. Оптимум — сухое или полусухое розовое, свежее белое, игристое брют."
+    },
+    {
+      "id": "steik_ribay",
+      "name": "Стейк рибай",
+      "category": "main_meat",
+      "aliases": [
+        "стейк рибай",
+        "рибай",
+        "стейк",
+        "ribeye"
+      ],
+      "fat": 4.5,
+      "acidity": 0.5,
+      "spice": 1.5,
+      "sweetness": 1,
+      "salt": 3.5,
+      "umami": 5,
+      "intensity": 4.5,
+      "flavor_tags": [
+        "beef",
+        "grilled",
+        "char",
+        "smoke",
+        "butter",
+        "black_pepper"
+      ],
+      "wine_requirements": "tannin 3.5-4.5, body 4-5, acidity >=3.5, oak 2.5-4, alcohol 3.5-4.5, aroma_intensity >=4. Эталонный случай правила «танины любят белок и жир»: мраморный жир связывает терпкость, соль её смягчает, и мощное красное раскрывается полностью. Каберне Совиньон и бленды Кубани и Крыма с выдержкой, Саперави."
+    },
+    {
+      "id": "burger",
+      "name": "Бургер",
+      "category": "fast_food",
+      "aliases": [
+        "бургер",
+        "гамбургер",
+        "чизбургер"
+      ],
+      "fat": 4.5,
+      "acidity": 2,
+      "spice": 1.5,
+      "sweetness": 2,
+      "salt": 4,
+      "umami": 4.5,
+      "intensity": 4,
+      "flavor_tags": [
+        "beef",
+        "grilled",
+        "cheese",
+        "pickled",
+        "tomato",
+        "char",
+        "bread",
+        "smoke"
+      ],
+      "wine_requirements": "tannin 2.5-3.5, acidity >=4, body 3.5-4, oak <=3, sweetness <=1.5. Жир, соль и умами высоки, но соусы дают сладко-кислый фон — вино должно быть сочным и фруктовым, а не строгим. Хороши среднетелые красные с ягодной ароматикой и плотное розовое."
+    },
+    {
+      "id": "pasta_carbonara",
+      "name": "Паста карбонара",
+      "category": "foreign_dish",
+      "aliases": [
+        "паста карбонара",
+        "карбонара",
+        "спагетти карбонара"
+      ],
+      "fat": 4.5,
+      "acidity": 0.5,
+      "spice": 1.5,
+      "sweetness": 0.5,
+      "salt": 4,
+      "umami": 4.5,
+      "intensity": 3.5,
+      "flavor_tags": [
+        "pork_cured",
+        "egg",
+        "cheese",
+        "black_pepper",
+        "dairy",
+        "pasta",
+        "cured"
+      ],
+      "wine_requirements": "acidity >=4, tannin <=2, body 3-4, oak <=2.5, aroma_intensity 3-4. Яично-сырный соус плюс гуанчале — очень жирно, солёно и умамно. Вину нужна кислотность как противовес и минимум терпкости. Идеальны белые с телом (Шардоне, Ркацители), оранжевые, реже — лёгкое красное; дескриптор pepper рифмуется с чёрным перцем."
+    },
+    {
+      "id": "pizza",
+      "name": "Пицца",
+      "category": "foreign_dish",
+      "aliases": [
+        "пицца",
+        "пицца маргарита",
+        "пицца пепперони"
+      ],
+      "fat": 4,
+      "acidity": 3,
+      "spice": 1.5,
+      "sweetness": 1.5,
+      "salt": 4,
+      "umami": 4.5,
+      "intensity": 3.5,
+      "flavor_tags": [
+        "tomato",
+        "cheese",
+        "dough",
+        "herbal",
+        "cured",
+        "toast"
+      ],
+      "wine_requirements": "acidity >=4, tannin 1.5-3, body 3-3.5, oak <=2, alcohol <=4. Томат задаёт кислотность, сыр — жир и соль, колбасы — умами. Вино должно быть кислотным и фруктовым, с мягким танином; дуб конфликтует с томатом. Среднетелые красные, плотные розовые."
+    },
+    {
+      "id": "sushi",
+      "name": "Суши",
+      "category": "foreign_dish",
+      "aliases": [
+        "суши",
+        "нигири",
+        "сашими",
+        "сушами",
+        "с сушами",
+        "суши и роллы"
+      ],
+      "fat": 1.5,
+      "acidity": 3,
+      "spice": 1.5,
+      "sweetness": 1.5,
+      "salt": 3.5,
+      "umami": 4.5,
+      "intensity": 2.5,
+      "flavor_tags": [
+        "raw_fish",
+        "rice",
+        "marine",
+        "soy",
+        "wasabi",
+        "mineral"
+      ],
+      "wine_requirements": "acidity >=4, tannin 0, oak 0, body <=3, sweetness 0.5-2, effervescence 0 или >=3, serve_temp_max <=10. Сырая рыба, соя и васаби: танин даст металл, дуб — грубость, крепость усилит васаби. Только чистые кислотные белые и брют; лёгкая сладость смягчает соевый соус и остроту."
+    },
+    {
+      "id": "rolly",
+      "name": "Роллы",
+      "category": "foreign_dish",
+      "aliases": [
+        "роллы",
+        "роллам",
+        "роллами",
+        "ролл филадельфия",
+        "калифорния"
+      ],
+      "fat": 3,
+      "acidity": 2.5,
+      "spice": 1.5,
+      "sweetness": 2,
+      "salt": 3.5,
+      "umami": 4.5,
+      "intensity": 3,
+      "flavor_tags": [
+        "raw_fish",
+        "rice",
+        "cream_cheese",
+        "soy",
+        "marine",
+        "nori",
+        "dairy"
+      ],
+      "wine_requirements": "acidity >=4, tannin 0, oak <=1, sweetness 1-2.5, body 2.5-3.5. Сливочный сыр добавляет жира, соусы — сладости, поэтому вино может быть чуть слаще, чем к суши. Танин по-прежнему исключён из-за рыбы и нори. Полусухое белое, розовое, игристое."
+    },
+    {
+      "id": "oysters",
+      "name": "Устрицы",
+      "category": "seafood",
+      "aliases": [
+        "устрицы",
+        "устрица",
+        "свежие устрицы",
+        "устрицы с лимоном"
+      ],
+      "fat": 1,
+      "acidity": 3,
+      "spice": 0,
+      "sweetness": 0.5,
+      "salt": 4,
+      "umami": 4.5,
+      "intensity": 2,
+      "flavor_tags": [
+        "seafood",
+        "briny",
+        "mineral",
+        "citrus",
+        "raw"
+      ],
+      "wine_requirements": "acidity 4-5, tannin 0, oak <=0.5, body 1-2.5, sweetness <=0.5, effervescence 0-5. Сырая устрица — солёность и йод при почти нулевом жире: вину нужна высокая кислотность вместо лимона и полное отсутствие дуба и танина — оба дают металлический привкус с морепродуктами. Классика — минеральное белое или брют."
+    },
+    {
+      "id": "cheese_plate",
+      "name": "Сырная тарелка",
+      "category": "appetizer",
+      "aliases": [
+        "сырная тарелка",
+        "сырной тарелке",
+        "сырное плато",
+        "тарелка сыров",
+        "ассорти сыров",
+        "к сыру",
+        "сыры",
+        "камамбер",
+        "камамберу",
+        "бри",
+        "пармезан",
+        "пармезану",
+        "моцарелла",
+        "моцарелле",
+        "брынза",
+        "брынзе",
+        "сырам",
+        "горгонзола",
+        "дорблю",
+        "чеддер",
+        "адыгейский сыр",
+        "сулугуни"
+      ],
+      "fat": 4,
+      "acidity": 1.5,
+      "spice": 0.5,
+      "sweetness": 1,
+      "salt": 3,
+      "umami": 3.5,
+      "intensity": 3,
+      "flavor_tags": [
+        "cheese",
+        "nutty",
+        "creamy",
+        "salty",
+        "honey"
+      ],
+      "wine_requirements": "acidity 3-4.5, tannin <=3, body 2.5-4, sweetness 0-3. Сборная тарелка — от свежего сыра до выдержанного: вину нужны кислотность против жира и тело против плотности. Универсальнее всего белое с выдержкой или неплотное красное; к голубым сырам классика — сладкое, поэтому лёгкая сладость не порок, а запас."
+    },
+    {
+      "id": "kotlety_farsh",
+      "name": "Котлеты из фарша",
+      "category": "main_meat",
+      "aliases": [
+        "котлеты",
+        "котлета",
+        "фарш",
+        "мясной фарш",
+        "говяжий фарш",
+        "рубленые котлеты",
+        "тефтели",
+        "фрикадельки",
+        "котлеты с пюре",
+        "макароны по-флотски"
+      ],
+      "fat": 4.0,
+      "acidity": 1.5,
+      "spice": 1.0,
+      "sweetness": 1.0,
+      "salt": 3.0,
+      "umami": 4.0,
+      "intensity": 4.0,
+      "flavor_tags": [
+        "minced_meat",
+        "beef",
+        "pork",
+        "fried",
+        "fried_onion",
+        "black_pepper",
+        "breadcrumb",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "tannin 2-3.5, body 3-4, acidity >=3.5, oak <=2.5, alcohol 3-4. Домашняя котлета мягче шашлыка: жарки много, дыма нет, поэтому бочка ей не нужна, а кислотность обязательна — она разбирает жир панировки. Красное среднего тела Кубани и Дона: Мерло, Каберне Фран, Красностоп без долгой выдержки."
+    },
+    {
+      "id": "kurinaya_grudka",
+      "name": "Куриная грудка",
+      "category": "main_poultry",
+      "aliases": [
+        "куриная грудка",
+        "курица",
+        "куриное филе",
+        "грудка",
+        "отварная курица",
+        "запечённая курица",
+        "куриная отбивная",
+        "филе курицы",
+        "индейка",
+        "индейке",
+        "индейку",
+        "индейкой",
+        "филе индейки",
+        "кролик",
+        "кролику",
+        "кролика",
+        "кроликом",
+        "крольчатина"
+      ],
+      "fat": 1.5,
+      "acidity": 1.0,
+      "spice": 0.5,
+      "sweetness": 1.0,
+      "salt": 2.5,
+      "umami": 3.0,
+      "intensity": 2.5,
+      "flavor_tags": [
+        "chicken",
+        "roasted",
+        "herbal",
+        "butter",
+        "garlic"
+      ],
+      "wine_requirements": "tannin <=2, body 2.5-3.5, acidity >=3.5, oak <=2, alcohol 2.5-3.5. Постное белое мясо танин обнажает — он остаётся во рту сухой горечью. Уместнее плотное белое или лёгкое красное без выдержки: Шардоне, Рислинг, Пино Нуар."
+    },
+    {
+      "id": "krevetki",
+      "name": "Креветки",
+      "category": "seafood",
+      "aliases": [
+        "креветки",
+        "креветка",
+        "тигровые креветки",
+        "королевские креветки",
+        "креветки на гриле"
+      ],
+      "fat": 1.5,
+      "acidity": 1.0,
+      "spice": 1.0,
+      "sweetness": 2.5,
+      "salt": 3.0,
+      "umami": 3.5,
+      "intensity": 2.5,
+      "flavor_tags": [
+        "shellfish",
+        "seafood",
+        "marine",
+        "sweet_flesh",
+        "garlic",
+        "butter",
+        "mineral"
+      ],
+      "wine_requirements": "tannin 0, acidity >=4, oak <=1.5, body 2-3, sweetness 0.5-1.5. Мясо креветки сладковатое и солоноватое разом: нужна высокая кислотность и минеральность, танин с морепродуктами даёт металлический привкус. Белые Крыма и Кубани, игристое брют."
+    },
+    {
+      "id": "zapechennaya_ryba",
+      "name": "Запечённая рыба",
+      "category": "seafood",
+      "aliases": [
+        "запечённая рыба",
+        "рыба в духовке",
+        "белая рыба",
+        "треска",
+        "судак",
+        "дорадо",
+        "сибас",
+        "филе рыбы",
+        "рыба на пару",
+        "запечённой рыбе",
+        "белой рыбе",
+        "белую рыбу",
+        "щука",
+        "щуке",
+        "щуку",
+        "судаку",
+        "судака",
+        "минтай",
+        "хек",
+        "палтус"
+      ],
+      "fat": 2.5,
+      "acidity": 1.5,
+      "spice": 0.5,
+      "sweetness": 1.0,
+      "salt": 2.5,
+      "umami": 3.0,
+      "intensity": 2.5,
+      "flavor_tags": [
+        "white_fish",
+        "marine",
+        "lemon",
+        "herbal",
+        "butter",
+        "roasted",
+        "mineral"
+      ],
+      "wine_requirements": "tannin 0-1, acidity >=3.5, oak <=2, body 2.5-3.5. Белая рыба деликатна: мощное вино её перекрывает, а танин ссорится с рыбьим жиром. Сухое белое со свежей кислотностью и лёгкой минеральностью — Рислинг, Шардоне без бочки, Совиньон Блан."
+    },
+    {
+      "id": "pasta_tomat",
+      "name": "Паста с томатным соусом",
+      "category": "foreign_dish",
+      "aliases": [
+        "паста",
+        "макароны",
+        "спагетти",
+        "паста с томатным соусом",
+        "болоньезе",
+        "макароны с сыром",
+        "лазанья",
+        "паста с овощами"
+      ],
+      "fat": 3.0,
+      "acidity": 3.5,
+      "spice": 1.0,
+      "sweetness": 2.0,
+      "salt": 3.0,
+      "umami": 4.0,
+      "intensity": 3.0,
+      "flavor_tags": [
+        "pasta",
+        "beef",
+        "tomato",
+        "dough",
+        "garlic",
+        "herbal",
+        "cheese",
+        "olive"
+      ],
+      "wine_requirements": "acidity >=4, tannin 2-3, body 2.5-3.5, oak <=2. Томат сам по себе кислый: вино с кислотностью ниже блюда рядом с ним станет плоским и сладковатым. Нужна зеркальная кислотность — красное без выдержки или свежее белое."
+    },
+    {
+      "id": "kartoshka_zapechennaya",
+      "name": "Запечённая картошка",
+      "category": "main_vegetable",
+      "aliases": [
+        "запечённая картошка",
+        "картошка",
+        "картофель",
+        "картофельное пюре",
+        "пюре",
+        "картофель по-деревенски",
+        "печёная картошка",
+        "картошка в духовке"
+      ],
+      "fat": 2.5,
+      "acidity": 0.5,
+      "spice": 0.5,
+      "sweetness": 1.5,
+      "salt": 3.0,
+      "umami": 2.5,
+      "intensity": 2.5,
+      "flavor_tags": [
+        "potato",
+        "root_vegetable",
+        "roasted",
+        "butter",
+        "herbal",
+        "garlic"
+      ],
+      "wine_requirements": "acidity >=3.5, tannin <=2.5, body 2.5-3.5, oak <=2. Картошка сама по себе нейтральна и берёт вкус от масла и трав: вино выбирается под то, с чем её едят. Универсально — свежее белое или лёгкое красное, без мощной бочки."
+    },
+    {
+      "id": "tushenaya_kapusta",
+      "name": "Тушёная капуста",
+      "category": "main_vegetable",
+      "aliases": [
+        "тушёная капуста",
+        "капуста",
+        "тушёная капуста с мясом",
+        "бигус"
+      ],
+      "fat": 2.0,
+      "acidity": 3.0,
+      "spice": 0.5,
+      "sweetness": 1.5,
+      "salt": 3.0,
+      "umami": 2.5,
+      "intensity": 2.5,
+      "flavor_tags": [
+        "cabbage",
+        "sauerkraut",
+        "fried_onion",
+        "carrot",
+        "vegetal",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "acidity >=4, tannin <=2, body 2-3, oak <=1.5. Капуста тушится с кислинкой, и вино обязано её выдержать: мягкое покажется вялым. Свежее белое или лёгкое красное; автохтоны Дона дают региональную рифму."
+    },
+    {
+      "id": "ovoshchi_gril",
+      "name": "Овощи на гриле",
+      "category": "main_vegetable",
+      "aliases": [
+        "овощи на гриле",
+        "овощи гриль",
+        "запечённые овощи",
+        "овощи",
+        "рататуй",
+        "баклажаны на гриле",
+        "барбекю из овощей",
+        "овощи на углях"
+      ],
+      "fat": 2.0,
+      "acidity": 2.0,
+      "spice": 0.5,
+      "sweetness": 2.0,
+      "salt": 2.5,
+      "umami": 2.5,
+      "intensity": 2.5,
+      "flavor_tags": [
+        "vegetal",
+        "grilled",
+        "char",
+        "bell_pepper",
+        "herbal",
+        "olive",
+        "smoke"
+      ],
+      "wine_requirements": "acidity >=3.5, tannin <=2.5, body 2.5-3.5, oak 1-2.5. Угли дают лёгкую горчинку и дым — их подхватывает вино с намёком на бочку, но мощное красное овощи задавит. Розовое, оранжевое или лёгкое красное."
+    },
+    {
+      "id": "gulyash",
+      "name": "Гуляш",
+      "category": "main_meat",
+      "aliases": [
+        "гуляш",
+        "тушёная говядина",
+        "мясное рагу",
+        "рагу",
+        "мясо в соусе",
+        "тушёное мясо",
+        "азу",
+        "говядина",
+        "говядине",
+        "говядину",
+        "говядиной",
+        "тушеная говядина"
+      ],
+      "fat": 3.5,
+      "acidity": 2.5,
+      "spice": 1.5,
+      "sweetness": 1.5,
+      "salt": 3.0,
+      "umami": 4.0,
+      "intensity": 4.0,
+      "flavor_tags": [
+        "beef",
+        "boiled_meat",
+        "tomato",
+        "paprika",
+        "fried_onion",
+        "meat_broth"
+      ],
+      "wine_requirements": "tannin 2.5-3.5, body 3-4, acidity >=3.5, oak 1.5-3, alcohol 3-4. Долгое тушение делает мясо мягким и насыщенным умами: вино нужно плотное, но с живой кислотностью, иначе соус перетянет. Саперави, Каберне Фран, Красностоп."
+    },
+    {
+      "id": "grechka_myaso",
+      "name": "Гречка с мясом",
+      "category": "main_meat",
+      "aliases": [
+        "гречка с мясом",
+        "гречка",
+        "гречневая каша",
+        "каша с мясом",
+        "гречка с котлетой"
+      ],
+      "fat": 3.0,
+      "acidity": 1.0,
+      "spice": 0.5,
+      "sweetness": 1.0,
+      "salt": 3.0,
+      "umami": 4.0,
+      "intensity": 3.5,
+      "flavor_tags": [
+        "minced_meat",
+        "beef",
+        "earth",
+        "fried_onion",
+        "mushroom",
+        "cuisine_russian"
+      ],
+      "wine_requirements": "tannin 2-3.5, body 3-4, acidity >=3.5, oak <=2.5. У гречки землистый тон, который перекликается с автохтонами: мясо добавляет умами и требует кислотности. Красное среднего тела, лучше российских сортов."
+    },
+    {
+      "id": "salat_cezar",
+      "name": "Салат цезарь",
+      "category": "salad",
+      "aliases": [
+        "цезарь",
+        "салат цезарь",
+        "цезарь с курицей"
+      ],
+      "fat": 3.0,
+      "acidity": 2.5,
+      "spice": 0.5,
+      "sweetness": 1.0,
+      "salt": 3.5,
+      "umami": 3.5,
+      "intensity": 2.5,
+      "flavor_tags": [
+        "chicken",
+        "cheese",
+        "mayonnaise",
+        "garlic",
+        "bread",
+        "egg",
+        "lemon"
+      ],
+      "wine_requirements": "acidity >=4, tannin 0-1, oak <=2, body 2.5-3.5. Соус жирный и солёный разом — кислотность вина работает и против жира, и в пару к соли. Белое сухое или игристое брют."
+    },
+    {
+      "id": "grecheskiy_salat",
+      "name": "Греческий салат",
+      "category": "salad",
+      "aliases": [
+        "греческий салат",
+        "салат",
+        "салат с фетой",
+        "овощной салат",
+        "салат из свежих овощей",
+        "оливки",
+        "оливкам",
+        "маслины",
+        "маслинам"
+      ],
+      "fat": 2.5,
+      "acidity": 3.5,
+      "spice": 0.5,
+      "sweetness": 1.5,
+      "salt": 3.5,
+      "umami": 2.5,
+      "intensity": 2.0,
+      "flavor_tags": [
+        "cucumber",
+        "tomato",
+        "olive",
+        "cheese",
+        "herbal",
+        "bell_pepper",
+        "vegetal"
+      ],
+      "wine_requirements": "acidity >=4, tannin 0, oak <=1, body 2-3. Овощи, брынза и оливки дают кислоту и соль при лёгком теле: вино нужно такое же лёгкое и свежее, иначе салат под ним исчезнет."
+    },
+    {
+      "id": "omlet",
+      "name": "Омлет",
+      "category": "hot_appetizer",
+      "aliases": [
+        "омлет",
+        "яичница",
+        "яйца",
+        "глазунья",
+        "скрэмбл"
+      ],
+      "fat": 3.0,
+      "acidity": 0.5,
+      "spice": 0.5,
+      "sweetness": 0.5,
+      "salt": 2.5,
+      "umami": 3.0,
+      "intensity": 2.0,
+      "flavor_tags": [
+        "egg",
+        "butter",
+        "dairy",
+        "cheese",
+        "creamy"
+      ],
+      "wine_requirements": "acidity >=3.5, tannin 0-1, oak <=1.5, body 2-3. Яйцо обволакивает язык и глушит вкус: спасает кислотность и пузырьки. Игристое или свежее белое; красное с танином рядом с яйцом отдаёт железом."
+    },
+    {
+      "id": "shokolad",
+      "name": "Шоколад",
+      "category": "dessert",
+      "aliases": [
+        "шоколад",
+        "тёмный шоколад",
+        "горький шоколад",
+        "молочный шоколад",
+        "конфеты"
+      ],
+      "fat": 3.5,
+      "acidity": 1.0,
+      "spice": 0.5,
+      "sweetness": 4.0,
+      "salt": 0.5,
+      "umami": 1.5,
+      "intensity": 3.5,
+      "flavor_tags": [
+        "caramel",
+        "roasted",
+        "nutty",
+        "dried_fruit"
+      ],
+      "wine_requirements": "sweetness >=4, body 3.5-4.5, acidity >=3, alcohol 3.5-4.5. Правило десерта: вино слаще блюда, иначе оно станет кислым и пустым. К шоколаду — креплёное или сладкое красное; сухое рядом с ним разваливается."
+    },
+    {
+      "id": "morozhenoe",
+      "name": "Мороженое",
+      "category": "dessert",
+      "aliases": [
+        "мороженое",
+        "пломбир",
+        "ванильное мороженое"
+      ],
+      "fat": 2.2,
+      "acidity": 0.5,
+      "spice": 0.0,
+      "sweetness": 4.5,
+      "salt": 0.5,
+      "umami": 1.0,
+      "intensity": 2.5,
+      "flavor_tags": [
+        "dairy",
+        "creamy",
+        "vanilla",
+        "custard",
+        "caramel"
+      ],
+      "wine_requirements": "sweetness >=4.5, acidity >=3, body 3-4. Сладость высокая, а подача холодная — холод притупляет вкус вина, поэтому нужен сладкий и ароматный стиль. Мускат, сладкое игристое."
+    },
+    {
+      "id": "frukty",
+      "name": "Фрукты и ягоды",
+      "category": "dessert",
+      "aliases": [
+        "фрукты",
+        "ягоды",
+        "клубника",
+        "персики",
+        "малина",
+        "фруктовая тарелка",
+        "свежие фрукты",
+        "арбуз",
+        "арбузу",
+        "арбуза",
+        "виноград",
+        "винограду",
+        "дыня",
+        "дыне",
+        "груша",
+        "груше",
+        "черешня"
+      ],
+      "fat": 0.5,
+      "acidity": 3.0,
+      "spice": 0.0,
+      "sweetness": 3.5,
+      "salt": 0.5,
+      "umami": 1.0,
+      "intensity": 2.0,
+      "flavor_tags": [
+        "berry",
+        "red_fruit",
+        "stone_fruit",
+        "apple",
+        "citrus",
+        "floral"
+      ],
+      "wine_requirements": "sweetness 3-4.5, acidity >=3.5, tannin 0, body 2-3. У свежих ягод своя кислота и своя сладость: вино должно быть не суше их, но и не тяжелее. Полусладкое белое, розовое, мускат."
+    },
+    {
+      "id": "orehi",
+      "name": "Орехи",
+      "category": "cold_appetizer",
+      "aliases": [
+        "орехи",
+        "миндаль",
+        "фундук",
+        "грецкие орехи",
+        "орешки"
+      ],
+      "fat": 4.0,
+      "acidity": 0.5,
+      "spice": 0.2,
+      "sweetness": 1.5,
+      "salt": 2.5,
+      "umami": 2.5,
+      "intensity": 2.5,
+      "flavor_tags": [
+        "nutty",
+        "walnut",
+        "roasted",
+        "dried_fruit"
+      ],
+      "wine_requirements": "oak 2-4, body 3-4, acidity >=3, alcohol 3.5-4.5. Ореховый тон — редкий случай, когда бочка работает в пару, а не против: выдержанное белое и креплёное подхватывают его напрямую."
+    }
+  ]
+}

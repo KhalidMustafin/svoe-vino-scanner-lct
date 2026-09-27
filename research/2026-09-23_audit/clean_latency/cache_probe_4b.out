@@ -1,0 +1,9 @@
+выгрузка до: []
+4b {"step": "warm_readers (reader.warm, синтетика)", "img_sha1": "9fe93422228d", "img_b64_len": 89340, "wall_ms": 3750, "load_ms": 2972, "prompt_eval_count": 1109, "prompt_eval_ms": 518, "eval_count": 26, "eval_ms": 209, "total_ms": 3724}
+4b {"step": "warm_scan попытка 1 (синтетика через _jpeg/decode/crop)", "img_sha1": "5199d8e2549c", "img_b64_len": 89208, "wall_ms": 805, "load_ms": 5, "prompt_eval_count": 1109, "prompt_eval_ms": 430, "eval_count": 43, "eval_ms": 323, "total_ms": 803}
+4b {"step": "warm_scan попытка 2 (синтетика через _jpeg/decode/crop)", "img_sha1": "5199d8e2549c", "img_b64_len": 89208, "wall_ms": 397, "load_ms": 6, "prompt_eval_count": 1109, "prompt_eval_ms": 33, "eval_count": 43, "eval_ms": 338, "total_ms": 396}
+4b {"step": "M388-orig-0 новый кадр", "img_sha1": "09c3bbc5cf29", "img_b64_len": 269952, "wall_ms": 879, "load_ms": 7, "prompt_eval_count": 853, "prompt_eval_ms": 324, "eval_count": 64, "eval_ms": 490, "total_ms": 877}
+4b {"step": "M388-orig-0 тот же кадр сразу", "img_sha1": "09c3bbc5cf29", "img_b64_len": 269952, "wall_ms": 577, "load_ms": 9, "prompt_eval_count": 853, "prompt_eval_ms": 34, "eval_count": 64, "eval_ms": 488, "total_ms": 557}
+4b {"step": "R064-orig-0 новый кадр", "img_sha1": "176e9acfa6d4", "img_b64_len": 271808, "wall_ms": 823, "load_ms": 7, "prompt_eval_count": 853, "prompt_eval_ms": 355, "eval_count": 51, "eval_ms": 403, "total_ms": 820}
+4b {"step": "R064-orig-0 тот же кадр сразу", "img_sha1": "176e9acfa6d4", "img_b64_len": 271808, "wall_ms": 681, "load_ms": 7, "prompt_eval_count": 853, "prompt_eval_ms": 38, "eval_count": 51, "eval_ms": 612, "total_ms": 679}
+выгрузка после: []

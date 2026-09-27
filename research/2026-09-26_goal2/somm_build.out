@@ -1,0 +1,24 @@
+# scripts/build_somm.py --sample 0 на итоговом коде (общий data/somm), затем --check
+Сахар известен: 1727 (и по «Описанию» 1), игристых: 297, крепость известна: 1567
+Пар: 172446; вердикты: {'yes': 97343, 'caveat': 15905, 'no': 53197, 'neutral': 6001}
+Блюд в top: мин 3, распределение {3: 5, 4: 53, 5: 2045}
+Подача по правилам: {'red': 219, 'red_full': 544, 'sparkling': 297, 'white': 705, 'white_full': 45, 'orange': 16, 'rose': 194, 'sweet_name': 24, 'sweet': 59}
+Время, с: facts 0.6, engine 26.1, files 5.5, всего 39.0
+Размеры: pairs.json 19.30 МБ, dishes.json 0.05 МБ, serve.json 0.00 МБ, vocab.json 0.03 МБ, knowledge.json 0.07 МБ
+
+Записано в <корень>\svoe-vino-scanner\data\somm
+
+--check: <корень>\svoe-vino-scanner\data\somm совпадает с пересборкой байт в байт
+
+# sha1 data/somm после пересборки
+413f16e677a31ce26c1716ff7cb27ebb9270d2d6 *dishes.json
+41fda4723c87decc6a18c345762dd56b39ef9a97 *knowledge.json
+0bb97825788d22392fb9f5a4e0fadc0bf28f741e *pairs.json
+d5689e442f2d7f5680d3dfb0c7686160808b3c08 *serve.json
+c6b16052d0d76aed9c550173dfd7b745e89a1058 *vocab.json
+# sha1 data/somm до (копия: svs-logs/somm-2409/acc_plan/integrate/somm_after-search_1d5b4e9/)
+6780deba6a4cc442736c98e5970d350a051d824e *somm/dishes.json
+41fda4723c87decc6a18c345762dd56b39ef9a97 *somm/knowledge.json
+b9a9897710f1391819327acb470664cb339b6734 *somm/pairs.json
+d5689e442f2d7f5680d3dfb0c7686160808b3c08 *somm/serve.json
+c6b16052d0d76aed9c550173dfd7b745e89a1058 *somm/vocab.json

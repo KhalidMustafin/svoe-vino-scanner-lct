@@ -1,0 +1,30 @@
+== образ
+svoe-vino-scanner:cpu 2.08GB 86f071a6cd70
+ Container svs-infra-smoke-scanner-cpu-1  Started
+порт открыт через 51 с (прогрев в lifespan)
+== окружение и тома
+uid=10001(svs) gid=10001(svs) groups=10001(svs)
+HF_HOME=/hf
+SVS_DATASET_DIR=/dataset
+SVS_DATA_DIR=/data
+SVS_DEVICE=cpu
+SVS_FIELD_PHOTO_DIR=/data/catalog/photos_small
+/data rw=false  /dataset rw=false  /hf/hub rw=false  
+== /v1/health
+status degraded ['vlm_warm_disabled', 'warm_scan:vlm_disabled', 'warm_scan:over_budget']
+cv google/siglip2-so400m-patch14-384 device cpu | resolve s2so400m-vlm35-goal.json
+index /data/index/visual-s2so400m.npz 2103 6312
+cards {"csv": "/dataset/strapi_output0709.csv", "photo_map": "/data/catalog/slug_photo_map.csv", "cards": 2103, "with_description": 2103, "with_photo_path": 2103}
+provenance.consistent True | formats {'jpeg': True, 'png': True, 'webp': True, 'heic': True, 'avif': True}
+warm scan {"decode": 4.1, "views": 2.3, "gpu_wait": 0.0, "cv": 14031.0, "resolve": 1.4, "total": 14039.0}
+== фото каталога
+GET /v1/field/photo/massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16 -> 200 image/webp 6886 B
+== predict на трёх публичных кадрах (без чтения этикетки — слаг не боевой)
+019c68d0.jpg keys ['confidence', 'degraded', 'error', 'margin', 'outcome', 'slug', 'timings_ms', 'top5'] | usadba-perovskih-pino-nuar-rezerv-krasnoe-suhoe-122 matched ['vlm_disabled', 'over_budget'] cv 13581.7 total 13889.4
+02eef911.webp keys ['confidence', 'degraded', 'error', 'margin', 'outcome', 'slug', 'timings_ms', 'top5'] | massandra-muskat-belyy-yuzhnoberezhnyy-beloe-sladkoe-16 matched ['vlm_disabled', 'over_budget'] cv 13452.5 total 13712.6
+096ca74e.jpg keys ['confidence', 'degraded', 'error', 'margin', 'outcome', 'slug', 'timings_ms', 'top5'] | aristov-anima-millesimato-beloe-bryut matched ['vlm_disabled', 'over_budget'] cv 13716.7 total 13971.6
+== не картинка
+{"slug":null,"confidence":{"top1":null,"top5":null},"margin":0.0,"top5":[],"outcome":"error","degraded":[],"timings_ms":{"decode":0.0,"total":0.0},"error":"decode: неизвестная сигнатура: ожидается JPEG, PNG, WebP, HEIC или AVIF"}  HTTP 200
+== журнал: ошибки записи и трассы
+0
+ Network svs-infra-smoke_default  Removed

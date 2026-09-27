@@ -1,0 +1,2462 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fefdfa">
+<meta name="color-scheme" content="light">
+<!-- Порталу при переходе по «Открыть на vino-svoe.ru» адрес нашей страницы не нужен. -->
+<meta name="referrer" content="same-origin">
+<title>Сканер этикеток · Своё Вино</title>
+<!-- Значка у страницы нет: пустой data: не даёт браузеру просить /favicon.ico (404 в консоли). -->
+<link rel="icon" href="data:,">
+<!-- Лист сомелье и его блоки (договор docs/api-sommelier.md, §8) — файлы дорожки листа рядом, в
+     /static. Нет файлов — страница рисует заметку, «розу ветров» и шкалы своими средствами, а
+     входа в лист нет. -->
+<link rel="stylesheet" href="/static/somm.css">
+<style>
+/* Страница продукта «Сомелье в карточке»: фото бутылки → карточка каталога с сомелье, «Не то
+   вино?», похожие из других виноделен и «Моего вина здесь нет».
+
+   Без внешних адресов: телефон в магазине держит связь через раз, а сервис работает и без
+   интернета. Факты вина — только выгрузка организатора и наши правила (решение 24.09): снимка
+   портала, его блюд, иконок, температуры и градиентов здесь нет. Цвета, шрифт и скругления —
+   токены договора сомелье (§8.2, заглушка tests/fixtures/somm/tokens.json); градиент шапки —
+   наш токен по цвету вина из выгрузки. Единственная внешняя ссылка — карточка на
+   vino-svoe.ru: это адрес, а не данные портала.
+
+   Кегли — 36/24 заголовки Playfair, 18/16 текст, 14 подписи, 12 мелкое: шесть размеров на всю
+   страницу. Текст до 14px — только цветом --text-3 (контраст не ниже 4,5:1), --text-2 — от 18px.
+
+   Заголовки — Playfair Display 500. Шрифт лежит рядом, в /static/fonts/ (Google Fonts, лицензия
+   SIL OFL 1.1 — fonts/OFL.txt): три подмножества с теми же unicode-range, что у Google, поэтому
+   браузер качает только нужные. Сначала шрифт из системы (local), потом свой файл; пока файл
+   грузится — запасной ряд из --display, font-display: swap не прячет текст. */
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Playfair Display Medium"), local("PlayfairDisplay-Medium"),
+    url("/static/fonts/PlayfairDisplay-Medium-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Playfair Display Medium"), local("PlayfairDisplay-Medium"),
+    url("/static/fonts/PlayfairDisplay-Medium-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Playfair Display Medium"), local("PlayfairDisplay-Medium"),
+    url("/static/fonts/PlayfairDisplay-Medium-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+:root {
+  --bg: #fefdfa;
+  --tile: #fdf9ed;
+  --text: #2c2a28;
+  --text-2: #857e79;
+  --text-3: #6f6863;
+  --accent: #8f3d42;
+  --accent-hover: #ab494f;
+  --accent-active: #723135;
+  --soft: #f9f1f1;
+  --soft-hover: #edd4d6;
+  --soft-active: #e0b8ba;
+  --pill: #f8ecc9;
+  --pill-text: #6b5316;
+  --border: #d7d4d2;
+  --white: #ffffff;
+  --orig: #6f6863;
+  --shade: rgba(0, 0, 0, .5);
+  --sticky: rgba(254, 253, 250, .94);
+  --g-red: linear-gradient(180deg, #A51B3A 0%, #741D30 100%);
+  --g-white: linear-gradient(180deg, #FCFBDF 0%, #F0EFD5 100%);
+  --g-rose: linear-gradient(180deg, #F2AAAD 0%, #F2828F 100%);
+  --g-orange: linear-gradient(180deg, #F4C99B 0%, #E3A06B 100%);
+  --g-red-light: linear-gradient(180deg, #F8E8EB 0%, #EED3D8 100%);
+  --g-white-light: linear-gradient(180deg, #FEFDF2 0%, #F7F6E6 100%);
+  --g-rose-light: linear-gradient(180deg, #FCEDEE 0%, #F8DCE0 100%);
+  --g-orange-light: linear-gradient(180deg, #FDF1E4 0%, #F8E2CC 100%);
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --display: "Playfair Display", Georgia, "Noto Serif", "Droid Serif", "Times New Roman", serif;
+  --gutter: 24px;
+  --r-block: 32px;
+  --r-scan: 24px;
+  --r-btn: 16px;
+  --r-btn-m: 12px;
+  --r-chip: 16px;
+  --r-field: 22px;
+  --r-bubble: 18px 18px 6px 18px;
+  --r-sheet: 32px 32px 0 0;
+  --pulse: 1s;
+  --swap: 320ms;
+  --rise: .25s;
+  /* Свои токены страницы (листу сомелье они не нужны): стекло шапки и плавающей кнопки, тёплые
+     тени с золотистым оттенком, небо рисунка виноградника и подъём карточек. */
+  --glass: rgba(253, 249, 237, .78);
+  --glass-white: rgba(255, 255, 255, .92);
+  --warm-shadow: 0 1px 2px rgba(108, 85, 15, .1), 0 4px 4px rgba(108, 85, 15, .05), 0 0 20px rgba(108, 85, 15, .1);
+  --gold-shadow: 0 8px 6px rgba(190, 159, 75, .05), 0 2px 4px rgba(190, 159, 75, .1);
+  --lift: 0 22px 40px -22px rgba(44, 42, 40, .5);
+  --sky: #f3e8da;
+  --enter: .45s;
+  color-scheme: light;
+}
+@media (max-width: 359px) { :root { --gutter: 16px; } }
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--text); font: 400 16px/1.5 var(--font);
+  min-height: 100dvh; overflow-x: hidden;
+}
+body.locked { overflow: hidden; }
+button, input { font: inherit; color: inherit; }
+p { margin: 0; }
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.hidden { display: none !important; }
+.display {
+  font-family: var(--display); font-weight: 500; letter-spacing: 0; text-wrap: balance;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+.ico { display: inline-flex; flex: none; width: 20px; height: 20px; }
+.ico svg { width: 100%; height: 100%; display: block; }
+.app {
+  position: relative; max-width: 520px; margin: 0 auto;
+  padding: 0 var(--gutter) calc(24px + env(safe-area-inset-bottom));
+}
+/* На экранах с плавающей кнопкой скана низ страницы не уходит под неё. */
+body[data-screen="result"] .app, body[data-screen="nf"] .app { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
+/* Экран появляется подъёмом, без прозрачности: вкладка в фоне не оставит его бледным. */
+.screen { animation: enter var(--enter) cubic-bezier(.2, .7, .2, 1); }
+@keyframes enter { from { transform: translateY(14px); } to { transform: none; } }
+
+/* ---------------------------------------------------------------- общие приёмы */
+.eyebrow {
+  font: 600 12px/1.25 var(--font); letter-spacing: .06em; text-transform: uppercase; color: var(--accent);
+}
+.meta { font-size: 14px; line-height: 1.5; color: var(--text-3); }
+.small { font-size: 12px; line-height: 1.35; color: var(--text-3); }
+.block { background: var(--tile); border-radius: var(--r-block); padding: 20px; }
+.h2 { font: 500 24px/1.25 var(--display); margin: 0; }
+.sec__hd { display: flex; align-items: center; gap: 4px; }
+.sec__hd .h2, .sec__hd .eyebrow { flex: 1; }
+.info-i {
+  width: 44px; height: 44px; margin: -12px -12px -12px 0; flex: none; border: 0; background: none;
+  color: var(--accent); cursor: pointer; display: inline-flex; align-items: center; justify-content: center;
+}
+.info-i .ico { width: 18px; height: 18px; }
+
+/* ---------------------------------------------------------------- шапка */
+/* Плавающая «пилюля» из стекла, как шапка портала: над рисунком главной и над карточкой. */
+.top {
+  --gap: calc(8px + env(safe-area-inset-top));
+  position: sticky; top: var(--gap); z-index: 6; display: flex; align-items: center; gap: 12px;
+  margin-top: var(--gap); padding: 8px 18px 8px 8px; min-height: 60px;
+  border-radius: 100px; background: var(--glass); box-shadow: var(--warm-shadow);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2); backdrop-filter: blur(12px) saturate(1.2);
+}
+/* Зазор над «пилюлей» закрыт фоном: при прокрутке над шапкой не торчат обрезки строк. */
+.top::before {
+  content: ""; position: absolute; left: calc(-1 * var(--gutter)); right: calc(-1 * var(--gutter)); bottom: 100%;
+  height: var(--gap); pointer-events: none; background: linear-gradient(180deg, var(--bg) 45%, rgba(254, 253, 250, 0));
+}
+.brand {
+  display: flex; align-items: center; gap: 10px; padding: 0; min-width: 0;
+  background: none; border: 0; cursor: pointer; text-align: left;
+}
+.brand__mark {
+  width: 44px; height: 44px; flex: none; border-radius: 50%; background: var(--accent); color: var(--white);
+  display: inline-flex; align-items: center; justify-content: center; box-shadow: inset 0 0 0 3px rgba(255, 255, 255, .14);
+}
+.brand__mark .ico { width: 22px; height: 22px; }
+.brand__words { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.brand b { font: 500 24px/1 var(--display); color: var(--accent); white-space: nowrap; }
+.brand__words span { font-size: 12px; line-height: 1.25; color: var(--text-3); white-space: nowrap; }
+.spacer { flex: 1; }
+.top__age {
+  flex: none; height: 24px; padding: 0 7px; border-radius: 8px; border: 1px solid var(--text-3);
+  font: 600 12px/22px var(--font); color: var(--text-3);
+}
+/* Плавающая кнопка скана внизу экрана карточки и подборки — под большой палец, как поиск с
+   камерой у портала. У конца страницы, где стоит свой блок «Ещё одна бутылка?», она уходит вниз. */
+.dock {
+  position: fixed; z-index: 8; left: 50%; bottom: calc(14px + env(safe-area-inset-bottom));
+  width: min(calc(100% - 32px), 472px); min-height: 60px; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 12px; padding: 8px 20px 8px 8px; cursor: pointer;
+  border-radius: 999px; background: var(--glass-white); box-shadow: var(--warm-shadow), var(--lift);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  font: 600 16px/1.25 var(--font); color: var(--text);
+  transition: transform .35s cubic-bezier(.2, .7, .2, 1), visibility 0s linear 0s;
+}
+.dock__cam {
+  width: 44px; height: 44px; flex: none; border-radius: 50%; background: var(--accent); color: var(--white);
+  display: inline-flex; align-items: center; justify-content: center; transition: background-color .3s ease-in;
+}
+.dock:hover .dock__cam { background: var(--accent-hover); }
+.dock:active { transform: translateX(-50%) scale(.98); }
+.dock__text { flex: 1; min-width: 0; }
+.dock__go { width: 18px; height: 18px; color: var(--accent); transform: rotate(-90deg); }
+.dock:focus-within { outline: 2px solid var(--accent); outline-offset: 2px; }
+.dock.away { transform: translate(-50%, 160%); visibility: hidden; transition: transform .35s ease-in, visibility 0s linear .35s; }
+
+/* ---------------------------------------------------------------- кнопки (UiButton портала) */
+.btn {
+  position: relative; display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; border: 2px solid transparent; cursor: pointer; text-decoration: none;
+  font: 600 16px/20px var(--font);
+  transition: background-color .3s ease-in, border-color .3s ease-in, color .3s ease-in, transform .2s linear;
+}
+.btn:active { transform: scale(.98); }
+.btn--l { min-height: 56px; border-radius: var(--r-btn); padding: 0 16px; }
+.btn--m { min-height: 44px; border-radius: var(--r-btn-m); padding: 0 12px; }
+.btn--primary { background: var(--accent); border-color: var(--accent); color: var(--white); }
+.btn--primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+.btn--primary:active { background: var(--accent-active); border-color: var(--accent-active); }
+.btn--secondary { background: var(--soft); color: var(--accent); }
+.btn--secondary:hover { background: var(--soft-hover); }
+.btn--secondary:active { background: var(--soft-active); }
+.btn--text { background: transparent; color: var(--accent); }
+.btn--text:hover { color: var(--accent-hover); }
+.btn--text:active { color: var(--accent-active); }
+.btn:focus-within { outline: 2px solid var(--accent); outline-offset: 2px; }
+/* Поле выбора файла спрятано, но живое: мобильные браузеры надёжно открывают камеру только
+   по нажатию на <label>, а display:none уносит поле из фокуса и от скринридера. */
+.pick { position: absolute; width: 1px; height: 1px; opacity: 0; overflow: hidden; pointer-events: none; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  display: inline-flex; align-items: center; min-height: 32px; padding: 0 12px; cursor: pointer;
+  border: 1px solid var(--border); border-radius: var(--r-chip); background: var(--bg); color: var(--accent);
+  font: 600 14px/1.2 var(--font); transition: border-color .2s ease, background-color .2s ease, color .2s ease;
+}
+.chip:hover { border-color: var(--accent); }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--white); }
+
+/* Реплика сомелье, если листа сомелье на странице нет: точка-аватар, имя, текст. */
+.say { display: flex; gap: 14px; align-items: flex-start; }
+.say__ava {
+  width: 48px; height: 48px; flex: none; border-radius: 50%; background: var(--soft);
+  display: flex; align-items: center; justify-content: center;
+}
+.say__ava::after { content: ""; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); }
+.say__body { min-width: 0; }
+.say__text { margin-top: 4px; font: 500 18px/1.45 var(--font); color: var(--text); }
+/* Рядом с фото человека (check, «нет в каталоге») аватар — точка у имени, как в макете: и у
+   своей реплики страницы, и у SommUI.say листа сомелье (его разметка — .somm-say). */
+.checkq .say, .nfv .say, .checkq .somm-say, .nfv .somm-say { display: block; }
+.checkq .say__ava, .nfv .say__ava, .checkq .somm-say__dot, .nfv .somm-say__dot { display: none; }
+.checkq .say .eyebrow::before, .nfv .say .eyebrow::before,
+.checkq .somm-say .somm-eyebrow::before, .nfv .somm-say .somm-eyebrow::before {
+  content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 8px; border-radius: 50%;
+  background: var(--accent); vertical-align: -1px;
+}
+.checkq .somm-say__body, .nfv .somm-say__body { padding-top: 0; }
+.checkq .somm-say__text, .nfv .somm-say__text { margin-top: 6px; }
+
+/* Фото бутылки в рамке: светлый оттенок цвета вина, бутылка по низу, тень-эллипс. Фото
+   каталога — на белом фоне: multiply растворяет белое в подложке. */
+.ph {
+  position: relative; display: flex; align-items: flex-end; justify-content: center; overflow: hidden;
+  border-radius: 16px; background: var(--g-white-light); flex: none;
+}
+.ph--red { background: var(--g-red-light); }
+.ph--rose { background: var(--g-rose-light); }
+.ph--orange { background: var(--g-orange-light); }
+.ph img {
+  position: relative; z-index: 1; display: block; max-width: 84%; max-height: 86%; margin-bottom: 8%;
+  object-fit: contain; mix-blend-mode: multiply;
+}
+.ph .shadow {
+  position: absolute; left: 50%; bottom: 5%; width: 60%; height: 8px; transform: translateX(-50%); border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(40, 20, 20, .3), rgba(40, 20, 20, 0));
+}
+/* Силуэт вместо фото, которого нет: светлое стекло с тонкой рамкой, пунктир этикетки и блик —
+   как бутылка в рамке скана на главной, а не значок битой картинки. */
+.bottle { display: block; flex: none; width: auto; height: 80%; max-width: 72%; overflow: visible; color: var(--text-3); }
+.bottle__glass { fill: var(--white); fill-opacity: .6; stroke: currentColor; stroke-opacity: .5; stroke-width: 1.3; }
+.bottle__cap { fill: currentColor; fill-opacity: .25; }
+.bottle__label { fill: none; stroke: var(--accent); stroke-opacity: .6; stroke-width: 1.2; stroke-dasharray: 2.5 2.5; }
+.bottle__shine { fill: none; stroke: var(--white); stroke-opacity: .9; stroke-width: 2; stroke-linecap: round; }
+.ph .bottle { margin-bottom: 8%; }
+
+/* ---------------------------------------------------------------- главная */
+/* Свой рисунок виноградника (/static/vineyard.svg) — под шапкой и заголовком, низом уходит в
+   фон страницы. Сам экран не сдвигается анимацией: сдвиг сделал бы его опорой рисунка. */
+.home { animation: none; }
+.home > :not(.land) { position: relative; z-index: 1; animation: enter var(--enter) cubic-bezier(.2, .7, .2, 1) backwards; }
+.home > .scanbox { animation-delay: .06s; }
+.home > .steps { animation-delay: .12s; }
+.home > .examples { animation-delay: .18s; }
+.land {
+  position: absolute; z-index: 0; left: 0; right: 0; top: 0; height: 500px; pointer-events: none;
+  background: linear-gradient(180deg, rgba(254, 253, 250, 0) 66%, var(--bg) 98%),
+    url("/static/vineyard.svg") 50% 100% / cover no-repeat;
+}
+.intro { padding: 44px 4px 0; text-align: center; }
+.intro .eyebrow { display: block; }
+.intro h1 { margin: 10px 0 0; font-size: 36px; line-height: 1.2; }
+.scanbox {
+  margin-top: 176px; padding: 20px 20px 8px; border-radius: var(--r-block); background: var(--glass);
+  box-shadow: var(--warm-shadow); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+}
+/* Уголки рамки 26px — как у скана «Лозы»: поверх фото при разборе. */
+.cn { position: absolute; width: 26px; height: 26px; border: 3px solid var(--accent); }
+.cn--a { top: 0; left: 0; border-right: 0; border-bottom: 0; border-top-left-radius: 10px; }
+.cn--b { top: 0; right: 0; border-left: 0; border-bottom: 0; border-top-right-radius: 10px; }
+.cn--c { bottom: 0; left: 0; border-right: 0; border-top: 0; border-bottom-left-radius: 10px; }
+.cn--d { bottom: 0; right: 0; border-left: 0; border-top: 0; border-bottom-right-radius: 10px; }
+/* Реплика сомелье в блоке скана — на ступень мельче, чтобы кнопка оставалась на первом экране. */
+.scanbox .somm-say__text, .scanbox .say__text { font-size: 16px; line-height: 1.45; }
+.scanbox__hint { display: flex; align-items: center; gap: 8px; margin: 14px 0 16px; }
+.scanbox__hint .ico { width: 16px; height: 16px; color: var(--accent); }
+.scanbox .btn--text { margin-top: 4px; }
+/* «Как это работает»: три шага плитками с номером в круге. */
+.steps { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.steps li { display: flex; flex-direction: column; gap: 8px; padding: 12px; border-radius: var(--r-scan); background: var(--tile); font-size: 14px; line-height: 1.35; }
+.steps__n {
+  width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: var(--white);
+  display: inline-flex; align-items: center; justify-content: center; font: 600 14px/1 var(--font);
+}
+.examples { margin-top: 28px; }
+.examples__sub { margin-top: 4px; }
+/* Примеры — плитками вин, как лента «Свои вина» портала: фото на оттенке цвета вина и подпись. */
+.ex-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 12px; }
+.ex {
+  display: flex; flex-direction: column; align-items: stretch; gap: 2px; min-width: 0; padding: 8px 8px 12px;
+  border: 0; border-radius: 20px; background: var(--tile); cursor: pointer; text-align: left; color: var(--text);
+  transition: transform .2s linear, box-shadow .3s ease;
+}
+.ex:hover { box-shadow: var(--warm-shadow); }
+.ex:active { transform: scale(.97); }
+.ex:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.ex .ph { width: 100%; height: 132px; margin-bottom: 8px; border-radius: 14px; }
+.ex__name { font-size: 14px; font-weight: 600; line-height: 1.3; max-width: 100%; overflow-wrap: anywhere; }
+.ex__winery { font-size: 12px; line-height: 1.25; color: var(--text-3); }
+.fact-line { display: flex; align-items: center; gap: 8px; margin-top: 20px; }
+.fact-line .ico { width: 16px; height: 16px; color: var(--accent); }
+
+/* ---------------------------------------------------------------- разбор */
+.shot {
+  position: relative; margin-top: 16px; height: 56dvh; max-height: 480px; min-height: 280px;
+  border-radius: var(--r-block); overflow: hidden; background: var(--text); box-shadow: var(--lift);
+}
+/* Фото на размытой копии самого себя — без чёрных полей по бокам. */
+.shot__bg {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  filter: blur(22px) brightness(.75); transform: scale(1.15);
+}
+.shot__img { position: relative; display: block; width: 100%; height: 100%; object-fit: contain; }
+.shot .cn { border-color: rgba(255, 255, 255, .92); }
+.shot .cn--a { top: 16px; left: 16px; }
+.shot .cn--b { top: 16px; right: 16px; }
+.shot .cn--c { bottom: 16px; left: 16px; }
+.shot .cn--d { bottom: 16px; right: 16px; }
+.shot .noprev {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 24px; text-align: center; font-size: 14px; color: rgba(255, 255, 255, .8);
+}
+.shot .noprev span { display: block; margin-top: 6px; word-break: break-all; }
+.beam {
+  position: absolute; left: 16px; right: 16px; height: 2px; border-radius: 2px; display: none;
+  background: linear-gradient(90deg, transparent, var(--accent-hover), transparent);
+  box-shadow: 0 0 18px 2px rgba(171, 73, 79, .6);
+}
+.shot.busy .beam { display: block; animation: beam 1.8s ease-in-out infinite; }
+@keyframes beam { 0% { top: 8%; opacity: .3; } 50% { top: 90%; opacity: 1; } 100% { top: 8%; opacity: .3; } }
+.scanning {
+  display: flex; align-items: flex-start; gap: 12px; margin-top: 16px; padding: 18px 20px;
+  border-radius: var(--r-scan); background: var(--tile);
+}
+.stages { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; flex: 1; }
+.stages li { display: flex; align-items: center; gap: 10px; font-size: 14px; line-height: 1.4; color: var(--text-3); }
+.stages li .ico { width: 16px; height: 16px; color: var(--accent); }
+.stages .stages__now { font-size: 16px; font-weight: 600; color: var(--text); }
+.pdot {
+  width: 10px; height: 10px; margin: 0 3px; flex: none; border-radius: 50%; background: var(--accent);
+  animation: pulse var(--pulse) ease-in-out infinite alternate;
+}
+@keyframes pulse { from { opacity: .35; } to { opacity: 1; } }
+.secs { padding-top: 3px; font-variant-numeric: tabular-nums; }
+.busy__cancel { margin-top: 16px; }
+
+/* ---------------------------------------------------------------- результат */
+.banner {
+  display: flex; gap: 12px; align-items: center; margin-top: 16px; padding: 14px 16px;
+  background: var(--pill); color: var(--pill-text); border-radius: var(--r-scan);
+}
+.banner b { display: block; font-weight: 600; font-size: 16px; line-height: 1.35; color: var(--text); }
+.banner p { font-size: 14px; line-height: 1.4; }
+.thumb { width: 48px; height: 64px; flex: none; border-radius: 10px; object-fit: cover; background: var(--text); }
+.not-here { margin-top: 12px; }
+.checkq { margin-top: 16px; }
+.checkq__row { display: flex; gap: 14px; align-items: flex-start; }
+.checkq__say { flex: 1; min-width: 0; }
+.checkq__opts { margin-top: 14px; }
+.alts { margin-top: 20px; }
+.alts__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 12px; }
+.alts__head .eyebrow { white-space: nowrap; }
+/* Варианты — лентой миниатюр: названия соседей часто совпадают началом, и отличающееся слово
+   выделено жирным. */
+.strip {
+  display: flex; gap: 8px; overflow-x: auto; margin: 10px calc(-1 * var(--gutter)) 12px;
+  padding: 4px var(--gutter) 4px; scroll-snap-type: x proximity; scroll-padding-inline: var(--gutter); scrollbar-width: none;
+}
+.strip::-webkit-scrollbar { display: none; }
+.alt {
+  flex: 0 0 112px; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 8px 10px;
+  border: 0; border-radius: 20px; background: var(--tile); cursor: pointer; scroll-snap-align: start;
+  color: var(--text); text-align: center; transition: box-shadow .3s ease, transform .2s linear;
+}
+.alt:hover { box-shadow: var(--warm-shadow); }
+.alt:active { transform: scale(.97); }
+.alt .ph { width: 96px; height: 132px; margin-bottom: 8px; border-radius: 14px; }
+.alt[aria-current="true"] { cursor: default; box-shadow: inset 0 0 0 2px var(--accent); }
+.alt__name { font-size: 12px; line-height: 1.3; overflow-wrap: anywhere; }
+.alt__name b { font-weight: 700; }
+.alt__winery { font-size: 12px; line-height: 1.3; color: var(--text-3); }
+.alt__now { font-size: 12px; line-height: 1.3; font-weight: 600; color: var(--accent); }
+
+.example {
+  display: flex; gap: 10px; align-items: flex-start; margin-top: 16px; padding: 12px 16px;
+  border-radius: var(--r-scan); background: var(--soft); font-size: 14px; line-height: 1.4; color: var(--text);
+}
+.example .ico { width: 18px; height: 18px; margin-top: 1px; color: var(--accent); }
+.example b { font-weight: 600; color: var(--accent); }
+/* Шапка карточки: «ваше фото ↔ фото каталога» на градиенте цвета вина — скруглённым блоком, как
+   блоки портала; своё фото — карточкой-снимком с белой рамкой, чуть наклонённой. */
+.hero {
+  position: relative; margin: 16px 0 0; height: 300px; overflow: hidden; border-radius: var(--r-block);
+  display: flex; align-items: center; justify-content: center; gap: 10px; padding: 0 12px;
+  background: var(--g-white); box-shadow: var(--lift); isolation: isolate;
+}
+.hero--red { background: var(--g-red); }
+.hero--rose { background: var(--g-rose); }
+.hero--orange { background: var(--g-orange); }
+.hero::before {
+  content: ""; position: absolute; z-index: -1; right: -60px; top: -40px; width: 320px; height: 320px; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255, 255, 255, .28), rgba(255, 255, 255, 0));
+}
+.hero::after {
+  content: ""; position: absolute; z-index: -1; left: 50%; bottom: -120px; width: 420px; height: 200px; border-radius: 50%;
+  transform: translateX(-50%); background: radial-gradient(closest-side, rgba(255, 255, 255, .22), rgba(255, 255, 255, 0));
+}
+.hero__badge {
+  position: absolute; z-index: 2; left: 16px; top: 16px; display: inline-flex; align-items: center; gap: 6px;
+  min-height: 28px; padding: 0 12px 0 8px; border-radius: 999px; background: var(--glass-white); box-shadow: var(--gold-shadow);
+  font: 600 12px/1.2 var(--font); color: var(--accent); animation: pop .5s .15s cubic-bezier(.2, .7, .2, 1) backwards;
+}
+.hero__badge .ico { width: 14px; height: 14px; }
+/* Фигура без z-index: иначе она своя группа наложения, и multiply фото каталога смешивал бы его
+   с пустотой, а не с градиентом шапки — белый фон снимка стоял бы прямоугольником. Слои держит
+   isolation у шапки, свечения под фото — z-index: -1. */
+.hero figure { position: relative; margin: 0; display: flex; flex-direction: column; align-items: center; }
+.hero__cap { margin-top: 10px; font-size: 12px; line-height: 1.25; color: var(--text); text-align: center; }
+.hero--red .hero__cap { color: rgba(255, 255, 255, .92); }
+.uphoto {
+  position: relative; display: block; width: min(120px, 32vw); height: 160px; border-radius: 16px; overflow: hidden;
+  background: var(--text); box-shadow: 0 0 0 2px rgba(255, 255, 255, .85), 0 14px 28px -8px rgba(0, 0, 0, .55);
+}
+.hero .uphoto {
+  width: min(108px, 29vw); height: 150px; border: 4px solid var(--white); border-radius: 18px;
+  box-shadow: 0 16px 30px -10px rgba(0, 0, 0, .5); transform: rotate(-4deg);
+}
+/* Кадр бутылки обрезается по рамке: центр — на этикетке (ниже середины), а не на плечиках. */
+.uphoto img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; }
+.hero__swap {
+  position: relative; z-index: 1; width: 40px; height: 40px; flex: none; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; color: var(--text);
+  background: rgba(255, 255, 255, .35); border: 1px solid rgba(255, 255, 255, .6);
+}
+.hero--red .hero__swap { color: var(--white); background: rgba(255, 255, 255, .14); border-color: rgba(255, 255, 255, .4); }
+.hero__photo { height: 224px; width: min(128px, 34vw); display: flex; align-items: flex-end; justify-content: center; }
+.hero__photo img {
+  display: block; max-height: 100%; max-width: 100%; object-fit: contain; mix-blend-mode: multiply;
+  animation: pop .6s cubic-bezier(.2, .7, .2, 1);
+}
+@keyframes pop { from { transform: translateY(10px) scale(.96); } to { transform: none; } }
+/* На тёмном градиенте multiply окрасил бы этикетку — там фото на белой подложке. */
+.hero--red .hero__photo img { mix-blend-mode: normal; background: var(--white); border-radius: 14px; padding: 8px 6px 0; }
+.hero__photo .bottle { height: 92%; }
+.hero--red .hero__photo .bottle { color: var(--white); }
+.hero--red .bottle__glass { fill-opacity: .14; stroke-opacity: .8; }
+.hero--red .bottle__cap { fill-opacity: .4; }
+.hero--red .bottle__label { stroke: var(--white); stroke-opacity: .75; }
+.hero--red .bottle__shine { stroke-opacity: .5; }
+.ttl { margin-top: 20px; }
+.ttl h1 { font-size: 36px; line-height: 1.2; margin: 0; overflow-wrap: anywhere; }
+.ttl__row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-top: 4px; }
+.winery { font-size: 18px; line-height: 1.4; color: var(--text-2); min-width: 0; }
+.link {
+  display: inline-flex; align-items: center; gap: 4px; flex: none; min-height: 44px; margin: -12px 0; padding: 0;
+  border: 0; background: none; cursor: pointer; white-space: nowrap; font: 600 14px/1 var(--font); color: var(--accent);
+}
+.link .ico { width: 16px; height: 16px; transition: transform .2s ease; }
+.link[aria-expanded="true"] .ico { transform: rotate(180deg); }
+/* Факты вина чипами, как детали на карточке портала: цвет и сахар (с образцом цвета), сорт, регион. */
+.facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.facts:empty { display: none; }
+.fact {
+  display: inline-flex; align-items: center; gap: 8px; max-width: 100%; min-height: 36px; padding: 4px 14px 4px 5px;
+  border-radius: 999px; background: var(--tile); font-size: 14px; line-height: 1.3; color: var(--text);
+}
+.fact__i {
+  width: 26px; height: 26px; flex: none; border-radius: 50%; background: var(--white); color: var(--accent);
+  display: inline-flex; align-items: center; justify-content: center; box-shadow: var(--gold-shadow);
+}
+.fact__i .ico { width: 15px; height: 15px; }
+.fact__i--red { background: var(--g-red); }
+.fact__i--white { background: var(--g-white); box-shadow: var(--gold-shadow), inset 0 0 0 1px var(--border); }
+.fact__i--rose { background: var(--g-rose); }
+.fact__i--orange { background: var(--g-orange); }
+.read { margin-top: 20px; }
+.read__hd { display: flex; align-items: center; gap: 6px; margin-bottom: 10px; }
+.read__hd .ico { width: 14px; height: 14px; color: var(--accent); }
+.pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.rp {
+  display: inline-flex; align-items: center; gap: 5px; max-width: 100%; min-height: 28px; padding: 0 10px;
+  border-radius: 999px; background: var(--soft); color: var(--text); font-size: 14px; line-height: 1.3;
+}
+.rp .ico { width: 14px; height: 14px; color: var(--accent); }
+.rp--miss { background: var(--pill); color: var(--pill-text); }
+.rp--none { background: transparent; border: 1px dashed var(--border); color: var(--text-3); }
+.rp--plain { background: var(--soft); }
+.legend {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin-top: 10px;
+  font-size: 12px; line-height: 1.4; color: var(--text-3);
+}
+.legend > span { display: inline-flex; align-items: center; gap: 5px; }
+.legend .lg + .lg { margin-left: -2px; }
+.legend .ico { width: 12px; height: 12px; color: var(--accent); }
+.lg { display: inline-block; flex: none; }
+.lg--none { width: 18px; height: 10px; border: 1px dashed var(--text-3); border-radius: 999px; }
+.lg--miss { width: 18px; height: 10px; border-radius: 999px; background: var(--pill); box-shadow: inset 0 0 0 1px var(--pill-text); }
+.lg--solid { width: 18px; height: 0; border-top: 2px solid var(--accent); }
+.lg--dash { width: 18px; height: 0; border-top: 2px dashed var(--accent); }
+.lg--dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+.lg--ring { width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--accent); }
+
+/* «Сомелье · коротко» — шаблон из фактов, если листа сомелье на странице нет. */
+.note { margin-top: 18px; }
+.note__hd { display: flex; align-items: center; gap: 8px; }
+.note__hd .eyebrow { white-space: nowrap; }
+.note__basis { flex: 1; min-width: 0; text-align: right; }
+.dot10 { width: 10px; height: 10px; flex: none; border-radius: 50%; background: var(--accent); }
+.note__text { margin-top: 10px; font: 500 18px/1.45 var(--font); color: var(--text); }
+.note__label { margin-top: 10px; }
+
+/* «Какое это вино»: «роза ветров» и шкалы профиля по 8 осям — одним блоком. */
+.taste { margin-top: 36px; }
+.taste__card { margin-top: 14px; padding: 20px; border-radius: var(--r-block); background: var(--tile); }
+.radar { display: flex; justify-content: center; }
+.radar__svg { display: block; width: 260px; max-width: 100%; height: auto; overflow: visible; }
+.radar__ring { fill: none; stroke: var(--border); stroke-width: 1; }
+.radar__ray { stroke: var(--border); stroke-width: 1; }
+.radar__area { fill: var(--accent); fill-opacity: .14; stroke: none; }
+/* Профиль «распускается» из центра «розы» — у своей и у той, что рисует лист сомелье: у обеих
+   центр 130, 110 в координатах рисунка. */
+.taste .radar__area, .taste .somm-radar__area { transform-origin: 130px 110px; animation: bloom .7s cubic-bezier(.2, .7, .2, 1); }
+@keyframes bloom { from { transform: scale(.2); } to { transform: none; } }
+.radar__edge { stroke: var(--accent); stroke-width: 1.5; stroke-linecap: round; }
+.radar__dot { fill: var(--accent); }
+.radar__dot--grape { fill: var(--tile); stroke: var(--accent); stroke-width: 2; }
+/* «По стилю» (сорта нет в приорах) — как «по сорту»: у одного вина бывает одна из двух. */
+.radar__dot--style { fill: var(--tile); stroke: var(--accent); stroke-width: 2; }
+.radar__label { fill: var(--text-3); font: 400 12px var(--font); }
+.taste__legend { display: grid; gap: 6px; margin-top: 16px; }
+.scales { display: grid; gap: 14px; margin-top: 20px; }
+.radar.hidden + .scales { margin-top: 0; }
+.scales:empty { display: none; }
+.scale__hd { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.scale__name { font: 600 14px/1.5 var(--font); }
+.scale__line { display: grid; grid-template-columns: 64px 1fr 64px; align-items: center; gap: 10px; margin-top: 2px; }
+.scale__pole--r { text-align: right; }
+.track { position: relative; height: 4px; margin: 0 7px; border-radius: 2px; background: var(--border); }
+.track .dot {
+  position: absolute; top: 50%; left: calc(var(--x) * 100%); width: 14px; height: 14px; border-radius: 50%;
+  transform: translate(-50%, -50%); background: var(--accent); box-shadow: 0 0 0 3px var(--tile);
+}
+.track .dot--grape { background: var(--tile); border: 2px solid var(--accent); }
+.track .dot--style { background: var(--tile); border: 2px solid var(--accent); }
+.askbox { margin-top: 28px; }
+/* Подача и крепость — две плитки, как у карточки портала: значок в круге, число крупно. Две
+   колонки; одна плитка (подачи не нашлось) — во всю ширину, без подписи в три строки. */
+.kpis { margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 12px; }
+.kpi {
+  display: flex; flex-direction: column; gap: 14px; align-items: flex-start; min-width: 0;
+  padding: 20px; border-radius: var(--r-block); background: var(--tile);
+}
+.icircle {
+  width: 40px; height: 40px; flex: none; border-radius: 50%; background: var(--accent); color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+}
+.icircle .ico { width: 20px; height: 20px; }
+.kpi__v { display: block; font: 500 24px/1.25 var(--display); font-variant-numeric: lining-nums; white-space: nowrap; }
+.kpi__l { display: block; margin-top: 4px; font-size: 14px; line-height: 1.4; color: var(--text-3); }
+.kpi .small { display: block; margin-top: 2px; }
+
+/* Плашка 149-ФЗ: одна на экран, над первым блоком подбора. */
+.notice {
+  display: grid; gap: 8px; margin-top: 32px; padding: 12px 16px; border-radius: var(--r-scan);
+  background: var(--soft); font-size: 12px; line-height: 1.35; color: var(--text-3);
+}
+.notice__t { display: flex; align-items: center; gap: 6px; }
+.notice__t .ico { width: 14px; height: 14px; color: var(--accent); }
+.notice + section, .notice + .group { margin-top: 20px; }
+.switch {
+  position: relative; display: inline-flex; align-items: center; gap: 8px; min-height: 32px; cursor: pointer;
+  color: var(--text); font-size: 14px; font-weight: 600;
+}
+.switch input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.switch__track {
+  position: relative; width: 36px; height: 20px; flex: none; border-radius: 999px; background: var(--border);
+  transition: background-color .2s ease;
+}
+.switch__track::after {
+  content: ""; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%;
+  background: var(--white); box-shadow: 0 1px 2px rgba(0, 0, 0, .2); transition: transform .2s ease;
+}
+.switch input:checked + .switch__track { background: var(--accent); }
+.switch input:checked + .switch__track::after { transform: translateX(16px); }
+.switch input:focus-visible + .switch__track { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* «К чему подать» — блоком, как блюда на карточке портала: блюдо, вердикт и чипы правил. */
+.dishes { margin-top: 32px; }
+.dishes .meta { margin-top: 4px; }
+.dish-list {
+  list-style: none; margin: 16px 0 0; padding: 20px; display: grid; gap: 18px;
+  border-radius: var(--r-block); background: var(--tile);
+}
+.dish { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; align-items: start; }
+.dish + .dish { padding-top: 18px; border-top: 1px solid var(--border); }
+.dish .icircle { width: 44px; height: 44px; }
+.dish .icircle .ico { width: 22px; height: 22px; }
+.dish__name { display: block; font: 600 16px/1.35 var(--font); }
+.dish__verdict { display: block; font-size: 14px; line-height: 1.4; color: var(--text-3); }
+.rules { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.rule {
+  display: inline-block; max-width: 100%; min-height: 32px; padding: 6px 12px;
+  border-radius: var(--r-chip); font: 600 14px/1.4 var(--font);
+}
+.rule--plus { background: var(--white); color: var(--accent); box-shadow: var(--gold-shadow); }
+.rule--minus { background: var(--pill); color: var(--pill-text); }
+.rule small { margin-left: 6px; font-size: 12px; font-weight: 400; color: var(--text-3); white-space: nowrap; }
+.desc { margin-top: 36px; }
+.descr { margin-top: 10px; font-size: 18px; line-height: 1.5; white-space: pre-line; overflow-wrap: anywhere; }
+.descr.clamped { display: -webkit-box; -webkit-line-clamp: 7; -webkit-box-orient: vertical; overflow: hidden; }
+.more { width: auto; min-height: 44px; padding: 0; justify-content: flex-start; }
+.src { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin-top: 10px; }
+.ext {
+  display: inline-flex; align-items: center; gap: 4px; min-height: 32px; text-decoration: none;
+  font: 600 14px/1 var(--font); color: var(--accent);
+}
+.ext .ico { width: 14px; height: 14px; }
+
+/* ---------------------------------------------------------------- подборки */
+.reco { margin-top: 40px; }
+.tiles { display: grid; gap: 10px; margin-top: 14px; }
+.tile {
+  display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 16px; align-items: start; padding: 14px 20px 16px 14px;
+  color: inherit; text-decoration: none; background: var(--tile); border-radius: var(--r-block);
+  transition: transform .3s ease-out, box-shadow .3s ease;
+}
+.tile:hover { box-shadow: var(--warm-shadow); }
+.tile:active { transform: scale(.985); }
+.tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.tile .ph { width: 72px; height: 108px; }
+.tile__body { min-width: 0; display: flex; flex-direction: column; gap: 2px; padding-top: 2px; }
+.tile__name {
+  font: 600 16px/1.3 var(--font); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.tile__meta { font-size: 14px; line-height: 1.4; color: var(--text-3); }
+.why { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px; font-size: 12px; line-height: 1.3; }
+.why li { padding: 4px 9px; border-radius: 999px; background: var(--white); color: var(--text); box-shadow: var(--gold-shadow); }
+.tile--ghost { pointer-events: none; }
+.tile--ghost .ph, .tile--ghost i {
+  background: linear-gradient(90deg, #f6f0e0, #fbf6ea, #f6f0e0); background-size: 200% 100%;
+  animation: shimmer 1.2s linear infinite;
+}
+.tile--ghost i { display: block; height: 12px; border-radius: 6px; margin-top: 8px; }
+.tile--ghost i:nth-child(1) { width: 80%; height: 16px; margin-top: 4px; }
+.tile--ghost i:nth-child(2) { width: 50%; }
+.tile--ghost i:nth-child(3) { width: 90%; margin-top: 16px; }
+@keyframes shimmer { from { background-position: 200% 0; } to { background-position: 0 0; } }
+.honest { margin-top: 12px; padding: 12px 16px; border-radius: var(--r-scan); background: var(--soft); font-size: 14px; line-height: 1.45; }
+
+/* ---------------------------------------------------------------- «Нет в каталоге» и ошибка */
+.nfv { margin-top: 16px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0 16px; align-items: start; }
+.nfv .uphoto {
+  width: 96px; height: 128px; border: 3px solid var(--white);
+  box-shadow: 0 10px 20px -10px rgba(0, 0, 0, .5); transform: rotate(-3deg);
+}
+/* Своего фото нет (HEIC, пример) — реплика во всю ширину блока. */
+.nfv .uphoto.hidden + div, .nfv__label { grid-column: 1 / -1; }
+.nfv__label { padding-top: 12px; }
+.maybe {
+  display: flex; align-items: center; gap: 12px; margin-top: 16px; padding: 10px 8px 10px 10px;
+  border-radius: var(--r-scan); background: var(--white); box-shadow: var(--warm-shadow);
+}
+.maybe .ph { width: 44px; height: 64px; border-radius: 12px; }
+.maybe .ph .shadow { height: 6px; }
+.maybe p { flex: 1; min-width: 0; font-size: 14px; line-height: 1.4; }
+.maybe p span { color: var(--text-3); }
+.maybe .btn { width: auto; flex: none; padding: 0 12px; font-size: 14px; }
+.group { margin-top: 28px; }
+.group__sub { margin-top: 4px; }
+.group .more { margin-top: 4px; }
+/* Конец экрана — блок на градиенте красного вина со своим рисунком: «Ещё одна бутылка?». */
+.again {
+  position: relative; overflow: hidden; margin-top: 44px; padding: 28px 24px 12px; border-radius: var(--r-block);
+  text-align: center; color: var(--white); background: var(--g-red); box-shadow: var(--lift);
+}
+.again::before {
+  content: ""; position: absolute; right: -70px; top: -90px; width: 260px; height: 260px; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255, 255, 255, .22), rgba(255, 255, 255, 0));
+}
+.again > * { position: relative; }
+.again h2 { margin: 0 0 18px; color: var(--white); }
+.again .btn--primary { background: var(--white); border-color: var(--white); color: var(--accent); }
+.again .btn--primary:hover { background: var(--soft); border-color: var(--soft); }
+.again .btn--primary:active { background: var(--soft-hover); border-color: var(--soft-hover); }
+.again .btn--text { margin-top: 4px; color: var(--white); }
+.again .btn--text:hover, .again .btn--text:active { color: var(--soft-hover); }
+.again .btn:focus-within { outline-color: var(--white); }
+.fail h1 { font-size: 36px; line-height: 1.2; margin: 24px 0 10px; }
+.fail__text { color: var(--text-2); font-size: 18px; line-height: 1.45; margin-bottom: 20px; }
+.tips {
+  list-style: none; margin: 0 0 24px; padding: 20px; display: grid; gap: 14px;
+  border-radius: var(--r-block); background: var(--tile);
+}
+.tips li { display: flex; gap: 14px; align-items: center; }
+.tips .icircle { width: 40px; height: 40px; }
+
+/* ---------------------------------------------------------------- лист 18+ */
+.sheet-wrap { position: fixed; inset: 0; z-index: 20; display: flex; flex-direction: column; justify-content: flex-end; }
+.overlay { position: absolute; inset: 0; background: var(--shade); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.sheet {
+  position: relative; width: 100%; max-width: 560px; max-height: 92dvh; margin: 0 auto; overflow: auto;
+  overscroll-behavior: contain; background: var(--bg); border-radius: var(--r-sheet);
+  padding: 12px var(--gutter) calc(24px + env(safe-area-inset-bottom)); animation: rise var(--rise) ease-out;
+}
+/* Только сдвиг, без прозрачности: если вкладка в фоне и анимация встала на первом кадре,
+   лист всё равно непрозрачный и читается. */
+@keyframes rise { from { transform: translateY(24px); } to { transform: none; } }
+.sheet:focus { outline: none; }
+.grip { width: 36px; height: 4px; border-radius: 2px; background: var(--border); margin: 0 auto 16px; }
+.age .sheet { text-align: center; }
+.age__mark {
+  width: 88px; height: 88px; margin: 4px auto 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 36px; line-height: 1; color: var(--white); background: var(--g-red); box-shadow: var(--lift);
+}
+.age h2 { font-size: 24px; line-height: 1.25; margin: 0 0 12px; }
+.age p { margin: 0 0 12px; color: var(--text); font-size: 16px; line-height: 1.5; }
+.age p.small { font-size: 12px; color: var(--text-3); }
+.age .btn--primary { margin-top: 12px; }
+.age .btn--text { margin-top: 4px; }
+
+.foot {
+  display: grid; gap: 8px; margin-top: 40px; padding-top: 14px; border-top: 1px solid var(--border);
+  font-size: 12px; line-height: 1.4; color: var(--text-3);
+}
+.foot__warn { display: flex; gap: 10px; align-items: flex-start; }
+.age-badge {
+  flex: none; height: 20px; padding: 0 6px; border-radius: 6px; border: 1px solid var(--text-3);
+  font: 600 12px/18px var(--font); color: var(--text-3);
+}
+
+/* Узкий телефон: подпись под названием в шапке не помещается рядом со значком 18+. */
+@media (max-width: 359px) {
+  .brand__words span { display: none; }
+  .steps li { padding: 10px; }
+}
+/* Невысокий экран: холмы ниже и уже, кнопка скана остаётся на первом экране. */
+@media (max-height: 740px) and (max-width: 719px) {
+  .intro { padding-top: 24px; }
+  .intro h1 { margin-top: 6px; }
+  .land { height: 420px; }
+  .scanbox { margin-top: 108px; }
+}
+/* Широкий экран (ноутбук жюри, планшет): страница — колонкой-карточкой поверх рисунка
+   виноградника во весь экран, плавающая кнопка — по ширине колонки. */
+@media (min-width: 720px) {
+  body { background: var(--sky) url("/static/vineyard.svg") 50% 100% / cover no-repeat fixed; }
+  .app {
+    margin: 32px auto; min-height: calc(100dvh - 64px); overflow: clip; border-radius: 40px;
+    background: var(--bg); box-shadow: 0 40px 90px -40px rgba(44, 42, 40, .55), var(--warm-shadow);
+  }
+  .top { --gap: 12px; margin-top: 16px; }
+  .land { border-radius: 40px 40px 0 0; }
+  .intro { padding-top: 56px; }
+  .scanbox { margin-top: 196px; }
+  .ex .ph { height: 168px; }
+  .dock { bottom: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shot.busy .beam { animation-duration: 5s; }
+  .pdot { animation: none; }
+  .tile--ghost .ph, .tile--ghost i { animation: none; }
+  .sheet { animation: none; }
+  .screen, .home > :not(.land), .hero__photo img, .hero__badge, .taste .radar__area, .taste .somm-radar__area { animation: none; }
+  .dock, .dock.away, .tile, .ex, .alt { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="app" id="app" inert aria-hidden="true">
+  <header class="top">
+    <button class="brand" id="brand" type="button" aria-label="На главную">
+      <span class="brand__mark" aria-hidden="true"><span class="ico" data-icon="glass"></span></span>
+      <span class="brand__words"><b>Своё Вино</b><span>сканер этикеток · сомелье</span></span>
+    </button>
+    <span class="spacer"></span>
+    <span class="top__age">18+</span>
+  </header>
+
+  <main>
+    <!-- Главная: свой рисунок виноградника, заголовок, сомелье в блоке скана, три шага и три
+         вина каталога без камеры. -->
+    <section class="screen home" id="home">
+      <div class="land" aria-hidden="true"></div>
+      <div class="intro">
+        <span class="eyebrow">Сканер этикеток и ИИ-сомелье</span>
+        <h1 class="display">Узнайте вино по&nbsp;этикетке</h1>
+      </div>
+      <div class="scanbox">
+        <div class="persona" id="homeSay"></div>
+        <p class="meta scanbox__hint"><span class="ico" data-icon="bottle"></span>Бутылка целиком, этикеткой к камере</p>
+        <label class="btn btn--primary btn--l">
+          <span class="ico" data-icon="camera"></span> Сканировать бутылку
+          <input class="pick js-pick" id="camera" type="file" accept="image/*" capture="environment">
+        </label>
+        <label class="btn btn--text btn--m">
+          <span class="ico" data-icon="image"></span> Загрузить фото
+          <input class="pick js-pick" id="gallery" type="file" accept="image/*">
+        </label>
+      </div>
+      <ol class="steps" aria-label="Как это работает">
+        <li><span class="steps__n" aria-hidden="true">1</span>Снимите бутылку</li>
+        <li><span class="steps__n" aria-hidden="true">2</span>ИИ прочитает этикетку</li>
+        <li><span class="steps__n" aria-hidden="true">3</span>Сомелье расскажет о вине</li>
+      </ol>
+      <section class="examples" aria-labelledby="exTitle">
+        <p class="eyebrow" id="exTitle">Посмотреть на примере</p>
+        <p class="small examples__sub">Без камеры: откроем карточку вина из каталога</p>
+        <div class="ex-row" id="examples"></div>
+      </section>
+      <p class="fact-line meta"><span class="ico" data-icon="lock"></span>2 103 карточки каталога «Своё Вино» · фото не сохраняем</p>
+    </section>
+
+    <!-- Разбор: ответ приходит одним куском, поэтому этапы идут по времени прошлых сканов. -->
+    <section class="screen hidden" id="busy">
+      <div class="shot" id="shot">
+        <img class="shot__bg" id="previewBg" alt="" aria-hidden="true">
+        <img class="shot__img" id="preview" alt="Ваше фото">
+        <div class="noprev hidden" id="noprev">Предпросмотр недоступен<span id="noprevName"></span></div>
+        <span class="cn cn--a"></span><span class="cn cn--b"></span><span class="cn cn--c"></span><span class="cn cn--d"></span>
+        <i class="beam"></i>
+      </div>
+      <div class="scanning" role="status" aria-live="polite">
+        <ol class="stages" id="stages"></ol>
+        <span class="small secs" id="secs">0 с</span>
+      </div>
+      <button class="btn btn--text btn--m busy__cancel" id="cancel" type="button">Отменить</button>
+    </section>
+
+    <!-- Результат: found, check, выбранное из вариантов и открытое без скана. -->
+    <section class="screen hidden" id="result">
+      <div class="banner hidden" id="banner" role="status">
+        <img class="thumb hidden" id="bannerThumb" alt="Ваше фото">
+        <div><b id="bannerTitle"></b><p id="bannerText"></p></div>
+      </div>
+      <!-- Главная кнопка, когда фото слабо похоже на каталог (after.suggest_not_found); иначе
+           «Моего вина здесь нет» живёт под вариантами. -->
+      <button class="btn btn--primary btn--l not-here hidden" id="notHereTop" type="button">Моего вина здесь нет</button>
+
+      <!-- Экран check: один вопрос сомелье по полю, которым различаются варианты (after.question). -->
+      <section class="checkq block hidden" id="checkq" aria-live="polite">
+        <div class="checkq__row">
+          <img class="thumb hidden" id="checkThumb" alt="Ваше фото">
+          <div class="checkq__say" id="checkSay"></div>
+        </div>
+        <div class="chips checkq__opts hidden" id="checkOpts" role="group" aria-label="Что на этикетке"></div>
+      </section>
+
+      <section class="alts hidden" id="alts" aria-labelledby="altsTitle">
+        <div class="alts__head"><p class="eyebrow" id="altsTitle">Какое из них ваше?</p><span class="small" id="altsSub"></span></div>
+        <div class="strip" id="altList"></div>
+        <button class="btn btn--secondary btn--m" id="notHere" type="button">Моего вина здесь нет</button>
+      </section>
+
+      <article class="hidden" id="wine">
+        <p class="example hidden" id="exampleNote"><span class="ico" data-icon="info"></span><span><b>Пример из каталога.</b> Карточка открыта без камеры — так сомелье отвечает после скана.</span></p>
+        <section class="hero hero--white" id="hero">
+          <span class="hero__badge hidden" id="heroBadge"><span class="ico" data-icon="check"></span>Нашли в каталоге</span>
+          <figure class="hidden" id="heroMe">
+            <span class="uphoto"><img id="heroShot" alt="Ваше фото"></span>
+            <figcaption class="hero__cap">ваше фото · только<br>на телефоне</figcaption>
+          </figure>
+          <span class="hero__swap hidden" id="heroSwap" aria-hidden="true"><span class="ico" data-icon="swap"></span></span>
+          <figure>
+            <span class="hero__photo" id="heroPhoto"></span>
+            <figcaption class="hero__cap" id="heroCap">фото каталога</figcaption>
+          </figure>
+        </section>
+        <section class="ttl" id="wineTtl">
+          <h1 class="display" id="wineName"></h1>
+          <div class="ttl__row">
+            <span class="winery" id="wineWinery"></span>
+            <button class="link hidden" id="altsToggle" type="button" aria-expanded="false" aria-controls="alts">Не то вино?<span class="ico" data-icon="chev"></span></button>
+          </div>
+          <div class="facts" id="wineMeta"></div>
+        </section>
+        <section class="read hidden" id="read" aria-labelledby="readTitle">
+          <p class="read__hd"><span class="ico" data-icon="sparkles"></span><span class="eyebrow" id="readTitle">ИИ прочитал на этикетке</span></p>
+          <div class="pills" id="pills"></div>
+          <p class="legend" id="readLegend"></p>
+        </section>
+        <section class="note block hidden" id="note" aria-label="Сомелье коротко"></section>
+        <section class="taste hidden" id="taste" aria-labelledby="tasteTitle">
+          <h2 class="h2" id="tasteTitle">Какое это вино</h2>
+          <div class="taste__card">
+            <div class="radar" id="radar"></div>
+            <div class="scales" id="scales"></div>
+            <!-- Одна легенда на «розу ветров» и шкалы: только те метки, что нарисованы. -->
+            <p class="legend taste__legend hidden" id="tasteLegend"></p>
+          </div>
+        </section>
+        <section class="askbox hidden" id="askBox" aria-label="Спросить сомелье"></section>
+        <section class="kpis hidden" id="kpis">
+          <div class="kpi hidden" id="tempKpi">
+            <span class="icircle"><span class="ico" data-icon="thermo"></span></span>
+            <div><b class="kpi__v" id="tempValue"></b><span class="kpi__l">Температура подачи</span><span class="small" id="tempSrc"></span></div>
+          </div>
+          <div class="kpi hidden" id="alcKpi">
+            <span class="icircle"><span class="ico" data-icon="percent"></span></span>
+            <div><b class="kpi__v" id="alcValue"></b><span class="kpi__l">Крепость</span><span class="small">из карточки каталога</span></div>
+          </div>
+        </section>
+        <section class="dishes hidden" id="dishBlock" data-reco aria-labelledby="dishTitle">
+          <div class="sec__hd"><h2 class="h2" id="dishTitle">К чему подать</h2></div>
+          <p class="meta">по правилам сочетаний и профилю вина</p>
+          <ul class="dish-list" id="dishes"></ul>
+        </section>
+        <section class="desc hidden" id="descBlock" aria-labelledby="descTitle">
+          <h2 class="h2" id="descTitle">Описание</h2>
+          <p class="descr clamped" id="descr"></p>
+          <button class="btn btn--text more hidden" id="more" type="button">Читать полностью</button>
+          <p class="small src"><span id="descSrc">Описание из каталога «Своё Вино»</span>
+            <a class="ext hidden" id="portalLink" target="_blank" rel="noopener noreferrer">Открыть на vino-svoe.ru<span class="ico" data-icon="ext"></span></a></p>
+        </section>
+      </article>
+
+      <section class="reco hidden" id="similar" data-reco aria-labelledby="simTitle">
+        <div class="sec__hd"><h2 class="h2" id="simTitle">Похожие из других виноделен</h2></div>
+        <div class="tiles" id="simList"></div>
+        <p class="honest hidden" id="simNote"></p>
+      </section>
+
+      <div class="again">
+        <h2 class="h2">Ещё одна бутылка?</h2>
+        <label class="btn btn--primary btn--l">
+          <span class="ico" data-icon="camera"></span> Сканировать
+          <input class="pick js-pick" type="file" accept="image/*" capture="environment">
+        </label>
+        <label class="btn btn--text btn--m">
+          <span class="ico" data-icon="image"></span> Загрузить фото
+          <input class="pick js-pick" type="file" accept="image/*">
+        </label>
+      </div>
+    </section>
+
+    <!-- «Нет в каталоге»: один вердикт сомелье, прочитанное и вина рядом по стилю. -->
+    <section class="screen hidden" id="nf">
+      <section class="nfv block" aria-live="polite">
+        <span class="uphoto hidden" id="nfShotBox"><img id="nfShot" alt="Ваше фото"></span>
+        <div id="nfSay"></div>
+        <p class="small nfv__label">Текст и подбор — алгоритм</p>
+      </section>
+      <section class="read hidden" id="nfRead" aria-labelledby="nfReadTitle">
+        <p class="read__hd"><span class="ico" data-icon="sparkles"></span><span class="eyebrow" id="nfReadTitle">ИИ прочитал на этикетке</span></p>
+        <div class="pills" id="nfPills"></div>
+        <p class="legend">Без галочек: карточки нет — сверять не с чем</p>
+      </section>
+      <div class="maybe hidden" id="maybe">
+        <span id="maybePhoto"></span>
+        <p id="maybeText"></p>
+        <button class="btn btn--text btn--m" id="maybeOpen" type="button">Открыть</button>
+      </div>
+      <p class="honest hidden" id="nfNote"></p>
+      <section class="group" id="nfSame" data-reco aria-labelledby="nfSameTitle">
+        <div class="sec__hd"><p class="eyebrow" id="nfSameTitle">Другие вина этой винодельни</p></div>
+        <p class="meta group__sub" id="nfSameSub"></p>
+        <div class="tiles" id="nfSameList"></div>
+        <button class="btn btn--text more hidden" id="nfSameMore" type="button"></button>
+      </section>
+      <section class="group" id="nfSim" data-reco aria-labelledby="nfSimTitle">
+        <div class="sec__hd"><p class="eyebrow" id="nfSimTitle">Близкие по стилю из других виноделен</p></div>
+        <p class="meta group__sub">Подбор по прочитанному с этикетки</p>
+        <div class="tiles" id="nfSimList"></div>
+      </section>
+      <div class="again">
+        <h2 class="h2">Сканировать другую бутылку?</h2>
+        <label class="btn btn--primary btn--l">
+          <span class="ico" data-icon="camera"></span> Сфотографировать ещё раз
+          <input class="pick js-pick" type="file" accept="image/*" capture="environment">
+        </label>
+        <label class="btn btn--text btn--m">
+          <span class="ico" data-icon="image"></span> Загрузить фото
+          <input class="pick js-pick" type="file" accept="image/*">
+        </label>
+      </div>
+    </section>
+
+    <section class="screen fail hidden" id="fail">
+      <h1 class="display" id="failTitle">Не получилось</h1>
+      <p class="fail__text" id="failText"></p>
+      <ul class="tips" id="tips">
+        <li><span class="icircle"><span class="ico" data-icon="bottle"></span></span>Бутылка целиком, этикетка смотрит в камеру</li>
+        <li><span class="icircle"><span class="ico" data-icon="sun"></span></span>Больше света, без бликов на этикетке</li>
+        <li><span class="icircle"><span class="ico" data-icon="phone"></span></span>Телефон ровно, без сильного наклона</li>
+      </ul>
+      <label class="btn btn--primary btn--l">
+        <span class="ico" data-icon="camera"></span> Сфотографировать ещё раз
+        <input class="pick js-pick" type="file" accept="image/*" capture="environment">
+      </label>
+      <label class="btn btn--text btn--m">
+        <span class="ico" data-icon="image"></span> Выбрать другое фото
+        <input class="pick js-pick" type="file" accept="image/*">
+      </label>
+    </section>
+
+    <!-- Плашка 149-ФЗ одна на экран: скрипт ставит её над первым блоком подбора. -->
+    <div class="notice hidden" id="notice"></div>
+  </main>
+
+  <footer class="foot">
+    <p class="foot__warn"><span class="age-badge">18+</span><span>Чрезмерное употребление алкоголя вредит вашему здоровью.</span></p>
+    <p>Сведения о винах — из каталога «Своё Вино». Фото бутылки нужно только для поиска и не сохраняется.</p>
+  </footer>
+
+  <!-- Плавающая кнопка скана на карточке и подборке; её поле открывает и камера листа сомелье. -->
+  <label class="dock hidden" id="topScan">
+    <span class="dock__cam"><span class="ico" data-icon="camera"></span></span>
+    <span class="dock__text">Сканировать бутылку</span>
+    <span class="ico dock__go" data-icon="chev"></span>
+    <input class="pick js-pick" type="file" accept="image/*" capture="environment" aria-label="Сканировать другую бутылку">
+  </label>
+</div>
+
+<!-- 18+ стоит перед контентом: пока нет подтверждения, страница под листом неактивна (inert). -->
+<div class="sheet-wrap age" id="age" role="dialog" aria-modal="true" aria-labelledby="ageTitle">
+  <div class="overlay"></div>
+  <div class="sheet" id="ageSheet" tabindex="-1">
+    <div class="grip"></div>
+    <div class="age__mark display">18+</div>
+    <div id="ageAsk">
+      <h2 class="display" id="ageTitle">Вам уже исполнилось 18 лет?</h2>
+      <p>Здесь сведения о винах: производитель, регион, сорт, к чему подать. Страница доступна
+        только совершеннолетним.</p>
+      <p class="small">На странице применяются рекомендательные технологии: блюда и похожие вина
+        подбираются по фактам каталога. Их можно отключить переключателем «Обычная сортировка».</p>
+      <button class="btn btn--primary btn--l" id="ageYes" type="button">Да, мне есть 18</button>
+      <button class="btn btn--text btn--m" id="ageNo" type="button">Нет</button>
+    </div>
+    <div class="hidden" id="ageDenied">
+      <h2 class="display">Страница доступна с 18 лет</h2>
+      <p>Сведения о винах показываем только совершеннолетним.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Лист сомелье (window.SommUI, договор §8.1). Файла нет — страница работает без листа. -->
+<script src="/static/somm.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  // ---------------------------------------------------------------- мелочи
+  var $ = function (id) { return document.getElementById(id); };
+  var NOTICE = "Применяются рекомендательные технологии";
+  var PLAIN_NOTE = "Обычная сортировка: по названию, без подбора";
+  var PORTAL = "https://vino-svoe.ru/wines/";
+  // Метка текста, который собрал алгоритм по фактам (решение 24.09): заметка карточки и реплики
+  // страницы — всегда шаблон, живой текст модели бывает только в листе сомелье.
+  var ALGO = "Текст и подбор — алгоритм";
+  var SLUG_RE = /^[A-Za-z0-9._-]+$/;
+  // «Посмотреть на примере»: позиции выгрузки организатора с фото — три винодельни и три цвета,
+  // у каждой «роза ветров» по всем 8 осям (сорт есть в приорах, сахар и крепость — в выгрузке):
+  // красное сухое, белое сухое и розовое игристое брют. Открываются карточкой, без камеры.
+  var EXAMPLES = [
+    { slug: "belbek-saperavi-krasnoe-suhoe-137", name: "Саперави", winery: "Бельбек", color: "Красное" },
+    { slug: "alma-valley-sovinon-blan-beloe-suhoe-14", name: "Совиньон Блан", winery: "Alma Valley", color: "Белое" },
+    { slug: "abrau-dyurso-brut-dor-rose-pino-nuar-rozovoe-bryut-12", name: "Brut d'Or Rose", winery: "Абрау-Дюрсо", color: "Розовое" }
+  ];
+  // Оттенок подложки — наш токен по цвету вина из выгрузки (категория организатора).
+  var TONES = { "Красное": "red", "Белое": "white", "Розовое": "rose", "Оранжевое": "orange" };
+  // Ключ из API ищется только среди своих ключей таблицы: «constructor» — не цвет вина.
+  function lookup(map, key) { return Object.prototype.hasOwnProperty.call(map, key) ? map[key] : undefined; }
+  function tone(color) { return lookup(TONES, color) || "white"; }
+  function toneOf(styleLabel) { return tone(String(styleLabel || "").split(" ")[0]); }
+
+  // Хранилище браузера — только удобства одного человека (18+, сортировка, темп этапов).
+  // В приватном окне или при запрете данных сайта оно бросает — страница работает и без него.
+  var store = {
+    get: function (key) { try { return window.localStorage.getItem(key); } catch (e) { return null; } },
+    set: function (key, value) { try { window.localStorage.setItem(key, value); } catch (e) { /* без памяти */ } }
+  };
+
+  var SVG_OPEN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" ' +
+    'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">';
+  var ICONS = {
+    camera: '<path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.7l1.1-1.8A1 1 0 0 1 9.2 3.7h5.6a1 1 0 0 1 .9.5L16.8 6h1.7A2.5 2.5 0 0 1 21 8.5v8A2.5 2.5 0 0 1 18.5 19h-13A2.5 2.5 0 0 1 3 16.5z"/><circle cx="12" cy="12.5" r="3.6"/>',
+    image: '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/>',
+    lock: '<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7.5a4 4 0 0 1 8 0V11"/>',
+    check: '<path d="M20 6 9 17l-5-5"/>',
+    sparkles: '<path d="M10 15.5a2 2 0 0 0-1.5-1.4l-6-1.6a.5.5 0 0 1 0-1l6-1.6A2 2 0 0 0 10 8.5l1.6-6.1a.5.5 0 0 1 1 0L14 8.5a2 2 0 0 0 1.5 1.4l6.1 1.6a.5.5 0 0 1 0 1l-6.1 1.6A2 2 0 0 0 14 15.5l-1.6 6.1a.5.5 0 0 1-1 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/>',
+    swap: '<path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/>',
+    thermo: '<path d="M10 13.5V5a2 2 0 1 1 4 0v8.5a4 4 0 1 1-4 0z"/><path d="M12 9.5v6"/>',
+    percent: '<path d="M18.5 5.5l-13 13"/><circle cx="7" cy="7" r="2.3"/><circle cx="17" cy="17" r="2.3"/>',
+    dish: '<path d="M5.5 3v5.5a2.5 2.5 0 0 0 5 0V3"/><path d="M8 3v18"/><path d="M18.5 21V3c-2.2 1.3-3.5 3.8-3.5 7v4.5h3.5"/>',
+    bottle: '<path d="M10 2.5h4v4c0 .8.3 1.5.9 2A5 5 0 0 1 16.5 12v8a1.5 1.5 0 0 1-1.5 1.5H9A1.5 1.5 0 0 1 7.5 20v-8a5 5 0 0 1 1.6-3.5c.6-.5.9-1.2.9-2z"/><path d="M7.5 14h9"/>',
+    sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+    phone: '<rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/>',
+    chev: '<path d="m6 9 6 6 6-6"/>',
+    info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5.5"/><path d="M12 7.6v.01"/>',
+    glass: '<path d="M7.5 3h9l-.6 6.2a3.9 3.9 0 0 1-7.8 0z"/><path d="M8 7.5h8"/><path d="M12 13.2V20"/><path d="M8.5 20.5h7"/>',
+    grape: '<circle cx="9" cy="10" r="2.4"/><circle cx="14" cy="10" r="2.4"/><circle cx="11.5" cy="14.2" r="2.4"/><circle cx="16.4" cy="14.2" r="2.4"/><circle cx="13.9" cy="18.4" r="2.4"/><path d="M11.5 7.6c0-2 1-3.6 3-4.6"/>',
+    pin: '<path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/>',
+    ext: '<path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M19 14v4.5a1.5 1.5 0 0 1-1.5 1.5h-12A1.5 1.5 0 0 1 4 18.5v-12A1.5 1.5 0 0 1 5.5 5H10"/>'
+  };
+  // Наши глифы групп блюд правил сочетаний (dishes.json, categories): иконок портала нет.
+  var DISH_ICONS = {
+    soup: '<path d="M3.5 11h17a8.5 8 0 0 1-17 0z"/><path d="M9 3.5c-.8 1 .8 2 0 3.5M12.5 3.5c-.8 1 .8 2 0 3.5M16 3.5c-.8 1 .8 2 0 3.5"/>',
+    dumplings: '<path d="M3 15c0-4.4 4-8 9-8s9 3.6 9 8z"/><path d="M7.5 10.5l1 4.5M12 8v7M16.5 10.5l-1 4.5"/>',
+    savory_pastry: '<path d="M3 13h18l-2 6H5z"/><path d="M4 13c1.2-4 4.3-6 8-6s6.8 2 8 6"/><path d="M9.5 9.5l.8 2M14.5 9.5l-.8 2"/>',
+    cold_appetizer: '<ellipse cx="12" cy="16" rx="9" ry="3.5"/><path d="M6.5 15c1-3 3-4.5 5.5-4.5M11.5 14.5c1-3 3-4.5 5.5-4.5"/>',
+    salad: '<path d="M3 12h18a9 7.5 0 0 1-18 0z"/><path d="M8 12c-1.2-3 .5-6 4-6.5-1 2.2-.3 4.2-1.2 6.5M13 12c.2-3 2-5.2 5-5.5-.9 2.2-.8 4-2 5.5"/>',
+    pickles: '<path d="M8.5 2.5h7v3h-7z"/><path d="M7 5.5h10a2 2 0 0 1 2 2V19a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 5 19V7.5a2 2 0 0 1 2-2z"/><path d="M10 10c-.5 3 .5 6 1.5 7.5M14 10c-.5 3 .5 6 1.5 7.5"/>',
+    seafood: '<path d="M2.5 12c3-4 6.8-5.5 10-5.5 3.2 0 5.3 2.2 6 5.5-.7 3.3-2.8 5.5-6 5.5-3.2 0-7-1.5-10-5.5z"/><path d="M18.5 12l3-3v6z"/><path d="M7.5 11v.01"/>',
+    seafood_raw: '<path d="M2.5 12c3-4 6.8-5.5 10-5.5 3.2 0 5.3 2.2 6 5.5-.7 3.3-2.8 5.5-6 5.5-3.2 0-7-1.5-10-5.5z"/><path d="M18.5 12l3-3v6z"/><path d="M10 8.5v7M13.5 8v8"/>',
+    main_meat: '<circle cx="12.5" cy="8.5" r="2.5"/><path d="M12.5 2a6.5 6.5 0 0 0-6.2 4.6c-1.1 3.1-.8 3.9-3.2 6.1A3 3 0 0 0 5 18c4 0 8.4-1.8 11.4-4.3A6.5 6.5 0 0 0 12.5 2z"/><path d="m18.5 6 2.2 4.5a6.5 6.5 0 0 1-2.3 7.2C15.4 20.2 11 22 7 22a3 3 0 0 1-2.7-1.7L2.4 16.5"/>',
+    main_poultry: '<ellipse cx="14.5" cy="9.5" rx="6" ry="4.8" transform="rotate(-45 14.5 9.5)"/><path d="M10.3 13.7 6.4 17.6"/><circle cx="4.9" cy="17.4" r="1.5"/><circle cx="6.6" cy="19.1" r="1.5"/>',
+    main_vegetable: '<path d="M5 19c0-8 5.2-14 14-14 0 8.8-6 14-14 14z"/><path d="M5 19 14.5 9.5"/>',
+    hot_appetizer: '<circle cx="10" cy="13" r="6.5"/><path d="M16.5 13h5"/><path d="M8 11.5c1-1 2.8-1 4 0"/>',
+    dessert: '<path d="M3 19h18v-7L3 8z"/><path d="M3 13.5l18 2"/><circle cx="7" cy="5.5" r="1.6"/>',
+    sweet_preserve: '<path d="M6.5 9.5h11l-1 9.5a2.5 2.5 0 0 1-2.5 2H10a2.5 2.5 0 0 1-2.5-2z"/><path d="M5 6.5h14v3H5z"/><path d="M12 3v3.5"/>',
+    fast_food: '<path d="M4 11a8 6.5 0 0 1 16 0z"/><path d="M3 14.5h18"/><path d="M4 17.5h16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/>',
+    foreign_dish: '<path d="M12 21 3 5.5c6-3 12-3 18 0z"/><path d="M4.8 8.5c4.8-2 9.6-2 14.4 0"/><path d="M11 12v.01M14 15v.01M10 16v.01"/>',
+    appetizer: '<path d="M3 18v-6.5L16 5l5 6.5V18z"/><path d="M3 11.5h18"/><circle cx="8" cy="14.8" r="1"/><circle cx="14.5" cy="15" r="1.3"/>'
+  };
+  // Силуэт бутылки вместо фото, которого нет (photo_url: null) или которое не загрузилось: стекло,
+  // колпачок, пунктир этикетки и блик — та же бутылка, что рисует лист сомелье (его BOTTLE).
+  var BOTTLE = '<svg class="bottle" viewBox="0 0 40 110" aria-hidden="true" focusable="false">' +
+    '<path class="bottle__glass" d="M15.5 3.5h9v19c0 3.4 1.9 5.9 4 8.6 2.1 2.7 3.5 5.6 3.5 9.4v60a5 5 0 0 1-5 5h-14a5 5 0 0 1-5-5V40.5c0-3.8 1.4-6.7 3.5-9.4 2.1-2.7 4-5.2 4-8.6z"/>' +
+    '<rect class="bottle__cap" x="15.5" y="3.5" width="9" height="11" rx="1.5"/>' +
+    '<rect class="bottle__label" x="13" y="58" width="14" height="26" rx="2.5"/>' +
+    '<path class="bottle__shine" d="M10.5 45v47"/></svg>';
+
+  function glyph(paths) {
+    var box = document.createElement("span");
+    box.className = "ico";
+    box.innerHTML = SVG_OPEN + paths + "</svg>";
+    return box;
+  }
+  function icon(name) { return glyph(ICONS[name] || ""); }
+  function fillIcons(root) {
+    root.querySelectorAll("[data-icon]").forEach(function (el) {
+      el.innerHTML = SVG_OPEN + (ICONS[el.getAttribute("data-icon")] || "") + "</svg>";
+    });
+  }
+  function silhouette() {
+    var box = document.createElement("span");
+    box.innerHTML = BOTTLE;
+    return box.firstChild;
+  }
+
+  // Узел без innerHTML: всё, что пришло из API, попадает в страницу только текстом.
+  function h(tag, props, kids) {
+    var el = document.createElement(tag);
+    Object.keys(props || {}).forEach(function (key) {
+      var value = props[key];
+      if (value === null || value === undefined || value === false) return;
+      if (key === "class") el.className = value;
+      else if (key === "text") el.textContent = value;
+      else if (key.slice(0, 2) === "on") el.addEventListener(key.slice(2), value);
+      else el.setAttribute(key, value === true ? "" : value);
+    });
+    (kids || []).forEach(function (kid) {
+      if (kid === null || kid === undefined || kid === false) return;
+      el.appendChild(typeof kid === "string" ? document.createTextNode(kid) : kid);
+    });
+    return el;
+  }
+  function show(el, on) { el.classList.toggle("hidden", on === false); }
+  function hide(el) { el.classList.add("hidden"); }
+
+  function mod(a, b) { return a - Math.floor(a / b) * b; }
+  function plural(n, one, few, many) {
+    var d10 = mod(n, 10), d100 = mod(n, 100);
+    if (d10 === 1 && d100 !== 11) return one;
+    if (d10 >= 2 && d10 <= 4 && (d100 < 12 || d100 > 14)) return few;
+    return many;
+  }
+  function norm(text) { return String(text || "").toLowerCase().replace(/ё/g, "е").replace(/\s+/g, " ").trim(); }
+
+  // Адреса из API: картинки — только наши пути /v1/…, внешняя ссылка — только карточка портала.
+  function localUrl(url) {
+    return typeof url === "string" && /^\/v1\/[A-Za-z0-9._\/-]+$/.test(url) && url.indexOf("..") < 0 ? url : null;
+  }
+  function portalUrl(url) {
+    if (typeof url !== "string" || url.indexOf(PORTAL) !== 0) return null;
+    return SLUG_RE.test(url.slice(PORTAL.length)) ? url : null;
+  }
+
+  // Фото вина в рамке цвета вина; нет фото или не загрузилось — силуэт бутылки.
+  function framePhoto(url, alt, toneName, eager) {
+    var box = h("span", { class: "ph ph--" + (toneName || "white") });
+    var src = localUrl(url);
+    var fallback = function () { box.textContent = ""; box.appendChild(silhouette()); };
+    if (!src) { fallback(); return box; }
+    var img = h("img", { src: src, alt: alt || "", decoding: "async", loading: eager ? null : "lazy" });
+    img.addEventListener("error", fallback);
+    box.appendChild(img);
+    box.appendChild(h("span", { class: "shadow", "aria-hidden": "true" }));
+    return box;
+  }
+
+  function getJSON(url, init) {
+    return fetch(url, init).then(function (response) {
+      return response.json().catch(function () { return null; }).then(function (body) {
+        if (!response.ok) {
+          var error = new Error(body && typeof body.detail === "string" ? body.detail : "HTTP " + response.status);
+          error.status = response.status;
+          throw error;
+        }
+        return body;
+      });
+    });
+  }
+  var enc = encodeURIComponent;
+  var cards = {};
+  function loadCard(slug) {
+    if (!cards[slug]) {
+      cards[slug] = getJSON("/v1/wines/" + enc(slug)).catch(function (error) { delete cards[slug]; throw error; });
+    }
+    return cards[slug];
+  }
+
+  // ---------------------------------------------------------------- лист сомелье
+  // Лист, заметку, «розу ветров» и шкалы рисует window.SommUI (договор сомелье, §8.1), если файл
+  // листа загрузился. Нет его или метод упал — заметку, розу и шкалы страница рисует сама по тем
+  // же правилам, а входа в лист нет: страница не ломается от отсутствия листа.
+  var SOMM = window.SommUI && window.SommUI.version === 1 ? window.SommUI : null;
+  function viaSomm(name, fallback) {
+    return function () {
+      if (SOMM && typeof SOMM[name] === "function") {
+        try { return SOMM[name].apply(SOMM, arguments); } catch (e) { /* ниже своя отрисовка */ }
+      }
+      return fallback ? fallback.apply(null, arguments) : false;
+    };
+  }
+
+  // Лист открыт — наверху истории его запись: кнопка «назад» телефона закрывает лист, а не
+  // уводит с карточки. Страница, закрывая лист сама (тап по вину, камера), эту запись заменяет.
+  // Закрыл лист человек (крестик, затемнение, Escape) — запись снимает своё history.back(). Оно
+  // асинхронное: пока его popstate не пришёл (backing), новая запись листа не ставится, а
+  // пришедший popstate не закрывает лист, открытый заново в ту же секунду, — ставит его запись.
+  var sheetEntry = false, quiet = false, backing = false;
+  function pushSheet() {
+    try { history.pushState({ at: at, sheet: "somm" }, ""); sheetEntry = true; } catch (e) { /* file:// */ }
+  }
+  function sheetOpen() {
+    try { return Boolean(SOMM && typeof SOMM.isOpen === "function" && SOMM.isOpen()); } catch (e) { return false; }
+  }
+  function leaveSheet() {
+    var top = sheetEntry;
+    if (sheetOpen()) {
+      quiet = true;
+      try { SOMM.close({}); } catch (e) { /* лист уже закрыт */ }
+      quiet = false;
+    }
+    sheetEntry = false;
+    return top;
+  }
+  var host = {
+    order: function () { return order; },
+    setOrder: function (next) { setOrder(next === "plain" ? "plain" : "reco"); },
+    openWine: function (slug) {
+      if (typeof slug !== "string" || !SLUG_RE.test(slug)) return;
+      open({ kind: "wine", slug: slug }, leaveSheet());
+    },
+    scan: function () {
+      if (leaveSheet()) {
+        try { history.replaceState({ at: at }, ""); } catch (e) { /* file:// */ }
+        replaceNext = true;
+      }
+      // Поле камеры в шапке: на экране карточки оно на странице, а не в скрытой главной.
+      document.querySelector("#topScan input").click();
+    },
+    onSheet: function (isOpen) {
+      if (isOpen) {
+        if (!sheetEntry && !backing) pushSheet();
+        return;
+      }
+      if (!sheetEntry || quiet) return;
+      sheetEntry = false;
+      backing = true;
+      try { history.back(); } catch (e) { backing = false; }
+    },
+    localUrl: localUrl,
+    portalUrl: portalUrl
+  };
+
+  // Тире не начинает строку, «6–8 °C» не рвётся: пробел перед тире и «°C» неразрывный, а у
+  // диапазона чисел — связки без ширины («бутылку — расскажу», заметка на 360 px).
+  function dash(text) {
+    return String(text || "").replace(/ —/g, "\u00a0—").replace(/(\d)–(\d)/g, "$1\u2060–\u2060$2").replace(/ °C/g, "\u00a0°C");
+  }
+  // Реплика персоны: «Сомелье» без лица и имени, аватар — точка.
+  var sayUI = viaSomm("say", function (el, text) {
+    el.textContent = "";
+    el.appendChild(h("div", { class: "say" }, [
+      h("span", { class: "say__ava", "aria-hidden": "true" }),
+      h("div", { class: "say__body" }, [h("p", { class: "eyebrow", text: "Сомелье" }), h("p", { class: "say__text", text: text })])
+    ]));
+    return true;
+  });
+  function say(el, text) { return sayUI(el, dash(text)); }
+
+  // ---------------------------------------------------------------- экраны и история
+  // Каждый экран результата — запись истории: кнопка «назад» телефона возвращает к прошлой
+  // карточке, а не уводит со страницы.
+  var SCREENS = ["home", "busy", "result", "nf", "fail"];
+  function screen(name) {
+    SCREENS.forEach(function (id) { show($(id), id === name); });
+    document.body.setAttribute("data-screen", name);
+    // Плавающая кнопка скана — на карточке и подборке; на главной и в ошибке кнопки свои.
+    show($("topScan"), name === "result" || name === "nf");
+    hide($("notice"));
+    window.scrollTo(0, 0);
+  }
+
+  var views = [{ kind: "home" }];
+  var at = 0;
+  var token = 0;          // растёт на каждый показ: поздний ответ не перерисует чужой экран
+  var reloads = {};       // что перезапросить при смене сортировки
+  var replaceNext = false; // следующий экран заменяет запись закрытого листа, а не встаёт поверх
+  try { history.replaceState({ at: 0 }, ""); } catch (e) { /* file:// */ }
+
+  function open(view, replace) {
+    replace = replace || replaceNext;
+    replaceNext = false;
+    views.length = at + 1;
+    views.push(view);
+    at = views.length - 1;
+    try {
+      if (replace) history.replaceState({ at: at }, "");
+      else history.pushState({ at: at }, "");
+    } catch (e) { /* file:// */ }
+    render(view);
+  }
+  function render(view) {
+    token += 1;
+    reloads = {};
+    if (view.kind === "scan") renderScan(view);
+    else if (view.kind === "wine") renderWine(view);
+    else if (view.kind === "nf") renderNotFound(view);
+    else if (view.kind === "fail") renderFail(view.reason);
+    else screen("home");
+  }
+  window.addEventListener("popstate", function (event) {
+    var state = event.state || {};
+    replaceNext = false;
+    if (backing) {
+      backing = false;
+      // Это «назад» самого листа: экран тот же. Лист успели открыть снова — его запись встаёт
+      // теперь, а сам он остаётся открытым: устаревший popstate не закрывает новый лист.
+      if (state.at === at && state.sheet !== "somm") {
+        if (sheetOpen() && !sheetEntry) pushSheet();
+        return;
+      }
+    }
+    if (sheetEntry && state.sheet !== "somm") {
+      sheetEntry = false;
+      quiet = true;
+      try { if (sheetOpen()) SOMM.close({ fromHistory: true }); } catch (e) { /* закрыт */ }
+      quiet = false;
+    }
+    var target = typeof state.at === "number" && views[state.at] ? state.at : 0;
+    var wasBusy = busy;
+    cancelScan();
+    if (target !== at || wasBusy) { at = target; render(views[at]); }
+  });
+  $("brand").addEventListener("click", function () { cancelScan(); open({ kind: "home" }, leaveSheet()); });
+
+  // Плавающая кнопка уходит вниз, пока виден блок «Ещё одна бутылка?» конца экрана: две
+  // одинаковые кнопки рядом не нужны. Без IntersectionObserver кнопка просто стоит на месте.
+  if ("IntersectionObserver" in window) {
+    var endings = document.querySelectorAll(".again");
+    var watch = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { entry.target.setAttribute("data-in", entry.isIntersecting ? "1" : ""); });
+      var near = Array.prototype.some.call(endings, function (el) { return el.getAttribute("data-in") === "1"; });
+      $("topScan").classList.toggle("away", near);
+    }, { rootMargin: "0px 0px -24px 0px" });
+    Array.prototype.forEach.call(endings, function (el) { watch.observe(el); });
+  }
+
+  // ---------------------------------------------------------------- сортировка и плашка 149-ФЗ
+  var order = store.get("svs.order") === "plain" ? "plain" : "reco";
+  function setOrder(next) {
+    if (next === order) return;
+    order = next;
+    store.set("svs.order", order);
+    Object.keys(reloads).forEach(function (key) { reloads[key](); });
+  }
+  var notice = $("notice");
+  function fillNotice(text) {
+    var focused = notice.contains(document.activeElement);   // перерисовка не должна терять фокус
+    notice.textContent = "";
+    var input = h("input", { type: "checkbox", role: "switch" });
+    input.checked = order === "plain";
+    input.setAttribute("aria-checked", String(input.checked));
+    input.addEventListener("change", function () { setOrder(input.checked ? "plain" : "reco"); });
+    notice.appendChild(h("span", { class: "notice__t" }, [icon("info"), order === "reco" ? (text || NOTICE) : PLAIN_NOTE]));
+    notice.appendChild(h("label", { class: "switch" }, [input, h("span", { class: "switch__track", "aria-hidden": "true" }), "Обычная сортировка"]));
+    if (focused) input.focus({ preventScroll: true });
+  }
+  // Одна плашка на экран — над первым готовым блоком подбора ([data-reco] с data-state="ready");
+  // у остальных блоков только значок (i), который ведёт к ней. Нет подбора — нет и плашки.
+  function placeNotice(root) {
+    root.querySelectorAll(".info-i").forEach(function (button) { button.remove(); });
+    var blocks = Array.prototype.filter.call(root.querySelectorAll("[data-reco]"), function (block) {
+      return block.getAttribute("data-state") === "ready" && !block.closest(".hidden");
+    });
+    if (!blocks.length) { hide(notice); return; }
+    fillNotice(blocks[0].getAttribute("data-notice"));
+    blocks[0].parentNode.insertBefore(notice, blocks[0]);
+    show(notice);
+    blocks.slice(1).forEach(function (block) {
+      var head = block.querySelector(".sec__hd");
+      if (head) head.appendChild(infoButton());
+    });
+  }
+  function infoButton() {
+    return h("button", {
+      class: "info-i", type: "button", "aria-label": NOTICE + ": переключатель «Обычная сортировка» выше",
+      onclick: function () {
+        notice.scrollIntoView({ block: "center" });
+        var input = notice.querySelector("input");
+        if (input) input.focus({ preventScroll: true });
+      }
+    }, [icon("info")]);
+  }
+  function setReco(block, state, text) {
+    block.setAttribute("data-state", state);
+    block.setAttribute("data-notice", text || "");
+  }
+
+  // Плитки подборок: фото 2:3 на оттенке цвета вина, название, винодельня, объяснение фактами.
+  // Процентов нет.
+  function tiles(list, items) {
+    list.textContent = "";
+    items.forEach(function (item) {
+      var where = [item.winery, item.region].filter(Boolean).join(" · ");
+      var why = (item.reasons || []).map(function (reason) { return h("li", { text: reason }); });
+      var link = h("a", { class: "tile", href: "?slug=" + enc(item.slug) }, [
+        framePhoto(item.photo_url, item.name, toneOf(item.style_label)),
+        h("div", { class: "tile__body" }, [
+          h("span", { class: "tile__name", text: item.name || item.slug }),
+          where ? h("span", { class: "tile__meta", text: where }) : null,
+          item.style_label ? h("span", { class: "tile__meta", text: item.style_label }) : null,
+          why.length ? h("ul", { class: "why" }, why) : null
+        ])
+      ]);
+      link.addEventListener("click", function (event) {
+        if (event.metaKey || event.ctrlKey || event.shiftKey) return;
+        event.preventDefault();
+        open({ kind: "wine", slug: item.slug });
+      });
+      list.appendChild(link);
+    });
+  }
+  function ghosts(list, count) {
+    list.textContent = "";
+    for (var i = 0; i < count; i++) {
+      list.appendChild(h("div", { class: "tile tile--ghost", "aria-hidden": "true" }, [
+        h("span", { class: "ph" }), h("div", { class: "tile__body" }, [h("i"), h("i"), h("i")])
+      ]));
+    }
+  }
+  // Честная фраза: текст из notes как есть, иначе своя, если список пуст.
+  function honest(el, notes, fallback) {
+    var text = (notes || []).map(function (note) { return note && note.text; }).filter(Boolean).join(" ");
+    el.textContent = dash(text || fallback);
+    show(el, Boolean(text || fallback));
+  }
+
+  // ---------------------------------------------------------------- скан
+  // Фото человека живёт только в памяти вкладки (адрес blob:) и уходит на сервер один раз —
+  // в /v1/scan. Шапка карточки, миниатюры и экран «нет в каталоге» берут тот же адрес.
+  var generation = 0, ticker = null, started = 0, busy = false, shotUrl = null, wake = null, shownStep = -1;
+  // Этапы — по-человечески и честно: ответ приходит одним куском, поэтому этап меняется по
+  // времени прошлых сканов на этом телефоне, последний держится до ответа, «почти готово» нет.
+  // «Своё Вино» — через неразрывный пробел: на 360 px название каталога не рвётся на две строки.
+  var STAGES = [
+    { text: "Отправляю фото", done: "Отправил фото", at: 0 },
+    { text: "Смотрю на бутылку", done: "Посмотрел на бутылку", at: 0.3 },
+    { text: "Читаю этикетку", done: "Прочитал этикетку", at: 0.7 },
+    { text: "Сверяю с каталогом «Своё Вино»", done: "", at: 1.9 }
+  ];
+
+  document.querySelectorAll("input.js-pick").forEach(function (input) {
+    input.addEventListener("change", function () {
+      var file = input.files && input.files[0];
+      input.value = "";   // без сброса второй выбор того же файла не пришлёт change
+      if (file) scan(file);
+    });
+  });
+  $("cancel").addEventListener("click", function () { cancelScan(); render(views[at]); });
+
+  function scan(file) {
+    generation += 1;
+    var mine = generation;
+    busy = true;
+    leaveSheet();
+    if (shotUrl) URL.revokeObjectURL(shotUrl);
+    shotUrl = URL.createObjectURL(file);
+    screen("busy");
+    var img = $("preview"), bg = $("previewBg");
+    hide($("noprev"));
+    $("noprevName").textContent = file.name || "";
+    img.onerror = function () { img.removeAttribute("src"); show($("noprev")); };   // HEIC браузер не рисует
+    bg.onerror = function () { bg.removeAttribute("src"); };
+    img.src = shotUrl;
+    bg.src = shotUrl;
+    $("shot").classList.add("busy");
+    tune();
+    started = Date.now();
+    shownStep = -1;
+    tick();
+    ticker = setInterval(tick, 200);
+    if (navigator.wakeLock && navigator.wakeLock.request) {
+      navigator.wakeLock.request("screen").then(function (lock) { wake = lock; }).catch(function () {});
+    }
+    var form = new FormData();
+    form.append("image", file, file.name || "photo.jpg");
+    var shot = shotUrl;
+    fetch("/v1/scan", { method: "POST", body: form })
+      .then(function (response) { return response.json(); })
+      .then(function (body) {
+        if (mine !== generation) return;
+        finish();
+        remember(body && body.timings_ms);
+        // Карточка скана — тот же объект, что GET /v1/wines/{slug}: возврат к ней из «Не то
+        // вино?» не ходит в сеть второй раз.
+        if (body && body.card && body.card.slug) cards[body.card.slug] = Promise.resolve(body.card);
+        // seen — один список на скан: его делят экран скана и открытые из вариантов карточки.
+        open({ kind: "scan", body: body, after: afterOf(body), seen: [], shot: shot });
+      })
+      .catch(function () {
+        if (mine !== generation) return;
+        finish();
+        open({ kind: "fail", reason: "network" });
+      });
+  }
+  function finish() {
+    busy = false;
+    clearInterval(ticker);
+    ticker = null;
+    $("shot").classList.remove("busy");
+    if (wake && wake.release) { try { wake.release(); } catch (e) { /* уже отпущен */ } }
+    wake = null;
+  }
+  function cancelScan() { if (busy) { generation += 1; finish(); } }
+  // Своё фото показывается, только пока оно то самое: новый скан меняет адрес, и старые экраны
+  // из истории своё фото больше не показывают.
+  function ownShot(view) { return view && view.shot && view.shot === shotUrl ? shotUrl : null; }
+  // HEIC сервис разбирает, а браузер не рисует: тогда миниатюры нет вовсе, а не значок битой
+  // картинки.
+  function showThumb(thumb, shot) {
+    thumb.onerror = function () { thumb.removeAttribute("src"); hide(thumb); };
+    if (shot) { thumb.src = shot; show(thumb); } else { thumb.removeAttribute("src"); hide(thumb); }
+  }
+
+  function num(key) { var value = parseFloat(store.get(key) || ""); return value > 0 ? value : 0; }
+  function tune() {
+    var cv = num("svs.cvSec"), vlm = num("svs.vlmSec");
+    if (cv) STAGES[2].at = Math.max(0.3, cv);
+    if (cv && vlm) STAGES[3].at = cv + vlm * 0.85;
+  }
+  function remember(t) {
+    if (!t) return;
+    if (t.cv) store.set("svs.cvSec", String(((t.decode || 0) + t.cv) / 1000));
+    if (t.vlm) store.set("svs.vlmSec", String(t.vlm / 1000));
+    if (t.total) store.set("svs.totalSec", String(t.total / 1000));
+  }
+  function tick() {
+    var sec = (Date.now() - started) / 1000;
+    $("secs").textContent = (sec < 10 ? sec.toFixed(1).replace(".", ",") : String(Math.round(sec))) + " с";
+    var step = 0;
+    STAGES.forEach(function (stage, i) { if (sec >= stage.at) step = i; });
+    if (step === shownStep) return;
+    shownStep = step;
+    var list = $("stages");
+    list.textContent = "";
+    STAGES.forEach(function (stage, i) {
+      if (i < step) list.appendChild(h("li", {}, [icon("check"), stage.done]));
+      else if (i === step) list.appendChild(h("li", { class: "stages__now" }, [h("span", { class: "pdot", "aria-hidden": "true" }), stage.text]));
+    });
+  }
+
+  // Сервис без слоя «после поиска» ещё отвечает старым телом: то же правило, что в договоре.
+  function afterOf(body) {
+    if (body && body.after && body.after.state) return body.after;
+    var read = { winery: null, color: null, sugar: null, grapes: [], abv: null, sparkling: null };
+    var outcome = body && body.outcome;
+    var p = body && body.confidence ? body.confidence.top1 : null;
+    var state = "found", reasons = [];
+    if (!body || outcome === "error") { state = "error"; reasons = [String((body && body.error) || "internal").split(":")[0]]; }
+    else if (outcome === "out_of_catalog") { state = "check"; reasons = ["abstain"]; }
+    else if (p === null || p === undefined) { state = "check"; reasons = ["no_confidence"]; }
+    else if (outcome === "ambiguous") { state = "check"; reasons = ["ambiguous"]; }
+    else if (p < 0.5) { state = "check"; reasons = ["low_confidence"]; }
+    return {
+      state: state, reasons: reasons, read: read, read_label: null, winery_in_catalog: null, winery_slugs: [],
+      suggest_not_found: false, question: null
+    };
+  }
+  function candidatesOf(body) {
+    if (body && Array.isArray(body.candidates)) return body.candidates;
+    return ((body && body.top5) || []).map(function (item) {
+      return { slug: item.slug, name: null, winery: null, photo_url: "/v1/wines/" + enc(item.slug) + "/photo" };
+    });
+  }
+
+  // ---------------------------------------------------------------- результат
+  function renderScan(view) {
+    var body = view.body || {}, after = view.after;
+    if (after.state === "error") { renderFail(after.reasons[0] || "internal"); return; }
+    if (after.state === "not_found") {
+      renderNotFound({
+        mode: "auto", read: after.read, readLabel: after.read_label, card: body.card,
+        cands: candidatesOf(body), seen: view.seen, shot: view.shot
+      });
+      return;
+    }
+    // Нет поля (сервис старше договора) — то же, что false: экран как раньше.
+    renderResult({
+      card: body.card, state: after.state, reasons: after.reasons,
+      readLabel: after.read_label, read: after.read, cands: candidatesOf(body),
+      suggest: after.suggest_not_found === true, seen: view.seen, shot: view.shot,
+      question: after.question || null
+    });
+  }
+
+  function renderWine(view) {
+    var mine = token;
+    screen("result");
+    ["banner", "notHereTop", "checkq", "alts", "similar"].forEach(function (id) { hide($(id)); });
+    if (!cards[view.slug]) {
+      show($("wine"));
+      ["exampleNote", "heroBadge", "read", "note", "taste", "askBox", "kpis", "dishBlock", "descBlock", "heroMe", "heroSwap", "altsToggle"].forEach(function (id) { hide($(id)); });
+      $("heroPhoto").textContent = "";
+      $("wineName").textContent = "Открываю карточку…";
+      $("wineWinery").textContent = "";
+      $("wineMeta").textContent = "";
+    }
+    loadCard(view.slug).then(function (card) {
+      if (mine !== token) return;
+      var picked = view.picked === true;
+      renderResult({
+        card: card, state: picked ? "picked" : view.example ? "example" : "browse",
+        readLabel: picked ? view.readLabel : null, read: picked ? view.read : null,
+        cands: picked ? view.cands : null, seen: picked ? view.seen : null, shot: picked ? view.shot : null
+      });
+    }).catch(function (error) {
+      if (mine !== token) return;
+      renderFail(error.status === 404 ? "no_card" : "network");
+    });
+  }
+
+  // Плашка «похоже, вина нет в каталоге» (after.suggest_not_found): фото слабо похоже на все
+  // снимки каталога. Это подсказка, а не отказ: самое похожее и варианты остаются на экране.
+  var SUGGEST_TITLE = "Похоже, этой бутылки может не быть в каталоге";
+  var SUGGEST_TEXT = "Фото слабо похоже на снимки каталога. Ниже самое близкое — проверьте его или подберём вина по этикетке.";
+  var SUGGEST_TEXT_EMPTY = "Фото слабо похоже на снимки каталога. Подберём вина по этикетке или выберите из вариантов.";
+  // Договор: в exclude не больше 20 slug.
+  var MAX_EXCLUDE = 20;
+
+  // seen — что человек видел в этом скане и, нажав «Моего вина здесь нет», отверг: самое
+  // похожее, варианты «Не то вино?», пока список раскрыт, и открытые из них карточки. Порядок —
+  // как показали.
+  function markSeen(seen, slug) { if (seen && slug && seen.indexOf(slug) < 0) seen.push(slug); }
+
+  var current = null;   // вино на экране результата: к нему привязаны похожие и сомелье
+  var alts = { open: false, list: [], seen: null };
+  function renderResult(o) {
+    screen("result");
+    var card = o.card || null;
+    current = card;
+    if (card) markSeen(o.seen, card.slug);
+    var suggest = o.state === "check" && o.suggest === true;
+    var shot = ownShot(o);
+
+    var banner = $("banner");
+    if (suggest) {
+      $("bannerTitle").textContent = SUGGEST_TITLE;
+      $("bannerText").textContent = card ? SUGGEST_TEXT : SUGGEST_TEXT_EMPTY;
+      showThumb($("bannerThumb"), shot);
+      show(banner);
+    } else hide(banner);
+
+    // При подсказке «нет в каталоге» главная кнопка — «Моего вина здесь нет» над вариантами,
+    // а варианты при карточке свёрнуты под «Не то вино?»; вторая такая же кнопка внутри не нужна.
+    var topButton = $("notHereTop");
+    topButton.onclick = function () { notHere(o); };
+    show(topButton, suggest);
+    show($("notHere"), !suggest);
+
+    // Раскрытый выбор «Какое из них ваше?» — на экране check. При подсказке «нет в каталоге»
+    // он свёрнут под «Не то вино?» — но только когда есть карточка: без неё смотреть не на что.
+    var pick = o.state === "check" && !(suggest && card);
+    if (pick) fillQuestion(o, card, shot); else hide($("checkq"));
+
+    var list = (o.cands || []).filter(function (cand) { return cand && cand.slug; }).slice(0, 5);
+    var others = list.filter(function (cand) { return !card || cand.slug !== card.slug; });
+    var box = $("alts");
+    if (o.cands && (others.length || o.read)) {
+      fillAlts(list, o, card);
+      if (pick) $("result").insertBefore(box, $("wine"));
+      else $("wineTtl").after(box);
+      $("altsTitle").textContent = pick ? "Какое из них ваше?" : "Другие варианты";
+      $("altsSub").textContent = pick ? "нажмите — карточка сменится" : "";
+      alts.list = list;
+      alts.seen = o.seen;
+      setAlts(pick);
+      show($("altsToggle"), !pick);
+    } else {
+      alts.list = [];
+      alts.seen = null;
+      setAlts(false);
+      hide($("altsToggle"));
+    }
+
+    show($("wine"), Boolean(card));
+    show($("similar"), Boolean(card));
+    if (card) {
+      fillCard(card, o);
+      loadSomm(card);
+      loadSimilar(card.slug);
+    }
+  }
+  // Варианты попадают в seen, когда список раскрыт: главная кнопка над свёрнутым списком не
+  // должна убирать из подборки то, чего человек не открывал (там может быть его вино).
+  function setAlts(open) {
+    alts.open = open;
+    show($("alts"), open);
+    $("altsToggle").setAttribute("aria-expanded", String(open));
+    if (alts.open) alts.list.forEach(function (cand) { markSeen(alts.seen, cand.slug); });
+  }
+  $("altsToggle").addEventListener("click", function () { setAlts(!alts.open); });
+
+  // Один вопрос сомелье по полю, которым различаются варианты (after.question); вариант ответа
+  // открывает карточку своего вина.
+  function fillQuestion(o, card, shot) {
+    var q = o.question;
+    var text = q && q.text ? q.text : card
+      ? "Похоже на несколько вин. Какое из них ваше? Нажмите на бутылку — карточка сменится."
+      : "Точного совпадения нет. Выберите своё вино из похожих — или подберу вина по этикетке.";
+    say($("checkSay"), text);
+    showThumb($("checkThumb"), shot);
+    var row = $("checkOpts");
+    row.textContent = "";
+    ((q && q.options) || []).forEach(function (opt) {
+      if (!opt || typeof opt.slug !== "string" || !SLUG_RE.test(opt.slug)) return;
+      var here = Boolean(card) && opt.slug === card.slug;
+      row.appendChild(h("button", {
+        class: "chip", type: "button", "aria-pressed": here ? "true" : "false",
+        onclick: here ? null : function () { pickWine(opt.slug, o); }
+      }, [String(opt.label || "")]));
+    });
+    show(row, row.childNodes.length > 0);
+    show($("checkq"));
+  }
+  function pickWine(slug, o) {
+    open({
+      kind: "wine", slug: slug, picked: true, cands: o.cands, readLabel: o.readLabel, read: o.read,
+      seen: o.seen, shot: o.shot
+    });
+  }
+
+  // Слова, которыми названия вариантов различаются, — жирным: «Русское Игристое полусухое».
+  function marked(names) {
+    var words = names.map(function (name) { return String(name || "").split(/\s+/).map(norm).filter(Boolean); });
+    var common = words.length > 1 ? words.reduce(function (acc, set) {
+      return acc.filter(function (word) { return set.indexOf(word) >= 0; });
+    }) : [];
+    return names.map(function (name) {
+      var out = [];
+      String(name || "").split(/(\s+)/).forEach(function (part) {
+        if (!part) return;
+        var plain = /^\s+$/.test(part) || words.length < 2 || common.indexOf(norm(part)) >= 0;
+        out.push(plain ? part : h("b", { text: part }));
+      });
+      return out;
+    });
+  }
+  function fillAlts(list, o, card) {
+    var row = $("altList");
+    row.textContent = "";
+    var names = marked(list.map(function (cand) { return cand.name || cand.slug; }));
+    list.forEach(function (cand, i) {
+      var here = Boolean(card) && cand.slug === card.slug;
+      row.appendChild(h("button", {
+        class: "alt", type: "button", "aria-current": here ? "true" : null,
+        onclick: here ? null : function () { pickWine(cand.slug, o); }
+      }, [
+        framePhoto(cand.photo_url, cand.name || cand.slug, "white"),
+        h("span", { class: "alt__name" }, names[i]),
+        cand.winery ? h("span", { class: "alt__winery", text: cand.winery }) : null,
+        here ? h("span", { class: "alt__now", text: "открыто" }) : null
+      ]));
+    });
+    show(row, list.length > 0);
+    $("notHere").onclick = function () { notHere(o); };
+  }
+
+  // «Моего вина здесь нет»: подборка по прочитанному без того, что человек уже видел и отверг.
+  // Список снимается копией в момент нажатия — у записи истории он свой.
+  function notHere(o) {
+    open({
+      kind: "nf", mode: "manual", read: o.read || {}, readLabel: o.readLabel,
+      exclude: (o.seen || []).slice(0, MAX_EXCLUDE), shot: o.shot
+    });
+  }
+
+  function realGrapes(grapes) {
+    return (grapes || []).filter(function (grape) { return grape && !/сорта винограда/i.test(grape); });
+  }
+
+  // @card-begin — карточка вина. Единственное место страницы со знаком процента: крепость
+  // пишется «16 % об.», как на этикетке. В блоках подбора процентов нет (§8 плана).
+  function fmtNumber(value) { return String(value).replace(".", ","); }
+  function fmtAlcohol(card) {
+    if (typeof card.alcohol !== "number") return null;
+    var top = typeof card.alcohol_max === "number" && card.alcohol_max !== card.alcohol
+      ? "–" + fmtNumber(card.alcohol_max) : "";
+    return fmtNumber(card.alcohol) + top + " % об.";
+  }
+  var SUGAR_WORDS = {
+    brut_nature: "брют натюр", extra_brut: "экстра брют", brut: "брют", suhoe: "сухое",
+    polusuhoe: "полусухое", polusladkoe: "полусладкое", sladkoe: "сладкое"
+  };
+  // «ИИ прочитал на этикетке»: поля after.read против полей карточки каталога. Совпало — ok
+  // (галочка), расходится — miss (жёлтая пилюля), в карточке поля нет — none (пунктир); без
+  // карточки — plain. Подписи — из after.read_label: там те же поля словами, а сорта — именами.
+  function readPills(read, label, card) {
+    var parts = String(label || "").split(" · ").filter(Boolean);
+    var words = { winery: null, sparkling: null, color: null, sugar: null, grapes: null, abv: null };
+    parts.forEach(function (part) {
+      var low = norm(part);
+      if (read.winery && low === norm(read.winery)) words.winery = part;
+      else if (low === "игристое") words.sparkling = part;
+      else if (read.color && low === norm(read.color)) words.color = part;
+      else if (read.sugar && low === lookup(SUGAR_WORDS, read.sugar)) words.sugar = part;
+      else if (/ % об\.$/.test(part)) words.abv = part;
+      else words.grapes = part;
+    });
+    var pills = [];
+    function add(text, state) { if (text) pills.push({ text: text, state: card ? state : "plain" }); }
+    if (read.winery) add(words.winery || read.winery, card && norm(read.winery) === norm(card.winery) ? "ok" : "miss");
+    if (read.sparkling === true) add(words.sparkling || "игристое", card && card.sparkling ? "ok" : "none");
+    if (read.color) add(words.color || norm(read.color), card && read.color === card.color_label ? "ok" : "miss");
+    if (read.sugar) {
+      add(words.sugar || lookup(SUGAR_WORDS, read.sugar) || read.sugar,
+        !card || !card.sugar_class ? "none" : read.sugar === card.sugar_class ? "ok" : "miss");
+    }
+    if (words.grapes) {
+      var own = realGrapes(card && card.grapes).map(norm);
+      var named = words.grapes.split(", ").map(norm);
+      var found = named.every(function (grape) {
+        return own.some(function (mine) { return mine.indexOf(grape) === 0 || grape.indexOf(mine) === 0; });
+      });
+      add(words.grapes, !own.length ? "none" : found ? "ok" : "miss");
+    }
+    if (typeof read.abv === "number") {
+      var least = card && typeof card.alcohol === "number" ? card.alcohol : null;
+      var most = card && typeof card.alcohol_max === "number" ? card.alcohol_max : least;
+      add(words.abv || fmtNumber(read.abv) + " % об.",
+        least === null ? "none" : read.abv >= least - 0.05 && read.abv <= most + 0.05 ? "ok" : "miss");
+    }
+    return pills;
+  }
+  // @card-end
+
+  function drawPills(el, pills) {
+    el.textContent = "";
+    pills.forEach(function (pill) {
+      el.appendChild(h("span", { class: "rp rp--" + pill.state }, [pill.text, pill.state === "ok" ? icon("check") : null]));
+    });
+  }
+  function fillRead(card, o) {
+    var box = $("read");
+    var fromScan = o.read && (o.state === "found" || o.state === "check" || o.state === "picked");
+    var pills = fromScan ? readPills(o.read, o.readLabel, card) : [];
+    if (!pills.length) { hide(box); return; }
+    drawPills($("pills"), pills);
+    var legend = $("readLegend");
+    legend.textContent = "";
+    var has = function (state) { return pills.some(function (pill) { return pill.state === state; }); };
+    legend.appendChild(h("span", {}, [icon("check"), "совпало с карточкой каталога"]));
+    if (has("miss")) legend.appendChild(h("span", {}, [h("i", { class: "lg lg--miss" }), "расходится с карточкой"]));
+    if (has("none")) legend.appendChild(h("span", {}, [h("i", { class: "lg lg--none" }), "в карточке нет"]));
+    show(box);
+  }
+
+  // Фото каталога в шапке; нет его — силуэт и честная подпись вместо «фото каталога».
+  function heroPhoto(url, alt) {
+    var box = $("heroPhoto"), cap = $("heroCap");
+    box.textContent = "";
+    var src = localUrl(url);
+    var none = function (text) { box.textContent = ""; box.appendChild(silhouette()); cap.textContent = text; };
+    cap.textContent = "фото каталога";
+    if (!src) { none("фото в каталоге нет"); return; }
+    var img = h("img", { src: src, alt: alt || "", decoding: "async" });
+    img.addEventListener("error", function () { none("фото не загрузилось"); });
+    box.appendChild(img);
+  }
+
+  // Факты карточки чипами: цвет и сахар с образцом цвета вина, сорт и регион — что есть.
+  function fillFacts(card) {
+    var box = $("wineMeta");
+    box.textContent = "";
+    function add(mark, text) {
+      if (text) box.appendChild(h("span", { class: "fact" }, [mark, text]));
+    }
+    add(h("span", { class: "fact__i fact__i--" + tone(card.color_label), "aria-hidden": "true" }), card.style_label);
+    add(h("span", { class: "fact__i", "aria-hidden": "true" }, [icon("grape")]), realGrapes(card.grapes).join(", "));
+    add(h("span", { class: "fact__i", "aria-hidden": "true" }, [icon("pin")]), card.region);
+  }
+
+  function fillCard(card, o) {
+    show($("exampleNote"), o.state === "example");
+    // Уверенный скан — метка на шапке: вино нашлось в каталоге, а не выбрано из вариантов.
+    show($("heroBadge"), o.state === "found");
+    $("hero").className = "hero hero--" + tone(card.color_label);
+    var shot = ownShot(o);
+    var me = $("heroShot");
+    me.onerror = function () { me.removeAttribute("src"); hide($("heroMe")); hide($("heroSwap")); };
+    if (shot) { me.src = shot; show($("heroMe")); show($("heroSwap")); }
+    else { me.removeAttribute("src"); hide($("heroMe")); hide($("heroSwap")); }
+    heroPhoto(card.photo_url, card.name);
+
+    $("wineName").textContent = card.name || "Без названия";
+    $("wineWinery").textContent = card.winery || "";
+    fillFacts(card);
+    fillRead(card, o);
+
+    var alc = fmtAlcohol(card);
+    $("alcValue").textContent = alc || "";
+    show($("alcKpi"), Boolean(alc));
+    hide($("tempKpi"));
+    show($("kpis"), Boolean(alc));
+
+    var descr = $("descr"), more = $("more"), text = card.description || "";
+    descr.textContent = text;
+    descr.classList.add("clamped");
+    [descr, $("descTitle"), $("descSrc")].forEach(function (el) { show(el, Boolean(text)); });
+    hide(more);
+    if (text) requestAnimationFrame(function () { show(more, descr.scrollHeight > descr.clientHeight + 2); });
+    more.onclick = function () { descr.classList.remove("clamped"); hide(more); };
+    var link = $("portalLink"), url = portalUrl(card.portal_url);
+    if (url) link.href = url; else link.removeAttribute("href");
+    show(link, Boolean(url));
+    show($("descBlock"), Boolean(text));   // пустое описание — блока нет (договор сомелье, §8.3)
+  }
+
+  // ---------------------------------------------------------------- сомелье в карточке
+  // GET /v1/wines/{slug}/sommelier (договор сомелье, §2): заметка-шаблон, профиль, подача,
+  // блюда с чипами правил и входы в лист. Считается на CPU за миллисекунды; скан его не ждёт.
+  var VERDICTS = { yes: "подходит", caveat: "подходит с оговоркой", no: "скорее нет", neutral: "правила молчат" };
+  var SOURCES = { grape: "по сорту", type: "типично для стиля", style: "типично для стиля" };
+  function loadSomm(card) {
+    var mine = token;
+    ["note", "taste", "askBox", "dishBlock"].forEach(function (id) { hide($(id)); });
+    setReco($("dishBlock"), "loading", "");
+    reloads.somm = function () { if (mine === token) loadSomm(card); };
+    getJSON("/v1/wines/" + enc(card.slug) + "/sommelier?order=" + order).then(function (somm) {
+      if (mine !== token) return;
+      fillSomm(somm || {}, card);
+      placeNotice($("result"));
+    }).catch(function () {
+      // Маршрута нет (сервис старше договора) или сбой: карточка остаётся без блоков сомелье.
+      if (mine !== token) return;
+      setReco($("dishBlock"), "empty", "");
+      placeNotice($("result"));
+    });
+  }
+
+  var drawNote = viaSomm("note", function (el, somm) {
+    var note = somm.note || {};
+    el.textContent = "";
+    el.appendChild(h("div", { class: "note__hd" }, [
+      h("span", { class: "dot10", "aria-hidden": "true" }),
+      h("span", { class: "eyebrow", text: "Сомелье · коротко" }),
+      note.basis ? h("span", { class: "small note__basis", text: note.basis }) : null
+    ]));
+    el.appendChild(h("p", { class: "note__text", text: note.text || "" }));
+    el.appendChild(h("p", { class: "small note__label", text: ALGO }));
+    return Boolean(note.text);
+  });
+  var drawRadarUI = viaSomm("radar", function (el, profile) { return drawRadar(el, profile); });
+  var drawScalesUI = viaSomm("scales", function (el, profile) { return drawScales(el, profile); });
+  // Заметке — тот же неразрывный пробел перед тире, что у реплик («Сорт / — Саперави» на
+  // 390 px): рисуется копия ответа, сам ответ (его получает и лист) не меняется. Копия — с фото
+  // каталога, как у входа в лист: ряд «Помягче · Посвежее» под заметкой открывает тот же лист.
+  function noteOf(somm) {
+    if (!somm.note || typeof somm.note.text !== "string") return somm;
+    var copy = {}, note = {};
+    Object.keys(somm).forEach(function (key) { copy[key] = somm[key]; });
+    Object.keys(somm.note).forEach(function (key) { note[key] = somm.note[key]; });
+    note.text = dash(note.text);
+    copy.note = note;
+    return copy;
+  }
+
+  function fillSomm(somm, card) {
+    var profile = Array.isArray(somm.profile) ? somm.profile : [];
+    show($("note"), drawNote($("note"), noteOf(entryData(somm, card))) !== false && Boolean(somm.note && somm.note.text));
+
+    var radar = $("radar"), scales = $("scales");
+    var drawn = drawRadarUI(radar, profile, null) !== false && radar.childNodes.length > 0;
+    show(radar, drawn);
+    // Легенда у шкал листа выключена: одна общая легенда ниже описывает и «розу», и шкалы.
+    var ruled = drawScalesUI(scales, profile, { legend: false }) !== false && scales.childNodes.length > 0;
+    tasteLegend(profile, drawn, ruled);
+    show($("taste"), drawn || ruled);
+
+    var ask = $("askBox");
+    ask.textContent = "";
+    var entered = false;
+    if (SOMM && typeof SOMM.entry === "function") {
+      try {
+        SOMM.entry(ask, entryData(somm, card));
+        entered = ask.childNodes.length > 0;
+      } catch (e) { entered = false; }
+    }
+    show(ask, entered);
+
+    var serve = somm.serve || null;
+    var t = serve && Array.isArray(serve.temperature_c) ? serve.temperature_c : null;
+    if (t && typeof t[0] === "number" && typeof t[1] === "number") {
+      $("tempValue").textContent = (t[0] === t[1] ? String(t[0]) : t[0] + "–" + t[1]) + " °C";
+      $("tempSrc").textContent = serve.by_grape ? "по правилу подачи, по сорту" : "по правилу подачи";
+      show($("tempKpi"));
+      show($("kpis"));
+    }
+
+    var dishes = Array.isArray(somm.dishes) ? somm.dishes : [];
+    drawDishes($("dishes"), dishes);
+    show($("dishBlock"), dishes.length > 0);
+    setReco($("dishBlock"), dishes.length ? "ready" : "empty", somm.notice_149);
+  }
+  // Лист получает ответ GET …/sommelier как есть и фото каталога для шапки листа.
+  function entryData(somm, card) {
+    var data = {};
+    Object.keys(somm).forEach(function (key) { data[key] = somm[key]; });
+    data.photo_url = localUrl(card.photo_url);
+    return data;
+  }
+
+  // @legend-begin — одна легенда «Какое это вино» под шкалами, только для нарисованных меток:
+  // точка «из карточки» (со сплошным отрезком, если он есть на «розе») и полая точка «по сорту»
+  // или «по стилю» (с пунктиром «розы»). Своей легенды у «розы» и у шкал нет — повтора тоже.
+  var LEGEND = [
+    ["catalog", "dot", "solid", "из карточки каталога"],
+    ["grape", "ring", "dash", "по сорту — типично для сорта, не замер этого вина"],
+    ["style", "ring", "dash", "по стилю — типично для стиля, не замер этого вина"]
+  ];
+  function tasteLegend(profile, radarDrawn, scalesDrawn) {
+    var legend = $("tasteLegend"), marks = {};
+    legend.textContent = "";
+    if (radarDrawn) {
+      var known = radarAxes(profile);
+      known.forEach(function (point, k) {
+        marks[point.axis.source] = true;
+        marks[edgeKind(point.axis, (k + 1 < known.length ? known[k + 1] : known[0]).axis)] = true;
+      });
+    }
+    if (scalesDrawn) scaleAxes(profile).forEach(function (axis) { marks[axis.source] = true; });
+    LEGEND.forEach(function (row) {
+      if (!marks[row[0]]) return;
+      legend.appendChild(h("span", {}, [h("i", { class: "lg lg--" + row[1] }),
+        marks[row[2]] ? h("i", { class: "lg lg--" + row[2] }) : null, row[3]]));
+    });
+    show(legend, legend.childNodes.length > 0);
+  }
+
+  // Шкалы профиля (договор §8.1): сладость, крепость, кислотность, танины, тело и пузырьки у
+  // игристого. Точка «из карточки» — сплошная, «по сорту» и «по стилю» — полые; ось без данных
+  // не рисуется.
+  var SCALE_AXES = ["sweetness", "alcohol", "acidity", "tannin", "body"];
+  function scaleAxes(profile) {
+    var byAxis = {};
+    (profile || []).forEach(function (axis) { if (axis && axis.axis) byAxis[axis.axis] = axis; });
+    var keys = SCALE_AXES.slice();
+    if (byAxis.effervescence && byAxis.effervescence.value > 0) keys.push("effervescence");
+    return keys.map(function (key) { return byAxis[key]; }).filter(knownAxis);
+  }
+  // @legend-end
+  function drawScales(el, profile) {
+    el.textContent = "";
+    scaleAxes(profile).forEach(function (axis) {
+      var hollow = axis.source !== "catalog";
+      var dot = h("span", { class: "dot" + (hollow ? " dot--" + axis.source : "") });
+      dot.style.setProperty("--x", String(Math.max(0, Math.min(1, axis.value))));
+      el.appendChild(h("div", { class: "scale" }, [
+        h("div", { class: "scale__hd" }, [
+          h("span", { class: "scale__name", text: axis.label }),
+          h("span", { class: "small", text: AXIS_SOURCES[axis.source] })
+        ]),
+        h("div", { class: "scale__line" }, [
+          h("span", { class: "small", text: axis.left }),
+          h("span", { class: "track" }, [dot]),
+          h("span", { class: "small scale__pole--r", text: axis.right })
+        ])
+      ]));
+    });
+    return el.childNodes.length > 0;
+  }
+
+  // @radar-begin — «роза ветров» профиля (договор сомелье, §8.1), если в листе сомелье её нет.
+  // 8 лучей от 12 часов по часовой стрелке; ось без источника не рисуется вовсе — ни луч, ни
+  // подпись, ни вершина, многоугольник соединяет соседние известные оси. Вершина «из карточки»
+  // — сплошная точка, «по сорту» и «по стилю» (сорта нет в приорах — оценка по винам того же
+  // стиля) — полая, а рёбра к ней — пунктир. Чисел и делений нет.
+  var SVGNS = "http://www.w3.org/2000/svg";
+  var RADAR = { cx: 130, cy: 110, r: 66, floor: 0.14, gap: 14 };
+  var AXIS_SOURCES = { catalog: "из карточки", grape: "по сорту", style: "по стилю" };
+  function knownAxis(axis) {
+    return Boolean(axis && typeof axis.value === "number" && isFinite(axis.value) &&
+      typeof axis.source === "string" && Object.prototype.hasOwnProperty.call(AXIS_SOURCES, axis.source));
+  }
+  // Ребро к вершине-оценке («по сорту» или «по стилю») — пунктир, между фактами — сплошное.
+  function edgeKind(a, b) { return a.source !== "catalog" || b.source !== "catalog" ? "dash" : "solid"; }
+  function svgNode(tag, attrs, text) {
+    var node = document.createElementNS(SVGNS, tag);
+    Object.keys(attrs || {}).forEach(function (key) { node.setAttribute(key, String(attrs[key])); });
+    if (text) node.textContent = text;
+    return node;
+  }
+  function round1(value) { return Math.round(value * 10) / 10; }
+  function radarPoint(i, n, radius) {
+    var angle = (i / n) * 2 * Math.PI;
+    return { x: RADAR.cx + radius * Math.sin(angle), y: RADAR.cy - radius * Math.cos(angle) };
+  }
+  function radarAxes(profile) {
+    var out = [];
+    (profile || []).forEach(function (axis, i) {
+      if (knownAxis(axis)) out.push({ axis: axis, i: i, n: profile.length });
+    });
+    return out;
+  }
+  function radarWords(known) {
+    return "Профиль вкуса: " + known.map(function (point) {
+      var axis = point.axis;
+      var pole = axis.value >= 0.5 ? axis.right : axis.left;
+      return String(axis.label || "").toLowerCase() + " — " + pole + (axis.source !== "catalog" ? " (" + AXIS_SOURCES[axis.source] + ")" : "");
+    }).join(", ");
+  }
+  function drawRadar(el, profile) {
+    el.textContent = "";
+    var known = radarAxes(profile);
+    if (known.length < 3) return false;
+    var svg = svgNode("svg", {
+      viewBox: "0 0 260 220", width: 260, height: 220, class: "radar__svg", role: "img", "aria-label": radarWords(known)
+    });
+    [1 / 3, 2 / 3, 1].forEach(function (k) {
+      svg.appendChild(svgNode("circle", { class: "radar__ring", cx: RADAR.cx, cy: RADAR.cy, r: round1(RADAR.r * k) }));
+    });
+    var tips = known.map(function (point) {
+      var end = radarPoint(point.i, point.n, RADAR.r);
+      svg.appendChild(svgNode("line", { class: "radar__ray", x1: RADAR.cx, y1: RADAR.cy, x2: round1(end.x), y2: round1(end.y) }));
+      var spot = radarPoint(point.i, point.n, RADAR.r + RADAR.gap);
+      var dx = spot.x - RADAR.cx, dy = spot.y - RADAR.cy;
+      svg.appendChild(svgNode("text", {
+        class: "radar__label", x: round1(spot.x), y: round1(spot.y + (dy > 1 ? 10 : dy < -1 ? -2 : 4)),
+        "text-anchor": Math.abs(dx) < 1 ? "middle" : dx > 0 ? "start" : "end"
+      }, point.axis.label));
+      var value = Math.max(0, Math.min(1, point.axis.value));
+      var tip = radarPoint(point.i, point.n, RADAR.r * Math.max(value, RADAR.floor));
+      return { x: round1(tip.x), y: round1(tip.y), source: point.axis.source };
+    });
+    svg.appendChild(svgNode("polygon", {
+      class: "radar__area", points: tips.map(function (tip) { return tip.x + "," + tip.y; }).join(" ")
+    }));
+    tips.forEach(function (tip, k) {
+      var next = k + 1 < tips.length ? tips[k + 1] : tips[0], kind = edgeKind(tip, next);
+      var attrs = { class: "radar__edge", x1: tip.x, y1: tip.y, x2: next.x, y2: next.y };
+      if (kind === "dash") { attrs.class = "radar__edge radar__edge--grape"; attrs["stroke-dasharray"] = "4 3"; }
+      svg.appendChild(svgNode("line", attrs));
+    });
+    tips.forEach(function (tip) {
+      var mod = tip.source !== "catalog" ? " radar__dot--" + tip.source : "";
+      svg.appendChild(svgNode("circle", { class: "radar__dot" + mod, cx: tip.x, cy: tip.y, r: 3 }));
+    });
+    el.appendChild(svg);
+    return true;
+  }
+  // @radar-end
+
+  // @dishes-begin — «К чему подать»: три блюда правил сочетаний с вердиктом и сильнейшими
+  // чипами «+» и «−» (остальные — в листе сомелье); у правила, которое сверялось с осью «по
+  // сорту» или с типичным значением стиля, — мелкая пометка. Чип, уже показанный у блюда выше,
+  // не повторяется: берётся следующее по силе правило этого блюда (у Саперави все три блюда
+  // начинались с «Кислотность освежает жирное»), а нет другого — то же. Источник, общий для всех
+  // чипов блюда, пишется раз — в строке вердикта («подходит · по сорту»), а не у каждого чипа.
+  function strongest(rules, used) {
+    var list = (rules || []).filter(function (rule) { return rule && rule.text; });
+    var pick = list.filter(function (rule) { return !used[rule.text]; })[0] || list[0] || null;
+    if (pick) used[pick.text] = true;
+    return pick;
+  }
+  // Общий источник чипов блюда (все «+» и «−» ответа) или null: считается по самим чипам, так
+  // что источник блюда в ответе странице не нужен; нет источника у чипов — пометок нет вовсе.
+  function dishSource(dish) {
+    var seen = (dish.plus || []).concat(dish.minus || []).filter(function (rule) { return rule && rule.text; })
+      .map(function (rule) { return rule.source; });
+    return seen.length && seen.every(function (s) { return s === seen[0]; }) && lookup(SOURCES, seen[0]) ? seen[0] : null;
+  }
+  function drawDishes(list, dishes) {
+    list.textContent = "";
+    var used = Object.create(null);
+    dishes.forEach(function (dish) {
+      var rules = [], plus = strongest(dish.plus, used), minus = strongest(dish.minus, used), shared = dishSource(dish);
+      if (plus) rules.push(ruleChip(plus, "+", shared));
+      if (minus) rules.push(ruleChip(minus, "−", shared));
+      var verdict = [lookup(VERDICTS, dish.verdict), shared && lookup(SOURCES, shared)].filter(Boolean).join(" · ");
+      list.appendChild(h("li", { class: "dish" }, [
+        h("span", { class: "icircle", "aria-hidden": "true" }, [glyph(lookup(DISH_ICONS, dish.category) || ICONS.dish)]),
+        h("div", {}, [
+          h("span", { class: "dish__name", text: dish.name || "" }),
+          verdict ? h("span", { class: "dish__verdict", text: verdict }) : null,
+          rules.length ? h("div", { class: "rules" }, rules) : null
+        ])
+      ]));
+    });
+  }
+  function ruleChip(rule, sign, shared) {
+    var source = shared ? null : lookup(SOURCES, rule.source);
+    return h("span", { class: "rule " + (sign === "+" ? "rule--plus" : "rule--minus") }, [
+      sign + " " + String(rule.text || ""), source ? h("small", { text: source }) : null
+    ]);
+  }
+  // @dishes-end
+
+  function loadSimilar(slug) {
+    var mine = token;
+    var block = $("similar"), list = $("simList"), note = $("simNote");
+    setReco(block, "loading", "");
+    ghosts(list, 3);
+    hide(note);
+    placeNotice($("result"));
+    reloads.similar = function () { if (mine === token) loadSimilar(slug); };
+    getJSON("/v1/wines/" + enc(slug) + "/similar?limit=3&order=" + order).then(function (body) {
+      if (mine !== token) return;
+      var items = body.items || [];
+      tiles(list, items);
+      honest(note, body.notes, items.length ? "" : "Похожих из других виноделен в каталоге не нашлось");
+      setReco(block, items.length ? "ready" : "empty", body.notice);
+      placeNotice($("result"));
+    }).catch(function () {
+      if (mine !== token) return;
+      list.textContent = "";
+      honest(note, null, "Не получилось загрузить похожие — повторите чуть позже");
+      setReco(block, "empty", "");
+      placeNotice($("result"));
+    });
+  }
+
+  // ---------------------------------------------------------------- «Моего вина здесь нет»
+  // Тело by-label — прочитанное с этикетки (after.read) и exclude: вина, которые человек уже
+  // видел и отверг; сервис убирает их вместе с их группами. Сервис старше договора лишнее
+  // поле пропускает (extra="ignore").
+  function byLabelPayload(view) {
+    var payload = {}, read = view.read || {};
+    Object.keys(read).forEach(function (key) { payload[key] = read[key]; });
+    if (view.exclude && view.exclude.length) payload.exclude = view.exclude.slice(0, MAX_EXCLUDE);
+    return payload;
+  }
+  // Один вердикт сомелье вместо стопки плашек — шаблон без модели; прочитанное — пилюлями ниже.
+  function nfVerdict(view) {
+    var read = Boolean(view.readLabel);
+    if (view.mode === "auto") {
+      return read
+        ? "Похоже, такого вина в каталоге нет. Ниже — что я прочитал на этикетке и вина, близкие по стилю."
+        : "Похоже, такого вина в каталоге нет, а этикетку прочитать почти не удалось. Вот что есть рядом по стилю.";
+    }
+    return read
+      ? "Подберу вина по прочитанному на этикетке — ближе всего вот эти."
+      : "Этикетку прочитать почти не удалось — покажу, что есть рядом по стилю.";
+  }
+
+  // Вин винодельни до 6 (договор «после поиска», §6): видны три, остальные — по кнопке, чтобы
+  // подбор по стилю не уходил на три экрана вниз.
+  var SAME_SHOWN = 3;
+  function sameTiles(items) {
+    var more = $("nfSameMore"), rest = items.length - SAME_SHOWN;
+    tiles($("nfSameList"), items.slice(0, SAME_SHOWN));
+    more.textContent = rest > 0 ? "Ещё " + rest + " " + plural(rest, "вино", "вина", "вин") + " винодельни" : "";
+    more.onclick = function () { tiles($("nfSameList"), items); hide(more); };
+    show(more, rest > 0);
+  }
+
+  function renderNotFound(view) {
+    var mine = token;
+    screen("nf");
+    var shot = ownShot(view);
+    var own = $("nfShot");
+    own.onerror = function () { own.removeAttribute("src"); hide($("nfShotBox")); };
+    if (shot) { own.src = shot; show($("nfShotBox")); } else { own.removeAttribute("src"); hide($("nfShotBox")); }
+    say($("nfSay"), nfVerdict(view));
+    var pills = readPills(view.read || {}, view.readLabel, null);
+    drawPills($("nfPills"), pills);
+    show($("nfRead"), pills.length > 0);
+
+    var maybe = $("maybe"), card = view.card;
+    if (view.mode === "auto" && card && card.slug) {
+      var photo = $("maybePhoto");
+      photo.textContent = "";
+      photo.appendChild(framePhoto(card.photo_url, card.name, tone(card.color_label)));
+      var text = $("maybeText");
+      text.textContent = "";
+      text.appendChild(document.createTextNode("Может, это "));
+      text.appendChild(h("b", { text: card.name || "самое похожее" }));
+      text.appendChild(h("span", { text: card.winery ? " · " + card.winery + "?" : "?" }));
+      $("maybeOpen").onclick = function () { pickWine(card.slug, view); };
+      show(maybe);
+    } else hide(maybe);
+
+    var same = $("nfSame"), sim = $("nfSim");
+    setReco(same, "loading", "");
+    setReco(sim, "loading", "");
+    ghosts($("nfSameList"), 2);
+    hide($("nfSameMore"));
+    ghosts($("nfSimList"), 3);
+    $("nfSameSub").textContent = "";
+    show(same);
+    show(sim);
+    hide($("nfNote"));
+    placeNotice($("nf"));
+    reloads.nf = function () { if (mine === token) renderNotFound(view); };
+
+    getJSON("/v1/similar/by-label?limit=3&order=" + order, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(byLabelPayload(view))
+    }).then(function (body) {
+      if (mine !== token) return;
+      var winery = body.winery || {};
+      // «Может, это …?» уже стоит выше — в винах винодельни оно не повторяется.
+      var maybeSlug = view.mode === "auto" && card ? card.slug : null;
+      var sameItems = (body.same_winery || []).filter(function (item) { return item && item.slug !== maybeSlug; });
+      var simItems = body.similar || [];
+      if (winery.in_catalog && sameItems.length) {
+        var count = typeof winery.count === "number" ? winery.count : sameItems.length;
+        $("nfSameSub").textContent = (winery.name || "") + " · " + count + " " + plural(count, "вино", "вина", "вин") + " в каталоге";
+        sameTiles(sameItems);
+        setReco(same, "ready", body.notice);
+        show(same);
+      } else { setReco(same, "empty", ""); hide(same); hide($("nfSameMore")); }
+      tiles($("nfSimList"), simItems);
+      setReco(sim, simItems.length ? "ready" : "empty", body.notice);
+      show(sim, simItems.length > 0);
+      var fallback = "";
+      if (!winery.in_catalog) fallback = winery.name ? "Винодельни «" + winery.name + "» в каталоге нет" : "Винодельню на этикетке прочитать не удалось";
+      if (!sameItems.length && !simItems.length) fallback = "В каталоге не нашлось ничего близкого — снимите этикетку ещё раз";
+      honest($("nfNote"), body.notes, fallback);
+      placeNotice($("nf"));
+    }).catch(function () {
+      if (mine !== token) return;
+      $("nfSameList").textContent = "";
+      $("nfSimList").textContent = "";
+      hide($("nfSameMore"));
+      setReco(same, "empty", "");
+      setReco(sim, "empty", "");
+      hide(same);
+      hide(sim);
+      honest($("nfNote"), null, "Не получилось загрузить подборку — повторите чуть позже");
+      placeNotice($("nf"));
+    });
+  }
+
+  // ---------------------------------------------------------------- ошибка
+  var FAIL = {
+    decode: ["Не получилось открыть фото", "Похоже, файл не картинка или формат не поддерживается. Снимите бутылку ещё раз."],
+    no_image: ["Не получилось отправить фото", "Фото не дошло до сервиса. Отправьте его ещё раз."],
+    bad_request: ["Не получилось отправить фото", "Фото не дошло до сервиса. Отправьте его ещё раз."],
+    too_large: ["Не получилось отправить фото", "Фото слишком большое. Снимите ещё раз или выберите другое."],
+    not_ready: ["Сервис запускается", "Повторите через минуту."],
+    cv: ["Что-то пошло не так", "Повторите ещё раз."],
+    internal: ["Что-то пошло не так", "Повторите ещё раз."],
+    network: ["Нет связи с сервисом", "Проверьте сеть и повторите ещё раз."],
+    no_card: ["Карточка не нашлась", "Такого вина в каталоге нет. Сфотографируйте бутылку ещё раз."]
+  };
+  // Советы по съёмке — только когда дело может быть в самом фото.
+  var PHOTO_FAILS = ["decode", "cv", "internal", "too_large"];
+  function renderFail(reason) {
+    screen("fail");
+    var text = lookup(FAIL, reason) || FAIL.internal;
+    $("failTitle").textContent = text[0];
+    $("failText").textContent = text[1];
+    show($("tips"), PHOTO_FAILS.indexOf(lookup(FAIL, reason) ? reason : "internal") >= 0);
+  }
+
+  // ---------------------------------------------------------------- главная, 18+ и старт
+  fillIcons(document);
+  say($("homeSay"), "Сфотографируйте бутылку — расскажу, что это за вино, к чему его подать и чем заменить.");
+  EXAMPLES.forEach(function (example) {
+    $("examples").appendChild(h("button", {
+      class: "ex", type: "button", "aria-label": "Пример: " + example.name + ", " + example.winery,
+      onclick: function () { open({ kind: "wine", slug: example.slug, example: true }); }
+    }, [
+      framePhoto("/v1/wines/" + example.slug + "/photo", "", tone(example.color), true),
+      h("span", { class: "ex__name", text: example.name }),
+      h("span", { class: "ex__winery", text: example.winery })
+    ]));
+  });
+
+  var AGE = "svs.age18";
+  // Лист сомелье подключается после листа 18+: до подтверждения возраста он не открывается и
+  // ничего не спрашивает (договор сомелье, §1 «Персона»).
+  function unlock() {
+    hide($("age"));
+    $("app").removeAttribute("inert");
+    $("app").removeAttribute("aria-hidden");
+    document.body.classList.remove("locked");
+    if (SOMM && typeof SOMM.init === "function") {
+      try { SOMM.init(host); } catch (e) { SOMM = null; }
+    }
+    // Ссылка вида ?slug=… открывает карточку сразу: так работают плитки похожих в новой вкладке.
+    var slug = new URLSearchParams(location.search).get("slug");
+    if (slug && SLUG_RE.test(slug)) open({ kind: "wine", slug: slug });
+    else screen("home");
+  }
+  $("ageYes").addEventListener("click", function () { store.set(AGE, "yes"); unlock(); });
+  $("ageNo").addEventListener("click", function () { hide($("ageAsk")); show($("ageDenied")); });
+  if (store.get(AGE) === "yes") unlock();
+  else { document.body.classList.add("locked"); $("ageSheet").focus({ preventScroll: true }); }
+})();
+</script>
+</body>
+</html>

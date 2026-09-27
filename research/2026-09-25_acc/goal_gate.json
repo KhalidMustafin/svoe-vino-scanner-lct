@@ -1,0 +1,254 @@
+{
+ "what": "совместные ворота итоговой сборки против acc-freeze @e266d2a",
+ "catalog_v2": {
+  "flag_off": {
+   "base": {
+    "frames": 353,
+    "wines": 226,
+    "soft": 315,
+    "soft_micro": 89.24,
+    "soft_macro": 88.86,
+    "soft_macro_ci95": [
+     84.7,
+     92.6
+    ],
+    "strict": 307,
+    "strict_micro": 86.97,
+    "strict_macro": 86.8,
+    "slices_soft": {
+     "L": "19/20",
+     "M": "233/268",
+     "R": "63/65"
+    },
+    "slices_strict": {
+     "L": "19/20",
+     "M": "229/268",
+     "R": "59/65"
+    }
+   },
+   "final": {
+    "frames": 353,
+    "wines": 226,
+    "soft": 315,
+    "soft_micro": 89.24,
+    "soft_macro": 88.86,
+    "soft_macro_ci95": [
+     84.7,
+     92.6
+    ],
+    "strict": 307,
+    "strict_micro": 86.97,
+    "strict_macro": 86.8,
+    "slices_soft": {
+     "L": "19/20",
+     "M": "233/268",
+     "R": "63/65"
+    },
+    "slices_strict": {
+     "L": "19/20",
+     "M": "229/268",
+     "R": "59/65"
+    }
+   },
+   "answers_changed": [],
+   "breaks_by_slice": {
+    "R": [],
+    "M": [],
+    "L": []
+   },
+   "fixes_by_slice": {
+    "R": [],
+    "M": [],
+    "L": []
+   },
+   "strict_not_lower": true
+  },
+  "flag_on_reference": {
+   "base": {
+    "frames": 353,
+    "wines": 226,
+    "soft": 319,
+    "soft_micro": 90.37,
+    "soft_macro": 90.19,
+    "soft_macro_ci95": [
+     86.3,
+     93.9
+    ],
+    "strict": 311,
+    "strict_micro": 88.1,
+    "strict_macro": 88.13,
+    "slices_soft": {
+     "L": "19/20",
+     "M": "235/268",
+     "R": "65/65"
+    },
+    "slices_strict": {
+     "L": "19/20",
+     "M": "231/268",
+     "R": "61/65"
+    }
+   },
+   "final": {
+    "frames": 353,
+    "wines": 226,
+    "soft": 319,
+    "soft_micro": 90.37,
+    "soft_macro": 90.19,
+    "soft_macro_ci95": [
+     86.3,
+     93.9
+    ],
+    "strict": 311,
+    "strict_micro": 88.1,
+    "strict_macro": 88.13,
+    "slices_soft": {
+     "L": "19/20",
+     "M": "235/268",
+     "R": "65/65"
+    },
+    "slices_strict": {
+     "L": "19/20",
+     "M": "231/268",
+     "R": "61/65"
+    }
+   },
+   "answers_changed": [],
+   "breaks_by_slice": {
+    "R": [],
+    "M": [],
+    "L": []
+   },
+   "fixes_by_slice": {
+    "R": [],
+    "M": [],
+    "L": []
+   },
+   "strict_not_lower": true
+  },
+  "pass": true
+ },
+ "krasnostop_v1": {
+  "main_frames": 617,
+  "same_packshot_frames": 286,
+  "as_is": {
+   "base": 543,
+   "final": 543,
+   "final_micro": 88.01,
+   "strict_base": 512,
+   "strict_final": 512,
+   "answers_changed": [],
+   "fixes": [],
+   "breaks": [],
+   "net": 0,
+   "same_packshot_changed": []
+  },
+  "no_watermark": {
+   "base": 545,
+   "final": 545,
+   "final_micro": 88.33,
+   "strict_base": 514,
+   "strict_final": 514,
+   "answers_changed": [],
+   "fixes": [],
+   "breaks": [],
+   "net": 0,
+   "same_packshot_changed": []
+  },
+  "flag_on_as_is": {
+   "base": 543,
+   "final": 543,
+   "final_micro": 88.01,
+   "strict_base": 512,
+   "strict_final": 512,
+   "answers_changed": [],
+   "fixes": [],
+   "breaks": [],
+   "net": 0,
+   "same_packshot_changed": []
+  },
+  "flag_on_no_watermark": {
+   "base": 545,
+   "final": 545,
+   "final_micro": 88.33,
+   "strict_base": 514,
+   "strict_final": 514,
+   "answers_changed": [],
+   "fixes": [],
+   "breaks": [],
+   "net": 0,
+   "same_packshot_changed": []
+  },
+  "K0225_correct": {
+   "base": true,
+   "final": true
+  },
+  "pass": true
+ },
+ "e3_code_gate": {
+  "base_v2.json": {
+   "gate_failures": {},
+   "frames": 353,
+   "failed": [],
+   "reads": {
+    "off_hits": 353,
+    "off_misses": 0,
+    "on_hits": 353,
+    "on_misses": 0
+   }
+  },
+  "final_v2.json": {
+   "gate_failures": {},
+   "frames": 353,
+   "failed": [],
+   "reads": {
+    "off_hits": 353,
+    "off_misses": 0,
+    "on_hits": 353,
+    "on_misses": 0
+   }
+  },
+  "base_kr.json": {
+   "gate_failures": {},
+   "frames": 903,
+   "failed": [],
+   "reads": {
+    "off_hits": 903,
+    "off_misses": 0,
+    "on_hits": 903,
+    "on_misses": 0
+   }
+  },
+  "final_kr.json": {
+   "gate_failures": {},
+   "frames": 903,
+   "failed": [],
+   "reads": {
+    "off_hits": 903,
+    "off_misses": 0,
+    "on_hits": 903,
+    "on_misses": 0
+   }
+  }
+ },
+ "files_sha1": {
+  "visual-s2so400m.npz": "ccd3a01f16379a3f0a8a1e7e8dc0623c7622bda5",
+  "gt_tokens.jsonl": "899d5db3747fd315b7c8bfedf121f6ae79799061",
+  "lexicon.json": "c2c7befd13b3f999b76c3469df31cc6a0732da5c",
+  "visual-s2so400m-live71.npz": "d0a53644978fca385d4db88cc35677ab261207e0",
+  "gt_tokens-live71.jsonl": "003db090393691e0e7c50c6e810ed1764f70443d",
+  "lexicon-live71.json": "41bda0093b9227675c139bd0db29cd7308432374"
+ },
+ "provenance_flag_on": {
+  "gt_tokens_sha1": "003db090393691e0e7c50c6e810ed1764f70443d",
+  "model_gt_tokens_sha1": "bf6a8823a45004b1e13e586e5a92e05b8beb07b0",
+  "lexicon_source_sha1": "003db090393691e0e7c50c6e810ed1764f70443d",
+  "derivation": "gt_fixes@2d7050bf+live71@312a0bc5",
+  "vlm_reader": "vlm@qwen3.5:4b|f3a017317f04",
+  "vlm_reader_trained": [
+   "vlm@qwen3.5:4b|f3a017317f04"
+  ],
+  "mismatch": [],
+  "consistent": true
+ },
+ "pass": true
+}

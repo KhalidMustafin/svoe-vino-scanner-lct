@@ -1,0 +1,85 @@
+{
+  "slug": "massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16",
+  "food": "fish",
+  "want": "fresher",
+  "order": "reco",
+  "notice": "Применяются рекомендательные технологии",
+  "pool": "near",
+  "items": [
+    {
+      "slug": "alma-valley-pino-gri-beloe-polusuhoe-15",
+      "name": "Пино Гри",
+      "winery": "Alma Valley",
+      "region": "Крым",
+      "style_label": "Белое полусухое",
+      "sparkling": false,
+      "grapes": [
+        "Пино Гри"
+      ],
+      "photo_url": "/v1/wines/alma-valley-pino-gri-beloe-polusuhoe-15/photo",
+      "portal_url": "https://vino-svoe.ru/wines/alma-valley-pino-gri-beloe-polusuhoe-15",
+      "reasons": [
+        "К рыбе и морепродуктам — по правилам сочетаний",
+        "Посвежее: полусухое, а не сладкое",
+        "Тоже Крым",
+        "Крепость 15° против 16°"
+      ],
+      "dishes": [
+        "Малосольная сёмга",
+        "Холодец",
+        "Солёная сельдь"
+      ],
+      "want_source": "catalog"
+    },
+    {
+      "slug": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+      "name": "Gewurztraminer de Gai-Kodzor",
+      "winery": "Виноградники Гай-Кодзора",
+      "region": "Кубань",
+      "style_label": "Белое полусухое",
+      "sparkling": false,
+      "grapes": [
+        "Гевюрцтраминер"
+      ],
+      "photo_url": "/v1/wines/vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135/photo",
+      "portal_url": "https://vino-svoe.ru/wines/vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+      "reasons": [
+        "К рыбе и морепродуктам — по правилам сочетаний",
+        "Посвежее: полусухое, а не сладкое",
+        "Кубань, а не Крым",
+        "Крепость 13,5° против 16°"
+      ],
+      "dishes": [
+        "Пастрома",
+        "Солёные грузди",
+        "Фаршированный перец"
+      ],
+      "want_source": "catalog"
+    },
+    {
+      "slug": "novyj-svet-polusuhoe-kollekczionnoe",
+      "name": "Новый Свет полусухое коллекционное",
+      "winery": "Новый Свет. Дом шампанских вин",
+      "region": "Крым",
+      "style_label": "Белое полусухое",
+      "sparkling": false,
+      "grapes": [
+        "Шардоне"
+      ],
+      "photo_url": "/v1/wines/novyj-svet-polusuhoe-kollekczionnoe/photo",
+      "portal_url": "https://vino-svoe.ru/wines/novyj-svet-polusuhoe-kollekczionnoe",
+      "reasons": [
+        "К рыбе и морепродуктам — по правилам сочетаний",
+        "Посвежее: полусухое, а не сладкое",
+        "Тоже Крым"
+      ],
+      "dishes": [
+        "Борщ с пампушками",
+        "Малосольная сёмга",
+        "Солёные грузди"
+      ],
+      "want_source": "catalog"
+    }
+  ],
+  "notes": []
+}

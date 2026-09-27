@@ -1,0 +1,135 @@
+{
+  "ask_dish_check_live.ndjson": {
+    "method": "POST",
+    "path": "/v1/sommelier/ask",
+    "query": {
+      "order": "reco"
+    },
+    "body": {
+      "slug": "fanagoriya-cru-lermont-saperavi-saperavi-krasnoe-suhoe-135",
+      "question": "а к борщу подойдёт?"
+    },
+    "env": {
+      "SVS_SOMM_LIVE": "1"
+    },
+    "gate": "free"
+  },
+  "ask_dish_check_guard.ndjson": {
+    "method": "POST",
+    "path": "/v1/sommelier/ask",
+    "query": {
+      "order": "reco"
+    },
+    "body": {
+      "slug": "fanagoriya-cru-lermont-saperavi-saperavi-krasnoe-suhoe-135",
+      "chip": "dish_check",
+      "args": {
+        "dish": "borsch"
+      }
+    },
+    "env": {
+      "SVS_SOMM_LIVE": "1"
+    },
+    "gate": "free"
+  },
+  "ask_what_to_eat_busy.ndjson": {
+    "method": "POST",
+    "path": "/v1/sommelier/ask",
+    "query": {
+      "order": "reco"
+    },
+    "body": {
+      "slug": "fanagoriya-cru-lermont-saperavi-saperavi-krasnoe-suhoe-135",
+      "chip": "what_to_eat"
+    },
+    "env": {
+      "SVS_SOMM_LIVE": "1"
+    },
+    "gate": "busy"
+  },
+  "ask_refusal.ndjson": {
+    "method": "POST",
+    "path": "/v1/sommelier/ask",
+    "query": {
+      "order": "reco"
+    },
+    "body": {
+      "slug": "fanagoriya-cru-lermont-saperavi-saperavi-krasnoe-suhoe-135",
+      "question": "где купить подешевле?"
+    },
+    "env": {},
+    "gate": "free"
+  },
+  "ask_softer_plain.ndjson": {
+    "method": "POST",
+    "path": "/v1/sommelier/ask",
+    "query": {
+      "order": "plain"
+    },
+    "body": {
+      "slug": "fanagoriya-cru-lermont-saperavi-saperavi-krasnoe-suhoe-135",
+      "chip": "softer"
+    },
+    "env": {},
+    "gate": "free"
+  },
+  "ask_guided_step.ndjson": {
+    "method": "POST",
+    "path": "/v1/sommelier/ask",
+    "query": {
+      "order": "reco"
+    },
+    "body": {
+      "slug": "fanagoriya-cru-lermont-saperavi-saperavi-krasnoe-suhoe-135",
+      "chip": "guided"
+    },
+    "env": {},
+    "gate": "free"
+  },
+  "ask_error.ndjson": {
+    "method": "POST",
+    "path": "/v1/sommelier/ask",
+    "query": {
+      "order": "reco"
+    },
+    "body": {
+      "slug": "fanagoriya-cru-lermont-saperavi-saperavi-krasnoe-suhoe-135",
+      "chip": "what_to_eat"
+    },
+    "env": {},
+    "gate": "free",
+    "fault": "исключение сборки ответа"
+  },
+  "sommelier_red.json": {
+    "method": "GET",
+    "path": "/v1/wines/fanagoriya-cru-lermont-saperavi-saperavi-krasnoe-suhoe-135/sommelier",
+    "query": {
+      "order": "reco"
+    }
+  },
+  "sommelier_sweet.json": {
+    "method": "GET",
+    "path": "/v1/wines/massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16/sommelier",
+    "query": {
+      "order": "reco"
+    }
+  },
+  "sommelier_sparkling.json": {
+    "method": "GET",
+    "path": "/v1/wines/fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12/sommelier",
+    "query": {
+      "order": "reco"
+    }
+  },
+  "sommelier_nosugar.json": {
+    "method": "GET",
+    "path": "/v1/wines/cru-lermont-risling/sommelier",
+    "query": {
+      "order": "reco"
+    }
+  },
+  "wine_card_noportal.json": {
+    "method": "GET",
+    "path": "/v1/wines/fanagoriya-cru-lermont-saperavi-saperavi-krasnoe-suhoe-135"
+  }
+}

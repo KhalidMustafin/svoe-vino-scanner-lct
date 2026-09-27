@@ -1,0 +1,112 @@
+�������� �������� ��� �������� �������� �� ��, �� ������� ������ resolve: {"gt_tokens_sha1": "06a294ff0e28b993f5ed4bad15ca8123f4467ef8", "model_gt_tokens_sha1": "bf6a8823a45004b1e13e586e5a92e05b8beb07b0", "lexicon_source_sha1": "06a294ff0e28b993f5ed4bad15ca8123f4467ef8", "vlm_reader": "vlm@qwen3.5:4b|f3a017317f04", "vlm_reader_trained": ["vlm@qwen3.5:4b|f3a017317f04"], "consistent": false} � ����� ������ � ���� ������ �� ���������
+сервисы: 8.2 с; off visual-s2so400m.npz (6312 строк), on visual-s2so400m-live71.npz (6525 строк, базовых 6312)
+50/903 за 14 с; сбоев 0; ворота {}
+100/903 за 17 с; сбоев 0; ворота {}
+150/903 за 21 с; сбоев 0; ворота {}
+200/903 за 26 с; сбоев 0; ворота {}
+250/903 за 30 с; сбоев 0; ворота {}
+300/903 за 34 с; сбоев 0; ворота {}
+350/903 за 38 с; сбоев 0; ворота {}
+400/903 за 42 с; сбоев 0; ворота {}
+450/903 за 45 с; сбоев 0; ворота {}
+500/903 за 49 с; сбоев 0; ворота {}
+550/903 за 53 с; сбоев 0; ворота {}
+600/903 за 57 с; сбоев 0; ворота {}
+650/903 за 60 с; сбоев 0; ворота {}
+700/903 за 64 с; сбоев 0; ворота {}
+750/903 за 68 с; сбоев 0; ворота {}
+800/903 за 73 с; сбоев 0; ворота {}
+850/903 за 77 с; сбоев 0; ворота {}
+900/903 за 81 с; сбоев 0; ворота {}
+{
+ "set": "krasnostop_v1",
+ "frames": 903,
+ "replayed": 903,
+ "failed": [],
+ "reads": {
+  "off_hits": 903,
+  "off_misses": 0,
+  "on_hits": 903,
+  "on_misses": 0
+ },
+ "gate": {},
+ "gate_frames": 903,
+ "csv_score_delta_max": 0.0,
+ "files": {
+  "off": {
+   "index_path": "<root>\\svoe-vino-scanner\\data\\index\\visual-s2so400m.npz",
+   "attrs_path": "<root>\\svoe-vino-scanner\\data\\gt\\gt_tokens.jsonl",
+   "lexicon_path": "<root>\\svoe-vino-scanner\\data\\index\\lexicon.json"
+  },
+  "on": {
+   "index_path": "<root>\\svoe-vino-scanner\\data\\index\\visual-s2so400m-live71.npz",
+   "attrs_path": "<root>\\svoe-vino-scanner\\data\\gt\\gt_tokens-live71.jsonl",
+   "lexicon_path": "<root>\\svoe-vino-scanner\\data\\index\\lexicon-live71.json"
+  },
+  "sha1": {
+   "visual-s2so400m.npz": "ccd3a01f16379a3f0a8a1e7e8dc0623c7622bda5",
+   "gt_tokens.jsonl": "bf6a8823a45004b1e13e586e5a92e05b8beb07b0",
+   "lexicon.json": "82bc2234b9953884f86cb77bf23193678f3bed72",
+   "visual-s2so400m-live71.npz": "d0a53644978fca385d4db88cc35677ab261207e0",
+   "gt_tokens-live71.jsonl": "06a294ff0e28b993f5ed4bad15ca8123f4467ef8",
+   "lexicon-live71.json": "3f2c9a8905fd40b8f3363131ee414b0d35eca05b"
+  }
+ },
+ "provenance_on": {
+  "gt_tokens_sha1": "06a294ff0e28b993f5ed4bad15ca8123f4467ef8",
+  "model_gt_tokens_sha1": "bf6a8823a45004b1e13e586e5a92e05b8beb07b0",
+  "lexicon_source_sha1": "06a294ff0e28b993f5ed4bad15ca8123f4467ef8",
+  "vlm_reader": "vlm@qwen3.5:4b|f3a017317f04",
+  "vlm_reader_trained": [
+   "vlm@qwen3.5:4b|f3a017317f04"
+  ],
+  "consistent": false
+ },
+ "live_slugs_count": 71,
+ "wall_s": 81.3,
+ "sanity": {
+  "h5_same_as_dump": 902,
+  "h5_differs": [
+   "K0203-orig-0"
+  ],
+  "fields_same_as_dump": 903,
+  "fields_differ": [],
+  "fields_same_off_on": 875
+ },
+ "score": {
+  "main_frames": 617,
+  "as_is": {
+   "changed": [
+    "K0629-orig-0"
+   ],
+   "changed_other_wine": [
+    "K0629-orig-0"
+   ],
+   "to_live_card": [
+    "K0629-orig-0"
+   ],
+   "fixes": [],
+   "breaks": [],
+   "micro_off": 87.84,
+   "micro_on": 87.84
+  },
+  "no_wm": {
+   "changed": [
+    "K0629-orig-0"
+   ],
+   "changed_other_wine": [
+    "K0629-orig-0"
+   ],
+   "to_live_card": [
+    "K0629-orig-0"
+   ],
+   "fixes": [],
+   "breaks": [],
+   "micro_off": 88.17,
+   "micro_on": 88.17
+  },
+  "decision_count": 1,
+  "decision": "flag_off_default",
+  "same_packshot_changed_other_wine": []
+ }
+}

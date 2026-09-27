@@ -1,0 +1,247 @@
+{
+  "slug": "massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16",
+  "confidence": {
+    "top1": 0.9712,
+    "top5": 0.9966
+  },
+  "margin": 0.9581,
+  "top5": [
+    {
+      "slug": "massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16",
+      "score": 0.9712
+    },
+    {
+      "slug": "massandra-muskatel-rozovyy-belye-sorta-vinograda-rozovoe-sladkoe-16",
+      "score": 0.0131
+    },
+    {
+      "slug": "massandra-muskatel-chernyy-krasnye-sorta-vinograda-krasnoe-sladkoe-16",
+      "score": 0.0064
+    },
+    {
+      "slug": "massandra-muskat-belyy-yuzhnoberezhnyy-beloe-sladkoe-16",
+      "score": 0.0041
+    },
+    {
+      "slug": "massandra-muskat-belyy-krasnogo-kamnya-beloe-sladkoe-13",
+      "score": 0.0018
+    }
+  ],
+  "outcome": "matched",
+  "degraded": [],
+  "timings_ms": {
+    "decode": 41.3,
+    "views": 6.2,
+    "gpu_wait": 0.0,
+    "cv": 176.9,
+    "vlm": 1421.0,
+    "resolve": 38.4,
+    "total": 1690.2
+  },
+  "error": null,
+  "evidence": {
+    "image": {
+      "format": "jpeg",
+      "width": 3024,
+      "height": 4032,
+      "bytes": 2811034
+    },
+    "cv": {
+      "model": "google/siglip2-so400m-patch14-384",
+      "margin": 0.021,
+      "top5": [
+        {
+          "slug": "massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16",
+          "score": 0.93,
+          "view": "label",
+          "rank": 1
+        },
+        {
+          "slug": "massandra-muskatel-rozovyy-belye-sorta-vinograda-rozovoe-sladkoe-16",
+          "score": 0.91,
+          "view": "label",
+          "rank": 2
+        },
+        {
+          "slug": "massandra-muskatel-chernyy-krasnye-sorta-vinograda-krasnoe-sladkoe-16",
+          "score": 0.89,
+          "view": "label",
+          "rank": 3
+        },
+        {
+          "slug": "massandra-muskat-belyy-yuzhnoberezhnyy-beloe-sladkoe-16",
+          "score": 0.87,
+          "view": "label",
+          "rank": 4
+        },
+        {
+          "slug": "massandra-muskat-belyy-krasnogo-kamnya-beloe-sladkoe-13",
+          "score": 0.85,
+          "view": "label",
+          "rank": 5
+        }
+      ],
+      "timings_ms": {
+        "embed": 171.2,
+        "match": 3.4,
+        "total": 174.6
+      }
+    },
+    "vlm": {
+      "model": "qwen3.5:4b",
+      "status": "ok",
+      "budget_ms": 6500,
+      "elapsed_ms": 1421.0,
+      "lines": [],
+      "fields": {
+        "winery": [
+          "Массандра"
+        ],
+        "cuvee": [
+          "мускатель"
+        ],
+        "grapes": [],
+        "sugar": [
+          "sladkoe"
+        ],
+        "vintage": null,
+        "serial": [],
+        "abv": 16.0,
+        "color": "Белое",
+        "unmatched": []
+      },
+      "timings_ms": {}
+    },
+    "resolve": {
+      "model": "resolve-v2prod-iter20",
+      "reader": "vlm",
+      "p_top1": 0.9712,
+      "scores_top5": [],
+      "cv_top1": "massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16",
+      "changed_cv_top1": false,
+      "text_read": true,
+      "ambiguous_rerank": false,
+      "changed_by_rerank": false
+    },
+    "abstain": {
+      "fired": false
+    }
+  },
+  "card": {
+    "slug": "massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16",
+    "name": "Мускатель белый",
+    "winery": "Массандра",
+    "region": "Крым",
+    "grapes": [
+      "Белые сорта винограда"
+    ],
+    "category": "Белое",
+    "color": "Янтарно-золотистый, прозрачный",
+    "sugar": "сладкое",
+    "sugar_class": "sladkoe",
+    "photo_name": "massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16.webp",
+    "color_label": "Белое",
+    "sugar_label": "сладкое",
+    "sparkling": false,
+    "style_label": "Белое сладкое",
+    "description": "Текст-заглушка вместо описания выгрузки организатора: выгрузка в git не кладётся.",
+    "description_src": "catalog",
+    "photo_url": "/v1/wines/massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16/photo",
+    "portal_url": "https://vino-svoe.ru/wines/massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16",
+    "alcohol": 16.0,
+    "alcohol_max": null,
+    "alcohol_src": "catalog"
+  },
+  "candidates": [
+    {
+      "slug": "massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16",
+      "name": "Мускатель белый",
+      "winery": "Массандра",
+      "photo_url": "/v1/wines/massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16/photo"
+    },
+    {
+      "slug": "massandra-muskatel-rozovyy-belye-sorta-vinograda-rozovoe-sladkoe-16",
+      "name": "Мускатель розовый",
+      "winery": "Массандра",
+      "photo_url": "/v1/wines/massandra-muskatel-rozovyy-belye-sorta-vinograda-rozovoe-sladkoe-16/photo"
+    },
+    {
+      "slug": "massandra-muskatel-chernyy-krasnye-sorta-vinograda-krasnoe-sladkoe-16",
+      "name": "Мускатель черный",
+      "winery": "Массандра",
+      "photo_url": "/v1/wines/massandra-muskatel-chernyy-krasnye-sorta-vinograda-krasnoe-sladkoe-16/photo"
+    },
+    {
+      "slug": "massandra-muskat-belyy-yuzhnoberezhnyy-beloe-sladkoe-16",
+      "name": "Мускат Белый Южнобережный",
+      "winery": "Массандра",
+      "photo_url": "/v1/wines/massandra-muskat-belyy-yuzhnoberezhnyy-beloe-sladkoe-16/photo"
+    },
+    {
+      "slug": "massandra-muskat-belyy-krasnogo-kamnya-beloe-sladkoe-13",
+      "name": "Мускат белый красного камня",
+      "winery": "Массандра",
+      "photo_url": "/v1/wines/massandra-muskat-belyy-krasnogo-kamnya-beloe-sladkoe-13/photo"
+    }
+  ],
+  "after": {
+    "state": "found",
+    "reasons": [],
+    "read": {
+      "winery": "Массандра",
+      "color": "Белое",
+      "sugar": "sladkoe",
+      "grapes": [],
+      "abv": 16.0,
+      "sparkling": null
+    },
+    "read_label": "Массандра · белое · сладкое · 16 % об.",
+    "winery_in_catalog": true,
+    "winery_slugs": [
+      "caperavi-avtorskoe-vino",
+      "cary-pandas-avtorskoe-vino",
+      "cira-avtorskoe-vino",
+      "massandra-premium-sangiovese-sandzhoveze-krasnoe-suhoe-13",
+      "massandra-avtorskoe-murvedr-krasnoe-suhoe-14",
+      "aligote-avtorskoe",
+      "massandra-bastardo-bastardo-magarachskiy-krasnoe-sladkoe-16",
+      "beloe-polusladkoe",
+      "massandra-vino-avtorskoe-pino-gri-beloe-suhoe-12",
+      "kaberne-sovinon",
+      "kaberne-avtorskoe-vino",
+      "massandra-kagor-gurzuf-saperavi-krasnoe-sladkoe-16",
+      "massandra-kagor-yuzhnoberezhnyy-saperavi-krasnoe-sladkoe-16",
+      "kokur-avtorskoe",
+      "massandra-kokur-desertnyy-surozh-beloe-sladkoe-16",
+      "kokur-premium",
+      "kokur-suhoe",
+      "massandra-lakrima-kristi-aleatiko-krasnoe-sladkoe-16",
+      "madera-krymskaya",
+      "massandra-kokur",
+      "massandra-muskat",
+      "massandra-rozovoe-suhoe",
+      "massandra-heres",
+      "massandra-massandra-heres-oreadna-aligote-beloe-suhoe-16",
+      "massandra-muskat-belyy-krasnogo-kamnya-beloe-sladkoe-13",
+      "massandra-muskat-belyy-pozdnego-sbora-beloe-sladkoe-10",
+      "massandra-muskat-belyy-yuzhnoberezhnyy-beloe-sladkoe-16",
+      "muskat-pozdnego-sbora-rozovyj",
+      "massandra-muskat-rozovyy-pozdnego-sbora-rozovoe-sladkoe-10",
+      "muskat-avtorskoe-vino",
+      "massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16",
+      "massandra-muskatel-rozovyy-belye-sorta-vinograda-rozovoe-sladkoe-16",
+      "massandra-muskatel-chernyy-krasnye-sorta-vinograda-krasnoe-sladkoe-16",
+      "massandra-pino-gri-beloe-sladkoe-16",
+      "pino-gri-avtorskoe",
+      "massandra-portveyn-belyy-alushta-belye-sorta-vinograda-beloe-sladkoe-17",
+      "massandra-portveyn-belyy-gurzuf-kokur-belyy-beloe-sladkoe-135",
+      "massandra-portveyn-belyy-krymskiy-kokur-beloe-sladkoe-18",
+      "massandra-portveyn-krasnyy-alushta-krasnye-sorta-vinograda-krasnoe-sladkoe-17",
+      "massandra-portveyn-krasnyy-livadiya-kaberne-sovinon-krasnoe-sladkoe-185",
+      "portvejn-surozh",
+      "roze-avtorskoe-vino"
+    ],
+    "suggest_not_found": false,
+    "question": null
+  }
+}

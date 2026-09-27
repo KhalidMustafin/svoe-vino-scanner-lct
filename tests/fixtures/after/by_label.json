@@ -1,0 +1,198 @@
+{
+  "read": {
+    "winery": "Фанагория",
+    "color": "Оранжевое",
+    "sugar": "brut",
+    "grapes": [],
+    "abv": 12.0,
+    "sparkling": true
+  },
+  "winery": {
+    "name": "Фанагория",
+    "in_catalog": true,
+    "count": 96
+  },
+  "order": "reco",
+  "notice": "Применяются рекомендательные технологии",
+  "same_winery": [
+    {
+      "slug": "fanagoriya-5-elements-bryut-beloe-pino-gri-igristoe-bryut-beloe-125",
+      "name": "5 elements Брют белое",
+      "winery": "Фанагория",
+      "region": "Кубань",
+      "style_label": "Белое брют",
+      "sparkling": true,
+      "grapes": [
+        "Пино Гри",
+        "Рислинг",
+        "Шардоне"
+      ],
+      "photo_url": "/v1/wines/fanagoriya-5-elements-bryut-beloe-pino-gri-igristoe-bryut-beloe-125/photo",
+      "portal_url": "https://vino-svoe.ru/wines/fanagoriya-5-elements-bryut-beloe-pino-gri-igristoe-bryut-beloe-125",
+      "reasons": [
+        "Тоже игристое брют",
+        "Белое, а не оранжевое"
+      ]
+    },
+    {
+      "slug": "fanagoriya-5-elements-bryut-rozovoe-saperavi-igristoe-bryut-rozovoe-125",
+      "name": "5 elements Брют розовое",
+      "winery": "Фанагория",
+      "region": "Кубань",
+      "style_label": "Розовое брют",
+      "sparkling": true,
+      "grapes": [
+        "Каберне Совиньон",
+        "Мерло",
+        "Саперави"
+      ],
+      "photo_url": "/v1/wines/fanagoriya-5-elements-bryut-rozovoe-saperavi-igristoe-bryut-rozovoe-125/photo",
+      "portal_url": "https://vino-svoe.ru/wines/fanagoriya-5-elements-bryut-rozovoe-saperavi-igristoe-bryut-rozovoe-125",
+      "reasons": [
+        "Тоже игристое брют",
+        "Розовое, а не оранжевое"
+      ]
+    },
+    {
+      "slug": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+      "name": "Alveus Ultra Cuvee Brut",
+      "winery": "Фанагория",
+      "region": "Кубань",
+      "style_label": "Белое брют",
+      "sparkling": true,
+      "grapes": [
+        "Рислинг",
+        "Шардоне"
+      ],
+      "photo_url": "/v1/wines/fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12/photo",
+      "portal_url": "https://vino-svoe.ru/wines/fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+      "reasons": [
+        "Тоже игристое брют",
+        "Белое, а не оранжевое"
+      ]
+    },
+    {
+      "slug": "fanagoriya-alveus-ultra-cuvee-bryut-rozovoe-merlo-igristoe-bryut-rozovoe-12",
+      "name": "Alveus Ultra Cuvee. Брют розовое",
+      "winery": "Фанагория",
+      "region": "Кубань",
+      "style_label": "Розовое брют",
+      "sparkling": true,
+      "grapes": [
+        "Мерло",
+        "Пино Нуар"
+      ],
+      "photo_url": "/v1/wines/fanagoriya-alveus-ultra-cuvee-bryut-rozovoe-merlo-igristoe-bryut-rozovoe-12/photo",
+      "portal_url": "https://vino-svoe.ru/wines/fanagoriya-alveus-ultra-cuvee-bryut-rozovoe-merlo-igristoe-bryut-rozovoe-12",
+      "reasons": [
+        "Тоже игристое брют",
+        "Розовое, а не оранжевое"
+      ]
+    },
+    {
+      "slug": "fanagoriya-blanc-de-blancs-shardone-beloe-bryut-12",
+      "name": "Blanc de Blancs",
+      "winery": "Фанагория",
+      "region": "Кубань",
+      "style_label": "Белое брют",
+      "sparkling": true,
+      "grapes": [
+        "Шардоне"
+      ],
+      "photo_url": "/v1/wines/fanagoriya-blanc-de-blancs-shardone-beloe-bryut-12/photo",
+      "portal_url": "https://vino-svoe.ru/wines/fanagoriya-blanc-de-blancs-shardone-beloe-bryut-12",
+      "reasons": [
+        "Тоже игристое брют",
+        "Белое, а не оранжевое"
+      ]
+    },
+    {
+      "slug": "fanagoriya-brule-cuve-brut-rozovoe-merlo-igristoe-bryut-rozovoe-12",
+      "name": "Brule Cuvée Brut Розовое",
+      "winery": "Фанагория",
+      "region": "Кубань",
+      "style_label": "Розовое брют",
+      "sparkling": true,
+      "grapes": [
+        "Мерло",
+        "Пино Блан",
+        "Пино Нуар"
+      ],
+      "photo_url": "/v1/wines/fanagoriya-brule-cuve-brut-rozovoe-merlo-igristoe-bryut-rozovoe-12/photo",
+      "portal_url": "https://vino-svoe.ru/wines/fanagoriya-brule-cuve-brut-rozovoe-merlo-igristoe-bryut-rozovoe-12",
+      "reasons": [
+        "Тоже игристое брют",
+        "Розовое, а не оранжевое"
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "slug": "abrau-dyurso-abrau-durso-brut-rose-reserve-pino-nuar-beloe-bryut-12",
+      "name": "Abrau-Durso Brut Rose Reserve",
+      "winery": "Абрау-Дюрсо",
+      "region": "Кубань",
+      "style_label": "Белое брют",
+      "sparkling": true,
+      "grapes": [
+        "Каберне Совиньон",
+        "Каберне Фран",
+        "Мерло",
+        "Пино Нуар",
+        "Пино Фран"
+      ],
+      "photo_url": "/v1/wines/abrau-dyurso-abrau-durso-brut-rose-reserve-pino-nuar-beloe-bryut-12/photo",
+      "portal_url": "https://vino-svoe.ru/wines/abrau-dyurso-abrau-durso-brut-rose-reserve-pino-nuar-beloe-bryut-12",
+      "reasons": [
+        "Тоже игристое брют",
+        "Белое, а не оранжевое",
+        "Тоже Кубань",
+        "Крепость та же — 12°"
+      ]
+    },
+    {
+      "slug": "golubitskoe-estate-tte-de-cheval-blanc-de-blancs-shardone-beloe-bryut-12",
+      "name": "Tête de Cheval Blanc de Blancs",
+      "winery": "Golubitskoe Estate",
+      "region": "Кубань",
+      "style_label": "Белое брют",
+      "sparkling": true,
+      "grapes": [
+        "Шардоне"
+      ],
+      "photo_url": "/v1/wines/golubitskoe-estate-tte-de-cheval-blanc-de-blancs-shardone-beloe-bryut-12/photo",
+      "portal_url": "https://vino-svoe.ru/wines/golubitskoe-estate-tte-de-cheval-blanc-de-blancs-shardone-beloe-bryut-12",
+      "reasons": [
+        "Тоже игристое брют",
+        "Белое, а не оранжевое",
+        "Тоже Кубань",
+        "Крепость та же — 12°"
+      ]
+    },
+    {
+      "slug": "gunko-winery-blanc-de-blancs-shardone-beloe-bryut-12",
+      "name": "Blanc de Blancs",
+      "winery": "Gunko Winery",
+      "region": "Кубань",
+      "style_label": "Белое брют",
+      "sparkling": true,
+      "grapes": [
+        "Шардоне"
+      ],
+      "photo_url": "/v1/wines/gunko-winery-blanc-de-blancs-shardone-beloe-bryut-12/photo",
+      "portal_url": "https://vino-svoe.ru/wines/gunko-winery-blanc-de-blancs-shardone-beloe-bryut-12",
+      "reasons": [
+        "Тоже игристое брют",
+        "Белое, а не оранжевое",
+        "Тоже Кубань",
+        "Крепость та же — 12°"
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "code": "relaxed_color",
+      "text": "Оранжевых игристых в каталоге нет — показываем игристые брют других цветов"
+    }
+  ]
+}

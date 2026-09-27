@@ -1,0 +1,13 @@
+9bf10c8 Критерий 2 PREREG_final: R-оригиналы на CPU-реплее — до просмотра kr-test
+status: []
+<корень>\svs-fund\app\__init__.py
+899d5db3747fd315b7c8bfedf121f6ae79799061 *gt/gt_tokens.jsonl
+c2c7befd13b3f999b76c3469df31cc6a0732da5c *index/lexicon.json
+ccd3a01f16379a3f0a8a1e7e8dc0623c7622bda5 *index/visual-s2so400m.npz
+0bb97825788d22392fb9f5a4e0fadc0bf28f741e *somm/pairs.json
+413f16e677a31ce26c1716ff7cb27ebb9270d2d6 *somm/dishes.json
+d5689e442f2d7f5680d3dfb0c7686160808b3c08 *somm/serve.json
+c6b16052d0d76aed9c550173dfd7b745e89a1058 *somm/vocab.json
+41fda4723c87decc6a18c345762dd56b39ef9a97 *somm/knowledge.json
+206627c7a95a759a781db21b8ee5c70d9e0c758b *<корень>/svs-logs/somm-2409/fund/final/cv-adapter-lw.npz
+lw-pool LF sha1 b82580e22d89aa3d5fd0e9a9678ed29e1fecb809

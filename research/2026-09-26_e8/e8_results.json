@@ -1,0 +1,477 @@
+{
+ "what": "Э8 — замер по research/2026-09-26_e8/PREREG.md",
+ "gates": {
+  "whole_runs": {
+   "catalog_v2": {
+    "frames": 353,
+    "replayed": 353,
+    "failed": [],
+    "misses": 0
+   },
+   "krasnostop_v1": {
+    "frames": 903,
+    "replayed": 903,
+    "failed": [],
+    "misses": 0
+   }
+  },
+  "M4_stand": {
+   "v2_off_vs_030c62e": [],
+   "v2_on_vs_030c62e": [],
+   "kr_off_vs_030c62e": [],
+   "kr_wm_off_vs_030c62e": [],
+   "ref_frames": [
+    353,
+    903
+   ]
+  },
+  "M5_reorder": {
+   "v2": [],
+   "kr": [
+    "K0342-orig-0",
+    "K0343-orig-0"
+   ],
+   "kr_wm": [
+    "K0342-orig-0",
+    "K0343-orig-0"
+   ]
+  },
+  "M5_on_gate_sets": {
+   "kr_gate_frames": 605,
+   "v2": [],
+   "kr": [],
+   "kr_wm": []
+  },
+  "M4_passed": true,
+  "M5_passed": false,
+  "passed": false,
+  "M5_on_gate_sets_passed": true,
+  "passed_addendum": true
+ },
+ "catalog_v2": {
+  "flag_off": {
+   "base": {
+    "soft": 315,
+    "soft_micro": 89.24,
+    "soft_macro": 88.86,
+    "strict": 307,
+    "strict_micro": 86.97,
+    "slices_soft": {
+     "R": 63,
+     "M": 233,
+     "L": 19
+    },
+    "slices_strict": {
+     "R": 59,
+     "M": 229,
+     "L": 19
+    },
+    "slices_n": {
+     "R": 65,
+     "M": 268,
+     "L": 20
+    }
+   },
+   "candidate": {
+    "soft": 313,
+    "soft_micro": 88.67,
+    "soft_macro": 87.98,
+    "strict": 305,
+    "strict_micro": 86.4,
+    "slices_soft": {
+     "R": 63,
+     "M": 231,
+     "L": 19
+    },
+    "slices_strict": {
+     "R": 59,
+     "M": 227,
+     "L": 19
+    },
+    "slices_n": {
+     "R": 65,
+     "M": 268,
+     "L": 20
+    }
+   },
+   "answers_changed": [
+    [
+     "M184-orig-0",
+     "esse-kaberne-fran-krasnoe-suhoe-13",
+     "esse-esse-sira-krasnoe-suhoe-12"
+    ],
+    [
+     "M482-orig-0",
+     "abrau-dyurso-abrau-kupazh-tyomnyy-suhoe-kaberne-sovinon-krasnoe-13",
+     "abrau-dyurso-abrau-kupazh-krasnyy-polsusladkoe-kaberne-sovinon-krasnoe-polusladkoe-11"
+    ]
+   ],
+   "fixes": [],
+   "breaks": [
+    "M184-orig-0",
+    "M482-orig-0"
+   ],
+   "strict_fixes": [],
+   "strict_breaks": [
+    "M184-orig-0",
+    "M482-orig-0"
+   ],
+   "breaks_R": [],
+   "slices_not_fewer": false,
+   "strict_not_lower": false
+  },
+  "flag_on_reference": {
+   "base": {
+    "soft": 319,
+    "soft_micro": 90.37,
+    "soft_macro": 90.19,
+    "strict": 311,
+    "strict_micro": 88.1,
+    "slices_soft": {
+     "R": 65,
+     "M": 235,
+     "L": 19
+    },
+    "slices_strict": {
+     "R": 61,
+     "M": 231,
+     "L": 19
+    },
+    "slices_n": {
+     "R": 65,
+     "M": 268,
+     "L": 20
+    }
+   },
+   "candidate": {
+    "soft": 317,
+    "soft_micro": 89.8,
+    "soft_macro": 89.31,
+    "strict": 309,
+    "strict_micro": 87.54,
+    "slices_soft": {
+     "R": 65,
+     "M": 233,
+     "L": 19
+    },
+    "slices_strict": {
+     "R": 61,
+     "M": 229,
+     "L": 19
+    },
+    "slices_n": {
+     "R": 65,
+     "M": 268,
+     "L": 20
+    }
+   },
+   "answers_changed": [
+    [
+     "M184-orig-0",
+     "esse-kaberne-fran-krasnoe-suhoe-13",
+     "esse-esse-sira-krasnoe-suhoe-12"
+    ],
+    [
+     "M482-orig-0",
+     "abrau-dyurso-abrau-kupazh-tyomnyy-suhoe-kaberne-sovinon-krasnoe-13",
+     "abrau-dyurso-abrau-kupazh-krasnyy-polsusladkoe-kaberne-sovinon-krasnoe-polusladkoe-11"
+    ]
+   ],
+   "fixes": [],
+   "breaks": [
+    "M184-orig-0",
+    "M482-orig-0"
+   ],
+   "strict_fixes": [],
+   "strict_breaks": [
+    "M184-orig-0",
+    "M482-orig-0"
+   ],
+   "breaks_R": [],
+   "slices_not_fewer": false,
+   "strict_not_lower": false
+  },
+  "cv": {
+   "max_abs_score_shift_other_slugs": 0.001579,
+   "cv_top1_became_card": [],
+   "cv_top1_left_card": [
+    "M482-orig-0"
+   ],
+   "cv_top1_changed": [
+    "M184-orig-0",
+    "M482-orig-0"
+   ]
+  }
+ },
+ "krasnostop_v1": {
+  "gate_605": {
+   "as_is": {
+    "frames": 605,
+    "base": 533,
+    "candidate": 533,
+    "strict_base": 503,
+    "strict_candidate": 503,
+    "answers_changed": [
+     [
+      "K0006-orig-0",
+      "abrau-dyurso-risling-beloe-suhoe-12",
+      "abrau-dyurso-abrau-kupazh-tyomnyy-suhoe-kaberne-sovinon-krasnoe-13"
+     ]
+    ],
+    "fixes": [],
+    "breaks": [],
+    "net": 0
+   },
+   "no_watermark": {
+    "frames": 605,
+    "base": 535,
+    "candidate": 535,
+    "strict_base": 505,
+    "strict_candidate": 505,
+    "answers_changed": [
+     [
+      "K0006-orig-0",
+      "abrau-dyurso-risling-beloe-suhoe-12",
+      "abrau-dyurso-abrau-kupazh-tyomnyy-suhoe-kaberne-sovinon-krasnoe-13"
+     ]
+    ],
+    "fixes": [],
+    "breaks": [],
+    "net": 0
+   }
+  },
+  "excluded_e8_wines": {
+   "as_is": {
+    "frames": 11,
+    "base": 9,
+    "candidate": 10,
+    "strict_base": 8,
+    "strict_candidate": 6,
+    "answers_changed": [
+     [
+      "K0342-orig-0",
+      "legato-legato-sovinon-blan-mtsvane-beloe-suhoe-125",
+      "legato-legato-sovinon-blan-beloe-suhoe-125"
+     ],
+     [
+      "K0570-orig-0",
+      "vino-suhoe-krasnoe-endemy-saperavi",
+      "derbent-vino-endemy-saperavi-krasnoe-suhoe-13"
+     ],
+     [
+      "K0693-orig-0",
+      "skalistyj-bereg-shepot-czvetov",
+      "skalistyy-bereg-shyopot-tsvetov-risling-beloe-suhoe-109"
+     ],
+     [
+      "K0780-orig-0",
+      "vibes-vermentino-viognier-barrel-fermented-vermentino-beloe-suhoe-115",
+      "vibes-vermentino-viognier-barrel-fermented-2022"
+     ]
+    ],
+    "fixes": [
+     "K0342-orig-0"
+    ],
+    "breaks": [],
+    "net": 1
+   },
+   "no_watermark": {
+    "frames": 11,
+    "base": 9,
+    "candidate": 10,
+    "strict_base": 8,
+    "strict_candidate": 6,
+    "answers_changed": [
+     [
+      "K0342-orig-0",
+      "legato-legato-sovinon-blan-mtsvane-beloe-suhoe-125",
+      "legato-legato-sovinon-blan-beloe-suhoe-125"
+     ],
+     [
+      "K0570-orig-0",
+      "vino-suhoe-krasnoe-endemy-saperavi",
+      "derbent-vino-endemy-saperavi-krasnoe-suhoe-13"
+     ],
+     [
+      "K0693-orig-0",
+      "skalistyj-bereg-shepot-czvetov",
+      "skalistyy-bereg-shyopot-tsvetov-risling-beloe-suhoe-109"
+     ],
+     [
+      "K0780-orig-0",
+      "vibes-vermentino-viognier-barrel-fermented-vermentino-beloe-suhoe-115",
+      "vibes-vermentino-viognier-barrel-fermented-2022"
+     ]
+    ],
+    "fixes": [
+     "K0342-orig-0"
+    ],
+    "breaks": [],
+    "net": 1
+   }
+  },
+  "K0225": {
+   "as_is": {
+    "frames": 1,
+    "base": 1,
+    "candidate": 1,
+    "strict_base": 1,
+    "strict_candidate": 1,
+    "answers_changed": [],
+    "fixes": [],
+    "breaks": [],
+    "net": 0
+   },
+   "no_watermark": {
+    "frames": 1,
+    "base": 1,
+    "candidate": 1,
+    "strict_base": 1,
+    "strict_candidate": 1,
+    "answers_changed": [],
+    "fixes": [],
+    "breaks": [],
+    "net": 0
+   }
+  },
+  "primary_617_reference": {
+   "as_is": {
+    "frames": 617,
+    "base": 543,
+    "candidate": 544,
+    "strict_base": 512,
+    "strict_candidate": 510,
+    "answers_changed": [
+     [
+      "K0006-orig-0",
+      "abrau-dyurso-risling-beloe-suhoe-12",
+      "abrau-dyurso-abrau-kupazh-tyomnyy-suhoe-kaberne-sovinon-krasnoe-13"
+     ],
+     [
+      "K0342-orig-0",
+      "legato-legato-sovinon-blan-mtsvane-beloe-suhoe-125",
+      "legato-legato-sovinon-blan-beloe-suhoe-125"
+     ],
+     [
+      "K0570-orig-0",
+      "vino-suhoe-krasnoe-endemy-saperavi",
+      "derbent-vino-endemy-saperavi-krasnoe-suhoe-13"
+     ],
+     [
+      "K0693-orig-0",
+      "skalistyj-bereg-shepot-czvetov",
+      "skalistyy-bereg-shyopot-tsvetov-risling-beloe-suhoe-109"
+     ],
+     [
+      "K0780-orig-0",
+      "vibes-vermentino-viognier-barrel-fermented-vermentino-beloe-suhoe-115",
+      "vibes-vermentino-viognier-barrel-fermented-2022"
+     ]
+    ],
+    "fixes": [
+     "K0342-orig-0"
+    ],
+    "breaks": [],
+    "net": 1
+   },
+   "no_watermark": {
+    "frames": 617,
+    "base": 545,
+    "candidate": 546,
+    "strict_base": 514,
+    "strict_candidate": 512,
+    "answers_changed": [
+     [
+      "K0006-orig-0",
+      "abrau-dyurso-risling-beloe-suhoe-12",
+      "abrau-dyurso-abrau-kupazh-tyomnyy-suhoe-kaberne-sovinon-krasnoe-13"
+     ],
+     [
+      "K0342-orig-0",
+      "legato-legato-sovinon-blan-mtsvane-beloe-suhoe-125",
+      "legato-legato-sovinon-blan-beloe-suhoe-125"
+     ],
+     [
+      "K0570-orig-0",
+      "vino-suhoe-krasnoe-endemy-saperavi",
+      "derbent-vino-endemy-saperavi-krasnoe-suhoe-13"
+     ],
+     [
+      "K0693-orig-0",
+      "skalistyj-bereg-shepot-czvetov",
+      "skalistyy-bereg-shyopot-tsvetov-risling-beloe-suhoe-109"
+     ],
+     [
+      "K0780-orig-0",
+      "vibes-vermentino-viognier-barrel-fermented-vermentino-beloe-suhoe-115",
+      "vibes-vermentino-viognier-barrel-fermented-2022"
+     ]
+    ],
+    "fixes": [
+     "K0342-orig-0"
+    ],
+    "breaks": [],
+    "net": 1
+   }
+  },
+  "same_packshot_changed": [],
+  "cv": {
+   "max_abs_score_shift_other_slugs": 0.002906,
+   "cv_top1_became_card": [
+    "K0804-orig-0",
+    "K0805-orig-0"
+   ],
+   "cv_top1_left_card": [],
+   "cv_top1_changed": [
+    "K0804-orig-0",
+    "K0805-orig-0"
+   ]
+  }
+ },
+ "ooc_v2": {
+  "frames": 409,
+  "replayed": 408,
+  "failed": [
+   "M608-orig-0"
+  ],
+  "answers_changed": [
+   [
+    "M054-orig-0",
+    "chteau-le-grand-vostock-cabernet-sauvignon-kaberne-sovinon-krasnoe-suhoe-14",
+    "chateau-andre-pino-nuar-krasnoe-suhoe-14"
+   ],
+   [
+    "M056-orig-0",
+    "chteau-le-grand-vostock-sauvignon-blanc-sovinon-blan-beloe-suhoe-14",
+    "chateau-andre-shardone-beloe-suhoe-13"
+   ]
+  ],
+  "to_e8_card": [],
+  "cv": {
+   "max_abs_score_shift_other_slugs": 0.000815,
+   "cv_top1_became_card": [],
+   "cv_top1_left_card": [
+    "M463-orig-0"
+   ],
+   "cv_top1_changed": [
+    "M116-orig-0",
+    "M463-orig-0"
+   ]
+  }
+ },
+ "acceptance": {
+  "v2": {
+   "fix>=4*break": false,
+   "fix>=1": false,
+   "no_break_R": true,
+   "slices_R_M_L_not_fewer": false,
+   "strict_not_lower": false
+  },
+  "kr": {
+   "net_as_is>=0": true,
+   "net_no_wm>=0": true
+  }
+ },
+ "accepted": false,
+ "decision": "отклонён"
+}

@@ -1,0 +1,27 @@
+Окно E, 26.09 00:09–00:48 по часам машины. Живая проверка кандидата 2 adapter-lw-ranker: сервис из svs-fund
+@9bf10c8 (только чтение), SVS_CANDIDATE=adapter-lw-ranker, SVS_CV_ADAPTER=fund/final/cv-adapter-lw.npz (sha1 206627c7),
+SVS_SOMM_LIVE=1, Ollama по умолчанию. Данные: gt 899d5db3, lexicon c2c7befd, индекс ccd3a01f (не тронут), somm pairs 0bb97825.
+kr-test не открывался.
+
+Перед стартом: /api/ps пуст, python/ollama на GPU нет, порт 8080 свободен. CPU занят чужими CPU-задачами (rot_probe x2,
+tilt_probe; позже exif_live, rot_score) — 83–100 % до 00:39, 26–60 % после; задержка поэтому шумная.
+
+/v1/health (флаг): ready, degraded_reasons [], provenance consistent=True (model_gt_tokens 899d5db3, derivation null,
+reader vlm@qwen3.5:4b|f3a017317f04), settings.candidate=adapter-lw-ranker, model.resolve=s2so400m-vlm35-lw-pool.json
+(trained_at 2026-09-25T18:06:52Z), model.cv_adapter: lw-s2.0-d1152, sha1 5d25e5c6, file 206627c7, index ccd3a01f,
+suggest_not_found 0.4299, abstain_floor 0.3475; cv_device cuda; somm ok. warnings: 1 (кандидат не продукт) — run_eval
+только с --allow-degraded. 441 скан: ошибок 0, null 0, degraded 0.
+
+1. R-оригиналы 65 (on/r_orig): «то же вино» 62/65, строго 58; = CPU-реплей с флагом (r_orig_check.json) 65/65;
+   = база 1d5b4e9 по счёту (62), против неё 3 ответа: R014 +, R096 −, R084 −/−. Продукт 070cab4 (окно D, с Э7) — 63.
+2. v2 353 по JPEG (on/v2): = офлайн svc-lw-ranker 353/353, null 0; «то же вино» 330, строго 311 (в выборке обучения —
+   не оценка). Итог v2 с R на оригиналах = офлайн 353/353.
+3. 23 кадра: null 0 во всех прогонах. Slug флага стабильны (on/on2/on3 одинаковы); против продукта 070cab4 — 20/23
+   (q-000003 вне каталога, M390 и L22 — починки строго). Стадии (on3 против off4): cv +7,9 мс p50, resolve +0,5 мс;
+   разница total — decode/vlm, флагом не затрагиваются. Стена: on2 p95 1620 (предел 1631), on3 1971; флаг выключен
+   тем же окном — off 1826, off2 1382, off3 2038, off4 1952.
+4. Сомелье: HTTP 200, 259 мс, dish_check, сельдь «скорее нет», sweet_wine_on_fish. Подборка без «суше» — код fund
+   без acc-somm3, флаг ни при чём.
+Флаг выключен: 23/23 = окно C (1d5b4e9), 20/20 = базы 23.09; против окна D 22/23 — q-000002 (Э7 нет в fund).
+
+Конец: сервис остановлен, keep_alive:0 → unload, /api/ps пуст, видеопамять 2178 МиБ P8, порт 8080 — 000.

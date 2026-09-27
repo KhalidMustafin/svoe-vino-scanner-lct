@@ -1,0 +1,48 @@
+{
+ "whole_runs": {
+  "catalog_v2": {
+   "frames": 353,
+   "replayed": 353,
+   "failed": [],
+   "misses": 0
+  },
+  "krasnostop_v1": {
+   "frames": 903,
+   "replayed": 903,
+   "failed": [],
+   "misses": 0
+  }
+ },
+ "M4_stand": {
+  "v2_off_vs_030c62e": [],
+  "v2_on_vs_030c62e": [],
+  "kr_off_vs_030c62e": [],
+  "kr_wm_off_vs_030c62e": [],
+  "ref_frames": [
+   353,
+   903
+  ]
+ },
+ "M5_reorder": {
+  "v2": [],
+  "kr": [
+   "K0342-orig-0",
+   "K0343-orig-0"
+  ],
+  "kr_wm": [
+   "K0342-orig-0",
+   "K0343-orig-0"
+  ]
+ },
+ "M5_on_gate_sets": {
+  "kr_gate_frames": 605,
+  "v2": [],
+  "kr": [],
+  "kr_wm": []
+ },
+ "M4_passed": true,
+ "M5_passed": false,
+ "passed": false,
+ "M5_on_gate_sets_passed": true,
+ "passed_addendum": true
+}

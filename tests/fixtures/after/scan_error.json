@@ -1,0 +1,38 @@
+{
+  "slug": null,
+  "confidence": {
+    "top1": null,
+    "top5": null
+  },
+  "margin": 0.0,
+  "top5": [],
+  "outcome": "error",
+  "degraded": [],
+  "timings_ms": {
+    "decode": 2.1,
+    "total": 2.4
+  },
+  "error": "decode: не картинка: cannot identify image file",
+  "evidence": {},
+  "card": null,
+  "candidates": [],
+  "after": {
+    "state": "error",
+    "reasons": [
+      "decode"
+    ],
+    "read": {
+      "winery": null,
+      "color": null,
+      "sugar": null,
+      "grapes": [],
+      "abv": null,
+      "sparkling": null
+    },
+    "read_label": null,
+    "winery_in_catalog": null,
+    "winery_slugs": [],
+    "suggest_not_found": false,
+    "question": null
+  }
+}

@@ -1,0 +1,189 @@
+# Сканер «Своё Вино» в Docker: сервис (Dockerfile) и модель чтения этикетки в Ollama.
+#
+#     cp .env.example .env                              # пути к данным; SVS_DATASET_HOST_DIR обязателен
+#     docker compose --profile gpu up -d --build        # NVIDIA GPU: сервис + Ollama на видеокарте
+#     docker compose --profile cpu up -d --build        # без видеокарты (медленно, README)
+#     curl http://127.0.0.1:8080/v1/health              # ждём "status": "ready"
+#
+# Профиль — один за раз: у обеих Ollama в сети одно имя `ollama`.
+#
+# Ollama уже работает на машине (нативная) — контейнер Ollama не нужен:
+#     SVS_OLLAMA_URL=http://host.docker.internal:11434 в .env, затем
+#     docker compose --profile gpu up -d --build --no-deps scanner-gpu
+# Нативную Ollama и Ollama из compose одновременно не держать: видеопамять одна (10 ГБ).
+#
+# Порт 11434 контейнерной Ollama наружу не публикуется: сервис ходит к ней по сети compose, а
+# на машине порт может быть занят нативной Ollama.
+
+name: svoe-vino-scanner
+
+x-scanner-env: &scanner-env
+  # Пути внутри контейнера фиксированы: пути машины приходят томами (ниже), а не переменными.
+  SVS_DATA_DIR: /data
+  SVS_DATASET_DIR: /dataset
+  SVS_HOST: 0.0.0.0
+  SVS_PORT: "8080"
+  SVS_OLLAMA_URL: ${SVS_OLLAMA_URL:-http://ollama:11434}
+  SVS_VLM_MODEL: ${SVS_VLM_MODEL:-qwen3.5:4b}
+  SVS_VLM_KEEP_ALIVE: ${SVS_VLM_KEEP_ALIVE:-24h}
+  SVS_BUDGET_MS: ${SVS_BUDGET_MS:-8000}
+  SVS_VLM_TIMEOUT_MS: ${SVS_VLM_TIMEOUT_MS:-5000}
+  SVS_ABSTAIN: ${SVS_ABSTAIN:-off}
+  SVS_TOP_K: ${SVS_TOP_K:-20}
+  SVS_MAX_UPLOAD_MB: ${SVS_MAX_UPLOAD_MB:-25}
+  SVS_CV_MODEL: ${SVS_CV_MODEL:-google/siglip2-so400m-patch14-384}
+  # Пустое значение — умолчание кода (app/api/config.py: from_env): всё от /data и /dataset.
+  SVS_INDEX_PATH: ${SVS_INDEX_PATH:-}
+  SVS_RESOLVE_MODEL: ${SVS_RESOLVE_MODEL:-}
+  SVS_LEXICON_PATH: ${SVS_LEXICON_PATH:-}
+  SVS_ATTRS_PATH: ${SVS_ATTRS_PATH:-}
+  SVS_CATALOG_CSV: ${SVS_CATALOG_CSV:-}
+  SVS_PHOTO_MAP: ${SVS_PHOTO_MAP:-}
+  # Живые карточки портала: 1 — комплект «CSV + 71 карточка» (индекс, gt и словарь вместе,
+  # файлы *-live71 в пачке данных), 0 — только CSV; пусто — умолчание кода (.env.example).
+  SVS_LIVE_CARDS: ${SVS_LIVE_CARDS:-}
+  # Путь поиска и выбора (research/2026-09-26_fund/PREREG_final.md): пусто — adapter-lw-ranker
+  # (адаптер поиска + ранкер -lw-pool; карта /data/index/cv-adapter-lw.npz из пачки данных),
+  # off или none — прежний путь без адаптера. С SVS_LIVE_CARDS=1 — только off (.env.example).
+  SVS_CANDIDATE: ${SVS_CANDIDATE:-}
+  SVS_CV_ADAPTER: ${SVS_CV_ADAPTER:-}
+  # Полевой контур (app/api/field.py). Архив по умолчанию — /data/field, а /data только на
+  # чтение: кадры на диск не пишутся. Фото каталога — пересжатые, из пачки данных.
+  SVS_FIELD_DIR: ${SVS_FIELD_DIR:-}
+  SVS_FIELD_PHOTO_DIR: ${SVS_FIELD_PHOTO_DIR:-/data/catalog/photos_small}
+  SVS_FIELD_TOKEN: ${SVS_FIELD_TOKEN:-}
+  # Полевой контур выключен, пока не задан SVS_FIELD=1: продукт кадров не пишет.
+  SVS_FIELD: ${SVS_FIELD:-}
+  # Слой после поиска: фото выгрузки, словарь групп вин и данные сомелье — из пачки данных.
+  SVS_PHOTO_DIR: ${SVS_PHOTO_DIR:-/data/catalog/photos_small}
+  SVS_WINES_PATH: ${SVS_WINES_PATH:-}
+  # Сомелье (app/api/somm.py): голос, поле вопроса, данные /data/somm, предел голоса и тихое окно.
+  SVS_SOMM_LIVE: ${SVS_SOMM_LIVE:-}
+  SVS_SOMM_INPUT: ${SVS_SOMM_INPUT:-}
+  SVS_SOMM_DIR: ${SVS_SOMM_DIR:-}
+  SVS_SOMM_TIMEOUT_MS: ${SVS_SOMM_TIMEOUT_MS:-}
+  SVS_SOMM_QUIET_S: ${SVS_SOMM_QUIET_S:-}
+  SVS_SOMM_SAFETY: ${SVS_SOMM_SAFETY:-}
+
+x-scanner: &scanner
+  ports:
+    # Скрипт организатора стучится на :8080. Сервис без авторизации — наружу только за прокси.
+    - "${SVS_PUBLISH_PORT:-8080}:8080"
+  volumes:
+    # Пачка данных (deploy/pack_data.sh): index/ (с картой адаптера), gt/, catalog/, somm/.
+    # Только чтение.
+    - type: bind
+      source: ${SVS_DATA_HOST_DIR:-./data}
+      target: /data
+      read_only: true
+    # Выгрузка организатора: strapi_output0709.csv. Без неё карточка остаётся без описаний
+    # (app/api/cards.py:179), поэтому переменная обязательна.
+    - type: bind
+      source: ${SVS_DATASET_HOST_DIR:?задайте в .env путь к распакованному датасету организатора (strapi_output0709.csv)}
+      target: /dataset
+      read_only: true
+    # Кэш Hugging Face с весами SigLIP: каталог с models--google--siglip2-so400m-patch14-384.
+    # Не нужен, если образ собран с SVS_SIGLIP_AT_BUILD=1 (веса тогда в /opt/siglip/hub).
+    - ${SVS_HF_HUB_HOST_DIR:-../siglip-vision-hub}:/hf/hub:ro
+  extra_hosts:
+    # Нативная Ollama хоста (SVS_OLLAMA_URL=http://host.docker.internal:11434); на Linux это имя
+    # само не резолвится.
+    - host.docker.internal:host-gateway
+  restart: on-failure:3
+  stop_grace_period: 20s
+
+x-ollama: &ollama
+  image: ollama/ollama:${OLLAMA_VERSION:-0.33.2}
+  environment:
+    # Модель не выгружается между кадрами: холодная загрузка — секунды, бюджет кадра — 8.
+    OLLAMA_KEEP_ALIVE: 24h
+    # Кадры идут по одному, а вторая модель в памяти вытеснила бы первую.
+    OLLAMA_NUM_PARALLEL: "1"
+    OLLAMA_MAX_LOADED_MODELS: "1"
+  volumes:
+    # По умолчанию — том compose (модель качает ollama-pull). Можно подложить каталог моделей
+    # нативной Ollama (OLLAMA_MODELS_HOST_DIR=C:/Users/<вы>/.ollama/models) и не качать 3,4 ГБ.
+    - ${OLLAMA_MODELS_HOST_DIR:-ollama-models}:/root/.ollama/models
+  networks:
+    default:
+      aliases: [ollama]
+  healthcheck:
+    test: ["CMD", "ollama", "list"]
+    interval: 10s
+    timeout: 5s
+    retries: 12
+    start_period: 10s
+  restart: unless-stopped
+
+x-gpu: &gpu
+  deploy:
+    resources:
+      reservations:
+        devices:
+          - driver: nvidia
+            count: all
+            capabilities: [gpu]
+
+services:
+  scanner-gpu:
+    <<: [*scanner, *gpu]
+    profiles: [gpu]
+    image: svoe-vino-scanner:gpu
+    build:
+      context: .
+      target: runtime
+      args:
+        TORCH: gpu
+        SIGLIP_AT_BUILD: ${SVS_SIGLIP_AT_BUILD:-0}
+    environment:
+      <<: *scanner-env
+      SVS_DEVICE: cuda
+    depends_on:
+      ollama-pull:
+        condition: service_completed_successfully
+        required: false
+
+  scanner-cpu:
+    <<: *scanner
+    profiles: [cpu]
+    image: svoe-vino-scanner:cpu
+    build:
+      context: .
+      target: runtime
+      args:
+        TORCH: cpu
+        SIGLIP_AT_BUILD: ${SVS_SIGLIP_AT_BUILD:-0}
+    environment:
+      <<: *scanner-env
+      SVS_DEVICE: cpu
+    depends_on:
+      ollama-pull:
+        condition: service_completed_successfully
+        required: false
+
+  ollama-gpu:
+    <<: [*ollama, *gpu]
+    profiles: [gpu]
+
+  ollama-cpu:
+    <<: *ollama
+    profiles: [cpu]
+
+  # Разово тянет модель чтения в том Ollama и выходит. Повторный запуск — сверка без скачивания.
+  ollama-pull:
+    image: ollama/ollama:${OLLAMA_VERSION:-0.33.2}
+    profiles: [gpu, cpu]
+    command: ["pull", "${SVS_VLM_MODEL:-qwen3.5:4b}"]
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+    depends_on:
+      ollama-gpu:
+        condition: service_healthy
+        required: false
+      ollama-cpu:
+        condition: service_healthy
+        required: false
+    restart: "no"
+
+volumes:
+  ollama-models:

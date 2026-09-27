@@ -1,0 +1,128 @@
+fund-on: код 0
+merged-on: код 0
+merged-off: код 0
+after: код 0
+{
+ "frames": {
+  "catalog_v2": 353,
+  "kr_dev": 308,
+  "ooc_v2": 408,
+  "r_orig": 65
+ },
+ "merged_off_eq_after": {
+  "files_identical": true,
+  "frames_identical": {
+   "catalog_v2": 353,
+   "kr_dev": 308,
+   "ooc_v2": 408,
+   "r_orig": 65
+  }
+ },
+ "merged_on_vs_fund_on": {
+  "frames_identical": {
+   "catalog_v2": 353,
+   "kr_dev": 308,
+   "ooc_v2": 408,
+   "r_orig": 64
+  },
+  "records_differ": 1,
+  "fields_differ": 1,
+  "fields_differ_after_vs_fund_on": 1,
+  "same_e7_frames_on_and_off": true,
+  "unexplained": [],
+  "answers_changed": 0,
+  "same_wine_breaks": [],
+  "same_wine_fixes": []
+ },
+ "score": {
+  "fund-on": {
+   "catalog_v2": {
+    "same_wine": 330,
+    "strict": 311
+   },
+   "kr_dev": {
+    "same_wine": 281,
+    "strict": 272
+   },
+   "r_orig": {
+    "same_wine": 62,
+    "strict": 58
+   },
+   "catalog_v2_R_jpeg": 62
+  },
+  "merged-on": {
+   "catalog_v2": {
+    "same_wine": 330,
+    "strict": 311
+   },
+   "kr_dev": {
+    "same_wine": 281,
+    "strict": 272
+   },
+   "r_orig": {
+    "same_wine": 62,
+    "strict": 58
+   },
+   "catalog_v2_R_jpeg": 62
+  },
+  "merged-off": {
+   "catalog_v2": {
+    "same_wine": 315,
+    "strict": 307
+   },
+   "kr_dev": {
+    "same_wine": 266,
+    "strict": 256
+   },
+   "r_orig": {
+    "same_wine": 63,
+    "strict": 59
+   },
+   "catalog_v2_R_jpeg": 63
+  },
+  "after": {
+   "catalog_v2": {
+    "same_wine": 315,
+    "strict": 307
+   },
+   "kr_dev": {
+    "same_wine": 266,
+    "strict": 256
+   },
+   "r_orig": {
+    "same_wine": 63,
+    "strict": 59
+   },
+   "catalog_v2_R_jpeg": 63
+  }
+ },
+ "answers_changed_on_vs_off": {
+  "catalog_v2": 36,
+  "kr_dev": 33,
+  "ooc_v2": 231,
+  "r_orig": 2
+ },
+ "r_orig_merged_on_ge_floor": true,
+ "offline_eq_service": {
+  "merged-on": {
+   "model": "s2so400m-vlm35-lw-pool.json",
+   "frames": 1134,
+   "equal": 1134,
+   "reader_fallback_cv_top1": 0,
+   "differ": []
+  },
+  "merged-off": {
+   "model": "s2so400m-vlm35-goal.json",
+   "frames": 1134,
+   "equal": 1134,
+   "reader_fallback_cv_top1": 0,
+   "differ": []
+  }
+ },
+ "commits": {
+  "fund": "9bf10c8",
+  "after": "070cab4",
+  "merged": "a4b7cee"
+ }
+}
+→ <корень>\svs-logs\somm-2409\fund\ship\gate\ship_gate.json

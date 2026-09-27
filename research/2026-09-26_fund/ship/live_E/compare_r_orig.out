@@ -1,0 +1,15 @@
+== шаг 1: 65 R-оригиналов, живой сервис с флагом adapter-lw-ranker; null 0
+  против CPU-реплея с флагом (r_orig_check): совпало 65/65 (100.0 %); живой «то же вино» 62 (строго 58), offline_on 62 (строго 58)
+  против CPU-реплея без флага (база 1d5b4e9): совпало 62/65 (95.38 %); живой «то же вино» 62 (строго 58), offline_base 62 (строго 58)
+    R014-orig-0 [живой/offline_base +/-]: живой massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16 | offline_base massandra-muskatel-rozovyy-belye-sorta-vinograda-rozovoe-sladkoe-16 | эталон massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16
+    R084-orig-0 [живой/offline_base -/-]: живой merlo-litavshhuk | offline_base vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14 | эталон kaberne-sovinon-3
+    R096-orig-0 [живой/offline_base -/+]: живой denisov_pino_noir_klaret | offline_base denisov_rubin_klaret_krasnaya_strelka | эталон denisov_rubin_klaret_krasnaya_strelka
+  против живого окна C (1d5b4e9): совпало 62/65 (95.38 %); живой «то же вино» 62 (строго 58), window_C 62 (строго 58)
+    R014-orig-0 [живой/window_C +/-]: живой massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16 | window_C massandra-muskatel-rozovyy-belye-sorta-vinograda-rozovoe-sladkoe-16 | эталон massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16
+    R084-orig-0 [живой/window_C -/-]: живой merlo-litavshhuk | window_C vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14 | эталон kaberne-sovinon-3
+    R096-orig-0 [живой/window_C -/+]: живой denisov_pino_noir_klaret | window_C denisov_rubin_klaret_krasnaya_strelka | эталон denisov_rubin_klaret_krasnaya_strelka
+  против живого окна D (070cab4, с Э7): совпало 63/65 (96.92 %); живой «то же вино» 62 (строго 58), window_D 63 (строго 59)
+    R084-orig-0 [живой/window_D -/-]: живой merlo-litavshhuk | window_D vinodelnya-begildeeva-kaberne-sovinon-krasnoe-suhoe-14 | эталон kaberne-sovinon-3
+    R096-orig-0 [живой/window_D -/+]: живой denisov_pino_noir_klaret | window_D denisov_rubin_klaret_krasnaya_strelka | эталон denisov_rubin_klaret_krasnaya_strelka
+  задержка живого, мс: {'n': 65, 'p50': 1990, 'p95_rank': 2334, 'max': 2676, 'over_3000': 0}
+ИТОГ шага 1: «то же вино» живой 62/65, база 1d5b4e9 62, продукт 070cab4 63; с реплеем флага 65/65

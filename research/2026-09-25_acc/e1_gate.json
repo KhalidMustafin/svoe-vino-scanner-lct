@@ -1,0 +1,29 @@
+{
+ "v2": {
+  "stand": 353,
+  "dump": 353,
+  "common": 353,
+  "slug_eq": 353,
+  "fields_eq": 353,
+  "slug_bad": [],
+  "fields_bad": []
+ },
+ "kr": {
+  "stand": 903,
+  "dump": 903,
+  "common": 903,
+  "slug_eq": 903,
+  "fields_eq": 903,
+  "slug_bad": [],
+  "fields_bad": []
+ },
+ "ooc": {
+  "stand": 408,
+  "dump": 408,
+  "common": 408,
+  "slug_eq": 408,
+  "fields_eq": 408,
+  "slug_bad": [],
+  "fields_bad": []
+ }
+}

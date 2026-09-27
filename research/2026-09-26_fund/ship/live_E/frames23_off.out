@@ -1,0 +1,12 @@
+== окно E / off: 23 кадров, null 0; задержка {'n': 23, 'p50': 1492, 'p95_rank': 1826, 'max': 1986, 'over_3000': 0}
+  против window_C_1d5b4e9: slug 23/23, sha расходится 0; задержка базы {'n': 23, 'p50': 1395, 'p95_rank': 1518, 'max': 1661, 'over_3000': 0}; Δp50 +97, Δp95 +308 мс
+  против window_D_070cab4: slug 22/23, sha расходится 0; задержка базы {'n': 23, 'p50': 1398, 'p95_rank': 1531, 'max': 1660, 'over_3000': 0}; Δp50 +94, Δp95 +295 мс
+    q-000002: было massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16 | сейчас massandra-muskatel-rozovyy-belye-sorta-vinograda-rozovoe-sladkoe-16
+  против base_2309_r1: slug 20/20, sha расходится 0; задержка базы {'n': 20, 'p50': 2073, 'p95_rank': 2379, 'max': 2429, 'over_3000': 0}
+  против base_2309_r2: slug 20/20, sha расходится 0; задержка базы {'n': 20, 'p50': 2034, 'p95_rank': 2345, 'max': 2360, 'over_3000': 0}
+  против window_E_on: slug 19/23, sha расходится 0; задержка базы {'n': 23, 'p50': 2064, 'p95_rank': 2300, 'max': 3009, 'over_3000': 1}; Δp50 -572, Δp95 -474 мс
+    q-000002: было massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16 | сейчас massandra-muskatel-rozovyy-belye-sorta-vinograda-rozovoe-sladkoe-16
+    q-000003: было fanagoriya-blanc-de-blancs-shardone-beloe-bryut-12 | сейчас aristov-anima-millesimato-beloe-bryut
+    M390-orig-0: было polusuhoe-rozovoe-zb-vajn-frizzante | сейчас zolotaya-balka-zb-frizzante-semi-dry-rose-risling-rozovoe-polusuhoe-10
+    L22-orig-0: было abrau-dyurso-victor-dravigny-polusladkoe-sovinon-blan-beloe-12 | сейчас abrau-dyurso-victor-dravigny-bryut
+ИТОГ: null 0, p95 1826 мс, предел (продукт окна D + 100) 1631 мс — ВЫШЕ предела

@@ -1,0 +1,588 @@
+{
+ "catalog_run": "pfix_final/iter20",
+ "ooc_run": "ooc_v2prod/iter20",
+ "frames": {
+  "catalog": 353,
+  "ooc": 409
+ },
+ "ooc_winery_groups": {
+  "yes": 210,
+  "unknown": 32,
+  "no": 167
+ },
+ "states_d1": {
+  "catalog": {
+   "found": 295,
+   "check": 58
+  },
+  "ooc": {
+   "check": 182,
+   "found": 227
+  }
+ },
+ "winery": {
+  "catalog": {
+   "catalog_correct": 280,
+   "catalog_other": 25,
+   "not_read_or_ambiguous": 48
+  },
+  "ooc": {
+   "catalog_but_truth_no": 22,
+   "catalog_but_truth_unknown": 6,
+   "catalog_correct": 150,
+   "catalog_other": 21,
+   "not_in_catalog_WRONG": 1,
+   "not_in_catalog_ok": 23,
+   "not_read_or_ambiguous": 186
+  }
+ },
+ "service_visual_max": null,
+ "rules": {
+  "main": {
+   "title": "правило плана: обе ветки, поверх любого экрана",
+   "picked": {
+    "visual_max": 0.8543,
+    "false_on_catalog": 7,
+    "false_examples": [
+     "M022-orig-0",
+     "M069-orig-0",
+     "M092-orig-0",
+     "M194-orig-0",
+     "M349-orig-0",
+     "M386-orig-0",
+     "M550-orig-0"
+    ],
+    "recall": 0.1932,
+    "fired_ooc": 79,
+    "ooc_frames": 409,
+    "by_winery_group": {
+     "no": {
+      "frames": 167,
+      "fired": 32,
+      "recall": 0.1916
+     },
+     "unknown": {
+      "frames": 32,
+      "fired": 2,
+      "recall": 0.0625
+     },
+     "yes": {
+      "frames": 210,
+      "fired": 45,
+      "recall": 0.2143
+     }
+    }
+   },
+   "no_threshold": {
+    "visual_max": null,
+    "false_on_catalog": 24,
+    "false_examples": [
+     "M021-orig-0",
+     "M022-orig-0",
+     "M069-orig-0",
+     "M091-orig-0",
+     "M092-orig-0",
+     "M095-orig-0",
+     "M096-orig-0",
+     "M147-orig-0",
+     "M154-orig-0",
+     "M156-orig-0"
+    ],
+    "recall": 0.2029,
+    "fired_ooc": 83,
+    "ooc_frames": 409,
+    "by_winery_group": {
+     "no": {
+      "frames": 167,
+      "fired": 32,
+      "recall": 0.1916
+     },
+     "unknown": {
+      "frames": 32,
+      "fired": 2,
+      "recall": 0.0625
+     },
+     "yes": {
+      "frames": 210,
+      "fired": 49,
+      "recall": 0.2333
+     }
+    }
+   }
+  },
+  "catalog_branch": {
+   "title": "только «винодельня каталога, позиции не сходятся»",
+   "picked": {
+    "visual_max": 0.8543,
+    "false_on_catalog": 7,
+    "false_examples": [
+     "M022-orig-0",
+     "M069-orig-0",
+     "M092-orig-0",
+     "M194-orig-0",
+     "M349-orig-0",
+     "M386-orig-0",
+     "M550-orig-0"
+    ],
+    "recall": 0.1345,
+    "fired_ooc": 55,
+    "ooc_frames": 409,
+    "by_winery_group": {
+     "no": {
+      "frames": 167,
+      "fired": 9,
+      "recall": 0.0539
+     },
+     "unknown": {
+      "frames": 32,
+      "fired": 2,
+      "recall": 0.0625
+     },
+     "yes": {
+      "frames": 210,
+      "fired": 44,
+      "recall": 0.2095
+     }
+    }
+   },
+   "no_threshold": {
+    "visual_max": null,
+    "false_on_catalog": 24,
+    "false_examples": [
+     "M021-orig-0",
+     "M022-orig-0",
+     "M069-orig-0",
+     "M091-orig-0",
+     "M092-orig-0",
+     "M095-orig-0",
+     "M096-orig-0",
+     "M147-orig-0",
+     "M154-orig-0",
+     "M156-orig-0"
+    ],
+    "recall": 0.1443,
+    "fired_ooc": 59,
+    "ooc_frames": 409,
+    "by_winery_group": {
+     "no": {
+      "frames": 167,
+      "fired": 9,
+      "recall": 0.0539
+     },
+     "unknown": {
+      "frames": 32,
+      "fired": 2,
+      "recall": 0.0625
+     },
+     "yes": {
+      "frames": 210,
+      "fired": 48,
+      "recall": 0.2286
+     }
+    }
+   }
+  },
+  "check_only": {
+   "title": "правило плана, только поверх `check`",
+   "picked": {
+    "visual_max": null,
+    "false_on_catalog": 6,
+    "false_examples": [
+     "M154-orig-0",
+     "M159-orig-0",
+     "M160-orig-0",
+     "M161-orig-0",
+     "M235-orig-0",
+     "M595-orig-0"
+    ],
+    "recall": 0.0856,
+    "fired_ooc": 35,
+    "ooc_frames": 409,
+    "by_winery_group": {
+     "no": {
+      "frames": 167,
+      "fired": 18,
+      "recall": 0.1078
+     },
+     "unknown": {
+      "frames": 32,
+      "fired": 0,
+      "recall": 0.0
+     },
+     "yes": {
+      "frames": 210,
+      "fired": 17,
+      "recall": 0.081
+     }
+    }
+   },
+   "no_threshold": {
+    "visual_max": null,
+    "false_on_catalog": 6,
+    "false_examples": [
+     "M154-orig-0",
+     "M159-orig-0",
+     "M160-orig-0",
+     "M161-orig-0",
+     "M235-orig-0",
+     "M595-orig-0"
+    ],
+    "recall": 0.0856,
+    "fired_ooc": 35,
+    "ooc_frames": 409,
+    "by_winery_group": {
+     "no": {
+      "frames": 167,
+      "fired": 18,
+      "recall": 0.1078
+     },
+     "unknown": {
+      "frames": 32,
+      "fired": 0,
+      "recall": 0.0
+     },
+     "yes": {
+      "frames": 210,
+      "fired": 17,
+      "recall": 0.081
+     }
+    }
+   }
+  },
+  "winery_confident": {
+   "title": "правило плана + уверенность чтения винодельни ≥ 0,75",
+   "picked": {
+    "visual_max": 0.8543,
+    "false_on_catalog": 7,
+    "false_examples": [
+     "M022-orig-0",
+     "M069-orig-0",
+     "M092-orig-0",
+     "M194-orig-0",
+     "M349-orig-0",
+     "M386-orig-0",
+     "M550-orig-0"
+    ],
+    "recall": 0.1858,
+    "fired_ooc": 76,
+    "ooc_frames": 409,
+    "by_winery_group": {
+     "no": {
+      "frames": 167,
+      "fired": 30,
+      "recall": 0.1796
+     },
+     "unknown": {
+      "frames": 32,
+      "fired": 2,
+      "recall": 0.0625
+     },
+     "yes": {
+      "frames": 210,
+      "fired": 44,
+      "recall": 0.2095
+     }
+    }
+   },
+   "no_threshold": {
+    "visual_max": null,
+    "false_on_catalog": 24,
+    "false_examples": [
+     "M021-orig-0",
+     "M022-orig-0",
+     "M069-orig-0",
+     "M091-orig-0",
+     "M092-orig-0",
+     "M095-orig-0",
+     "M096-orig-0",
+     "M147-orig-0",
+     "M154-orig-0",
+     "M156-orig-0"
+    ],
+    "recall": 0.1956,
+    "fired_ooc": 80,
+    "ooc_frames": 409,
+    "by_winery_group": {
+     "no": {
+      "frames": 167,
+      "fired": 30,
+      "recall": 0.1796
+     },
+     "unknown": {
+      "frames": 32,
+      "fired": 2,
+      "recall": 0.0625
+     },
+     "yes": {
+      "frames": 210,
+      "fired": 48,
+      "recall": 0.2286
+     }
+    }
+   }
+  },
+  "s10_text": {
+   "title": "для сравнения: условия S10 (текст не совпал) + порог",
+   "picked": {
+    "visual_max": 0.8746,
+    "false_on_catalog": 7,
+    "false_examples": [
+     "L23-orig-0",
+     "M069-orig-0",
+     "M092-orig-0",
+     "M386-orig-0",
+     "M430-orig-0",
+     "M549-orig-0",
+     "R054-orig-0"
+    ],
+    "recall": 0.1345,
+    "fired_ooc": 55,
+    "ooc_frames": 409,
+    "by_winery_group": {
+     "no": {
+      "frames": 167,
+      "fired": 17,
+      "recall": 0.1018
+     },
+     "unknown": {
+      "frames": 32,
+      "fired": 1,
+      "recall": 0.0312
+     },
+     "yes": {
+      "frames": 210,
+      "fired": 37,
+      "recall": 0.1762
+     }
+    }
+   },
+   "no_threshold": {
+    "visual_max": null,
+    "false_on_catalog": 22,
+    "false_examples": [
+     "L19-orig-0",
+     "L23-orig-0",
+     "M069-orig-0",
+     "M091-orig-0",
+     "M092-orig-0",
+     "M095-orig-0",
+     "M096-orig-0",
+     "M154-orig-0",
+     "M156-orig-0",
+     "M184-orig-0"
+    ],
+    "recall": 0.1443,
+    "fired_ooc": 59,
+    "ooc_frames": 409,
+    "by_winery_group": {
+     "no": {
+      "frames": 167,
+      "fired": 17,
+      "recall": 0.1018
+     },
+     "unknown": {
+      "frames": 32,
+      "fired": 1,
+      "recall": 0.0312
+     },
+     "yes": {
+      "frames": 210,
+      "fired": 41,
+      "recall": 0.1952
+     }
+    }
+   }
+  },
+  "visual_only": {
+   "title": "только счёт CV, без винодельни (`suggest_not_found`)",
+   "picked": {
+    "visual_max": 0.8024,
+    "false_on_catalog": 6,
+    "false_examples": [
+     "L11-orig-0",
+     "M069-orig-0",
+     "M194-orig-0",
+     "M378-orig-0",
+     "M424-orig-0",
+     "M431-orig-0"
+    ],
+    "recall": 0.643,
+    "fired_ooc": 263,
+    "ooc_frames": 409,
+    "by_winery_group": {
+     "no": {
+      "frames": 167,
+      "fired": 149,
+      "recall": 0.8922
+     },
+     "unknown": {
+      "frames": 32,
+      "fired": 24,
+      "recall": 0.75
+     },
+     "yes": {
+      "frames": 210,
+      "fired": 90,
+      "recall": 0.4286
+     }
+    }
+   },
+   "no_threshold": {
+    "visual_max": null,
+    "false_on_catalog": 353,
+    "false_examples": [
+     "L04-orig-0",
+     "L05-orig-0",
+     "L07-orig-0",
+     "L10-orig-0",
+     "L11-orig-0",
+     "L14-orig-0",
+     "L17-orig-0",
+     "L18-orig-0",
+     "L19-orig-0",
+     "L20-orig-0"
+    ],
+    "recall": 1.0,
+    "fired_ooc": 409,
+    "ooc_frames": 409,
+    "by_winery_group": {
+     "no": {
+      "frames": 167,
+      "fired": 167,
+      "recall": 1.0
+     },
+     "unknown": {
+      "frames": 32,
+      "fired": 32,
+      "recall": 1.0
+     },
+     "yes": {
+      "frames": 210,
+      "fired": 210,
+      "recall": 1.0
+     }
+    }
+   }
+  }
+ },
+ "funnel": {
+  "catalog": {
+   "catalog: no_position_agrees": 26,
+   "catalog: no_position_agrees & !conditional": 24,
+   "winery=None": 48,
+   "winery=catalog": 305
+  },
+  "ooc": {
+   "catalog: no_position_agrees": 68,
+   "catalog: no_position_agrees & !conditional": 59,
+   "winery=None": 186,
+   "winery=catalog": 199,
+   "winery=unknown": 24
+  }
+ },
+ "verdict": {
+  "auto_screen": false,
+  "reason": "полнота 19.3 % при 7 ложных из 353: ниже 50 % — автоэкрана нет, check + кнопка"
+ },
+ "suggest": {
+  "rule": "suggest_not_found = счёт CV лучшей серии (zmax) < порога; порог — наибольший, при котором флаг не больше чем на 7 из 353 кадров каталога",
+  "picked": {
+   "visual_max": 0.8024,
+   "false_on_catalog": 6,
+   "false_examples": [
+    "L11-orig-0",
+    "M069-orig-0",
+    "M194-orig-0",
+    "M378-orig-0",
+    "M424-orig-0",
+    "M431-orig-0"
+   ],
+   "recall": 0.643,
+   "fired_ooc": 263,
+   "ooc_frames": 409,
+   "by_winery_group": {
+    "no": {
+     "frames": 167,
+     "fired": 149,
+     "recall": 0.8922
+    },
+    "unknown": {
+     "frames": 32,
+     "fired": 24,
+     "recall": 0.75
+    },
+    "yes": {
+     "frames": 210,
+     "fired": 90,
+     "recall": 0.4286
+    }
+   }
+  },
+  "service_visual_max": 0.8024,
+  "service_matches_picked": true,
+  "at_service": {
+   "visual_max": 0.8024,
+   "false_on_catalog": 6,
+   "false_examples": [
+    "L11-orig-0",
+    "M069-orig-0",
+    "M194-orig-0",
+    "M378-orig-0",
+    "M424-orig-0",
+    "M431-orig-0"
+   ],
+   "recall": 0.643,
+   "fired_ooc": 263,
+   "ooc_frames": 409,
+   "by_winery_group": {
+    "no": {
+     "frames": 167,
+     "fired": 149,
+     "recall": 0.8922
+    },
+    "unknown": {
+     "frames": 32,
+     "fired": 24,
+     "recall": 0.75
+    },
+    "yes": {
+     "frames": 210,
+     "fired": 90,
+     "recall": 0.4286
+    }
+   }
+  },
+  "catalog_screens": {
+   "flagged": 6,
+   "flagged_correct": 5,
+   "found_to_check": 4,
+   "found_to_check_correct": 4,
+   "reason_added_to_check": 2
+  },
+  "ooc_screens": {
+   "flagged": 263,
+   "flagged_correct": 0,
+   "found_to_check": 129,
+   "found_to_check_correct": 0,
+   "reason_added_to_check": 134
+  },
+  "catalog_correct_total": 305,
+  "catalog_found_total": 295,
+  "ooc_found_total": 227,
+  "service_disagreements": 0,
+  "out_of_fold": {
+   "wines": 226,
+   "folds": 5,
+   "shuffles": 20,
+   "false_median": 8.0,
+   "false_min": 6,
+   "false_max": 9,
+   "false_share_median": 0.0227,
+   "recall_median": 0.5819,
+   "recall_min": 0.5726,
+   "recall_max": 0.643,
+   "threshold_min": 0.783,
+   "threshold_max": 0.8144
+  }
+ }
+}

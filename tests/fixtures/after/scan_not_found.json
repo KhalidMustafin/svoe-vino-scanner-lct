@@ -1,0 +1,311 @@
+{
+  "slug": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+  "confidence": {
+    "top1": 0.6204,
+    "top5": 0.9712
+  },
+  "margin": 0.4091,
+  "top5": [
+    {
+      "slug": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+      "score": 0.6204
+    },
+    {
+      "slug": "fanagoriya-alveus-ultra-cuvee-ekstra-bryut-beloe-risling-reynskiy-12",
+      "score": 0.2113
+    },
+    {
+      "slug": "fanagoriya-alveus-ultra-cuvee-bryut-rozovoe-merlo-igristoe-bryut-rozovoe-12",
+      "score": 0.0902
+    },
+    {
+      "slug": "fanagoriya-alveus-ultra-cuvee-ekstra-bryut-rozovoe-merlo-12",
+      "score": 0.0391
+    },
+    {
+      "slug": "fanagoriya-blanc-de-blancs-shardone-beloe-bryut-12",
+      "score": 0.0102
+    }
+  ],
+  "outcome": "matched",
+  "degraded": [],
+  "timings_ms": {
+    "decode": 40.2,
+    "views": 6.0,
+    "gpu_wait": 0.0,
+    "cv": 178.3,
+    "vlm": 1533.7,
+    "resolve": 41.9,
+    "total": 1802.4
+  },
+  "error": null,
+  "evidence": {
+    "image": {
+      "format": "jpeg",
+      "width": 3024,
+      "height": 4032,
+      "bytes": 2811034
+    },
+    "cv": {
+      "model": "google/siglip2-so400m-patch14-384",
+      "margin": 0.021,
+      "top5": [
+        {
+          "slug": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+          "score": 0.88,
+          "view": "label",
+          "rank": 1
+        },
+        {
+          "slug": "fanagoriya-alveus-ultra-cuvee-ekstra-bryut-beloe-risling-reynskiy-12",
+          "score": 0.87,
+          "view": "label",
+          "rank": 2
+        },
+        {
+          "slug": "fanagoriya-alveus-ultra-cuvee-bryut-rozovoe-merlo-igristoe-bryut-rozovoe-12",
+          "score": 0.86,
+          "view": "label",
+          "rank": 3
+        },
+        {
+          "slug": "fanagoriya-alveus-ultra-cuvee-ekstra-bryut-rozovoe-merlo-12",
+          "score": 0.85,
+          "view": "label",
+          "rank": 4
+        },
+        {
+          "slug": "fanagoriya-blanc-de-blancs-shardone-beloe-bryut-12",
+          "score": 0.84,
+          "view": "label",
+          "rank": 5
+        }
+      ],
+      "timings_ms": {
+        "embed": 171.2,
+        "match": 3.4,
+        "total": 174.6
+      }
+    },
+    "vlm": {
+      "model": "qwen3.5:4b",
+      "status": "ok",
+      "budget_ms": 6500,
+      "elapsed_ms": 1533.7,
+      "lines": [],
+      "fields": {
+        "winery": [
+          "Фанагория"
+        ],
+        "cuvee": [
+          "alveus",
+          "ultra",
+          "cuvee",
+          "оранж"
+        ],
+        "grapes": [],
+        "sugar": [
+          "brut"
+        ],
+        "vintage": null,
+        "serial": [],
+        "abv": 12.0,
+        "color": "Оранжевое",
+        "unmatched": [
+          "orange"
+        ]
+      },
+      "timings_ms": {}
+    },
+    "resolve": {
+      "model": "resolve-v2prod-iter20",
+      "reader": "vlm",
+      "p_top1": 0.6204,
+      "scores_top5": [],
+      "cv_top1": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+      "changed_cv_top1": false,
+      "text_read": true,
+      "ambiguous_rerank": false,
+      "changed_by_rerank": false
+    },
+    "abstain": {
+      "fired": false,
+      "winery_confident": true,
+      "winery_positions_match": false
+    }
+  },
+  "card": {
+    "slug": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+    "name": "Alveus Ultra Cuvee Brut",
+    "winery": "Фанагория",
+    "region": "Кубань",
+    "grapes": [
+      "Рислинг",
+      "Шардоне"
+    ],
+    "category": "Белое",
+    "color": "Соломенный",
+    "sugar": "брют",
+    "sugar_class": "brut",
+    "photo_name": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12.webp",
+    "color_label": "Белое",
+    "sugar_label": "брют",
+    "sparkling": true,
+    "style_label": "Белое брют",
+    "description": "Текст-заглушка вместо описания выгрузки организатора: выгрузка в git не кладётся.",
+    "description_src": "catalog",
+    "photo_url": "/v1/wines/fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12/photo",
+    "portal_url": "https://vino-svoe.ru/wines/fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+    "alcohol": 12.0,
+    "alcohol_max": null,
+    "alcohol_src": "catalog"
+  },
+  "candidates": [
+    {
+      "slug": "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+      "name": "Alveus Ultra Cuvee Brut",
+      "winery": "Фанагория",
+      "photo_url": "/v1/wines/fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12/photo"
+    },
+    {
+      "slug": "fanagoriya-alveus-ultra-cuvee-ekstra-bryut-beloe-risling-reynskiy-12",
+      "name": "Alveus Ultra Cuvee. Экстра брют белое",
+      "winery": "Фанагория",
+      "photo_url": "/v1/wines/fanagoriya-alveus-ultra-cuvee-ekstra-bryut-beloe-risling-reynskiy-12/photo"
+    },
+    {
+      "slug": "fanagoriya-alveus-ultra-cuvee-bryut-rozovoe-merlo-igristoe-bryut-rozovoe-12",
+      "name": "Alveus Ultra Cuvee. Брют розовое",
+      "winery": "Фанагория",
+      "photo_url": "/v1/wines/fanagoriya-alveus-ultra-cuvee-bryut-rozovoe-merlo-igristoe-bryut-rozovoe-12/photo"
+    },
+    {
+      "slug": "fanagoriya-alveus-ultra-cuvee-ekstra-bryut-rozovoe-merlo-12",
+      "name": "Alveus Ultra Cuvee. Экстра брют розовое",
+      "winery": "Фанагория",
+      "photo_url": "/v1/wines/fanagoriya-alveus-ultra-cuvee-ekstra-bryut-rozovoe-merlo-12/photo"
+    },
+    {
+      "slug": "fanagoriya-blanc-de-blancs-shardone-beloe-bryut-12",
+      "name": "Blanc de Blancs",
+      "winery": "Фанагория",
+      "photo_url": "/v1/wines/fanagoriya-blanc-de-blancs-shardone-beloe-bryut-12/photo"
+    }
+  ],
+  "after": {
+    "state": "not_found",
+    "reasons": [
+      "winery_no_match"
+    ],
+    "read": {
+      "winery": "Фанагория",
+      "color": "Оранжевое",
+      "sugar": "brut",
+      "grapes": [],
+      "abv": 12.0,
+      "sparkling": true
+    },
+    "read_label": "Фанагория · игристое · оранжевое · брют · 12 % об.",
+    "winery_in_catalog": true,
+    "winery_slugs": [
+      "fanagoriya-100-ottenkov-krasnogo-kaberne-kaberne-sovinon-krasnoe-suhoe-135",
+      "fanagoriya-100-ottenkov-krasnogo-pino-nuar-krasnoe-suhoe-135",
+      "fanagoriya-100-ottenkov-krasnogo-saperavi-krasnoe-suhoe-14",
+      "fanagoriya-100-ottenkov-shardone-beloe-suhoe-14",
+      "fanagoriya-101-ottenok-krasnogo-kaberne-kaberne-sovinon-krasnoe-suhoe-14",
+      "fanagoriya-101-ottenok-krasnogo-pino-nuar-krasnoe-suhoe-135",
+      "fanagoriya-101-ottenok-krasnogo-saperavi-krasnoe-suhoe-14",
+      "fanagoriya-5-elements-bryut-beloe-pino-gri-igristoe-bryut-beloe-125",
+      "fanagoriya-5-elements-bryut-rozovoe-saperavi-igristoe-bryut-rozovoe-125",
+      "fanagoriya-alta-qortis-saperavi-krasnoe-suhoe-145",
+      "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+      "fanagoriya-alveus-ultra-cuvee-bryut-rozovoe-merlo-igristoe-bryut-rozovoe-12",
+      "fanagoriya-alveus-ultra-cuvee-ekstra-bryut-beloe-risling-reynskiy-12",
+      "fanagoriya-alveus-ultra-cuvee-ekstra-bryut-rozovoe-merlo-12",
+      "fanagoriya-blanc-de-blancs-shardone-beloe-bryut-12",
+      "fanagoriya-blanc-de-noir-mene-extra-brut-2019-pino-nuar-beloe-ekstra-bryut-12",
+      "fanagoriya-blanc-de-noirs-mene-pino-mene-beloe-ekstra-bryut-12",
+      "fanagoriya-brule-cabernet-franc-polusuhoe-rozovoe-kaberne-fran-12",
+      "fanagoriya-brule-cabernet-sauvignon-polusladkoe-krasnoe-kaberne-sovinon-125",
+      "fanagoriya-brule-cuve-brut-rozovoe-merlo-igristoe-bryut-rozovoe-12",
+      "fanagoriya-brule-frizzante-brut-beloe-pino-nuar-bryut-115",
+      "fanagoriya-brule-frizzante-brut-rozovoe-merlo-igristoe-bryut-rozovoe-115",
+      "fanagoriya-brule-frizzante-polusladkoe-beloe-pino-nuar-11",
+      "fanagoriya-brule-muscat-ottonel-brut-muskat-ottonel-beloe-polusladkoe-12",
+      "fanagoriya-brule-muscat-ottonel-polusladkoe-muskat-ottonel-beloe-115",
+      "fanagoriya-brule-saperavi-saperavi-igristoe-sladkoe-krasnoe-bryut-125",
+      "fanagoriya-brule-sauvignon-blanc-brut-sovinon-blan-beloe-bryut-12",
+      "fanagoriya-cru-lermont-cabernet-franc-kaberne-fran-krasnoe-suhoe-13",
+      "fanagoriya-cru-lermont-cabernet-sauvignon-kaberne-sovinon-krasnoe-suhoe-13",
+      "fanagoriya-cru-lermont-chardonnay-shardone-beloe-suhoe-14",
+      "fanagoriya-cru-lermont-merlo-merlo-krasnoe-suhoe-14",
+      "fanagoriya-cru-lermont-petit-verdot-pti-verdo-krasnoe-suhoe-13",
+      "fanagoriya-cru-lermont-pinot-noir-pino-nuar-krasnoe-suhoe-13",
+      "fanagoriya-cru-lermont-saperavi-saperavi-krasnoe-suhoe-135",
+      "cru-lermont-risling",
+      "fanagoriya-cru-lermont-rubinovyy-magaracha-krasnoe-suhoe-13",
+      "fanagoriya-fanagoria-extra-brut-rose-2019-pino-nuar-igristoe-bryut-rozovoe-ekstra-bryut-12",
+      "fanagoriya-formula-q-saperavi-krasnoe-suhoe-135",
+      "fanagoriya-ice-wine-kaberne-kaberne-sovinon-krasnoe-sladkoe-11",
+      "fanagoriya-ice-wine-merlo-rozovoe-sladkoe-10",
+      "fanagoriya-ice-wine-risling-tihoe-beloe-sladkoe-10",
+      "fanagoriya-ice-wine-saperavi-tihoe-krasnoe-sladkoe-10",
+      "fanagoriya-par-amour-pervenets-magaracha-beloe-polusladkoe-105-125",
+      "fanagoriya-par-amour-pervenets-magaracha-beloe-polusuhoe-105-125",
+      "fanagoriya-par-amour-pervenets-magaracha-rozovoe-polusuhoe-105-125",
+      "fanagoriya-par-amour-rubin-golodrigi-krasnoe-polusladkoe-105-125",
+      "fanagoriya-pelle-calda-saperavi-krasnoe-suhoe-155",
+      "fanagoriya-primum-alveus-blanc-de-blancs-2017-shardone-igristoe-bryut-beloe-12",
+      "fanagoriya-primum-alveus-blanc-de-blancs-ekstra-bryut-2019-shardone-beloe-11-13",
+      "fanagoriya-primum-alveus-extra-brut-rose-2014-pino-nuar-rozovoe-bryut-12",
+      "fanagoriya-primum-alveus-blanc-de-noirs-meunier-ekstra-bryut-2019-mene-beloe-11-13",
+      "fanagoriya-primum-alveus-brut-2021-shardone-beloe-bryut-11-13",
+      "fanagoriya-primum-alveus-bryut-2019-pino-nuar-igristoe-bryut-rozovoe-11-13",
+      "fanagoriya-primum-alveus-ekstra-bryut-2017-pino-nuar-beloe-11-13",
+      "fanagoriya-q-blanc-sovinon-blan-beloe-suhoe-14",
+      "fanagoriya-q-bordeaux-blend-kaberne-sovinon-krasnoe-suhoe-135",
+      "fanagoriya-rose-kaberne-sovinon-rozovoe-polusuhoe-13",
+      "fanagoriya-rose-kaberne-fran-rozovoe-suhoe-13",
+      "fanagoriya-rose-saperavi-rozovoe-polusuhoe-125",
+      "fanagoriya-rs-noir-saperavi-krasnoe-polusladkoe-125",
+      "fanagoriya-saqra-saperavi-krasnoe-suhoe-135",
+      "fanagoriya-solera-moscatel-oro-muskat-ottonel-beloe-suhoe-16",
+      "fanagoriya-solera-porto-negro-saperavi-krasnoe-suhoe-15",
+      "fanagoriya-solera-rkatsiteli-ambra-rkatsiteli-beloe-suhoe-15",
+      "fanagoriya-solera-saperavi-ruby-saperavi-krasnoe-suhoe-16",
+      "fanagoriya-sur-lie-chardonnay-shardone-beloe-suhoe-135",
+      "fanagoriya-sur-lie-clairet-saperavi-krasnoe-suhoe-13",
+      "fanagoriya-sur-lie-vi-vi-aligote-beloe-suhoe-125",
+      "fanagoriya-velvet-season-muskat-ottonel-beloe-sladkoe-13",
+      "fanagoriya-velvet-season-risling-beloe-sladkoe-12",
+      "fanagoriya-dekanter-chardonnay-2020-shardone-beloe-suhoe-135",
+      "fanagoriya-dekanter-riesling-2020-risling-reynskiy-beloe-suhoe-13",
+      "fanagoriya-dekanter-kaberne-sovinon-2018-krasnoe-suhoe-14",
+      "fanagoriya-dekanter-kaberne-fran-2019-krasnoe-suhoe-13",
+      "fanagoriya-dekanter-merlo-2018-krasnoe-suhoe-14",
+      "fanagoriya-dekanter-pino-nuar-2020-krasnoe-suhoe-135",
+      "fanagoriya-dekanter-rkatsiteli-2019-beloe-suhoe-135",
+      "fanagoriya-dekanter-saperavi-2017-krasnoe-suhoe-135",
+      "fanagoriya-dekanter-formula-q-kaberne-sovinon-krasnoe-suhoe-135",
+      "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-beloe-polusuhoe-11",
+      "fanagoriya-zelyonoe-vino-risling-tsitronnyy-magaracha-merlo-rozovoe-polusuhoe-11",
+      "fanagoriya-ledyanoe-vino-muskat-muskat-ottonel-beloe-sladkoe-11",
+      "ona-skazala-da",
+      "rozovoe-polusladkoe",
+      "fanagoriya-tochka-saperavi-krasnoe-suhoe-14",
+      "fanagoriya-beloe-polusladkoe",
+      "fanagoriya-ona-skazala-da-beloe-bryut",
+      "fanagoriya-ona-skazala-da-beloe-polusladkoe",
+      "fanagoriya-fanagoriya-sakra-sennoy-krasnostop-krasnoe-suhoe-135",
+      "fanagoriya-fanagoriya-hey-bey-shardone-beloe-suhoe-13",
+      "fanagoriya-fanagoriya-blanc-de-blancs-beloe-iz-belogo-shardone-igristoe-bryut-beloe-11-13",
+      "fanagoriya-fanagoriya-blanc-de-noirs-beloe-iz-chyornogo-merlo-igristoe-bryut-beloe-11-13",
+      "fanagoriya-fanagoriya-rose-de-noirs-roze-de-nuar-merlo-igristoe-bryut-rozovoe-11-13",
+      "fanagoriya-fanagoriya-bryut-beloe-sovinon-blan-igristoe-bryut-beloe-11-13",
+      "fanagoriya-fanagoriya-bryut-rozovoe-sovinon-blan-igristoe-bryut-rozovoe-11-13",
+      "fanagoriya-fanagoriya-polusladkoe-rozovoe-sovinon-blan-krasnoe-11-13"
+    ],
+    "suggest_not_found": false,
+    "question": null
+  }
+}

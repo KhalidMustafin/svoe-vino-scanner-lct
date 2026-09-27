@@ -1,0 +1,298 @@
+{
+ "files_sha1": {
+  "fund-on": "aafe8c435e4666b7a77d6da537fd39995000ab68",
+  "merged-on": "ec73d3122ed634dcc22fd849ef130037d94c7bf8",
+  "merged-off": "7b7c368e754fc8ab0c052b550a9f7654ed784a09",
+  "after": "7b7c368e754fc8ab0c052b550a9f7654ed784a09"
+ },
+ "frames": {
+  "catalog_v2": 353,
+  "kr_dev": 308,
+  "ooc_v2": 408,
+  "r_orig": 65
+ },
+ "merged_off_eq_after": {
+  "files_identical": true,
+  "frames_identical": {
+   "catalog_v2": 353,
+   "kr_dev": 308,
+   "ooc_v2": 408,
+   "r_orig": 65
+  }
+ },
+ "merged_on_vs_fund_on": {
+  "frames_identical": {
+   "catalog_v2": 353,
+   "kr_dev": 308,
+   "ooc_v2": 408,
+   "r_orig": 64
+  },
+  "records_differ": 1,
+  "fields_differ": 1,
+  "fields_differ_after_vs_fund_on": 1,
+  "same_e7_frames_on_and_off": true,
+  "unexplained": [],
+  "answers_changed": 0,
+  "same_wine_breaks": [],
+  "same_wine_fixes": [],
+  "frames": [
+   {
+    "key": "r_orig:R014-orig-0",
+    "set": "r_orig",
+    "fields_differ": true,
+    "raw_text_same": true,
+    "fund_on": "massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16",
+    "merged_on": "massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16",
+    "answer_changed": false,
+    "label": "massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16",
+    "fund_on_same_wine": true,
+    "merged_on_same_wine": true,
+    "fund_on_strict": true,
+    "merged_on_strict": true
+   }
+  ]
+ },
+ "score": {
+  "fund-on": {
+   "catalog_v2": {
+    "same_wine": 330,
+    "strict": 311
+   },
+   "kr_dev": {
+    "same_wine": 281,
+    "strict": 272
+   },
+   "r_orig": {
+    "same_wine": 62,
+    "strict": 58
+   },
+   "catalog_v2_R_jpeg": 62
+  },
+  "merged-on": {
+   "catalog_v2": {
+    "same_wine": 330,
+    "strict": 311
+   },
+   "kr_dev": {
+    "same_wine": 281,
+    "strict": 272
+   },
+   "r_orig": {
+    "same_wine": 62,
+    "strict": 58
+   },
+   "catalog_v2_R_jpeg": 62
+  },
+  "merged-off": {
+   "catalog_v2": {
+    "same_wine": 315,
+    "strict": 307
+   },
+   "kr_dev": {
+    "same_wine": 266,
+    "strict": 256
+   },
+   "r_orig": {
+    "same_wine": 63,
+    "strict": 59
+   },
+   "catalog_v2_R_jpeg": 63
+  },
+  "after": {
+   "catalog_v2": {
+    "same_wine": 315,
+    "strict": 307
+   },
+   "kr_dev": {
+    "same_wine": 266,
+    "strict": 256
+   },
+   "r_orig": {
+    "same_wine": 63,
+    "strict": 59
+   },
+   "catalog_v2_R_jpeg": 63
+  }
+ },
+ "answers_changed_on_vs_off": {
+  "catalog_v2": 36,
+  "kr_dev": 33,
+  "ooc_v2": 231,
+  "r_orig": 2
+ },
+ "r_orig_merged_on_ge_floor": true,
+ "offline_eq_service": {
+  "merged-on": {
+   "model": "s2so400m-vlm35-lw-pool.json",
+   "frames": 1134,
+   "equal": 1134,
+   "reader_fallback_cv_top1": 0,
+   "differ": []
+  },
+  "merged-off": {
+   "model": "s2so400m-vlm35-goal.json",
+   "frames": 1134,
+   "equal": 1134,
+   "reader_fallback_cv_top1": 0,
+   "differ": []
+  }
+ },
+ "metas": {
+  "fund-on": {
+   "variant": "fund-on",
+   "app": "<корень>\\svs-logs\\somm-2409\\fund\\ship\\gate\\src_9bf10c8\\app",
+   "frames": 1134,
+   "assert_no_test": 2268,
+   "reads": {
+    "hits": 1134,
+    "misses": 0
+   },
+   "candidate": "adapter-lw-ranker",
+   "resolve_model": "s2so400m-vlm35-lw-pool.json",
+   "cv_adapter": {
+    "name": "lw-s2.0-d1152",
+    "kind": "lw",
+    "sha1": "5d25e5c66ecd0034a018a7a6e43f092aba60daf8",
+    "file_sha1": "206627c7a95a759a781db21b8ee5c70d9e0c758b",
+    "index_sha1": "ccd3a01f16379a3f0a8a1e7e8dc0623c7622bda5",
+    "dim": [
+     1152,
+     1152
+    ],
+    "suggest_not_found_visual_max": 0.4299,
+    "abstain_visual_floor": 0.3475
+   },
+   "provenance": {
+    "gt_tokens_sha1": "899d5db3747fd315b7c8bfedf121f6ae79799061",
+    "model_gt_tokens_sha1": "899d5db3747fd315b7c8bfedf121f6ae79799061",
+    "lexicon_source_sha1": "899d5db3747fd315b7c8bfedf121f6ae79799061",
+    "derivation": null,
+    "vlm_reader": "vlm@qwen3.5:4b|f3a017317f04",
+    "vlm_reader_trained": [
+     "vlm@qwen3.5:4b|f3a017317f04"
+    ],
+    "mismatch": [],
+    "consistent": true
+   },
+   "warnings": [
+    "SVS_BUDGET_MS=30000: скрипт организатора ждёт 10000 мс вместе с сетью и загрузкой файла — ответ может не успеть",
+    "SVS_CANDIDATE=adapter-lw-ranker: кандидат фундаментального трека, не продукт — приёмка только по research/2026-09-26_fund/PREREG_final.md, цифры замера продукта к нему не относятся"
+   ],
+   "blas_threads": "1",
+   "seconds": 162.9
+  },
+  "merged-on": {
+   "variant": "merged-on",
+   "app": "<корень>\\svs-after\\app",
+   "frames": 1134,
+   "assert_no_test": 2268,
+   "reads": {
+    "hits": 1134,
+    "misses": 0
+   },
+   "candidate": "adapter-lw-ranker",
+   "resolve_model": "s2so400m-vlm35-lw-pool.json",
+   "cv_adapter": {
+    "name": "lw-s2.0-d1152",
+    "kind": "lw",
+    "sha1": "5d25e5c66ecd0034a018a7a6e43f092aba60daf8",
+    "file_sha1": "206627c7a95a759a781db21b8ee5c70d9e0c758b",
+    "index_sha1": "ccd3a01f16379a3f0a8a1e7e8dc0623c7622bda5",
+    "dim": [
+     1152,
+     1152
+    ],
+    "suggest_not_found_visual_max": 0.4299,
+    "abstain_visual_floor": 0.3475
+   },
+   "provenance": {
+    "gt_tokens_sha1": "899d5db3747fd315b7c8bfedf121f6ae79799061",
+    "model_gt_tokens_sha1": "899d5db3747fd315b7c8bfedf121f6ae79799061",
+    "lexicon_source_sha1": "899d5db3747fd315b7c8bfedf121f6ae79799061",
+    "derivation": null,
+    "vlm_reader": "vlm@qwen3.5:4b|f3a017317f04",
+    "vlm_reader_trained": [
+     "vlm@qwen3.5:4b|f3a017317f04"
+    ],
+    "model_cv_adapter_sha1": "5d25e5c66ecd0034a018a7a6e43f092aba60daf8",
+    "cv_adapter_sha1": "5d25e5c66ecd0034a018a7a6e43f092aba60daf8",
+    "cv_adapter_index_sha1": "ccd3a01f16379a3f0a8a1e7e8dc0623c7622bda5",
+    "mismatch": [],
+    "consistent": true
+   },
+   "warnings": [
+    "SVS_BUDGET_MS=30000: скрипт организатора ждёт 10000 мс вместе с сетью и загрузкой файла — ответ может не успеть"
+   ],
+   "blas_threads": "1",
+   "seconds": 163.3
+  },
+  "merged-off": {
+   "variant": "merged-off",
+   "app": "<корень>\\svs-after\\app",
+   "frames": 1134,
+   "assert_no_test": 2268,
+   "reads": {
+    "hits": 1134,
+    "misses": 0
+   },
+   "candidate": "off",
+   "resolve_model": "s2so400m-vlm35-goal.json",
+   "cv_adapter": null,
+   "provenance": {
+    "gt_tokens_sha1": "899d5db3747fd315b7c8bfedf121f6ae79799061",
+    "model_gt_tokens_sha1": "bf6a8823a45004b1e13e586e5a92e05b8beb07b0",
+    "lexicon_source_sha1": "899d5db3747fd315b7c8bfedf121f6ae79799061",
+    "derivation": "gt_fixes@2d7050bf",
+    "vlm_reader": "vlm@qwen3.5:4b|f3a017317f04",
+    "vlm_reader_trained": [
+     "vlm@qwen3.5:4b|f3a017317f04"
+    ],
+    "model_cv_adapter_sha1": null,
+    "cv_adapter_sha1": null,
+    "cv_adapter_index_sha1": null,
+    "mismatch": [],
+    "consistent": true
+   },
+   "warnings": [
+    "SVS_BUDGET_MS=30000: скрипт организатора ждёт 10000 мс вместе с сетью и загрузкой файла — ответ может не успеть"
+   ],
+   "blas_threads": "1",
+   "seconds": 163.6
+  },
+  "after": {
+   "variant": "after",
+   "app": "<корень>\\svs-logs\\somm-2409\\fund\\ship\\gate\\src_070cab4\\app",
+   "frames": 1134,
+   "assert_no_test": 2268,
+   "reads": {
+    "hits": 1134,
+    "misses": 0
+   },
+   "candidate": null,
+   "resolve_model": "s2so400m-vlm35-goal.json",
+   "cv_adapter": null,
+   "provenance": {
+    "gt_tokens_sha1": "899d5db3747fd315b7c8bfedf121f6ae79799061",
+    "model_gt_tokens_sha1": "bf6a8823a45004b1e13e586e5a92e05b8beb07b0",
+    "lexicon_source_sha1": "899d5db3747fd315b7c8bfedf121f6ae79799061",
+    "derivation": "gt_fixes@2d7050bf",
+    "vlm_reader": "vlm@qwen3.5:4b|f3a017317f04",
+    "vlm_reader_trained": [
+     "vlm@qwen3.5:4b|f3a017317f04"
+    ],
+    "mismatch": [],
+    "consistent": true
+   },
+   "warnings": [
+    "SVS_BUDGET_MS=30000: скрипт организатора ждёт 10000 мс вместе с сетью и загрузкой файла — ответ может не успеть"
+   ],
+   "blas_threads": "1",
+   "seconds": 163.1
+  }
+ },
+ "commits": {
+  "fund": "9bf10c8",
+  "after": "070cab4",
+  "merged": "a4b7cee"
+ }
+}

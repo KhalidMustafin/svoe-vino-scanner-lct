@@ -1,0 +1,212 @@
+{
+  "slug": "fanagoriya-cru-lermont-saperavi-saperavi-krasnoe-suhoe-135",
+  "name": "Cru Lermont Saperavi",
+  "winery": "Фанагория",
+  "order": "reco",
+  "note": {
+    "text": "Cru Lermont Saperavi — красное сухое. Фанагория, Кубань. Подают при 16–18 °C. По правилам сочетаний к нему подходят бородинский хлеб с салом, гусь запечённый и борщ с пампушками.",
+    "basis": "по карточке каталога, правилам подачи и сочетаний",
+    "generated": false,
+    "label": "Текст и подбор — алгоритм"
+  },
+  "profile": [
+    {
+      "axis": "sweetness",
+      "label": "Сладость",
+      "left": "сухое",
+      "right": "сладкое",
+      "value": 0.08,
+      "source": "catalog"
+    },
+    {
+      "axis": "acidity",
+      "label": "Кислотность",
+      "left": "мягкая",
+      "right": "живая",
+      "value": 0.77,
+      "source": "grape"
+    },
+    {
+      "axis": "tannin",
+      "label": "Танины",
+      "left": "мягкие",
+      "right": "терпкие",
+      "value": 0.84,
+      "source": "grape"
+    },
+    {
+      "axis": "body",
+      "label": "Тело",
+      "left": "лёгкое",
+      "right": "плотное",
+      "value": 0.89,
+      "source": "grape"
+    },
+    {
+      "axis": "alcohol",
+      "label": "Крепость",
+      "left": "лёгкое",
+      "right": "крепкое",
+      "value": 0.79,
+      "source": "catalog"
+    },
+    {
+      "axis": "oak",
+      "label": "Дуб",
+      "left": "без дуба",
+      "right": "заметный",
+      "value": 0.5,
+      "source": "grape"
+    },
+    {
+      "axis": "aroma_intensity",
+      "label": "Аромат",
+      "left": "сдержанный",
+      "right": "яркий",
+      "value": 0.72,
+      "source": "grape"
+    },
+    {
+      "axis": "effervescence",
+      "label": "Пузырьки",
+      "left": "тихое",
+      "right": "игристое",
+      "value": 0.0,
+      "source": "catalog"
+    }
+  ],
+  "serve": {
+    "temperature_c": [
+      16,
+      18
+    ],
+    "source": "rule",
+    "rule": "red_full",
+    "by_grape": true
+  },
+  "dishes": [
+    {
+      "id": "borodinsky_hleb_s_salom",
+      "name": "Бородинский хлеб с салом",
+      "category": "cold_appetizer",
+      "verdict": "yes",
+      "plus": [
+        {
+          "id": "acid_cuts_fat",
+          "text": "Кислотность освежает жирное",
+          "source": "grape"
+        },
+        {
+          "id": "intensity_match",
+          "text": "Равны по силе вкуса",
+          "source": "grape"
+        },
+        {
+          "id": "salt_loves_acidity",
+          "text": "Кислотность к солёному",
+          "source": "grape"
+        }
+      ],
+      "minus": [],
+      "source": "grape"
+    },
+    {
+      "id": "gus",
+      "name": "Гусь запечённый",
+      "category": "main_poultry",
+      "verdict": "caveat",
+      "plus": [
+        {
+          "id": "acid_cuts_fat",
+          "text": "Кислотность освежает жирное",
+          "source": "grape"
+        },
+        {
+          "id": "intensity_match",
+          "text": "Равны по силе вкуса",
+          "source": "grape"
+        },
+        {
+          "id": "tannin_meets_protein_fat",
+          "text": "Танинам — белок и жир",
+          "source": "grape"
+        }
+      ],
+      "minus": [
+        {
+          "id": "umami_vs_tannin_clash",
+          "text": "Бульон подчёркивает терпкость",
+          "source": "grape"
+        }
+      ],
+      "source": "grape"
+    },
+    {
+      "id": "borsch_s_pampushkami",
+      "name": "Борщ с пампушками",
+      "category": "soup",
+      "verdict": "caveat",
+      "plus": [
+        {
+          "id": "acid_cuts_fat",
+          "text": "Кислотность освежает жирное",
+          "source": "grape"
+        },
+        {
+          "id": "intensity_match",
+          "text": "Равны по силе вкуса",
+          "source": "grape"
+        },
+        {
+          "id": "acidity_mirror",
+          "text": "Свежесть вровень с блюдом",
+          "source": "grape"
+        }
+      ],
+      "minus": [
+        {
+          "id": "umami_vs_tannin_clash",
+          "text": "Бульон подчёркивает терпкость",
+          "source": "grape"
+        }
+      ],
+      "source": "grape"
+    }
+  ],
+  "chips": [
+    {
+      "id": "what_to_eat",
+      "text": "К чему подать"
+    },
+    {
+      "id": "serve",
+      "text": "Как подать"
+    },
+    {
+      "id": "softer",
+      "text": "Помягче"
+    },
+    {
+      "id": "fresher",
+      "text": "Посвежее"
+    },
+    {
+      "id": "replace",
+      "text": "Чем заменить"
+    },
+    {
+      "id": "grape",
+      "text": "О сорте Саперави",
+      "args": {
+        "grape": "saperavi"
+      }
+    },
+    {
+      "id": "guided",
+      "text": "Помогите выбрать"
+    }
+  ],
+  "live": true,
+  "input": true,
+  "notice_149": "Применяются рекомендательные технологии"
+}

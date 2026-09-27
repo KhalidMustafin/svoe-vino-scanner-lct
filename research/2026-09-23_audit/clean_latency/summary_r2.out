@@ -1,0 +1,83 @@
+
+==== 4b_r2 (qwen3.5:4b)
+холодный старт до ready 15.2 с (порт 15.2 с); participant_test код 0, 43.8 с на 20 кадров
+latency_ms (скрипт организатора): p50 2033, p95 2346 (линейн.) / 2345 (ближ. ранг), max 2360, среднее 2000; >3 с: 0, >5 с: 0, >8 с: 0, >=10 с: 0; null slug 0
+  по возрастанию: [1487, 1576, 1604, 1738, 1879, 1959, 1970, 2002, 2006, 2032, 2034, 2037, 2045, 2105, 2140, 2196, 2226, 2251, 2345, 2360]
+точность на 20: мягко 18/20, строго 17/20
+обрывы по журналу: vlm_timeout 0, vlm_budget_cut 0, budget_exceeded 0
+/v1/health после прогона: status ready [] scans {"total": 20, "errors": 0, "null_slug": 0, "text_read": 20, "max_total_ms": 2342.8, "degraded": {}}
+CPU: до старта сервиса среднее None %; в окне прогона среднее 17.7 %, max 52.0 % (34 отсчётов)
+nvidia-smi: до старта max None МиБ; в окне прогона 6856–6856 МиБ (48 отсчётов); max за жизнь сервиса 6856 МиБ
+/api/ps после ready: [{'name': 'qwen3.5:4b', 'size': 3128038521, 'size_vram': 3128038521, 'context_length': 4096}]
+прогревочные сканы до ready: [('2026-09-23 13:06:24,450', 'chteau-le-grand-vostock-cabernet-sauvignon-reserve-kaberne-sovinon-krasnoe-suhoe-14', 'matched', '0.6614', '1518', '-')]
+строка прогрева: 2026-09-23 13:06:24,450 INFO app.api.service: Прогрев: ready — {"cv": {"status": "ok", "elapsed_ms": 7952.3, "device": "cuda"}, "vlm": {"status": "ok", "elapsed_ms": 4031}, "scan": {"attempt": 1, "outcome": "matched", "degraded": [], "timings_ms": {"decode": 5.5, "views": 2.0, "gpu_wait": 0.0, "cv": 239.0, "vlm": 842.1, "resolve": 429.1, "total": 1518.1}}}
+покадрово: q | вид | latency | total сервиса | degraded | мягко/строго
+  M346-orig-0  jpg          2037  2015 -                            1/1  p=1.0
+  M388-orig-0  jpg          2140  2118 -                            0/0  p=0.525
+  M592-orig-0  jpg          2226  2206 -                            1/1  p=0.1033
+  M186-orig-0  heic         2034  2020 -                            1/1  p=0.9865
+  M193-orig-0  heic         1970  1955 -                            1/1  p=0.8825
+  M431-orig-0  jpg          1487  1465 -                            1/1  p=0.4322
+  M390-orig-0  jpg          1576  1556 -                            1/0  p=0.8019
+  M208-orig-0  heic         1879  1866 -                            1/1  p=0.9774
+  L22-orig-0   jpg          2006  2002 -                            0/0  p=0.5126
+  M161-orig-0  jpg          2251  2236 -                            1/1  p=0.1245
+  M269-orig-0  jpg          1959  1942 -                            1/1  p=0.7079
+  R055-orig-0  portal_webp  2032  2026 -                            1/1  p=0.8047
+  R064-orig-0  portal_webp  2105  2093 -                            1/1  p=0.9586
+  L45-orig-0   jpg          1604  1599 -                            1/1  p=0.9105
+  M414-orig-0  jpg          2002  1984 -                            1/1  p=0.7744
+  M128-orig-0  jpg          2360  2343 -                            1/1  p=0.9109
+  M359-orig-0  jpg          2345  2324 -                            1/1  p=0.5485
+  R094-orig-0  portal_webp  2196  2190 -                            1/1  p=0.9827
+  R075-orig-0  portal_webp  2045  2039 -                            1/1  p=0.9214
+  R066-orig-0  portal_webp  1738  1732 -                            1/1  p=0.9954
+/v1/scan после прогона (разбор стадий):
+  M440-orig-0  new               wall  2070 degraded=[] timings={'decode': 82.7, 'views': 6.3, 'gpu_wait': 0.0, 'cv': 633.5, 'vlm': 1309.2, 'resolve': 1.4, 'total': 2033.6}
+  M062-orig-0  new               wall  1992 degraded=[] timings={'decode': 85.1, 'views': 6.4, 'gpu_wait': 0.0, 'cv': 493.4, 'vlm': 1364.5, 'resolve': 4.7, 'total': 1954.5}
+  M312-orig-0  new               wall  2164 degraded=[] timings={'decode': 97.6, 'views': 6.4, 'gpu_wait': 0.0, 'cv': 491.2, 'vlm': 1523.6, 'resolve': 3.7, 'total': 2122.8}
+  M312-orig-0  repeat_immediate  wall  1542 degraded=[] timings={'decode': 92.9, 'views': 6.3, 'gpu_wait': 0.0, 'cv': 493.3, 'vlm': 918.2, 'resolve': 1.5, 'total': 1512.4}
+  M346-orig-0  repeat_after_20   wall  1284 degraded=[] timings={'decode': 86.4, 'views': 6.4, 'gpu_wait': 0.0, 'cv': 482.5, 'vlm': 668.7, 'resolve': 1.3, 'total': 1245.6}
+
+==== 8b_r2 (qwen3-vl:8b-instruct)
+холодный старт до ready 17.0 с (порт 17.0 с); participant_test код 0, 73.7 с на 20 кадров
+latency_ms (скрипт организатора): p50 3536, p95 3972 (линейн.) / 3949 (ближ. ранг), max 4404, среднее 3498; >3 с: 17, >5 с: 0, >8 с: 0, >=10 с: 0; null slug 0
+  по возрастанию: [2859, 2939, 2947, 3073, 3101, 3169, 3273, 3285, 3511, 3517, 3555, 3628, 3675, 3678, 3743, 3774, 3939, 3943, 3949, 4404]
+точность на 20: мягко 19/20, строго 18/20
+обрывы по журналу: vlm_timeout 0, vlm_budget_cut 0, budget_exceeded 0
+/v1/health после прогона: status ready [] scans {"total": 20, "errors": 0, "null_slug": 0, "text_read": 20, "max_total_ms": 4384.3, "degraded": {}}
+CPU: до старта сервиса среднее None %; в окне прогона среднее 16.7 %, max 49.0 % (58 отсчётов)
+nvidia-smi: до старта max None МиБ; в окне прогона 9909–9916 МиБ (136 отсчётов); max за жизнь сервиса 9931 МиБ
+/api/ps после ready: [{'name': 'qwen3-vl:8b-instruct', 'size': 5793780858, 'size_vram': 5793780858, 'context_length': 4096}]
+прогревочные сканы до ready: [('2026-09-23 13:04:13,591', 'chteau-le-grand-vostock-cabernet-sauvignon-reserve-kaberne-sovinon-krasnoe-suhoe-14', 'matched', '0.6953', '2209', '-')]
+строка прогрева: 2026-09-23 13:04:13,592 INFO app.api.service: Прогрев: ready — {"cv": {"status": "ok", "elapsed_ms": 8029.9, "device": "cuda"}, "vlm": {"status": "ok", "elapsed_ms": 4863}, "scan": {"attempt": 1, "outcome": "matched", "degraded": [], "timings_ms": {"decode": 4.9, "views": 2.0, "gpu_wait": 0.0, "cv": 237.7, "vlm": 1558.1, "resolve": 405.4, "total": 2209.2}}}
+покадрово: q | вид | latency | total сервиса | degraded | мягко/строго
+  M346-orig-0  jpg          3517  3499 -                            1/1  p=0.9999
+  M388-orig-0  jpg          3743  3723 -                            1/1  p=0.5217
+  M592-orig-0  jpg          3774  3753 -                            1/1  p=0.1033
+  M186-orig-0  heic         3555  3542 -                            1/1  p=0.9865
+  M193-orig-0  heic         3273  3255 -                            1/1  p=0.8825
+  M431-orig-0  jpg          2859  2838 -                            1/1  p=0.4322
+  M390-orig-0  jpg          2947  2927 -                            1/0  p=0.8019
+  M208-orig-0  heic         3285  3272 -                            1/1  p=0.9774
+  L22-orig-0   jpg          3675  3671 -                            0/0  p=0.5126
+  M161-orig-0  jpg          3169  3151 -                            1/1  p=0.1245
+  M269-orig-0  jpg          2939  2920 -                            1/1  p=0.7326
+  R055-orig-0  portal_webp  3678  3672 -                            1/1  p=0.8047
+  R064-orig-0  portal_webp  3943  3931 -                            1/1  p=0.9586
+  L45-orig-0   jpg          3101  3097 -                            1/1  p=0.9105
+  M414-orig-0  jpg          3511  3492 -                            1/1  p=0.7744
+  M128-orig-0  jpg          3949  3932 -                            1/1  p=0.9109
+  M359-orig-0  jpg          4404  4384 -                            1/1  p=0.5485
+  R094-orig-0  portal_webp  3939  3932 -                            1/1  p=0.9492
+  R075-orig-0  portal_webp  3628  3622 -                            1/1  p=0.9214
+  R066-orig-0  portal_webp  3073  3066 -                            1/1  p=0.9954
+/v1/scan после прогона (разбор стадий):
+  M440-orig-0  new               wall  3709 degraded=[] timings={'decode': 85.8, 'views': 6.1, 'gpu_wait': 0.0, 'cv': 691.7, 'vlm': 2882.9, 'resolve': 1.2, 'total': 3668.0}
+  M062-orig-0  new               wall  2845 degraded=[] timings={'decode': 86.3, 'views': 6.1, 'gpu_wait': 0.0, 'cv': 476.3, 'vlm': 2235.6, 'resolve': 3.5, 'total': 2808.0}
+  M312-orig-0  new               wall  3806 degraded=[] timings={'decode': 91.0, 'views': 6.0, 'gpu_wait': 0.0, 'cv': 488.8, 'vlm': 3174.0, 'resolve': 3.7, 'total': 3763.8}
+  M312-orig-0  repeat_immediate  wall  2252 degraded=[] timings={'decode': 99.4, 'views': 6.4, 'gpu_wait': 0.0, 'cv': 491.2, 'vlm': 1617.7, 'resolve': 1.1, 'total': 2216.1}
+  M346-orig-0  repeat_after_20   wall  1799 degraded=[] timings={'decode': 87.3, 'views': 5.9, 'gpu_wait': 0.0, 'cv': 487.4, 'vlm': 1179.3, 'resolve': 1.0, 'total': 1761.1}
+
+8b_r2 минус 4b_r2 по кадрам: медиана 1515 мс, min 918, max 2059; 8b_r2 медленнее на 20/20
+ответы различаются: [('M388-orig-0', 'inkermanskiy-zmv-inkerman-bryut-rkatsiteli-beloe-12', 'inkermanskiy-zmv-inkerman-bryut-shardone-beloe-135', False, True)]

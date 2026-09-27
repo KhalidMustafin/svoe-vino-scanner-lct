@@ -1,0 +1,8 @@
+# python -m bench.resolve_equality --model configs/resolve/s2so400m-vlm35-lw-pool.json (код a4b7cee, общий data)
+pfix_final: 353/353 кадров — сервис = офлайн
+kr_holdout: 617/617 кадров — сервис = офлайн
+код выхода 0
+# python -m bench.resolve_equality --model configs/resolve/s2so400m-vlm35-goal.json (код a4b7cee, общий data)
+pfix_final: 353/353 кадров — сервис = офлайн
+kr_holdout: 617/617 кадров — сервис = офлайн
+код выхода 0

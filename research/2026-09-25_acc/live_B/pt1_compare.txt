@@ -1,0 +1,43 @@
+{
+ "new": {
+  "n": 20,
+  "p50": 1310.5,
+  "p95_rank": 1544,
+  "p95_linear": 1544,
+  "max": 1554,
+  "null_slug": 0
+ },
+ "baseline_4b": {
+  "stats": {
+   "n": 20,
+   "p50": 2057.5,
+   "p95_rank": 2379,
+   "p95_linear": 2382,
+   "max": 2429,
+   "null_slug": 0
+  },
+  "slug_equal": 20,
+  "of": 20,
+  "diffs": [],
+  "sha_mismatch": [],
+  "missing": []
+ },
+ "baseline_4b_r2": {
+  "stats": {
+   "n": 20,
+   "p50": 2033.0,
+   "p95_rank": 2345,
+   "p95_linear": 2346,
+   "max": 2360,
+   "null_slug": 0
+  },
+  "slug_equal": 20,
+  "of": 20,
+  "diffs": [],
+  "sha_mismatch": [],
+  "missing": []
+ },
+ "p95_limit_ms": 2479.0
+}
+ИТОГ: совпало (p95 1544 мс, предел 2479 мс)
+compare exit=0

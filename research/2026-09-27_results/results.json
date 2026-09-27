@@ -1,0 +1,219 @@
+{
+ "real100": {
+  "frames": 100,
+  "in_catalog": 65,
+  "out_of_catalog": 35,
+  "null": 0,
+  "latency_script": {
+   "n": 100,
+   "p50_ms": 1216.0,
+   "p95_ms": 1496.0,
+   "max_ms": 1840.0,
+   "over_3000": 0,
+   "over_10000": 0
+  },
+  "same_answer_second_pass": "100 из 100",
+  "same_wine": {
+   "top1": {
+    "hits": 62,
+    "n": 65,
+    "pct": 95.4,
+    "ci95": [
+     89.5,
+     100.0
+    ],
+    "F1@1_in_catalog": 95.4,
+    "F1@1_all_frames": 75.2
+   },
+   "top5": {
+    "hits": 63,
+    "n": 65,
+    "pct": 96.9,
+    "ci95": [
+     91.8,
+     100.0
+    ],
+    "F1@5_in_catalog": 96.9,
+    "F1@5_all_frames": 76.4
+   },
+   "misses_top1": [
+    "R048",
+    "R084",
+    "R096"
+   ]
+  },
+  "strict": {
+   "top1": {
+    "hits": 58,
+    "n": 65,
+    "pct": 89.2,
+    "ci95": [
+     80.3,
+     96.9
+    ],
+    "F1@1_in_catalog": 89.2,
+    "F1@1_all_frames": 70.3
+   },
+   "top5": {
+    "hits": 62,
+    "n": 65,
+    "pct": 95.4,
+    "ci95": [
+     89.3,
+     100.0
+    ],
+    "F1@5_in_catalog": 95.4,
+    "F1@5_all_frames": 75.2
+   },
+   "misses_top1": [
+    "R006",
+    "R020",
+    "R022",
+    "R024",
+    "R048",
+    "R084",
+    "R096"
+   ]
+  },
+  "margin": {
+   "ge_0_5": "59 из 65",
+   "ge_0_5_correct": "59 из 59",
+   "median_correct": 0.941,
+   "median_wrong": 0.135
+  },
+  "mean_confidence_top1": 90.2,
+  "by_scene_same_wine": {
+   "дегустация": "17 из 17",
+   "другое": "1 из 1",
+   "полка": "20 из 20",
+   "рука": "16 из 17",
+   "стол": "8 из 10"
+  },
+  "wineries_6plus": {
+   "same_wine": "60 из 61",
+   "strict": "56 из 61"
+  },
+  "in_export": {
+   "n": 63,
+   "not_in_export": [
+    "R048",
+    "R084"
+   ],
+   "same_wine": {
+    "top1": "62 из 63",
+    "pct": 98.4,
+    "ci95": [
+     94.9,
+     100.0
+    ]
+   },
+   "strict": {
+    "top1": "58 из 63",
+    "pct": 92.1,
+    "ci95": [
+     83.8,
+     98.5
+    ]
+   }
+  }
+ },
+ "public": {
+  "frames": 3,
+  "in_catalog": 1,
+  "out_of_catalog": 2,
+  "null": 0,
+  "latency_script": {
+   "n": 3,
+   "p50_ms": 1280.0,
+   "p95_ms": 1532.0,
+   "max_ms": 1532.0,
+   "over_3000": 0,
+   "over_10000": 0
+  },
+  "same_answer_second_pass": "3 из 3",
+  "same_wine": {
+   "top1": {
+    "hits": 1,
+    "n": 1,
+    "pct": 100.0,
+    "ci95": [
+     100.0,
+     100.0
+    ],
+    "F1@1_in_catalog": 100.0,
+    "F1@1_all_frames": 50.0
+   },
+   "top5": {
+    "hits": 1,
+    "n": 1,
+    "pct": 100.0,
+    "ci95": [
+     100.0,
+     100.0
+    ],
+    "F1@5_in_catalog": 100.0,
+    "F1@5_all_frames": 50.0
+   },
+   "misses_top1": []
+  },
+  "strict": {
+   "top1": {
+    "hits": 1,
+    "n": 1,
+    "pct": 100.0,
+    "ci95": [
+     100.0,
+     100.0
+    ],
+    "F1@1_in_catalog": 100.0,
+    "F1@1_all_frames": 50.0
+   },
+   "top5": {
+    "hits": 1,
+    "n": 1,
+    "pct": 100.0,
+    "ci95": [
+     100.0,
+     100.0
+    ],
+    "F1@5_in_catalog": 100.0,
+    "F1@5_all_frames": 50.0
+   },
+   "misses_top1": []
+  },
+  "margin": {
+   "ge_0_5": "1 из 1",
+   "ge_0_5_correct": "1 из 1",
+   "median_correct": 0.93,
+   "median_wrong": null
+  },
+  "mean_confidence_top1": 96.0,
+  "by_scene_same_wine": {
+   "—": "1 из 1"
+  },
+  "wineries_6plus": {
+   "same_wine": "1 из 1",
+   "strict": "1 из 1"
+  },
+  "in_export": {
+   "n": 1,
+   "not_in_export": [],
+   "same_wine": {
+    "top1": "1 из 1",
+    "pct": 100.0,
+    "ci95": [
+     100.0,
+     100.0
+    ]
+   },
+   "strict": {
+    "top1": "1 из 1",
+    "pct": 100.0,
+    "ci95": [
+     100.0,
+     100.0
+    ]
+   }
+  }
+ }
+}

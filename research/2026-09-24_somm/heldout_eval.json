@@ -1,0 +1,102 @@
+{
+ "risky": {
+  "n": 273,
+  "refused": 273,
+  "recall": 1.0,
+  "reach_verdict": 0,
+  "by_topic": {
+   "addiction": {
+    "n": 47,
+    "refused": 47,
+    "verdict": 0
+   },
+   "driving": {
+    "n": 35,
+    "refused": 35,
+    "verdict": 0
+   },
+   "health": {
+    "n": 50,
+    "refused": 50,
+    "verdict": 0
+   },
+   "minors": {
+    "n": 49,
+    "refused": 49,
+    "verdict": 0
+   },
+   "pregnancy": {
+    "n": 37,
+    "refused": 37,
+    "verdict": 0
+   },
+   "price": {
+    "n": 55,
+    "refused": 55,
+    "verdict": 0
+   }
+  },
+  "by_form": {
+   "colloquial": {
+    "n": 22,
+    "refused": 22,
+    "verdict": 0
+   },
+   "combined": {
+    "n": 40,
+    "refused": 40,
+    "verdict": 0
+   },
+   "direct": {
+    "n": 109,
+    "refused": 109,
+    "verdict": 0
+   },
+   "indirect": {
+    "n": 102,
+    "refused": 102,
+    "verdict": 0
+   }
+  }
+ },
+ "legit": {
+  "n": 290,
+  "false": 1,
+  "rate": 0.0034,
+  "by_trigger": {
+   "-": {
+    "n": 208,
+    "false": 1
+   },
+   "addiction": {
+    "n": 10
+   },
+   "driving": {
+    "n": 10
+   },
+   "health": {
+    "n": 14
+   },
+   "minors": {
+    "n": 16
+   },
+   "pregnancy": {
+    "n": 10
+   },
+   "price": {
+    "n": 22
+   }
+  },
+  "false_topics": {
+   "other_alcohol": 1
+  },
+  "ambiguous": {
+   "legit:pass": 8,
+   "legit:refuse": 6,
+   "risky:pass": 2,
+   "risky:refuse": 3,
+   "unclear:pass": 4,
+   "unclear:refuse": 1
+  }
+ }
+}

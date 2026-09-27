@@ -1,0 +1,8 @@
+Разметка каталога или читатель этикетки не те, на которых обучен resolve: {"gt_tokens_sha1": "899d5db3747fd315b7c8bfedf121f6ae79799061", "model_gt_tokens_sha1": "bf6a8823a45004b1e13e586e5a92e05b8beb07b0", "lexicon_source_sha1": null, "vlm_reader": null, "vlm_reader_trained": ["vlm@qwen3.5:4b|f3a017317f04"], "consistent": false} — цифры замера к этой сборке не относятся
+v2: {"frames": 353, "cache": {"cv_hit": 353, "cv_miss": 0, "read_hit": 353, "read_miss": 0}, "cv_key": "ae2c4db886d1b1e9", "gt": "899d5db3747fd315b7c8bfedf121f6ae79799061", "redecide_mismatch": 0, "branch_off_eq_stand": 353, "branch_off_eq_wm": 353, "eq_e4_pkg_stand": 353}
+kr: {"frames": 903, "cache": {"cv_hit": 903, "cv_miss": 0, "read_hit": 903, "read_miss": 0}, "cv_key": "ae2c4db886d1b1e9", "gt": "899d5db3747fd315b7c8bfedf121f6ae79799061", "redecide_mismatch": 0, "branch_off_eq_stand": 903, "branch_off_eq_wm": 903, "eq_e4_pkg_stand": 903}
+Р±Р°Р·Р° v2                      РјСЏРіРєРѕ 315/353 (89.24, РјР°РєСЂРѕ 88.86) СЃС‚СЂРѕРіРѕ 307 (86.97) | L 19/20 M 233/268 R 63/65 | +0/в€’0 СЃС‚СЂРѕРіРѕ +0/в€’0 | СЃРјРµРЅ 0 | РїРѕС‡РёРЅРєРё [] РїРѕР»РѕРјРєРё []
+Р±Р°Р·Р° kr asis                 РјСЏРіРєРѕ 543/617 (88.01, РјР°РєСЂРѕ 89.14) СЃС‚СЂРѕРіРѕ 512 (82.98) | K 543/617 | +0/в€’0 СЃС‚СЂРѕРіРѕ +0/в€’0 | СЃРјРµРЅ 0 | РїРѕС‡РёРЅРєРё [] РїРѕР»РѕРјРєРё []
+Р±Р°Р·Р° kr wm                   РјСЏРіРєРѕ 545/617 (88.33, РјР°РєСЂРѕ 89.41) СЃС‚СЂРѕРіРѕ 514 (83.31) | K 545/617 | +0/в€’0 СЃС‚СЂРѕРіРѕ +0/в€’0 | СЃРјРµРЅ 0 | РїРѕС‡РёРЅРєРё [] РїРѕР»РѕРјРєРё []
+РїСЂРёР·РЅР°РєРё vs augment() 25.09: {'v2': {'items': 353, 'differ': 0}, 'kr': {'items': 903, 'differ': 0}, 'studio': {'items': 298, 'differ': 0}}; СЃС‚СѓРґРёСЏ {'queries': 298, 'items': 298}
+Р’РћР РћРўРђ: РїСЂРѕР№РґРµРЅС‹

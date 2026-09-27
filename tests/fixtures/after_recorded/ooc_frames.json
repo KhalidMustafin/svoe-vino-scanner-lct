@@ -1,0 +1,296 @@
+{
+ "source": "svoe-vino-scanner/runs/field25/iters/runs/ooc_v2prod/iter20/predictions.jsonl",
+ "note": "Записанные ответы сервиса (4B + H5) на кадрах поля вне каталога: чтение VLM (строки и поля словаря), top-5 после H5 с вероятностями, счёт CV top-1 (zmax). Кадров и путей к ним здесь нет.",
+ "frames": [
+  {
+   "query_id": "R030-orig-0",
+   "wine": "Alveus Ультра Кюве Оранж Брют (Фанагория): винодельни на этикетке нет, только линия Alveus",
+   "outcome": "ambiguous",
+   "p_top1": 0.326,
+   "top5": [
+    [
+     "fanagoriya-alveus-ultra-cuvee-brut-shardone-beloe-bryut-12",
+     0.2421
+    ],
+    [
+     "fanagoriya-alveus-ultra-cuvee-bryut-rozovoe-merlo-igristoe-bryut-rozovoe-12",
+     0.326
+    ],
+    [
+     "fanagoriya-alveus-ultra-cuvee-ekstra-bryut-beloe-risling-reynskiy-12",
+     0.2552
+    ],
+    [
+     "fanagoriya-alveus-ultra-cuvee-ekstra-bryut-rozovoe-merlo-12",
+     0.1741
+    ],
+    [
+     "fanagoriya-primum-alveus-extra-brut-2016-shardone-beloe-bryut-12",
+     0.0008
+    ]
+   ],
+   "cv_top1": 0.7771,
+   "vlm": {
+    "status": "ok",
+    "lines": [
+     "ALVEUS",
+     "УЛЬТРА КЮВЕ",
+     "ОРАНЖ",
+     "БРЮТ"
+    ],
+    "fields": {
+     "winery": [],
+     "cuvee": [
+      "alveus"
+     ],
+     "grapes": [],
+     "sugar": [
+      "brut"
+     ],
+     "vintage": null,
+     "serial": [
+      "ультра",
+      "кюве"
+     ],
+     "abv": null,
+     "color": "Оранжевое",
+     "unmatched": []
+    }
+   }
+  },
+  {
+   "query_id": "R002-orig-0",
+   "wine": "Шато Пино «Беленькое»: винодельня каталога, позиции нет",
+   "outcome": "ambiguous",
+   "p_top1": 0.357,
+   "top5": [
+    [
+     "shato-pino-sovinon-blan-semilon-beloe-suhoe-115",
+     0.357
+    ],
+    [
+     "shato-pino-gravitatsiya-kaberne-sovinon-merlo-krasnoe-suhoe-135",
+     0.1633
+    ],
+    [
+     "shato-pino-shato-pino-koldun-merlo-krasnoe-suhoe-137",
+     0.1261
+    ],
+    [
+     "shato-pino-aligote-rkatsiteli-beloe-suhoe-12",
+     0.1235
+    ],
+    [
+     "shato-pino-marselan-merlo-krasnoe-suhoe-13",
+     0.0672
+    ]
+   ],
+   "cv_top1": 0.8072,
+   "vlm": {
+    "status": "ok",
+    "lines": [
+     "CHÂTEAU",
+     "PINOT",
+     "Беленькое",
+     "2025"
+    ],
+    "fields": {
+     "winery": [
+      "chateau",
+      "Шато Пино",
+      "чатеау"
+     ],
+     "cuvee": [
+      "pinot",
+      "шато",
+      "пино"
+     ],
+     "grapes": [],
+     "sugar": [],
+     "vintage": 2025,
+     "serial": [],
+     "abv": null,
+     "color": null,
+     "unmatched": [
+      "беленькое"
+     ]
+    }
+   }
+  },
+  {
+   "query_id": "R058-orig-0",
+   "wine": "Усадьба Дивноморское, Терруар «Вторая линия» — «Вечерница»: винодельня каталога, позиции нет",
+   "outcome": "matched",
+   "p_top1": 0.9244,
+   "top5": [
+    [
+     "usadba-divnomorskoe-yuzhnyy-les-merlo-krasnoe-suhoe-137",
+     0.9244
+    ],
+    [
+     "usadba-divnomorskoe-solist-marselan-rozovoe-suhoe-115",
+     0.0601
+    ],
+    [
+     "usadba-divnomorskoe-solnechnyy-veter-shardone-beloe-suhoe-125",
+     0.0098
+    ],
+    [
+     "usadba-divnomorskoe-holodnyy-tuman-risling-beloe-suhoe-115",
+     0.0043
+    ],
+    [
+     "usadba-divnomorskoe-pinot-noir-pino-nuar-krasnoe-suhoe-12",
+     0.0003
+    ]
+   ],
+   "cv_top1": 0.9493,
+   "vlm": {
+    "status": "ok",
+    "lines": [
+     "УСАДЬБА",
+     "ДИВНОМОРСКОЕ",
+     "ТЕРРУАР",
+     "ВТОРАЯ ЛИНИЯ",
+     "Вегетарица"
+    ],
+    "fields": {
+     "winery": [
+      "Усадьба Дивноморское"
+     ],
+     "cuvee": [],
+     "grapes": [],
+     "sugar": [],
+     "vintage": null,
+     "serial": [
+      "терруар"
+     ],
+     "abv": null,
+     "color": null,
+     "unmatched": [
+      "вторая",
+      "линия",
+      "вегетарица"
+     ]
+    }
+   }
+  },
+  {
+   "query_id": "R086-orig-0",
+   "wine": "Bel Colle Barolo DOCG: иностранное вино, с этикетки не прочитано ни одного поля",
+   "outcome": "matched",
+   "p_top1": 0.6752,
+   "top5": [
+    [
+     "vinodelnya-begildeeva-merlo-krasnoe-suhoe-14",
+     0.6752
+    ],
+    [
+     "loco-cimbali-loco-cimbali-red-kaberne-sovinon-krasnoe-suhoe-135",
+     0.1083
+    ],
+    [
+     "nebbiolo",
+     0.0483
+    ],
+    [
+     "vinodelnya-marchenko-vermilon-kaberne-azos-krasnoe-suhoe-14",
+     0.0314
+    ],
+    [
+     "blanc-de-blancs-idolo",
+     0.0247
+    ]
+   ],
+   "cv_top1": 0.6918,
+   "vlm": {
+    "status": "ok",
+    "lines": [
+     "BELCOLLE",
+     "VERDUNO - ITALIA",
+     "BAROLO",
+     "DENOMINAZIONE DI ORIGINE CONTROLLATA E GARANTITA"
+    ],
+    "fields": {
+     "winery": [],
+     "cuvee": [],
+     "grapes": [],
+     "sugar": [],
+     "vintage": null,
+     "serial": [],
+     "abv": null,
+     "color": null,
+     "unmatched": [
+      "belcolle",
+      "verduno",
+      "italia",
+      "barolo",
+      "denominazione",
+      "origine",
+      "controllata",
+      "garantita"
+     ]
+    }
+   }
+  },
+  {
+   "query_id": "M054-orig-0",
+   "wine": "Château de Châtaignier: чужая винодельня, словарь дал только родовое «chateau»",
+   "outcome": "ambiguous",
+   "p_top1": 0.2314,
+   "top5": [
+    [
+     "chteau-le-grand-vostock-cabernet-sauvignon-kaberne-sovinon-krasnoe-suhoe-14",
+     0.2314
+    ],
+    [
+     "chateau-andre-pino-nuar-krasnoe-suhoe-14",
+     0.223
+    ],
+    [
+     "chateau-andre-merlo-krasnoe-suhoe-14",
+     0.1802
+    ],
+    [
+     "kuban-vino-kaberne-de-tamane-kaberne-sovinon-krasnoe-suhoe-125",
+     0.0643
+    ],
+    [
+     "chteau-le-grand-vostock-merlot-merlo-krasnoe-suhoe-14",
+     0.0623
+    ]
+   ],
+   "cv_top1": 0.7599,
+   "vlm": {
+    "status": "ok",
+    "lines": [
+     "CHÂTEAU",
+     "de CHÂTAIGNIER",
+     "КРАЧОЕ",
+     "СУХОЕ"
+    ],
+    "fields": {
+     "winery": [
+      "chateau",
+      "чатеау"
+     ],
+     "cuvee": [
+      "шато"
+     ],
+     "grapes": [],
+     "sugar": [
+      "suhoe"
+     ],
+     "vintage": null,
+     "serial": [],
+     "abv": null,
+     "color": null,
+     "unmatched": [
+      "chataignier",
+      "крачое"
+     ]
+    }
+   }
+  }
+ ]
+}

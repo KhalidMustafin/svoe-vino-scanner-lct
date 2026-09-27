@@ -1,0 +1,200 @@
+{
+  "slug": "cru-lermont-risling",
+  "name": "Cru Lermont Рислинг",
+  "winery": "Фанагория",
+  "order": "reco",
+  "note": {
+    "text": "Cru Lermont Рислинг — белое. Фанагория, Кубань. Подают при 6–8 °C. По правилам сочетаний к нему подходят блины с икрой, икра красная и малосольная сёмга.",
+    "basis": "по карточке каталога, правилам подачи и сочетаний",
+    "generated": false,
+    "label": "Текст и подбор — алгоритм"
+  },
+  "profile": [
+    {
+      "axis": "sweetness",
+      "label": "Сладость",
+      "left": "сухое",
+      "right": "сладкое",
+      "value": null,
+      "source": null
+    },
+    {
+      "axis": "acidity",
+      "label": "Кислотность",
+      "left": "мягкая",
+      "right": "живая",
+      "value": 0.83,
+      "source": "grape"
+    },
+    {
+      "axis": "tannin",
+      "label": "Танины",
+      "left": "мягкие",
+      "right": "терпкие",
+      "value": 0.0,
+      "source": "grape"
+    },
+    {
+      "axis": "body",
+      "label": "Тело",
+      "left": "лёгкое",
+      "right": "плотное",
+      "value": 0.51,
+      "source": "grape"
+    },
+    {
+      "axis": "alcohol",
+      "label": "Крепость",
+      "left": "лёгкое",
+      "right": "крепкое",
+      "value": null,
+      "source": null
+    },
+    {
+      "axis": "oak",
+      "label": "Дуб",
+      "left": "без дуба",
+      "right": "заметный",
+      "value": 0.2,
+      "source": "grape"
+    },
+    {
+      "axis": "aroma_intensity",
+      "label": "Аромат",
+      "left": "сдержанный",
+      "right": "яркий",
+      "value": 0.72,
+      "source": "grape"
+    },
+    {
+      "axis": "effervescence",
+      "label": "Пузырьки",
+      "left": "тихое",
+      "right": "игристое",
+      "value": 0.0,
+      "source": "catalog"
+    }
+  ],
+  "serve": {
+    "temperature_c": [
+      6,
+      8
+    ],
+    "source": "rule",
+    "rule": "white",
+    "by_grape": true
+  },
+  "dishes": [
+    {
+      "id": "bliny_ikra",
+      "name": "Блины с икрой",
+      "category": "cold_appetizer",
+      "verdict": "yes",
+      "plus": [
+        {
+          "id": "acid_cuts_fat",
+          "text": "Кислотность освежает жирное",
+          "source": "grape"
+        },
+        {
+          "id": "intensity_match",
+          "text": "Равны по силе вкуса",
+          "source": "type"
+        },
+        {
+          "id": "seafood_loves_mineral_white",
+          "text": "Минеральность к рыбе и морю",
+          "source": "grape"
+        }
+      ],
+      "minus": [],
+      "source": null
+    },
+    {
+      "id": "ikra_krasnaya",
+      "name": "Икра красная",
+      "category": "cold_appetizer",
+      "verdict": "yes",
+      "plus": [
+        {
+          "id": "acid_cuts_fat",
+          "text": "Кислотность освежает жирное",
+          "source": "grape"
+        },
+        {
+          "id": "intensity_match",
+          "text": "Равны по силе вкуса",
+          "source": "type"
+        },
+        {
+          "id": "seafood_loves_mineral_white",
+          "text": "Минеральность к рыбе и морю",
+          "source": "grape"
+        }
+      ],
+      "minus": [],
+      "source": null
+    },
+    {
+      "id": "malosolnaya_semga",
+      "name": "Малосольная сёмга",
+      "category": "cold_appetizer",
+      "verdict": "yes",
+      "plus": [
+        {
+          "id": "acid_cuts_fat",
+          "text": "Кислотность освежает жирное",
+          "source": "grape"
+        },
+        {
+          "id": "intensity_match",
+          "text": "Равны по силе вкуса",
+          "source": "type"
+        },
+        {
+          "id": "seafood_loves_mineral_white",
+          "text": "Минеральность к рыбе и морю",
+          "source": "grape"
+        }
+      ],
+      "minus": [],
+      "source": null
+    }
+  ],
+  "chips": [
+    {
+      "id": "what_to_eat",
+      "text": "К чему подать"
+    },
+    {
+      "id": "serve",
+      "text": "Как подать"
+    },
+    {
+      "id": "softer",
+      "text": "Помягче"
+    },
+    {
+      "id": "fresher",
+      "text": "Посвежее"
+    },
+    {
+      "id": "replace",
+      "text": "Чем заменить"
+    },
+    {
+      "id": "grape",
+      "text": "О сорте Рислинг",
+      "args": {
+        "grape": "riesling"
+      }
+    },
+    {
+      "id": "guided",
+      "text": "Помогите выбрать"
+    }
+  ],
+  "live": true,
+  "input": true,
+  "notice_149": "Применяются рекомендательные технологии"
+}

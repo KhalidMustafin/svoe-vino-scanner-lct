@@ -1,0 +1,19 @@
+﻿=== baseline 2026-09-23 12:49:31
+nvidia-smi: 864 MiB, 10240 MiB, 1 %, P3
+
+  pid name           dedicated_MiB shared_MiB
+  --- ----           ------------- ----------
+16548 firefox                 5230          1
+25840 dwm                      341          4
+11760 NVIDIA Overlay           111          0
+14128 desktop-app               66          6
+24280 csrss                     52         16
+13256 ollama                     0          0
+
+
+
+sum over processes: dedicated 5991 MiB, shared 31 MiB
+adapter luid_0x00000000_0x000155a2_phys_0 dedicated 885 MiB
+adapter luid_0x00000000_0x00016754_phys_0 dedicated 0 MiB
+adapter luid_0x00000000_0x000155a2_phys_0 shared 32 MiB
+adapter luid_0x00000000_0x00016754_phys_0 shared 0 MiB

@@ -1,0 +1,52 @@
+{
+  "slug": "shato-pino-shiraz-krasnoe-suhoe-14",
+  "order": "plain",
+  "limit": 3,
+  "notice": null,
+  "category_label": "Красное сухое",
+  "items": [
+    {
+      "slug": "fanagoriya-100-ottenkov-krasnogo-kaberne-kaberne-sovinon-krasnoe-suhoe-135",
+      "name": "100 оттенков красного. Каберне",
+      "winery": "Фанагория",
+      "region": "Кубань",
+      "style_label": "Красное сухое",
+      "sparkling": false,
+      "grapes": [
+        "Каберне Совиньон"
+      ],
+      "photo_url": "/v1/wines/fanagoriya-100-ottenkov-krasnogo-kaberne-kaberne-sovinon-krasnoe-suhoe-135/photo",
+      "portal_url": "https://vino-svoe.ru/wines/fanagoriya-100-ottenkov-krasnogo-kaberne-kaberne-sovinon-krasnoe-suhoe-135",
+      "reasons": []
+    },
+    {
+      "slug": "fanagoriya-100-ottenkov-krasnogo-pino-nuar-krasnoe-suhoe-135",
+      "name": "100 оттенков красного. Пино Нуар",
+      "winery": "Фанагория",
+      "region": "Кубань",
+      "style_label": "Красное сухое",
+      "sparkling": false,
+      "grapes": [
+        "Пино Нуар"
+      ],
+      "photo_url": "/v1/wines/fanagoriya-100-ottenkov-krasnogo-pino-nuar-krasnoe-suhoe-135/photo",
+      "portal_url": "https://vino-svoe.ru/wines/fanagoriya-100-ottenkov-krasnogo-pino-nuar-krasnoe-suhoe-135",
+      "reasons": []
+    },
+    {
+      "slug": "fanagoriya-100-ottenkov-krasnogo-saperavi-krasnoe-suhoe-14",
+      "name": "100 оттенков красного. Саперави",
+      "winery": "Фанагория",
+      "region": "Кубань",
+      "style_label": "Красное сухое",
+      "sparkling": false,
+      "grapes": [
+        "Саперави"
+      ],
+      "photo_url": "/v1/wines/fanagoriya-100-ottenkov-krasnogo-saperavi-krasnoe-suhoe-14/photo",
+      "portal_url": "https://vino-svoe.ru/wines/fanagoriya-100-ottenkov-krasnogo-saperavi-krasnoe-suhoe-14",
+      "reasons": []
+    }
+  ],
+  "notes": []
+}

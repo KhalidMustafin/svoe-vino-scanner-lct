@@ -1,0 +1,847 @@
+{
+ "anchors": 200,
+ "anchors_without_sugar": 43,
+ "somm": {
+  "source": "data",
+  "wines": 2103
+ },
+ "catalog": {
+  "wines": 2103,
+  "pool": 1980,
+  "groups": 1980,
+  "sugar_known": 1727,
+  "sparkling": 297,
+  "abv_known": 1567,
+  "abv_ranges": 32,
+  "with_photo": 2080,
+  "photo_wrong": 23,
+  "tokens_source": "gt_tokens.jsonl",
+  "groups_source": "wines.jsonl"
+ },
+ "combos": 2400,
+ "exceptions": 0,
+ "ms": {
+  "p50": 2.155,
+  "p95": 5.912,
+  "max": 16.095,
+  "need_p95": 50
+ },
+ "ge3": {
+  "n": 2074,
+  "of_evaluable": 2188,
+  "share": 0.9479,
+  "need": 0.9,
+  "all_combos": {
+   "n": 2074,
+   "of": 2400,
+   "share": 0.8642
+  }
+ },
+ "not_evaluable": {
+  "combos": 212,
+  "by_want": {
+   "fresher": 8,
+   "softer": 32,
+   "sweeter": 172
+  },
+  "honest_note": 212
+ },
+ "ge3_by_want": {
+  "fresher": 0.975,
+  "softer": 0.93,
+  "sweeter": 0.6875
+ },
+ "ge3_by_want_evaluable": {
+  "fresher": 0.9848,
+  "softer": 0.9688,
+  "sweeter": 0.8758
+ },
+ "short": {
+  "n": 326,
+  "with_honest_note": 326
+ },
+ "notes_by_want": {
+  "fresher": {
+   "note:fewer_than_three": 12,
+   "note:fewer_than_three:cheese": 3,
+   "note:fewer_than_three:fish": 3,
+   "note:fewer_than_three:meat": 3,
+   "note:fewer_than_three:none": 3,
+   "note:not_evaluable": 8,
+   "note:not_evaluable:cheese": 2,
+   "note:not_evaluable:fish": 2,
+   "note:not_evaluable:meat": 2,
+   "note:not_evaluable:none": 2,
+   "note:pool_expanded": 20,
+   "note:pool_expanded:cheese": 6,
+   "note:pool_expanded:fish": 8,
+   "note:pool_expanded:meat": 3,
+   "note:pool_expanded:none": 3
+  },
+  "softer": {
+   "no_difference_sugar:None": 4,
+   "no_difference_sugar:polusladkoe": 4,
+   "no_difference_sugar:sladkoe": 8,
+   "note:fewer_than_three": 8,
+   "note:fewer_than_three:cheese": 2,
+   "note:fewer_than_three:fish": 2,
+   "note:fewer_than_three:meat": 2,
+   "note:fewer_than_three:none": 2,
+   "note:no_difference": 16,
+   "note:no_difference:cheese": 4,
+   "note:no_difference:fish": 4,
+   "note:no_difference:meat": 4,
+   "note:no_difference:none": 4,
+   "note:not_evaluable": 32,
+   "note:not_evaluable:cheese": 8,
+   "note:not_evaluable:fish": 8,
+   "note:not_evaluable:meat": 8,
+   "note:not_evaluable:none": 8,
+   "note:pool_expanded": 29,
+   "note:pool_expanded:cheese": 9,
+   "note:pool_expanded:fish": 8,
+   "note:pool_expanded:meat": 6,
+   "note:pool_expanded:none": 6
+  },
+  "sweeter": {
+   "no_difference_sugar:sladkoe": 28,
+   "note:fewer_than_three": 50,
+   "note:fewer_than_three:cheese": 15,
+   "note:fewer_than_three:fish": 20,
+   "note:fewer_than_three:meat": 15,
+   "note:no_difference": 28,
+   "note:no_difference:cheese": 7,
+   "note:no_difference:fish": 7,
+   "note:no_difference:meat": 7,
+   "note:no_difference:none": 7,
+   "note:not_evaluable": 172,
+   "note:not_evaluable:cheese": 43,
+   "note:not_evaluable:fish": 43,
+   "note:not_evaluable:meat": 43,
+   "note:not_evaluable:none": 43,
+   "note:pool_expanded": 60,
+   "note:pool_expanded:cheese": 1,
+   "note:pool_expanded:fish": 57,
+   "note:pool_expanded:meat": 1,
+   "note:pool_expanded:none": 1
+  }
+ },
+ "no_difference": {
+  "expected": 44,
+  "honest": 44,
+  "false_note": 0
+ },
+ "notes": {
+  "not_evaluable": 212,
+  "pool_expanded": 109,
+  "fewer_than_three": 70,
+  "no_difference": 44
+ },
+ "pool": {
+  "near": 2291,
+  "catalog": 109
+ },
+ "same_winery_or_group_in_items": 0,
+ "direction_check_failed": 0,
+ "food_check_failed": 0,
+ "softer_sugar": {
+  "items": 2238,
+  "above_ceiling_known_sugar": 0,
+  "drier_than_anchor": 0,
+  "above_semidry_same_as_anchor": {
+   "polusladkoe:grape": 62,
+   "sladkoe:grape": 1
+  },
+  "unknown_sugar": 382,
+  "two_steps_up_within_cap": {},
+  "above_examples": []
+ },
+ "content_filter_violations": 0,
+ "stop_words": 0,
+ "percent_in_body": 0,
+ "strings_checked": 117654,
+ "as_is": {
+  "distinct_triples_per_anchor_food": {
+   "1": 8,
+   "2": 70,
+   "3": 722
+  },
+  "distinct_nonempty_triples_per_anchor_food": {
+   "0": 8,
+   "1": 43,
+   "2": 232,
+   "3": 517
+  },
+  "shared_wines_between_directions": {
+   "fresher/softer": {
+    "0": 710,
+    "1": 24,
+    "2": 8,
+    "3": 8
+   },
+   "fresher/sweeter": {
+    "0": 550
+   },
+   "softer/sweeter": {
+    "0": 305,
+    "1": 136,
+    "2": 77,
+    "3": 26
+   }
+  },
+  "softer_sweeter_share_2_or_3": {
+   "n": 103,
+   "of": 544,
+   "share": 0.1893
+  },
+  "mean_distinct": 2.893,
+  "item_want_source": {
+   "catalog": 0.6875,
+   "grape": 0.3125
+  },
+  "answers_all_catalog": 0.6592,
+  "answers": {
+   "all_catalog": 1379,
+   "grape_only": 593,
+   "mixed": 120
+  },
+  "all_catalog_by_want": {
+   "fresher": 0.73,
+   "softer": 0.3063,
+   "sweeter": 0.6875
+  }
+ },
+ "plain": {
+  "combos": 800,
+  "bad": 0,
+  "p95_ms": 0.589
+ },
+ "reason_heads": {
+  "Тоже сухое": 1841,
+  "Посвежее": 1787,
+  "Помягче по сорту": 1730,
+  "Тоже Кубань": 1668,
+  "Послаще": 1650,
+  "Посвежее по сорту": 1640,
+  "К мясу": 1556,
+  "К сырам": 1555,
+  "К рыбе и морепродуктам": 1540,
+  "Тот же сорт": 1297,
+  "Помягче": 861,
+  "Тоже Крым": 832,
+  "Крым, а не Кубань": 775,
+  "Кубань, а не Крым": 619,
+  "Сорт": 601,
+  "Общий сорт": 506,
+  "Сорта": 221,
+  "Дагестан, а не Кубань": 175,
+  "Общие сорта": 173,
+  "Кубань, а не Дагестан": 171
+ },
+ "sweep": {
+  "anchors": 2103,
+  "anchors_in_pool": 1980,
+  "calls": 42060,
+  "exceptions": 0,
+  "ms": {
+   "p50": 1.394,
+   "p95": 4.811,
+   "max": 41.057
+  },
+  "short_without_note": 0,
+  "bad_strings": 0,
+  "percent_in_body": 0,
+  "softer_sugar": {
+   "items": 23823,
+   "above_ceiling_known_sugar": 0,
+   "drier_than_anchor": 0,
+   "above_semidry_same_as_anchor": {
+    "polusladkoe:grape": 591,
+    "sladkoe:grape": 27
+   },
+   "unknown_sugar": 3773,
+   "two_steps_up_within_cap": {},
+   "above_examples": [],
+   "items_by_anchor": {
+    "pool": 22413,
+    "not_in_pool": 1410
+   }
+  },
+  "pass": {
+   "no_exceptions": true,
+   "honest_when_short": true,
+   "content_filter": true,
+   "softer_not_above_ceiling": true
+  }
+ },
+ "pass": {
+  "no_exceptions": true,
+  "p95_under_50ms": true,
+  "ge3_share_90": true,
+  "honest_when_short": true,
+  "honest_when_no_difference": true,
+  "honest_when_not_evaluable": true,
+  "food_from_pairing_rules": true,
+  "content_filter": true,
+  "no_percent": true,
+  "softer_not_above_ceiling": true,
+  "sweep_clean": true
+ },
+ "errors": [],
+ "direction_bad": [],
+ "food_bad": [],
+ "filter_hits": [],
+ "examples": {
+  "massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16 fish fresher": {
+   "slug": "massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16",
+   "food": "fish",
+   "want": "fresher",
+   "order": "reco",
+   "notice": "Применяются рекомендательные технологии",
+   "pool": "near",
+   "items": [
+    {
+     "slug": "alma-valley-pino-gri-beloe-polusuhoe-15",
+     "name": "Пино Гри",
+     "winery": "Alma Valley",
+     "region": "Крым",
+     "style_label": "Белое полусухое",
+     "sparkling": false,
+     "grapes": [
+      "Пино Гри"
+     ],
+     "photo_url": "/v1/wines/alma-valley-pino-gri-beloe-polusuhoe-15/photo",
+     "portal_url": "https://vino-svoe.ru/wines/alma-valley-pino-gri-beloe-polusuhoe-15",
+     "reasons": [
+      "К рыбе и морепродуктам — по правилам сочетаний",
+      "Посвежее: полусухое, а не сладкое",
+      "Тоже Крым",
+      "Крепость 15° против 16°"
+     ],
+     "dishes": [
+      "Малосольная сёмга",
+      "Холодец",
+      "Солёная сельдь"
+     ],
+     "want_source": "catalog"
+    },
+    {
+     "slug": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+     "name": "Gewurztraminer de Gai-Kodzor",
+     "winery": "Виноградники Гай-Кодзора",
+     "region": "Кубань",
+     "style_label": "Белое полусухое",
+     "sparkling": false,
+     "grapes": [
+      "Гевюрцтраминер"
+     ],
+     "photo_url": "/v1/wines/vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135/photo",
+     "portal_url": "https://vino-svoe.ru/wines/vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+     "reasons": [
+      "К рыбе и морепродуктам — по правилам сочетаний",
+      "Посвежее: полусухое, а не сладкое",
+      "Кубань, а не Крым",
+      "Крепость 13,5° против 16°"
+     ],
+     "dishes": [
+      "Пастрома",
+      "Солёные грузди",
+      "Фаршированный перец"
+     ],
+     "want_source": "catalog"
+    },
+    {
+     "slug": "novyj-svet-polusuhoe-kollekczionnoe",
+     "name": "Новый Свет полусухое коллекционное",
+     "winery": "Новый Свет. Дом шампанских вин",
+     "region": "Крым",
+     "style_label": "Белое полусухое",
+     "sparkling": false,
+     "grapes": [
+      "Шардоне"
+     ],
+     "photo_url": "/v1/wines/novyj-svet-polusuhoe-kollekczionnoe/photo",
+     "portal_url": "https://vino-svoe.ru/wines/novyj-svet-polusuhoe-kollekczionnoe",
+     "reasons": [
+      "К рыбе и морепродуктам — по правилам сочетаний",
+      "Посвежее: полусухое, а не сладкое",
+      "Тоже Крым"
+     ],
+     "dishes": [
+      "Борщ с пампушками",
+      "Малосольная сёмга",
+      "Солёные грузди"
+     ],
+     "want_source": "catalog"
+    }
+   ],
+   "notes": []
+  },
+  "massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16 none sweeter": {
+   "slug": "massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16",
+   "food": "none",
+   "want": "sweeter",
+   "order": "reco",
+   "notice": "Применяются рекомендательные технологии",
+   "pool": "near",
+   "items": [],
+   "notes": [
+    {
+     "code": "no_difference",
+     "text": "Это вино уже сладкое: послаще в каталоге по описаниям не найти"
+    }
+   ]
+  },
+  "massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16 none softer": {
+   "slug": "massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16",
+   "food": "none",
+   "want": "softer",
+   "order": "reco",
+   "notice": "Применяются рекомендательные технологии",
+   "pool": "near",
+   "items": [],
+   "notes": [
+    {
+     "code": "not_evaluable",
+     "text": "По сорту мягкость этого вина не оценить — помягче подобрать не по чему"
+    }
+   ]
+  },
+  "soyuz-vino-konfessa-sandzhoveze-polusladkoe-krasnoe-11 none softer": {
+   "slug": "soyuz-vino-konfessa-sandzhoveze-polusladkoe-krasnoe-11",
+   "food": "none",
+   "want": "softer",
+   "order": "reco",
+   "notice": "Применяются рекомендательные технологии",
+   "pool": "near",
+   "items": [
+    {
+     "slug": "fanagoriya-fanagoriya-polusladkoe-rozovoe-sovinon-blan-krasnoe-11-13",
+     "name": "Фанагория. Полусладкое розовое",
+     "winery": "Фанагория",
+     "region": "Кубань",
+     "style_label": "Красное полусладкое",
+     "sparkling": false,
+     "grapes": [
+      "Мерло",
+      "Пино Нуар",
+      "Совиньон Блан",
+      "Шардоне"
+     ],
+     "photo_url": "/v1/wines/fanagoriya-fanagoriya-polusladkoe-rozovoe-sovinon-blan-krasnoe-11-13/photo",
+     "portal_url": "https://vino-svoe.ru/wines/fanagoriya-fanagoriya-polusladkoe-rozovoe-sovinon-blan-krasnoe-11-13",
+     "reasons": [
+      "Помягче по сорту: танины ниже — Мерло и Пино Нуар, а не Санджовезе",
+      "Тоже полусладкое",
+      "Тоже Кубань",
+      "Крепость 11–13° против 11°"
+     ],
+     "dishes": [
+      "Сырники",
+      "Творожная запеканка",
+      "Фрукты и ягоды"
+     ],
+     "want_source": "grape"
+    },
+    {
+     "slug": "derbent-vino-di-kaspiko-merlo-krasnoe-polusladkoe-11",
+     "name": "Ди Каспико",
+     "winery": "Дербент Вино",
+     "region": "Дагестан",
+     "style_label": "Красное полусладкое",
+     "sparkling": false,
+     "grapes": [
+      "Мерло"
+     ],
+     "photo_url": "/v1/wines/derbent-vino-di-kaspiko-merlo-krasnoe-polusladkoe-11/photo",
+     "portal_url": "https://vino-svoe.ru/wines/derbent-vino-di-kaspiko-merlo-krasnoe-polusladkoe-11",
+     "reasons": [
+      "Помягче по сорту: танины ниже — Мерло, а не Санджовезе",
+      "Тоже полусладкое",
+      "Дагестан, а не Кубань",
+      "Крепость та же — 11°"
+     ],
+     "dishes": [
+      "Шоколад",
+      "Сырная тарелка",
+      "Сырники"
+     ],
+     "want_source": "grape"
+    },
+    {
+     "slug": "valeriy-zaharin-pino-nuar-valeriy-zaharin-krasnoe-polusladkoe-105",
+     "name": "Пино Нуар. Валерий Захарьин",
+     "winery": "Валерий Захарьин",
+     "region": "Крым",
+     "style_label": "Красное полусладкое",
+     "sparkling": false,
+     "grapes": [
+      "Пино Нуар"
+     ],
+     "photo_url": "/v1/wines/valeriy-zaharin-pino-nuar-valeriy-zaharin-krasnoe-polusladkoe-105/photo",
+     "portal_url": "https://vino-svoe.ru/wines/valeriy-zaharin-pino-nuar-valeriy-zaharin-krasnoe-polusladkoe-105",
+     "reasons": [
+      "Помягче по сорту: танины ниже — Пино Нуар, а не Санджовезе",
+      "Тоже полусладкое",
+      "Крым, а не Кубань",
+      "Крепость 10,5° против 11°"
+     ],
+     "dishes": [
+      "Сырники",
+      "Сырная тарелка",
+      "Фрукты и ягоды"
+     ],
+     "want_source": "grape"
+    }
+   ],
+   "notes": []
+  },
+  "shato-pino-shiraz-krasnoe-suhoe-14 meat fresher": {
+   "slug": "shato-pino-shiraz-krasnoe-suhoe-14",
+   "food": "meat",
+   "want": "fresher",
+   "order": "reco",
+   "notice": "Применяются рекомендательные технологии",
+   "pool": "near",
+   "items": [
+    {
+     "slug": "vinodelnya-byurne-sira-krasnoe-suhoe-135",
+     "name": "БЮРНЬЕ.СИРА сухое красное",
+     "winery": "Винодельня Бюрнье",
+     "region": "Кубань",
+     "style_label": "Красное сухое",
+     "sparkling": false,
+     "grapes": [
+      "Сира"
+     ],
+     "photo_url": "/v1/wines/vinodelnya-byurne-sira-krasnoe-suhoe-135/photo",
+     "portal_url": "https://vino-svoe.ru/wines/vinodelnya-byurne-sira-krasnoe-suhoe-135",
+     "reasons": [
+      "К мясу — по правилам сочетаний",
+      "Посвежее: крепость 13,5° против 14°",
+      "Тот же сорт — Сира",
+      "Тоже сухое"
+     ],
+     "dishes": [
+      "Котлеты из фарша",
+      "Буженина",
+      "Шашлык из свинины"
+     ],
+     "want_source": "catalog"
+    },
+    {
+     "slug": "andryus-yutsis-organic-syrah-sira-krasnoe-suhoe-135",
+     "name": "Organic Syrah",
+     "winery": "Andryus Yutsis",
+     "region": "Крым",
+     "style_label": "Красное сухое",
+     "sparkling": false,
+     "grapes": [
+      "Сира"
+     ],
+     "photo_url": "/v1/wines/andryus-yutsis-organic-syrah-sira-krasnoe-suhoe-135/photo",
+     "portal_url": "https://vino-svoe.ru/wines/andryus-yutsis-organic-syrah-sira-krasnoe-suhoe-135",
+     "reasons": [
+      "К мясу — по правилам сочетаний",
+      "Посвежее: крепость 13,5° против 14°",
+      "Тот же сорт — Сира",
+      "Тоже сухое"
+     ],
+     "dishes": [
+      "Буженина",
+      "Котлеты из фарша",
+      "Шашлык из свинины"
+     ],
+     "want_source": "catalog"
+    },
+    {
+     "slug": "bakla-vines-sira-krasnoe-suhoe-135",
+     "name": "Сира",
+     "winery": "Bakla Vines",
+     "region": "Крым",
+     "style_label": "Красное сухое",
+     "sparkling": false,
+     "grapes": [
+      "Сира"
+     ],
+     "photo_url": "/v1/wines/bakla-vines-sira-krasnoe-suhoe-135/photo",
+     "portal_url": "https://vino-svoe.ru/wines/bakla-vines-sira-krasnoe-suhoe-135",
+     "reasons": [
+      "К мясу — по правилам сочетаний",
+      "Посвежее: крепость 13,5° против 14°",
+      "Тот же сорт — Сира",
+      "Тоже сухое"
+     ],
+     "dishes": [
+      "Буженина",
+      "Котлеты из фарша",
+      "Шашлык из свинины"
+     ],
+     "want_source": "catalog"
+    }
+   ],
+   "notes": []
+  },
+  "shato-pino-shiraz-krasnoe-suhoe-14 meat softer": {
+   "slug": "shato-pino-shiraz-krasnoe-suhoe-14",
+   "food": "meat",
+   "want": "softer",
+   "order": "reco",
+   "notice": "Применяются рекомендательные технологии",
+   "pool": "near",
+   "items": [
+    {
+     "slug": "vinodelnya-myshako-quintessence-storm-shiraz-krasnoe-polusuhoe-15",
+     "name": "Quintessence Storm. Шираз",
+     "winery": "Мысхако",
+     "region": "Кубань",
+     "style_label": "Красное полусухое",
+     "sparkling": false,
+     "grapes": [
+      "Сира"
+     ],
+     "photo_url": "/v1/wines/vinodelnya-myshako-quintessence-storm-shiraz-krasnoe-polusuhoe-15/photo",
+     "portal_url": "https://vino-svoe.ru/wines/vinodelnya-myshako-quintessence-storm-shiraz-krasnoe-polusuhoe-15",
+     "reasons": [
+      "К мясу — по правилам сочетаний",
+      "Помягче: полусухое, а не сухое",
+      "Тот же сорт — Сира",
+      "Тоже Кубань"
+     ],
+     "dishes": [
+      "Буженина",
+      "Котлеты из фарша",
+      "Бефстроганов"
+     ],
+     "want_source": "catalog"
+    },
+    {
+     "slug": "soyuz-vino-shato-de-mongolfer-shiraz-polusuhoe-krasnoe-11",
+     "name": "Шато де Монгольфьер Шираз Полусухое",
+     "winery": "Союз-Вино",
+     "region": "Кубань",
+     "style_label": "Красное полусухое",
+     "sparkling": false,
+     "grapes": [
+      "Сира"
+     ],
+     "photo_url": "/v1/wines/soyuz-vino-shato-de-mongolfer-shiraz-polusuhoe-krasnoe-11/photo",
+     "portal_url": "https://vino-svoe.ru/wines/soyuz-vino-shato-de-mongolfer-shiraz-polusuhoe-krasnoe-11",
+     "reasons": [
+      "К мясу — по правилам сочетаний",
+      "Помягче: полусухое, а не сухое",
+      "Тот же сорт — Сира",
+      "Тоже Кубань"
+     ],
+     "dishes": [
+      "Буженина",
+      "Котлеты из фарша",
+      "Бефстроганов"
+     ],
+     "want_source": "catalog"
+    },
+    {
+     "slug": "alma-valley-solntse-vozduh-vinograd-sira-shiraz-krasnoe-polusuhoe-135",
+     "name": "Солнце, воздух, виноград",
+     "winery": "Alma Valley",
+     "region": "Крым",
+     "style_label": "Красное полусухое",
+     "sparkling": false,
+     "grapes": [
+      "Каберне Совиньон",
+      "Каберне Фран",
+      "Сира",
+      "Темпранильо"
+     ],
+     "photo_url": "/v1/wines/alma-valley-solntse-vozduh-vinograd-sira-shiraz-krasnoe-polusuhoe-135/photo",
+     "portal_url": "https://vino-svoe.ru/wines/alma-valley-solntse-vozduh-vinograd-sira-shiraz-krasnoe-polusuhoe-135",
+     "reasons": [
+      "К мясу — по правилам сочетаний",
+      "Помягче: полусухое, а не сухое",
+      "Общий сорт — Сира",
+      "Крым, а не Кубань"
+     ],
+     "dishes": [
+      "Буженина",
+      "Котлеты из фарша",
+      "Шашлык из свинины"
+     ],
+     "want_source": "catalog"
+    }
+   ],
+   "notes": []
+  },
+  "shato-pino-shiraz-krasnoe-suhoe-14 meat sweeter": {
+   "slug": "shato-pino-shiraz-krasnoe-suhoe-14",
+   "food": "meat",
+   "want": "sweeter",
+   "order": "reco",
+   "notice": "Применяются рекомендательные технологии",
+   "pool": "near",
+   "items": [
+    {
+     "slug": "vinodelnya-myshako-quintessence-storm-shiraz-krasnoe-polusuhoe-15",
+     "name": "Quintessence Storm. Шираз",
+     "winery": "Мысхако",
+     "region": "Кубань",
+     "style_label": "Красное полусухое",
+     "sparkling": false,
+     "grapes": [
+      "Сира"
+     ],
+     "photo_url": "/v1/wines/vinodelnya-myshako-quintessence-storm-shiraz-krasnoe-polusuhoe-15/photo",
+     "portal_url": "https://vino-svoe.ru/wines/vinodelnya-myshako-quintessence-storm-shiraz-krasnoe-polusuhoe-15",
+     "reasons": [
+      "К мясу — по правилам сочетаний",
+      "Послаще: полусухое, а не сухое",
+      "Тот же сорт — Сира",
+      "Тоже Кубань"
+     ],
+     "dishes": [
+      "Буженина",
+      "Котлеты из фарша",
+      "Бефстроганов"
+     ],
+     "want_source": "catalog"
+    },
+    {
+     "slug": "soyuz-vino-shato-de-mongolfer-shiraz-polusuhoe-krasnoe-11",
+     "name": "Шато де Монгольфьер Шираз Полусухое",
+     "winery": "Союз-Вино",
+     "region": "Кубань",
+     "style_label": "Красное полусухое",
+     "sparkling": false,
+     "grapes": [
+      "Сира"
+     ],
+     "photo_url": "/v1/wines/soyuz-vino-shato-de-mongolfer-shiraz-polusuhoe-krasnoe-11/photo",
+     "portal_url": "https://vino-svoe.ru/wines/soyuz-vino-shato-de-mongolfer-shiraz-polusuhoe-krasnoe-11",
+     "reasons": [
+      "К мясу — по правилам сочетаний",
+      "Послаще: полусухое, а не сухое",
+      "Тот же сорт — Сира",
+      "Тоже Кубань"
+     ],
+     "dishes": [
+      "Буженина",
+      "Котлеты из фарша",
+      "Бефстроганов"
+     ],
+     "want_source": "catalog"
+    },
+    {
+     "slug": "valeriy-zaharin-sira-valeriy-zaharin-krasnoe-polusladkoe-125",
+     "name": "Сира. Валерий Захарьин",
+     "winery": "Валерий Захарьин",
+     "region": "Крым",
+     "style_label": "Красное полусладкое",
+     "sparkling": false,
+     "grapes": [
+      "Сира"
+     ],
+     "photo_url": "/v1/wines/valeriy-zaharin-sira-valeriy-zaharin-krasnoe-polusladkoe-125/photo",
+     "portal_url": "https://vino-svoe.ru/wines/valeriy-zaharin-sira-valeriy-zaharin-krasnoe-polusladkoe-125",
+     "reasons": [
+      "К мясу — по правилам сочетаний",
+      "Послаще: полусладкое, а не сухое",
+      "Тот же сорт — Сира",
+      "Крым, а не Кубань"
+     ],
+     "dishes": [
+      "Сырники",
+      "Шоколад",
+      "Творожная запеканка"
+     ],
+     "want_source": "catalog"
+    }
+   ],
+   "notes": []
+  },
+  "shato-pino-shiraz-krasnoe-suhoe-14 fish softer": {
+   "slug": "shato-pino-shiraz-krasnoe-suhoe-14",
+   "food": "fish",
+   "want": "softer",
+   "order": "reco",
+   "notice": "Применяются рекомендательные технологии",
+   "pool": "near",
+   "items": [
+    {
+     "slug": "chateau-andre-pino-nuar-krasnoe-suhoe-14",
+     "name": "Пино Нуар",
+     "winery": "Chateau Andre",
+     "region": "Кубань",
+     "style_label": "Красное сухое",
+     "sparkling": false,
+     "grapes": [
+      "Пино Нуар"
+     ],
+     "photo_url": "/v1/wines/chateau-andre-pino-nuar-krasnoe-suhoe-14/photo",
+     "portal_url": "https://vino-svoe.ru/wines/chateau-andre-pino-nuar-krasnoe-suhoe-14",
+     "reasons": [
+      "К рыбе и морепродуктам — по правилам сочетаний",
+      "Помягче по сорту: танины ниже — Пино Нуар, а не Сира",
+      "Тоже сухое",
+      "Тоже Кубань"
+     ],
+     "dishes": [
+      "Борщ с пампушками",
+      "Селёдка под шубой",
+      "Буженина"
+     ],
+     "want_source": "grape"
+    },
+    {
+     "slug": "imenie-sikory-pino-nuar-semeynyy-rezerv-krasnoe-suhoe-14",
+     "name": "Пино Нуар. Семейный резерв",
+     "winery": "Имение Сикоры",
+     "region": "Кубань",
+     "style_label": "Красное сухое",
+     "sparkling": false,
+     "grapes": [
+      "Пино Нуар"
+     ],
+     "photo_url": "/v1/wines/imenie-sikory-pino-nuar-semeynyy-rezerv-krasnoe-suhoe-14/photo",
+     "portal_url": "https://vino-svoe.ru/wines/imenie-sikory-pino-nuar-semeynyy-rezerv-krasnoe-suhoe-14",
+     "reasons": [
+      "К рыбе и морепродуктам — по правилам сочетаний",
+      "Помягче по сорту: танины ниже — Пино Нуар, а не Сира",
+      "Тоже сухое",
+      "Тоже Кубань"
+     ],
+     "dishes": [
+      "Борщ с пампушками",
+      "Селёдка под шубой",
+      "Буженина"
+     ],
+     "want_source": "grape"
+    },
+    {
+     "slug": "alma-valley-alma-graviti-pino-nuar-merlo-kaberne-sovinon-krasnoe-suhoe-14",
+     "name": "Альма Гравити. Пино Нуар - Мерло - Каберне Совиньон",
+     "winery": "Alma Valley",
+     "region": "Крым",
+     "style_label": "Красное сухое",
+     "sparkling": false,
+     "grapes": [
+      "Пино Нуар"
+     ],
+     "photo_url": "/v1/wines/alma-valley-alma-graviti-pino-nuar-merlo-kaberne-sovinon-krasnoe-suhoe-14/photo",
+     "portal_url": "https://vino-svoe.ru/wines/alma-valley-alma-graviti-pino-nuar-merlo-kaberne-sovinon-krasnoe-suhoe-14",
+     "reasons": [
+      "К рыбе и морепродуктам — по правилам сочетаний",
+      "Помягче по сорту: танины ниже — Пино Нуар, а не Сира",
+      "Тоже сухое",
+      "Крым, а не Кубань"
+     ],
+     "dishes": [
+      "Борщ с пампушками",
+      "Селёдка под шубой",
+      "Малосольная сёмга"
+     ],
+     "want_source": "grape"
+    }
+   ],
+   "notes": []
+  }
+ }
+}

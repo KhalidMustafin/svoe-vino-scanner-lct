@@ -1,0 +1,1334 @@
+{
+ "base": {
+  "v2": {
+   "soft_ok": 305,
+   "strict_ok": 297,
+   "n": 353,
+   "soft_macro": 85.95,
+   "soft_micro": 86.4,
+   "strict_micro": 84.14,
+   "slices": {
+    "L": {
+     "soft": 19,
+     "strict": 19,
+     "n": 20
+    },
+    "M": {
+     "soft": 224,
+     "strict": 220,
+     "n": 268
+    },
+    "R": {
+     "soft": 62,
+     "strict": 58,
+     "n": 65
+    }
+   },
+   "fixes": [],
+   "breaks": [],
+   "strict_fixes": [],
+   "strict_breaks": [],
+   "by_slice": {
+    "L": {
+     "fix": 0,
+     "brk": 0
+    },
+    "M": {
+     "fix": 0,
+     "brk": 0
+    },
+    "R": {
+     "fix": 0,
+     "brk": 0
+    }
+   },
+   "changed": 0
+  },
+  "kr": {
+   "soft_ok": 542,
+   "strict_ok": 511,
+   "n": 616,
+   "soft_macro": 89.12,
+   "soft_micro": 87.99,
+   "strict_micro": 82.95,
+   "slices": {
+    "K": {
+     "soft": 542,
+     "strict": 511,
+     "n": 616
+    }
+   },
+   "fixes": [],
+   "breaks": [],
+   "strict_fixes": [],
+   "strict_breaks": [],
+   "by_slice": {
+    "K": {
+     "fix": 0,
+     "brk": 0
+    }
+   },
+   "changed": 0
+  },
+  "kr_wm": {
+   "soft_ok": 544,
+   "strict_ok": 513,
+   "n": 616,
+   "soft_macro": 89.39,
+   "soft_micro": 88.31,
+   "strict_micro": 83.28,
+   "slices": {
+    "K": {
+     "soft": 544,
+     "strict": 513,
+     "n": 616
+    }
+   },
+   "fixes": [
+    "K0316",
+    "K0446"
+   ],
+   "breaks": [],
+   "strict_fixes": [
+    "K0316",
+    "K0446"
+   ],
+   "strict_breaks": [],
+   "by_slice": {
+    "K": {
+     "fix": 2,
+     "brk": 0
+    }
+   },
+   "changed": 4
+  },
+  "ooc": {
+   "sugar_read": 295,
+   "sugar_ok": 290,
+   "color_read": 289,
+   "color_ok": 288,
+   "color_bad": 1,
+   "sugar_bad": 5
+  }
+ },
+ "off": {
+  "v2": {
+   "soft_ok": 305,
+   "strict_ok": 297,
+   "n": 353,
+   "soft_macro": 85.95,
+   "soft_micro": 86.4,
+   "strict_micro": 84.14,
+   "slices": {
+    "L": {
+     "soft": 19,
+     "strict": 19,
+     "n": 20
+    },
+    "M": {
+     "soft": 224,
+     "strict": 220,
+     "n": 268
+    },
+    "R": {
+     "soft": 62,
+     "strict": 58,
+     "n": 65
+    }
+   },
+   "fixes": [],
+   "breaks": [],
+   "strict_fixes": [],
+   "strict_breaks": [],
+   "by_slice": {
+    "L": {
+     "fix": 0,
+     "brk": 0
+    },
+    "M": {
+     "fix": 0,
+     "brk": 0
+    },
+    "R": {
+     "fix": 0,
+     "brk": 0
+    }
+   },
+   "changed": 0
+  },
+  "kr": {
+   "soft_ok": 542,
+   "strict_ok": 511,
+   "n": 616,
+   "soft_macro": 89.12,
+   "soft_micro": 87.99,
+   "strict_micro": 82.95,
+   "slices": {
+    "K": {
+     "soft": 542,
+     "strict": 511,
+     "n": 616
+    }
+   },
+   "fixes": [],
+   "breaks": [],
+   "strict_fixes": [],
+   "strict_breaks": [],
+   "by_slice": {
+    "K": {
+     "fix": 0,
+     "brk": 0
+    }
+   },
+   "changed": 0
+  },
+  "kr_wm": {
+   "soft_ok": 544,
+   "strict_ok": 513,
+   "n": 616,
+   "soft_macro": 89.39,
+   "soft_micro": 88.31,
+   "strict_micro": 83.28,
+   "slices": {
+    "K": {
+     "soft": 544,
+     "strict": 513,
+     "n": 616
+    }
+   },
+   "fixes": [],
+   "breaks": [],
+   "strict_fixes": [],
+   "strict_breaks": [],
+   "by_slice": {
+    "K": {
+     "fix": 0,
+     "brk": 0
+    }
+   },
+   "changed": 0
+  },
+  "kr_aside": "K0638: база неверно, кандидат неверно",
+  "kr_aside_wm": "K0638: база неверно, кандидат неверно",
+  "ooc": {
+   "sugar_read": 295,
+   "sugar_ok": 290,
+   "color_read": 289,
+   "color_ok": 288,
+   "color_bad": 1,
+   "sugar_bad": 5
+  },
+  "ooc_new_false_colors": [],
+  "ooc_color_no_label": {
+   "R074-orig-0": "Белое",
+   "R077-orig-0": "Белое",
+   "R089-orig-0": "Красное",
+   "R095-orig-0": "Белое",
+   "R098-orig-0": "Красное",
+   "R099-orig-0": "Оранжевое",
+   "R100-orig-0": "Белое"
+  },
+  "ooc_fields_changed": 0,
+  "v2_fields_changed": 0,
+  "kr_fields_changed": 0,
+  "offline_mismatch": {
+   "v2": [],
+   "kr": []
+  },
+  "verdict": [],
+  "soft_breaks_anywhere": 0
+ },
+ "p1": {
+  "v2": {
+   "soft_ok": 311,
+   "strict_ok": 303,
+   "n": 353,
+   "soft_macro": 87.68,
+   "soft_micro": 88.1,
+   "strict_micro": 85.84,
+   "slices": {
+    "L": {
+     "soft": 19,
+     "strict": 19,
+     "n": 20
+    },
+    "M": {
+     "soft": 230,
+     "strict": 226,
+     "n": 268
+    },
+    "R": {
+     "soft": 62,
+     "strict": 58,
+     "n": 65
+    }
+   },
+   "fixes": [
+    "M214",
+    "M410",
+    "M422",
+    "M425",
+    "M459",
+    "M460"
+   ],
+   "breaks": [],
+   "strict_fixes": [
+    "M214",
+    "M410",
+    "M422",
+    "M425",
+    "M459",
+    "M460"
+   ],
+   "strict_breaks": [],
+   "by_slice": {
+    "L": {
+     "fix": 0,
+     "brk": 0
+    },
+    "M": {
+     "fix": 6,
+     "brk": 0
+    },
+    "R": {
+     "fix": 0,
+     "brk": 0
+    }
+   },
+   "changed": 6
+  },
+  "kr": {
+   "soft_ok": 543,
+   "strict_ok": 512,
+   "n": 616,
+   "soft_macro": 89.32,
+   "soft_micro": 88.15,
+   "strict_micro": 83.12,
+   "slices": {
+    "K": {
+     "soft": 543,
+     "strict": 512,
+     "n": 616
+    }
+   },
+   "fixes": [
+    "K0266"
+   ],
+   "breaks": [],
+   "strict_fixes": [
+    "K0266"
+   ],
+   "strict_breaks": [],
+   "by_slice": {
+    "K": {
+     "fix": 1,
+     "brk": 0
+    }
+   },
+   "changed": 1
+  },
+  "kr_wm": {
+   "soft_ok": 545,
+   "strict_ok": 514,
+   "n": 616,
+   "soft_macro": 89.6,
+   "soft_micro": 88.47,
+   "strict_micro": 83.44,
+   "slices": {
+    "K": {
+     "soft": 545,
+     "strict": 514,
+     "n": 616
+    }
+   },
+   "fixes": [
+    "K0266"
+   ],
+   "breaks": [],
+   "strict_fixes": [
+    "K0266"
+   ],
+   "strict_breaks": [],
+   "by_slice": {
+    "K": {
+     "fix": 1,
+     "brk": 0
+    }
+   },
+   "changed": 1
+  },
+  "kr_aside": "K0638: база неверно, кандидат неверно",
+  "kr_aside_wm": "K0638: база неверно, кандидат неверно",
+  "ooc": {
+   "sugar_read": 295,
+   "sugar_ok": 290,
+   "color_read": 289,
+   "color_ok": 288,
+   "color_bad": 1,
+   "sugar_bad": 5
+  },
+  "ooc_new_false_colors": [],
+  "ooc_color_no_label": {
+   "R074-orig-0": "Белое",
+   "R077-orig-0": "Белое",
+   "R089-orig-0": "Красное",
+   "R095-orig-0": "Белое",
+   "R098-orig-0": "Красное",
+   "R099-orig-0": "Оранжевое",
+   "R100-orig-0": "Белое"
+  },
+  "ooc_fields_changed": 0,
+  "v2_fields_changed": 0,
+  "kr_fields_changed": 0,
+  "offline_mismatch": {
+   "v2": [],
+   "kr": []
+  },
+  "verdict": [],
+  "soft_breaks_anywhere": 0
+ },
+ "r1a": {
+  "v2": {
+   "soft_ok": 307,
+   "strict_ok": 299,
+   "n": 353,
+   "soft_macro": 86.25,
+   "soft_micro": 86.97,
+   "strict_micro": 84.7,
+   "slices": {
+    "L": {
+     "soft": 19,
+     "strict": 19,
+     "n": 20
+    },
+    "M": {
+     "soft": 225,
+     "strict": 221,
+     "n": 268
+    },
+    "R": {
+     "soft": 63,
+     "strict": 59,
+     "n": 65
+    }
+   },
+   "fixes": [
+    "M455",
+    "R014"
+   ],
+   "breaks": [],
+   "strict_fixes": [
+    "M455",
+    "R014"
+   ],
+   "strict_breaks": [],
+   "by_slice": {
+    "L": {
+     "fix": 0,
+     "brk": 0
+    },
+    "M": {
+     "fix": 1,
+     "brk": 0
+    },
+    "R": {
+     "fix": 1,
+     "brk": 0
+    }
+   },
+   "changed": 2
+  },
+  "kr": {
+   "soft_ok": 542,
+   "strict_ok": 511,
+   "n": 616,
+   "soft_macro": 89.12,
+   "soft_micro": 87.99,
+   "strict_micro": 82.95,
+   "slices": {
+    "K": {
+     "soft": 542,
+     "strict": 511,
+     "n": 616
+    }
+   },
+   "fixes": [],
+   "breaks": [],
+   "strict_fixes": [],
+   "strict_breaks": [],
+   "by_slice": {
+    "K": {
+     "fix": 0,
+     "brk": 0
+    }
+   },
+   "changed": 0
+  },
+  "kr_wm": {
+   "soft_ok": 544,
+   "strict_ok": 513,
+   "n": 616,
+   "soft_macro": 89.39,
+   "soft_micro": 88.31,
+   "strict_micro": 83.28,
+   "slices": {
+    "K": {
+     "soft": 544,
+     "strict": 513,
+     "n": 616
+    }
+   },
+   "fixes": [],
+   "breaks": [],
+   "strict_fixes": [],
+   "strict_breaks": [],
+   "by_slice": {
+    "K": {
+     "fix": 0,
+     "brk": 0
+    }
+   },
+   "changed": 0
+  },
+  "kr_aside": "K0638: база неверно, кандидат неверно",
+  "kr_aside_wm": "K0638: база неверно, кандидат неверно",
+  "ooc": {
+   "sugar_read": 295,
+   "sugar_ok": 290,
+   "color_read": 289,
+   "color_ok": 288,
+   "color_bad": 1,
+   "sugar_bad": 5
+  },
+  "ooc_new_false_colors": [],
+  "ooc_color_no_label": {
+   "R074-orig-0": "Белое",
+   "R077-orig-0": "Белое",
+   "R089-orig-0": "Красное",
+   "R095-orig-0": "Белое",
+   "R098-orig-0": "Красное",
+   "R099-orig-0": "Оранжевое",
+   "R100-orig-0": "Белое"
+  },
+  "ooc_fields_changed": 0,
+  "v2_fields_changed": 3,
+  "kr_fields_changed": 0,
+  "offline_mismatch": {
+   "v2": [],
+   "kr": []
+  },
+  "verdict": [],
+  "soft_breaks_anywhere": 0
+ },
+ "r1b": {
+  "v2": {
+   "soft_ok": 305,
+   "strict_ok": 297,
+   "n": 353,
+   "soft_macro": 85.95,
+   "soft_micro": 86.4,
+   "strict_micro": 84.14,
+   "slices": {
+    "L": {
+     "soft": 19,
+     "strict": 19,
+     "n": 20
+    },
+    "M": {
+     "soft": 224,
+     "strict": 220,
+     "n": 268
+    },
+    "R": {
+     "soft": 62,
+     "strict": 58,
+     "n": 65
+    }
+   },
+   "fixes": [],
+   "breaks": [],
+   "strict_fixes": [],
+   "strict_breaks": [],
+   "by_slice": {
+    "L": {
+     "fix": 0,
+     "brk": 0
+    },
+    "M": {
+     "fix": 0,
+     "brk": 0
+    },
+    "R": {
+     "fix": 0,
+     "brk": 0
+    }
+   },
+   "changed": 0
+  },
+  "kr": {
+   "soft_ok": 542,
+   "strict_ok": 511,
+   "n": 616,
+   "soft_macro": 89.12,
+   "soft_micro": 87.99,
+   "strict_micro": 82.95,
+   "slices": {
+    "K": {
+     "soft": 542,
+     "strict": 511,
+     "n": 616
+    }
+   },
+   "fixes": [],
+   "breaks": [],
+   "strict_fixes": [],
+   "strict_breaks": [],
+   "by_slice": {
+    "K": {
+     "fix": 0,
+     "brk": 0
+    }
+   },
+   "changed": 0
+  },
+  "kr_wm": {
+   "soft_ok": 544,
+   "strict_ok": 513,
+   "n": 616,
+   "soft_macro": 89.39,
+   "soft_micro": 88.31,
+   "strict_micro": 83.28,
+   "slices": {
+    "K": {
+     "soft": 544,
+     "strict": 513,
+     "n": 616
+    }
+   },
+   "fixes": [],
+   "breaks": [],
+   "strict_fixes": [],
+   "strict_breaks": [],
+   "by_slice": {
+    "K": {
+     "fix": 0,
+     "brk": 0
+    }
+   },
+   "changed": 0
+  },
+  "kr_aside": "K0638: база неверно, кандидат неверно",
+  "kr_aside_wm": "K0638: база неверно, кандидат неверно",
+  "ooc": {
+   "sugar_read": 295,
+   "sugar_ok": 292,
+   "color_read": 289,
+   "color_ok": 288,
+   "color_bad": 1,
+   "sugar_bad": 3
+  },
+  "ooc_new_false_colors": [],
+  "ooc_color_no_label": {
+   "R074-orig-0": "Белое",
+   "R077-orig-0": "Белое",
+   "R089-orig-0": "Красное",
+   "R095-orig-0": "Белое",
+   "R098-orig-0": "Красное",
+   "R099-orig-0": "Оранжевое",
+   "R100-orig-0": "Белое"
+  },
+  "ooc_fields_changed": 2,
+  "v2_fields_changed": 0,
+  "kr_fields_changed": 0,
+  "offline_mismatch": {
+   "v2": [],
+   "kr": []
+  },
+  "verdict": [],
+  "soft_breaks_anywhere": 0
+ },
+ "r1c": {
+  "v2": {
+   "soft_ok": 305,
+   "strict_ok": 297,
+   "n": 353,
+   "soft_macro": 85.95,
+   "soft_micro": 86.4,
+   "strict_micro": 84.14,
+   "slices": {
+    "L": {
+     "soft": 19,
+     "strict": 19,
+     "n": 20
+    },
+    "M": {
+     "soft": 224,
+     "strict": 220,
+     "n": 268
+    },
+    "R": {
+     "soft": 62,
+     "strict": 58,
+     "n": 65
+    }
+   },
+   "fixes": [],
+   "breaks": [],
+   "strict_fixes": [],
+   "strict_breaks": [],
+   "by_slice": {
+    "L": {
+     "fix": 0,
+     "brk": 0
+    },
+    "M": {
+     "fix": 0,
+     "brk": 0
+    },
+    "R": {
+     "fix": 0,
+     "brk": 0
+    }
+   },
+   "changed": 0
+  },
+  "kr": {
+   "soft_ok": 542,
+   "strict_ok": 511,
+   "n": 616,
+   "soft_macro": 89.12,
+   "soft_micro": 87.99,
+   "strict_micro": 82.95,
+   "slices": {
+    "K": {
+     "soft": 542,
+     "strict": 511,
+     "n": 616
+    }
+   },
+   "fixes": [],
+   "breaks": [],
+   "strict_fixes": [],
+   "strict_breaks": [],
+   "by_slice": {
+    "K": {
+     "fix": 0,
+     "brk": 0
+    }
+   },
+   "changed": 0
+  },
+  "kr_wm": {
+   "soft_ok": 544,
+   "strict_ok": 513,
+   "n": 616,
+   "soft_macro": 89.39,
+   "soft_micro": 88.31,
+   "strict_micro": 83.28,
+   "slices": {
+    "K": {
+     "soft": 544,
+     "strict": 513,
+     "n": 616
+    }
+   },
+   "fixes": [],
+   "breaks": [],
+   "strict_fixes": [],
+   "strict_breaks": [],
+   "by_slice": {
+    "K": {
+     "fix": 0,
+     "brk": 0
+    }
+   },
+   "changed": 0
+  },
+  "kr_aside": "K0638: база неверно, кандидат неверно",
+  "kr_aside_wm": "K0638: база неверно, кандидат неверно",
+  "ooc": {
+   "sugar_read": 295,
+   "sugar_ok": 290,
+   "color_read": 289,
+   "color_ok": 288,
+   "color_bad": 1,
+   "sugar_bad": 5
+  },
+  "ooc_new_false_colors": [],
+  "ooc_color_no_label": {
+   "R074-orig-0": "Белое",
+   "R077-orig-0": "Белое",
+   "R089-orig-0": "Красное",
+   "R095-orig-0": "Белое",
+   "R098-orig-0": "Красное",
+   "R099-orig-0": "Оранжевое",
+   "R100-orig-0": "Белое"
+  },
+  "ooc_fields_changed": 0,
+  "v2_fields_changed": 2,
+  "kr_fields_changed": 0,
+  "offline_mismatch": {
+   "v2": [],
+   "kr": []
+  },
+  "verdict": [],
+  "soft_breaks_anywhere": 0
+ },
+ "r1g": {
+  "v2": {
+   "soft_ok": 305,
+   "strict_ok": 297,
+   "n": 353,
+   "soft_macro": 85.95,
+   "soft_micro": 86.4,
+   "strict_micro": 84.14,
+   "slices": {
+    "L": {
+     "soft": 19,
+     "strict": 19,
+     "n": 20
+    },
+    "M": {
+     "soft": 224,
+     "strict": 220,
+     "n": 268
+    },
+    "R": {
+     "soft": 62,
+     "strict": 58,
+     "n": 65
+    }
+   },
+   "fixes": [],
+   "breaks": [],
+   "strict_fixes": [],
+   "strict_breaks": [],
+   "by_slice": {
+    "L": {
+     "fix": 0,
+     "brk": 0
+    },
+    "M": {
+     "fix": 0,
+     "brk": 0
+    },
+    "R": {
+     "fix": 0,
+     "brk": 0
+    }
+   },
+   "changed": 0
+  },
+  "kr": {
+   "soft_ok": 542,
+   "strict_ok": 511,
+   "n": 616,
+   "soft_macro": 89.12,
+   "soft_micro": 87.99,
+   "strict_micro": 82.95,
+   "slices": {
+    "K": {
+     "soft": 542,
+     "strict": 511,
+     "n": 616
+    }
+   },
+   "fixes": [],
+   "breaks": [],
+   "strict_fixes": [],
+   "strict_breaks": [],
+   "by_slice": {
+    "K": {
+     "fix": 0,
+     "brk": 0
+    }
+   },
+   "changed": 0
+  },
+  "kr_wm": {
+   "soft_ok": 544,
+   "strict_ok": 513,
+   "n": 616,
+   "soft_macro": 89.39,
+   "soft_micro": 88.31,
+   "strict_micro": 83.28,
+   "slices": {
+    "K": {
+     "soft": 544,
+     "strict": 513,
+     "n": 616
+    }
+   },
+   "fixes": [],
+   "breaks": [],
+   "strict_fixes": [],
+   "strict_breaks": [],
+   "by_slice": {
+    "K": {
+     "fix": 0,
+     "brk": 0
+    }
+   },
+   "changed": 0
+  },
+  "kr_aside": "K0638: база неверно, кандидат неверно",
+  "kr_aside_wm": "K0638: база неверно, кандидат неверно",
+  "ooc": {
+   "sugar_read": 295,
+   "sugar_ok": 290,
+   "color_read": 288,
+   "color_ok": 288,
+   "sugar_bad": 5
+  },
+  "ooc_new_false_colors": [],
+  "ooc_color_no_label": {
+   "R074-orig-0": "Белое",
+   "R077-orig-0": "Белое",
+   "R089-orig-0": "Красное",
+   "R095-orig-0": "Белое",
+   "R098-orig-0": "Красное",
+   "R099-orig-0": "Оранжевое",
+   "R100-orig-0": "Белое"
+  },
+  "ooc_fields_changed": 1,
+  "v2_fields_changed": 0,
+  "kr_fields_changed": 0,
+  "offline_mismatch": {
+   "v2": [],
+   "kr": []
+  },
+  "verdict": [],
+  "soft_breaks_anywhere": 0
+ },
+ "r1d": {
+  "v2": {
+   "soft_ok": 306,
+   "strict_ok": 298,
+   "n": 353,
+   "soft_macro": 86.39,
+   "soft_micro": 86.69,
+   "strict_micro": 84.42,
+   "slices": {
+    "L": {
+     "soft": 19,
+     "strict": 19,
+     "n": 20
+    },
+    "M": {
+     "soft": 225,
+     "strict": 221,
+     "n": 268
+    },
+    "R": {
+     "soft": 62,
+     "strict": 58,
+     "n": 65
+    }
+   },
+   "fixes": [
+    "M543"
+   ],
+   "breaks": [],
+   "strict_fixes": [
+    "M543"
+   ],
+   "strict_breaks": [],
+   "by_slice": {
+    "L": {
+     "fix": 0,
+     "brk": 0
+    },
+    "M": {
+     "fix": 1,
+     "brk": 0
+    },
+    "R": {
+     "fix": 0,
+     "brk": 0
+    }
+   },
+   "changed": 1
+  },
+  "kr": {
+   "soft_ok": 542,
+   "strict_ok": 511,
+   "n": 616,
+   "soft_macro": 89.12,
+   "soft_micro": 87.99,
+   "strict_micro": 82.95,
+   "slices": {
+    "K": {
+     "soft": 542,
+     "strict": 511,
+     "n": 616
+    }
+   },
+   "fixes": [],
+   "breaks": [],
+   "strict_fixes": [],
+   "strict_breaks": [],
+   "by_slice": {
+    "K": {
+     "fix": 0,
+     "brk": 0
+    }
+   },
+   "changed": 0
+  },
+  "kr_wm": {
+   "soft_ok": 544,
+   "strict_ok": 513,
+   "n": 616,
+   "soft_macro": 89.39,
+   "soft_micro": 88.31,
+   "strict_micro": 83.28,
+   "slices": {
+    "K": {
+     "soft": 544,
+     "strict": 513,
+     "n": 616
+    }
+   },
+   "fixes": [],
+   "breaks": [],
+   "strict_fixes": [],
+   "strict_breaks": [],
+   "by_slice": {
+    "K": {
+     "fix": 0,
+     "brk": 0
+    }
+   },
+   "changed": 0
+  },
+  "kr_aside": "K0638: база неверно, кандидат неверно",
+  "kr_aside_wm": "K0638: база неверно, кандидат неверно",
+  "ooc": {
+   "sugar_read": 295,
+   "sugar_ok": 290,
+   "color_read": 289,
+   "color_ok": 288,
+   "color_bad": 1,
+   "sugar_bad": 5
+  },
+  "ooc_new_false_colors": [],
+  "ooc_color_no_label": {
+   "R074-orig-0": "Белое",
+   "R077-orig-0": "Белое",
+   "R089-orig-0": "Красное",
+   "R095-orig-0": "Белое",
+   "R098-orig-0": "Красное",
+   "R099-orig-0": "Оранжевое",
+   "R100-orig-0": "Белое"
+  },
+  "ooc_fields_changed": 49,
+  "v2_fields_changed": 62,
+  "kr_fields_changed": 92,
+  "offline_mismatch": {
+   "v2": [],
+   "kr": []
+  },
+  "verdict": [],
+  "soft_breaks_anywhere": 0
+ },
+ "r1": {
+  "v2": {
+   "soft_ok": 308,
+   "strict_ok": 300,
+   "n": 353,
+   "soft_macro": 86.69,
+   "soft_micro": 87.25,
+   "strict_micro": 84.99,
+   "slices": {
+    "L": {
+     "soft": 19,
+     "strict": 19,
+     "n": 20
+    },
+    "M": {
+     "soft": 226,
+     "strict": 222,
+     "n": 268
+    },
+    "R": {
+     "soft": 63,
+     "strict": 59,
+     "n": 65
+    }
+   },
+   "fixes": [
+    "M455",
+    "M543",
+    "R014"
+   ],
+   "breaks": [],
+   "strict_fixes": [
+    "M455",
+    "M543",
+    "R014"
+   ],
+   "strict_breaks": [],
+   "by_slice": {
+    "L": {
+     "fix": 0,
+     "brk": 0
+    },
+    "M": {
+     "fix": 2,
+     "brk": 0
+    },
+    "R": {
+     "fix": 1,
+     "brk": 0
+    }
+   },
+   "changed": 3
+  },
+  "kr": {
+   "soft_ok": 542,
+   "strict_ok": 511,
+   "n": 616,
+   "soft_macro": 89.12,
+   "soft_micro": 87.99,
+   "strict_micro": 82.95,
+   "slices": {
+    "K": {
+     "soft": 542,
+     "strict": 511,
+     "n": 616
+    }
+   },
+   "fixes": [],
+   "breaks": [],
+   "strict_fixes": [],
+   "strict_breaks": [],
+   "by_slice": {
+    "K": {
+     "fix": 0,
+     "brk": 0
+    }
+   },
+   "changed": 0
+  },
+  "kr_wm": {
+   "soft_ok": 544,
+   "strict_ok": 513,
+   "n": 616,
+   "soft_macro": 89.39,
+   "soft_micro": 88.31,
+   "strict_micro": 83.28,
+   "slices": {
+    "K": {
+     "soft": 544,
+     "strict": 513,
+     "n": 616
+    }
+   },
+   "fixes": [],
+   "breaks": [],
+   "strict_fixes": [],
+   "strict_breaks": [],
+   "by_slice": {
+    "K": {
+     "fix": 0,
+     "brk": 0
+    }
+   },
+   "changed": 0
+  },
+  "kr_aside": "K0638: база неверно, кандидат неверно",
+  "kr_aside_wm": "K0638: база неверно, кандидат неверно",
+  "ooc": {
+   "sugar_read": 295,
+   "sugar_ok": 292,
+   "color_read": 288,
+   "color_ok": 288,
+   "sugar_bad": 3
+  },
+  "ooc_new_false_colors": [],
+  "ooc_color_no_label": {
+   "R074-orig-0": "Белое",
+   "R077-orig-0": "Белое",
+   "R089-orig-0": "Красное",
+   "R095-orig-0": "Белое",
+   "R098-orig-0": "Красное",
+   "R099-orig-0": "Оранжевое",
+   "R100-orig-0": "Белое"
+  },
+  "ooc_fields_changed": 52,
+  "v2_fields_changed": 65,
+  "kr_fields_changed": 92,
+  "offline_mismatch": {
+   "v2": [],
+   "kr": []
+  },
+  "verdict": [],
+  "soft_breaks_anywhere": 0
+ },
+ "pkg": {
+  "v2": {
+   "soft_ok": 314,
+   "strict_ok": 306,
+   "n": 353,
+   "soft_macro": 88.42,
+   "soft_micro": 88.95,
+   "strict_micro": 86.69,
+   "slices": {
+    "L": {
+     "soft": 19,
+     "strict": 19,
+     "n": 20
+    },
+    "M": {
+     "soft": 232,
+     "strict": 228,
+     "n": 268
+    },
+    "R": {
+     "soft": 63,
+     "strict": 59,
+     "n": 65
+    }
+   },
+   "fixes": [
+    "M214",
+    "M410",
+    "M422",
+    "M425",
+    "M455",
+    "M459",
+    "M460",
+    "M543",
+    "R014"
+   ],
+   "breaks": [],
+   "strict_fixes": [
+    "M214",
+    "M410",
+    "M422",
+    "M425",
+    "M455",
+    "M459",
+    "M460",
+    "M543",
+    "R014"
+   ],
+   "strict_breaks": [],
+   "by_slice": {
+    "L": {
+     "fix": 0,
+     "brk": 0
+    },
+    "M": {
+     "fix": 8,
+     "brk": 0
+    },
+    "R": {
+     "fix": 1,
+     "brk": 0
+    }
+   },
+   "changed": 9
+  },
+  "kr": {
+   "soft_ok": 543,
+   "strict_ok": 512,
+   "n": 616,
+   "soft_macro": 89.32,
+   "soft_micro": 88.15,
+   "strict_micro": 83.12,
+   "slices": {
+    "K": {
+     "soft": 543,
+     "strict": 512,
+     "n": 616
+    }
+   },
+   "fixes": [
+    "K0266"
+   ],
+   "breaks": [],
+   "strict_fixes": [
+    "K0266"
+   ],
+   "strict_breaks": [],
+   "by_slice": {
+    "K": {
+     "fix": 1,
+     "brk": 0
+    }
+   },
+   "changed": 1
+  },
+  "kr_wm": {
+   "soft_ok": 545,
+   "strict_ok": 514,
+   "n": 616,
+   "soft_macro": 89.6,
+   "soft_micro": 88.47,
+   "strict_micro": 83.44,
+   "slices": {
+    "K": {
+     "soft": 545,
+     "strict": 514,
+     "n": 616
+    }
+   },
+   "fixes": [
+    "K0266"
+   ],
+   "breaks": [],
+   "strict_fixes": [
+    "K0266"
+   ],
+   "strict_breaks": [],
+   "by_slice": {
+    "K": {
+     "fix": 1,
+     "brk": 0
+    }
+   },
+   "changed": 1
+  },
+  "kr_aside": "K0638: база неверно, кандидат неверно",
+  "kr_aside_wm": "K0638: база неверно, кандидат неверно",
+  "ooc": {
+   "sugar_read": 295,
+   "sugar_ok": 292,
+   "color_read": 288,
+   "color_ok": 288,
+   "sugar_bad": 3
+  },
+  "ooc_new_false_colors": [],
+  "ooc_color_no_label": {
+   "R074-orig-0": "Белое",
+   "R077-orig-0": "Белое",
+   "R089-orig-0": "Красное",
+   "R095-orig-0": "Белое",
+   "R098-orig-0": "Красное",
+   "R099-orig-0": "Оранжевое",
+   "R100-orig-0": "Белое"
+  },
+  "ooc_fields_changed": 52,
+  "v2_fields_changed": 65,
+  "kr_fields_changed": 92,
+  "offline_mismatch": {
+   "v2": [],
+   "kr": []
+  },
+  "verdict": [],
+  "soft_breaks_anywhere": 0
+ },
+ "p1_dump_vs_stand": {
+  "v2": [],
+  "kr": []
+ },
+ "step1_items_kept": [
+  "r1a",
+  "r1b",
+  "r1c",
+  "r1g",
+  "r1d"
+ ],
+ "step1_items_dropped": []
+}

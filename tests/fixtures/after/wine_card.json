@@ -1,0 +1,25 @@
+{
+  "slug": "massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16",
+  "name": "Мускатель белый",
+  "winery": "Массандра",
+  "region": "Крым",
+  "grapes": [
+    "Белые сорта винограда"
+  ],
+  "category": "Белое",
+  "color": "Янтарно-золотистый, прозрачный",
+  "sugar": "сладкое",
+  "sugar_class": "sladkoe",
+  "photo_name": "massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16.webp",
+  "color_label": "Белое",
+  "sugar_label": "сладкое",
+  "sparkling": false,
+  "style_label": "Белое сладкое",
+  "description": "Текст-заглушка вместо описания выгрузки организатора: выгрузка в git не кладётся.",
+  "description_src": "catalog",
+  "photo_url": "/v1/wines/massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16/photo",
+  "portal_url": "https://vino-svoe.ru/wines/massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16",
+  "alcohol": 16.0,
+  "alcohol_max": null,
+  "alcohol_src": "catalog"
+}

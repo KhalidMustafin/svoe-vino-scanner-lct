@@ -1,0 +1,1806 @@
+{
+ "base": {
+  "v2": {
+   "n": 353,
+   "soft_ok": 314,
+   "strict_ok": 306,
+   "soft_micro": 88.95,
+   "soft_macro": 88.42,
+   "strict_micro": 86.69,
+   "slices": {
+    "L": {
+     "soft": 19,
+     "strict": 19,
+     "n": 20
+    },
+    "M": {
+     "soft": 232,
+     "strict": 228,
+     "n": 268
+    },
+    "R": {
+     "soft": 63,
+     "strict": 59,
+     "n": 65
+    }
+   }
+  },
+  "kr": {
+   "n": 616,
+   "soft_ok": 542,
+   "strict_ok": 511,
+   "soft_micro": 87.99,
+   "soft_macro": 89.12,
+   "strict_micro": 82.95,
+   "slices": {
+    "K": {
+     "soft": 542,
+     "strict": 511,
+     "n": 616
+    }
+   }
+  },
+  "kr_wm": {
+   "n": 616,
+   "soft_ok": 544,
+   "strict_ok": 513,
+   "soft_micro": 88.31,
+   "soft_macro": 89.39,
+   "strict_micro": 83.28,
+   "slices": {
+    "K": {
+     "soft": 544,
+     "strict": 513,
+     "n": 616
+    }
+   }
+  },
+  "k0225": {
+   "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+   "base_ok": true,
+   "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+   "new_ok": true
+  },
+  "k0225_wm": {
+   "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+   "base_ok": true,
+   "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+   "new_ok": true
+  },
+  "health": []
+ },
+ "units": {
+  "compat": {
+   "health": [],
+   "v2": {
+    "n": 353,
+    "soft_ok": 314,
+    "strict_ok": 306,
+    "soft_micro": 88.95,
+    "soft_macro": 88.42,
+    "strict_micro": 86.69,
+    "slices": {
+     "L": {
+      "soft": 19,
+      "strict": 19,
+      "n": 20
+     },
+     "M": {
+      "soft": 232,
+      "strict": 228,
+      "n": 268
+     },
+     "R": {
+      "soft": 63,
+      "strict": 59,
+      "n": 65
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "L": {
+      "fix": 0,
+      "brk": 0
+     },
+     "M": {
+      "fix": 0,
+      "brk": 0
+     },
+     "R": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "kr": {
+    "n": 616,
+    "soft_ok": 542,
+    "strict_ok": 511,
+    "soft_micro": 87.99,
+    "soft_macro": 89.12,
+    "strict_micro": 82.95,
+    "slices": {
+     "K": {
+      "soft": 542,
+      "strict": 511,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "kr_wm": {
+    "n": 616,
+    "soft_ok": 544,
+    "strict_ok": 513,
+    "soft_micro": 88.31,
+    "soft_macro": 89.39,
+    "strict_micro": 83.28,
+    "slices": {
+     "K": {
+      "soft": 544,
+      "strict": 513,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "k0225": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "k0225_wm": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "kr_other_changed": [],
+   "soft_breaks": 0,
+   "v2_fields_changed": [],
+   "v2_resolve_changed": 7,
+   "kr_fields_changed": [],
+   "kr_resolve_changed": 20
+  },
+  "row01": {
+   "health": [],
+   "v2": {
+    "n": 353,
+    "soft_ok": 315,
+    "strict_ok": 307,
+    "soft_micro": 89.24,
+    "soft_macro": 88.86,
+    "strict_micro": 86.97,
+    "slices": {
+     "L": {
+      "soft": 19,
+      "strict": 19,
+      "n": 20
+     },
+     "M": {
+      "soft": 233,
+      "strict": 229,
+      "n": 268
+     },
+     "R": {
+      "soft": 63,
+      "strict": 59,
+      "n": 65
+     }
+    },
+    "fixes": [
+     "M596"
+    ],
+    "breaks": [],
+    "strict_fixes": [
+     "M596"
+    ],
+    "strict_breaks": [],
+    "by_slice": {
+     "L": {
+      "fix": 0,
+      "brk": 0
+     },
+     "M": {
+      "fix": 1,
+      "brk": 0
+     },
+     "R": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": [
+     "M596"
+    ]
+   },
+   "kr": {
+    "n": 616,
+    "soft_ok": 542,
+    "strict_ok": 511,
+    "soft_micro": 87.99,
+    "soft_macro": 89.12,
+    "strict_micro": 82.95,
+    "slices": {
+     "K": {
+      "soft": 542,
+      "strict": 511,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "kr_wm": {
+    "n": 616,
+    "soft_ok": 544,
+    "strict_ok": 513,
+    "soft_micro": 88.31,
+    "soft_macro": 89.39,
+    "strict_micro": 83.28,
+    "slices": {
+     "K": {
+      "soft": 544,
+      "strict": 513,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "k0225": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "k0225_wm": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "kr_other_changed": [],
+   "soft_breaks": 0,
+   "v2_fields_changed": [],
+   "v2_resolve_changed": 7,
+   "kr_fields_changed": [],
+   "kr_resolve_changed": 0
+  },
+  "row02": {
+   "health": [],
+   "v2": {
+    "n": 353,
+    "soft_ok": 314,
+    "strict_ok": 306,
+    "soft_micro": 88.95,
+    "soft_macro": 88.42,
+    "strict_micro": 86.69,
+    "slices": {
+     "L": {
+      "soft": 19,
+      "strict": 19,
+      "n": 20
+     },
+     "M": {
+      "soft": 232,
+      "strict": 228,
+      "n": 268
+     },
+     "R": {
+      "soft": 63,
+      "strict": 59,
+      "n": 65
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "L": {
+      "fix": 0,
+      "brk": 0
+     },
+     "M": {
+      "fix": 0,
+      "brk": 0
+     },
+     "R": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "kr": {
+    "n": 616,
+    "soft_ok": 542,
+    "strict_ok": 511,
+    "soft_micro": 87.99,
+    "soft_macro": 89.12,
+    "strict_micro": 82.95,
+    "slices": {
+     "K": {
+      "soft": 542,
+      "strict": 511,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "kr_wm": {
+    "n": 616,
+    "soft_ok": 544,
+    "strict_ok": 513,
+    "soft_micro": 88.31,
+    "soft_macro": 89.39,
+    "strict_micro": 83.28,
+    "slices": {
+     "K": {
+      "soft": 544,
+      "strict": 513,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "k0225": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "k0225_wm": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "kr_other_changed": [],
+   "soft_breaks": 0,
+   "v2_fields_changed": [],
+   "v2_resolve_changed": 0,
+   "kr_fields_changed": [],
+   "kr_resolve_changed": 0
+  },
+  "row03": {
+   "health": [],
+   "v2": {
+    "n": 353,
+    "soft_ok": 314,
+    "strict_ok": 306,
+    "soft_micro": 88.95,
+    "soft_macro": 88.42,
+    "strict_micro": 86.69,
+    "slices": {
+     "L": {
+      "soft": 19,
+      "strict": 19,
+      "n": 20
+     },
+     "M": {
+      "soft": 232,
+      "strict": 228,
+      "n": 268
+     },
+     "R": {
+      "soft": 63,
+      "strict": 59,
+      "n": 65
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "L": {
+      "fix": 0,
+      "brk": 0
+     },
+     "M": {
+      "fix": 0,
+      "brk": 0
+     },
+     "R": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "kr": {
+    "n": 616,
+    "soft_ok": 542,
+    "strict_ok": 511,
+    "soft_micro": 87.99,
+    "soft_macro": 89.12,
+    "strict_micro": 82.95,
+    "slices": {
+     "K": {
+      "soft": 542,
+      "strict": 511,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "kr_wm": {
+    "n": 616,
+    "soft_ok": 544,
+    "strict_ok": 513,
+    "soft_micro": 88.31,
+    "soft_macro": 89.39,
+    "strict_micro": 83.28,
+    "slices": {
+     "K": {
+      "soft": 544,
+      "strict": 513,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "k0225": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "k0225_wm": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "kr_other_changed": [],
+   "soft_breaks": 0,
+   "v2_fields_changed": [],
+   "v2_resolve_changed": 1,
+   "kr_fields_changed": [],
+   "kr_resolve_changed": 1
+  },
+  "row04": {
+   "health": [],
+   "v2": {
+    "n": 353,
+    "soft_ok": 314,
+    "strict_ok": 306,
+    "soft_micro": 88.95,
+    "soft_macro": 88.42,
+    "strict_micro": 86.69,
+    "slices": {
+     "L": {
+      "soft": 19,
+      "strict": 19,
+      "n": 20
+     },
+     "M": {
+      "soft": 232,
+      "strict": 228,
+      "n": 268
+     },
+     "R": {
+      "soft": 63,
+      "strict": 59,
+      "n": 65
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "L": {
+      "fix": 0,
+      "brk": 0
+     },
+     "M": {
+      "fix": 0,
+      "brk": 0
+     },
+     "R": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "kr": {
+    "n": 616,
+    "soft_ok": 542,
+    "strict_ok": 511,
+    "soft_micro": 87.99,
+    "soft_macro": 89.12,
+    "strict_micro": 82.95,
+    "slices": {
+     "K": {
+      "soft": 542,
+      "strict": 511,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "kr_wm": {
+    "n": 616,
+    "soft_ok": 544,
+    "strict_ok": 513,
+    "soft_micro": 88.31,
+    "soft_macro": 89.39,
+    "strict_micro": 83.28,
+    "slices": {
+     "K": {
+      "soft": 544,
+      "strict": 513,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "k0225": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "k0225_wm": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "kr_other_changed": [],
+   "soft_breaks": 0,
+   "v2_fields_changed": [],
+   "v2_resolve_changed": 5,
+   "kr_fields_changed": [],
+   "kr_resolve_changed": 0
+  },
+  "row05": {
+   "health": [],
+   "v2": {
+    "n": 353,
+    "soft_ok": 314,
+    "strict_ok": 306,
+    "soft_micro": 88.95,
+    "soft_macro": 88.42,
+    "strict_micro": 86.69,
+    "slices": {
+     "L": {
+      "soft": 19,
+      "strict": 19,
+      "n": 20
+     },
+     "M": {
+      "soft": 232,
+      "strict": 228,
+      "n": 268
+     },
+     "R": {
+      "soft": 63,
+      "strict": 59,
+      "n": 65
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "L": {
+      "fix": 0,
+      "brk": 0
+     },
+     "M": {
+      "fix": 0,
+      "brk": 0
+     },
+     "R": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "kr": {
+    "n": 616,
+    "soft_ok": 542,
+    "strict_ok": 511,
+    "soft_micro": 87.99,
+    "soft_macro": 89.12,
+    "strict_micro": 82.95,
+    "slices": {
+     "K": {
+      "soft": 542,
+      "strict": 511,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "kr_wm": {
+    "n": 616,
+    "soft_ok": 544,
+    "strict_ok": 513,
+    "soft_micro": 88.31,
+    "soft_macro": 89.39,
+    "strict_micro": 83.28,
+    "slices": {
+     "K": {
+      "soft": 544,
+      "strict": 513,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "k0225": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "k0225_wm": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "kr_other_changed": [],
+   "soft_breaks": 0,
+   "v2_fields_changed": [],
+   "v2_resolve_changed": 1,
+   "kr_fields_changed": [],
+   "kr_resolve_changed": 5
+  },
+  "row06": {
+   "health": [],
+   "v2": {
+    "n": 353,
+    "soft_ok": 314,
+    "strict_ok": 306,
+    "soft_micro": 88.95,
+    "soft_macro": 88.42,
+    "strict_micro": 86.69,
+    "slices": {
+     "L": {
+      "soft": 19,
+      "strict": 19,
+      "n": 20
+     },
+     "M": {
+      "soft": 232,
+      "strict": 228,
+      "n": 268
+     },
+     "R": {
+      "soft": 63,
+      "strict": 59,
+      "n": 65
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "L": {
+      "fix": 0,
+      "brk": 0
+     },
+     "M": {
+      "fix": 0,
+      "brk": 0
+     },
+     "R": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "kr": {
+    "n": 616,
+    "soft_ok": 542,
+    "strict_ok": 511,
+    "soft_micro": 87.99,
+    "soft_macro": 89.12,
+    "strict_micro": 82.95,
+    "slices": {
+     "K": {
+      "soft": 542,
+      "strict": 511,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "kr_wm": {
+    "n": 616,
+    "soft_ok": 544,
+    "strict_ok": 513,
+    "soft_micro": 88.31,
+    "soft_macro": 89.39,
+    "strict_micro": 83.28,
+    "slices": {
+     "K": {
+      "soft": 544,
+      "strict": 513,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "k0225": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "k0225_wm": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "kr_other_changed": [],
+   "soft_breaks": 0,
+   "v2_fields_changed": [],
+   "v2_resolve_changed": 0,
+   "kr_fields_changed": [],
+   "kr_resolve_changed": 2
+  },
+  "row07": {
+   "health": [],
+   "v2": {
+    "n": 353,
+    "soft_ok": 314,
+    "strict_ok": 306,
+    "soft_micro": 88.95,
+    "soft_macro": 88.42,
+    "strict_micro": 86.69,
+    "slices": {
+     "L": {
+      "soft": 19,
+      "strict": 19,
+      "n": 20
+     },
+     "M": {
+      "soft": 232,
+      "strict": 228,
+      "n": 268
+     },
+     "R": {
+      "soft": 63,
+      "strict": 59,
+      "n": 65
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "L": {
+      "fix": 0,
+      "brk": 0
+     },
+     "M": {
+      "fix": 0,
+      "brk": 0
+     },
+     "R": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "kr": {
+    "n": 616,
+    "soft_ok": 542,
+    "strict_ok": 511,
+    "soft_micro": 87.99,
+    "soft_macro": 89.12,
+    "strict_micro": 82.95,
+    "slices": {
+     "K": {
+      "soft": 542,
+      "strict": 511,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "kr_wm": {
+    "n": 616,
+    "soft_ok": 544,
+    "strict_ok": 513,
+    "soft_micro": 88.31,
+    "soft_macro": 89.39,
+    "strict_micro": 83.28,
+    "slices": {
+     "K": {
+      "soft": 544,
+      "strict": 513,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "k0225": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "k0225_wm": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "kr_other_changed": [],
+   "soft_breaks": 0,
+   "v2_fields_changed": [],
+   "v2_resolve_changed": 1,
+   "kr_fields_changed": [],
+   "kr_resolve_changed": 1
+  },
+  "row08": {
+   "health": [],
+   "v2": {
+    "n": 353,
+    "soft_ok": 314,
+    "strict_ok": 306,
+    "soft_micro": 88.95,
+    "soft_macro": 88.42,
+    "strict_micro": 86.69,
+    "slices": {
+     "L": {
+      "soft": 19,
+      "strict": 19,
+      "n": 20
+     },
+     "M": {
+      "soft": 232,
+      "strict": 228,
+      "n": 268
+     },
+     "R": {
+      "soft": 63,
+      "strict": 59,
+      "n": 65
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "L": {
+      "fix": 0,
+      "brk": 0
+     },
+     "M": {
+      "fix": 0,
+      "brk": 0
+     },
+     "R": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "kr": {
+    "n": 616,
+    "soft_ok": 542,
+    "strict_ok": 511,
+    "soft_micro": 87.99,
+    "soft_macro": 89.12,
+    "strict_micro": 82.95,
+    "slices": {
+     "K": {
+      "soft": 542,
+      "strict": 511,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "kr_wm": {
+    "n": 616,
+    "soft_ok": 544,
+    "strict_ok": 513,
+    "soft_micro": 88.31,
+    "soft_macro": 89.39,
+    "strict_micro": 83.28,
+    "slices": {
+     "K": {
+      "soft": 544,
+      "strict": 513,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "k0225": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "k0225_wm": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "kr_other_changed": [],
+   "soft_breaks": 0,
+   "v2_fields_changed": [],
+   "v2_resolve_changed": 0,
+   "kr_fields_changed": [],
+   "kr_resolve_changed": 0
+  },
+  "row09": {
+   "health": [],
+   "v2": {
+    "n": 353,
+    "soft_ok": 314,
+    "strict_ok": 306,
+    "soft_micro": 88.95,
+    "soft_macro": 88.42,
+    "strict_micro": 86.69,
+    "slices": {
+     "L": {
+      "soft": 19,
+      "strict": 19,
+      "n": 20
+     },
+     "M": {
+      "soft": 232,
+      "strict": 228,
+      "n": 268
+     },
+     "R": {
+      "soft": 63,
+      "strict": 59,
+      "n": 65
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "L": {
+      "fix": 0,
+      "brk": 0
+     },
+     "M": {
+      "fix": 0,
+      "brk": 0
+     },
+     "R": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "kr": {
+    "n": 616,
+    "soft_ok": 542,
+    "strict_ok": 511,
+    "soft_micro": 87.99,
+    "soft_macro": 89.12,
+    "strict_micro": 82.95,
+    "slices": {
+     "K": {
+      "soft": 542,
+      "strict": 511,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "kr_wm": {
+    "n": 616,
+    "soft_ok": 544,
+    "strict_ok": 513,
+    "soft_micro": 88.31,
+    "soft_macro": 89.39,
+    "strict_micro": 83.28,
+    "slices": {
+     "K": {
+      "soft": 544,
+      "strict": 513,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "k0225": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "k0225_wm": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "kr_other_changed": [],
+   "soft_breaks": 0,
+   "v2_fields_changed": [],
+   "v2_resolve_changed": 0,
+   "kr_fields_changed": [],
+   "kr_resolve_changed": 0
+  },
+  "row10": {
+   "health": [],
+   "v2": {
+    "n": 353,
+    "soft_ok": 314,
+    "strict_ok": 306,
+    "soft_micro": 88.95,
+    "soft_macro": 88.42,
+    "strict_micro": 86.69,
+    "slices": {
+     "L": {
+      "soft": 19,
+      "strict": 19,
+      "n": 20
+     },
+     "M": {
+      "soft": 232,
+      "strict": 228,
+      "n": 268
+     },
+     "R": {
+      "soft": 63,
+      "strict": 59,
+      "n": 65
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "L": {
+      "fix": 0,
+      "brk": 0
+     },
+     "M": {
+      "fix": 0,
+      "brk": 0
+     },
+     "R": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "kr": {
+    "n": 616,
+    "soft_ok": 542,
+    "strict_ok": 511,
+    "soft_micro": 87.99,
+    "soft_macro": 89.12,
+    "strict_micro": 82.95,
+    "slices": {
+     "K": {
+      "soft": 542,
+      "strict": 511,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "kr_wm": {
+    "n": 616,
+    "soft_ok": 544,
+    "strict_ok": 513,
+    "soft_micro": 88.31,
+    "soft_macro": 89.39,
+    "strict_micro": 83.28,
+    "slices": {
+     "K": {
+      "soft": 544,
+      "strict": 513,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "k0225": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "k0225_wm": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "kr_other_changed": [],
+   "soft_breaks": 0,
+   "v2_fields_changed": [],
+   "v2_resolve_changed": 0,
+   "kr_fields_changed": [],
+   "kr_resolve_changed": 0
+  },
+  "row11": {
+   "health": [],
+   "v2": {
+    "n": 353,
+    "soft_ok": 314,
+    "strict_ok": 306,
+    "soft_micro": 88.95,
+    "soft_macro": 88.42,
+    "strict_micro": 86.69,
+    "slices": {
+     "L": {
+      "soft": 19,
+      "strict": 19,
+      "n": 20
+     },
+     "M": {
+      "soft": 232,
+      "strict": 228,
+      "n": 268
+     },
+     "R": {
+      "soft": 63,
+      "strict": 59,
+      "n": 65
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "L": {
+      "fix": 0,
+      "brk": 0
+     },
+     "M": {
+      "fix": 0,
+      "brk": 0
+     },
+     "R": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "kr": {
+    "n": 616,
+    "soft_ok": 542,
+    "strict_ok": 511,
+    "soft_micro": 87.99,
+    "soft_macro": 89.12,
+    "strict_micro": 82.95,
+    "slices": {
+     "K": {
+      "soft": 542,
+      "strict": 511,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "kr_wm": {
+    "n": 616,
+    "soft_ok": 544,
+    "strict_ok": 513,
+    "soft_micro": 88.31,
+    "soft_macro": 89.39,
+    "strict_micro": 83.28,
+    "slices": {
+     "K": {
+      "soft": 544,
+      "strict": 513,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "k0225": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "k0225_wm": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "kr_other_changed": [],
+   "soft_breaks": 0,
+   "v2_fields_changed": [],
+   "v2_resolve_changed": 0,
+   "kr_fields_changed": [],
+   "kr_resolve_changed": 0
+  },
+  "row12": {
+   "health": [],
+   "v2": {
+    "n": 353,
+    "soft_ok": 314,
+    "strict_ok": 306,
+    "soft_micro": 88.95,
+    "soft_macro": 88.42,
+    "strict_micro": 86.69,
+    "slices": {
+     "L": {
+      "soft": 19,
+      "strict": 19,
+      "n": 20
+     },
+     "M": {
+      "soft": 232,
+      "strict": 228,
+      "n": 268
+     },
+     "R": {
+      "soft": 63,
+      "strict": 59,
+      "n": 65
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "L": {
+      "fix": 0,
+      "brk": 0
+     },
+     "M": {
+      "fix": 0,
+      "brk": 0
+     },
+     "R": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "kr": {
+    "n": 616,
+    "soft_ok": 542,
+    "strict_ok": 511,
+    "soft_micro": 87.99,
+    "soft_macro": 89.12,
+    "strict_micro": 82.95,
+    "slices": {
+     "K": {
+      "soft": 542,
+      "strict": 511,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "kr_wm": {
+    "n": 616,
+    "soft_ok": 544,
+    "strict_ok": 513,
+    "soft_micro": 88.31,
+    "soft_macro": 89.39,
+    "strict_micro": 83.28,
+    "slices": {
+     "K": {
+      "soft": 544,
+      "strict": 513,
+      "n": 616
+     }
+    },
+    "fixes": [],
+    "breaks": [],
+    "strict_fixes": [],
+    "strict_breaks": [],
+    "by_slice": {
+     "K": {
+      "fix": 0,
+      "brk": 0
+     }
+    },
+    "changed": []
+   },
+   "k0225": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "k0225_wm": {
+    "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "base_ok": true,
+    "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+    "new_ok": true
+   },
+   "kr_other_changed": [],
+   "soft_breaks": 0,
+   "v2_fields_changed": [
+    "R091-orig-0",
+    "R094-orig-0"
+   ],
+   "v2_resolve_changed": 11,
+   "kr_fields_changed": [
+    "K0012-orig-0",
+    "K0290-orig-0",
+    "K0454-orig-0",
+    "K0455-orig-0",
+    "K0456-orig-0",
+    "K0457-orig-0",
+    "K0458-orig-0",
+    "K0459-orig-0",
+    "K0460-orig-0",
+    "K0461-orig-0",
+    "K0462-orig-0",
+    "K0482-orig-0",
+    "K0483-orig-0",
+    "K0521-orig-0",
+    "K0522-orig-0",
+    "K0523-orig-0",
+    "K0524-orig-0",
+    "K0525-orig-0",
+    "K0533-orig-0",
+    "K0674-orig-0",
+    "K0899-orig-0"
+   ],
+   "kr_resolve_changed": 11
+  }
+ },
+ "kept": [
+  "compat",
+  "row01",
+  "row02",
+  "row03",
+  "row04",
+  "row05",
+  "row06",
+  "row07",
+  "row08",
+  "row09",
+  "row10",
+  "row11",
+  "row12"
+ ],
+ "dropped": [],
+ "pkg_rows": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "pkg_compat": true,
+ "pkg": {
+  "health": [],
+  "v2": {
+   "n": 353,
+   "soft_ok": 315,
+   "strict_ok": 307,
+   "soft_micro": 89.24,
+   "soft_macro": 88.86,
+   "strict_micro": 86.97,
+   "slices": {
+    "L": {
+     "soft": 19,
+     "strict": 19,
+     "n": 20
+    },
+    "M": {
+     "soft": 233,
+     "strict": 229,
+     "n": 268
+    },
+    "R": {
+     "soft": 63,
+     "strict": 59,
+     "n": 65
+    }
+   },
+   "fixes": [
+    "M596"
+   ],
+   "breaks": [],
+   "strict_fixes": [
+    "M596"
+   ],
+   "strict_breaks": [],
+   "by_slice": {
+    "L": {
+     "fix": 0,
+     "brk": 0
+    },
+    "M": {
+     "fix": 1,
+     "brk": 0
+    },
+    "R": {
+     "fix": 0,
+     "brk": 0
+    }
+   },
+   "changed": [
+    "M596"
+   ]
+  },
+  "kr": {
+   "n": 616,
+   "soft_ok": 542,
+   "strict_ok": 511,
+   "soft_micro": 87.99,
+   "soft_macro": 89.12,
+   "strict_micro": 82.95,
+   "slices": {
+    "K": {
+     "soft": 542,
+     "strict": 511,
+     "n": 616
+    }
+   },
+   "fixes": [],
+   "breaks": [],
+   "strict_fixes": [],
+   "strict_breaks": [],
+   "by_slice": {
+    "K": {
+     "fix": 0,
+     "brk": 0
+    }
+   },
+   "changed": []
+  },
+  "kr_wm": {
+   "n": 616,
+   "soft_ok": 544,
+   "strict_ok": 513,
+   "soft_micro": 88.31,
+   "soft_macro": 89.39,
+   "strict_micro": 83.28,
+   "slices": {
+    "K": {
+     "soft": 544,
+     "strict": 513,
+     "n": 616
+    }
+   },
+   "fixes": [],
+   "breaks": [],
+   "strict_fixes": [],
+   "strict_breaks": [],
+   "by_slice": {
+    "K": {
+     "fix": 0,
+     "brk": 0
+    }
+   },
+   "changed": []
+  },
+  "k0225": {
+   "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+   "base_ok": true,
+   "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+   "new_ok": true
+  },
+  "k0225_wm": {
+   "base": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+   "base_ok": true,
+   "new": "vinogradniki-gay-kodzora-gewurztraminer-de-gai-kodzor-gevyurtstraminer-beloe-polusuhoe-135",
+   "new_ok": true
+  },
+  "kr_other_changed": [],
+  "soft_breaks": 0,
+  "v2_fields_changed": [
+   "R091-orig-0",
+   "R094-orig-0"
+  ],
+  "v2_resolve_changed": 34,
+  "kr_fields_changed": [
+   "K0012-orig-0",
+   "K0290-orig-0",
+   "K0454-orig-0",
+   "K0455-orig-0",
+   "K0456-orig-0",
+   "K0457-orig-0",
+   "K0458-orig-0",
+   "K0459-orig-0",
+   "K0460-orig-0",
+   "K0461-orig-0",
+   "K0462-orig-0",
+   "K0482-orig-0",
+   "K0483-orig-0",
+   "K0521-orig-0",
+   "K0522-orig-0",
+   "K0523-orig-0",
+   "K0524-orig-0",
+   "K0525-orig-0",
+   "K0533-orig-0",
+   "K0674-orig-0",
+   "K0899-orig-0"
+  ],
+  "kr_resolve_changed": 37,
+  "verdict": []
+ }
+}

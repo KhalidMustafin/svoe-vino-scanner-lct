@@ -1,0 +1,5 @@
+# Пачка данных сверяется по sha1: байты как есть, без замены переводов строк на checkout.
+data/** -text
+# Отчётные прогоны — тоже байты как есть: иначе на Windows (core.autocrlf) bench.judge видит в
+# predictions.jsonl переводы строк CRLF.
+research/**/*.jsonl -text

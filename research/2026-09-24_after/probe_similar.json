@@ -1,0 +1,358 @@
+{
+ "pool": 1980,
+ "ge3": {
+  "n": 1980,
+  "share": 1.0,
+  "need": 0.99
+ },
+ "anchors_without_sugar": {
+  "n": 360,
+  "ge3": 360,
+  "share": 1.0
+ },
+ "catalog": {
+  "wines": 2103,
+  "pool": 1980,
+  "groups": 1980,
+  "sugar_known": 1727,
+  "sparkling": 297,
+  "abv_known": 1567,
+  "abv_ranges": 32,
+  "with_photo": 2080,
+  "photo_wrong": 23,
+  "tokens_source": "gt_tokens.jsonl",
+  "groups_source": "wines.jsonl"
+ },
+ "same_winery_in_top": 0,
+ "same_group_in_top": 0,
+ "first_shares_grape": {
+  "n": 1861,
+  "share": 0.9399,
+  "need": 0.9
+ },
+ "first_shares_grape_known": {
+  "n": 1861,
+  "of": 1951,
+  "share": 0.9539
+ },
+ "triple_differs": {
+  "n": 1980,
+  "share": 1.0,
+  "need": 0.9
+ },
+ "first_differs": {
+  "n": 943,
+  "share": 0.4763
+ },
+ "banned": {},
+ "content_filter_violations": 0,
+ "strings_checked": 120933,
+ "ms": {
+  "p50": 1.122,
+  "p95": 2.169,
+  "max": 2.789,
+  "need_p95": 20
+ },
+ "distinct_triples": 1401,
+ "most_common_triple": 18,
+ "short": [],
+ "plain": {
+  "ge3": 1964,
+  "bad_order_or_own_winery": 0
+ },
+ "reason_heads": {
+  "Тоже": 7610,
+  "Тот": 4306,
+  "Крепость": 4129,
+  "Крым": 1099,
+  "Кубань": 935,
+  "Общие": 489,
+  "Сорт": 396,
+  "Общий": 375,
+  "Дагестан": 335,
+  "Игристое": 189,
+  "Те": 188,
+  "Долина": 115,
+  "Сорта": 96,
+  "Ставрополье": 65,
+  "Сухое": 59,
+  "Самара": 43,
+  "Полусладкое": 36,
+  "Полусухое": 32,
+  "Нижняя": 29,
+  "Северная": 15,
+  "Сладкое": 14,
+  "Дальневосточная": 4
+ },
+ "pass": {
+  "ge3": true,
+  "no_own_winery_or_group": true,
+  "first_shares_grape": true,
+  "triple_differs": true,
+  "no_percent_or_degenerate": true,
+  "content_filter": true,
+  "p95_under_20ms": true
+ },
+ "filter_hits": [],
+ "examples": {
+  "cru-lermont-risling": {
+   "slug": "cru-lermont-risling",
+   "order": "reco",
+   "limit": 3,
+   "notice": "Применяются рекомендательные технологии",
+   "category_label": "Белое",
+   "items": [
+    {
+     "slug": "abrau-dyurso-risling-beloe-suhoe-12",
+     "name": "Рислинг",
+     "winery": "Абрау-Дюрсо",
+     "region": "Кубань",
+     "style_label": "Белое сухое",
+     "sparkling": false,
+     "grapes": [
+      "Рислинг"
+     ],
+     "photo_url": "/v1/wines/abrau-dyurso-risling-beloe-suhoe-12/photo",
+     "portal_url": "https://vino-svoe.ru/wines/abrau-dyurso-risling-beloe-suhoe-12",
+     "reasons": [
+      "Тот же сорт — Рислинг",
+      "Тоже Кубань"
+     ]
+    },
+    {
+     "slug": "amelia-2023",
+     "name": "Amelia, 2023",
+     "winery": "WINEMAFIA",
+     "region": "Кубань",
+     "style_label": "Белое",
+     "sparkling": false,
+     "grapes": [
+      "Рислинг"
+     ],
+     "photo_url": "/v1/wines/amelia-2023/photo",
+     "portal_url": "https://vino-svoe.ru/wines/amelia-2023",
+     "reasons": [
+      "Тот же сорт — Рислинг",
+      "Тоже Кубань"
+     ]
+    },
+    {
+     "slug": "agora-risling",
+     "name": "AGORA Рислинг",
+     "winery": "AGORA WINERY",
+     "region": "Крым",
+     "style_label": "Белое",
+     "sparkling": false,
+     "grapes": [
+      "Рислинг"
+     ],
+     "photo_url": "/v1/wines/agora-risling/photo",
+     "portal_url": "https://vino-svoe.ru/wines/agora-risling",
+     "reasons": [
+      "Тот же сорт — Рислинг",
+      "Крым, а не Кубань"
+     ]
+    }
+   ],
+   "notes": []
+  },
+  "fanagoriya-cru-lermont-saperavi-saperavi-krasnoe-suhoe-135": {
+   "slug": "fanagoriya-cru-lermont-saperavi-saperavi-krasnoe-suhoe-135",
+   "order": "reco",
+   "limit": 3,
+   "notice": "Применяются рекомендательные технологии",
+   "category_label": "Красное сухое",
+   "items": [
+    {
+     "slug": "dubinin-winery-saperavi-fresh-krasnoe-suhoe-135",
+     "name": "Саперави фреш",
+     "winery": "Dubinin Winery",
+     "region": "Кубань",
+     "style_label": "Красное сухое",
+     "sparkling": false,
+     "grapes": [
+      "Саперави"
+     ],
+     "photo_url": "/v1/wines/dubinin-winery-saperavi-fresh-krasnoe-suhoe-135/photo",
+     "portal_url": "https://vino-svoe.ru/wines/dubinin-winery-saperavi-fresh-krasnoe-suhoe-135",
+     "reasons": [
+      "Тот же сорт — Саперави",
+      "Тоже сухое",
+      "Тоже Кубань",
+      "Крепость та же — 13,5°"
+     ]
+    },
+    {
+     "slug": "gunko-winery-saperavi-gunko-winery-krasnoe-suhoe-135",
+     "name": "Саперави Gunko Winery",
+     "winery": "Gunko Winery",
+     "region": "Кубань",
+     "style_label": "Красное сухое",
+     "sparkling": false,
+     "grapes": [
+      "Саперави"
+     ],
+     "photo_url": "/v1/wines/gunko-winery-saperavi-gunko-winery-krasnoe-suhoe-135/photo",
+     "portal_url": "https://vino-svoe.ru/wines/gunko-winery-saperavi-gunko-winery-krasnoe-suhoe-135",
+     "reasons": [
+      "Тот же сорт — Саперави",
+      "Тоже сухое",
+      "Тоже Кубань",
+      "Крепость та же — 13,5°"
+     ]
+    },
+    {
+     "slug": "agrolayn-mountain-eagle-saperavi-saperavi-krasnoe-suhoe-135",
+     "name": "Mountain Eagle Saperavi",
+     "winery": "Агролайн",
+     "region": "Дагестан",
+     "style_label": "Красное сухое",
+     "sparkling": false,
+     "grapes": [
+      "Саперави"
+     ],
+     "photo_url": "/v1/wines/agrolayn-mountain-eagle-saperavi-saperavi-krasnoe-suhoe-135/photo",
+     "portal_url": "https://vino-svoe.ru/wines/agrolayn-mountain-eagle-saperavi-saperavi-krasnoe-suhoe-135",
+     "reasons": [
+      "Тот же сорт — Саперави",
+      "Тоже сухое",
+      "Дагестан, а не Кубань",
+      "Крепость та же — 13,5°"
+     ]
+    }
+   ],
+   "notes": []
+  },
+  "massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16": {
+   "slug": "massandra-muskatel-belyy-belye-sorta-vinograda-beloe-sladkoe-16",
+   "order": "reco",
+   "limit": 3,
+   "notice": "Применяются рекомендательные технологии",
+   "category_label": "Белое сладкое",
+   "items": [
+    {
+     "slug": "zmv-koktebel-muskat-yantarnyy-desertnyy-beloe-sladkoe-16",
+     "name": "Мускат янтарный десертный",
+     "winery": "ЗМВ Коктебель",
+     "region": "Крым",
+     "style_label": "Белое сладкое",
+     "sparkling": false,
+     "grapes": [
+      "Мускат"
+     ],
+     "photo_url": "/v1/wines/zmv-koktebel-muskat-yantarnyy-desertnyy-beloe-sladkoe-16/photo",
+     "portal_url": "https://vino-svoe.ru/wines/zmv-koktebel-muskat-yantarnyy-desertnyy-beloe-sladkoe-16",
+     "reasons": [
+      "Тоже сладкое",
+      "Тоже Крым",
+      "Крепость та же — 16°"
+     ]
+    },
+    {
+     "slug": "solnechnaya-dolina-porto-solnechnoy-doliny-kokur-belyy-beloe-sladkoe-175",
+     "name": "Порто Солнечной Долины",
+     "winery": "Солнечная долина",
+     "region": "Крым",
+     "style_label": "Белое сладкое",
+     "sparkling": false,
+     "grapes": [
+      "Кокур"
+     ],
+     "photo_url": "/v1/wines/solnechnaya-dolina-porto-solnechnoy-doliny-kokur-belyy-beloe-sladkoe-175/photo",
+     "portal_url": "https://vino-svoe.ru/wines/solnechnaya-dolina-porto-solnechnoy-doliny-kokur-belyy-beloe-sladkoe-175",
+     "reasons": [
+      "Тоже сладкое",
+      "Тоже Крым",
+      "Крепость 17,5° против 16°"
+     ]
+    },
+    {
+     "slug": "vinogradniki-gay-kodzora-muscat-de-gai-kodzor-sladkiy-muskat-aleksandriyskiy-beloe-sladkoe-14",
+     "name": "Muscat de Gai-Kodzor сладкий",
+     "winery": "Виноградники Гай-Кодзора",
+     "region": "Кубань",
+     "style_label": "Белое сладкое",
+     "sparkling": false,
+     "grapes": [
+      "Мускат Александрийский"
+     ],
+     "photo_url": "/v1/wines/vinogradniki-gay-kodzora-muscat-de-gai-kodzor-sladkiy-muskat-aleksandriyskiy-beloe-sladkoe-14/photo",
+     "portal_url": "https://vino-svoe.ru/wines/vinogradniki-gay-kodzora-muscat-de-gai-kodzor-sladkiy-muskat-aleksandriyskiy-beloe-sladkoe-14",
+     "reasons": [
+      "Тоже сладкое",
+      "Кубань, а не Крым",
+      "Крепость 14° против 16°"
+     ]
+    }
+   ],
+   "notes": []
+  },
+  "shato-pino-shiraz-krasnoe-suhoe-14": {
+   "slug": "shato-pino-shiraz-krasnoe-suhoe-14",
+   "order": "reco",
+   "limit": 3,
+   "notice": "Применяются рекомендательные технологии",
+   "category_label": "Красное сухое",
+   "items": [
+    {
+     "slug": "chateau-de-talu-shiraz-rezerv-sira-krasnoe-suhoe-14",
+     "name": "Шираз Резерв",
+     "winery": "Chateau de Talu",
+     "region": "Кубань",
+     "style_label": "Красное сухое",
+     "sparkling": false,
+     "grapes": [
+      "Сира"
+     ],
+     "photo_url": "/v1/wines/chateau-de-talu-shiraz-rezerv-sira-krasnoe-suhoe-14/photo",
+     "portal_url": "https://vino-svoe.ru/wines/chateau-de-talu-shiraz-rezerv-sira-krasnoe-suhoe-14",
+     "reasons": [
+      "Тот же сорт — Сира",
+      "Тоже сухое",
+      "Тоже Кубань",
+      "Крепость та же — 14°"
+     ]
+    },
+    {
+     "slug": "vinogradniki-gay-kodzora-terroir-de-gai-kodzor-sira-krasnoe-suhoe-14",
+     "name": "Terroir De Gai-Kodzor",
+     "winery": "Виноградники Гай-Кодзора",
+     "region": "Кубань",
+     "style_label": "Красное сухое",
+     "sparkling": false,
+     "grapes": [
+      "Сира"
+     ],
+     "photo_url": "/v1/wines/vinogradniki-gay-kodzora-terroir-de-gai-kodzor-sira-krasnoe-suhoe-14/photo",
+     "portal_url": "https://vino-svoe.ru/wines/vinogradniki-gay-kodzora-terroir-de-gai-kodzor-sira-krasnoe-suhoe-14",
+     "reasons": [
+      "Тот же сорт — Сира",
+      "Тоже сухое",
+      "Тоже Кубань",
+      "Крепость та же — 14°"
+     ]
+    },
+    {
+     "slug": "alma-valley-shiraz-sira-rezerv-krasnoe-suhoe-14",
+     "name": "Шираз (Сира) Резерв",
+     "winery": "Alma Valley",
+     "region": "Крым",
+     "style_label": "Красное сухое",
+     "sparkling": false,
+     "grapes": [
+      "Сира"
+     ],
+     "photo_url": "/v1/wines/alma-valley-shiraz-sira-rezerv-krasnoe-suhoe-14/photo",
+     "portal_url": "https://vino-svoe.ru/wines/alma-valley-shiraz-sira-rezerv-krasnoe-suhoe-14",
+     "reasons": [
+      "Тот же сорт — Сира",
+      "Тоже сухое",
+      "Крым, а не Кубань",
+      "Крепость та же — 14°"
+     ]
+    }
+   ],
+   "notes": []
+  }
+ }
+}

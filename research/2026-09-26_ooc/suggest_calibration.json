@@ -1,0 +1,76 @@
+{
+ "what": "порог подсказки suggest_not_found на шкале карты adapter-lw (кандидат 2, умолчание с 26.09)",
+ "adapter_content_sha1": "5d25e5c66ecd0034a018a7a6e43f092aba60daf8",
+ "adapter_file_sha1": "206627c7a95a759a781db21b8ee5c70d9e0c758b",
+ "index_sha1": "ccd3a01f16379a3f0a8a1e7e8dc0623c7622bda5",
+ "suggest_not_found_visual_max": 0.4379,
+ "previous": {
+  "value": 0.4299,
+  "source": "meta карты, build_final.py: только v2 353, ≤ 7"
+ },
+ "rule": "наибольший порог (k-й снизу счёт, вниз до 1e-4, срабатывание строгое «<»), при котором флаг стоит не больше чем на 2 % кадров каталога по выдаче карты вне фолда (lwn-pw, 5 групп вин): кадры каталога вместе ≤ 2 %: v2 353 + kr-dev 308 + R-оригиналы 65 = 726, ≤ 14 флагов",
+ "rule_id": "R2",
+ "score": "evidence.abstain.best_visual: zmax top-1 выдачи карты, обрезка нулём, 4 знака",
+ "catalog_scores": "вне фолда: adapter/screen/lwn-pw.npz (v2, kr-dev), карты тех же фолдов (fold_maps.npz, пересобраны: top-1 кадров пула = lwn-pw, max|Δ| на ooc_v2 2,4e-7) для R-оригиналов по query_id R-кадра v2",
+ "ooc_scores": "итоговая карта сервиса (эти кадры карта не видела); сверено с записью ворот выпуска merged-on",
+ "at_threshold": {
+  "catalog_flags_out_of_fold": {
+   "catalog_v2": "9/353",
+   "kr_dev": "3/308",
+   "r_orig": "2/65"
+  },
+  "catalog_flags_in_sample_final_map": {
+   "catalog_v2": "5/353",
+   "kr_dev": "3/308",
+   "r_orig": "2/65"
+  },
+  "recall_ooc_v2": "236/408",
+  "recall_studio": "286/600"
+ },
+ "at_previous": {
+  "catalog_flags_out_of_fold": {
+   "catalog_v2": "7/353",
+   "kr_dev": "3/308",
+   "r_orig": "2/65"
+  },
+  "catalog_flags_in_sample_final_map": {
+   "catalog_v2": "4/353",
+   "kr_dev": "3/308",
+   "r_orig": "2/65"
+  },
+  "recall_ooc_v2": "229/408",
+  "recall_studio": "268/600"
+ },
+ "out_of_sample_flags_20x5fold": {
+  "catalog_v2": {
+   "median": 10.0,
+   "min": 8,
+   "max": 11
+  },
+  "kr_dev": {
+   "median": 3.5,
+   "min": 3,
+   "max": 5
+  },
+  "r_orig": {
+   "median": 2.0,
+   "min": 2,
+   "max": 2
+  }
+ },
+ "auc": {
+  "studio: kr_dev(oof) vs studio(final)": 0.9242,
+  "field: v2(oof) vs ooc_v2(final)": 0.9512,
+  "R: r_orig(oof) vs ooc_v2(final)": 0.9423,
+  "all cat(oof) vs studio(final)": 0.9236,
+  "all cat(oof) vs ooc_v2(final)": 0.9505
+ },
+ "inputs": {
+  "negatives_jsonl_sha1": "3a5160d7eea226fccf69d78436d8084eb38cedcb",
+  "studio_qemb": "qemb_ooc_studio.npz",
+  "measure_json_sha1": "4c53b9cb0d5d521655640f2be651cd89282271d4",
+  "code_commit": "24a10b8"
+ },
+ "not_affected": "slug, top-5, /v1/eval/predict, экран not_found (выключен)",
+ "report": "ARCHITECTURE.md (адаптер: своя шкала счёта), docs/api-after-search.md"
+}
