@@ -69,6 +69,21 @@
   видеокарты сервис поднимается на процессоре, но кадр идёт десятки секунд и в 10 с скрипта не
   укладывается: оценка и демо — на видеокарте.
 
+**Что взято готовым, а что обучено нами.** Готовые модели работают как есть, а поверх них мы
+обучили свои компоненты на размеченных нами кадрах, внутри контура:
+
+| Компонент | Что делает | Откуда и как обучен |
+|---|---|---|
+| SigLIP 2 so400m (`google/siglip2-so400m-patch14-384`, ревизия `e8e48729`) | векторы фото бутылки | открытая модель, веса заморожены |
+| `qwen3.5:4b` в Ollama | читает этикетку: винодельня, сорт, год, сахар, цвет | открытая модель, не дообучалась: задан только промпт |
+| индекс каталога `data/index/visual-s2so400m.npz` | 6 312 векторов эталонов 2 103 карточек | наш: собран из фото выгрузки организатора (у 10 карточек эталон поправлен, [`data/README.md`](data/README.md)) |
+| адаптер поиска `data/index/cv-adapter-lw.npz` | линейная карта 1152 × 1152 поверх векторов SigLIP: гасит свет, фон, ракурс и телефон | наш: обучен на 6 116 парах «окно кадра — эталон верной карточки» из 1 529 кадров, CPU, около 50 с |
+| ранкер `configs/resolve/s2so400m-vlm35-lw-pool.json` | выбирает одну карточку из top-20 по 34 признакам картинки и прочитанного текста | наш: обучен на 1 517 кадрах (30 266 пар), CPU, около 12 мин |
+
+Адаптер и ранкер вместе подняли «то же вино» на отложенном тесте kr-test с 89,6 до 94,5 %
+(p = 0,0015, [ARCHITECTURE §7](ARCHITECTURE.md)). Как пересобрать данные и переобучить —
+[«Подготовка данных и обучение»](#подготовка-данных-и-обучение).
+
 ## Соответствие ТЗ
 
 | Пункт ТЗ | Статус | Где |
@@ -83,7 +98,7 @@
 | SLA до 3 с | p95 1,5 с | там же |
 | Карточка: производитель, регион, сорт, описание, к чему подать | есть | описание — из выгрузки организатора, подача — по правилам сочетаний |
 | Карточка: рейтинг Роскачества | нет | его нет ни в выгрузке организатора, ни на карточке портала; поле появится, если данные передадут |
-| README и ARCHITECTURE, воспроизводимый запуск | есть | этот файл, `ARCHITECTURE.md`, Docker compose |
+| README и ARCHITECTURE, воспроизводимый запуск | есть | этот файл, `ARCHITECTURE.md`, Docker compose; Ubuntu / Debian — [«Подготовка Ubuntu и Debian»](#подготовка-ubuntu-и-debian); обучение — [«Подготовка данных и обучение»](#подготовка-данных-и-обучение) |
 
 **Почему к сервису возвращаются.** Скан не заканчивается тупиком: у каждого исхода есть
 следующий шаг — карточка, «Не то вино?», аналоги, «Моего вина здесь нет». После карточки —
@@ -101,6 +116,10 @@
 - NVIDIA GPU с CUDA 12.8+ и 10 ГБ видеопамяти (на RTX 3080 10 ГБ во время прогона занято 7,2 ГБ
   вместе с рабочим столом; карты меньше 10 ГБ не проверялись). Без видеокарты ответ дольше 10 с
   скрипта организатора (раздел «Без видеокарты»)
+- Для Docker: Linux — Ubuntu 24.04 проверена; Debian 12 — с Docker из репозитория Docker, на нём не
+  запускали ([«Подготовка Ubuntu и Debian»](#подготовка-ubuntu-и-debian)) — или Windows с Docker
+  Desktop и WSL 2; Docker Compose 2.20+ и buildx; на диске — около 25 ГБ (образ `gpu` с весами SigLIP, образ
+  Ollama, модель чтения 3,4 ГБ, кэш сборки)
 
 ## Окружение
 
@@ -226,7 +245,7 @@ curl http://127.0.0.1:8080/v1/health     # ждём "status": "ready"
 | `SVS_LIVE_CARDS` | `0` | только вместе с `SVS_CANDIDATE=off` (у комплекта свой индекс, карта адаптера к нему не подходит). `1` — комплект «CSV + 71 карточка живого портала, чьего вина нет в CSV» (`scripts/build_live_set.py`): умолчания индекса, gt и словаря переключаются вместе на `*-live71` (явные `SVS_INDEX_PATH`, `SVS_ATTRS_PATH`, `SVS_LEXICON_PATH` главнее); нормировка CV заморожена по строкам CSV; живой gt — объявленная производная gt обучения resolve (`configs/resolve/gt_lineage.json`, шаг `live71`), поэтому `provenance.consistent=true` только при включённом флаге (`research/2026-09-25_acc/`) |
 | `SVS_CATALOG_CSV` | `$SVS_DATASET_DIR/strapi_output0709.csv` | описания и цвет для карточек (по желанию) |
 | `SVS_PHOTO_MAP` | `$SVS_DATA_DIR/catalog/slug_photo_map.csv` | пути к фото для карточек (по желанию) |
-| `SVS_PHOTO_DIR` | `SVS_FIELD_PHOTO_DIR` или `$SVS_DATA_DIR/catalog/photos_small` | лёгкие фото выгрузки `<slug>.webp` для карточки и плиток; в репозиторий не входят (`scripts/make_photo_pack.py` при наличии датасета организатора), без них — силуэт |
+| `SVS_PHOTO_DIR` | `SVS_FIELD_PHOTO_DIR` или `$SVS_DATA_DIR/catalog/photos_small` | лёгкие фото выгрузки `<slug>.webp` для карточки и плиток; в репозиторий не входят; собирает `scripts/make_photo_pack.py` по карте `slug,path` к фото выгрузки (`--photo-map`; сама карта — рабочий файл вне репозитория), без них — силуэт |
 | `SVS_WINES_PATH` | `$SVS_DATA_DIR/catalog/wines.jsonl` | словарь групп вин «то же вино» (рядом — `wine_groups.json`) |
 | `SVS_MAX_UPLOAD_MB` | `25` | предел размера файла |
 | `SVS_VLM_KEEP_ALIVE` | `24h` | сколько Ollama держит VLM в памяти после запроса |
@@ -418,9 +437,13 @@ SVS_DATASET_DIR="$D" scripts/run_eval.sh --images-dir "$D/eval/queries" \
 
 1. Обёртка добавляет `~/bin` в PATH и проверяет `curl`, `jq`, `awk`, `mktemp` и `sha256sum`.
    Она проверяет и то, что `mktemp -d` даёт каталог в `/tmp`.
-2. `jq.exe` на Windows пишет CRLF, и slug приехал бы с хвостом `\r`. Поэтому обёртка
+2. `jq.exe` на Windows пишет CRLF, и в `predictions.jsonl` попали бы `\r` (проверка 29.09: сам
+   slug Git Bash очищает при подстановке `$(…)`, `\r` остаются в концах строк). Поэтому обёртка
    подставляет свой `jq`, который вызывает `jq -b`.
 3. Каталог кадров передаётся как `C:/...`: curl из mingw не открывает пути `/c/...`.
+
+   На Linux пункты 2 и 3 не срабатывают: обёртка включает их, только если видит `\r` в выводе
+   `jq` и находит `cygpath`.
 4. Прогон начинается, только если сервис на цепочке замера: `/v1/health` = `ready`, пустые
    `degraded_reasons` и флаги прогревочного скана (`warm.scan.degraded`), нет `warnings`
    настроек, `provenance.consistent` не `false`. В `warnings` попадает и сомелье на заглушках
@@ -434,6 +457,22 @@ SVS_DATASET_DIR="$D" scripts/run_eval.sh --images-dir "$D/eval/queries" \
    её в `service_stats.json`: сколько ответов пришло без прочитанного текста и с какими
    флагами. Если хоть один — печатается `ВНИМАНИЕ`.
 6. Обёртка проверяет, что в `predictions.jsonl` нет `\r`, и вызывает `bench.judge`.
+
+**Новый набор без эталона** — так скрипт организатора запускают на приватных кадрах. Обёртке
+нужен `--gt`, поэтому здесь скрипт идёт напрямую. Нужны только `bash`, `curl`, `jq`, `awk`,
+`mktemp` и `sha256sum` (или `shasum`), без Python; сервис должен отвечать `ready` в `/v1/health`:
+
+```bash
+bash "$D/eval/participant_test.sh" --images-dir <папка кадров> --manifest <queries.tsv> \
+    --endpoint http://127.0.0.1:8080/v1/eval/predict --output predictions.jsonl
+```
+
+Организатору передаётся `predictions.jsonl`: по строке на кадр со slug и временем ответа.
+Эталон и итоговые метрики считает организатор. Из Git Bash на Windows абсолютную папку кадров
+передавайте как `C:/...` (`--images-dir "$(cygpath -m <папка кадров>)"`): путь `/c/...` curl из
+mingw не откроет, и у всех кадров будет `predicted_slug: null` без ошибки. Строки файла там
+заканчиваются CRLF, значения slug при этом чистые; если нужен файл с LF —
+`sed -i 's/\r$//' predictions.jsonl`.
 
 `bench.judge` можно звать и отдельно:
 `python -m bench.judge --pred predictions.jsonl --gt data/gt/public_gt.tsv [--out judge.json]`.
@@ -500,7 +539,8 @@ top-5, `confidence` и `margin` — второй проход `research/2026-09-
 - **`compose.yml`** поднимает сервис и Ollama с моделью чтения. Профилей два:
   - `gpu` — видеокарта NVIDIA, так мерили;
   - `cpu` — без видеокарты, медленно (ниже).
-- **`.env.example`** — образец настроек. В нём все переменные `SVS_*` с умолчаниями кода.
+- **`.env.example`** — образец настроек. В нём все переменные `SVS_*` с умолчаниями кода; для
+  сборки задано `SVS_SIGLIP_AT_BUILD=1` (без переменной compose берёт `0`).
 
 Профиль выбирается всегда: без `--profile` compose не поднимает ничего. Держать оба профиля сразу
 нельзя — у обеих Ollama в сети одно имя `ollama`.
@@ -511,18 +551,55 @@ top-5, `confidence` и `margin` — второй проход `research/2026-09-
 | Python 3.12 и зависимости по `uv.lock`: torch cu128 или cpu, transformers, FastAPI | `/opt/venv` | образ | — |
 | пачка данных: индекс, карта адаптера поиска, словарь, признаки каталога, словарь групп вин, данные сомелье (фото карточек — только если собраны локально) | `/data`, только чтение | `deploy/pack_data.sh` | `SVS_DATA_HOST_DIR`, по умолчанию `./data` |
 | выгрузка организатора `strapi_output0709.csv` | `/dataset`, только чтение | датасет кейса | `SVS_DATASET_HOST_DIR` — **обязательна** |
-| веса SigLIP, кэш Hugging Face | `/hf/hub`, только чтение | `~/.cache/huggingface/hub` или результат `scripts/trim_vision_weights.py` | `SVS_HF_HUB_HOST_DIR`, по умолчанию `../siglip-vision-hub` |
+| веса SigLIP, кэш Hugging Face | в образе (`/opt/siglip/hub`) или том `/hf/hub`, только чтение | в `.env.example` качаются при сборке (`SVS_SIGLIP_AT_BUILD=1`; без переменной compose берёт `0`); иначе `~/.cache/huggingface/hub` или результат `scripts/trim_vision_weights.py` | `SVS_SIGLIP_AT_BUILD`; при `0` — `SVS_HF_HUB_HOST_DIR`, по умолчанию `../siglip-vision-hub` |
 | модель чтения `qwen3.5:4b`, 3,4 ГБ | том `ollama-models` | качает сервис `ollama-pull` | `OLLAMA_MODELS_HOST_DIR` — каталог моделей нативной Ollama, чтобы не качать заново |
 
 **Выгрузка организатора обязательна.** Без неё сервис стартует, но карточки остаются без
 описаний. Поэтому compose без `SVS_DATASET_HOST_DIR` не запускается и сразу говорит, чего не
 хватает.
 
-**Веса SigLIP в образе.** С `SVS_SIGLIP_AT_BUILD=1` веса качаются при сборке, и том `/hf/hub`
-не нужен:
+**Веса SigLIP в образе.** С `SVS_SIGLIP_AT_BUILD=1` (так в `.env.example`) веса качаются при
+сборке, и том `/hf/hub` не нужен:
 - берётся ровно ревизия индекса `e8e48729…`;
 - от неё остаётся только зрительная башня, +1,7 ГБ к образу;
 - `trim_vision_weights.py` проверяет, что forward-проход совпадает с полной моделью до бита.
+
+### Подготовка Ubuntu и Debian
+
+Один раз на машине с видеокартой NVIDIA. Проверено 28.09 на Ubuntu 24.04 (облачный сервер,
+NVIDIA L40S, драйвер 570.211, итог — в [«Что проверено»](#что-проверено-а-что-нет)):
+
+```bash
+# Docker Engine, compose v2 и buildx из пакетов Ubuntu; git, curl, jq, unzip — для шагов ниже
+sudo apt-get update
+sudo apt-get install -y docker.io docker-compose-v2 docker-buildx git curl jq unzip
+sudo systemctl enable --now docker
+sudo usermod -aG docker "$USER"   # docker без sudo — после повторного входа (ниже)
+# драйвер NVIDIA: в шапке nvidia-smi — «CUDA Version: 12.8» или выше
+nvidia-smi
+# NVIDIA Container Toolkit — через него контейнер видит видеокарту
+curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey \
+  | sudo gpg --dearmor --yes -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg
+curl -fsSL https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list \
+  | sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' \
+  | sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list > /dev/null
+sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
+sudo nvidia-ctk runtime configure --runtime=docker && sudo systemctl restart docker
+sudo docker run --rm --gpus all ubuntu:24.04 nvidia-smi -L    # в выводе — видеокарта
+# uv — окружение судьи bench.judge для шага 4 (скрипту организатора оно не нужно)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+# выйти и войти заново: после этого docker работает без sudo, а uv (~/.local/bin) есть в PATH;
+# без перелогина — `newgrp docker` и `. "$HOME/.local/bin/env"`
+```
+
+**Debian 12.** Первая строка `apt-get install` выше на Debian не пройдёт: в штатных пакетах нет
+compose v2. `git curl jq unzip` ставятся отдельно, а Docker Engine с `docker-compose-plugin` и
+`docker-buildx-plugin` — из репозитория Docker
+([docs.docker.com/engine/install/debian](https://docs.docker.com/engine/install/debian/)).
+Штатный драйвер NVIDIA в Debian 12 — серия 535 (CUDA 12.2), этого мало: драйвер с CUDA 12.8+
+берут из репозитория NVIDIA. Toolkit и остальные шаги — как выше. На Debian мы не запускали.
+
+Без видеокарты блок NVIDIA не нужен — профиль `cpu` ([ниже](#без-видеокарты---profile-cpu)).
 
 ### Шаги на чистой машине
 
@@ -530,8 +607,9 @@ top-5, `confidence` и `margin` — второй проход `research/2026-09-
 git clone https://github.com/KhalidMustafin/svoe-vino-scanner-lct.git svoe-vino-scanner
 cd svoe-vino-scanner
 # 1. Данные сервиса уже в data/ (состав и источники — data/README.md)
-# 2. Настройки: SVS_DATASET_HOST_DIR — папка выгрузки организатора (strapi_output0709.csv, eval/);
-#    SVS_SIGLIP_AT_BUILD=1 — веса SigLIP скачаются при сборке, отдельная папка весов не нужна
+# 2. Настройки: задать только SVS_DATASET_HOST_DIR — папку выгрузки организатора
+#    (strapi_output0709.csv, eval/). SVS_SIGLIP_AT_BUILD=1 уже стоит: веса SigLIP скачаются при
+#    сборке, отдельная папка весов не нужна
 cp .env.example .env && nano .env
 docker compose --profile gpu config > /dev/null   # проверка .env без запуска
 # 3. Сборка и запуск. Первый раз качаются torch cu128 и модель чтения
@@ -548,6 +626,7 @@ SVS_DATASET_DIR="$D" scripts/run_eval.sh --images-dir "$D/eval/queries" \
 R=".../Реальные фото"     # куда распакован «Реальные фото.zip» (своей папки в архиве нет)
 SVS_DATASET_DIR="$D" scripts/run_eval.sh --images-dir "$R" \
     --manifest data/gt/real_photos_queries.tsv --gt data/gt/real_photos_gt.tsv --out runs/eval-real100
+#    Новый набор без эталона — скрипт организатора напрямую, «Прогон скрипта организатора»
 # 6. Страница продукта: http://127.0.0.1:8080/ ; с телефона в той же сети — http://<IP машины>:8080/
 ```
 
@@ -567,11 +646,13 @@ SVS_DATASET_DIR="$D" scripts/run_eval.sh --images-dir "$R" \
 идёт дольше минуты. Дождитесь её и перезапустите сервис: `docker compose --profile gpu restart
 scanner-gpu`, — второй прогрев занимает доли секунды. Весов
 rubert-tiny2 в образе нет: смысловой слой сомелье (`SVS_SOMM_SAFETY=1`) в контейнере скажет
-`missing`, пока их не положат в кэш Hugging Face тома.
+`missing`. Подложить их можно в кэш тома `/hf/hub` только при `SVS_SIGLIP_AT_BUILD=0`: при `1`
+сервис читает кэш образа `/opt/siglip/hub`, и том не виден.
 
 **Что нужно для профиля `gpu`:**
 - драйвер NVIDIA с CUDA 12.8+;
-- NVIDIA Container Toolkit (Linux) или Docker Desktop с WSL 2 (Windows);
+- NVIDIA Container Toolkit (Linux, [«Подготовка Ubuntu и Debian»](#подготовка-ubuntu-и-debian))
+  или Docker Desktop с WSL 2 (Windows);
 - для скрипта организатора — bash, curl, jq, для судьи — `uv sync` (шаг 4).
 
 **Видеопамять одна.** Нативную Ollama перед запуском остановите: сервис с `qwen3.5:4b` занимает
@@ -603,6 +684,15 @@ Docker. Docker Desktop на Windows и macOS доводит `host.docker.interna
 
 Профиль `cpu` нужен, чтобы проверить сборку и данные на машине без видеокарты. Для замера и для
 скрипта организатора он не годится.
+
+```bash
+docker compose --profile cpu up -d --build
+docker compose logs -f scanner-cpu            # ждём строку «Прогрев: …»
+curl -s -F "image=@кадр.jpg" http://127.0.0.1:8080/v1/eval/predict   # один кадр, ответ — {"slug": …}
+```
+
+`status: degraded` в `/v1/health` на процессоре — ожидаемо: чтение этикетки не укладывается в
+бюджет.
 
 Из Git Bash на Windows `docker run -e ИМЯ=/путь` переписывает пути в `C:/Program Files/Git/...`.
 Помогает `MSYS_NO_PATHCONV=1`. Compose читает `.env` сам, его это не касается.
@@ -657,7 +747,7 @@ services:
 - **Путь эксперта целиком — 27.09.** Свежий клон, `.env` из `.env.example` с правками
   `SVS_DATASET_HOST_DIR`, `SVS_SIGLIP_AT_BUILD=1`, `SVS_HF_HUB_HOST_DIR` (пустая папка вместо кэша
   весов машины) и `OLLAMA_MODELS_HOST_DIR` (модель чтения — из каталога нативной Ollama; скачивание
-  её сервисом `ollama-pull` в этом прогоне не проверялось), `docker compose --profile gpu up -d --build`
+  её сервисом `ollama-pull` проверено позже, на Ubuntu — ниже), `docker compose --profile gpu up -d --build`
   с Ollama в контейнере. Веса SigLIP скачались при сборке. Проверка нашла и закрыла ошибку:
   файл весов в образе был доступен только root, сервис падал в `cv_warm_error`; теперь `Dockerfile`
   открывает веса на чтение. Итог: `ready`, `provenance` согласована, у сомелье все пять файлов из
@@ -665,6 +755,102 @@ services:
   103, p95 1,8 с (`research/2026-09-27_results/jury_path/`).
 - **Контейнер `gpu` с нативной Ollama** — отчётный прогон 27.09
   ([`research/2026-09-27_results/`](research/2026-09-27_results/RESULTS.md)).
+- **Ubuntu 24.04 на облачном сервере — 28–29.09.** Виртуальная видеокарта NVIDIA L40S 12 ГБ,
+  драйвер 570.211, 6 vCPU, 7 ГБ ОЗУ и подкачка 8 ГБ. Пакеты — как в
+  [«Подготовке Ubuntu и Debian»](#подготовка-ubuntu-и-debian). Код — коммит, опубликованный
+  27.09: код сервиса тот же, позже менялись только документы и `.env.example`. `.env` — из
+  `.env.example` с `SVS_DATASET_HOST_DIR` и `SVS_SIGLIP_AT_BUILD=1`, плюс настройки стенда: порт
+  и `SVS_SOMM_INPUT=0`. Ollama в контейнере, модель чтения скачал сервис `ollama-pull`. Итог —
+  `ready`.
+
+  Скрипт организатора запускали с другой машины, через интернет, на 3 + 100 кадрах. У 4 кадров
+  (R011, R017, R067, R088) он записал null: ответ не дошёл по сети, хотя сервис ответил на все
+  100 и null в счётчиках `/v1/health` — 0. Повтор этих 4 кадров дал ответы отчётного прогона. С
+  повтором ответы на «Реальных фото» совпали с отчётным прогоном у 99 из 100 (разница — кадр R003
+  с вином вне каталога), top-1 и top-5 те же.
+
+  Время на сервере (`timings_ms.total`) 29.09 — p50 1,0 с, p95 1,3 с, максимум 1,9 с. По часам
+  скрипта, вместе с передачей кадра через интернет, — p95 5,2 с, максимум 8,5 с. Скорость
+  виртуальной карты плавала: 28.09 днём p95 на сервере доходил до 3,9 с. Результаты этого прогона
+  в репозиторий не входят.
+
+## Подготовка данных и обучение
+
+Для технических специалистов: как из выгрузки организатора получаются файлы, с которыми работает
+сервис. Итоговые файлы лежат в git (`data/`, `configs/resolve/`): индекс, словарь, признаки
+каталога, карта адаптера и ранкер. Промежуточных векторов и таблиц пула в репозитории нет. Для
+запуска и проверки ничего из этого делать не нужно. Облачных API нет ни в одном шаге. На
+видеокарте считаются векторы индекса и чтения этикеток `qwen3.5:4b`, обучение карты и ранкера
+идёт на CPU.
+
+| Шаг | Скрипт | Вход → выход | Подробно |
+|---|---|---|---|
+| 1. Признаки карточек | `scripts/build_gt_tokens.py` | CSV выгрузки, рабочие таблицы двойников и алиасов виноделен и снимок живого API портала (`plan_live_wines.json`) → `data/gt/gt_tokens.jsonl` | [«Эталонные токены и словарь»](#эталонные-токены-и-словарь) |
+| 2. Словарь | `scripts/build_lexicon.py` | `gt_tokens.jsonl` → `data/index/lexicon.json` | там же |
+| 3. Индекс эталонов | `scripts/build_index.py` | карта `slug,path` к фото эталонов → `data/index/visual-s2so400m.npz`: 2 103 карточки; из одних фото выгрузки — 6 309 векторов, в git — 6 312 (с правкой эталонов 23.09) | [ARCHITECTURE](ARCHITECTURE.md), «Пополнение каталога» |
+| 4. Векторы и чтения кадров пула | образец — `research/2026-09-26_fund/qemb_pairs.py`; чтения — прогоны `qwen3.5:4b` | кадры пула → векторы 4 окон SigLIP (CPU, float32) и тексты этикеток | [`TRAINPOOL.md`](research/2026-09-26_fund/TRAINPOOL.md) |
+| 5. Таблицы пула | `research/2026-09-26_fund/build_trainpool.py` | векторы и чтения → выдача top-20 и 34 признака ранкера на кандидата | там же |
+| 6. Адаптер поиска | `research/2026-09-26_fund/adapter/build_candidate.py`, затем `adapter/screen.py` | 6 116 пар «окно кадра — эталон верной карточки» из 1 529 кадров → карта LW, около 50 с; выдача карты вне фолда для порогов шкалы | [`PREREG_final.md`](research/2026-09-26_fund/PREREG_final.md), §2.1 |
+| 7. Итоговые карта и ранкер | `research/2026-09-26_fund/final/build_final.py` | пул → `cv-adapter-lw.npz` и `s2so400m-vlm35-lw-pool.json`, около 12 мин | `PREREG_final.md`, §2.3; [ARCHITECTURE](ARCHITECTURE.md), §2 |
+
+```bash
+# окружение с torch и transformers — раздел «Окружение» (шаг 4 «Шагов на чистой машине» ставит
+# лёгкое окружение судьи, без них)
+uv sync --extra gpu --extra dev --extra api --extra cv
+# шаги 1–2 — «Эталонные токены и словарь»; шаг 3 (видеокарта; веса SigLIP ревизии e8e48729):
+uv run python scripts/build_index.py --photo-map <CSV slug,path> \
+    --model google/siglip2-so400m-patch14-384 --device cuda --out data/index/visual-s2so400m.npz
+# шаги 5–7 (CPU) — как их запускали; перед повтором поправить заглушки путей (ниже)
+PYTHONPATH=. uv run python research/2026-09-26_fund/build_trainpool.py --sets catalog_v2 kr_dev ooc_v2
+PYTHONPATH=. uv run python research/2026-09-26_fund/build_trainpool.py --sets pairs
+PYTHONPATH=. uv run python research/2026-09-26_fund/build_trainpool.py --merge
+PYTHONPATH=. uv run python research/2026-09-26_fund/adapter/build_candidate.py
+PYTHONPATH=. uv run python research/2026-09-26_fund/adapter/screen.py --method lw_nested \
+    --params '{"pairs": "per_window"}' --name lwn-pw
+PYTHONPATH=. uv run python research/2026-09-26_fund/final/build_final.py
+```
+
+Куда пишет шаг 7:
+- ранкер — сразу в `configs/resolve/s2so400m-vlm35-lw-pool.json`, поверх файла из git;
+- карту и отчёт — в рабочую папку `final/` вне репозитория (`FUND` в `protocol.py`). Карту
+  копируют в `data/index/cv-adapter-lw.npz` и пересобирают образ: `configs/` входят в него.
+  После этого в `/v1/health` должно быть `provenance.consistent = true`.
+
+**Данные обучения.** В пуле 1 533 кадра с вином каталога:
+- студийные пары Роскачества и их «телефонные» копии — 358 + 358;
+- полевые кадры каталога (разметка v2) — 353. Из них 65 — JPEG-копии «Реальных фото»
+  организатора (срез R), остальные — наши снимки;
+- снимки карточек товаров интернет-магазина (kr-dev) — 308 + 156.
+
+Карта учится на 6 116 парах из 1 529 кадров, ранкер — на 1 517 кадрах пула, у которых верная
+карточка в top-20. Кадры вне каталога — 408 из 409 набора `ooc_v2`: у одного нет чтения в кэше.
+Они идут только в пороги шкалы счёта CV. Разметка кадров наша, по правилу «то же вино»
+([`research/README.md`](research/README.md)). Отложенный тест kr-test в пул не входит: это
+проверяет `protocol.assert_no_test`.
+
+**Что можно повторить из этого репозитория, а что нет:**
+- **Кадры пула и кэш чтений в репозиторий не входят.** Это чужие снимки и фото из магазинов,
+  поэтому без них шаги 4–7 не повторить. Скрипты шагов 5–7 лежат как запускались
+  ([`research/README.md`](research/README.md)), и в них стоят заглушки путей:
+  - `<корень>` (`ROOT`) в `research/2026-09-26_fund/protocol.py`;
+  - `<tmp>` (`GOAL26`) в `build_trainpool.py`.
+
+  Данные сервиса шаги 5–7 читают из снимка `frozen_data` (`protocol.FROZEN`), а не из `data/`.
+  Векторы запросов для v2, kr и наборов вне каталога считались тем же путём, что в
+  `qemb_pairs.py`; отдельные скрипты для них в репозиторий не вошли.
+- **`build_final.py` сверяет sha1 карты шага 6** с закреплённым `LW_SOURCE_SHA1` (`ae96acfb…`).
+  Новую карту сверка не пропустит, пока константу не обновить. То же и при повторе на другой
+  машине: пересборка тем же рецептом совпадает с точностью до 2,4·10⁻⁷ (порядок сложения BLAS,
+  `PREREG_final.md`, §2.1).
+- **Готовые артефакты проверяются без кадров.** В `meta` ранкера записаны sha1 пула, наборы,
+  seeds, время обучения и sha1 карты. Сервис при старте сверяет карту с sha1 индекса, а модель —
+  с признаками каталога (`provenance` в `/v1/health`).
+- **Индекс `ccd3a01f` включает правку эталонов 23.09**, и её фото не публикуются. Индекс,
+  собранный заново из выгрузки, будет другим. С ним нужна новая карта адаптера (шаги 6–7, с
+  проверкой на новых отложенных данных: kr-test уже израсходован) или прежний путь
+  `SVS_CANDIDATE=off`.
+- **Входы шагов 1 и 3 — тоже рабочие файлы вне репозитория:** таблицы двойников, снимок API и
+  `slug_photo_map.csv`.
 
 ## Полевой стенд
 

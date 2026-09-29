@@ -1221,8 +1221,9 @@ text: проверенный текст модели или шаблон с пр
   `uv sync --frozen --extra gpu --extra cv --extra api`, `ollama pull qwen3.5:4b`,
   `python -m app.api`.
 - **Docker** — README, «Запуск в Docker»: `Dockerfile`, `compose.yml` с профилями `gpu` и `cpu`,
-  `.env.example`. Окружение ставится строго по `uv.lock`. Данные, выгрузка организатора и веса
-  SigLIP приходят томами, только на чтение. Образ `cpu` собран и поднят через compose без
+  `.env.example`. Окружение ставится строго по `uv.lock`. Данные и выгрузка организатора приходят
+  томами, только на чтение; веса SigLIP с `SVS_SIGLIP_AT_BUILD=1` (так в `.env.example`)
+  скачиваются при сборке в образ, при `0` — тоже томом. Образ `cpu` собран и поднят через compose без
   Ollama (`research/2026-09-23_docker-smoke/`). Контейнер `gpu` из чистого клона поднят 27.09: на
   нём снят прогон скрипта организатора
   ([`research/2026-09-27_results/RESULTS.md`](research/2026-09-27_results/RESULTS.md)).
@@ -1290,8 +1291,8 @@ text: проверенный текст модели или шаблон с пр
 - **Смысловой слой выключен.** Окольные фразы о зависимости, трезвости и здоровье без слова темы
   правила ловят плохо — 3 из 18, 4 из 10 и 3 из 14 (`research/2026-09-24_somm/safety_eval.json`).
   Для показа без риска — `SVS_SOMM_INPUT=0` (только чипы). Весов rubert-tiny2 в образе Docker
-  нет: с `SVS_SOMM_SAFETY=1` в контейнере слой скажет `missing`, пока их не положат в кэш
-  Hugging Face тома.
+  нет: с `SVS_SOMM_SAFETY=1` в контейнере слой скажет `missing`. Подложить их можно в кэш тома
+  `/hf/hub` только при `SVS_SIGLIP_AT_BUILD=0`: при `1` сервис читает кэш образа.
 
 ## 13. Стек ТЗ и встраивание в портал
 
@@ -1374,8 +1375,11 @@ POST /v1/scan  (multipart `image`, ≤ 25 МБ; JPEG, PNG, WebP, HEIC, AVIF)
    публичный репозиторий они не входят.
 2. Словарь — `scripts/build_lexicon.py`.
 3. Векторы — `scripts/build_index.py --photo-map <slug,path> --model
-   google/siglip2-so400m-patch14-384`. Модель нужно указать явно: по умолчанию скрипт берёт
-   SigLIP base (`DEFAULT_MODEL`, `app/features/embedder.py:29`). Индекс пересчитывается целиком.
+   google/siglip2-so400m-patch14-384 --device cuda --out data/index/visual-s2so400m.npz`. Модель
+   и выход нужно указать явно: по умолчанию скрипт берёт SigLIP base (`DEFAULT_MODEL`,
+   `app/features/embedder.py:29`) и пишет `data/index/visual.npz`, а сервис читает
+   `visual-s2so400m.npz`. Индекс пересчитывается целиком. Порядок всех шагов с обучением —
+   README, «Подготовка данных и обучение».
 4. Фото, данные сомелье и ссылки — `scripts/make_photo_pack.py`, `scripts/build_somm.py`,
    `scripts/build_portal_links.py`; архив для сервера — `deploy/pack_data.sh`.
 
